@@ -60,6 +60,7 @@ include_directories (AFTER "${OpenCV_INCLUDE_DIRS}")
 target_link_libraries(tonav ${OpenCV_LIBS})
 
 find_package(image_transport REQUIRED)
+include_directories (AFTER ${image_transport_INCLUDE_DIRS})
 target_link_libraries(tonav ${image_transport_LIBRARIES})
 
 find_package(cv_bridge REQUIRED)
