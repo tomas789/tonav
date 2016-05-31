@@ -6,11 +6,6 @@ set (CMAKE_MODULE_PATH ${tonav_CMAKE_DIR} ${CMAKE_MODULE_PATH})
 find_package(catkin REQUIRED
              COMPONENTS message_generation std_msgs sensor_msgs image_transport)
 
-catkin_package(
-    CATKIN_DEPENDS message_runtime std_msgs sensor_msgs tf2 roscpp
-    DEPENDS eigen opencv
-)
-
 include_directories("${tonav_SOURCE_DIR}/include")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -pedantic")
@@ -48,6 +43,11 @@ add_executable(tonav ${SOURCE_FILES})
 
 find_package(Eigen3 REQUIRED)
 include_directories (AFTER "${EIGEN3_INCLUDE_DIR}")
+
+catkin_package(
+    CATKIN_DEPENDS message_runtime std_msgs sensor_msgs tf2 roscpp
+    DEPENDS eigen
+)
 
 find_package(Boost REQUIRED COMPONENTS program_options filesystem)
 include_directories (AFTER "${Boost_INCLUDE_DIRS}")
