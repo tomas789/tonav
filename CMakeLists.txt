@@ -45,7 +45,7 @@ find_package(Eigen3 REQUIRED)
 include_directories (AFTER "${EIGEN3_INCLUDE_DIR}")
 
 catkin_package(
-    CATKIN_DEPENDS message_runtime std_msgs sensor_msgs tf2 roscpp
+    CATKIN_DEPENDS message_runtime std_msgs sensor_msgs tf2 tf2_ros roscpp
     DEPENDS eigen
 )
 
