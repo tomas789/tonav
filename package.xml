@@ -20,8 +20,6 @@
     <build_depend>eigen</build_depend>
     <build_depend>opencv</build_depend>
 
-    <build_export_depend>eigen</build_export_depend>
-
     <run_depend>cmake_modules</run_depend>
     <run_depend>roscpp</run_depend>
     <run_depend>message_runtime</run_depend>
