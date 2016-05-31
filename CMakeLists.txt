@@ -7,7 +7,8 @@ find_package(catkin REQUIRED
              COMPONENTS message_generation std_msgs sensor_msgs image_transport)
 
 catkin_package(
-    CATKIN_DEPENDS message_runtime std_msgs sensor_msgs tf2 roscpp eigen opencv
+    CATKIN_DEPENDS message_runtime std_msgs sensor_msgs tf2 roscpp
+    DEPENDS eigen opencv
 )
 
 include_directories("${tonav_SOURCE_DIR}/include")
