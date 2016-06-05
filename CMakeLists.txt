@@ -38,7 +38,7 @@ set(SOURCE_FILES
         src/imu_buffer.cpp
         src/filter.cpp
         include/filter_state.h
-        src/filter_state.cpp include/feature_tracker.h src/feature_tracker.cpp)
+        src/filter_state.cpp include/feature_tracker.h src/feature_tracker.cpp include/frame_features.h src/frame_features.cpp)
 add_executable(tonav ${SOURCE_FILES})
 
 find_package(Eigen3 REQUIRED)

@@ -109,8 +109,7 @@ int Navigator::run(int argc, const char* argv[]) {
 
                 feature_tracker.processImage(img);
 
-
-                sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "mono8", img).toImageMsg();
+                sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", img).toImageMsg();
                 pub.publish(msg);
             }
             geometry_msgs::TransformStamped transform;
