@@ -42,10 +42,6 @@ public:
     double& getCameraDelayTimeRef();
     double& getCameraReadoutTimeRef();
 
-    Eigen::Block<StateType, 4, 1> getRotationForBodyPoseBlock(std::size_t i);
-    Eigen::Block<StateType, 3, 1> getPositionForBodyPoseBlock(std::size_t i);
-    Eigen::Block<StateType, 3, 1> getVelocityForBodyPoseBlock(std::size_t i);
-
     Eigen::Block<Eigen::Vector3d, 3, 1> getRotationEstimateBlock();
     Eigen::Block<Eigen::Vector3d, 3, 1> getAccelerationEstimateBlock();
 
@@ -55,6 +51,8 @@ public:
     std::ostream& uglyPrint(std::ostream& out) const;
 
     FilterState deriveNewStateForImuPropagation() const;
+
+    void appendCameraPose(const CameraPose& camera_pose);
 
 private:
     StateType state_;

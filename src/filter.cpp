@@ -40,7 +40,17 @@ void Filter::stepInertial(double timedelta, const ImuItem &accel, const ImuItem 
 }
 
 void Filter::stepCamera(double timedelta, cv::Mat &frame) {
-    features_tracked_ = feature_tracker_.processImage(features_tracked_, frame);
+    FeatureTracker::feature_track_list current_features_tracked;
+    current_features_tracked = feature_tracker_.processImage(features_tracked_, frame);
+
+    FeatureTracker::feature_track_list out_of_view_features;
+    for (std::size_t i = 0; i < features_tracked_.size(); ++i) {
+        if (features_tracked_[i]->isOutOfView()) {
+            out_of_view_features.push_back(features_tracked_[i]);
+        }
+    }
+
+    features_tracked_ = current_features_tracked;
 }
 
 void Filter::propagateRotation(FilterState &old_state, FilterState &new_state, double timedelta, const ImuItem &accel,

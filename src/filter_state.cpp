@@ -91,18 +91,6 @@ double& FilterState::getCameraReadoutTimeRef() {
     return state_(56, 0);
 }
 
-Eigen::Block<FilterState::StateType, 4, 1> FilterState::getRotationForBodyPoseBlock(std::size_t i) {
-    return state_.block<4, 1>(57+10*i, 0);
-}
-
-Eigen::Block<FilterState::StateType, 3, 1> FilterState::getPositionForBodyPoseBlock(std::size_t i) {
-    return state_.block<3, 1>(57+10*i+4, 0);
-}
-
-Eigen::Block<FilterState::StateType, 3, 1> FilterState::getVelocityForBodyPoseBlock(std::size_t i) {
-    return state_.block<3, 1>(57+10*i+7, 0);
-}
-
 Eigen::Block<Eigen::Vector3d, 3, 1> FilterState::getRotationEstimateBlock() {
     return rotation_estimate_.block<3, 1>(0, 0);
 }
