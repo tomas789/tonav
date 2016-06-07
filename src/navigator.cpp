@@ -21,7 +21,6 @@
 #include "exceptions/base_exception.h"
 #include "exceptions/impossible_exception.h"
 #include "filter.h"
-#include "feature_tracker.h"
 #include "imu_buffer.h"
 #include "imu_feed.h"
 
@@ -106,8 +105,7 @@ int Navigator::run(int argc, const char* argv[]) {
                 std::cout << "Propagate CAM at time " << std::fixed << camera_item.getTime() << std::endl;
 
                 cv::Mat img = camera_feed.getImage(camera_item);
-
-                feature_tracker.processImage(img);
+                filter.stepCamera(camera_item.getTime(), img);
 
                 sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", img).toImageMsg();
                 pub.publish(msg);

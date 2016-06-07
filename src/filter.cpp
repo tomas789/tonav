@@ -11,7 +11,7 @@
 #include "filter_state.h"
 #include "imu_item.h"
 
-Filter::Filter(const Calibration &calibration) : calibration_(calibration) {
+Filter::Filter(const Calibration &calibration) : calibration_(calibration), filter_state_(calibration.getMaxCameraPoses()) {
 }
 
 void Filter::initialize() {
@@ -39,12 +39,12 @@ void Filter::stepInertial(double timedelta, const ImuItem &accel, const ImuItem 
     std::cout << filter_state_ << std::endl;
 }
 
-void Filter::stepCamera(double timedelta, const cv::Mat &frame) {
-
+void Filter::stepCamera(double timedelta, cv::Mat &frame) {
+    features_tracked_ = feature_tracker_.processImage(features_tracked_, frame);
 }
 
 void Filter::propagateRotation(FilterState &old_state, FilterState &new_state, double timedelta, const ImuItem &accel,
-                               const ImuItem &gyro) {
+        const ImuItem &gyro) {
     Eigen::Vector3d rotation_measured;
     rotation_measured << gyro.getX(), gyro.getY(), gyro.getZ();
     Eigen::Vector3d accel_measured;
@@ -157,11 +157,6 @@ void Filter::initializeCameraCalibration() {
 }
 
 void Filter::initializeBodyPoses() {
-    for (int i = 0; i < poses_; ++i) {
-        filter_state_.getRotationForBodyPoseBlock(i) = filter_state_.getRotationBlock();
-        filter_state_.getPositionForBodyPoseBlock(i) = filter_state_.getPositionBlock();
-        filter_state_.getVelocityForBodyPoseBlock(i) = filter_state_.getVelocityBlock();
-    }
 }
 
 Eigen::Matrix<double, 9, 1> Filter::vectorizeMatrix(const Eigen::Matrix<double, 3, 3> &mat) {

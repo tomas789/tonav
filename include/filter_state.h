@@ -7,12 +7,15 @@
 
 #include <iostream>
 #include <Eigen/Dense>
+#include <vector>
+
+#include "camera_pose.h"
 
 class FilterState {
-    constexpr static std::size_t poses_ = 10;
-
 public:
-    using StateType = Eigen::Matrix<double, 57+10*poses_, 1>;
+    using StateType = Eigen::Matrix<double, 57, 1>;
+
+    FilterState(std::size_t max_poses);
 
     Eigen::Block<StateType, 4, 1> getRotationBlock();
     Eigen::Quaterniond getRotationQuaternion();
@@ -49,11 +52,6 @@ public:
     Eigen::Quaterniond getRotationToThisFrame();
     void setRotationToThisFrame(const Eigen::Quaterniond& quat);
 
-
-    constexpr static std::size_t getPoses() {
-        return poses_;
-    }
-
     std::ostream& uglyPrint(std::ostream& out) const;
 
     FilterState deriveNewStateForImuPropagation() const;
@@ -63,6 +61,8 @@ private:
     Eigen::Quaterniond rotation_to_this_frame_;
     Eigen::Vector3d rotation_estimate_;
     Eigen::Vector3d acceleration_estimate_;
+
+    std::vector<CameraPose> poses_;
 };
 
 std::ostream& operator<< (std::ostream& out, FilterState& state);

@@ -9,6 +9,7 @@
 
 #include "calibration.h"
 #include "filter_state.h"
+#include "feature_tracker.h"
 
 class ImuItem;
 
@@ -17,14 +18,13 @@ namespace cv {
 }
 
 class Filter {
-    constexpr static std::size_t poses_ = FilterState::getPoses();
 public:
     Filter(const Calibration& calibration);
 
     void initialize();
 
     void stepInertial(double timedelta, const ImuItem& accel, const ImuItem& gyro);
-    void stepCamera(double timedelta, const cv::Mat& frame);
+    void stepCamera(double timedelta, cv::Mat& frame);
 
     void propagateRotation(
             FilterState& old_state, FilterState& new_state, double timedelta, const ImuItem& accel,
@@ -38,15 +38,13 @@ public:
     Eigen::Vector3d getCurrentPosition();
     Eigen::Quaterniond getCurrentAttitude();
 
-    constexpr static std::size_t getPoses() {
-        return poses_;
-    }
-
 private:
     Calibration calibration_;
 
     FilterState filter_state_;
     Eigen::Matrix<double, 15, 15> filter_covar_;
+
+    FeatureTracker::feature_track_list features_tracked_;
 
     void initializeBodyFrame();
     void initializeImuCalibration();
@@ -57,6 +55,8 @@ private:
     static Eigen::Matrix<double, 3, 3> unvectorizeMatrix(Eigen::Block<FilterState::StateType, 9, 1> vec);
     static Eigen::Matrix4d omegaMatrix(const Eigen::Vector3d vec);
     static Eigen::Matrix3d crossMatrix(const Eigen::Vector3d vec);
+
+    FeatureTracker feature_tracker_;
 };
 
 #endif //TONAV_FILTER_H

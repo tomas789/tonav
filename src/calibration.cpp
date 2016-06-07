@@ -22,7 +22,8 @@ const std::vector<std::string> Calibration::allowed_params_ = {
         "Camera.posToImuX", "Camera.posToImuY", "Camera.posToImuZ",
         "Camera.td", "Camera.tr",
         "ORBextractor.nFeatures",
-        "Imu.Ts", "Imu.Tg", "Imu.Ta"
+        "Imu.Ts", "Imu.Tg", "Imu.Ta",
+        "Filter.maxCameraPoses"
 };
 
 Calibration Calibration::fromPath(boost::filesystem::path fname) {
@@ -139,6 +140,10 @@ Calibration Calibration::fromPath(boost::filesystem::path fname) {
             }
         } else if (key == "Imu.Ta") {
             if (!Calibration::tryParseMatrix3d(value, calib.t_a_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Filter.maxCameraPoses") {
+            if (!Calibration::tryParseInt(value, calib.max_camera_poses_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
         } else {
@@ -284,6 +289,10 @@ double Calibration::getCameraDelayTime() const {
 
 double Calibration::getCameraReadoutTime() const {
     return t_r_;
+}
+
+int Calibration::getMaxCameraPoses() const {
+    return max_camera_poses_;
 }
 
 

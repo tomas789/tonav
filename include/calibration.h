@@ -13,6 +13,8 @@
 
 class Calibration {
 public:
+    int getMaxCameraPoses() const;
+
     Eigen::Matrix<double, 3, 3> getGSensitivityMatrix() const;
     Eigen::Matrix<double, 3, 3> getGyroscopeShapeMatrix() const;
     Eigen::Matrix<double, 3, 3> getAccelerometerShapeMatrix() const;
@@ -36,6 +38,8 @@ public:
     static bool tryParseDouble(const std::string& value, double& out);
     static bool tryParseMatrix3d(const std::string& value, Eigen::Matrix3d& out);
 private:
+    int max_camera_poses_;
+
     double f_x_;
     double f_y_;
     double c_x_;

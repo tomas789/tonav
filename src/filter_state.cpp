@@ -137,6 +137,10 @@ FilterState FilterState::deriveNewStateForImuPropagation() const {
     return new_state;
 }
 
+FilterState::FilterState(std::size_t max_poses) {
+    poses_.reserve(max_poses);
+}
+
 std::ostream& operator<< (std::ostream& out, FilterState& state) {
     Eigen::IOFormat formatter(4, 0, ", ", "\n", "[", "]");
     out << std::fixed << std::setprecision(4);
@@ -158,12 +162,14 @@ std::ostream& operator<< (std::ostream& out, FilterState& state) {
     out << "Cam delay:       " << state.getCameraDelayTimeRef() << std::endl;
     out << "Cam readout:     " << state.getCameraReadoutTimeRef() << std::endl;
 
+#if 0
     for (int i = 0; i < FilterState::getPoses(); ++i) {
         out << " * " << std::setw(8) << "Pose " + std::to_string(i) << ": "
             << state.getRotationForBodyPoseBlock(i).transpose().format(formatter) << " "
             << state.getPositionForBodyPoseBlock(i).transpose().format(formatter) << " "
             << state.getVelocityForBodyPoseBlock(i).transpose().format(formatter) << std::endl;
     }
+#endif
 
 
     return out;
