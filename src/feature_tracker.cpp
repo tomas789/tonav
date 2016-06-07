@@ -6,6 +6,7 @@
 
 #include <cmath>
 #include <iostream>
+#include <memory>
 #include <opencv2/core/core.hpp>
 
 #include "exceptions/general_exception.h"
