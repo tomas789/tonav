@@ -13,9 +13,9 @@ This is work-in-progress. It is not able to work out-of-the-box currently. Expec
 
 ## Goals
 
-As a goal of this work I want to create complete navigation stack without using global position such as GPS. For local navigation it uses Multi-State Constraint Kalman Filter which is at the time of writing state-of-the-art method. It also has great computation power to accuracy ratio. Drawback of this approach is that still accumulates (relatively small) drift during time. To compensate for this I want to use mechanism that uses loop closures. It will be based on principles used in ORB-SLAM. I have quite a bit experience with it at it works great.
+As a goal of this work I want to create complete navigation stack without using global position such as GPS. For local navigation it uses Multi-State Constraint Kalman Filter which is at the time of writing state-of-the-art method. It also has a great computation power to accuracy ratio. Drawback of this approach is that still accumulates (relatively small) drift during time. To compensate for this I want to use mechanism that uses loop closures. It will be based on principles used in ORB-SLAM. I have quite a bit experience with it and it works great.
 
-By combining of this two approaches I want to create navigation stack that will be able to perform life-long navigation using very cheap hardware and with low energy demands. It should be able to run on battery. It should also be able to run on CPU only.
+By combining these two approaches I want to create navigation stack that will be able to perform life-long navigation using very cheap hardware and with low energy demands. It should be able to run on battery. It should also be able to run on CPU only.
 
 Goal list:
  - Accurate navigation
@@ -28,7 +28,7 @@ Goal list:
 
 For development purpose, I use [MIT Stata Center Data Set](http://projects.csail.mit.edu/stata/index.php). It contains rosbag files recorded from PR2 robot. 
 
-Each bag file is quite large because it contains laser scans. For purpose of this word they are not needed. So I created filtered version of them using command 
+Each bag file is quite large because it contains laser scans. They are not needed for the purpose of this work, so I created a filtered version of them using command 
 
 `$ rosbag filter 2011-01-18-06-37-58.bag pr2.bag 'topic in ("/wide_stereo/left/image_rect", "/wide_stereo/left/camera_info", "/torso_lift    _imu/data", "/tf", "/robot_pose_ekf/odom_combined")'`
 
@@ -36,7 +36,7 @@ By the way. Can you believe how hard it is to find publically available bagfile 
 
 ## Installation
 
-To install this you have to have installed and working ROS. Then it should be fairly easy to build and run.
+To install this you need to have installed and working ROS. Then it should be fairly easy to build and run.
 
 ```
 git clone https://github.com/tomas789/tonav.git
@@ -63,11 +63,11 @@ For [MIT Stata Center Data Set](http://projects.csail.mit.edu/stata/index.php) I
 
 ## Documentation
 
-At the time of writing there is no good documentation. Actually best one is this readme. You can also find some useful information in my in-source Doxygen documentation. It you have installed Doxygen in version at least 1.8.8 you can generate it. Just run `make doc` and it will be generated in the folder `build/doc`
+At the time of writing there is no good documentation. Actually the best one is this readme. You can also find some useful information in my in-source Doxygen documentation. If you have installed Doxygen in version at least 1.8.8 you can generate it. Just run `make doc` and it will be generated in the folder `build/doc`.
 
 ## Bug reporting and support
 
-This is something as alpha-dev-buggy piece of work. But stay tuned. I do my best. It you want to report a bug or if you want to know something about it just contact me at tomas789@gmail.com or simply use [Issue tracker of GitHub](https://github.com/tomas789/tonav/issues).
+This is something as alpha-dev-buggy piece of work. But stay tuned. I do my best. If you want to report a bug or if you want to know something about it just contact me at tomas789@gmail.com or simply use [Issue tracker of GitHub](https://github.com/tomas789/tonav/issues).
 
 ## What does Tonav mean?
 
