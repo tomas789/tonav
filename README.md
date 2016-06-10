@@ -32,7 +32,7 @@ Each bag file is quite large because it contains laser scans. For purpose of thi
 
 `$ rosbag filter 2011-01-18-06-37-58.bag pr2.bag 'topic in ("/wide_stereo/left/image_rect", "/wide_stereo/left/camera_info", "/torso_lift    _imu/data", "/tf", "/robot_pose_ekf/odom_combined")'`
 
-By the way. Can you beleave how hard it is to find publically available bagfile that is recorded using some cheap hardware? C'mon!
+By the way. Can you believe how hard it is to find publically available bagfile that is recorded using some cheap hardware? C'mon!
 
 ## Installation
 
