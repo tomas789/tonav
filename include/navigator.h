@@ -7,8 +7,23 @@
 
 #include <boost/program_options.hpp>
 
+/**
+ * @brief Perform navigation from dataset.
+ *
+ * @deprecated This is deprecated. Use Tonav or it's convenience
+ *             wrapper TonavRos instead.
+ */
 class Navigator {
 public:
+    /**
+     * @brief Run navigation node from dataset.
+     *
+     * @deprecated This is deprecated. Use Tonav or it's convenience
+     *             wrapper TonavRos instead.
+     *
+     * @param argc Number of command line arguments.
+     * @param argv List of command line arguments.
+     */
     int run(int argc, const char* argv[]);
 
 private:

@@ -11,7 +11,8 @@
 #include "filter_state.h"
 #include "imu_item.h"
 
-Filter::Filter(const Calibration &calibration) : calibration_(calibration), filter_state_(calibration.getMaxCameraPoses()) {
+Filter::Filter(const Calibration &calibration)
+: calibration_(calibration), accel_buffer_(ImuDevice::ACCELEROMETER, calibration.getBufferSize()), gyro_buffer_(ImuDevice::GYROSCOPE, calibration.getBufferSize()) {
 }
 
 void Filter::initialize() {
@@ -23,7 +24,7 @@ void Filter::initialize() {
     filter_state_.getRotationEstimateBlock().setZero();
     filter_state_.getAccelerationEstimateBlock().setZero();
 
-    std::cout << filter_state_ << std::endl;
+    // std::cout << filter_state_ << std::endl;
 
     filter_covar_.setIdentity();
 }
@@ -36,10 +37,12 @@ void Filter::stepInertial(double timedelta, const ImuItem &accel, const ImuItem 
     propagateVelocityAndPosition(old_state, new_state, timedelta, accel, gyro);
 
     old_state = new_state;
-    std::cout << filter_state_ << std::endl;
+    // std::cout << filter_state_ << std::endl;
 }
 
 void Filter::stepCamera(double timedelta, cv::Mat &frame) {
+    augment();
+    
     FeatureTracker::feature_track_list current_features_tracked;
     current_features_tracked = feature_tracker_.processImage(features_tracked_, frame);
 
@@ -167,6 +170,11 @@ void Filter::initializeCameraCalibration() {
 }
 
 void Filter::initializeBodyPoses() {
+}
+
+void Filter::augment() {
+    CameraPose pose;
+    
 }
 
 Eigen::Matrix<double, 9, 1> Filter::vectorizeMatrix(const Eigen::Matrix<double, 3, 3> &mat) {

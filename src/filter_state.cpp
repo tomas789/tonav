@@ -125,8 +125,8 @@ FilterState FilterState::deriveNewStateForImuPropagation() const {
     return new_state;
 }
 
-FilterState::FilterState(std::size_t max_poses) {
-    poses_.reserve(max_poses);
+void FilterState::appendCameraPose(const CameraPose &camera_pose) {
+    poses_.push_back(camera_pose);
 }
 
 std::ostream& operator<< (std::ostream& out, FilterState& state) {

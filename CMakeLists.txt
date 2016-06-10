@@ -10,6 +10,8 @@ include_directories("${tonav_SOURCE_DIR}/include")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
+set (CMAKE_INSTALL_RPATH /opt/ros/jade/lib)
+
 set(SOURCE_FILES
         src/main.cpp
         src/calibration.cpp
@@ -38,11 +40,25 @@ set(SOURCE_FILES
         src/imu_buffer.cpp
         src/filter.cpp
         include/filter_state.h
-        src/filter_state.cpp include/feature_tracker.h src/feature_tracker.cpp include/frame_features.h src/frame_features.cpp include/camera_pose.h include/feature_track.h src/feature_track.cpp src/camera_pose.cpp)
+        src/filter_state.cpp
+        include/feature_tracker.h
+        src/feature_tracker.cpp
+        include/frame_features.h
+        src/frame_features.cpp
+        include/camera_pose.h
+        include/feature_track.h
+        src/feature_track.cpp
+        src/camera_pose.cpp
+        include/tonav.h
+        src/tonav.cpp
+        include/tonav_ros.h
+        src/tonav_ros.cpp
+)
 add_executable(tonav ${SOURCE_FILES})
 
 find_package(Eigen3 REQUIRED)
 include_directories (AFTER "${EIGEN3_INCLUDE_DIR}")
+
 
 catkin_package(
     CATKIN_DEPENDS message_runtime std_msgs sensor_msgs tf2 tf2_ros roscpp
@@ -68,3 +84,13 @@ target_link_libraries(tonav ${cv_bridge_LIBRARIES})
 
 find_package(tf2_ros REQUIRED)
 target_link_libraries(tonav ${tf2_ros_LIBRARIES})
+
+find_package(Doxygen 1.8.8)
+if(DOXYGEN_FOUND)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+    add_custom_target(doc ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "Generating API documentation with Doxygen" VERBATIM
+    )
+endif(DOXYGEN_FOUND)
+

@@ -130,7 +130,7 @@ void FeatureTracker::drawStats(cv::Mat &image, const std::vector<double> &previo
     cv::putText(image, "New features: " + std::to_string(new_features), cv::Point(50, 65), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
     cv::putText(image, "Matched features: " + std::to_string(current_features_matched.size() - new_features), cv::Point(50, 80), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
     cv::putText(image, "Matches size: " + std::to_string(matches.size()), cv::Point(50, 95), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
-    cv::putText(image, "Average feature live: " + std::to_string(average_feature_live), cv::Point(50, 110), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
+    cv::putText(image, "Average feature life: " + std::to_string(average_feature_live), cv::Point(50, 110), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
 
 }
 

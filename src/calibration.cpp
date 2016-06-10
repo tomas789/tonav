@@ -23,7 +23,7 @@ const std::vector<std::string> Calibration::allowed_params_ = {
         "Camera.td", "Camera.tr",
         "ORBextractor.nFeatures",
         "Imu.Ts", "Imu.Tg", "Imu.Ta",
-        "Filter.maxCameraPoses"
+        "Filter.maxCameraPoses", "Filter.bufferSize"
 };
 
 Calibration Calibration::fromPath(boost::filesystem::path fname) {
@@ -144,6 +144,10 @@ Calibration Calibration::fromPath(boost::filesystem::path fname) {
             }
         } else if (key == "Filter.maxCameraPoses") {
             if (!Calibration::tryParseInt(value, calib.max_camera_poses_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "bufferSize") {
+            if (!Calibration::tryParseInt(value, calib.buffer_size_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
         } else {
@@ -295,7 +299,9 @@ int Calibration::getMaxCameraPoses() const {
     return max_camera_poses_;
 }
 
-
+int Calibration::getBufferSize() const {
+    return buffer_size_;
+}
 
 
 

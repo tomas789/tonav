@@ -10,6 +10,7 @@
 #include "calibration.h"
 #include "filter_state.h"
 #include "feature_tracker.h"
+#include "imu_buffer.h"
 
 class ImuItem;
 
@@ -37,9 +38,14 @@ public:
 
     Eigen::Vector3d getCurrentPosition();
     Eigen::Quaterniond getCurrentAttitude();
+    
+    ImuBuffer& getAccelerometerBufferRef();
+    ImuBuffer& getGyroscopeBufferRef();
 
 private:
     Calibration calibration_;
+    ImuBuffer accel_buffer_;
+    ImuBuffer gyro_buffer_;
 
     FilterState filter_state_;
     Eigen::Matrix<double, 15, 15> filter_covar_;
@@ -50,6 +56,8 @@ private:
     void initializeImuCalibration();
     void initializeCameraCalibration();
     void initializeBodyPoses();
+    
+    void augment();
 
     static Eigen::Matrix<double, 9, 1> vectorizeMatrix(const Eigen::Matrix<double, 3, 3>& mat);
     static Eigen::Matrix<double, 3, 3> unvectorizeMatrix(Eigen::Block<FilterState::StateType, 9, 1> vec);
