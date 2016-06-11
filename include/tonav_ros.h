@@ -7,6 +7,8 @@
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/Imu.h>
 #include <boost/program_options.hpp>
+#include <image_transport/image_transport.h>
+#include <tf2_ros/transform_broadcaster.h>
 
 #include "tonav.h"
 
@@ -43,6 +45,9 @@ private:
     Eigen::Matrix3d current_camera_matrix_;
     Eigen::Matrix<double, 5, 1> current_distirtion_params_;
     
+    image_transport::Publisher image_publisher_;
+    tf2_ros::TransformBroadcaster tf_broadcaster_;
+    
     void setAllowedOptionsDescription();
     bool parseCommandLineParams(int argc, char* argv[]);
     void printHelp();
@@ -51,6 +56,8 @@ private:
     void cameraInfoCallback(const sensor_msgs::CameraInfoConstPtr& msg);
     void imuCallback(const sensor_msgs::ImuConstPtr& msg);
     double getMessageTime(ros::Time stamp);
+    
+    void publishResults();
 };
 
 #endif //TONAV_TONAV_ROS_H

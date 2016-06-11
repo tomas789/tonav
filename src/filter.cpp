@@ -12,7 +12,7 @@
 #include "imu_item.h"
 
 Filter::Filter(const Calibration &calibration)
-: calibration_(calibration), accel_buffer_(ImuDevice::ACCELEROMETER, calibration.getBufferSize()), gyro_buffer_(ImuDevice::GYROSCOPE, calibration.getBufferSize()) {
+: calibration_(calibration) {
 }
 
 void Filter::initialize() {
@@ -40,7 +40,7 @@ void Filter::stepInertial(double timedelta, const ImuItem &accel, const ImuItem 
     // std::cout << filter_state_ << std::endl;
 }
 
-void Filter::stepCamera(double timedelta, cv::Mat &frame) {
+void Filter::stepCamera(double timedelta, const ImuItem& accel, const ImuItem& gyro, cv::Mat &frame) {
     augment();
     
     FeatureTracker::feature_track_list current_features_tracked;
@@ -123,10 +123,12 @@ void Filter::propagateVelocityAndPosition(
             rotation_from_body_to_global*y_estimate + 0.5 * getGlobalGravity()*timedelta*timedelta;
 }
 
+void Filter::setGlobalGravity(Eigen::Vector3d gravity) {
+    global_gravity_ = gravity;
+}
+
 Eigen::Vector3d Filter::getGlobalGravity() const {
-    Eigen::Vector3d gravity;
-    gravity << 0, 0, -1;
-    return gravity;
+    return global_gravity_;
 }
 
 Eigen::Vector3d Filter::getCurrentPosition() {
@@ -135,6 +137,10 @@ Eigen::Vector3d Filter::getCurrentPosition() {
 
 Eigen::Quaterniond Filter::getCurrentAttitude() {
     return filter_state_.getRotationQuaternion();
+}
+
+double Filter::getImageCaptureTime(double arrive_time) {
+    return arrive_time + filter_state_.getCameraDelayTimeRef();
 }
 
 void Filter::initializeBodyFrame() {

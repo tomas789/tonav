@@ -146,7 +146,7 @@ Calibration Calibration::fromPath(boost::filesystem::path fname) {
             if (!Calibration::tryParseInt(value, calib.max_camera_poses_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
-        } else if (key == "bufferSize") {
+        } else if (key == "Filter.bufferSize") {
             if (!Calibration::tryParseInt(value, calib.buffer_size_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }

@@ -10,6 +10,15 @@
 #include "imu_device.h"
 #include "imu_item.h"
 
+/**
+ * @brief Buffer of IMU data measurements.
+ *
+ * @deprecated This class is no longer needed. It is used in Navigator
+ *             class only.
+ *
+ * Using this class you can interpolate IMU measurement at any time in
+ * interval [getMinTime(), getMaxTime()]
+ */
 class ImuBuffer {
 public:
     ImuBuffer(ImuDevice device, std::size_t size);

@@ -6,6 +6,7 @@
 #define TONAV_IMU_ITEM_H
 
 #include <string>
+#include <Eigen/Core>
 
 #include "imu_device.h"
 
@@ -15,6 +16,7 @@ class ImuItem {
 public:
     friend class ImuBuffer;
     static ImuItem fromString(std::string line);
+    static ImuItem fromVector3d(double time, const ImuDevice& device, const Eigen::Vector3d& data);
 
     ImuDevice getDevice() const;
 
@@ -23,12 +25,11 @@ public:
     double getX() const;
     double getY() const;
     double getZ() const;
+    Eigen::Vector3d getVector() const;
 private:
     ImuDevice device_;
     double time_;
-    double x_;
-    double y_;
-    double z_;
+    Eigen::Vector3d data_;
 };
 
 #endif //TONAV_IMU_ITEM_H

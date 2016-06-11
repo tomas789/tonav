@@ -34,21 +34,27 @@ ImuItem ImuItem::fromString(std::string line) {
                 break;
             case 2:
                 // x
-                if (!Calibration::tryParseDouble(s, item.x_)) {
+                double x;
+                if (!Calibration::tryParseDouble(s, x)) {
                     throw GeneralException("Failed parse IMU data: Expected double value: " + s);
                 }
+                item.data_(0, 0) = x;
                 break;
             case 3:
                 // y
-                if (!Calibration::tryParseDouble(s, item.y_)) {
+                double y;
+                if (!Calibration::tryParseDouble(s, y)) {
                     throw GeneralException("Failed parse IMU data: Expected double value: " + s);
                 }
+                item.data_(1, 0) = y;
                 break;
             case 4:
                 // z
-                if (!Calibration::tryParseDouble(s, item.z_)) {
+                double z;
+                if (!Calibration::tryParseDouble(s, z)) {
                     throw GeneralException("Failed parse IMU data: Expected double value: " + s);
                 }
+                item.data_(2, 0) = z;
                 break;
             default:
                 throw GeneralException("");
@@ -57,6 +63,14 @@ ImuItem ImuItem::fromString(std::string line) {
               ? std::string::npos
               : pos_end + 1;
     }
+    return item;
+}
+
+ImuItem ImuItem::fromVector3d(double time, const ImuDevice& device, const Eigen::Vector3d &data) {
+    ImuItem item;
+    item.time_ = time;
+    item.device_ = device;
+    item.data_ = data;
     return item;
 }
 
@@ -69,13 +83,17 @@ double ImuItem::getTime() const {
 }
 
 double ImuItem::getX() const {
-    return x_;
+    return data_(0, 0);
 }
 
 double ImuItem::getY() const {
-    return y_;
+    return data_(1, 0);
 }
 
 double ImuItem::getZ() const {
-    return z_;
+    return data_(2, 0);
+}
+
+Eigen::Vector3d ImuItem::getVector() const {
+    return data_;
 }

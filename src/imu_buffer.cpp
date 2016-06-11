@@ -57,9 +57,7 @@ ImuItem ImuBuffer::interpolateAtTime(double time) const {
             double t = (time - earlier.getTime()) / time_delta;
             interpolated.time_ = time;
             interpolated.device_ = later.getDevice();
-            interpolated.x_ = t * earlier.x_ + (1-t) * later.x_;
-            interpolated.y_ = t * earlier.y_ + (1-t) * later.y_;
-            interpolated.z_ = t * earlier.z_ + (1-t) * later.z_;
+            interpolated.data_ = t * earlier.data_ + (1-t) * later.data_;
             return interpolated;
         }
     }

@@ -4,7 +4,10 @@
 #include <opencv2/core/core.hpp>
 #include <Eigen/Core>
 
+#include "calibration.h"
 #include "filter.h"
+#include "imu_buffer.h"
+#include "imu_device.h"
 
 /**
  * @brief This is main class for communicating with filter. 
@@ -15,6 +18,13 @@
  */
 class Tonav {
 public:
+    /**
+     * @brief Initialize filter with configuration
+     *
+     * @param calibration Calibration
+     */
+    Tonav(Calibration& calibration);
+    
     /**
      * @brief Perform navigation step with data from accelerometer.
      *
@@ -100,9 +110,42 @@ public:
      */
     void setCameraModelParams(const Eigen::Matrix3d& camera_matrix, const Eigen::Matrix<double, 5, 1> distortion_params);
     
+    bool filterWasUpdated() const;
+    
+    Eigen::Quaterniond getCurrentOrientation();
+    Eigen::Vector3d getCurrentPosition();
+    cv::Mat getCurrentImage() const;
+    
 private:
     std::size_t initial_delay_;
     Filter filter_;
+    
+    bool has_global_gravity_set_;
+    
+    double last_image_capture_time_;
+    cv::Mat last_image_;
+    
+    double last_update_time_;
+    bool filter_was_updated_;
+    
+    std::list<ImuItem> accel_buffer_;
+    std::list<ImuItem> gyro_buffer_;
+    
+    bool checkGlobalGravity();
+    double getMaxAccelerometerTime() const;
+    double getMaxGyroscopeTime() const;
+    
+    void initialize();
+    void initializeGlobalGravity();
+    void initializeLastUpdateTime();
+    
+    void updateAccelerationImpl(double time, Eigen::Vector3d accel);
+    void updateRotationRateImpl(double time, Eigen::Vector3d gyro);
+    
+    void performUpdateIfPossible();
+    void performUpdate();
+    
+    ImuItem interpolate(double time, const ImuItem& earlier, const ImuItem& later) const;
 };
 
 #endif //TONAV_TONAV_H
