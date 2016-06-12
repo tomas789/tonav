@@ -58,7 +58,7 @@ PROJECT_LOGO           =
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = /Users/tomaskrejci/tonav/build/doc
+OUTPUT_DIRECTORY       = @CMAKE_BINARY_DIR@/tonav/doc
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -781,7 +781,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = /Users/tomaskrejci/tonav
+INPUT                  = @CMAKE_SOURCE_DIR@
 INPUT += README.md
 
 # This tag can be used to specify the character encoding of the source files
