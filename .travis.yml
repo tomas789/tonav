@@ -124,4 +124,5 @@ script:
   - make doc
 
 after_success:
-  - bash ~/catkin_ws/src/tonav/deploy.sh
+  - cd ~/catkin_ws/src/tonav
+  - bash deploy.sh

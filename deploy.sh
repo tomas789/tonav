@@ -10,7 +10,7 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
-cd ~/catkin_ws/build/tonav/doc
+cd ~/catkin_ws/build/tonav_doc
 
 git init
 git config user.name "Travis-ci"
