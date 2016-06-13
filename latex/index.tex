@@ -1,0 +1,64 @@
+\href{https://travis-ci.org/tomas789/tonav/branches}{\tt !\mbox{[}Travis-\/\-C\-I Tonav\mbox{]}\mbox{[}2\mbox{]}}
+
+Implementation of Multi-\/\-State Constraint Kalman \hyperlink{class_filter}{Filter} (M\-S\-C\-K\-F) for Vision-\/aided Inertial Navigation. This is my master's thesis.
+
+\subsection*{Status}
+
+This is work-\/in-\/progress. It is not able to work out-\/of-\/the-\/box currently. Expected time when it will be able to work out-\/of-\/the-\/box\-: July 2016.
+
+\subsection*{Goals}
+
+As a goal of this work I want to create complete navigation stack without using global position such as G\-P\-S. For local navigation it uses Multi-\/\-State Constraint Kalman \hyperlink{class_filter}{Filter} which is at the time of writing state-\/of-\/the-\/art method. It also has a great computation power to accuracy ratio. Drawback of this approach is that still accumulates (relatively small) drift during time. To compensate for this I want to use mechanism that uses loop closures. It will be based on principles used in O\-R\-B-\/\-S\-L\-A\-M. I have quite a bit experience with it and it works great.
+
+By combining these two approaches I want to create navigation stack that will be able to perform life-\/long navigation using very cheap hardware and with low energy demands. It should be able to run on battery. It should also be able to run on C\-P\-U only.
+
+Goal list\-:
+\begin{DoxyItemize}
+\item Accurate navigation
+\item Low-\/cost hardware
+\item Life-\/long navigation
+\item Low-\/energy demand (battery)
+\item Global drift compensation (loop closure)
+\end{DoxyItemize}
+
+\subsection*{Datasets}
+
+For development purpose, I use \href{http://projects.csail.mit.edu/stata/index.php}{\tt M\-I\-T Stata Center Data Set}. It contains rosbag files recorded from P\-R2 robot.
+
+Each bag file is quite large because it contains laser scans. They are not needed for the purpose of this work, so I created a filtered version of them using command
+
+{\ttfamily \$ rosbag filter 2011-\/01-\/18-\/06-\/37-\/58.\-bag pr2.\-bag 'topic in (\char`\"{}/wide\-\_\-stereo/left/image\-\_\-rect\char`\"{}, \char`\"{}/wide\-\_\-stereo/left/camera\-\_\-info\char`\"{}, \char`\"{}/torso\-\_\-lift    \-\_\-imu/data\char`\"{}, \char`\"{}/tf\char`\"{}, \char`\"{}/robot\-\_\-pose\-\_\-ekf/odom\-\_\-combined\char`\"{})'}
+
+By the way. Can you believe how hard it is to find publically available bagfile that is recorded using some cheap hardware? C'mon!
+
+\subsection*{Installation}
+
+To install this you need to have installed and working R\-O\-S. Then it should be fairly easy to build and run.
+
+``` git clone \href{https://github.com/tomas789/tonav.git}{\tt https\-://github.\-com/tomas789/tonav.\-git} cd tonav mkdir build cd build cmake .. make ```
+
+\subsection*{Run}
+
+I currently don't provide any roslaunch file. Just run {\ttfamily roscore} and then run \hyperlink{class_tonav}{Tonav}
+
+``` ./tonav --image $<$image\-\_\-topic$>$ --camerainfo $<$camerainfo\-\_\-topic$>$ --imu $<$imu\-\_\-topic$>$ ```
+
+For \href{http://projects.csail.mit.edu/stata/index.php}{\tt M\-I\-T Stata Center Data Set} I run it using
+
+``` ./tonav --image /wide\-\_\-stereo/left/image\-\_\-rect --camerainfo /wide\-\_\-stereo/left/camera\-\_\-info --imu /torso\-\_\-lift\-\_\-imu/data ```
+
+\subsection*{Documentation}
+
+At the time of writing there is no good documentation. Actually the best one is this readme. You can also find some useful information in my in-\/source Doxygen documentation. If you have installed Doxygen in version at least 1.\-8.\-8 you can generate it. Just run {\ttfamily make doc} and it will be generated in the folder {\ttfamily build/doc}.
+
+\subsection*{Bug reporting and support}
+
+This is something as alpha-\/dev-\/buggy piece of work. But stay tuned. I do my best. If you want to report a bug or if you want to know something about it just contact me at \href{mailto:tomas789@gmail.com}{\tt tomas789@gmail.\-com} or simply use \href{https://github.com/tomas789/tonav/issues}{\tt Issue tracker of Git\-Hub}.
+
+\subsection*{What does \hyperlink{class_tonav}{Tonav} mean?}
+
+Its Tom's Navigation.
+
+\subsection*{License}
+
+This work is currently distributed under L\-G\-P\-L v3 license. In the future, it will switch to G\-P\-L. 

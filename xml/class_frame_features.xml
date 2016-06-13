@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_frame_features" kind="class" prot="public">
+    <compoundname>FrameFeatures</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_frame_features_1a5ed94b174a59b9aa93299c3b5ce355e4" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; cv::KeyPoint &gt;</type>
+        <definition>std::vector&lt;cv::KeyPoint&gt; FrameFeatures::keypoints_</definition>
+        <argsstring></argsstring>
+        <name>keypoints_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="22" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_frame_features_1adec4eebbbf23dc00c8420c0f9b94ab42" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat FrameFeatures::descriptors_</definition>
+        <argsstring></argsstring>
+        <name>descriptors_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="23" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_frame_features_1a5942b53a2e105a82e6454cd259157aa0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_frame_features" kindref="compound">FrameFeatures</ref></type>
+        <definition>FrameFeatures FrameFeatures::fromImage</definition>
+        <argsstring>(cv::Ptr&lt; cv::FeatureDetector &gt; detector, cv::Ptr&lt; cv::DescriptorExtractor &gt; extractor, cv::Mat &amp;image)</argsstring>
+        <name>fromImage</name>
+        <param>
+          <type>cv::Ptr&lt; cv::FeatureDetector &gt;</type>
+          <declname>detector</declname>
+        </param>
+        <param>
+          <type>cv::Ptr&lt; cv::DescriptorExtractor &gt;</type>
+          <declname>extractor</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="13" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="13" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_frame_features_1a6977a4effbe856ff8583f4352cd138b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; cv::DMatch &gt;</type>
+        <definition>std::vector&lt; cv::DMatch &gt; FrameFeatures::match</definition>
+        <argsstring>(cv::Ptr&lt; cv::DescriptorMatcher &gt; matcher, const FrameFeatures &amp;other)</argsstring>
+        <name>match</name>
+        <param>
+          <type>cv::Ptr&lt; cv::DescriptorMatcher &gt;</type>
+          <declname>matcher</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_frame_features" kindref="compound">FrameFeatures</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="63" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_frame_features_1ae36e05c015c5980fb0801fc0b6ee97ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FrameFeatures::drawFeatures</definition>
+        <argsstring>(cv::Mat &amp;image, cv::Scalar color=cv::Scalar(255, 0, 0))</argsstring>
+        <name>drawFeatures</name>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>cv::Scalar</type>
+          <declname>color</declname>
+          <defval>cv::Scalar(255, 0, 0)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="43" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_frame_features_1aff3c47e301fde7db68ecac5d852c6edf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; cv::KeyPoint &gt; &amp;</type>
+        <definition>std::vector&lt; cv::KeyPoint &gt; &amp; FrameFeatures::keypoints</definition>
+        <argsstring>()</argsstring>
+        <name>keypoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="73" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_frame_features_1a29b51fc67b07fe6e5b9236a092d1e17a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const std::vector&lt; cv::KeyPoint &gt; &amp;</type>
+        <definition>const std::vector&lt; cv::KeyPoint &gt; &amp; FrameFeatures::keypoints</definition>
+        <argsstring>() const </argsstring>
+        <name>keypoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="77" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_frame_features_1ad4b7642d5127163fbf02ee23945d3123" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FrameFeatures::detectKeypoints</definition>
+        <argsstring>(cv::Ptr&lt; cv::FeatureDetector &gt; detector, cv::Mat gray)</argsstring>
+        <name>detectKeypoints</name>
+        <param>
+          <type>cv::Ptr&lt; cv::FeatureDetector &gt;</type>
+          <declname>detector</declname>
+        </param>
+        <param>
+          <type>cv::Mat</type>
+          <declname>gray</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="55" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_frame_features_1a609ebf1d8a00b77cacec9876576cf13a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FrameFeatures::computeDescriptors</definition>
+        <argsstring>(cv::Ptr&lt; cv::DescriptorExtractor &gt; detector, cv::Mat gray)</argsstring>
+        <name>computeDescriptors</name>
+        <param>
+          <type>cv::Ptr&lt; cv::DescriptorExtractor &gt;</type>
+          <declname>detector</declname>
+        </param>
+        <param>
+          <type>cv::Mat</type>
+          <declname>gray</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_frame_features_1a13014d394e80327f5643fb21853398f1" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat FrameFeatures::toGray</definition>
+        <argsstring>(cv::Mat image)</argsstring>
+        <name>toGray</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="28" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="28" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="11" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" bodystart="11" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_frame_features_1a609ebf1d8a00b77cacec9876576cf13a" prot="private" virt="non-virtual"><scope>FrameFeatures</scope><name>computeDescriptors</name></member>
+      <member refid="class_frame_features_1adec4eebbbf23dc00c8420c0f9b94ab42" prot="private" virt="non-virtual"><scope>FrameFeatures</scope><name>descriptors_</name></member>
+      <member refid="class_frame_features_1ad4b7642d5127163fbf02ee23945d3123" prot="private" virt="non-virtual"><scope>FrameFeatures</scope><name>detectKeypoints</name></member>
+      <member refid="class_frame_features_1ae36e05c015c5980fb0801fc0b6ee97ca" prot="public" virt="non-virtual"><scope>FrameFeatures</scope><name>drawFeatures</name></member>
+      <member refid="class_frame_features_1a5942b53a2e105a82e6454cd259157aa0" prot="public" virt="non-virtual"><scope>FrameFeatures</scope><name>fromImage</name></member>
+      <member refid="class_frame_features_1aff3c47e301fde7db68ecac5d852c6edf" prot="public" virt="non-virtual"><scope>FrameFeatures</scope><name>keypoints</name></member>
+      <member refid="class_frame_features_1a29b51fc67b07fe6e5b9236a092d1e17a" prot="public" virt="non-virtual"><scope>FrameFeatures</scope><name>keypoints</name></member>
+      <member refid="class_frame_features_1a5ed94b174a59b9aa93299c3b5ce355e4" prot="private" virt="non-virtual"><scope>FrameFeatures</scope><name>keypoints_</name></member>
+      <member refid="class_frame_features_1a6977a4effbe856ff8583f4352cd138b8" prot="public" virt="non-virtual"><scope>FrameFeatures</scope><name>match</name></member>
+      <member refid="class_frame_features_1a13014d394e80327f5643fb21853398f1" prot="private" virt="non-virtual"><scope>FrameFeatures</scope><name>toGray</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

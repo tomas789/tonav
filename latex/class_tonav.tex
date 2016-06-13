@@ -1,0 +1,214 @@
+\hypertarget{class_tonav}{\section{Tonav Class Reference}
+\label{class_tonav}\index{Tonav@{Tonav}}
+}
+
+
+This is main class for communicating with filter. You can pass I\-M\-U and camera data to filter through it and get information about current filter state.  
+
+
+
+
+{\ttfamily \#include $<$tonav.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tonav_a0c3d527cc8ec6832d4ea650ad31c726a}{Tonav} (\hyperlink{class_calibration}{Calibration} \&calibration)
+\begin{DoxyCompactList}\small\item\em Initialize filter with configuration. \end{DoxyCompactList}\item 
+void \hyperlink{class_tonav_ac458c8712b1eeef1ba169835706d26fd}{update\-Acceleration} (double time, Eigen\-::\-Vector3d accel)
+\begin{DoxyCompactList}\small\item\em Perform navigation step with data from accelerometer. \end{DoxyCompactList}\item 
+void \hyperlink{class_tonav_a02a596cd5acf1799830499dd97e5e2e5}{update\-Rotation\-Rate} (double time, Eigen\-::\-Vector3d gyro)
+\begin{DoxyCompactList}\small\item\em Perform navigation step with data from gyroscope. \end{DoxyCompactList}\item 
+void \hyperlink{class_tonav_ac7c7cdaa16941df03aca92a3eaa75ed7}{update\-Acceleration\-And\-Rotation\-Rate} (double time, Eigen\-::\-Vector3d accel, Eigen\-::\-Vector3d gyro)
+\begin{DoxyCompactList}\small\item\em Perform navigation step with data from both accelerometer and gyroscore. \end{DoxyCompactList}\item 
+void \hyperlink{class_tonav_a765f593b621a40052a01b7d0449d9b8e}{update\-Image} (double time, cv\-::\-Mat \&image)
+\begin{DoxyCompactList}\small\item\em Perform navigation step with image from camera. \end{DoxyCompactList}\item 
+void \hyperlink{class_tonav_a53fddfad248ab9a75906e310266e1f0d}{set\-Camera\-Model\-Params} (const Eigen\-::\-Matrix3d \&camera\-\_\-matrix, const Eigen\-::\-Matrix$<$ double, 5, 1 $>$ distortion\-\_\-params)
+\begin{DoxyCompactList}\small\item\em Set camera model params. \end{DoxyCompactList}\item 
+\hypertarget{class_tonav_a6cd97922b947734bca02119a60135c30}{bool {\bfseries filter\-Was\-Updated} () const }\label{class_tonav_a6cd97922b947734bca02119a60135c30}
+
+\item 
+\hypertarget{class_tonav_a724c0d36fb1f182023831f70fa166e55}{Eigen\-::\-Quaterniond {\bfseries get\-Current\-Orientation} ()}\label{class_tonav_a724c0d36fb1f182023831f70fa166e55}
+
+\item 
+\hypertarget{class_tonav_a4717848cb42b3311e19d656de940bc65}{Eigen\-::\-Vector3d {\bfseries get\-Current\-Position} ()}\label{class_tonav_a4717848cb42b3311e19d656de940bc65}
+
+\item 
+\hypertarget{class_tonav_a3929b594397489b232e77e4344c8675a}{cv\-::\-Mat {\bfseries get\-Current\-Image} () const }\label{class_tonav_a3929b594397489b232e77e4344c8675a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is main class for communicating with filter. You can pass I\-M\-U and camera data to filter through it and get information about current filter state. 
+
+As a user, you should only communicate with this class. 
+
+Definition at line 19 of file tonav.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_tonav_a0c3d527cc8ec6832d4ea650ad31c726a}{\index{Tonav@{Tonav}!Tonav@{Tonav}}
+\index{Tonav@{Tonav}!Tonav@{Tonav}}
+\subsubsection[{Tonav}]{\setlength{\rightskip}{0pt plus 5cm}Tonav\-::\-Tonav (
+\begin{DoxyParamCaption}
+\item[{{\bf Calibration} \&}]{calibration}
+\end{DoxyParamCaption}
+)}}\label{class_tonav_a0c3d527cc8ec6832d4ea650ad31c726a}
+
+
+Initialize filter with configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em calibration} & \hyperlink{class_calibration}{Calibration} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file tonav.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_tonav_a53fddfad248ab9a75906e310266e1f0d}{\index{Tonav@{Tonav}!set\-Camera\-Model\-Params@{set\-Camera\-Model\-Params}}
+\index{set\-Camera\-Model\-Params@{set\-Camera\-Model\-Params}!Tonav@{Tonav}}
+\subsubsection[{set\-Camera\-Model\-Params}]{\setlength{\rightskip}{0pt plus 5cm}void Tonav\-::set\-Camera\-Model\-Params (
+\begin{DoxyParamCaption}
+\item[{const Eigen\-::\-Matrix3d \&}]{camera\-\_\-matrix, }
+\item[{const Eigen\-::\-Matrix$<$ double, 5, 1 $>$}]{distortion\-\_\-params}
+\end{DoxyParamCaption}
+)}}\label{class_tonav_a53fddfad248ab9a75906e310266e1f0d}
+
+
+Set camera model params. 
+
+\hyperlink{class_tonav}{Tonav} is using pinhole camera modes as implemented in Open\-C\-V. Using this function, you can set camera intrinsics parameters.
+
+Camera matrix\-:
+
+$ \begin{pmatrix} f_x & 0 & c_x \\ 0 & f_y & c_y \\ 0 & 0 & 1 \end{pmatrix} $
+
+Distortion params\-:
+
+$ \begin{pmatrix} k_1 & k_2 & p_1 & p_2 & k_3 \end{pmatrix} $
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera\-\_\-matrix} & Camera matrix \\
+\hline
+{\em distortion\-\_\-params} & Distortion parameters \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_tonav_ac458c8712b1eeef1ba169835706d26fd}{\index{Tonav@{Tonav}!update\-Acceleration@{update\-Acceleration}}
+\index{update\-Acceleration@{update\-Acceleration}!Tonav@{Tonav}}
+\subsubsection[{update\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}void Tonav\-::update\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{double}]{time, }
+\item[{Eigen\-::\-Vector3d}]{accel}
+\end{DoxyParamCaption}
+)}}\label{class_tonav_ac458c8712b1eeef1ba169835706d26fd}
+
+
+Perform navigation step with data from accelerometer. 
+
+Parameter {\ttfamily accel} is vector $(x, y, z)$ measured in $\frac{m}{s^2}$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time at which accelerometer data were captured. \\
+\hline
+{\em accel} & 3\-D vector of accelerometer data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 13 of file tonav.\-cpp.
+
+\hypertarget{class_tonav_ac7c7cdaa16941df03aca92a3eaa75ed7}{\index{Tonav@{Tonav}!update\-Acceleration\-And\-Rotation\-Rate@{update\-Acceleration\-And\-Rotation\-Rate}}
+\index{update\-Acceleration\-And\-Rotation\-Rate@{update\-Acceleration\-And\-Rotation\-Rate}!Tonav@{Tonav}}
+\subsubsection[{update\-Acceleration\-And\-Rotation\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}void Tonav\-::update\-Acceleration\-And\-Rotation\-Rate (
+\begin{DoxyParamCaption}
+\item[{double}]{time, }
+\item[{Eigen\-::\-Vector3d}]{accel, }
+\item[{Eigen\-::\-Vector3d}]{gyro}
+\end{DoxyParamCaption}
+)}}\label{class_tonav_ac7c7cdaa16941df03aca92a3eaa75ed7}
+
+
+Perform navigation step with data from both accelerometer and gyroscore. 
+
+Parameter {\ttfamily accel} is vector $(x, y, z)$ measured in $\frac{m}{s^2}$. Parameter {\ttfamily gyro} is vector $(x, y, z)$ measured in $\frac{rad}{s}$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time at which accelerometer and gyroscope data were both captured. \\
+\hline
+{\em accel} & 3\-D vector of accelerometer data. \\
+\hline
+{\em gyro} & 3\-D vector of gyroscope data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file tonav.\-cpp.
+
+\hypertarget{class_tonav_a765f593b621a40052a01b7d0449d9b8e}{\index{Tonav@{Tonav}!update\-Image@{update\-Image}}
+\index{update\-Image@{update\-Image}!Tonav@{Tonav}}
+\subsubsection[{update\-Image}]{\setlength{\rightskip}{0pt plus 5cm}void Tonav\-::update\-Image (
+\begin{DoxyParamCaption}
+\item[{double}]{time, }
+\item[{cv\-::\-Mat \&}]{image}
+\end{DoxyParamCaption}
+)}}\label{class_tonav_a765f593b621a40052a01b7d0449d9b8e}
+
+
+Perform navigation step with image from camera. 
+
+Time passed to this function should be as deterministic as possible. Try to avoid as much buffering as you can. Also don't do any variable-\/duration image processing like detecting features from image.
+
+Image should by in format G\-R\-A\-Y8 and should have reasonable resolution. Full-\/\-H\-D is unnecessarily large. Something about 640x480 is good enough. It speeds up processing of the image and delivers more real-\/time localization.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time at which camera image was captured. \\
+\hline
+{\em image} & Captured image. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file tonav.\-cpp.
+
+\hypertarget{class_tonav_a02a596cd5acf1799830499dd97e5e2e5}{\index{Tonav@{Tonav}!update\-Rotation\-Rate@{update\-Rotation\-Rate}}
+\index{update\-Rotation\-Rate@{update\-Rotation\-Rate}!Tonav@{Tonav}}
+\subsubsection[{update\-Rotation\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}void Tonav\-::update\-Rotation\-Rate (
+\begin{DoxyParamCaption}
+\item[{double}]{time, }
+\item[{Eigen\-::\-Vector3d}]{gyro}
+\end{DoxyParamCaption}
+)}}\label{class_tonav_a02a596cd5acf1799830499dd97e5e2e5}
+
+
+Perform navigation step with data from gyroscope. 
+
+Parameter {\ttfamily gyro} is vector $(x, y, z)$ measured in $\frac{rad}{s}$.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Time at which gyroscope data were captured. \\
+\hline
+{\em gyro} & 3\-D vector of gyroscope data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 18 of file tonav.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/tomaskrejci/catkin\-\_\-ws/src/tonav/include/tonav.\-h\item 
+/home/tomaskrejci/catkin\-\_\-ws/src/tonav/src/tonav.\-cpp\end{DoxyCompactItemize}

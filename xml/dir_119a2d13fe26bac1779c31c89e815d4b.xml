@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_119a2d13fe26bac1779c31c89e815d4b" kind="dir">
+    <compoundname>/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions</compoundname>
+    <innerfile refid="base__exception_8cpp">base_exception.cpp</innerfile>
+    <innerfile refid="calibration__file__error_8cpp">calibration_file_error.cpp</innerfile>
+    <innerfile refid="general__exception_8cpp">general_exception.cpp</innerfile>
+    <innerfile refid="impossible__exception_8cpp">impossible_exception.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions/"/>
+  </compounddef>
+</doxygen>

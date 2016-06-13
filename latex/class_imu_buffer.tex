@@ -1,0 +1,52 @@
+\hypertarget{class_imu_buffer}{\section{Imu\-Buffer Class Reference}
+\label{class_imu_buffer}\index{Imu\-Buffer@{Imu\-Buffer}}
+}
+
+
+Buffer of I\-M\-U data measurements.  
+
+
+
+
+{\ttfamily \#include $<$imu\-\_\-buffer.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_imu_buffer_a50dd06412b4e7f3f041ae6ab6fa680b0}{{\bfseries Imu\-Buffer} (Imu\-Device device, std\-::size\-\_\-t size)}\label{class_imu_buffer_a50dd06412b4e7f3f041ae6ab6fa680b0}
+
+\item 
+\hypertarget{class_imu_buffer_a03aff5b4ab113232a3fa032115249018}{void {\bfseries add\-Measurement} (\hyperlink{class_imu_item}{Imu\-Item} item)}\label{class_imu_buffer_a03aff5b4ab113232a3fa032115249018}
+
+\item 
+\hypertarget{class_imu_buffer_a70e3b571c1ff9c9e2ca60c8dfd1eee1c}{\hyperlink{class_imu_item}{Imu\-Item} {\bfseries interpolate\-At\-Time} (double time) const }\label{class_imu_buffer_a70e3b571c1ff9c9e2ca60c8dfd1eee1c}
+
+\item 
+\hypertarget{class_imu_buffer_a3c23315625f26a5673b814f513c1bc98}{double {\bfseries get\-Min\-Time} () const }\label{class_imu_buffer_a3c23315625f26a5673b814f513c1bc98}
+
+\item 
+\hypertarget{class_imu_buffer_aa3f3a11dc21d97386b3154122cb8e296}{double {\bfseries get\-Max\-Time} () const }\label{class_imu_buffer_aa3f3a11dc21d97386b3154122cb8e296}
+
+\item 
+\hypertarget{class_imu_buffer_a4500c72f04ac02e629e77762953c6abc}{bool {\bfseries is\-Ready} () const }\label{class_imu_buffer_a4500c72f04ac02e629e77762953c6abc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Buffer of I\-M\-U data measurements. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000001}{Deprecated}]This class is no longer needed. It is used in \hyperlink{class_navigator}{Navigator} class only.\end{DoxyRefDesc}
+
+
+Using this class you can interpolate I\-M\-U measurement at any time in interval \mbox{[}get\-Min\-Time(), get\-Max\-Time()\mbox{]} 
+
+Definition at line 22 of file imu\-\_\-buffer.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/tomaskrejci/catkin\-\_\-ws/src/tonav/include/imu\-\_\-buffer.\-h\item 
+/home/tomaskrejci/catkin\-\_\-ws/src/tonav/src/imu\-\_\-buffer.\-cpp\end{DoxyCompactItemize}

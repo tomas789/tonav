@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#<sp/>Tonav</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">[![Travis-CI<sp/><ref refid="class_tonav" kindref="compound">Tonav</ref>][2]][1]</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/>[1]:<sp/>https:</highlight><highlight class="comment">//travis-ci.org/tomas789/tonav/branches</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/>[2]:<sp/>https:</highlight><highlight class="comment">//travis-ci.org/tomas789/tonav.svg?branch=master<sp/>(Travis-CI<sp/>Tonav)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">Implementation<sp/>of<sp/>Multi-State<sp/>Constraint<sp/>Kalman<sp/><ref refid="class_filter" kindref="compound">Filter</ref><sp/>(MSCKF)<sp/>for<sp/>Vision-aided<sp/>Inertial<sp/>Navigation.<sp/>This<sp/>is<sp/>my<sp/>master&apos;s<sp/>thesis.</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>Status</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">This<sp/>is<sp/>work-in-progress.<sp/>It<sp/>is<sp/>not<sp/>able<sp/>to<sp/>work<sp/>out-of-the-box<sp/>currently.<sp/>Expected<sp/>time<sp/>when<sp/>it<sp/>will<sp/>be<sp/>able<sp/>to<sp/>work<sp/>out-of-the-box:<sp/>July<sp/>2016.</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">##<sp/>Goals</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">As<sp/>a<sp/>goal<sp/>of<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>work<sp/>I<sp/>want<sp/>to<sp/>create<sp/>complete<sp/>navigation<sp/>stack<sp/>without<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>global<sp/>position<sp/>such<sp/>as<sp/>GPS.<sp/>For<sp/>local<sp/>navigation<sp/>it<sp/>uses<sp/>Multi-State<sp/>Constraint<sp/>Kalman<sp/><ref refid="class_filter" kindref="compound">Filter</ref><sp/>which<sp/>is<sp/>at<sp/>the<sp/>time<sp/>of<sp/>writing<sp/>state-of-the-art<sp/>method.<sp/>It<sp/>also<sp/>has<sp/>a<sp/>great<sp/>computation<sp/>power<sp/>to<sp/>accuracy<sp/>ratio.<sp/>Drawback<sp/>of<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>approach<sp/>is<sp/>that<sp/>still<sp/>accumulates<sp/>(relatively<sp/>small)<sp/>drift<sp/>during<sp/>time.<sp/>To<sp/>compensate<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>I<sp/>want<sp/>to<sp/>use<sp/>mechanism<sp/>that<sp/>uses<sp/>loop<sp/>closures.<sp/>It<sp/>will<sp/>be<sp/>based<sp/>on<sp/>principles<sp/>used<sp/>in<sp/>ORB-SLAM.<sp/>I<sp/>have<sp/>quite<sp/>a<sp/>bit<sp/>experience<sp/>with<sp/>it<sp/>and<sp/>it<sp/>works<sp/>great.</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">By<sp/>combining<sp/>these<sp/>two<sp/>approaches<sp/>I<sp/>want<sp/>to<sp/>create<sp/>navigation<sp/>stack<sp/>that<sp/>will<sp/>be<sp/>able<sp/>to<sp/>perform<sp/>life-</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>navigation<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>very<sp/>cheap<sp/>hardware<sp/>and<sp/>with<sp/>low<sp/>energy<sp/>demands.<sp/>It<sp/>should<sp/>be<sp/>able<sp/>to<sp/>run<sp/>on<sp/>battery.<sp/>It<sp/>should<sp/>also<sp/>be<sp/>able<sp/>to<sp/>run<sp/>on<sp/>CPU<sp/>only.</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">Goal<sp/>list:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/>-<sp/>Accurate<sp/>navigation</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/>-<sp/>Low-cost<sp/>hardware</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/>-<sp/>Life-</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>navigation</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/>-<sp/>Low-energy<sp/>demand<sp/>(battery)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/>-<sp/>Global<sp/>drift<sp/>compensation<sp/>(loop<sp/>closure)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>Datasets</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">For<sp/>development<sp/>purpose,<sp/>I<sp/>use<sp/>[MIT<sp/>Stata<sp/>Center<sp/>Data<sp/>Set](http:</highlight><highlight class="comment">//projects.csail.mit.edu/stata/index.php).<sp/>It<sp/>contains<sp/>rosbag<sp/>files<sp/>recorded<sp/>from<sp/>PR2<sp/>robot.<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">Each<sp/>bag<sp/>file<sp/>is<sp/>quite<sp/>large<sp/>because<sp/>it<sp/>contains<sp/>laser<sp/>scans.<sp/>They<sp/>are<sp/>not<sp/>needed<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>the<sp/>purpose<sp/>of<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>work,<sp/>so<sp/>I<sp/>created<sp/>a<sp/>filtered<sp/>version<sp/>of<sp/>them<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>command<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">`$<sp/>rosbag<sp/>filter<sp/>2011-01-18-06-37-58.bag<sp/>pr2.bag<sp/></highlight><highlight class="stringliteral">&apos;topic<sp/>in<sp/>(&quot;/wide_stereo/left/image_rect&quot;,<sp/>&quot;/wide_stereo/left/camera_info&quot;,<sp/>&quot;/torso_lift<sp/><sp/><sp/><sp/>_imu/data&quot;,<sp/>&quot;/tf&quot;,<sp/>&quot;/robot_pose_ekf/odom_combined&quot;)&apos;</highlight><highlight class="normal">`</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">By<sp/>the<sp/>way.<sp/>Can<sp/>you<sp/>believe<sp/>how<sp/>hard<sp/>it<sp/>is<sp/>to<sp/>find<sp/>publically<sp/>available<sp/>bagfile<sp/>that<sp/>is<sp/>recorded<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>some<sp/>cheap<sp/>hardware?<sp/>C</highlight><highlight class="stringliteral">&apos;mon!</highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral">##<sp/>Installation</highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral">To<sp/>install<sp/>this<sp/>you<sp/>need<sp/>to<sp/>have<sp/>installed<sp/>and<sp/>working<sp/>ROS.<sp/>Then<sp/>it<sp/>should<sp/>be<sp/>fairly<sp/>easy<sp/>to<sp/>build<sp/>and<sp/>run.</highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral">```</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral">git<sp/>clone<sp/>https://github.com/tomas789/tonav.git</highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral">cd<sp/>tonav</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral">mkdir<sp/>build</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral">cd<sp/>build</highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral">cmake<sp/>..</highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral">make</highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral">```</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral">##<sp/>Run</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral">I<sp/>currently<sp/>don&apos;</highlight><highlight class="normal">t<sp/>provide<sp/>any<sp/>roslaunch<sp/>file.<sp/>Just<sp/>run<sp/>`roscore`<sp/>and<sp/>then<sp/>run<sp/><ref refid="class_tonav" kindref="compound">Tonav</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">```</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">./tonav<sp/>--image<sp/>&lt;image_topic&gt;<sp/>--camerainfo<sp/>&lt;camerainfo_topic&gt;<sp/>--imu<sp/>&lt;imu_topic&gt;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">```</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">For<sp/>[MIT<sp/>Stata<sp/>Center<sp/>Data<sp/>Set](http:</highlight><highlight class="comment">//projects.csail.mit.edu/stata/index.php)<sp/>I<sp/>run<sp/>it<sp/>using</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">```</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">./tonav<sp/>--image<sp/>/wide_stereo/left/image_rect<sp/>--camerainfo<sp/>/wide_stereo/left/camera_info<sp/>--imu<sp/>/torso_lift_imu/data</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">```</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>Documentation</highlight></codeline>
+<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">At<sp/>the<sp/>time<sp/>of<sp/>writing<sp/>there<sp/>is<sp/>no<sp/>good<sp/>documentation.<sp/>Actually<sp/>the<sp/>best<sp/>one<sp/>is<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>readme.<sp/>You<sp/>can<sp/>also<sp/>find<sp/>some<sp/>useful<sp/>information<sp/>in<sp/>my<sp/>in-source<sp/>Doxygen<sp/>documentation.<sp/>If<sp/>you<sp/>have<sp/>installed<sp/>Doxygen<sp/>in<sp/>version<sp/>at<sp/>least<sp/>1.8.8<sp/>you<sp/>can<sp/>generate<sp/>it.<sp/>Just<sp/>run<sp/>`make<sp/>doc`<sp/>and<sp/>it<sp/>will<sp/>be<sp/>generated<sp/>in<sp/>the<sp/>folder<sp/>`build/doc`.</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">##<sp/>Bug<sp/>reporting<sp/>and<sp/>support</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">This<sp/>is<sp/>something<sp/>as<sp/>alpha-dev-buggy<sp/>piece<sp/>of<sp/>work.<sp/>But<sp/>stay<sp/>tuned.<sp/>I<sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>my<sp/>best.<sp/>If<sp/>you<sp/>want<sp/>to<sp/>report<sp/>a<sp/>bug<sp/>or<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>you<sp/>want<sp/>to<sp/>know<sp/>something<sp/>about<sp/>it<sp/>just<sp/>contact<sp/>me<sp/>at<sp/>tomas789@gmail.com<sp/>or<sp/>simply<sp/>use<sp/>[Issue<sp/>tracker<sp/>of<sp/>GitHub](https:</highlight><highlight class="comment">//github.com/tomas789/tonav/issues).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>What<sp/>does<sp/>Tonav<sp/>mean?</highlight></codeline>
+<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal">Its<sp/>Tom</highlight><highlight class="stringliteral">&apos;s<sp/>Navigation.</highlight></codeline>
+<codeline lineno="75"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="76"><highlight class="stringliteral">##<sp/>License</highlight></codeline>
+<codeline lineno="77"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="78"><highlight class="stringliteral">This<sp/>work<sp/>is<sp/>currently<sp/>distributed<sp/>under<sp/>LGPL<sp/>v3<sp/>license.<sp/>In<sp/>the<sp/>future,<sp/>it<sp/>will<sp/>switch<sp/>to<sp/>GPL.</highlight></codeline>
+    </programlisting>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/README.md"/>
+  </compounddef>
+</doxygen>

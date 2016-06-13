@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="imu__item_8h" kind="file">
+    <compoundname>imu_item.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">Eigen/Core</includes>
+    <includes refid="imu__device_8h" local="yes">imu_device.h</includes>
+    <includedby refid="imu__buffer_8h" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/include/imu_buffer.h</includedby>
+    <includedby refid="imu__feed_8h" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h</includedby>
+    <includedby refid="filter_8cpp" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp</includedby>
+    <includedby refid="imu__buffer_8cpp" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/src/imu_buffer.cpp</includedby>
+    <includedby refid="imu__feed_8cpp" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/src/imu_feed.cpp</includedby>
+    <includedby refid="imu__item_8cpp" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp</includedby>
+    <incdepgraph>
+      <node id="241">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="239">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h</label>
+        <link refid="imu_item.h"/>
+        <childnode refid="240" relation="include">
+        </childnode>
+        <childnode refid="241" relation="include">
+        </childnode>
+        <childnode refid="242" relation="include">
+        </childnode>
+      </node>
+      <node id="240">
+        <label>string</label>
+      </node>
+      <node id="242">
+        <label>imu_device.h</label>
+        <link refid="imu__device_8h_source"/>
+        <childnode refid="243" relation="include">
+        </childnode>
+      </node>
+      <node id="243">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="254">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/imu_buffer.cpp</label>
+        <link refid="imu__buffer_8cpp_source"/>
+      </node>
+      <node id="251">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp</label>
+        <link refid="tonav_8cpp_source"/>
+      </node>
+      <node id="255">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h</label>
+        <link refid="imu__feed_8h_source"/>
+        <childnode refid="256" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+      </node>
+      <node id="249">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="244">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h</label>
+        <link refid="imu_item.h"/>
+        <childnode refid="245" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="254" relation="include">
+        </childnode>
+        <childnode refid="256" relation="include">
+        </childnode>
+        <childnode refid="257" relation="include">
+        </childnode>
+      </node>
+      <node id="247">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h</label>
+        <link refid="tonav_8h_source"/>
+        <childnode refid="248" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="250" relation="include">
+        </childnode>
+      </node>
+      <node id="248">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h</label>
+        <link refid="tonav__ros_8h_source"/>
+        <childnode refid="249" relation="include">
+        </childnode>
+        <childnode refid="250" relation="include">
+        </childnode>
+      </node>
+      <node id="246">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h</label>
+        <link refid="filter_8h_source"/>
+        <childnode refid="247" relation="include">
+        </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+      </node>
+      <node id="256">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/imu_feed.cpp</label>
+        <link refid="imu__feed_8cpp_source"/>
+      </node>
+      <node id="253">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp</label>
+        <link refid="navigator_8cpp_source"/>
+      </node>
+      <node id="252">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp</label>
+        <link refid="filter_8cpp_source"/>
+      </node>
+      <node id="245">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/imu_buffer.h</label>
+        <link refid="imu__buffer_8h_source"/>
+        <childnode refid="246" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+        <childnode refid="254" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+      </node>
+      <node id="257">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp</label>
+        <link refid="imu__item_8cpp_source"/>
+      </node>
+      <node id="250">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp</label>
+        <link refid="tonav__ros_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_imu_item" prot="public">ImuItem</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Tomas<sp/>Krejci<sp/>on<sp/>5/10/16.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TONAV_IMU_ITEM_H</highlight></codeline>
+<codeline lineno="6"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TONAV_IMU_ITEM_H</highlight></codeline>
+<codeline lineno="7"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Core&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;imu_device.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_imu_buffer" kindref="compound">ImuBuffer</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_imu_item" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_imu_buffer" kindref="compound">ImuBuffer</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>fromString(std::string<sp/>line);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>fromVector3d(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ImuDevice&amp;<sp/>device,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3d&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>ImuDevice<sp/>getDevice()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getTime()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getX()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getY()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getZ()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>getVector()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>ImuDevice<sp/>device_;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time_;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>data_;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_IMU_ITEM_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h"/>
+  </compounddef>
+</doxygen>

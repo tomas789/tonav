@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_tonav_ros" kind="class" prot="public">
+    <compoundname>TonavRos</compoundname>
+    <includes refid="tonav__ros_8h" local="no">tonav_ros.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tonav_ros_1a7b4b8e04ff5d67e41ed8b08ac8e50863" prot="private" static="no" mutable="no">
+        <type>std::unique_ptr&lt; <ref refid="class_tonav" kindref="compound">Tonav</ref> &gt;</type>
+        <definition>std::unique_ptr&lt;Tonav&gt; TonavRos::tonav_</definition>
+        <argsstring></argsstring>
+        <name>tonav_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="39" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_ros_1a76e3cd1dca6ce525a26685a4a8544568" prot="private" static="no" mutable="no">
+        <type>ros::Time</type>
+        <definition>ros::Time TonavRos::time_beginning_</definition>
+        <argsstring></argsstring>
+        <name>time_beginning_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="40" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_ros_1ac39c85415ba939d34232811f896b9fec" prot="private" static="no" mutable="no">
+        <type>po::options_description</type>
+        <definition>po::options_description TonavRos::options_description_</definition>
+        <argsstring></argsstring>
+        <name>options_description_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="42" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_ros_1a79ac1f10c2e8d5686a32f38c7d9cca3b" prot="private" static="no" mutable="no">
+        <type>po::variables_map</type>
+        <definition>po::variables_map TonavRos::variables_map_</definition>
+        <argsstring></argsstring>
+        <name>variables_map_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="43" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_ros_1a71577bac5e42f5d724363a8331e165d8" prot="private" static="no" mutable="no">
+        <type>Eigen::Matrix3d</type>
+        <definition>Eigen::Matrix3d TonavRos::current_camera_matrix_</definition>
+        <argsstring></argsstring>
+        <name>current_camera_matrix_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="45" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_ros_1a23afa1843cb47c4184e8852d0fca9ff2" prot="private" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; double, 5, 1 &gt;</type>
+        <definition>Eigen::Matrix&lt;double, 5, 1&gt; TonavRos::current_distirtion_params_</definition>
+        <argsstring></argsstring>
+        <name>current_distirtion_params_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="46" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_ros_1a65a77856804ae4221d70f2658e3d3ac8" prot="private" static="no" mutable="no">
+        <type>image_transport::Publisher</type>
+        <definition>image_transport::Publisher TonavRos::image_publisher_</definition>
+        <argsstring></argsstring>
+        <name>image_publisher_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="48" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_ros_1a9db897aa58b7c98fc400296eb679ceda" prot="private" static="no" mutable="no">
+        <type>tf2_ros::TransformBroadcaster</type>
+        <definition>tf2_ros::TransformBroadcaster TonavRos::tf_broadcaster_</definition>
+        <argsstring></argsstring>
+        <name>tf_broadcaster_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="49" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tonav_ros_1a7ffb90f8f4462153f8fd9acd71eee657" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TonavRos::TonavRos</definition>
+        <argsstring>()</argsstring>
+        <name>TonavRos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_ros_1aa64cf50545f6cf41c538679703809724" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int TonavRos::run</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>run</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Run navigation node. </para>        </briefdescription>
+        <detaileddescription>
+<para>Run ROS node and start navigation. This is blocking function. It also calls <computeroutput>ros::init</computeroutput> function.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of command line arguments. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of command line arguments. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="36" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="20" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_tonav_ros_1a6c58d39b58f9a115ed318fc52bd62864" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TonavRos::setAllowedOptionsDescription</definition>
+        <argsstring>()</argsstring>
+        <name>setAllowedOptionsDescription</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="51" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="53" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_ros_1a4881a19e6c59e6bd5249a3020897c80b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TonavRos::parseCommandLineParams</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>parseCommandLineParams</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="52" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="63" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_ros_1a611ddd325aa1d65d0a2ac3fa1bbb70e1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TonavRos::printHelp</definition>
+        <argsstring>()</argsstring>
+        <name>printHelp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="53" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="104" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_ros_1ad2fa15e68589a4d7af04d74975926f33" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TonavRos::cameraCallback</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;msg)</argsstring>
+        <name>cameraCallback</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="55" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="108" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_ros_1aaa0fe1c1aa4d0274d6850871e3f0b435" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TonavRos::cameraInfoCallback</definition>
+        <argsstring>(const sensor_msgs::CameraInfoConstPtr &amp;msg)</argsstring>
+        <name>cameraInfoCallback</name>
+        <param>
+          <type>const sensor_msgs::CameraInfoConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="56" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="121" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_ros_1a938a2e3aa0a0c1607aa1d625a4106e5d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TonavRos::imuCallback</definition>
+        <argsstring>(const sensor_msgs::ImuConstPtr &amp;msg)</argsstring>
+        <name>imuCallback</name>
+        <param>
+          <type>const sensor_msgs::ImuConstPtr &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="57" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="134" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_ros_1a5bf1305e6fd8dfad2b23f25a386a68bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double TonavRos::getMessageTime</definition>
+        <argsstring>(ros::Time stamp)</argsstring>
+        <name>getMessageTime</name>
+        <param>
+          <type>ros::Time</type>
+          <declname>stamp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="58" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="148" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_ros_1a45c1f7b16e1a2ef47578440e4b5a6154" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TonavRos::publishResults</definition>
+        <argsstring>()</argsstring>
+        <name>publishResults</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="60" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp" bodystart="156" bodyend="179"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_tonav" kindref="compound">Tonav</ref> navigation node for ROS. </para>    </briefdescription>
+    <detaileddescription>
+<para>This is full implementation of ROS node performing navigation using data directly from ROS. It also publishes result to ROS. </para>    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" line="23" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h" bodystart="23" bodyend="61"/>
+    <listofallmembers>
+      <member refid="class_tonav_ros_1ad2fa15e68589a4d7af04d74975926f33" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>cameraCallback</name></member>
+      <member refid="class_tonav_ros_1aaa0fe1c1aa4d0274d6850871e3f0b435" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>cameraInfoCallback</name></member>
+      <member refid="class_tonav_ros_1a71577bac5e42f5d724363a8331e165d8" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>current_camera_matrix_</name></member>
+      <member refid="class_tonav_ros_1a23afa1843cb47c4184e8852d0fca9ff2" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>current_distirtion_params_</name></member>
+      <member refid="class_tonav_ros_1a5bf1305e6fd8dfad2b23f25a386a68bd" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>getMessageTime</name></member>
+      <member refid="class_tonav_ros_1a65a77856804ae4221d70f2658e3d3ac8" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>image_publisher_</name></member>
+      <member refid="class_tonav_ros_1a938a2e3aa0a0c1607aa1d625a4106e5d" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>imuCallback</name></member>
+      <member refid="class_tonav_ros_1ac39c85415ba939d34232811f896b9fec" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>options_description_</name></member>
+      <member refid="class_tonav_ros_1a4881a19e6c59e6bd5249a3020897c80b" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>parseCommandLineParams</name></member>
+      <member refid="class_tonav_ros_1a611ddd325aa1d65d0a2ac3fa1bbb70e1" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>printHelp</name></member>
+      <member refid="class_tonav_ros_1a45c1f7b16e1a2ef47578440e4b5a6154" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>publishResults</name></member>
+      <member refid="class_tonav_ros_1aa64cf50545f6cf41c538679703809724" prot="public" virt="non-virtual"><scope>TonavRos</scope><name>run</name></member>
+      <member refid="class_tonav_ros_1a6c58d39b58f9a115ed318fc52bd62864" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>setAllowedOptionsDescription</name></member>
+      <member refid="class_tonav_ros_1a9db897aa58b7c98fc400296eb679ceda" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>tf_broadcaster_</name></member>
+      <member refid="class_tonav_ros_1a76e3cd1dca6ce525a26685a4a8544568" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>time_beginning_</name></member>
+      <member refid="class_tonav_ros_1a7b4b8e04ff5d67e41ed8b08ac8e50863" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>tonav_</name></member>
+      <member refid="class_tonav_ros_1a7ffb90f8f4462153f8fd9acd71eee657" prot="public" virt="non-virtual"><scope>TonavRos</scope><name>TonavRos</name></member>
+      <member refid="class_tonav_ros_1a79ac1f10c2e8d5686a32f38c7d9cca3b" prot="private" virt="non-virtual"><scope>TonavRos</scope><name>variables_map_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

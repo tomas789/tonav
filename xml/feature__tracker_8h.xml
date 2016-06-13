@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="feature__tracker_8h" kind="file">
+    <compoundname>feature_tracker.h</compoundname>
+    <includes local="no">memory</includes>
+    <includes local="no">opencv2/core/core.hpp</includes>
+    <includes local="no">opencv2/features2d/features2d.hpp</includes>
+    <includes refid="frame__features_8h" local="yes">frame_features.h</includes>
+    <includes refid="feature__track_8h" local="yes">feature_track.h</includes>
+    <includedby refid="filter_8h" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h</includedby>
+    <includedby refid="feature__tracker_8cpp" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/src/feature_tracker.cpp</includedby>
+    <incdepgraph>
+      <node id="119">
+        <label>frame_features.h</label>
+        <link refid="frame__features_8h_source"/>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>feature_track.h</label>
+        <link refid="feature__track_8h_source"/>
+        <childnode refid="121" relation="include">
+        </childnode>
+        <childnode refid="122" relation="include">
+        </childnode>
+      </node>
+      <node id="117">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="118">
+        <label>opencv2/features2d/features2d.hpp</label>
+      </node>
+      <node id="121">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="122">
+        <label>vector</label>
+      </node>
+      <node id="115">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h</label>
+        <link refid="feature_tracker.h"/>
+        <childnode refid="116" relation="include">
+        </childnode>
+        <childnode refid="117" relation="include">
+        </childnode>
+        <childnode refid="118" relation="include">
+        </childnode>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="129">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp</label>
+        <link refid="tonav_8cpp_source"/>
+      </node>
+      <node id="127">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="125">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h</label>
+        <link refid="tonav_8h_source"/>
+        <childnode refid="126" relation="include">
+        </childnode>
+        <childnode refid="129" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/tonav_ros.h</label>
+        <link refid="tonav__ros_8h_source"/>
+        <childnode refid="127" relation="include">
+        </childnode>
+        <childnode refid="128" relation="include">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h</label>
+        <link refid="filter_8h_source"/>
+        <childnode refid="125" relation="include">
+        </childnode>
+        <childnode refid="130" relation="include">
+        </childnode>
+        <childnode refid="131" relation="include">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/feature_tracker.cpp</label>
+        <link refid="feature__tracker_8cpp_source"/>
+      </node>
+      <node id="123">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h</label>
+        <link refid="feature_tracker.h"/>
+        <childnode refid="124" relation="include">
+        </childnode>
+        <childnode refid="132" relation="include">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp</label>
+        <link refid="navigator_8cpp_source"/>
+      </node>
+      <node id="130">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp</label>
+        <link refid="filter_8cpp_source"/>
+      </node>
+      <node id="128">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp</label>
+        <link refid="tonav__ros_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_feature_tracker" prot="public">FeatureTracker</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Tomas<sp/>Krejci<sp/>on<sp/>5/30/16.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>TONAV_FEATURE_TRACKER_H</highlight></codeline>
+<codeline lineno="6"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TONAV_FEATURE_TRACKER_H</highlight></codeline>
+<codeline lineno="7"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/core/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/features2d/features2d.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;frame_features.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;feature_track.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_feature_tracker" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_feature_tracker" kindref="compound">FeatureTracker</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>feature_track_list<sp/>=<sp/>std::vector&lt;std::shared_ptr&lt;FeatureTrack&gt;&gt;;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_feature_tracker" kindref="compound">FeatureTracker</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>feature_track_list<sp/>processImage(feature_track_list&amp;<sp/>previous_tracks,<sp/>cv::Mat&amp;<sp/>image);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>frame_number_;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Ptr&lt;cv::FeatureDetector&gt;<sp/>detector_;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Ptr&lt;cv::DescriptorExtractor&gt;<sp/>extractor_;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Ptr&lt;cv::DescriptorMatcher&gt;<sp/>matcher_;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_frame_features" kindref="compound">FrameFeatures</ref><sp/>previous_frame_features_;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>computeDistanceLimitForMatch(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;cv::DMatch&gt;&amp;<sp/>matches)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>drawStats(cv::Mat&amp;<sp/>image,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;double&gt;&amp;<sp/>previous_features_matched,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;bool&gt;&amp;<sp/>current_features_matched,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>feature_track_list&amp;<sp/>current_tracks,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;cv::DMatch&gt;&amp;<sp/>matches)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>markOutOfViewFeatures(std::vector&lt;double&gt;&amp;<sp/>feature_matched,<sp/>feature_track_list&amp;<sp/>feature_tracks)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>createNewFeatureTracks(std::vector&lt;bool&gt;&amp;<sp/>feature_matched,<sp/>feature_track_list&amp;<sp/>feature_tracks,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_frame_features" kindref="compound">FrameFeatures</ref>&amp;<sp/>frame_features)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_FEATURE_TRACKER_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h"/>
+  </compounddef>
+</doxygen>

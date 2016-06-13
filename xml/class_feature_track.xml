@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_feature_track" kind="class" prot="public">
+    <compoundname>FeatureTrack</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_feature_track_1abcd85eb76a80f0bf0fe06403b7a1b418" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool FeatureTrack::is_out_of_view_</definition>
+        <argsstring></argsstring>
+        <name>is_out_of_view_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="23" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_feature_track_1ac2ba060693c052da317ab99c890c765c" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t FeatureTrack::first_frame_number_</definition>
+        <argsstring></argsstring>
+        <name>first_frame_number_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="24" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_feature_track_1a9ff68e9bda4336fe891edac8db34f706" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; Eigen::Vector2d &gt;</type>
+        <definition>std::vector&lt;Eigen::Vector2d&gt; FeatureTrack::positions_</definition>
+        <argsstring></argsstring>
+        <name>positions_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_feature_track_1ade7f659359480dab8f8ec7ace7625467" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FeatureTrack::FeatureTrack</definition>
+        <argsstring>(std::size_t first_frame_number)</argsstring>
+        <name>FeatureTrack</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>first_frame_number</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="13" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_track.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_track_1a5f13b226ac16fb0c9abe692c17f0f0c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FeatureTrack::addFeaturePosition</definition>
+        <argsstring>(double x, double y)</argsstring>
+        <name>addFeaturePosition</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_track.cpp" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_track_1aa21cd2b1af1f2aaea1e7d19631f80474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FeatureTrack::revertLastPosition</definition>
+        <argsstring>()</argsstring>
+        <name>revertLastPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_track.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_track_1a1635683732cdfda103a37d926d2efbf9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t FeatureTrack::getFirstFrameNumber</definition>
+        <argsstring>() const </argsstring>
+        <name>getFirstFrameNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_track.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_track_1a966f8f018b7305d764216880f4a6f8ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FeatureTrack::isOutOfView</definition>
+        <argsstring>() const </argsstring>
+        <name>isOutOfView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="20" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_track.cpp" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_track_1a75a507f6ac11d3a9319523d131c7949d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FeatureTrack::setOutOfView</definition>
+        <argsstring>()</argsstring>
+        <name>setOutOfView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="21" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_track.cpp" bodystart="34" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" line="11" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_track.h" bodystart="11" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_feature_track_1a5f13b226ac16fb0c9abe692c17f0f0c6" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>addFeaturePosition</name></member>
+      <member refid="class_feature_track_1ade7f659359480dab8f8ec7ace7625467" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>FeatureTrack</name></member>
+      <member refid="class_feature_track_1ac2ba060693c052da317ab99c890c765c" prot="private" virt="non-virtual"><scope>FeatureTrack</scope><name>first_frame_number_</name></member>
+      <member refid="class_feature_track_1a1635683732cdfda103a37d926d2efbf9" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>getFirstFrameNumber</name></member>
+      <member refid="class_feature_track_1abcd85eb76a80f0bf0fe06403b7a1b418" prot="private" virt="non-virtual"><scope>FeatureTrack</scope><name>is_out_of_view_</name></member>
+      <member refid="class_feature_track_1a966f8f018b7305d764216880f4a6f8ba" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>isOutOfView</name></member>
+      <member refid="class_feature_track_1a9ff68e9bda4336fe891edac8db34f706" prot="private" virt="non-virtual"><scope>FeatureTrack</scope><name>positions_</name></member>
+      <member refid="class_feature_track_1aa21cd2b1af1f2aaea1e7d19631f80474" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>revertLastPosition</name></member>
+      <member refid="class_feature_track_1a75a507f6ac11d3a9319523d131c7949d" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>setOutOfView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

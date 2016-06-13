@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_camera_item" kind="class" prot="public">
+    <compoundname>CameraItem</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_camera_item_1afbae2157e639d87e2643e9c77a1b2be4" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CameraItem::time_</definition>
+        <argsstring></argsstring>
+        <name>time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_camera_item_1adefa8c62d0b45964545457f19d85a31b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string CameraItem::file_name_</definition>
+        <argsstring></argsstring>
+        <name>file_name_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_camera_item_1a4cccf1e169a05288c47ecf232afb2086" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_camera_item" kindref="compound">CameraItem</ref></type>
+        <definition>CameraItem CameraItem::fromString</definition>
+        <argsstring>(std::string fname)</argsstring>
+        <name>fromString</name>
+        <param>
+          <type>std::string</type>
+          <declname>fname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" line="12" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_item.cpp" bodystart="10" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_camera_item_1a6227ac10298e97b4ae86371de99cd4c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double CameraItem::getTime</definition>
+        <argsstring>() const </argsstring>
+        <name>getTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" line="14" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_item.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_item_1a6e19e5bdbfc691fb8abc4e94ef43f05e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string CameraItem::getFileName</definition>
+        <argsstring>() const </argsstring>
+        <name>getFileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_item.cpp" bodystart="40" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" line="10" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h" bodystart="10" bodyend="20"/>
+    <listofallmembers>
+      <member refid="class_camera_item_1adefa8c62d0b45964545457f19d85a31b" prot="private" virt="non-virtual"><scope>CameraItem</scope><name>file_name_</name></member>
+      <member refid="class_camera_item_1a4cccf1e169a05288c47ecf232afb2086" prot="public" virt="non-virtual"><scope>CameraItem</scope><name>fromString</name></member>
+      <member refid="class_camera_item_1a6e19e5bdbfc691fb8abc4e94ef43f05e" prot="public" virt="non-virtual"><scope>CameraItem</scope><name>getFileName</name></member>
+      <member refid="class_camera_item_1a6227ac10298e97b4ae86371de99cd4c9" prot="public" virt="non-virtual"><scope>CameraItem</scope><name>getTime</name></member>
+      <member refid="class_camera_item_1afbae2157e639d87e2643e9c77a1b2be4" prot="private" virt="non-virtual"><scope>CameraItem</scope><name>time_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

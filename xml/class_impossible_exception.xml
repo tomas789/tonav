@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_impossible_exception" kind="class" prot="public">
+    <compoundname>ImpossibleException</compoundname>
+    <basecompoundref refid="class_base_exception" prot="public" virt="non-virtual">BaseException</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_impossible_exception_1a25263d7b6cb8395f7a1362e248e979c5" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ImpossibleException::msg_</definition>
+        <argsstring></argsstring>
+        <name>msg_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/impossible_exception.h" line="21" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/impossible_exception.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_impossible_exception_1a88afecc506123920b1bcd8f8b1bc612d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ImpossibleException::ImpossibleException</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>ImpossibleException</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/impossible_exception.h" line="14" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions/impossible_exception.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_impossible_exception_1a3368d553e27e69451266f56bc37e9a86" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const char *</type>
+        <definition>const char * ImpossibleException::what</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>what</name>
+        <reimplements refid="class_base_exception_1a9a4668c1da76b424a113d600f313b67f">what</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/impossible_exception.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions/impossible_exception.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_impossible_exception_1a2c7f4df42eafdab7b10dee81add4bf28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ImpossibleException::~ImpossibleException</definition>
+        <argsstring>()</argsstring>
+        <name>~ImpossibleException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/impossible_exception.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions/impossible_exception.cpp" bodystart="18" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="38">
+        <label>BaseException</label>
+        <link refid="class_base_exception"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>ImpossibleException</label>
+        <link refid="class_impossible_exception"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="41">
+        <label>BaseException</label>
+        <link refid="class_base_exception"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ImpossibleException</label>
+        <link refid="class_impossible_exception"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/impossible_exception.h" line="12" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/impossible_exception.h" bodystart="12" bodyend="22"/>
+    <listofallmembers>
+      <member refid="class_base_exception_1a675e42df7cdd795575bccf521f8ff930" prot="public" virt="non-virtual"><scope>ImpossibleException</scope><name>BaseException</name></member>
+      <member refid="class_impossible_exception_1a88afecc506123920b1bcd8f8b1bc612d" prot="public" virt="non-virtual"><scope>ImpossibleException</scope><name>ImpossibleException</name></member>
+      <member refid="class_impossible_exception_1a25263d7b6cb8395f7a1362e248e979c5" prot="private" virt="non-virtual"><scope>ImpossibleException</scope><name>msg_</name></member>
+      <member refid="class_impossible_exception_1a3368d553e27e69451266f56bc37e9a86" prot="public" virt="virtual"><scope>ImpossibleException</scope><name>what</name></member>
+      <member refid="class_impossible_exception_1a2c7f4df42eafdab7b10dee81add4bf28" prot="public" virt="non-virtual"><scope>ImpossibleException</scope><name>~ImpossibleException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

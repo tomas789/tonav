@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_calibration_file_error" kind="class" prot="public">
+    <compoundname>CalibrationFileError</compoundname>
+    <basecompoundref refid="class_base_exception" prot="public" virt="non-virtual">BaseException</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_calibration_file_error_1acde3ad16d1d41e5ede02244730d20081" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string CalibrationFileError::msg_</definition>
+        <argsstring></argsstring>
+        <name>msg_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/calibration_file_error.h" line="22" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/calibration_file_error.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_calibration_file_error_1ac4403a65bb13617f6f9aaea23a408c0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CalibrationFileError::CalibrationFileError</definition>
+        <argsstring>(const std::string &amp;msg)</argsstring>
+        <name>CalibrationFileError</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/calibration_file_error.h" line="14" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions/calibration_file_error.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_file_error_1a91d41fb29208c4304760a251de8ca50a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CalibrationFileError::CalibrationFileError</definition>
+        <argsstring>(int line_number, const std::string &amp;msg)</argsstring>
+        <name>CalibrationFileError</name>
+        <param>
+          <type>int</type>
+          <declname>line_number</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/calibration_file_error.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions/calibration_file_error.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_file_error_1a935a4e242a42bb1ab4867c05f44eebc9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>const char *</type>
+        <definition>const char * CalibrationFileError::what</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>what</name>
+        <reimplements refid="class_base_exception_1a9a4668c1da76b424a113d600f313b67f">what</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/calibration_file_error.h" line="17" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions/calibration_file_error.cpp" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_file_error_1a5fc4fc7a6c2241e145ba82cc1d88eb9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>CalibrationFileError::~CalibrationFileError</definition>
+        <argsstring>()</argsstring>
+        <name>~CalibrationFileError</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/calibration_file_error.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions/calibration_file_error.cpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>BaseException</label>
+        <link refid="class_base_exception"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>std::exception</label>
+      </node>
+      <node id="9">
+        <label>CalibrationFileError</label>
+        <link refid="class_calibration_file_error"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>BaseException</label>
+        <link refid="class_base_exception"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>std::exception</label>
+      </node>
+      <node id="12">
+        <label>CalibrationFileError</label>
+        <link refid="class_calibration_file_error"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/calibration_file_error.h" line="12" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions/calibration_file_error.h" bodystart="12" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_base_exception_1a675e42df7cdd795575bccf521f8ff930" prot="public" virt="non-virtual"><scope>CalibrationFileError</scope><name>BaseException</name></member>
+      <member refid="class_calibration_file_error_1ac4403a65bb13617f6f9aaea23a408c0a" prot="public" virt="non-virtual"><scope>CalibrationFileError</scope><name>CalibrationFileError</name></member>
+      <member refid="class_calibration_file_error_1a91d41fb29208c4304760a251de8ca50a" prot="public" virt="non-virtual"><scope>CalibrationFileError</scope><name>CalibrationFileError</name></member>
+      <member refid="class_calibration_file_error_1acde3ad16d1d41e5ede02244730d20081" prot="private" virt="non-virtual"><scope>CalibrationFileError</scope><name>msg_</name></member>
+      <member refid="class_calibration_file_error_1a935a4e242a42bb1ab4867c05f44eebc9" prot="public" virt="virtual"><scope>CalibrationFileError</scope><name>what</name></member>
+      <member refid="class_calibration_file_error_1a5fc4fc7a6c2241e145ba82cc1d88eb9b" prot="public" virt="virtual"><scope>CalibrationFileError</scope><name>~CalibrationFileError</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

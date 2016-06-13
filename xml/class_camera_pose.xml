@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_camera_pose" kind="class" prot="public">
+    <compoundname>CameraPose</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_camera_pose_1a6898788bbfddfab4a5bf78d911477bf4" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 10, 1 &gt;</type>
+        <definition>using CameraPose::CameraPoseType =  Eigen::Matrix&lt;double, 10, 1&gt;</definition>
+        <argsstring></argsstring>
+        <name>CameraPoseType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="13" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_camera_pose_1ad3adf8335a31145e9905eae1fff0708f" prot="private" static="no" mutable="no">
+        <type>CameraPoseType</type>
+        <definition>CameraPoseType CameraPose::camera_pose_</definition>
+        <argsstring></argsstring>
+        <name>camera_pose_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_camera_pose_1a77c9ea1d0386f1ca0daac90fa609fd35" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t CameraPose::pose_id_</definition>
+        <argsstring></argsstring>
+        <name>pose_id_</name>
+        <initializer>= std::numeric_limits&lt;std::size_t&gt;::max()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="32" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_camera_pose_1a90d2e7704a89768d74b02c01abd28ce9" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t CameraPose::features_active_</definition>
+        <argsstring></argsstring>
+        <name>features_active_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="33" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_camera_pose_1aeb6b408cd1298d44c577d4e2d6b7bd56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CameraPose::CameraPose</definition>
+        <argsstring>()</argsstring>
+        <name>CameraPose</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1a9393e875cfde4b1587a5f8b06d498466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CameraPose::CameraPose</definition>
+        <argsstring>(std::size_t pose_id)</argsstring>
+        <name>CameraPose</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>pose_id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1a91fe393ed7bd9c638198a7e138e3926c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t CameraPose::poseId</definition>
+        <argsstring>() const </argsstring>
+        <name>poseId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1ab690a1975e061c75e2431c2f671d5637" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::size_t</type>
+        <definition>std::size_t CameraPose::getActiveFeaturesCount</definition>
+        <argsstring>() const </argsstring>
+        <name>getActiveFeaturesCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="20" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1ad52f534b1a0b4841a4c8d5e04471f0a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CameraPose::setActiveFeaturesCount</definition>
+        <argsstring>(std::size_t i)</argsstring>
+        <name>setActiveFeaturesCount</name>
+        <param>
+          <type>std::size_t</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="21" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1acfe976d10448deee4b714506c3ab6357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CameraPose::decreaseActiveFeaturesCount</definition>
+        <argsstring>()</argsstring>
+        <name>decreaseActiveFeaturesCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="22" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1adeec70b16372d5aede066da2b6bf5d4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Block&lt; CameraPoseType, 4, 1 &gt;</type>
+        <definition>Eigen::Block&lt; CameraPose::CameraPoseType, 4, 1 &gt; CameraPose::getRotationForBodyPoseBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getRotationForBodyPoseBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="24" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1af518728cc70c31460a20fc0f6f3f40a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Block&lt; CameraPoseType, 3, 1 &gt;</type>
+        <definition>Eigen::Block&lt; CameraPose::CameraPoseType, 3, 1 &gt; CameraPose::getPositionForBodyPoseBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getPositionForBodyPoseBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1ae15933c2b5176d011135164962639a99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Block&lt; CameraPoseType, 3, 1 &gt;</type>
+        <definition>Eigen::Block&lt; CameraPose::CameraPoseType, 3, 1 &gt; CameraPose::getVelocityForBodyPoseBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getVelocityForBodyPoseBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_pose_1aea5ef3206eb4f8929495dfc8f3a93571" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CameraPose::isValid</definition>
+        <argsstring>() const </argsstring>
+        <name>isValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="28" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="11" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="11" bodyend="34"/>
+    <listofallmembers>
+      <member refid="class_camera_pose_1ad3adf8335a31145e9905eae1fff0708f" prot="private" virt="non-virtual"><scope>CameraPose</scope><name>camera_pose_</name></member>
+      <member refid="class_camera_pose_1aeb6b408cd1298d44c577d4e2d6b7bd56" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>CameraPose</name></member>
+      <member refid="class_camera_pose_1a9393e875cfde4b1587a5f8b06d498466" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>CameraPose</name></member>
+      <member refid="class_camera_pose_1a6898788bbfddfab4a5bf78d911477bf4" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>CameraPoseType</name></member>
+      <member refid="class_camera_pose_1acfe976d10448deee4b714506c3ab6357" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>decreaseActiveFeaturesCount</name></member>
+      <member refid="class_camera_pose_1a90d2e7704a89768d74b02c01abd28ce9" prot="private" virt="non-virtual"><scope>CameraPose</scope><name>features_active_</name></member>
+      <member refid="class_camera_pose_1ab690a1975e061c75e2431c2f671d5637" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>getActiveFeaturesCount</name></member>
+      <member refid="class_camera_pose_1af518728cc70c31460a20fc0f6f3f40a4" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>getPositionForBodyPoseBlock</name></member>
+      <member refid="class_camera_pose_1adeec70b16372d5aede066da2b6bf5d4a" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>getRotationForBodyPoseBlock</name></member>
+      <member refid="class_camera_pose_1ae15933c2b5176d011135164962639a99" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>getVelocityForBodyPoseBlock</name></member>
+      <member refid="class_camera_pose_1aea5ef3206eb4f8929495dfc8f3a93571" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>isValid</name></member>
+      <member refid="class_camera_pose_1a77c9ea1d0386f1ca0daac90fa609fd35" prot="private" virt="non-virtual"><scope>CameraPose</scope><name>pose_id_</name></member>
+      <member refid="class_camera_pose_1a91fe393ed7bd9c638198a7e138e3926c" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>poseId</name></member>
+      <member refid="class_camera_pose_1ad52f534b1a0b4841a4c8d5e04471f0a1" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>setActiveFeaturesCount</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

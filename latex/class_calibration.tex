@@ -1,0 +1,76 @@
+\hypertarget{class_calibration}{\section{Calibration Class Reference}
+\label{class_calibration}\index{Calibration@{Calibration}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_calibration_a0273a577bae64d0833262103580e4a38}{int {\bfseries get\-Max\-Camera\-Poses} () const }\label{class_calibration_a0273a577bae64d0833262103580e4a38}
+
+\item 
+\hypertarget{class_calibration_acdf5d45d605b29f9114ae05600f07b76}{int {\bfseries get\-Buffer\-Size} () const }\label{class_calibration_acdf5d45d605b29f9114ae05600f07b76}
+
+\item 
+\hypertarget{class_calibration_ad3edc4101a92835c6eed1dcfa004b592}{Eigen\-::\-Matrix$<$ double, 3, 3 $>$ {\bfseries get\-G\-Sensitivity\-Matrix} () const }\label{class_calibration_ad3edc4101a92835c6eed1dcfa004b592}
+
+\item 
+\hypertarget{class_calibration_a645b1a1cd460d493756669392ac71b78}{Eigen\-::\-Matrix$<$ double, 3, 3 $>$ {\bfseries get\-Gyroscope\-Shape\-Matrix} () const }\label{class_calibration_a645b1a1cd460d493756669392ac71b78}
+
+\item 
+\hypertarget{class_calibration_acd1d1fff6512b6fbfa8ff80cd45033f3}{Eigen\-::\-Matrix$<$ double, 3, 3 $>$ {\bfseries get\-Accelerometer\-Shape\-Matrix} () const }\label{class_calibration_acd1d1fff6512b6fbfa8ff80cd45033f3}
+
+\item 
+\hypertarget{class_calibration_a1144bc436545a52c5036ba6b02028c78}{Eigen\-::\-Matrix$<$ double, 3, 1 $>$ {\bfseries get\-Camera\-To\-Body\-Offset} () const }\label{class_calibration_a1144bc436545a52c5036ba6b02028c78}
+
+\item 
+\hypertarget{class_calibration_ab8e718f8167cbc0d15cb90983175ce9d}{double {\bfseries get\-Focal\-Length\-X} () const }\label{class_calibration_ab8e718f8167cbc0d15cb90983175ce9d}
+
+\item 
+\hypertarget{class_calibration_af25283fd143f9f8e4026afadff66188f}{double {\bfseries get\-Focal\-Length\-Y} () const }\label{class_calibration_af25283fd143f9f8e4026afadff66188f}
+
+\item 
+\hypertarget{class_calibration_aa101a7999e6eec103dce4ec651c2218b}{double {\bfseries get\-Optical\-Center\-X} () const }\label{class_calibration_aa101a7999e6eec103dce4ec651c2218b}
+
+\item 
+\hypertarget{class_calibration_a7486353559a45d424afb1aa6fbfa9f24}{double {\bfseries get\-Optical\-Center\-Y} () const }\label{class_calibration_a7486353559a45d424afb1aa6fbfa9f24}
+
+\item 
+\hypertarget{class_calibration_a57798a33c441afe2e0b675008e962af6}{Eigen\-::\-Matrix$<$ double, 3, 1 $>$ {\bfseries get\-Radial\-Distortion\-Parameters} () const }\label{class_calibration_a57798a33c441afe2e0b675008e962af6}
+
+\item 
+\hypertarget{class_calibration_ab42ba1d8120e3c22b85204c5dfd98f7f}{Eigen\-::\-Matrix$<$ double, 2, 1 $>$ {\bfseries get\-Tangential\-Distortion\-Parameters} () const }\label{class_calibration_ab42ba1d8120e3c22b85204c5dfd98f7f}
+
+\item 
+\hypertarget{class_calibration_a22c6544bba616210e34f9020479a32c6}{double {\bfseries get\-Camera\-Delay\-Time} () const }\label{class_calibration_a22c6544bba616210e34f9020479a32c6}
+
+\item 
+\hypertarget{class_calibration_aecbab0b6d724fa68f5af6e038111284b}{double {\bfseries get\-Camera\-Readout\-Time} () const }\label{class_calibration_aecbab0b6d724fa68f5af6e038111284b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_calibration_a407d16502f36acfc7bd00572abe90739}{static \hyperlink{class_calibration}{Calibration} {\bfseries from\-Path} (boost\-::filesystem\-::path fname)}\label{class_calibration_a407d16502f36acfc7bd00572abe90739}
+
+\item 
+\hypertarget{class_calibration_a1d1c3b1b92ae75db9428f61b7afcc7f0}{static bool {\bfseries try\-Parse\-Int} (const std\-::string \&value, int \&out)}\label{class_calibration_a1d1c3b1b92ae75db9428f61b7afcc7f0}
+
+\item 
+\hypertarget{class_calibration_a043fc49ab017f6188dfb1b38cf7b573e}{static bool {\bfseries try\-Parse\-Double} (const std\-::string \&value, double \&out)}\label{class_calibration_a043fc49ab017f6188dfb1b38cf7b573e}
+
+\item 
+\hypertarget{class_calibration_a58c12342c94ea075107e6202e67c714a}{static bool {\bfseries try\-Parse\-Matrix3d} (const std\-::string \&value, Eigen\-::\-Matrix3d \&out)}\label{class_calibration_a58c12342c94ea075107e6202e67c714a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file calibration.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/tomaskrejci/catkin\-\_\-ws/src/tonav/include/calibration.\-h\item 
+/home/tomaskrejci/catkin\-\_\-ws/src/tonav/src/calibration.\-cpp\end{DoxyCompactItemize}

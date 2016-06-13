@@ -1,0 +1,604 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_calibration" kind="class" prot="public">
+    <compoundname>Calibration</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_calibration_1a8ede976d782d5bf475fab7a162c03c5e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Calibration::max_camera_poses_</definition>
+        <argsstring></argsstring>
+        <name>max_camera_poses_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="41" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a5122fb440119b6e1bc679eabc63677ea" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Calibration::buffer_size_</definition>
+        <argsstring></argsstring>
+        <name>buffer_size_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="42" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a85df8bb5d9c188bb4a17e2d3d92ee0f3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::f_x_</definition>
+        <argsstring></argsstring>
+        <name>f_x_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="44" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1ae347cd702e9056353b228e4d257bcb0a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::f_y_</definition>
+        <argsstring></argsstring>
+        <name>f_y_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="45" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a8c4e07d9efcaf5a328a1c86eadb22b53" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::c_x_</definition>
+        <argsstring></argsstring>
+        <name>c_x_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="46" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a7631f3ca2271086d0105e907a9a79a23" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::c_y_</definition>
+        <argsstring></argsstring>
+        <name>c_y_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="47" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a32c4ae305a69a5a70b5461bcac18ff44" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::p_c_b_x_</definition>
+        <argsstring></argsstring>
+        <name>p_c_b_x_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="48" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1ac6f1b8ab6fc113232bfa856b5a98bb31" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::p_c_b_y_</definition>
+        <argsstring></argsstring>
+        <name>p_c_b_y_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="49" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1ab9c03358c3a3da753ea5d7fdd508beae" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::p_c_b_z_</definition>
+        <argsstring></argsstring>
+        <name>p_c_b_z_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="50" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a823ba6076669ada98231ef0c646953b3" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::t_d_</definition>
+        <argsstring></argsstring>
+        <name>t_d_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="51" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a0e9927c89d8a901bfa6f2460e5ed2ff0" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::t_r_</definition>
+        <argsstring></argsstring>
+        <name>t_r_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="52" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a628f0a296e3ab66355c7148a17bff886" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::k_1_</definition>
+        <argsstring></argsstring>
+        <name>k_1_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="54" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1aeb77b41d4206b8a167e749b7ec0818ca" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::k_2_</definition>
+        <argsstring></argsstring>
+        <name>k_2_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="55" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1af1dc18d7e45eb8df11eefae4be743bde" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::k_3_</definition>
+        <argsstring></argsstring>
+        <name>k_3_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="56" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a0e48ee2045be83b61aace0eb2ff54b00" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::p_1_</definition>
+        <argsstring></argsstring>
+        <name>p_1_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="57" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a476e50dea0868c67951dcd9c59ae0628" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Calibration::p_2_</definition>
+        <argsstring></argsstring>
+        <name>p_2_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="58" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1aebd895f2f43c2486931ff5483ba29bef" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Calibration::orb_nfeatures_</definition>
+        <argsstring></argsstring>
+        <name>orb_nfeatures_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="60" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a8d802dc24f6af35ee82c12c9ea528916" prot="private" static="no" mutable="no">
+        <type>Eigen::Matrix3d</type>
+        <definition>Eigen::Matrix3d Calibration::t_s_</definition>
+        <argsstring></argsstring>
+        <name>t_s_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="62" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1a2fc1c69f32292f42dcb9dbdf2eee7d7f" prot="private" static="no" mutable="no">
+        <type>Eigen::Matrix3d</type>
+        <definition>Eigen::Matrix3d Calibration::t_a_</definition>
+        <argsstring></argsstring>
+        <name>t_a_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="63" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_calibration_1ad4cbc3c7786eaf318fa2649e350c477a" prot="private" static="no" mutable="no">
+        <type>Eigen::Matrix3d</type>
+        <definition>Eigen::Matrix3d Calibration::t_g_</definition>
+        <argsstring></argsstring>
+        <name>t_g_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="64" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_calibration_1ada96ce5205d03ecb367efe6c3b09b7bd" prot="private" static="yes" mutable="no">
+        <type>const std::vector&lt; std::string &gt;</type>
+        <definition>const std::vector&lt; std::string &gt; Calibration::allowed_params_</definition>
+        <argsstring></argsstring>
+        <name>allowed_params_</name>
+        <initializer>= {
+        &quot;Camera.fx&quot;, &quot;Camera.fy&quot;, &quot;Camera.cx&quot;, &quot;Camera.cy&quot;,
+        &quot;Camera.k1&quot;, &quot;Camera.k2&quot;, &quot;Camera.k3&quot;, &quot;Camera.p1&quot;, &quot;Camera.p2&quot;,
+        &quot;Camera.posToImuX&quot;, &quot;Camera.posToImuY&quot;, &quot;Camera.posToImuZ&quot;,
+        &quot;Camera.td&quot;, &quot;Camera.tr&quot;,
+        &quot;ORBextractor.nFeatures&quot;,
+        &quot;Imu.Ts&quot;, &quot;Imu.Tg&quot;, &quot;Imu.Ta&quot;,
+        &quot;Filter.maxCameraPoses&quot;, &quot;Filter.bufferSize&quot;
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="66" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_calibration_1a0273a577bae64d0833262103580e4a38" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Calibration::getMaxCameraPoses</definition>
+        <argsstring>() const </argsstring>
+        <name>getMaxCameraPoses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="298" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1acdf5d45d605b29f9114ae05600f07b76" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Calibration::getBufferSize</definition>
+        <argsstring>() const </argsstring>
+        <name>getBufferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="302" bodyend="304"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1ad3edc4101a92835c6eed1dcfa004b592" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix&lt; double, 3, 3 &gt;</type>
+        <definition>Eigen::Matrix&lt; double, 3, 3 &gt; Calibration::getGSensitivityMatrix</definition>
+        <argsstring>() const </argsstring>
+        <name>getGSensitivityMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="244" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1a645b1a1cd460d493756669392ac71b78" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix&lt; double, 3, 3 &gt;</type>
+        <definition>Eigen::Matrix&lt; double, 3, 3 &gt; Calibration::getGyroscopeShapeMatrix</definition>
+        <argsstring>() const </argsstring>
+        <name>getGyroscopeShapeMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="248" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1acd1d1fff6512b6fbfa8ff80cd45033f3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix&lt; double, 3, 3 &gt;</type>
+        <definition>Eigen::Matrix&lt; double, 3, 3 &gt; Calibration::getAccelerometerShapeMatrix</definition>
+        <argsstring>() const </argsstring>
+        <name>getAccelerometerShapeMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="20" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="252" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1a1144bc436545a52c5036ba6b02028c78" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix&lt; double, 3, 1 &gt;</type>
+        <definition>Eigen::Matrix&lt; double, 3, 1 &gt; Calibration::getCameraToBodyOffset</definition>
+        <argsstring>() const </argsstring>
+        <name>getCameraToBodyOffset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="22" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="256" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1ab8e718f8167cbc0d15cb90983175ce9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Calibration::getFocalLengthX</definition>
+        <argsstring>() const </argsstring>
+        <name>getFocalLengthX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="24" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="262" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1af25283fd143f9f8e4026afadff66188f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Calibration::getFocalLengthY</definition>
+        <argsstring>() const </argsstring>
+        <name>getFocalLengthY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="266" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1aa101a7999e6eec103dce4ec651c2218b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Calibration::getOpticalCenterX</definition>
+        <argsstring>() const </argsstring>
+        <name>getOpticalCenterX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="270" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1a7486353559a45d424afb1aa6fbfa9f24" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Calibration::getOpticalCenterY</definition>
+        <argsstring>() const </argsstring>
+        <name>getOpticalCenterY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="27" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="274" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1a57798a33c441afe2e0b675008e962af6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix&lt; double, 3, 1 &gt;</type>
+        <definition>Eigen::Matrix&lt; double, 3, 1 &gt; Calibration::getRadialDistortionParameters</definition>
+        <argsstring>() const </argsstring>
+        <name>getRadialDistortionParameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="29" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="278" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1ab42ba1d8120e3c22b85204c5dfd98f7f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix&lt; double, 2, 1 &gt;</type>
+        <definition>Eigen::Matrix&lt; double, 2, 1 &gt; Calibration::getTangentialDistortionParameters</definition>
+        <argsstring>() const </argsstring>
+        <name>getTangentialDistortionParameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="30" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="284" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1a22c6544bba616210e34f9020479a32c6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Calibration::getCameraDelayTime</definition>
+        <argsstring>() const </argsstring>
+        <name>getCameraDelayTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="32" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="290" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1aecbab0b6d724fa68f5af6e038111284b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Calibration::getCameraReadoutTime</definition>
+        <argsstring>() const </argsstring>
+        <name>getCameraReadoutTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="33" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="294" bodyend="296"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_calibration_1a407d16502f36acfc7bd00572abe90739" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_calibration" kindref="compound">Calibration</ref></type>
+        <definition>Calibration Calibration::fromPath</definition>
+        <argsstring>(boost::filesystem::path fname)</argsstring>
+        <name>fromPath</name>
+        <param>
+          <type>boost::filesystem::path</type>
+          <declname>fname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="35" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="29" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1a1d1c3b1b92ae75db9428f61b7afcc7f0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Calibration::tryParseInt</definition>
+        <argsstring>(const std::string &amp;value, int &amp;out)</argsstring>
+        <name>tryParseInt</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="37" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="176" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1a043fc49ab017f6188dfb1b38cf7b573e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Calibration::tryParseDouble</definition>
+        <argsstring>(const std::string &amp;value, double &amp;out)</argsstring>
+        <name>tryParseDouble</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>double &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="38" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="161" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_calibration_1a58c12342c94ea075107e6202e67c714a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Calibration::tryParseMatrix3d</definition>
+        <argsstring>(const std::string &amp;value, Eigen::Matrix3d &amp;out)</argsstring>
+        <name>tryParseMatrix3d</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>Eigen::Matrix3d &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="39" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/calibration.cpp" bodystart="191" bodyend="242"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" line="13" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/calibration.h" bodystart="13" bodyend="67"/>
+    <listofallmembers>
+      <member refid="class_calibration_1ada96ce5205d03ecb367efe6c3b09b7bd" prot="private" virt="non-virtual"><scope>Calibration</scope><name>allowed_params_</name></member>
+      <member refid="class_calibration_1a5122fb440119b6e1bc679eabc63677ea" prot="private" virt="non-virtual"><scope>Calibration</scope><name>buffer_size_</name></member>
+      <member refid="class_calibration_1a8c4e07d9efcaf5a328a1c86eadb22b53" prot="private" virt="non-virtual"><scope>Calibration</scope><name>c_x_</name></member>
+      <member refid="class_calibration_1a7631f3ca2271086d0105e907a9a79a23" prot="private" virt="non-virtual"><scope>Calibration</scope><name>c_y_</name></member>
+      <member refid="class_calibration_1a85df8bb5d9c188bb4a17e2d3d92ee0f3" prot="private" virt="non-virtual"><scope>Calibration</scope><name>f_x_</name></member>
+      <member refid="class_calibration_1ae347cd702e9056353b228e4d257bcb0a" prot="private" virt="non-virtual"><scope>Calibration</scope><name>f_y_</name></member>
+      <member refid="class_calibration_1a407d16502f36acfc7bd00572abe90739" prot="public" virt="non-virtual"><scope>Calibration</scope><name>fromPath</name></member>
+      <member refid="class_calibration_1acd1d1fff6512b6fbfa8ff80cd45033f3" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getAccelerometerShapeMatrix</name></member>
+      <member refid="class_calibration_1acdf5d45d605b29f9114ae05600f07b76" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getBufferSize</name></member>
+      <member refid="class_calibration_1a22c6544bba616210e34f9020479a32c6" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getCameraDelayTime</name></member>
+      <member refid="class_calibration_1aecbab0b6d724fa68f5af6e038111284b" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getCameraReadoutTime</name></member>
+      <member refid="class_calibration_1a1144bc436545a52c5036ba6b02028c78" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getCameraToBodyOffset</name></member>
+      <member refid="class_calibration_1ab8e718f8167cbc0d15cb90983175ce9d" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getFocalLengthX</name></member>
+      <member refid="class_calibration_1af25283fd143f9f8e4026afadff66188f" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getFocalLengthY</name></member>
+      <member refid="class_calibration_1ad3edc4101a92835c6eed1dcfa004b592" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getGSensitivityMatrix</name></member>
+      <member refid="class_calibration_1a645b1a1cd460d493756669392ac71b78" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getGyroscopeShapeMatrix</name></member>
+      <member refid="class_calibration_1a0273a577bae64d0833262103580e4a38" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getMaxCameraPoses</name></member>
+      <member refid="class_calibration_1aa101a7999e6eec103dce4ec651c2218b" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getOpticalCenterX</name></member>
+      <member refid="class_calibration_1a7486353559a45d424afb1aa6fbfa9f24" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getOpticalCenterY</name></member>
+      <member refid="class_calibration_1a57798a33c441afe2e0b675008e962af6" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getRadialDistortionParameters</name></member>
+      <member refid="class_calibration_1ab42ba1d8120e3c22b85204c5dfd98f7f" prot="public" virt="non-virtual"><scope>Calibration</scope><name>getTangentialDistortionParameters</name></member>
+      <member refid="class_calibration_1a628f0a296e3ab66355c7148a17bff886" prot="private" virt="non-virtual"><scope>Calibration</scope><name>k_1_</name></member>
+      <member refid="class_calibration_1aeb77b41d4206b8a167e749b7ec0818ca" prot="private" virt="non-virtual"><scope>Calibration</scope><name>k_2_</name></member>
+      <member refid="class_calibration_1af1dc18d7e45eb8df11eefae4be743bde" prot="private" virt="non-virtual"><scope>Calibration</scope><name>k_3_</name></member>
+      <member refid="class_calibration_1a8ede976d782d5bf475fab7a162c03c5e" prot="private" virt="non-virtual"><scope>Calibration</scope><name>max_camera_poses_</name></member>
+      <member refid="class_calibration_1aebd895f2f43c2486931ff5483ba29bef" prot="private" virt="non-virtual"><scope>Calibration</scope><name>orb_nfeatures_</name></member>
+      <member refid="class_calibration_1a0e48ee2045be83b61aace0eb2ff54b00" prot="private" virt="non-virtual"><scope>Calibration</scope><name>p_1_</name></member>
+      <member refid="class_calibration_1a476e50dea0868c67951dcd9c59ae0628" prot="private" virt="non-virtual"><scope>Calibration</scope><name>p_2_</name></member>
+      <member refid="class_calibration_1a32c4ae305a69a5a70b5461bcac18ff44" prot="private" virt="non-virtual"><scope>Calibration</scope><name>p_c_b_x_</name></member>
+      <member refid="class_calibration_1ac6f1b8ab6fc113232bfa856b5a98bb31" prot="private" virt="non-virtual"><scope>Calibration</scope><name>p_c_b_y_</name></member>
+      <member refid="class_calibration_1ab9c03358c3a3da753ea5d7fdd508beae" prot="private" virt="non-virtual"><scope>Calibration</scope><name>p_c_b_z_</name></member>
+      <member refid="class_calibration_1a2fc1c69f32292f42dcb9dbdf2eee7d7f" prot="private" virt="non-virtual"><scope>Calibration</scope><name>t_a_</name></member>
+      <member refid="class_calibration_1a823ba6076669ada98231ef0c646953b3" prot="private" virt="non-virtual"><scope>Calibration</scope><name>t_d_</name></member>
+      <member refid="class_calibration_1ad4cbc3c7786eaf318fa2649e350c477a" prot="private" virt="non-virtual"><scope>Calibration</scope><name>t_g_</name></member>
+      <member refid="class_calibration_1a0e9927c89d8a901bfa6f2460e5ed2ff0" prot="private" virt="non-virtual"><scope>Calibration</scope><name>t_r_</name></member>
+      <member refid="class_calibration_1a8d802dc24f6af35ee82c12c9ea528916" prot="private" virt="non-virtual"><scope>Calibration</scope><name>t_s_</name></member>
+      <member refid="class_calibration_1a043fc49ab017f6188dfb1b38cf7b573e" prot="public" virt="non-virtual"><scope>Calibration</scope><name>tryParseDouble</name></member>
+      <member refid="class_calibration_1a1d1c3b1b92ae75db9428f61b7afcc7f0" prot="public" virt="non-virtual"><scope>Calibration</scope><name>tryParseInt</name></member>
+      <member refid="class_calibration_1a58c12342c94ea075107e6202e67c714a" prot="public" virt="non-virtual"><scope>Calibration</scope><name>tryParseMatrix3d</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

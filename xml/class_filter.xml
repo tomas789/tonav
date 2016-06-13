@@ -1,0 +1,499 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_filter" kind="class" prot="public">
+    <compoundname>Filter</compoundname>
+    <includes refid="filter_8h" local="no">filter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_filter_1a5ce5416c310a3d0cc10b009e8c9cb710" prot="private" static="no" mutable="no">
+        <type><ref refid="class_calibration" kindref="compound">Calibration</ref></type>
+        <definition>Calibration Filter::calibration_</definition>
+        <argsstring></argsstring>
+        <name>calibration_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="70" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_filter_1abedd76a53f3f4d1f2d9b97bc388b71b4" prot="private" static="no" mutable="no">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d Filter::global_gravity_</definition>
+        <argsstring></argsstring>
+        <name>global_gravity_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="72" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_filter_1a223764530b5dc708c3ff099d0f20d2b3" prot="private" static="no" mutable="no">
+        <type><ref refid="class_filter_state" kindref="compound">FilterState</ref></type>
+        <definition>FilterState Filter::filter_state_</definition>
+        <argsstring></argsstring>
+        <name>filter_state_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="74" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_filter_1a60c590488c3aab36a4d8d3d881e9a6fb" prot="private" static="no" mutable="no">
+        <type>Eigen::Matrix&lt; double, 15, 15 &gt;</type>
+        <definition>Eigen::Matrix&lt;double, 15, 15&gt; Filter::filter_covar_</definition>
+        <argsstring></argsstring>
+        <name>filter_covar_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="75" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_filter_1af53d4ab1a01feab4ffeafb919aa31836" prot="private" static="no" mutable="no">
+        <type>FeatureTracker::feature_track_list</type>
+        <definition>FeatureTracker::feature_track_list Filter::features_tracked_</definition>
+        <argsstring></argsstring>
+        <name>features_tracked_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="77" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_filter_1a8c60c70e6bc3d329d1423c295e42f722" prot="private" static="no" mutable="no">
+        <type><ref refid="class_feature_tracker" kindref="compound">FeatureTracker</ref></type>
+        <definition>FeatureTracker Filter::feature_tracker_</definition>
+        <argsstring></argsstring>
+        <name>feature_tracker_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="91" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_filter_1ac00d9ce620e60b2c8b26ca9cad7e1b39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Filter::Filter</definition>
+        <argsstring>(const Calibration &amp;calibration)</argsstring>
+        <name>Filter</name>
+        <param>
+          <type>const <ref refid="class_calibration" kindref="compound">Calibration</ref> &amp;</type>
+          <declname>calibration</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a5742b1247b9f92a9148d99386cdd3876" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="33" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="18" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a27176eb65976f98cdc9495b4fdfc3296" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::stepInertial</definition>
+        <argsstring>(double timedelta, const ImuItem &amp;accel, const ImuItem &amp;gyro)</argsstring>
+        <name>stepInertial</name>
+        <param>
+          <type>double</type>
+          <declname>timedelta</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>accel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>gyro</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="35" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="32" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a1fad49c62892905f713de0bf66d9f3c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::stepCamera</definition>
+        <argsstring>(double timedelta, const ImuItem &amp;accel, const ImuItem &amp;gyro, cv::Mat &amp;frame)</argsstring>
+        <name>stepCamera</name>
+        <param>
+          <type>double</type>
+          <declname>timedelta</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>accel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>gyro</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>frame</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="36" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="43" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a3ed7acd6fff45ead8b4209d4e31a8097" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::propagateRotation</definition>
+        <argsstring>(FilterState &amp;old_state, FilterState &amp;new_state, double timedelta, const ImuItem &amp;accel, const ImuItem &amp;gyro)</argsstring>
+        <name>propagateRotation</name>
+        <param>
+          <type><ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;</type>
+          <declname>old_state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;</type>
+          <declname>new_state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>timedelta</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>accel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>gyro</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="38" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="59" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a778f444068abe887fd58e02f00be6121" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::propagateVelocityAndPosition</definition>
+        <argsstring>(FilterState &amp;old_state, FilterState &amp;new_state, double timedelta, const ImuItem &amp;accel, const ImuItem &amp;gyro)</argsstring>
+        <name>propagateVelocityAndPosition</name>
+        <param>
+          <type><ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;</type>
+          <declname>old_state</declname>
+        </param>
+        <param>
+          <type><ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;</type>
+          <declname>new_state</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>timedelta</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>accel</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>gyro</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="41" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="101" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1ad046b83209a1f03d65ac75f16b538546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::setGlobalGravity</definition>
+        <argsstring>(Eigen::Vector3d gravity)</argsstring>
+        <name>setGlobalGravity</name>
+        <param>
+          <type>Eigen::Vector3d</type>
+          <declname>gravity</declname>
+        </param>
+        <briefdescription>
+<para>Set initial estimate of gravity in global frame. </para>        </briefdescription>
+        <detaileddescription>
+<para>This is usually calculated as averate of first few accelerometer measurements. It assumes, that device don&apos;t move for few seconds at the beginning.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gravity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial estimate of gravity in global frame. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="53" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="126" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1aeeb0c2e971a47c73c2f950aa8890f1ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d Filter::getGlobalGravity</definition>
+        <argsstring>() const </argsstring>
+        <name>getGlobalGravity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="54" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="130" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a936ea0f9f4f587d0cd9bc26a4a73df34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d Filter::getCurrentPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="56" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="134" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a7094e57e502a4fc7f124f0d1184eb133" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Quaterniond</type>
+        <definition>Eigen::Quaterniond Filter::getCurrentAttitude</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentAttitude</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="57" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="138" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a1c7a33a737fafec46d6e98ec1be37a4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Filter::getImageCaptureTime</definition>
+        <argsstring>(double arrive_time)</argsstring>
+        <name>getImageCaptureTime</name>
+        <param>
+          <type>double</type>
+          <declname>arrive_time</declname>
+        </param>
+        <briefdescription>
+<para>Calculate <formula id="0">$\hat{t} = t + \hat{t}_d$</formula>. </para>        </briefdescription>
+        <detaileddescription>
+<para>This method calculates image capture time from time when image arrived.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arrive_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time whan image arrived </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Estimated image capture time </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="67" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="142" bodyend="144"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_filter_1a69db72432ea7cd0ce7ba2499a5bb0c7d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::initializeBodyFrame</definition>
+        <argsstring>()</argsstring>
+        <name>initializeBodyFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="79" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="146" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a314f3e0a340741cb8201a8ae8d53ed28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::initializeImuCalibration</definition>
+        <argsstring>()</argsstring>
+        <name>initializeImuCalibration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="80" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="156" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1ab0db3877232b9fa66f5dd8ebe4385234" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::initializeCameraCalibration</definition>
+        <argsstring>()</argsstring>
+        <name>initializeCameraCalibration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="81" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="166" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1ab326892073289dc55496876cf56e64ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::initializeBodyPoses</definition>
+        <argsstring>()</argsstring>
+        <name>initializeBodyPoses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="82" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="178" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a7c142cfe493dbfdc445f3c5b02b60ccc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Filter::augment</definition>
+        <argsstring>()</argsstring>
+        <name>augment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="84" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="181" bodyend="184"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_filter_1a5a67d5f280f4ddd173dff97fb65ae079" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix&lt; double, 9, 1 &gt;</type>
+        <definition>Eigen::Matrix&lt; double, 9, 1 &gt; Filter::vectorizeMatrix</definition>
+        <argsstring>(const Eigen::Matrix&lt; double, 3, 3 &gt; &amp;mat)</argsstring>
+        <name>vectorizeMatrix</name>
+        <param>
+          <type>const Eigen::Matrix&lt; double, 3, 3 &gt; &amp;</type>
+          <declname>mat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="86" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="186" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a35ead90b530777757cabfd503f608844" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix&lt; double, 3, 3 &gt;</type>
+        <definition>Eigen::Matrix&lt; double, 3, 3 &gt; Filter::unvectorizeMatrix</definition>
+        <argsstring>(Eigen::Block&lt; FilterState::StateType, 9, 1 &gt; vec)</argsstring>
+        <name>unvectorizeMatrix</name>
+        <param>
+          <type>Eigen::Block&lt; FilterState::StateType, 9, 1 &gt;</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="87" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="194" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a06bea04b55f4483660aa3bd5f4c13619" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix4d</type>
+        <definition>Eigen::Matrix4d Filter::omegaMatrix</definition>
+        <argsstring>(const Eigen::Vector3d vec)</argsstring>
+        <name>omegaMatrix</name>
+        <param>
+          <type>const Eigen::Vector3d</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="88" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="202" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_1a0df9593448ac278363c61fe64e739e3d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Matrix3d</type>
+        <definition>Eigen::Matrix3d Filter::crossMatrix</definition>
+        <argsstring>(const Eigen::Vector3d vec)</argsstring>
+        <name>crossMatrix</name>
+        <param>
+          <type>const Eigen::Vector3d</type>
+          <declname>vec</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="89" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="211" bodyend="217"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Implementation of MSCKF. </para>    </briefdescription>
+    <detaileddescription>
+<para>This is core functionality of <ref refid="class_tonav" kindref="compound">Tonav</ref>. All methods must be called with caution. It assumes correct order of update steps.</para><para>Don&apos;t use this class directly. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead </para>    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="29" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="29" bodyend="92"/>
+    <listofallmembers>
+      <member refid="class_filter_1a7c142cfe493dbfdc445f3c5b02b60ccc" prot="private" virt="non-virtual"><scope>Filter</scope><name>augment</name></member>
+      <member refid="class_filter_1a5ce5416c310a3d0cc10b009e8c9cb710" prot="private" virt="non-virtual"><scope>Filter</scope><name>calibration_</name></member>
+      <member refid="class_filter_1a0df9593448ac278363c61fe64e739e3d" prot="private" virt="non-virtual"><scope>Filter</scope><name>crossMatrix</name></member>
+      <member refid="class_filter_1a8c60c70e6bc3d329d1423c295e42f722" prot="private" virt="non-virtual"><scope>Filter</scope><name>feature_tracker_</name></member>
+      <member refid="class_filter_1af53d4ab1a01feab4ffeafb919aa31836" prot="private" virt="non-virtual"><scope>Filter</scope><name>features_tracked_</name></member>
+      <member refid="class_filter_1ac00d9ce620e60b2c8b26ca9cad7e1b39" prot="public" virt="non-virtual"><scope>Filter</scope><name>Filter</name></member>
+      <member refid="class_filter_1a60c590488c3aab36a4d8d3d881e9a6fb" prot="private" virt="non-virtual"><scope>Filter</scope><name>filter_covar_</name></member>
+      <member refid="class_filter_1a223764530b5dc708c3ff099d0f20d2b3" prot="private" virt="non-virtual"><scope>Filter</scope><name>filter_state_</name></member>
+      <member refid="class_filter_1a7094e57e502a4fc7f124f0d1184eb133" prot="public" virt="non-virtual"><scope>Filter</scope><name>getCurrentAttitude</name></member>
+      <member refid="class_filter_1a936ea0f9f4f587d0cd9bc26a4a73df34" prot="public" virt="non-virtual"><scope>Filter</scope><name>getCurrentPosition</name></member>
+      <member refid="class_filter_1aeeb0c2e971a47c73c2f950aa8890f1ac" prot="public" virt="non-virtual"><scope>Filter</scope><name>getGlobalGravity</name></member>
+      <member refid="class_filter_1a1c7a33a737fafec46d6e98ec1be37a4c" prot="public" virt="non-virtual"><scope>Filter</scope><name>getImageCaptureTime</name></member>
+      <member refid="class_filter_1abedd76a53f3f4d1f2d9b97bc388b71b4" prot="private" virt="non-virtual"><scope>Filter</scope><name>global_gravity_</name></member>
+      <member refid="class_filter_1a5742b1247b9f92a9148d99386cdd3876" prot="public" virt="non-virtual"><scope>Filter</scope><name>initialize</name></member>
+      <member refid="class_filter_1a69db72432ea7cd0ce7ba2499a5bb0c7d" prot="private" virt="non-virtual"><scope>Filter</scope><name>initializeBodyFrame</name></member>
+      <member refid="class_filter_1ab326892073289dc55496876cf56e64ee" prot="private" virt="non-virtual"><scope>Filter</scope><name>initializeBodyPoses</name></member>
+      <member refid="class_filter_1ab0db3877232b9fa66f5dd8ebe4385234" prot="private" virt="non-virtual"><scope>Filter</scope><name>initializeCameraCalibration</name></member>
+      <member refid="class_filter_1a314f3e0a340741cb8201a8ae8d53ed28" prot="private" virt="non-virtual"><scope>Filter</scope><name>initializeImuCalibration</name></member>
+      <member refid="class_filter_1a06bea04b55f4483660aa3bd5f4c13619" prot="private" virt="non-virtual"><scope>Filter</scope><name>omegaMatrix</name></member>
+      <member refid="class_filter_1a3ed7acd6fff45ead8b4209d4e31a8097" prot="public" virt="non-virtual"><scope>Filter</scope><name>propagateRotation</name></member>
+      <member refid="class_filter_1a778f444068abe887fd58e02f00be6121" prot="public" virt="non-virtual"><scope>Filter</scope><name>propagateVelocityAndPosition</name></member>
+      <member refid="class_filter_1ad046b83209a1f03d65ac75f16b538546" prot="public" virt="non-virtual"><scope>Filter</scope><name>setGlobalGravity</name></member>
+      <member refid="class_filter_1a1fad49c62892905f713de0bf66d9f3c7" prot="public" virt="non-virtual"><scope>Filter</scope><name>stepCamera</name></member>
+      <member refid="class_filter_1a27176eb65976f98cdc9495b4fdfc3296" prot="public" virt="non-virtual"><scope>Filter</scope><name>stepInertial</name></member>
+      <member refid="class_filter_1a35ead90b530777757cabfd503f608844" prot="private" virt="non-virtual"><scope>Filter</scope><name>unvectorizeMatrix</name></member>
+      <member refid="class_filter_1a5a67d5f280f4ddd173dff97fb65ae079" prot="private" virt="non-virtual"><scope>Filter</scope><name>vectorizeMatrix</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_imu_item" kind="class" prot="public">
+    <compoundname>ImuItem</compoundname>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_imu_item_1affcdaeabb9b33248d9efdf687f2eab5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class ImuBuffer</definition>
+        <argsstring></argsstring>
+        <name>ImuBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="17" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_imu_item_1a1297a2b71891496d3de357d11bb69d8d" prot="private" static="no" mutable="no">
+        <type>ImuDevice</type>
+        <definition>ImuDevice ImuItem::device_</definition>
+        <argsstring></argsstring>
+        <name>device_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="30" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_imu_item_1a4a3cf6964810f579f70467f5350f0222" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ImuItem::time_</definition>
+        <argsstring></argsstring>
+        <name>time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_imu_item_1a0df3d67d823f333a0eea8a2673f64cdf" prot="private" static="no" mutable="no">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d ImuItem::data_</definition>
+        <argsstring></argsstring>
+        <name>data_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="32" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_imu_item_1af127ca299205f31693ed6a85330bf915" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_imu_item" kindref="compound">ImuItem</ref></type>
+        <definition>ImuItem ImuItem::fromString</definition>
+        <argsstring>(std::string line)</argsstring>
+        <name>fromString</name>
+        <param>
+          <type>std::string</type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="9" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_imu_item_1a0a28edeccaf5f42fabf05e76c5c46519" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_imu_item" kindref="compound">ImuItem</ref></type>
+        <definition>ImuItem ImuItem::fromVector3d</definition>
+        <argsstring>(double time, const ImuDevice &amp;device, const Eigen::Vector3d &amp;data)</argsstring>
+        <name>fromVector3d</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const ImuDevice &amp;</type>
+          <declname>device</declname>
+        </param>
+        <param>
+          <type>const Eigen::Vector3d &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="69" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_imu_item_1ac12a9c7f77a7318de5893a26284c8f12" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>ImuDevice</type>
+        <definition>ImuDevice ImuItem::getDevice</definition>
+        <argsstring>() const </argsstring>
+        <name>getDevice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="21" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_imu_item_1adf0603391765e4950651ee67fe2273b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ImuItem::getTime</definition>
+        <argsstring>() const </argsstring>
+        <name>getTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="23" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="81" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_imu_item_1a9fe54cf71ea23dc3f044bf849a50743b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ImuItem::getX</definition>
+        <argsstring>() const </argsstring>
+        <name>getX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="85" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_imu_item_1af969726f713eb67b6b544133bea5fd21" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ImuItem::getY</definition>
+        <argsstring>() const </argsstring>
+        <name>getY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_imu_item_1af010fd2fd5ecd5868764a760f6040af5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ImuItem::getZ</definition>
+        <argsstring>() const </argsstring>
+        <name>getZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="27" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_imu_item_1a1cd4668ce368cb3b8360f42a1ab97580" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d ImuItem::getVector</definition>
+        <argsstring>() const </argsstring>
+        <name>getVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="28" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="97" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="15" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_imu_item_1a0df3d67d823f333a0eea8a2673f64cdf" prot="private" virt="non-virtual"><scope>ImuItem</scope><name>data_</name></member>
+      <member refid="class_imu_item_1a1297a2b71891496d3de357d11bb69d8d" prot="private" virt="non-virtual"><scope>ImuItem</scope><name>device_</name></member>
+      <member refid="class_imu_item_1af127ca299205f31693ed6a85330bf915" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>fromString</name></member>
+      <member refid="class_imu_item_1a0a28edeccaf5f42fabf05e76c5c46519" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>fromVector3d</name></member>
+      <member refid="class_imu_item_1ac12a9c7f77a7318de5893a26284c8f12" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>getDevice</name></member>
+      <member refid="class_imu_item_1adf0603391765e4950651ee67fe2273b7" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>getTime</name></member>
+      <member refid="class_imu_item_1a1cd4668ce368cb3b8360f42a1ab97580" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>getVector</name></member>
+      <member refid="class_imu_item_1a9fe54cf71ea23dc3f044bf849a50743b" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>getX</name></member>
+      <member refid="class_imu_item_1af969726f713eb67b6b544133bea5fd21" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>getY</name></member>
+      <member refid="class_imu_item_1af010fd2fd5ecd5868764a760f6040af5" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>getZ</name></member>
+      <member refid="class_imu_item_1affcdaeabb9b33248d9efdf687f2eab5c" prot="public" virt="non-virtual"><scope>ImuItem</scope><name>ImuBuffer</name></member>
+      <member refid="class_imu_item_1a4a3cf6964810f579f70467f5350f0222" prot="private" virt="non-virtual"><scope>ImuItem</scope><name>time_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

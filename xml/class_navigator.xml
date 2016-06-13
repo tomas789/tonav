@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_navigator" kind="class" prot="public">
+    <compoundname>Navigator</compoundname>
+    <includes refid="navigator_8h" local="no">navigator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_navigator_1ae92bfd56f6030f8ed1fa8fcdb3e45f7a" prot="private" static="no" mutable="no">
+        <type>boost::program_options::options_description</type>
+        <definition>boost::program_options::options_description Navigator::options_description_</definition>
+        <argsstring></argsstring>
+        <name>options_description_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="33" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_navigator_1a4897258895f7bbb7ef040d4bdda4c762" prot="private" static="no" mutable="no">
+        <type>boost::program_options::variables_map</type>
+        <definition>boost::program_options::variables_map Navigator::vmap_</definition>
+        <argsstring></argsstring>
+        <name>vmap_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="34" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_navigator_1a614e53f6cf6859608b14057272003cea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Navigator::run</definition>
+        <argsstring>(int argc, const char *argv[])</argsstring>
+        <name>run</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Run navigation node from dataset. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This is deprecated. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or it&apos;s convenience wrapper <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of command line arguments. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of command line arguments. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="27" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp" bodystart="27" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_navigator_1ad3dc73ff6148e6c3c6f696577f495391" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Navigator::parseOptions</definition>
+        <argsstring>(int argc, const char *argv[])</argsstring>
+        <name>parseOptions</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="30" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp" bodystart="141" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="class_navigator_1ae02f8096eaa90c51330b700c9c036868" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Navigator::printHelp</definition>
+        <argsstring>(bool to_stderr=false)</argsstring>
+        <name>printHelp</name>
+        <param>
+          <type>bool</type>
+          <declname>to_stderr</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp" bodystart="157" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Perform navigation from dataset. </para>    </briefdescription>
+    <detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This is deprecated. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or it&apos;s convenience wrapper <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" bodystart="16" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_navigator_1ae92bfd56f6030f8ed1fa8fcdb3e45f7a" prot="private" virt="non-virtual"><scope>Navigator</scope><name>options_description_</name></member>
+      <member refid="class_navigator_1ad3dc73ff6148e6c3c6f696577f495391" prot="private" virt="non-virtual"><scope>Navigator</scope><name>parseOptions</name></member>
+      <member refid="class_navigator_1ae02f8096eaa90c51330b700c9c036868" prot="private" virt="non-virtual"><scope>Navigator</scope><name>printHelp</name></member>
+      <member refid="class_navigator_1a614e53f6cf6859608b14057272003cea" prot="public" virt="non-virtual"><scope>Navigator</scope><name>run</name></member>
+      <member refid="class_navigator_1a4897258895f7bbb7ef040d4bdda4c762" prot="private" virt="non-virtual"><scope>Navigator</scope><name>vmap_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

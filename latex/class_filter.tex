@@ -1,0 +1,113 @@
+\hypertarget{class_filter}{\section{Filter Class Reference}
+\label{class_filter}\index{Filter@{Filter}}
+}
+
+
+Implementation of M\-S\-C\-K\-F.  
+
+
+
+
+{\ttfamily \#include $<$filter.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_filter_ac00d9ce620e60b2c8b26ca9cad7e1b39}{{\bfseries Filter} (const \hyperlink{class_calibration}{Calibration} \&calibration)}\label{class_filter_ac00d9ce620e60b2c8b26ca9cad7e1b39}
+
+\item 
+\hypertarget{class_filter_a5742b1247b9f92a9148d99386cdd3876}{void {\bfseries initialize} ()}\label{class_filter_a5742b1247b9f92a9148d99386cdd3876}
+
+\item 
+\hypertarget{class_filter_a27176eb65976f98cdc9495b4fdfc3296}{void {\bfseries step\-Inertial} (double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_a27176eb65976f98cdc9495b4fdfc3296}
+
+\item 
+\hypertarget{class_filter_a1fad49c62892905f713de0bf66d9f3c7}{void {\bfseries step\-Camera} (double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro, cv\-::\-Mat \&frame)}\label{class_filter_a1fad49c62892905f713de0bf66d9f3c7}
+
+\item 
+\hypertarget{class_filter_a3ed7acd6fff45ead8b4209d4e31a8097}{void {\bfseries propagate\-Rotation} (\hyperlink{class_filter_state}{Filter\-State} \&old\-\_\-state, \hyperlink{class_filter_state}{Filter\-State} \&new\-\_\-state, double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_a3ed7acd6fff45ead8b4209d4e31a8097}
+
+\item 
+\hypertarget{class_filter_a778f444068abe887fd58e02f00be6121}{void {\bfseries propagate\-Velocity\-And\-Position} (\hyperlink{class_filter_state}{Filter\-State} \&old\-\_\-state, \hyperlink{class_filter_state}{Filter\-State} \&new\-\_\-state, double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_a778f444068abe887fd58e02f00be6121}
+
+\item 
+void \hyperlink{class_filter_ad046b83209a1f03d65ac75f16b538546}{set\-Global\-Gravity} (Eigen\-::\-Vector3d gravity)
+\begin{DoxyCompactList}\small\item\em Set initial estimate of gravity in global frame. \end{DoxyCompactList}\item 
+\hypertarget{class_filter_aeeb0c2e971a47c73c2f950aa8890f1ac}{Eigen\-::\-Vector3d {\bfseries get\-Global\-Gravity} () const }\label{class_filter_aeeb0c2e971a47c73c2f950aa8890f1ac}
+
+\item 
+\hypertarget{class_filter_a936ea0f9f4f587d0cd9bc26a4a73df34}{Eigen\-::\-Vector3d {\bfseries get\-Current\-Position} ()}\label{class_filter_a936ea0f9f4f587d0cd9bc26a4a73df34}
+
+\item 
+\hypertarget{class_filter_a7094e57e502a4fc7f124f0d1184eb133}{Eigen\-::\-Quaterniond {\bfseries get\-Current\-Attitude} ()}\label{class_filter_a7094e57e502a4fc7f124f0d1184eb133}
+
+\item 
+double \hyperlink{class_filter_a1c7a33a737fafec46d6e98ec1be37a4c}{get\-Image\-Capture\-Time} (double arrive\-\_\-time)
+\begin{DoxyCompactList}\small\item\em Calculate $\hat{t} = t + \hat{t}_d$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of M\-S\-C\-K\-F. 
+
+This is core functionality of \hyperlink{class_tonav}{Tonav}. All methods must be called with caution. It assumes correct order of update steps.
+
+Don't use this class directly. Use \hyperlink{class_tonav}{Tonav} or \hyperlink{class_tonav_ros}{Tonav\-Ros} instead 
+
+Definition at line 29 of file filter.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_filter_a1c7a33a737fafec46d6e98ec1be37a4c}{\index{Filter@{Filter}!get\-Image\-Capture\-Time@{get\-Image\-Capture\-Time}}
+\index{get\-Image\-Capture\-Time@{get\-Image\-Capture\-Time}!Filter@{Filter}}
+\subsubsection[{get\-Image\-Capture\-Time}]{\setlength{\rightskip}{0pt plus 5cm}double Filter\-::get\-Image\-Capture\-Time (
+\begin{DoxyParamCaption}
+\item[{double}]{arrive\-\_\-time}
+\end{DoxyParamCaption}
+)}}\label{class_filter_a1c7a33a737fafec46d6e98ec1be37a4c}
+
+
+Calculate $\hat{t} = t + \hat{t}_d$. 
+
+This method calculates image capture time from time when image arrived.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arrive\-\_\-time} & Time whan image arrived \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estimated image capture time 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file filter.\-cpp.
+
+\hypertarget{class_filter_ad046b83209a1f03d65ac75f16b538546}{\index{Filter@{Filter}!set\-Global\-Gravity@{set\-Global\-Gravity}}
+\index{set\-Global\-Gravity@{set\-Global\-Gravity}!Filter@{Filter}}
+\subsubsection[{set\-Global\-Gravity}]{\setlength{\rightskip}{0pt plus 5cm}void Filter\-::set\-Global\-Gravity (
+\begin{DoxyParamCaption}
+\item[{Eigen\-::\-Vector3d}]{gravity}
+\end{DoxyParamCaption}
+)}}\label{class_filter_ad046b83209a1f03d65ac75f16b538546}
+
+
+Set initial estimate of gravity in global frame. 
+
+This is usually calculated as averate of first few accelerometer measurements. It assumes, that device don't move for few seconds at the beginning.
+
+
+\begin{DoxyParams}{Parameters}
+{\em gravity} & Initial estimate of gravity in global frame. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 126 of file filter.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/tomaskrejci/catkin\-\_\-ws/src/tonav/include/filter.\-h\item 
+/home/tomaskrejci/catkin\-\_\-ws/src/tonav/src/filter.\-cpp\end{DoxyCompactItemize}

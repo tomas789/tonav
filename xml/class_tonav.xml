@@ -1,0 +1,606 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_tonav" kind="class" prot="public">
+    <compoundname>Tonav</compoundname>
+    <includes refid="tonav_8h" local="no">tonav.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tonav_1ac5d9d1b74ca8bf3af35b06a591576188" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t Tonav::initial_delay_</definition>
+        <argsstring></argsstring>
+        <name>initial_delay_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="120" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_1a0ad5267968fc08071f1f23f39ff90a26" prot="private" static="no" mutable="no">
+        <type><ref refid="class_filter" kindref="compound">Filter</ref></type>
+        <definition>Filter Tonav::filter_</definition>
+        <argsstring></argsstring>
+        <name>filter_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="121" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_1a492a3ada76bc0a8c79024d9901b16e7a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tonav::has_global_gravity_set_</definition>
+        <argsstring></argsstring>
+        <name>has_global_gravity_set_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="123" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_1a53c6c1b075b45f4a02c7d90f451bcd81" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Tonav::last_image_capture_time_</definition>
+        <argsstring></argsstring>
+        <name>last_image_capture_time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="125" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_1a85e1dcbb05b40fc59a30ba27f6853fc0" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Tonav::last_image_</definition>
+        <argsstring></argsstring>
+        <name>last_image_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="126" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_1a3e587c752f9ea457cd5d077c9bc1e336" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Tonav::last_update_time_</definition>
+        <argsstring></argsstring>
+        <name>last_update_time_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="128" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_1aa30d01a89c09cfae84aa82225e953384" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Tonav::filter_was_updated_</definition>
+        <argsstring></argsstring>
+        <name>filter_was_updated_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="129" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_1aab1e1b589665b61f3017d8f2d2f3fa3b" prot="private" static="no" mutable="no">
+        <type>std::list&lt; <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &gt;</type>
+        <definition>std::list&lt;ImuItem&gt; Tonav::accel_buffer_</definition>
+        <argsstring></argsstring>
+        <name>accel_buffer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="131" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tonav_1ac9203e6d53b20839b120e8ce97e7b6ea" prot="private" static="no" mutable="no">
+        <type>std::list&lt; <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &gt;</type>
+        <definition>std::list&lt;ImuItem&gt; Tonav::gyro_buffer_</definition>
+        <argsstring></argsstring>
+        <name>gyro_buffer_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="132" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tonav_1a0c3d527cc8ec6832d4ea650ad31c726a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tonav::Tonav</definition>
+        <argsstring>(Calibration &amp;calibration)</argsstring>
+        <name>Tonav</name>
+        <param>
+          <type><ref refid="class_calibration" kindref="compound">Calibration</ref> &amp;</type>
+          <declname>calibration</declname>
+        </param>
+        <briefdescription>
+<para>Initialize filter with configuration. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>calibration</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_calibration" kindref="compound">Calibration</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1ac458c8712b1eeef1ba169835706d26fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::updateAcceleration</definition>
+        <argsstring>(double time, Eigen::Vector3d accel)</argsstring>
+        <name>updateAcceleration</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector3d</type>
+          <declname>accel</declname>
+        </param>
+        <briefdescription>
+<para>Perform navigation step with data from accelerometer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Parameter <computeroutput>accel</computeroutput> is vector <formula id="1">$(x, y, z)$</formula> measured in <formula id="2">$\frac{m}{s^2}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time at which accelerometer data were captured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>accel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D vector of accelerometer data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="37" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a02a596cd5acf1799830499dd97e5e2e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::updateRotationRate</definition>
+        <argsstring>(double time, Eigen::Vector3d gyro)</argsstring>
+        <name>updateRotationRate</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector3d</type>
+          <declname>gyro</declname>
+        </param>
+        <briefdescription>
+<para>Perform navigation step with data from gyroscope. </para>        </briefdescription>
+        <detaileddescription>
+<para>Parameter <computeroutput>gyro</computeroutput> is vector <formula id="1">$(x, y, z)$</formula> measured in <formula id="3">$\frac{rad}{s}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time at which gyroscope data were captured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gyro</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D vector of gyroscope data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="48" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="18" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1ac7c7cdaa16941df03aca92a3eaa75ed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::updateAccelerationAndRotationRate</definition>
+        <argsstring>(double time, Eigen::Vector3d accel, Eigen::Vector3d gyro)</argsstring>
+        <name>updateAccelerationAndRotationRate</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector3d</type>
+          <declname>accel</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector3d</type>
+          <declname>gyro</declname>
+        </param>
+        <briefdescription>
+<para>Perform navigation step with data from both accelerometer and gyroscore. </para>        </briefdescription>
+        <detaileddescription>
+<para>Parameter <computeroutput>accel</computeroutput> is vector <formula id="1">$(x, y, z)$</formula> measured in <formula id="2">$\frac{m}{s^2}$</formula>. Parameter <computeroutput>gyro</computeroutput> is vector <formula id="1">$(x, y, z)$</formula> measured in <formula id="3">$\frac{rad}{s}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time at which accelerometer and gyroscope data were both captured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>accel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D vector of accelerometer data. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>gyro</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>3D vector of gyroscope data. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="63" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="23" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a765f593b621a40052a01b7d0449d9b8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::updateImage</definition>
+        <argsstring>(double time, cv::Mat &amp;image)</argsstring>
+        <name>updateImage</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para>Perform navigation step with image from camera. </para>        </briefdescription>
+        <detaileddescription>
+<para>Time passed to this function should be as deterministic as possible. Try to avoid as much buffering as you can. Also don&apos;t do any variable-duration image processing like detecting features from image.</para><para>Image should by in format GRAY8 and should have reasonable resolution. Full-HD is unnecessarily large. Something about 640x480 is good enough. It speeds up processing of the image and delivers more real-time localization.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time at which camera image was captured. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Captured image. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="81" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="29" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a53fddfad248ab9a75906e310266e1f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::setCameraModelParams</definition>
+        <argsstring>(const Eigen::Matrix3d &amp;camera_matrix, const Eigen::Matrix&lt; double, 5, 1 &gt; distortion_params)</argsstring>
+        <name>setCameraModelParams</name>
+        <param>
+          <type>const Eigen::Matrix3d &amp;</type>
+          <declname>camera_matrix</declname>
+        </param>
+        <param>
+          <type>const Eigen::Matrix&lt; double, 5, 1 &gt;</type>
+          <declname>distortion_params</declname>
+        </param>
+        <briefdescription>
+<para>Set camera model params. </para>        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_tonav" kindref="compound">Tonav</ref> is using pinhole camera modes as implemented in OpenCV. Using this function, you can set camera intrinsics parameters.</para><para>Camera matrix:</para><para><formula id="4">$ \begin{pmatrix} f_x &amp; 0 &amp; c_x \\ 0 &amp; f_y &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{pmatrix} $</formula></para><para>Distortion params:</para><para><formula id="5">$ \begin{pmatrix} k_1 &amp; k_2 &amp; p_1 &amp; p_2 &amp; k_3 \end{pmatrix} $</formula></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>camera_matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Camera matrix </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>distortion_params</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Distortion parameters </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a6cd97922b947734bca02119a60135c30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tonav::filterWasUpdated</definition>
+        <argsstring>() const </argsstring>
+        <name>filterWasUpdated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="113" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a724c0d36fb1f182023831f70fa166e55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Quaterniond</type>
+        <definition>Eigen::Quaterniond Tonav::getCurrentOrientation</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentOrientation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="115" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a4717848cb42b3311e19d656de940bc65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Vector3d</type>
+        <definition>Eigen::Vector3d Tonav::getCurrentPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="116" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a3929b594397489b232e77e4344c8675a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Tonav::getCurrentImage</definition>
+        <argsstring>() const </argsstring>
+        <name>getCurrentImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="117" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="54" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_tonav_1a396f2f4c5b53e742156d7e7a080eb176" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Tonav::checkGlobalGravity</definition>
+        <argsstring>()</argsstring>
+        <name>checkGlobalGravity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="134" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="58" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a53d772b2f935be79b9faa05747e88b00" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Tonav::getMaxAccelerometerTime</definition>
+        <argsstring>() const </argsstring>
+        <name>getMaxAccelerometerTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="135" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="71" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a99e9d162f55e27b404451164a939b787" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Tonav::getMaxGyroscopeTime</definition>
+        <argsstring>() const </argsstring>
+        <name>getMaxGyroscopeTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="136" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="78" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a98518b9c4feeefa13fde82e5ed1a1398" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::initialize</definition>
+        <argsstring>()</argsstring>
+        <name>initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="138" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="85" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a3b3836ac2a2cf345ab6bcf396907a044" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::initializeGlobalGravity</definition>
+        <argsstring>()</argsstring>
+        <name>initializeGlobalGravity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="139" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="92" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a0d6ce231d4c99c00663df22d786bc95c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::initializeLastUpdateTime</definition>
+        <argsstring>()</argsstring>
+        <name>initializeLastUpdateTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="140" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="116" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1ade1172c34aa02eb74aa6f9853a959165" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::updateAccelerationImpl</definition>
+        <argsstring>(double time, Eigen::Vector3d accel)</argsstring>
+        <name>updateAccelerationImpl</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector3d</type>
+          <declname>accel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="142" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="120" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1afe432d3975844875d514ae3c0cfe8693" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::updateRotationRateImpl</definition>
+        <argsstring>(double time, Eigen::Vector3d gyro)</argsstring>
+        <name>updateRotationRateImpl</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>Eigen::Vector3d</type>
+          <declname>gyro</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="143" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="131" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a241dcda5dc09ddd1d9fa8a247e37f39f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::performUpdateIfPossible</definition>
+        <argsstring>()</argsstring>
+        <name>performUpdateIfPossible</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="145" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="142" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a6d7ba76b933a3ab606476010b97bd9c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tonav::performUpdate</definition>
+        <argsstring>()</argsstring>
+        <name>performUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="146" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="155" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tonav_1a4cbe91ddd8bd4fb6dc624cd2e45e7ab2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_imu_item" kindref="compound">ImuItem</ref></type>
+        <definition>ImuItem Tonav::interpolate</definition>
+        <argsstring>(double time, const ImuItem &amp;earlier, const ImuItem &amp;later) const </argsstring>
+        <name>interpolate</name>
+        <param>
+          <type>double</type>
+          <declname>time</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>earlier</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+          <declname>later</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="148" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="201" bodyend="208"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is main class for communicating with filter. You can pass IMU and camera data to filter through it and get information about current filter state. </para>    </briefdescription>
+    <detaileddescription>
+<para>As a user, you should only communicate with this class. </para>    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="19" bodyend="149"/>
+    <listofallmembers>
+      <member refid="class_tonav_1aab1e1b589665b61f3017d8f2d2f3fa3b" prot="private" virt="non-virtual"><scope>Tonav</scope><name>accel_buffer_</name></member>
+      <member refid="class_tonav_1a396f2f4c5b53e742156d7e7a080eb176" prot="private" virt="non-virtual"><scope>Tonav</scope><name>checkGlobalGravity</name></member>
+      <member refid="class_tonav_1a0ad5267968fc08071f1f23f39ff90a26" prot="private" virt="non-virtual"><scope>Tonav</scope><name>filter_</name></member>
+      <member refid="class_tonav_1aa30d01a89c09cfae84aa82225e953384" prot="private" virt="non-virtual"><scope>Tonav</scope><name>filter_was_updated_</name></member>
+      <member refid="class_tonav_1a6cd97922b947734bca02119a60135c30" prot="public" virt="non-virtual"><scope>Tonav</scope><name>filterWasUpdated</name></member>
+      <member refid="class_tonav_1a3929b594397489b232e77e4344c8675a" prot="public" virt="non-virtual"><scope>Tonav</scope><name>getCurrentImage</name></member>
+      <member refid="class_tonav_1a724c0d36fb1f182023831f70fa166e55" prot="public" virt="non-virtual"><scope>Tonav</scope><name>getCurrentOrientation</name></member>
+      <member refid="class_tonav_1a4717848cb42b3311e19d656de940bc65" prot="public" virt="non-virtual"><scope>Tonav</scope><name>getCurrentPosition</name></member>
+      <member refid="class_tonav_1a53d772b2f935be79b9faa05747e88b00" prot="private" virt="non-virtual"><scope>Tonav</scope><name>getMaxAccelerometerTime</name></member>
+      <member refid="class_tonav_1a99e9d162f55e27b404451164a939b787" prot="private" virt="non-virtual"><scope>Tonav</scope><name>getMaxGyroscopeTime</name></member>
+      <member refid="class_tonav_1ac9203e6d53b20839b120e8ce97e7b6ea" prot="private" virt="non-virtual"><scope>Tonav</scope><name>gyro_buffer_</name></member>
+      <member refid="class_tonav_1a492a3ada76bc0a8c79024d9901b16e7a" prot="private" virt="non-virtual"><scope>Tonav</scope><name>has_global_gravity_set_</name></member>
+      <member refid="class_tonav_1ac5d9d1b74ca8bf3af35b06a591576188" prot="private" virt="non-virtual"><scope>Tonav</scope><name>initial_delay_</name></member>
+      <member refid="class_tonav_1a98518b9c4feeefa13fde82e5ed1a1398" prot="private" virt="non-virtual"><scope>Tonav</scope><name>initialize</name></member>
+      <member refid="class_tonav_1a3b3836ac2a2cf345ab6bcf396907a044" prot="private" virt="non-virtual"><scope>Tonav</scope><name>initializeGlobalGravity</name></member>
+      <member refid="class_tonav_1a0d6ce231d4c99c00663df22d786bc95c" prot="private" virt="non-virtual"><scope>Tonav</scope><name>initializeLastUpdateTime</name></member>
+      <member refid="class_tonav_1a4cbe91ddd8bd4fb6dc624cd2e45e7ab2" prot="private" virt="non-virtual"><scope>Tonav</scope><name>interpolate</name></member>
+      <member refid="class_tonav_1a85e1dcbb05b40fc59a30ba27f6853fc0" prot="private" virt="non-virtual"><scope>Tonav</scope><name>last_image_</name></member>
+      <member refid="class_tonav_1a53c6c1b075b45f4a02c7d90f451bcd81" prot="private" virt="non-virtual"><scope>Tonav</scope><name>last_image_capture_time_</name></member>
+      <member refid="class_tonav_1a3e587c752f9ea457cd5d077c9bc1e336" prot="private" virt="non-virtual"><scope>Tonav</scope><name>last_update_time_</name></member>
+      <member refid="class_tonav_1a6d7ba76b933a3ab606476010b97bd9c9" prot="private" virt="non-virtual"><scope>Tonav</scope><name>performUpdate</name></member>
+      <member refid="class_tonav_1a241dcda5dc09ddd1d9fa8a247e37f39f" prot="private" virt="non-virtual"><scope>Tonav</scope><name>performUpdateIfPossible</name></member>
+      <member refid="class_tonav_1a53fddfad248ab9a75906e310266e1f0d" prot="public" virt="non-virtual"><scope>Tonav</scope><name>setCameraModelParams</name></member>
+      <member refid="class_tonav_1a0c3d527cc8ec6832d4ea650ad31c726a" prot="public" virt="non-virtual"><scope>Tonav</scope><name>Tonav</name></member>
+      <member refid="class_tonav_1ac458c8712b1eeef1ba169835706d26fd" prot="public" virt="non-virtual"><scope>Tonav</scope><name>updateAcceleration</name></member>
+      <member refid="class_tonav_1ac7c7cdaa16941df03aca92a3eaa75ed7" prot="public" virt="non-virtual"><scope>Tonav</scope><name>updateAccelerationAndRotationRate</name></member>
+      <member refid="class_tonav_1ade1172c34aa02eb74aa6f9853a959165" prot="private" virt="non-virtual"><scope>Tonav</scope><name>updateAccelerationImpl</name></member>
+      <member refid="class_tonav_1a765f593b621a40052a01b7d0449d9b8e" prot="public" virt="non-virtual"><scope>Tonav</scope><name>updateImage</name></member>
+      <member refid="class_tonav_1a02a596cd5acf1799830499dd97e5e2e5" prot="public" virt="non-virtual"><scope>Tonav</scope><name>updateRotationRate</name></member>
+      <member refid="class_tonav_1afe432d3975844875d514ae3c0cfe8693" prot="private" virt="non-virtual"><scope>Tonav</scope><name>updateRotationRateImpl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

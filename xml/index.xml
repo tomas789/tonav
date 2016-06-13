@@ -1,0 +1,405 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.6">
+  <compound refid="class_base_exception" kind="class"><name>BaseException</name>
+    <member refid="class_base_exception_1a675e42df7cdd795575bccf521f8ff930" kind="function"><name>BaseException</name></member>
+    <member refid="class_base_exception_1a9a4668c1da76b424a113d600f313b67f" kind="function"><name>what</name></member>
+  </compound>
+  <compound refid="class_calibration" kind="class"><name>Calibration</name>
+    <member refid="class_calibration_1a8ede976d782d5bf475fab7a162c03c5e" kind="variable"><name>max_camera_poses_</name></member>
+    <member refid="class_calibration_1a5122fb440119b6e1bc679eabc63677ea" kind="variable"><name>buffer_size_</name></member>
+    <member refid="class_calibration_1a85df8bb5d9c188bb4a17e2d3d92ee0f3" kind="variable"><name>f_x_</name></member>
+    <member refid="class_calibration_1ae347cd702e9056353b228e4d257bcb0a" kind="variable"><name>f_y_</name></member>
+    <member refid="class_calibration_1a8c4e07d9efcaf5a328a1c86eadb22b53" kind="variable"><name>c_x_</name></member>
+    <member refid="class_calibration_1a7631f3ca2271086d0105e907a9a79a23" kind="variable"><name>c_y_</name></member>
+    <member refid="class_calibration_1a32c4ae305a69a5a70b5461bcac18ff44" kind="variable"><name>p_c_b_x_</name></member>
+    <member refid="class_calibration_1ac6f1b8ab6fc113232bfa856b5a98bb31" kind="variable"><name>p_c_b_y_</name></member>
+    <member refid="class_calibration_1ab9c03358c3a3da753ea5d7fdd508beae" kind="variable"><name>p_c_b_z_</name></member>
+    <member refid="class_calibration_1a823ba6076669ada98231ef0c646953b3" kind="variable"><name>t_d_</name></member>
+    <member refid="class_calibration_1a0e9927c89d8a901bfa6f2460e5ed2ff0" kind="variable"><name>t_r_</name></member>
+    <member refid="class_calibration_1a628f0a296e3ab66355c7148a17bff886" kind="variable"><name>k_1_</name></member>
+    <member refid="class_calibration_1aeb77b41d4206b8a167e749b7ec0818ca" kind="variable"><name>k_2_</name></member>
+    <member refid="class_calibration_1af1dc18d7e45eb8df11eefae4be743bde" kind="variable"><name>k_3_</name></member>
+    <member refid="class_calibration_1a0e48ee2045be83b61aace0eb2ff54b00" kind="variable"><name>p_1_</name></member>
+    <member refid="class_calibration_1a476e50dea0868c67951dcd9c59ae0628" kind="variable"><name>p_2_</name></member>
+    <member refid="class_calibration_1aebd895f2f43c2486931ff5483ba29bef" kind="variable"><name>orb_nfeatures_</name></member>
+    <member refid="class_calibration_1a8d802dc24f6af35ee82c12c9ea528916" kind="variable"><name>t_s_</name></member>
+    <member refid="class_calibration_1a2fc1c69f32292f42dcb9dbdf2eee7d7f" kind="variable"><name>t_a_</name></member>
+    <member refid="class_calibration_1ad4cbc3c7786eaf318fa2649e350c477a" kind="variable"><name>t_g_</name></member>
+    <member refid="class_calibration_1ada96ce5205d03ecb367efe6c3b09b7bd" kind="variable"><name>allowed_params_</name></member>
+    <member refid="class_calibration_1a0273a577bae64d0833262103580e4a38" kind="function"><name>getMaxCameraPoses</name></member>
+    <member refid="class_calibration_1acdf5d45d605b29f9114ae05600f07b76" kind="function"><name>getBufferSize</name></member>
+    <member refid="class_calibration_1ad3edc4101a92835c6eed1dcfa004b592" kind="function"><name>getGSensitivityMatrix</name></member>
+    <member refid="class_calibration_1a645b1a1cd460d493756669392ac71b78" kind="function"><name>getGyroscopeShapeMatrix</name></member>
+    <member refid="class_calibration_1acd1d1fff6512b6fbfa8ff80cd45033f3" kind="function"><name>getAccelerometerShapeMatrix</name></member>
+    <member refid="class_calibration_1a1144bc436545a52c5036ba6b02028c78" kind="function"><name>getCameraToBodyOffset</name></member>
+    <member refid="class_calibration_1ab8e718f8167cbc0d15cb90983175ce9d" kind="function"><name>getFocalLengthX</name></member>
+    <member refid="class_calibration_1af25283fd143f9f8e4026afadff66188f" kind="function"><name>getFocalLengthY</name></member>
+    <member refid="class_calibration_1aa101a7999e6eec103dce4ec651c2218b" kind="function"><name>getOpticalCenterX</name></member>
+    <member refid="class_calibration_1a7486353559a45d424afb1aa6fbfa9f24" kind="function"><name>getOpticalCenterY</name></member>
+    <member refid="class_calibration_1a57798a33c441afe2e0b675008e962af6" kind="function"><name>getRadialDistortionParameters</name></member>
+    <member refid="class_calibration_1ab42ba1d8120e3c22b85204c5dfd98f7f" kind="function"><name>getTangentialDistortionParameters</name></member>
+    <member refid="class_calibration_1a22c6544bba616210e34f9020479a32c6" kind="function"><name>getCameraDelayTime</name></member>
+    <member refid="class_calibration_1aecbab0b6d724fa68f5af6e038111284b" kind="function"><name>getCameraReadoutTime</name></member>
+    <member refid="class_calibration_1a407d16502f36acfc7bd00572abe90739" kind="function"><name>fromPath</name></member>
+    <member refid="class_calibration_1a1d1c3b1b92ae75db9428f61b7afcc7f0" kind="function"><name>tryParseInt</name></member>
+    <member refid="class_calibration_1a043fc49ab017f6188dfb1b38cf7b573e" kind="function"><name>tryParseDouble</name></member>
+    <member refid="class_calibration_1a58c12342c94ea075107e6202e67c714a" kind="function"><name>tryParseMatrix3d</name></member>
+  </compound>
+  <compound refid="class_calibration_file_error" kind="class"><name>CalibrationFileError</name>
+    <member refid="class_calibration_file_error_1acde3ad16d1d41e5ede02244730d20081" kind="variable"><name>msg_</name></member>
+    <member refid="class_calibration_file_error_1ac4403a65bb13617f6f9aaea23a408c0a" kind="function"><name>CalibrationFileError</name></member>
+    <member refid="class_calibration_file_error_1a91d41fb29208c4304760a251de8ca50a" kind="function"><name>CalibrationFileError</name></member>
+    <member refid="class_calibration_file_error_1a935a4e242a42bb1ab4867c05f44eebc9" kind="function"><name>what</name></member>
+    <member refid="class_calibration_file_error_1a5fc4fc7a6c2241e145ba82cc1d88eb9b" kind="function"><name>~CalibrationFileError</name></member>
+  </compound>
+  <compound refid="class_camera_feed" kind="class"><name>CameraFeed</name>
+    <member refid="class_camera_feed_1a217aec63b984207a40f460c3c99a66b4" kind="variable"><name>current_item_</name></member>
+    <member refid="class_camera_feed_1acf108e2036fc37819f0fe6ace6e17e2d" kind="variable"><name>items_</name></member>
+    <member refid="class_camera_feed_1aaab6bb3a35f2dc18e6e70f91315b66a7" kind="variable"><name>path_</name></member>
+    <member refid="class_camera_feed_1a2d7c8c329802b64568b312675115efce" kind="function"><name>hasNext</name></member>
+    <member refid="class_camera_feed_1a175a707efb56c2f3c78c2859129cbc24" kind="function"><name>next</name></member>
+    <member refid="class_camera_feed_1ac703c1de71a7bf488f82921177ea4b0a" kind="function"><name>top</name></member>
+    <member refid="class_camera_feed_1af761420a0337f52253b23c7d276516f8" kind="function"><name>getImage</name></member>
+    <member refid="class_camera_feed_1a38c0ad4632b39babdc99fc65ddc56c36" kind="function"><name>fromDataset</name></member>
+    <member refid="class_camera_feed_1a81ba81dfe23ef727d19dfef4615a1334" kind="function"><name>loadFile</name></member>
+  </compound>
+  <compound refid="class_camera_item" kind="class"><name>CameraItem</name>
+    <member refid="class_camera_item_1afbae2157e639d87e2643e9c77a1b2be4" kind="variable"><name>time_</name></member>
+    <member refid="class_camera_item_1adefa8c62d0b45964545457f19d85a31b" kind="variable"><name>file_name_</name></member>
+    <member refid="class_camera_item_1a4cccf1e169a05288c47ecf232afb2086" kind="function"><name>fromString</name></member>
+    <member refid="class_camera_item_1a6227ac10298e97b4ae86371de99cd4c9" kind="function"><name>getTime</name></member>
+    <member refid="class_camera_item_1a6e19e5bdbfc691fb8abc4e94ef43f05e" kind="function"><name>getFileName</name></member>
+  </compound>
+  <compound refid="class_camera_pose" kind="class"><name>CameraPose</name>
+    <member refid="class_camera_pose_1a6898788bbfddfab4a5bf78d911477bf4" kind="typedef"><name>CameraPoseType</name></member>
+    <member refid="class_camera_pose_1ad3adf8335a31145e9905eae1fff0708f" kind="variable"><name>camera_pose_</name></member>
+    <member refid="class_camera_pose_1a77c9ea1d0386f1ca0daac90fa609fd35" kind="variable"><name>pose_id_</name></member>
+    <member refid="class_camera_pose_1a90d2e7704a89768d74b02c01abd28ce9" kind="variable"><name>features_active_</name></member>
+    <member refid="class_camera_pose_1aeb6b408cd1298d44c577d4e2d6b7bd56" kind="function"><name>CameraPose</name></member>
+    <member refid="class_camera_pose_1a9393e875cfde4b1587a5f8b06d498466" kind="function"><name>CameraPose</name></member>
+    <member refid="class_camera_pose_1a91fe393ed7bd9c638198a7e138e3926c" kind="function"><name>poseId</name></member>
+    <member refid="class_camera_pose_1ab690a1975e061c75e2431c2f671d5637" kind="function"><name>getActiveFeaturesCount</name></member>
+    <member refid="class_camera_pose_1ad52f534b1a0b4841a4c8d5e04471f0a1" kind="function"><name>setActiveFeaturesCount</name></member>
+    <member refid="class_camera_pose_1acfe976d10448deee4b714506c3ab6357" kind="function"><name>decreaseActiveFeaturesCount</name></member>
+    <member refid="class_camera_pose_1adeec70b16372d5aede066da2b6bf5d4a" kind="function"><name>getRotationForBodyPoseBlock</name></member>
+    <member refid="class_camera_pose_1af518728cc70c31460a20fc0f6f3f40a4" kind="function"><name>getPositionForBodyPoseBlock</name></member>
+    <member refid="class_camera_pose_1ae15933c2b5176d011135164962639a99" kind="function"><name>getVelocityForBodyPoseBlock</name></member>
+    <member refid="class_camera_pose_1aea5ef3206eb4f8929495dfc8f3a93571" kind="function"><name>isValid</name></member>
+  </compound>
+  <compound refid="class_feature_track" kind="class"><name>FeatureTrack</name>
+    <member refid="class_feature_track_1abcd85eb76a80f0bf0fe06403b7a1b418" kind="variable"><name>is_out_of_view_</name></member>
+    <member refid="class_feature_track_1ac2ba060693c052da317ab99c890c765c" kind="variable"><name>first_frame_number_</name></member>
+    <member refid="class_feature_track_1a9ff68e9bda4336fe891edac8db34f706" kind="variable"><name>positions_</name></member>
+    <member refid="class_feature_track_1ade7f659359480dab8f8ec7ace7625467" kind="function"><name>FeatureTrack</name></member>
+    <member refid="class_feature_track_1a5f13b226ac16fb0c9abe692c17f0f0c6" kind="function"><name>addFeaturePosition</name></member>
+    <member refid="class_feature_track_1aa21cd2b1af1f2aaea1e7d19631f80474" kind="function"><name>revertLastPosition</name></member>
+    <member refid="class_feature_track_1a1635683732cdfda103a37d926d2efbf9" kind="function"><name>getFirstFrameNumber</name></member>
+    <member refid="class_feature_track_1a966f8f018b7305d764216880f4a6f8ba" kind="function"><name>isOutOfView</name></member>
+    <member refid="class_feature_track_1a75a507f6ac11d3a9319523d131c7949d" kind="function"><name>setOutOfView</name></member>
+  </compound>
+  <compound refid="class_feature_tracker" kind="class"><name>FeatureTracker</name>
+    <member refid="class_feature_tracker_1a8c26ba2ee4c3653c6082a6ceec345f8a" kind="typedef"><name>feature_track_list</name></member>
+    <member refid="class_feature_tracker_1a195dd5e3ad4de16ad308a286b3cad686" kind="variable"><name>frame_number_</name></member>
+    <member refid="class_feature_tracker_1a05a821be736f56ca4b7cc843cd8fa749" kind="variable"><name>detector_</name></member>
+    <member refid="class_feature_tracker_1a4b2e2783b8e4af24c0852d56352e0d21" kind="variable"><name>extractor_</name></member>
+    <member refid="class_feature_tracker_1a82e990668ae9d8638d952dee0b50aebf" kind="variable"><name>matcher_</name></member>
+    <member refid="class_feature_tracker_1a4de6e5cba3b7fb183c25372224c3d756" kind="variable"><name>previous_frame_features_</name></member>
+    <member refid="class_feature_tracker_1a8c28706f74ecbee7a3631fae638997e0" kind="function"><name>FeatureTracker</name></member>
+    <member refid="class_feature_tracker_1a1d44cc6cd06ced4f321d2ecebfd7b069" kind="function"><name>processImage</name></member>
+    <member refid="class_feature_tracker_1ad9e7dee562f7f6c4ec8db2737c80d268" kind="function"><name>computeDistanceLimitForMatch</name></member>
+    <member refid="class_feature_tracker_1ad8132a92654790b056c446b45d7b83f0" kind="function"><name>drawStats</name></member>
+    <member refid="class_feature_tracker_1a000b9142d84d2ca0d7137382cd44cb3f" kind="function"><name>markOutOfViewFeatures</name></member>
+    <member refid="class_feature_tracker_1a4ee2e5f60e9ba9aed83820d5efa2e563" kind="function"><name>createNewFeatureTracks</name></member>
+  </compound>
+  <compound refid="class_filter" kind="class"><name>Filter</name>
+    <member refid="class_filter_1a5ce5416c310a3d0cc10b009e8c9cb710" kind="variable"><name>calibration_</name></member>
+    <member refid="class_filter_1abedd76a53f3f4d1f2d9b97bc388b71b4" kind="variable"><name>global_gravity_</name></member>
+    <member refid="class_filter_1a223764530b5dc708c3ff099d0f20d2b3" kind="variable"><name>filter_state_</name></member>
+    <member refid="class_filter_1a60c590488c3aab36a4d8d3d881e9a6fb" kind="variable"><name>filter_covar_</name></member>
+    <member refid="class_filter_1af53d4ab1a01feab4ffeafb919aa31836" kind="variable"><name>features_tracked_</name></member>
+    <member refid="class_filter_1a8c60c70e6bc3d329d1423c295e42f722" kind="variable"><name>feature_tracker_</name></member>
+    <member refid="class_filter_1ac00d9ce620e60b2c8b26ca9cad7e1b39" kind="function"><name>Filter</name></member>
+    <member refid="class_filter_1a5742b1247b9f92a9148d99386cdd3876" kind="function"><name>initialize</name></member>
+    <member refid="class_filter_1a27176eb65976f98cdc9495b4fdfc3296" kind="function"><name>stepInertial</name></member>
+    <member refid="class_filter_1a1fad49c62892905f713de0bf66d9f3c7" kind="function"><name>stepCamera</name></member>
+    <member refid="class_filter_1a3ed7acd6fff45ead8b4209d4e31a8097" kind="function"><name>propagateRotation</name></member>
+    <member refid="class_filter_1a778f444068abe887fd58e02f00be6121" kind="function"><name>propagateVelocityAndPosition</name></member>
+    <member refid="class_filter_1ad046b83209a1f03d65ac75f16b538546" kind="function"><name>setGlobalGravity</name></member>
+    <member refid="class_filter_1aeeb0c2e971a47c73c2f950aa8890f1ac" kind="function"><name>getGlobalGravity</name></member>
+    <member refid="class_filter_1a936ea0f9f4f587d0cd9bc26a4a73df34" kind="function"><name>getCurrentPosition</name></member>
+    <member refid="class_filter_1a7094e57e502a4fc7f124f0d1184eb133" kind="function"><name>getCurrentAttitude</name></member>
+    <member refid="class_filter_1a1c7a33a737fafec46d6e98ec1be37a4c" kind="function"><name>getImageCaptureTime</name></member>
+    <member refid="class_filter_1a69db72432ea7cd0ce7ba2499a5bb0c7d" kind="function"><name>initializeBodyFrame</name></member>
+    <member refid="class_filter_1a314f3e0a340741cb8201a8ae8d53ed28" kind="function"><name>initializeImuCalibration</name></member>
+    <member refid="class_filter_1ab0db3877232b9fa66f5dd8ebe4385234" kind="function"><name>initializeCameraCalibration</name></member>
+    <member refid="class_filter_1ab326892073289dc55496876cf56e64ee" kind="function"><name>initializeBodyPoses</name></member>
+    <member refid="class_filter_1a7c142cfe493dbfdc445f3c5b02b60ccc" kind="function"><name>augment</name></member>
+    <member refid="class_filter_1a5a67d5f280f4ddd173dff97fb65ae079" kind="function"><name>vectorizeMatrix</name></member>
+    <member refid="class_filter_1a35ead90b530777757cabfd503f608844" kind="function"><name>unvectorizeMatrix</name></member>
+    <member refid="class_filter_1a06bea04b55f4483660aa3bd5f4c13619" kind="function"><name>omegaMatrix</name></member>
+    <member refid="class_filter_1a0df9593448ac278363c61fe64e739e3d" kind="function"><name>crossMatrix</name></member>
+  </compound>
+  <compound refid="class_filter_state" kind="class"><name>FilterState</name>
+    <member refid="class_filter_state_1a26539bef949b11d11deb68ab8fba5598" kind="typedef"><name>StateType</name></member>
+    <member refid="class_filter_state_1a99125bb35efc27cdef7b0301fbe3f1e2" kind="variable"><name>state_</name></member>
+    <member refid="class_filter_state_1a53c85f641be38d478116965289636003" kind="variable"><name>rotation_to_this_frame_</name></member>
+    <member refid="class_filter_state_1a2ed6fb431a10be370860f4d613eb1bb6" kind="variable"><name>rotation_estimate_</name></member>
+    <member refid="class_filter_state_1a7bf9ec3f4726859b9fbdffceee517ad2" kind="variable"><name>acceleration_estimate_</name></member>
+    <member refid="class_filter_state_1a629c50bfbab55caef2f0d1e0262481b4" kind="variable"><name>poses_</name></member>
+    <member refid="class_filter_state_1a549088ec74cb2262e397b929abc174d2" kind="function"><name>getRotationBlock</name></member>
+    <member refid="class_filter_state_1a5f61beb08bf43811cebea645c80949ac" kind="function"><name>getRotationQuaternion</name></member>
+    <member refid="class_filter_state_1ab2a6e477d01da9521267781a73757838" kind="function"><name>setRotationQuaternion</name></member>
+    <member refid="class_filter_state_1af2dd9af9a0722a05cbc59981cf40aead" kind="function"><name>getPositionBlock</name></member>
+    <member refid="class_filter_state_1a239c2732f1a3d647c21b96f5d53dd215" kind="function"><name>getVelocityBlock</name></member>
+    <member refid="class_filter_state_1a43b485d8c02d6eb8e37cd8f2323e9e43" kind="function"><name>getAccelerometerBiasBlock</name></member>
+    <member refid="class_filter_state_1a8bb562801b8b34026dad74bd4223c06e" kind="function"><name>getGyroscopeBiasBlock</name></member>
+    <member refid="class_filter_state_1a8686bb8e54e2e9902c28095f8c623745" kind="function"><name>getGyroscopeShapeVectorizedBlock</name></member>
+    <member refid="class_filter_state_1a1ab46a729807178faf9b6bebb87aa791" kind="function"><name>getGSensitivityVectorizedBlock</name></member>
+    <member refid="class_filter_state_1a57cb64b2b25132c2da38b0313da415c5" kind="function"><name>getAccelerometerShapeVectorizedBlock</name></member>
+    <member refid="class_filter_state_1a844855f0fa5ebf0c606a06ea6fdb460b" kind="function"><name>getCameraToBodyOffsetBlock</name></member>
+    <member refid="class_filter_state_1a3b65a9649366c853ffd99784fe9bef72" kind="function"><name>getFocalLengthXRef</name></member>
+    <member refid="class_filter_state_1aed71d6cec7d8a101ba10b83f969d28d4" kind="function"><name>getFocalLengthYRef</name></member>
+    <member refid="class_filter_state_1a3fc41a17c48851340acbfdfc9c164f01" kind="function"><name>getOpticalCenterXRef</name></member>
+    <member refid="class_filter_state_1a7ddf9eca9ab6cad9bee85ee6cfc80de0" kind="function"><name>getOpticalCenterYRef</name></member>
+    <member refid="class_filter_state_1aa326b846da2b55623e4d219d357e6b57" kind="function"><name>getRadialDistortionParametersBlock</name></member>
+    <member refid="class_filter_state_1ad4b9c49509f2cc303c554969a8264c89" kind="function"><name>getTangentialDistortionParametersBlock</name></member>
+    <member refid="class_filter_state_1a6563a73bad1016317018c85d53380962" kind="function"><name>getCameraDelayTimeRef</name></member>
+    <member refid="class_filter_state_1ab9d3e7cad1ae09ed35bcc528c0e8ef45" kind="function"><name>getCameraReadoutTimeRef</name></member>
+    <member refid="class_filter_state_1a928bd10a77b39859d6f108f8dd8ae0e9" kind="function"><name>getRotationEstimateBlock</name></member>
+    <member refid="class_filter_state_1a4436166f7dbaf6c002b6fc2832b4f136" kind="function"><name>getAccelerationEstimateBlock</name></member>
+    <member refid="class_filter_state_1ab3d02580cdbd89bc64276467d7c1c854" kind="function"><name>getRotationToThisFrame</name></member>
+    <member refid="class_filter_state_1ae820e97a5a74c7765780bc7bb223796b" kind="function"><name>setRotationToThisFrame</name></member>
+    <member refid="class_filter_state_1aed4aab3a5133d37924bc5c1284b6cb66" kind="function"><name>uglyPrint</name></member>
+    <member refid="class_filter_state_1af33cfbc67284846e3ca9c26a79c227a9" kind="function"><name>deriveNewStateForImuPropagation</name></member>
+    <member refid="class_filter_state_1a9fdc71df11cf72369b86be2eaffcea27" kind="function"><name>appendCameraPose</name></member>
+  </compound>
+  <compound refid="class_frame_features" kind="class"><name>FrameFeatures</name>
+    <member refid="class_frame_features_1a5ed94b174a59b9aa93299c3b5ce355e4" kind="variable"><name>keypoints_</name></member>
+    <member refid="class_frame_features_1adec4eebbbf23dc00c8420c0f9b94ab42" kind="variable"><name>descriptors_</name></member>
+    <member refid="class_frame_features_1a5942b53a2e105a82e6454cd259157aa0" kind="function"><name>fromImage</name></member>
+    <member refid="class_frame_features_1a6977a4effbe856ff8583f4352cd138b8" kind="function"><name>match</name></member>
+    <member refid="class_frame_features_1ae36e05c015c5980fb0801fc0b6ee97ca" kind="function"><name>drawFeatures</name></member>
+    <member refid="class_frame_features_1aff3c47e301fde7db68ecac5d852c6edf" kind="function"><name>keypoints</name></member>
+    <member refid="class_frame_features_1a29b51fc67b07fe6e5b9236a092d1e17a" kind="function"><name>keypoints</name></member>
+    <member refid="class_frame_features_1ad4b7642d5127163fbf02ee23945d3123" kind="function"><name>detectKeypoints</name></member>
+    <member refid="class_frame_features_1a609ebf1d8a00b77cacec9876576cf13a" kind="function"><name>computeDescriptors</name></member>
+    <member refid="class_frame_features_1a13014d394e80327f5643fb21853398f1" kind="function"><name>toGray</name></member>
+  </compound>
+  <compound refid="class_general_exception" kind="class"><name>GeneralException</name>
+    <member refid="class_general_exception_1affaa2eb9e867013039dc47b047b69ebd" kind="variable"><name>msg_</name></member>
+    <member refid="class_general_exception_1ae9a9599d82aa29bef098dbb594e2f13e" kind="function"><name>GeneralException</name></member>
+    <member refid="class_general_exception_1ab6bb7c8ae3ab248e082d7fbf3f4a2cf3" kind="function"><name>GeneralException</name></member>
+    <member refid="class_general_exception_1a1d8d27063e77fe4658daa8279d0af52c" kind="function"><name>what</name></member>
+    <member refid="class_general_exception_1a28131a7d253ed732cce2127435475c61" kind="function"><name>~GeneralException</name></member>
+  </compound>
+  <compound refid="class_impossible_exception" kind="class"><name>ImpossibleException</name>
+    <member refid="class_impossible_exception_1a25263d7b6cb8395f7a1362e248e979c5" kind="variable"><name>msg_</name></member>
+    <member refid="class_impossible_exception_1a88afecc506123920b1bcd8f8b1bc612d" kind="function"><name>ImpossibleException</name></member>
+    <member refid="class_impossible_exception_1a3368d553e27e69451266f56bc37e9a86" kind="function"><name>what</name></member>
+    <member refid="class_impossible_exception_1a2c7f4df42eafdab7b10dee81add4bf28" kind="function"><name>~ImpossibleException</name></member>
+  </compound>
+  <compound refid="class_imu_buffer" kind="class"><name>ImuBuffer</name>
+    <member refid="class_imu_buffer_1aa8931d3647c6bf3c646e0bf876e7d396" kind="variable"><name>device_</name></member>
+    <member refid="class_imu_buffer_1aa7b8f1c6e22cb3ffcebfeb31422af6d1" kind="variable"><name>size_</name></member>
+    <member refid="class_imu_buffer_1ab083a806a0b4a0226fb8411396feaa96" kind="variable"><name>cur_pos_</name></member>
+    <member refid="class_imu_buffer_1a512078d422f2a15eef365dff726c0d04" kind="variable"><name>items_</name></member>
+    <member refid="class_imu_buffer_1a50dd06412b4e7f3f041ae6ab6fa680b0" kind="function"><name>ImuBuffer</name></member>
+    <member refid="class_imu_buffer_1a03aff5b4ab113232a3fa032115249018" kind="function"><name>addMeasurement</name></member>
+    <member refid="class_imu_buffer_1a70e3b571c1ff9c9e2ca60c8dfd1eee1c" kind="function"><name>interpolateAtTime</name></member>
+    <member refid="class_imu_buffer_1a3c23315625f26a5673b814f513c1bc98" kind="function"><name>getMinTime</name></member>
+    <member refid="class_imu_buffer_1aa3f3a11dc21d97386b3154122cb8e296" kind="function"><name>getMaxTime</name></member>
+    <member refid="class_imu_buffer_1a4500c72f04ac02e629e77762953c6abc" kind="function"><name>isReady</name></member>
+  </compound>
+  <compound refid="class_imu_feed" kind="class"><name>ImuFeed</name>
+    <member refid="class_imu_feed_1a55500761d6d1640c8d72283efb8deb74" kind="variable"><name>current_item_</name></member>
+    <member refid="class_imu_feed_1a36bba19161cda384418f8e6fc28bb3de" kind="variable"><name>items_</name></member>
+    <member refid="class_imu_feed_1a5ab48b9002ee9eacfe760afc579e1b50" kind="function"><name>hasNext</name></member>
+    <member refid="class_imu_feed_1ab36b0a9833d5687820065483818de270" kind="function"><name>next</name></member>
+    <member refid="class_imu_feed_1a48e5bf07fb20dc5f55e3078b6c57adc2" kind="function"><name>top</name></member>
+    <member refid="class_imu_feed_1a65c5b70f27e938f6a13bd55fd0bb5127" kind="function"><name>fromDataset</name></member>
+    <member refid="class_imu_feed_1a390e91c7586c3581e04f33a4aefed66c" kind="function"><name>loadFile</name></member>
+  </compound>
+  <compound refid="class_imu_item" kind="class"><name>ImuItem</name>
+    <member refid="class_imu_item_1affcdaeabb9b33248d9efdf687f2eab5c" kind="friend"><name>ImuBuffer</name></member>
+    <member refid="class_imu_item_1a1297a2b71891496d3de357d11bb69d8d" kind="variable"><name>device_</name></member>
+    <member refid="class_imu_item_1a4a3cf6964810f579f70467f5350f0222" kind="variable"><name>time_</name></member>
+    <member refid="class_imu_item_1a0df3d67d823f333a0eea8a2673f64cdf" kind="variable"><name>data_</name></member>
+    <member refid="class_imu_item_1af127ca299205f31693ed6a85330bf915" kind="function"><name>fromString</name></member>
+    <member refid="class_imu_item_1a0a28edeccaf5f42fabf05e76c5c46519" kind="function"><name>fromVector3d</name></member>
+    <member refid="class_imu_item_1ac12a9c7f77a7318de5893a26284c8f12" kind="function"><name>getDevice</name></member>
+    <member refid="class_imu_item_1adf0603391765e4950651ee67fe2273b7" kind="function"><name>getTime</name></member>
+    <member refid="class_imu_item_1a9fe54cf71ea23dc3f044bf849a50743b" kind="function"><name>getX</name></member>
+    <member refid="class_imu_item_1af969726f713eb67b6b544133bea5fd21" kind="function"><name>getY</name></member>
+    <member refid="class_imu_item_1af010fd2fd5ecd5868764a760f6040af5" kind="function"><name>getZ</name></member>
+    <member refid="class_imu_item_1a1cd4668ce368cb3b8360f42a1ab97580" kind="function"><name>getVector</name></member>
+  </compound>
+  <compound refid="class_navigator" kind="class"><name>Navigator</name>
+    <member refid="class_navigator_1ae92bfd56f6030f8ed1fa8fcdb3e45f7a" kind="variable"><name>options_description_</name></member>
+    <member refid="class_navigator_1a4897258895f7bbb7ef040d4bdda4c762" kind="variable"><name>vmap_</name></member>
+    <member refid="class_navigator_1a614e53f6cf6859608b14057272003cea" kind="function"><name>run</name></member>
+    <member refid="class_navigator_1ad3dc73ff6148e6c3c6f696577f495391" kind="function"><name>parseOptions</name></member>
+    <member refid="class_navigator_1ae02f8096eaa90c51330b700c9c036868" kind="function"><name>printHelp</name></member>
+  </compound>
+  <compound refid="class_tonav" kind="class"><name>Tonav</name>
+    <member refid="class_tonav_1ac5d9d1b74ca8bf3af35b06a591576188" kind="variable"><name>initial_delay_</name></member>
+    <member refid="class_tonav_1a0ad5267968fc08071f1f23f39ff90a26" kind="variable"><name>filter_</name></member>
+    <member refid="class_tonav_1a492a3ada76bc0a8c79024d9901b16e7a" kind="variable"><name>has_global_gravity_set_</name></member>
+    <member refid="class_tonav_1a53c6c1b075b45f4a02c7d90f451bcd81" kind="variable"><name>last_image_capture_time_</name></member>
+    <member refid="class_tonav_1a85e1dcbb05b40fc59a30ba27f6853fc0" kind="variable"><name>last_image_</name></member>
+    <member refid="class_tonav_1a3e587c752f9ea457cd5d077c9bc1e336" kind="variable"><name>last_update_time_</name></member>
+    <member refid="class_tonav_1aa30d01a89c09cfae84aa82225e953384" kind="variable"><name>filter_was_updated_</name></member>
+    <member refid="class_tonav_1aab1e1b589665b61f3017d8f2d2f3fa3b" kind="variable"><name>accel_buffer_</name></member>
+    <member refid="class_tonav_1ac9203e6d53b20839b120e8ce97e7b6ea" kind="variable"><name>gyro_buffer_</name></member>
+    <member refid="class_tonav_1a0c3d527cc8ec6832d4ea650ad31c726a" kind="function"><name>Tonav</name></member>
+    <member refid="class_tonav_1ac458c8712b1eeef1ba169835706d26fd" kind="function"><name>updateAcceleration</name></member>
+    <member refid="class_tonav_1a02a596cd5acf1799830499dd97e5e2e5" kind="function"><name>updateRotationRate</name></member>
+    <member refid="class_tonav_1ac7c7cdaa16941df03aca92a3eaa75ed7" kind="function"><name>updateAccelerationAndRotationRate</name></member>
+    <member refid="class_tonav_1a765f593b621a40052a01b7d0449d9b8e" kind="function"><name>updateImage</name></member>
+    <member refid="class_tonav_1a53fddfad248ab9a75906e310266e1f0d" kind="function"><name>setCameraModelParams</name></member>
+    <member refid="class_tonav_1a6cd97922b947734bca02119a60135c30" kind="function"><name>filterWasUpdated</name></member>
+    <member refid="class_tonav_1a724c0d36fb1f182023831f70fa166e55" kind="function"><name>getCurrentOrientation</name></member>
+    <member refid="class_tonav_1a4717848cb42b3311e19d656de940bc65" kind="function"><name>getCurrentPosition</name></member>
+    <member refid="class_tonav_1a3929b594397489b232e77e4344c8675a" kind="function"><name>getCurrentImage</name></member>
+    <member refid="class_tonav_1a396f2f4c5b53e742156d7e7a080eb176" kind="function"><name>checkGlobalGravity</name></member>
+    <member refid="class_tonav_1a53d772b2f935be79b9faa05747e88b00" kind="function"><name>getMaxAccelerometerTime</name></member>
+    <member refid="class_tonav_1a99e9d162f55e27b404451164a939b787" kind="function"><name>getMaxGyroscopeTime</name></member>
+    <member refid="class_tonav_1a98518b9c4feeefa13fde82e5ed1a1398" kind="function"><name>initialize</name></member>
+    <member refid="class_tonav_1a3b3836ac2a2cf345ab6bcf396907a044" kind="function"><name>initializeGlobalGravity</name></member>
+    <member refid="class_tonav_1a0d6ce231d4c99c00663df22d786bc95c" kind="function"><name>initializeLastUpdateTime</name></member>
+    <member refid="class_tonav_1ade1172c34aa02eb74aa6f9853a959165" kind="function"><name>updateAccelerationImpl</name></member>
+    <member refid="class_tonav_1afe432d3975844875d514ae3c0cfe8693" kind="function"><name>updateRotationRateImpl</name></member>
+    <member refid="class_tonav_1a241dcda5dc09ddd1d9fa8a247e37f39f" kind="function"><name>performUpdateIfPossible</name></member>
+    <member refid="class_tonav_1a6d7ba76b933a3ab606476010b97bd9c9" kind="function"><name>performUpdate</name></member>
+    <member refid="class_tonav_1a4cbe91ddd8bd4fb6dc624cd2e45e7ab2" kind="function"><name>interpolate</name></member>
+  </compound>
+  <compound refid="class_tonav_ros" kind="class"><name>TonavRos</name>
+    <member refid="class_tonav_ros_1a7b4b8e04ff5d67e41ed8b08ac8e50863" kind="variable"><name>tonav_</name></member>
+    <member refid="class_tonav_ros_1a76e3cd1dca6ce525a26685a4a8544568" kind="variable"><name>time_beginning_</name></member>
+    <member refid="class_tonav_ros_1ac39c85415ba939d34232811f896b9fec" kind="variable"><name>options_description_</name></member>
+    <member refid="class_tonav_ros_1a79ac1f10c2e8d5686a32f38c7d9cca3b" kind="variable"><name>variables_map_</name></member>
+    <member refid="class_tonav_ros_1a71577bac5e42f5d724363a8331e165d8" kind="variable"><name>current_camera_matrix_</name></member>
+    <member refid="class_tonav_ros_1a23afa1843cb47c4184e8852d0fca9ff2" kind="variable"><name>current_distirtion_params_</name></member>
+    <member refid="class_tonav_ros_1a65a77856804ae4221d70f2658e3d3ac8" kind="variable"><name>image_publisher_</name></member>
+    <member refid="class_tonav_ros_1a9db897aa58b7c98fc400296eb679ceda" kind="variable"><name>tf_broadcaster_</name></member>
+    <member refid="class_tonav_ros_1a7ffb90f8f4462153f8fd9acd71eee657" kind="function"><name>TonavRos</name></member>
+    <member refid="class_tonav_ros_1aa64cf50545f6cf41c538679703809724" kind="function"><name>run</name></member>
+    <member refid="class_tonav_ros_1a6c58d39b58f9a115ed318fc52bd62864" kind="function"><name>setAllowedOptionsDescription</name></member>
+    <member refid="class_tonav_ros_1a4881a19e6c59e6bd5249a3020897c80b" kind="function"><name>parseCommandLineParams</name></member>
+    <member refid="class_tonav_ros_1a611ddd325aa1d65d0a2ac3fa1bbb70e1" kind="function"><name>printHelp</name></member>
+    <member refid="class_tonav_ros_1ad2fa15e68589a4d7af04d74975926f33" kind="function"><name>cameraCallback</name></member>
+    <member refid="class_tonav_ros_1aaa0fe1c1aa4d0274d6850871e3f0b435" kind="function"><name>cameraInfoCallback</name></member>
+    <member refid="class_tonav_ros_1a938a2e3aa0a0c1607aa1d625a4106e5d" kind="function"><name>imuCallback</name></member>
+    <member refid="class_tonav_ros_1a5bf1305e6fd8dfad2b23f25a386a68bd" kind="function"><name>getMessageTime</name></member>
+    <member refid="class_tonav_ros_1a45c1f7b16e1a2ef47578440e4b5a6154" kind="function"><name>publishResults</name></member>
+  </compound>
+  <compound refid="namespacecv" kind="namespace"><name>cv</name>
+  </compound>
+  <compound refid="calibration_8h" kind="file"><name>calibration.h</name>
+  </compound>
+  <compound refid="camera__feed_8h" kind="file"><name>camera_feed.h</name>
+  </compound>
+  <compound refid="camera__item_8h" kind="file"><name>camera_item.h</name>
+  </compound>
+  <compound refid="camera__pose_8h" kind="file"><name>camera_pose.h</name>
+  </compound>
+  <compound refid="base__exception_8h" kind="file"><name>base_exception.h</name>
+  </compound>
+  <compound refid="calibration__file__error_8h" kind="file"><name>calibration_file_error.h</name>
+  </compound>
+  <compound refid="general__exception_8h" kind="file"><name>general_exception.h</name>
+  </compound>
+  <compound refid="impossible__exception_8h" kind="file"><name>impossible_exception.h</name>
+  </compound>
+  <compound refid="feature__track_8h" kind="file"><name>feature_track.h</name>
+  </compound>
+  <compound refid="feature__tracker_8h" kind="file"><name>feature_tracker.h</name>
+  </compound>
+  <compound refid="filter_8h" kind="file"><name>filter.h</name>
+  </compound>
+  <compound refid="filter__state_8h" kind="file"><name>filter_state.h</name>
+    <member refid="filter__state_8h_1a3a5a9d65998f784bb88e234dbcbbe4b2" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="frame__features_8h" kind="file"><name>frame_features.h</name>
+  </compound>
+  <compound refid="imu__buffer_8h" kind="file"><name>imu_buffer.h</name>
+  </compound>
+  <compound refid="imu__device_8h" kind="file"><name>imu_device.h</name>
+    <member refid="imu__device_8h_1aae40a1b17afde4519d066cb8e7fc372a" kind="enum"><name>ImuDevice</name></member>
+    <member refid="imu__device_8h_1aae40a1b17afde4519d066cb8e7fc372aa82ed934f0761e2ab416c8823945d9f19" kind="enumvalue"><name>ACCELEROMETER</name></member>
+    <member refid="imu__device_8h_1aae40a1b17afde4519d066cb8e7fc372aa47b665e001209866c06d6e85c68ddc28" kind="enumvalue"><name>GYROSCOPE</name></member>
+    <member refid="imu__device_8h_1a592d650b0d0d2c8dd4dd6d5f8383d4c7" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="imu__feed_8h" kind="file"><name>imu_feed.h</name>
+  </compound>
+  <compound refid="imu__item_8h" kind="file"><name>imu_item.h</name>
+  </compound>
+  <compound refid="navigator_8h" kind="file"><name>navigator.h</name>
+  </compound>
+  <compound refid="tonav_8h" kind="file"><name>tonav.h</name>
+  </compound>
+  <compound refid="tonav__ros_8h" kind="file"><name>tonav_ros.h</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="calibration_8cpp" kind="file"><name>calibration.cpp</name>
+  </compound>
+  <compound refid="camera__feed_8cpp" kind="file"><name>camera_feed.cpp</name>
+  </compound>
+  <compound refid="camera__item_8cpp" kind="file"><name>camera_item.cpp</name>
+  </compound>
+  <compound refid="camera__pose_8cpp" kind="file"><name>camera_pose.cpp</name>
+  </compound>
+  <compound refid="base__exception_8cpp" kind="file"><name>base_exception.cpp</name>
+  </compound>
+  <compound refid="calibration__file__error_8cpp" kind="file"><name>calibration_file_error.cpp</name>
+  </compound>
+  <compound refid="general__exception_8cpp" kind="file"><name>general_exception.cpp</name>
+  </compound>
+  <compound refid="impossible__exception_8cpp" kind="file"><name>impossible_exception.cpp</name>
+  </compound>
+  <compound refid="feature__track_8cpp" kind="file"><name>feature_track.cpp</name>
+  </compound>
+  <compound refid="feature__tracker_8cpp" kind="file"><name>feature_tracker.cpp</name>
+  </compound>
+  <compound refid="filter_8cpp" kind="file"><name>filter.cpp</name>
+  </compound>
+  <compound refid="filter__state_8cpp" kind="file"><name>filter_state.cpp</name>
+    <member refid="filter__state_8cpp_1a3a5a9d65998f784bb88e234dbcbbe4b2" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="frame__features_8cpp" kind="file"><name>frame_features.cpp</name>
+  </compound>
+  <compound refid="imu__buffer_8cpp" kind="file"><name>imu_buffer.cpp</name>
+  </compound>
+  <compound refid="imu__device_8cpp" kind="file"><name>imu_device.cpp</name>
+    <member refid="imu__device_8cpp_1a592d650b0d0d2c8dd4dd6d5f8383d4c7" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="imu__feed_8cpp" kind="file"><name>imu_feed.cpp</name>
+  </compound>
+  <compound refid="imu__item_8cpp" kind="file"><name>imu_item.cpp</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="navigator_8cpp" kind="file"><name>navigator.cpp</name>
+  </compound>
+  <compound refid="tonav_8cpp" kind="file"><name>tonav.cpp</name>
+  </compound>
+  <compound refid="tonav__ros_8cpp" kind="file"><name>tonav_ros.cpp</name>
+  </compound>
+  <compound refid="deprecated" kind="page"><name>deprecated</name>
+  </compound>
+  <compound refid="dir_119a2d13fe26bac1779c31c89e815d4b" kind="dir"><name>/home/tomaskrejci/catkin_ws/src/tonav/src/exceptions</name>
+  </compound>
+  <compound refid="dir_734c681b99cd729715879287ad712f3d" kind="dir"><name>/home/tomaskrejci/catkin_ws/src/tonav/include/exceptions</name>
+  </compound>
+  <compound refid="dir_f97762bdf8743f35312a8b7baffb065d" kind="dir"><name>/home/tomaskrejci/catkin_ws/src/tonav/include</name>
+  </compound>
+  <compound refid="dir_78904803ca055348b96ebbc46a36ff61" kind="dir"><name>/home/tomaskrejci/catkin_ws/src/tonav/src</name>
+  </compound>
+  <compound refid="dir_ba74edf55eb34ba7b231c772e05b8ff9" kind="dir"><name>/home/tomaskrejci/catkin_ws/src</name>
+  </compound>
+  <compound refid="dir_0b36b3fbd8326eeffd18fd9dd0cae780" kind="dir"><name>/home/tomaskrejci/catkin_ws/src/tonav</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

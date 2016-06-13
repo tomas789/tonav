@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_feature_tracker" kind="class" prot="public">
+    <compoundname>FeatureTracker</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_feature_tracker_1a8c26ba2ee4c3653c6082a6ceec345f8a" prot="public" static="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="class_feature_track" kindref="compound">FeatureTrack</ref> &gt;&gt;</type>
+        <definition>using FeatureTracker::feature_track_list =  std::vector&lt;std::shared_ptr&lt;FeatureTrack&gt;&gt;</definition>
+        <argsstring></argsstring>
+        <name>feature_track_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="17" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_feature_tracker_1a195dd5e3ad4de16ad308a286b3cad686" prot="private" static="no" mutable="no">
+        <type>std::size_t</type>
+        <definition>std::size_t FeatureTracker::frame_number_</definition>
+        <argsstring></argsstring>
+        <name>frame_number_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="23" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_feature_tracker_1a05a821be736f56ca4b7cc843cd8fa749" prot="private" static="no" mutable="no">
+        <type>cv::Ptr&lt; cv::FeatureDetector &gt;</type>
+        <definition>cv::Ptr&lt;cv::FeatureDetector&gt; FeatureTracker::detector_</definition>
+        <argsstring></argsstring>
+        <name>detector_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="24" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_feature_tracker_1a4b2e2783b8e4af24c0852d56352e0d21" prot="private" static="no" mutable="no">
+        <type>cv::Ptr&lt; cv::DescriptorExtractor &gt;</type>
+        <definition>cv::Ptr&lt;cv::DescriptorExtractor&gt; FeatureTracker::extractor_</definition>
+        <argsstring></argsstring>
+        <name>extractor_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_feature_tracker_1a82e990668ae9d8638d952dee0b50aebf" prot="private" static="no" mutable="no">
+        <type>cv::Ptr&lt; cv::DescriptorMatcher &gt;</type>
+        <definition>cv::Ptr&lt;cv::DescriptorMatcher&gt; FeatureTracker::matcher_</definition>
+        <argsstring></argsstring>
+        <name>matcher_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_feature_tracker_1a4de6e5cba3b7fb183c25372224c3d756" prot="private" static="no" mutable="no">
+        <type><ref refid="class_frame_features" kindref="compound">FrameFeatures</ref></type>
+        <definition>FrameFeatures FeatureTracker::previous_frame_features_</definition>
+        <argsstring></argsstring>
+        <name>previous_frame_features_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="27" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_feature_tracker_1a8c28706f74ecbee7a3631fae638997e0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FeatureTracker::FeatureTracker</definition>
+        <argsstring>()</argsstring>
+        <name>FeatureTracker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_tracker.cpp" bodystart="16" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_tracker_1a1d44cc6cd06ced4f321d2ecebfd7b069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>feature_track_list</type>
+        <definition>FeatureTracker::feature_track_list FeatureTracker::processImage</definition>
+        <argsstring>(feature_track_list &amp;previous_tracks, cv::Mat &amp;image)</argsstring>
+        <name>processImage</name>
+        <param>
+          <type>feature_track_list &amp;</type>
+          <declname>previous_tracks</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="20" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_tracker.cpp" bodystart="24" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_feature_tracker_1ad9e7dee562f7f6c4ec8db2737c80d268" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double FeatureTracker::computeDistanceLimitForMatch</definition>
+        <argsstring>(const std::vector&lt; cv::DMatch &gt; &amp;matches) const </argsstring>
+        <name>computeDistanceLimitForMatch</name>
+        <param>
+          <type>const std::vector&lt; cv::DMatch &gt; &amp;</type>
+          <declname>matches</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="29" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_tracker.cpp" bodystart="89" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_tracker_1ad8132a92654790b056c446b45d7b83f0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FeatureTracker::drawStats</definition>
+        <argsstring>(cv::Mat &amp;image, const std::vector&lt; double &gt; &amp;previous_features_matched, const std::vector&lt; bool &gt; &amp;current_features_matched, const feature_track_list &amp;current_tracks, const std::vector&lt; cv::DMatch &gt; &amp;matches) const </argsstring>
+        <name>drawStats</name>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; double &gt; &amp;</type>
+          <declname>previous_features_matched</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; bool &gt; &amp;</type>
+          <declname>current_features_matched</declname>
+        </param>
+        <param>
+          <type>const feature_track_list &amp;</type>
+          <declname>current_tracks</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; cv::DMatch &gt; &amp;</type>
+          <declname>matches</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="30" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_tracker.cpp" bodystart="106" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_tracker_1a000b9142d84d2ca0d7137382cd44cb3f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FeatureTracker::markOutOfViewFeatures</definition>
+        <argsstring>(std::vector&lt; double &gt; &amp;feature_matched, feature_track_list &amp;feature_tracks) const </argsstring>
+        <name>markOutOfViewFeatures</name>
+        <param>
+          <type>std::vector&lt; double &gt; &amp;</type>
+          <declname>feature_matched</declname>
+        </param>
+        <param>
+          <type>feature_track_list &amp;</type>
+          <declname>feature_tracks</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="33" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_tracker.cpp" bodystart="137" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_tracker_1a4ee2e5f60e9ba9aed83820d5efa2e563" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FeatureTracker::createNewFeatureTracks</definition>
+        <argsstring>(std::vector&lt; bool &gt; &amp;feature_matched, feature_track_list &amp;feature_tracks, const FrameFeatures &amp;frame_features) const </argsstring>
+        <name>createNewFeatureTracks</name>
+        <param>
+          <type>std::vector&lt; bool &gt; &amp;</type>
+          <declname>feature_matched</declname>
+        </param>
+        <param>
+          <type>feature_track_list &amp;</type>
+          <declname>feature_tracks</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_frame_features" kindref="compound">FrameFeatures</ref> &amp;</type>
+          <declname>frame_features</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="34" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/feature_tracker.cpp" bodystart="148" bodyend="159"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/feature_tracker.h" bodystart="15" bodyend="36"/>
+    <listofallmembers>
+      <member refid="class_feature_tracker_1ad9e7dee562f7f6c4ec8db2737c80d268" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>computeDistanceLimitForMatch</name></member>
+      <member refid="class_feature_tracker_1a4ee2e5f60e9ba9aed83820d5efa2e563" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>createNewFeatureTracks</name></member>
+      <member refid="class_feature_tracker_1a05a821be736f56ca4b7cc843cd8fa749" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>detector_</name></member>
+      <member refid="class_feature_tracker_1ad8132a92654790b056c446b45d7b83f0" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>drawStats</name></member>
+      <member refid="class_feature_tracker_1a4b2e2783b8e4af24c0852d56352e0d21" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>extractor_</name></member>
+      <member refid="class_feature_tracker_1a8c26ba2ee4c3653c6082a6ceec345f8a" prot="public" virt="non-virtual"><scope>FeatureTracker</scope><name>feature_track_list</name></member>
+      <member refid="class_feature_tracker_1a8c28706f74ecbee7a3631fae638997e0" prot="public" virt="non-virtual"><scope>FeatureTracker</scope><name>FeatureTracker</name></member>
+      <member refid="class_feature_tracker_1a195dd5e3ad4de16ad308a286b3cad686" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>frame_number_</name></member>
+      <member refid="class_feature_tracker_1a000b9142d84d2ca0d7137382cd44cb3f" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>markOutOfViewFeatures</name></member>
+      <member refid="class_feature_tracker_1a82e990668ae9d8638d952dee0b50aebf" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>matcher_</name></member>
+      <member refid="class_feature_tracker_1a4de6e5cba3b7fb183c25372224c3d756" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>previous_frame_features_</name></member>
+      <member refid="class_feature_tracker_1a1d44cc6cd06ced4f321d2ecebfd7b069" prot="public" virt="non-virtual"><scope>FeatureTracker</scope><name>processImage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

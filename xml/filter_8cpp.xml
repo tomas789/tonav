@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="filter_8cpp" kind="file">
+    <compoundname>filter.cpp</compoundname>
+    <includes refid="filter_8h" local="yes">filter.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">opencv2/core/core.hpp</includes>
+    <includes refid="calibration_8h" local="yes">calibration.h</includes>
+    <includes refid="filter__state_8h" local="yes">filter_state.h</includes>
+    <includes refid="imu__item_8h" local="yes">imu_item.h</includes>
+    <incdepgraph>
+      <node id="431">
+        <label>list</label>
+      </node>
+      <node id="433">
+        <label>limits</label>
+      </node>
+      <node id="438">
+        <label>frame_features.h</label>
+        <link refid="frame__features_8h_source"/>
+        <childnode refid="436" relation="include">
+        </childnode>
+        <childnode refid="437" relation="include">
+        </childnode>
+      </node>
+      <node id="439">
+        <label>feature_track.h</label>
+        <link refid="feature__track_8h_source"/>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="428" relation="include">
+        </childnode>
+      </node>
+      <node id="426">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="436">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="442">
+        <label>imu_item.h</label>
+        <link refid="imu__item_8h_source"/>
+        <childnode refid="427" relation="include">
+        </childnode>
+        <childnode refid="426" relation="include">
+        </childnode>
+        <childnode refid="441" relation="include">
+        </childnode>
+      </node>
+      <node id="427">
+        <label>string</label>
+      </node>
+      <node id="441">
+        <label>imu_device.h</label>
+        <link refid="imu__device_8h_source"/>
+        <childnode refid="430" relation="include">
+        </childnode>
+      </node>
+      <node id="437">
+        <label>opencv2/features2d/features2d.hpp</label>
+      </node>
+      <node id="423">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="429">
+        <label>filter_state.h</label>
+        <link refid="filter__state_8h_source"/>
+        <childnode refid="430" relation="include">
+        </childnode>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="431" relation="include">
+        </childnode>
+        <childnode refid="432" relation="include">
+        </childnode>
+      </node>
+      <node id="422">
+        <label>filter.h</label>
+        <link refid="filter_8h_source"/>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="434" relation="include">
+        </childnode>
+        <childnode refid="440" relation="include">
+        </childnode>
+      </node>
+      <node id="425">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="424">
+        <label>calibration.h</label>
+        <link refid="calibration_8h_source"/>
+        <childnode refid="425" relation="include">
+        </childnode>
+        <childnode refid="426" relation="include">
+        </childnode>
+        <childnode refid="427" relation="include">
+        </childnode>
+        <childnode refid="428" relation="include">
+        </childnode>
+      </node>
+      <node id="428">
+        <label>vector</label>
+      </node>
+      <node id="434">
+        <label>feature_tracker.h</label>
+        <link refid="feature__tracker_8h_source"/>
+        <childnode refid="435" relation="include">
+        </childnode>
+        <childnode refid="436" relation="include">
+        </childnode>
+        <childnode refid="437" relation="include">
+        </childnode>
+        <childnode refid="438" relation="include">
+        </childnode>
+        <childnode refid="439" relation="include">
+        </childnode>
+      </node>
+      <node id="430">
+        <label>iostream</label>
+      </node>
+      <node id="421">
+        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp</label>
+        <link refid="filter.cpp"/>
+        <childnode refid="422" relation="include">
+        </childnode>
+        <childnode refid="430" relation="include">
+        </childnode>
+        <childnode refid="436" relation="include">
+        </childnode>
+        <childnode refid="424" relation="include">
+        </childnode>
+        <childnode refid="429" relation="include">
+        </childnode>
+        <childnode refid="442" relation="include">
+        </childnode>
+      </node>
+      <node id="440">
+        <label>imu_buffer.h</label>
+        <link refid="imu__buffer_8h_source"/>
+        <childnode refid="428" relation="include">
+        </childnode>
+        <childnode refid="441" relation="include">
+        </childnode>
+        <childnode refid="442" relation="include">
+        </childnode>
+      </node>
+      <node id="432">
+        <label>camera_pose.h</label>
+        <link refid="camera__pose_8h_source"/>
+        <childnode refid="423" relation="include">
+        </childnode>
+        <childnode refid="433" relation="include">
+        </childnode>
+      </node>
+      <node id="435">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>Tomas<sp/>Krejci<sp/>on<sp/>5/12/16.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;filter.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/core/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;calibration.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;filter_state.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;imu_item.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">Filter::Filter(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_calibration" kindref="compound">Calibration</ref><sp/>&amp;calibration)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">:<sp/>calibration_(calibration)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::initialize()<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>initializeBodyFrame();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>initializeImuCalibration();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>initializeCameraCalibration();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>initializeBodyPoses();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getRotationEstimateBlock().setZero();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getAccelerationEstimateBlock().setZero();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>filter_state_<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_covar_.setIdentity();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::stepInertial(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timedelta,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;accel,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;gyro)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_filter_state" kindref="compound">FilterState</ref><sp/>new_state<sp/>=<sp/>filter_state_.deriveNewStateForImuPropagation();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_filter_state" kindref="compound">FilterState</ref>&amp;<sp/>old_state<sp/>=<sp/>filter_state_;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>propagateRotation(old_state,<sp/>new_state,<sp/>timedelta,<sp/>accel,<sp/>gyro);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>propagateVelocityAndPosition(old_state,<sp/>new_state,<sp/>timedelta,<sp/>accel,<sp/>gyro);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>old_state<sp/>=<sp/>new_state;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>std::cout<sp/>&lt;&lt;<sp/>filter_state_<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::stepCamera(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timedelta,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref>&amp;<sp/>accel,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref>&amp;<sp/>gyro,<sp/>cv::Mat<sp/>&amp;frame)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>augment();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>FeatureTracker::feature_track_list<sp/>current_features_tracked;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>current_features_tracked<sp/>=<sp/>feature_tracker_.processImage(features_tracked_,<sp/>frame);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>FeatureTracker::feature_track_list<sp/>out_of_view_features;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>features_tracked_.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(features_tracked_[i]-&gt;isOutOfView())<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>out_of_view_features.push_back(features_tracked_[i]);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>features_tracked_<sp/>=<sp/>current_features_tracked;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::propagateRotation(<ref refid="class_filter_state" kindref="compound">FilterState</ref><sp/>&amp;old_state,<sp/><ref refid="class_filter_state" kindref="compound">FilterState</ref><sp/>&amp;new_state,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timedelta,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;accel,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;gyro)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>rotation_measured;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>rotation_measured<sp/>&lt;&lt;<sp/>gyro.getX(),<sp/>gyro.getY(),<sp/>gyro.getZ();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>accel_measured;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>accel_measured<sp/>&lt;&lt;<sp/>accel.getX(),<sp/>accel.getY(),<sp/>accel.getZ();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>gyro_shape<sp/>=<sp/>unvectorizeMatrix(new_state.getGyroscopeShapeVectorizedBlock());</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>accel_shape<sp/>=<sp/>unvectorizeMatrix(new_state.getAccelerometerShapeVectorizedBlock());</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>g_sensitivity<sp/>=<sp/>unvectorizeMatrix(new_state.getGSensitivityVectorizedBlock());</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>accel_estimate<sp/>=<sp/>accel_shape.inverse()<sp/>*<sp/>(accel_measured<sp/>-<sp/>new_state.getAccelerometerBiasBlock());</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>rotation_estimate_new;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>rotation_estimate_new<sp/>=<sp/>gyro_shape.inverse()<sp/>*<sp/>(</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotation_measured<sp/>-<sp/>g_sensitivity*accel_estimate<sp/>-<sp/>new_state.getGyroscopeBiasBlock()</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>new_state.getRotationEstimateBlock()<sp/>=<sp/>rotation_estimate_new;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector4d<sp/>q0;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>q0<sp/>&lt;&lt;<sp/>0,<sp/>0,<sp/>0,<sp/>1;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector4d<sp/>k1<sp/>=<sp/>0.5<sp/>*<sp/>Filter::omegaMatrix(old_state.getRotationEstimateBlock())<sp/>*<sp/>q0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix4d<sp/>omega_mat_k2_k3<sp/>=<sp/>Filter::omegaMatrix(</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(old_state.getRotationEstimateBlock()<sp/>+<sp/>new_state.getRotationEstimateBlock())/<sp/>2</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector4d<sp/>k2<sp/>=<sp/>0.5<sp/>*<sp/>omega_mat_k2_k3<sp/>*<sp/>(q0<sp/>+<sp/>(timedelta/2.0)*k1);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector4d<sp/>k3<sp/>=<sp/>0.5<sp/>*<sp/>omega_mat_k2_k3<sp/>*<sp/>(q0<sp/>+<sp/>(timedelta/2.0)*k2);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector4d<sp/>k4<sp/>=<sp/>0.5<sp/>*<sp/>Filter::omegaMatrix(new_state.getRotationEstimateBlock())<sp/>*<sp/>(q0<sp/>+<sp/>timedelta*k3);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector4d<sp/>trans_to_new_frame_vec<sp/>=<sp/>q0<sp/>+<sp/>timedelta/6.0<sp/>*<sp/>(k1<sp/>+<sp/>2*k2<sp/>+<sp/>2*k3<sp/>+<sp/>k4);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>to_old_frame<sp/>=<sp/>old_state.getRotationQuaternion();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>trans_to_new_frame(</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trans_to_new_frame_vec(3,<sp/>0),<sp/>trans_to_new_frame_vec(0,<sp/>0),<sp/>trans_to_new_frame_vec(1,<sp/>0),</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trans_to_new_frame_vec(2,<sp/>0)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>trans_to_new_frame.normalize();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>new_state.setRotationToThisFrame(trans_to_new_frame);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>to_new_frame<sp/>=<sp/>trans_to_new_frame<sp/>*<sp/>to_old_frame;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>new_state.setRotationQuaternion(to_new_frame);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::propagateVelocityAndPosition(</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_filter_state" kindref="compound">FilterState</ref><sp/>&amp;old_state,<sp/><ref refid="class_filter_state" kindref="compound">FilterState</ref><sp/>&amp;new_state,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timedelta,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;accel,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;gyro)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>accelerometer_shape<sp/>=<sp/>Filter::unvectorizeMatrix(new_state.getAccelerometerShapeVectorizedBlock());</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>accelerometer_measurement;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>accelerometer_measurement<sp/>&lt;&lt;<sp/>accel.getX(),<sp/>accel.getY(),<sp/>accel.getZ();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>new_state.getAccelerationEstimateBlock()<sp/>=<sp/>accelerometer_shape.inverse()<sp/>*<sp/>(</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accelerometer_measurement<sp/>-<sp/>new_state.getAccelerometerBiasBlock()</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>rotation_backwards<sp/>=<sp/>new_state.getRotationToThisFrame().toRotationMatrix().transpose();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>s_estimate<sp/>=<sp/>timedelta/2.0<sp/>*<sp/>(</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotation_backwards*new_state.getAccelerationEstimateBlock()<sp/>+<sp/>old_state.getAccelerationEstimateBlock()</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>y_estimate<sp/>=<sp/>timedelta/2.0<sp/>*<sp/>s_estimate;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>rotation_from_body_to_global<sp/>=<sp/>old_state.getRotationQuaternion().toRotationMatrix().transpose();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>new_state.getVelocityBlock()<sp/>=</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>old_state.getVelocityBlock()<sp/>+<sp/>rotation_from_body_to_global<sp/>*<sp/>s_estimate<sp/>+<sp/>getGlobalGravity()*timedelta;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>new_state.getPositionBlock()<sp/>=</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>old_state.getPositionBlock()<sp/>+<sp/>old_state.getVelocityBlock()*timedelta<sp/>+</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotation_from_body_to_global*y_estimate<sp/>+<sp/>0.5<sp/>*<sp/>getGlobalGravity()*timedelta*timedelta;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="class_filter_1ad046b83209a1f03d65ac75f16b538546" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_filter_1ad046b83209a1f03d65ac75f16b538546" kindref="member">Filter::setGlobalGravity</ref>(Eigen::Vector3d<sp/>gravity)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>global_gravity_<sp/>=<sp/>gravity;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">Eigen::Vector3d<sp/>Filter::getGlobalGravity()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>global_gravity_;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">Eigen::Vector3d<sp/>Filter::getCurrentPosition()<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>filter_state_.getPositionBlock();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">Eigen::Quaterniond<sp/>Filter::getCurrentAttitude()<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>filter_state_.getRotationQuaternion();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="class_filter_1a1c7a33a737fafec46d6e98ec1be37a4c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_filter_1a1c7a33a737fafec46d6e98ec1be37a4c" kindref="member">Filter::getImageCaptureTime</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>arrive_time)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>arrive_time<sp/>+<sp/>filter_state_.getCameraDelayTimeRef();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::initializeBodyFrame()<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>initial_rotation<sp/>=<sp/>Eigen::Quaterniond::Identity();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getRotationBlock()<sp/>&lt;&lt;<sp/>initial_rotation.vec(),<sp/>initial_rotation.w();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getPositionBlock().setZero();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getVelocityBlock().setZero();</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getGyroscopeBiasBlock().setZero();</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getAccelerometerBiasBlock().setZero();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::initializeImuCalibration()<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>gyroscope_shape_vectorized<sp/>=<sp/>Filter::vectorizeMatrix(calibration_.getGyroscopeShapeMatrix());</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>g_senstivity_vectorized<sp/>=<sp/>Filter::vectorizeMatrix(calibration_.getGSensitivityMatrix());</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>accelerometer_shape_vectorized<sp/>=<sp/>Filter::vectorizeMatrix(calibration_.getAccelerometerShapeMatrix());</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getGyroscopeShapeVectorizedBlock()<sp/>=<sp/>gyroscope_shape_vectorized;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getGSensitivityVectorizedBlock()<sp/>=<sp/>g_senstivity_vectorized;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getAccelerometerShapeVectorizedBlock()<sp/>=<sp/>accelerometer_shape_vectorized;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::initializeCameraCalibration()<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getCameraToBodyOffsetBlock()<sp/>=<sp/>calibration_.getCameraToBodyOffset();</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getFocalLengthXRef()<sp/>=<sp/>calibration_.getFocalLengthX();</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getFocalLengthYRef()<sp/>=<sp/>calibration_.getFocalLengthY();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getOpticalCenterXRef()<sp/>=<sp/>calibration_.getOpticalCenterX();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getOpticalCenterYRef()<sp/>=<sp/>calibration_.getOpticalCenterY();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getRadialDistortionParametersBlock()<sp/>=<sp/>calibration_.getRadialDistortionParameters();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getTangentialDistortionParametersBlock()<sp/>=<sp/>calibration_.getTangentialDistortionParameters();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getCameraDelayTimeRef()<sp/>=<sp/>calibration_.getCameraDelayTime();</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getCameraReadoutTimeRef()<sp/>=<sp/>calibration_.getCameraReadoutTime();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::initializeBodyPoses()<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::augment()<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_camera_pose" kindref="compound">CameraPose</ref><sp/>pose;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal">Eigen::Matrix&lt;double,<sp/>9,<sp/>1&gt;<sp/>Filter::vectorizeMatrix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Matrix&lt;double,<sp/>3,<sp/>3&gt;<sp/>&amp;mat)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix&lt;double,<sp/>9,<sp/>1&gt;<sp/>vec;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>vec.block&lt;3,<sp/>1&gt;(0,<sp/>0)<sp/>=<sp/>mat.row(0);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>vec.block&lt;3,<sp/>1&gt;(3,<sp/>0)<sp/>=<sp/>mat.row(1);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>vec.block&lt;3,<sp/>1&gt;(6,<sp/>0)<sp/>=<sp/>mat.row(2);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vec;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">Eigen::Matrix&lt;double,<sp/>3,<sp/>3&gt;<sp/>Filter::unvectorizeMatrix(Eigen::Block&lt;FilterState::StateType,<sp/>9,<sp/>1&gt;<sp/>vec)<sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix&lt;double,<sp/>3,<sp/>3&gt;<sp/>mat;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>mat.row(0)<sp/>=<sp/>vec.block&lt;3,<sp/>1&gt;(0,<sp/>0);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>mat.row(1)<sp/>=<sp/>vec.block&lt;3,<sp/>1&gt;(3,<sp/>0);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>mat.row(2)<sp/>=<sp/>vec.block&lt;3,<sp/>1&gt;(6,<sp/>0);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mat;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal">Eigen::Matrix4d<sp/>Filter::omegaMatrix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3d<sp/>vec)<sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix4d<sp/>mat;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>mat.block&lt;3,<sp/>3&gt;(0,<sp/>0)<sp/>=<sp/>Filter::crossMatrix(-1*vec);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>mat.block&lt;1,<sp/>3&gt;(3,<sp/>0)<sp/>=<sp/>-1*(vec.transpose());</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>mat.block&lt;3,<sp/>1&gt;(0,<sp/>3)<sp/>=<sp/>vec;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>mat(3,<sp/>3)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mat;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal">Eigen::Matrix3d<sp/>Filter::crossMatrix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3d<sp/>vec)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>mat;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>mat<sp/>&lt;&lt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>-1*vec(2),<sp/><sp/><sp/><sp/>vec(1),</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec(2),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0,<sp/>-1*vec(0),</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1*vec(1),<sp/><sp/><sp/><sp/>vec(0),<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mat;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp"/>
+  </compounddef>
+</doxygen>

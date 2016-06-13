@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_camera_feed" kind="class" prot="public">
+    <compoundname>CameraFeed</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_camera_feed_1a217aec63b984207a40f460c3c99a66b4" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_camera_item" kindref="compound">CameraItem</ref> &gt;::iterator</type>
+        <definition>std::vector&lt;CameraItem&gt;::iterator CameraFeed::current_item_</definition>
+        <argsstring></argsstring>
+        <name>current_item_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="30" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_camera_feed_1acf108e2036fc37819f0fe6ace6e17e2d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_camera_item" kindref="compound">CameraItem</ref> &gt;</type>
+        <definition>std::vector&lt;CameraItem&gt; CameraFeed::items_</definition>
+        <argsstring></argsstring>
+        <name>items_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_camera_feed_1aaab6bb3a35f2dc18e6e70f91315b66a7" prot="private" static="no" mutable="no">
+        <type>boost::filesystem::path</type>
+        <definition>boost::filesystem::path CameraFeed::path_</definition>
+        <argsstring></argsstring>
+        <name>path_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="32" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_camera_feed_1a2d7c8c329802b64568b312675115efce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CameraFeed::hasNext</definition>
+        <argsstring>() const </argsstring>
+        <name>hasNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="20" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_feed_1a175a707efb56c2f3c78c2859129cbc24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CameraFeed::next</definition>
+        <argsstring>()</argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="21" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_feed_1ac703c1de71a7bf488f82921177ea4b0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="class_camera_item" kindref="compound">CameraItem</ref> &amp;</type>
+        <definition>const CameraItem &amp; CameraFeed::top</definition>
+        <argsstring>() const </argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="22" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="26" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_feed_1af761420a0337f52253b23c7d276516f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat CameraFeed::getImage</definition>
+        <argsstring>(const CameraItem &amp;item) const </argsstring>
+        <name>getImage</name>
+        <param>
+          <type>const <ref refid="class_camera_item" kindref="compound">CameraItem</ref> &amp;</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="24" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="62" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_camera_feed_1a38c0ad4632b39babdc99fc65ddc56c36" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_camera_feed" kindref="compound">CameraFeed</ref></type>
+        <definition>CameraFeed CameraFeed::fromDataset</definition>
+        <argsstring>(boost::filesystem::path path)</argsstring>
+        <name>fromDataset</name>
+        <param>
+          <type>boost::filesystem::path</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="33" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_camera_feed_1a81ba81dfe23ef727d19dfef4615a1334" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CameraFeed::loadFile</definition>
+        <argsstring>(boost::filesystem::path fpath)</argsstring>
+        <name>loadFile</name>
+        <param>
+          <type>boost::filesystem::path</type>
+          <declname>fpath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="28" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="40" bodyend="60"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" bodystart="18" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_camera_feed_1a217aec63b984207a40f460c3c99a66b4" prot="private" virt="non-virtual"><scope>CameraFeed</scope><name>current_item_</name></member>
+      <member refid="class_camera_feed_1a38c0ad4632b39babdc99fc65ddc56c36" prot="public" virt="non-virtual"><scope>CameraFeed</scope><name>fromDataset</name></member>
+      <member refid="class_camera_feed_1af761420a0337f52253b23c7d276516f8" prot="public" virt="non-virtual"><scope>CameraFeed</scope><name>getImage</name></member>
+      <member refid="class_camera_feed_1a2d7c8c329802b64568b312675115efce" prot="public" virt="non-virtual"><scope>CameraFeed</scope><name>hasNext</name></member>
+      <member refid="class_camera_feed_1acf108e2036fc37819f0fe6ace6e17e2d" prot="private" virt="non-virtual"><scope>CameraFeed</scope><name>items_</name></member>
+      <member refid="class_camera_feed_1a81ba81dfe23ef727d19dfef4615a1334" prot="private" virt="non-virtual"><scope>CameraFeed</scope><name>loadFile</name></member>
+      <member refid="class_camera_feed_1a175a707efb56c2f3c78c2859129cbc24" prot="public" virt="non-virtual"><scope>CameraFeed</scope><name>next</name></member>
+      <member refid="class_camera_feed_1aaab6bb3a35f2dc18e6e70f91315b66a7" prot="private" virt="non-virtual"><scope>CameraFeed</scope><name>path_</name></member>
+      <member refid="class_camera_feed_1ac703c1de71a7bf488f82921177ea4b0a" prot="public" virt="non-virtual"><scope>CameraFeed</scope><name>top</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_imu_feed" kind="class" prot="public">
+    <compoundname>ImuFeed</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_imu_feed_1a55500761d6d1640c8d72283efb8deb74" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &gt;::iterator</type>
+        <definition>std::vector&lt;ImuItem&gt;::iterator ImuFeed::current_item_</definition>
+        <argsstring></argsstring>
+        <name>current_item_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_imu_feed_1a36bba19161cda384418f8e6fc28bb3de" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &gt;</type>
+        <definition>std::vector&lt;ImuItem&gt; ImuFeed::items_</definition>
+        <argsstring></argsstring>
+        <name>items_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_imu_feed_1a5ab48b9002ee9eacfe760afc579e1b50" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ImuFeed::hasNext</definition>
+        <argsstring>() const </argsstring>
+        <name>hasNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_feed.cpp" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_imu_feed_1ab36b0a9833d5687820065483818de270" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ImuFeed::next</definition>
+        <argsstring>()</argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" line="17" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_feed.cpp" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_imu_feed_1a48e5bf07fb20dc5f55e3078b6c57adc2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &amp;</type>
+        <definition>const ImuItem &amp; ImuFeed::top</definition>
+        <argsstring>() const </argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_feed.cpp" bodystart="23" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_imu_feed_1a65c5b70f27e938f6a13bd55fd0bb5127" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_imu_feed" kindref="compound">ImuFeed</ref></type>
+        <definition>ImuFeed ImuFeed::fromDataset</definition>
+        <argsstring>(boost::filesystem::path path)</argsstring>
+        <name>fromDataset</name>
+        <param>
+          <type>boost::filesystem::path</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" line="20" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_feed.cpp" bodystart="30" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_imu_feed_1a390e91c7586c3581e04f33a4aefed66c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ImuFeed::loadFile</definition>
+        <argsstring>(boost::filesystem::path fpath)</argsstring>
+        <name>loadFile</name>
+        <param>
+          <type>boost::filesystem::path</type>
+          <declname>fpath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" line="23" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_feed.cpp" bodystart="36" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" line="14" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_feed.h" bodystart="14" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_imu_feed_1a55500761d6d1640c8d72283efb8deb74" prot="private" virt="non-virtual"><scope>ImuFeed</scope><name>current_item_</name></member>
+      <member refid="class_imu_feed_1a65c5b70f27e938f6a13bd55fd0bb5127" prot="public" virt="non-virtual"><scope>ImuFeed</scope><name>fromDataset</name></member>
+      <member refid="class_imu_feed_1a5ab48b9002ee9eacfe760afc579e1b50" prot="public" virt="non-virtual"><scope>ImuFeed</scope><name>hasNext</name></member>
+      <member refid="class_imu_feed_1a36bba19161cda384418f8e6fc28bb3de" prot="private" virt="non-virtual"><scope>ImuFeed</scope><name>items_</name></member>
+      <member refid="class_imu_feed_1a390e91c7586c3581e04f33a4aefed66c" prot="private" virt="non-virtual"><scope>ImuFeed</scope><name>loadFile</name></member>
+      <member refid="class_imu_feed_1ab36b0a9833d5687820065483818de270" prot="public" virt="non-virtual"><scope>ImuFeed</scope><name>next</name></member>
+      <member refid="class_imu_feed_1a48e5bf07fb20dc5f55e3078b6c57adc2" prot="public" virt="non-virtual"><scope>ImuFeed</scope><name>top</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
