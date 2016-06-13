@@ -20,8 +20,6 @@ git remote add upstream "https://$GH_TOKEN@github.com/tomas789/tonav.git"
 git fetch upstream
 git reset upstream/gh-pages
 
-echo "tonav-cname" > CNAME
-
 touch .
 
 git add -A .
