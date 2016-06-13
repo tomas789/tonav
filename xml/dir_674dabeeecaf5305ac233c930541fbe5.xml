@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_674dabeeecaf5305ac233c930541fbe5" kind="dir">
+    <compoundname>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport</compoundname>
+    <innerfile refid="camera__common_8h">camera_common.h</innerfile>
+    <innerfile refid="camera__publisher_8h">camera_publisher.h</innerfile>
+    <innerfile refid="camera__subscriber_8h">camera_subscriber.h</innerfile>
+    <innerfile refid="exception_8h">exception.h</innerfile>
+    <innerfile refid="image__transport_8h">image_transport.h</innerfile>
+    <innerfile refid="loader__fwds_8h">loader_fwds.h</innerfile>
+    <innerfile refid="publisher_8h">publisher.h</innerfile>
+    <innerfile refid="publisher__plugin_8h">publisher_plugin.h</innerfile>
+    <innerfile refid="raw__publisher_8h">raw_publisher.h</innerfile>
+    <innerfile refid="raw__subscriber_8h">raw_subscriber.h</innerfile>
+    <innerfile refid="simple__publisher__plugin_8h">simple_publisher_plugin.h</innerfile>
+    <innerfile refid="simple__subscriber__plugin_8h">simple_subscriber_plugin.h</innerfile>
+    <innerfile refid="single__subscriber__publisher_8h">single_subscriber_publisher.h</innerfile>
+    <innerfile refid="subscriber_8h">subscriber.h</innerfile>
+    <innerfile refid="subscriber__filter_8h">subscriber_filter.h</innerfile>
+    <innerfile refid="subscriber__plugin_8h">subscriber_plugin.h</innerfile>
+    <innerfile refid="transport__hints_8h">transport_hints.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/"/>
+  </compounddef>
+</doxygen>

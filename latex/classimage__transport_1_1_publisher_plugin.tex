@@ -1,0 +1,101 @@
+\hypertarget{classimage__transport_1_1_publisher_plugin}{\section{image\-\_\-transport\-:\-:Publisher\-Plugin Class Reference}
+\label{classimage__transport_1_1_publisher_plugin}\index{image\-\_\-transport\-::\-Publisher\-Plugin@{image\-\_\-transport\-::\-Publisher\-Plugin}}
+}
+
+
+Base class for plugins to \hyperlink{classimage__transport_1_1_publisher}{Publisher}.  
+
+
+
+
+{\ttfamily \#include $<$publisher\-\_\-plugin.\-h$>$}
+
+Inheritance diagram for image\-\_\-transport\-:\-:Publisher\-Plugin\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.545894cm]{classimage__transport_1_1_publisher_plugin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_abe0cd36dc3c170adb6aec8bc6d81d52e}{virtual std\-::string \hyperlink{classimage__transport_1_1_publisher_plugin_abe0cd36dc3c170adb6aec8bc6d81d52e}{get\-Transport\-Name} () const =0}\label{classimage__transport_1_1_publisher_plugin_abe0cd36dc3c170adb6aec8bc6d81d52e}
+
+\begin{DoxyCompactList}\small\item\em Get a string identifier for the transport provided by this plugin. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_aa79894b876115d4993fad934e200ad48}{void \hyperlink{classimage__transport_1_1_publisher_plugin_aa79894b876115d4993fad934e200ad48}{advertise} (ros\-::\-Node\-Handle \&nh, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, bool latch=true)}\label{classimage__transport_1_1_publisher_plugin_aa79894b876115d4993fad934e200ad48}
+
+\begin{DoxyCompactList}\small\item\em Advertise a topic, simple version. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_aa05d1be5ed987a1074b480ef9d6d93ea}{void \hyperlink{classimage__transport_1_1_publisher_plugin_aa05d1be5ed987a1074b480ef9d6d93ea}{advertise} (ros\-::\-Node\-Handle \&nh, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Subscriber\-Status\-Callback \&connect\-\_\-cb, const Subscriber\-Status\-Callback \&disconnect\-\_\-cb=Subscriber\-Status\-Callback(), const ros\-::\-Void\-Ptr \&tracked\-\_\-object=ros\-::\-Void\-Ptr(), bool latch=true)}\label{classimage__transport_1_1_publisher_plugin_aa05d1be5ed987a1074b480ef9d6d93ea}
+
+\begin{DoxyCompactList}\small\item\em Advertise a topic with subscriber status callbacks. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_a10afba12d403ba21536610fce596c856}{virtual uint32\-\_\-t \hyperlink{classimage__transport_1_1_publisher_plugin_a10afba12d403ba21536610fce596c856}{get\-Num\-Subscribers} () const =0}\label{classimage__transport_1_1_publisher_plugin_a10afba12d403ba21536610fce596c856}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of subscribers that are currently connected to this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_ac00807561a7e3406472273b85f1036e8}{virtual std\-::string \hyperlink{classimage__transport_1_1_publisher_plugin_ac00807561a7e3406472273b85f1036e8}{get\-Topic} () const =0}\label{classimage__transport_1_1_publisher_plugin_ac00807561a7e3406472273b85f1036e8}
+
+\begin{DoxyCompactList}\small\item\em Returns the communication topic that this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin} will publish on. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_a9c17e85717c5478011c944998d9f1bff}{virtual void \hyperlink{classimage__transport_1_1_publisher_plugin_a9c17e85717c5478011c944998d9f1bff}{publish} (const sensor\-\_\-msgs\-::\-Image \&message) const =0}\label{classimage__transport_1_1_publisher_plugin_a9c17e85717c5478011c944998d9f1bff}
+
+\begin{DoxyCompactList}\small\item\em Publish an image using the transport associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_a5ec0ad17a8f0ef7b966089c3b8f6ee60}{virtual void \hyperlink{classimage__transport_1_1_publisher_plugin_a5ec0ad17a8f0ef7b966089c3b8f6ee60}{publish} (const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&message) const }\label{classimage__transport_1_1_publisher_plugin_a5ec0ad17a8f0ef7b966089c3b8f6ee60}
+
+\begin{DoxyCompactList}\small\item\em Publish an image using the transport associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classimage__transport_1_1_publisher_plugin_add246a58e2cc57ceba3c957f52a95a6d}{publish} (const sensor\-\_\-msgs\-::\-Image \&message, const uint8\-\_\-t $\ast$data) const 
+\begin{DoxyCompactList}\small\item\em Publish an image using the transport associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. This version of the function can be used to optimize cases where you don't want to fill a R\-O\-S message first to avoid useless copies. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_aebf86857a6453919807061565f8837d2}{virtual void \hyperlink{classimage__transport_1_1_publisher_plugin_aebf86857a6453919807061565f8837d2}{shutdown} ()=0}\label{classimage__transport_1_1_publisher_plugin_aebf86857a6453919807061565f8837d2}
+
+\begin{DoxyCompactList}\small\item\em Shutdown any advertisements associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_ac509e7c5ce1a6ce07870968eb1e0a0e3}{static std\-::string \hyperlink{classimage__transport_1_1_publisher_plugin_ac509e7c5ce1a6ce07870968eb1e0a0e3}{get\-Lookup\-Name} (const std\-::string \&transport\-\_\-name)}\label{classimage__transport_1_1_publisher_plugin_ac509e7c5ce1a6ce07870968eb1e0a0e3}
+
+\begin{DoxyCompactList}\small\item\em Return the lookup name of the \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin} associated with a specific transport identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_publisher_plugin_ab6452043d8f51ed52638abf470aa4884}{virtual void \hyperlink{classimage__transport_1_1_publisher_plugin_ab6452043d8f51ed52638abf470aa4884}{advertise\-Impl} (ros\-::\-Node\-Handle \&nh, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Subscriber\-Status\-Callback \&connect\-\_\-cb, const Subscriber\-Status\-Callback \&disconnect\-\_\-cb, const ros\-::\-Void\-Ptr \&tracked\-\_\-object, bool latch)=0}\label{classimage__transport_1_1_publisher_plugin_ab6452043d8f51ed52638abf470aa4884}
+
+\begin{DoxyCompactList}\small\item\em Advertise a topic. Must be implemented by the subclass. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for plugins to \hyperlink{classimage__transport_1_1_publisher}{Publisher}. 
+
+Definition at line 47 of file publisher\-\_\-plugin.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_publisher_plugin_add246a58e2cc57ceba3c957f52a95a6d}{\index{image\-\_\-transport\-::\-Publisher\-Plugin@{image\-\_\-transport\-::\-Publisher\-Plugin}!publish@{publish}}
+\index{publish@{publish}!image_transport::PublisherPlugin@{image\-\_\-transport\-::\-Publisher\-Plugin}}
+\subsubsection[{publish}]{\setlength{\rightskip}{0pt plus 5cm}virtual void image\-\_\-transport\-::\-Publisher\-Plugin\-::publish (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Image \&}]{message, }
+\item[{const uint8\-\_\-t $\ast$}]{data}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classimage__transport_1_1_publisher_plugin_add246a58e2cc57ceba3c957f52a95a6d}
+
+
+Publish an image using the transport associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. This version of the function can be used to optimize cases where you don't want to fill a R\-O\-S message first to avoid useless copies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & an image message to use information from (but not data) \\
+\hline
+{\em data} & a pointer to the image data to use to fill the Image message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classimage__transport_1_1_raw_publisher_a62ee9d7dab3a361ad92c70a4df5d6416}{image\-\_\-transport\-::\-Raw\-Publisher}.
+
+
+
+Definition at line 110 of file publisher\-\_\-plugin.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/publisher\-\_\-plugin.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="structimage__transport_1_1_simple_publisher_plugin_1_1_simple_publisher_plugin_impl" kind="struct" prot="private">
+    <compoundname>image_transport::SimplePublisherPlugin::SimplePublisherPluginImpl</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structimage__transport_1_1_simple_publisher_plugin_1_1_simple_publisher_plugin_impl_1a93bcc747884d4b9303136be4daff4224" prot="public" static="no" mutable="no">
+        <type>const ros::NodeHandle</type>
+        <definition>const ros::NodeHandle image_transport::SimplePublisherPlugin&lt; M &gt;::SimplePublisherPluginImpl::param_nh_</definition>
+        <argsstring></argsstring>
+        <name>param_nh_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_publisher_plugin.h" line="173" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_publisher_plugin.h" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_simple_publisher_plugin_1_1_simple_publisher_plugin_impl_1a049e67530926126349c58b8a98283369" prot="public" static="no" mutable="no">
+        <type>ros::Publisher</type>
+        <definition>ros::Publisher image_transport::SimplePublisherPlugin&lt; M &gt;::SimplePublisherPluginImpl::pub_</definition>
+        <argsstring></argsstring>
+        <name>pub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_publisher_plugin.h" line="174" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_publisher_plugin.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structimage__transport_1_1_simple_publisher_plugin_1_1_simple_publisher_plugin_impl_1abc6b73ac696a6b0241b07a513e07c712" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::SimplePublisherPlugin&lt; M &gt;::SimplePublisherPluginImpl::SimplePublisherPluginImpl</definition>
+        <argsstring>(const ros::NodeHandle &amp;nh)</argsstring>
+        <name>SimplePublisherPluginImpl</name>
+        <param>
+          <type>const ros::NodeHandle &amp;</type>
+          <declname>nh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_publisher_plugin.h" line="168" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_publisher_plugin.h" bodystart="168" bodyend="171"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_publisher_plugin.h" line="167" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_publisher_plugin.h" bodystart="166" bodyend="175"/>
+    <listofallmembers>
+      <member refid="structimage__transport_1_1_simple_publisher_plugin_1_1_simple_publisher_plugin_impl_1a93bcc747884d4b9303136be4daff4224" prot="public" virt="non-virtual"><scope>image_transport::SimplePublisherPlugin::SimplePublisherPluginImpl</scope><name>param_nh_</name></member>
+      <member refid="structimage__transport_1_1_simple_publisher_plugin_1_1_simple_publisher_plugin_impl_1a049e67530926126349c58b8a98283369" prot="public" virt="non-virtual"><scope>image_transport::SimplePublisherPlugin::SimplePublisherPluginImpl</scope><name>pub_</name></member>
+      <member refid="structimage__transport_1_1_simple_publisher_plugin_1_1_simple_publisher_plugin_impl_1abc6b73ac696a6b0241b07a513e07c712" prot="public" virt="non-virtual"><scope>image_transport::SimplePublisherPlugin::SimplePublisherPluginImpl</scope><name>SimplePublisherPluginImpl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

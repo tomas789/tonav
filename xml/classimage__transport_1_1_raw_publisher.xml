@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_raw_publisher" kind="class" prot="public">
+    <compoundname>image_transport::RawPublisher</compoundname>
+    <basecompoundref refid="classimage__transport_1_1_simple_publisher_plugin" prot="public" virt="non-virtual">image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</basecompoundref>
+    <includes refid="raw__publisher_8h" local="no">raw_publisher.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_raw_publisher_1a1547259e0778b9018c15bd2f284eb556" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual image_transport::RawPublisher::~RawPublisher</definition>
+        <argsstring>()</argsstring>
+        <name>~RawPublisher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" line="51" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_raw_publisher_1adbb149bca794283f80db9df4c32f34dc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string image_transport::RawPublisher::getTransportName</definition>
+        <argsstring>() const </argsstring>
+        <name>getTransportName</name>
+        <reimplements refid="classimage__transport_1_1_publisher_plugin_1abe0cd36dc3c170adb6aec8bc6d81d52e">getTransportName</reimplements>
+        <briefdescription>
+<para>Get a string identifier for the transport provided by this plugin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" line="53" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_raw_publisher_1a567f1bc6ddaf5fc191fda71d4e5b4d22" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::RawPublisher::publish</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;message) const </argsstring>
+        <name>publish</name>
+        <reimplements refid="classimage__transport_1_1_publisher_plugin_1a5ec0ad17a8f0ef7b966089c3b8f6ee60">publish</reimplements>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Publish an image using the transport associated with this <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" line="60" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_raw_publisher_1a62ee9d7dab3a361ad92c70a4df5d6416" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::RawPublisher::publish</definition>
+        <argsstring>(const sensor_msgs::Image &amp;message, const uint8_t *data) const </argsstring>
+        <name>publish</name>
+        <reimplements refid="classimage__transport_1_1_publisher_plugin_1add246a58e2cc57ceba3c957f52a95a6d">publish</reimplements>
+        <param>
+          <type>const sensor_msgs::Image &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Publish an image using the transport associated with this <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. This version of the function can be used to optimize cases where you don&apos;t want to fill a ROS message first to avoid useless copies. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an image message to use information from (but not data) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the image data to use to fill the Image message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" line="66" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classimage__transport_1_1_raw_publisher_1a5d82f75d47a79f1df0be82165398e8fa" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::RawPublisher::publish</definition>
+        <argsstring>(const sensor_msgs::Image &amp;message, const PublishFn &amp;publish_fn) const </argsstring>
+        <name>publish</name>
+        <reimplements refid="classimage__transport_1_1_simple_publisher_plugin_1a193470dd32092d13e2284052d4fa359a">publish</reimplements>
+        <param>
+          <type>const sensor_msgs::Image &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_simple_publisher_plugin_1a01bd11cb3ee6b7ce6715a3b57feadf93" kindref="member">PublishFn</ref> &amp;</type>
+          <declname>publish_fn</declname>
+        </param>
+        <briefdescription>
+<para>Publish an image using the specified publish function. Must be implemented by the subclass. </para>        </briefdescription>
+        <detaileddescription>
+<para>The PublishFn publishes the transport-specific message type. This indirection allows <ref refid="classimage__transport_1_1_simple_subscriber_plugin" kindref="compound">SimpleSubscriberPlugin</ref> to use this function for both normal broadcast publishing and single subscriber publishing (in subscription callbacks). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" line="69" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" bodystart="69" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_raw_publisher_1a18a9e588fde64cffdf43a3cebba7b471" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string image_transport::RawPublisher::getTopicToAdvertise</definition>
+        <argsstring>(const std::string &amp;base_topic) const </argsstring>
+        <name>getTopicToAdvertise</name>
+        <reimplements refid="classimage__transport_1_1_simple_publisher_plugin_1a46df2b43de62c169d28ac510010d032f">getTopicToAdvertise</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <briefdescription>
+<para>Return the communication topic name for a given base topic. </para>        </briefdescription>
+        <detaileddescription>
+<para>Defaults to &lt;base topic&gt;/&lt;transport name&gt;. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" line="74" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" bodystart="74" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The default <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classimage__transport_1_1_raw_publisher" kindref="compound">RawPublisher</ref> is a simple wrapper for ros::Publisher, publishing unaltered Image messages on the base topic. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="91">
+        <label>image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</label>
+        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="93">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="92">
+        <label>image_transport::PublisherPlugin</label>
+        <link refid="classimage__transport_1_1_publisher_plugin"/>
+        <childnode refid="93" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>image_transport::RawPublisher</label>
+        <link refid="classimage__transport_1_1_raw_publisher"/>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="95">
+        <label>image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</label>
+        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="97">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="96">
+        <label>image_transport::PublisherPlugin</label>
+        <link refid="classimage__transport_1_1_publisher_plugin"/>
+        <childnode refid="97" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>image_transport::RawPublisher</label>
+        <link refid="classimage__transport_1_1_raw_publisher"/>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" line="49" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_publisher.h" bodystart="48" bodyend="78"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_publisher_plugin_1aa79894b876115d4993fad934e200ad48" prot="public" virt="non-virtual"><scope>image_transport::RawPublisher</scope><name>advertise</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1aa05d1be5ed987a1074b480ef9d6d93ea" prot="public" virt="non-virtual"><scope>image_transport::RawPublisher</scope><name>advertise</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1af9ca774ef9d18a9cf745c92762c00d91" prot="protected" virt="virtual"><scope>image_transport::RawPublisher</scope><name>advertiseImpl</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a4329bd192aa03ec8b44e52c6bbe91a11" prot="protected" virt="virtual"><scope>image_transport::RawPublisher</scope><name>connectCallback</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1ac02aac90a3a159c1450a298b63a37425" prot="protected" virt="virtual"><scope>image_transport::RawPublisher</scope><name>disconnectCallback</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1ac509e7c5ce1a6ce07870968eb1e0a0e3" prot="public" virt="non-virtual"><scope>image_transport::RawPublisher</scope><name>getLookupName</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a58697b43b16d32531b4f67a7c8709f20" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>getNumSubscribers</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a11ad943c96711dc4a797a2b577ae9ea3" prot="protected" virt="non-virtual"><scope>image_transport::RawPublisher</scope><name>getPublisher</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a24f9923dbde675f1693b1be252805918" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_raw_publisher_1a18a9e588fde64cffdf43a3cebba7b471" prot="protected" virt="virtual"><scope>image_transport::RawPublisher</scope><name>getTopicToAdvertise</name></member>
+      <member refid="classimage__transport_1_1_raw_publisher_1adbb149bca794283f80db9df4c32f34dc" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>getTransportName</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a5f73a993e871242e51671f3cf82d4e1b" prot="protected" virt="non-virtual"><scope>image_transport::RawPublisher</scope><name>nh</name></member>
+      <member refid="classimage__transport_1_1_raw_publisher_1a567f1bc6ddaf5fc191fda71d4e5b4d22" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_raw_publisher_1a62ee9d7dab3a361ad92c70a4df5d6416" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_raw_publisher_1a5d82f75d47a79f1df0be82165398e8fa" prot="protected" virt="virtual"><scope>image_transport::RawPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a409f2078d4aa3466e843404b88cfe101" prot="public" virt="virtual" ambiguityscope="SimplePublisherPlugin&lt; sensor_msgs::Image &gt;::"><scope>image_transport::RawPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a01bd11cb3ee6b7ce6715a3b57feadf93" prot="protected" virt="non-virtual"><scope>image_transport::RawPublisher</scope><name>PublishFn</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a62e2d4cce1756530fbf6a323b1a00c59" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>shutdown</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1ae5ad84df1be58ec15cd3cfd645d5097b" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>~PublisherPlugin</name></member>
+      <member refid="classimage__transport_1_1_raw_publisher_1a1547259e0778b9018c15bd2f284eb556" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>~RawPublisher</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a755bf0cb92fd491596736feae2c8c454" prot="public" virt="virtual"><scope>image_transport::RawPublisher</scope><name>~SimplePublisherPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

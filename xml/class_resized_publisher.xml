@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_resized_publisher" kind="class" prot="public">
+    <compoundname>ResizedPublisher</compoundname>
+    <basecompoundref refid="classimage__transport_1_1_simple_publisher_plugin" prot="public" virt="non-virtual">image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_resized_publisher_1a2282c668269cc359be3f1767fa31c1cc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string ResizedPublisher::getTransportName</definition>
+        <argsstring>() const </argsstring>
+        <name>getTransportName</name>
+        <reimplements refid="classimage__transport_1_1_publisher_plugin_1abe0cd36dc3c170adb6aec8bc6d81d52e">getTransportName</reimplements>
+        <briefdescription>
+<para>Get a string identifier for the transport provided by this plugin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h" line="7" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h" bodystart="7" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_resized_publisher_1af0121f511226071f7cb96fb3e50879a6" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ResizedPublisher::publish</definition>
+        <argsstring>(const sensor_msgs::Image &amp;message, const PublishFn &amp;publish_fn) const </argsstring>
+        <name>publish</name>
+        <reimplements refid="classimage__transport_1_1_simple_publisher_plugin_1a193470dd32092d13e2284052d4fa359a">publish</reimplements>
+        <param>
+          <type>const sensor_msgs::Image &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_simple_publisher_plugin_1a01bd11cb3ee6b7ce6715a3b57feadf93" kindref="member">PublishFn</ref> &amp;</type>
+          <declname>publish_fn</declname>
+        </param>
+        <briefdescription>
+<para>Publish an image using the specified publish function. Must be implemented by the subclass. </para>        </briefdescription>
+        <detaileddescription>
+<para>The PublishFn publishes the transport-specific message type. This indirection allows SimpleSubscriberPlugin to use this function for both normal broadcast publishing and single subscriber publishing (in subscription callbacks). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h" line="13" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_publisher.cpp" bodystart="5" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="109">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="108">
+        <label>image_transport::PublisherPlugin</label>
+        <link refid="classimage__transport_1_1_publisher_plugin"/>
+        <childnode refid="109" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
+        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
+        <childnode refid="108" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>ResizedPublisher</label>
+        <link refid="class_resized_publisher"/>
+        <childnode refid="107" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="113">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="112">
+        <label>image_transport::PublisherPlugin</label>
+        <link refid="classimage__transport_1_1_publisher_plugin"/>
+        <childnode refid="113" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
+        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
+        <childnode refid="112" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>ResizedPublisher</label>
+        <link refid="class_resized_publisher"/>
+        <childnode refid="111" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h" line="5" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h" bodystart="4" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_publisher_plugin_1aa79894b876115d4993fad934e200ad48" prot="public" virt="non-virtual"><scope>ResizedPublisher</scope><name>advertise</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1aa05d1be5ed987a1074b480ef9d6d93ea" prot="public" virt="non-virtual"><scope>ResizedPublisher</scope><name>advertise</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1af9ca774ef9d18a9cf745c92762c00d91" prot="protected" virt="virtual"><scope>ResizedPublisher</scope><name>advertiseImpl</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a4329bd192aa03ec8b44e52c6bbe91a11" prot="protected" virt="virtual"><scope>ResizedPublisher</scope><name>connectCallback</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1ac02aac90a3a159c1450a298b63a37425" prot="protected" virt="virtual"><scope>ResizedPublisher</scope><name>disconnectCallback</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1ac509e7c5ce1a6ce07870968eb1e0a0e3" prot="public" virt="non-virtual"><scope>ResizedPublisher</scope><name>getLookupName</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a58697b43b16d32531b4f67a7c8709f20" prot="public" virt="virtual"><scope>ResizedPublisher</scope><name>getNumSubscribers</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a11ad943c96711dc4a797a2b577ae9ea3" prot="protected" virt="non-virtual"><scope>ResizedPublisher</scope><name>getPublisher</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a24f9923dbde675f1693b1be252805918" prot="public" virt="virtual"><scope>ResizedPublisher</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a46df2b43de62c169d28ac510010d032f" prot="protected" virt="virtual"><scope>ResizedPublisher</scope><name>getTopicToAdvertise</name></member>
+      <member refid="class_resized_publisher_1a2282c668269cc359be3f1767fa31c1cc" prot="public" virt="virtual"><scope>ResizedPublisher</scope><name>getTransportName</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a5f73a993e871242e51671f3cf82d4e1b" prot="protected" virt="non-virtual"><scope>ResizedPublisher</scope><name>nh</name></member>
+      <member refid="class_resized_publisher_1af0121f511226071f7cb96fb3e50879a6" prot="protected" virt="virtual"><scope>ResizedPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a409f2078d4aa3466e843404b88cfe101" prot="public" virt="virtual" ambiguityscope="SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;::"><scope>ResizedPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1a5ec0ad17a8f0ef7b966089c3b8f6ee60" prot="public" virt="virtual" ambiguityscope="image_transport::PublisherPlugin::"><scope>ResizedPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1add246a58e2cc57ceba3c957f52a95a6d" prot="public" virt="virtual" ambiguityscope="image_transport::PublisherPlugin::"><scope>ResizedPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a01bd11cb3ee6b7ce6715a3b57feadf93" prot="protected" virt="non-virtual"><scope>ResizedPublisher</scope><name>PublishFn</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a62e2d4cce1756530fbf6a323b1a00c59" prot="public" virt="virtual"><scope>ResizedPublisher</scope><name>shutdown</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1ae5ad84df1be58ec15cd3cfd645d5097b" prot="public" virt="virtual"><scope>ResizedPublisher</scope><name>~PublisherPlugin</name></member>
+      <member refid="classimage__transport_1_1_simple_publisher_plugin_1a755bf0cb92fd491596736feae2c8c454" prot="public" virt="virtual"><scope>ResizedPublisher</scope><name>~SimplePublisherPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

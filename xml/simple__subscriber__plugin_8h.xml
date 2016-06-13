@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="simple__subscriber__plugin_8h" kind="file">
+    <compoundname>simple_subscriber_plugin.h</compoundname>
+    <includes refid="subscriber__plugin_8h" local="yes">image_transport/subscriber_plugin.h</includes>
+    <includes local="no">boost/scoped_ptr.hpp</includes>
+    <includedby refid="raw__subscriber_8h" local="yes">/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h</includedby>
+    <includedby refid="resized__subscriber_8h" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h</includedby>
+    <incdepgraph>
+      <node id="887">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="888">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="885">
+        <label>image_transport/subscriber_plugin.h</label>
+        <link refid="subscriber__plugin_8h_source"/>
+        <childnode refid="886" relation="include">
+        </childnode>
+        <childnode refid="887" relation="include">
+        </childnode>
+        <childnode refid="888" relation="include">
+        </childnode>
+        <childnode refid="889" relation="include">
+        </childnode>
+      </node>
+      <node id="889">
+        <label>image_transport/transport_hints.h</label>
+        <link refid="transport__hints_8h_source"/>
+        <childnode refid="886" relation="include">
+        </childnode>
+      </node>
+      <node id="886">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="890">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+      <node id="884">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h</label>
+        <link refid="simple_subscriber_plugin.h"/>
+        <childnode refid="885" relation="include">
+        </childnode>
+        <childnode refid="890" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="895">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</label>
+        <link refid="tutorial_2src_2manifest_8cpp_source"/>
+      </node>
+      <node id="894">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h</label>
+        <link refid="resized__subscriber_8h_source"/>
+        <childnode refid="895" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+      </node>
+      <node id="893">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/manifest.cpp</label>
+        <link refid="src_2manifest_8cpp_source"/>
+      </node>
+      <node id="896">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp</label>
+        <link refid="resized__subscriber_8cpp_source"/>
+      </node>
+      <node id="892">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h</label>
+        <link refid="raw__subscriber_8h_source"/>
+        <childnode refid="893" relation="include">
+        </childnode>
+      </node>
+      <node id="891">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h</label>
+        <link refid="simple_subscriber_plugin.h"/>
+        <childnode refid="892" relation="include">
+        </childnode>
+        <childnode refid="894" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classimage__transport_1_1_simple_subscriber_plugin" prot="public">image_transport::SimpleSubscriberPlugin</innerclass>
+    <innerclass refid="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl" prot="private">image_transport::SimpleSubscriberPlugin::SimpleSubscriberPluginImpl</innerclass>
+    <innernamespace refid="namespaceimage__transport">image_transport</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Software<sp/>License<sp/>Agreement<sp/>(BSD<sp/>License)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*<sp/><sp/>Copyright<sp/>(c)<sp/>2009,<sp/>Willow<sp/>Garage,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>the<sp/>Willow<sp/>Garage<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">*<sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">*<sp/><sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*<sp/><sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">*<sp/><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">*<sp/><sp/>COPYRIGHT<sp/>OWNER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">*<sp/><sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*<sp/><sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">*<sp/><sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">*<sp/><sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">*<sp/><sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">*<sp/><sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">*<sp/><sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">*********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IMAGE_TRANSPORT_SIMPLE_SUBSCRIBER_PLUGIN_H</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IMAGE_TRANSPORT_SIMPLE_SUBSCRIBER_PLUGIN_H</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;image_transport/subscriber_plugin.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/scoped_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">image_transport<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>M&gt;</highlight></codeline>
+<codeline lineno="62" refid="classimage__transport_1_1_simple_subscriber_plugin" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classimage__transport_1_1_simple_subscriber_plugin" kindref="compound">SimpleSubscriberPlugin</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_subscriber_plugin" kindref="compound">SubscriberPlugin</ref></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classimage__transport_1_1_simple_subscriber_plugin" kindref="compound">SimpleSubscriberPlugin</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classimage__transport_1_1_simple_subscriber_plugin_1ab6e2fa57778770429195a516b78dcb1a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1ab6e2fa57778770429195a516b78dcb1a" kindref="member">getTopic</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="68"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(simple_impl_)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>simple_impl_-&gt;sub_.getTopic();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="classimage__transport_1_1_simple_subscriber_plugin_1ae7115a373237561c9896fa93d74fe981" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1ae7115a373237561c9896fa93d74fe981" kindref="member">getNumPublishers</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="74"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(simple_impl_)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>simple_impl_-&gt;sub_.getNumPublishers();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="classimage__transport_1_1_simple_subscriber_plugin_1a559eb7593e56faf92fbfba771e317455" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a559eb7593e56faf92fbfba771e317455" kindref="member">shutdown</ref>()</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(simple_impl_)<sp/>simple_impl_-&gt;sub_.shutdown();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1ae3fbeb43694289e50670d7050da82a1a" kindref="member">internalCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>M::ConstPtr&amp;<sp/>message,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callback&amp;<sp/>user_cb)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268" kindref="member">getTopicToSubscribe</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>base_topic)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="99"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>base_topic<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classimage__transport_1_1_subscriber_plugin_1a647dc0f6e0c34f0b4d8b809b3c679f88" kindref="member">getTransportName</ref>();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="103" refid="classimage__transport_1_1_simple_subscriber_plugin_1adead418bf0be6f6511af9e6a03ab8322" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1adead418bf0be6f6511af9e6a03ab8322" kindref="member">subscribeImpl</ref>(ros::NodeHandle&amp;<sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" kindref="member">nh</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>base_topic,<sp/>uint32_t<sp/>queue_size,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callback&amp;<sp/>callback,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ros::VoidPtr&amp;<sp/>tracked_object,</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_transport_hints" kindref="compound">TransportHints</ref>&amp;<sp/>transport_hints)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Push<sp/>each<sp/>group<sp/>of<sp/>transport-specific<sp/>parameters<sp/>into<sp/>a<sp/>separate<sp/>sub-namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::NodeHandle<sp/>param_nh(transport_hints.getParameterNH(),<sp/><ref refid="classimage__transport_1_1_subscriber_plugin_1a647dc0f6e0c34f0b4d8b809b3c679f88" kindref="member">getTransportName</ref>());</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>simple_impl_.reset(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>SimpleSubscriberPluginImpl(param_nh));</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>simple_impl_-&gt;sub_<sp/>=<sp/>nh.subscribe&lt;M&gt;(<ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268" kindref="member">getTopicToSubscribe</ref>(base_topic),<sp/>queue_size,</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::bind(&amp;<ref refid="classimage__transport_1_1_simple_subscriber_plugin_1ae3fbeb43694289e50670d7050da82a1a" kindref="member">SimpleSubscriberPlugin::internalCallback</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>_1,<sp/>callback),</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tracked_object,<sp/>transport_hints.getRosHints());</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ros::NodeHandle&amp;<sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" kindref="member">nh</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="120"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>simple_impl_-&gt;param_nh_;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">SimpleSubscriberPluginImpl</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>SimpleSubscriberPluginImpl(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ros::NodeHandle&amp;<sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" kindref="member">nh</ref>)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>param_nh_(nh)</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>ros::NodeHandle<sp/>param_nh_;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::Subscriber<sp/>sub_;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>boost::scoped_ptr&lt;SimpleSubscriberPluginImpl&gt;<sp/>simple_impl_;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace<sp/>image_transport</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="mainpage_8dox" kind="file">
+    <compoundname>mainpage.dox</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+    </programlisting>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/mainpage.dox"/>
+  </compounddef>
+</doxygen>

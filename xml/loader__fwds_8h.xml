@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="loader__fwds_8h" kind="file">
+    <compoundname>loader_fwds.h</compoundname>
+    <includedby refid="publisher_8h" local="yes">/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher.h</includedby>
+    <includedby refid="subscriber_8h" local="yes">/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber.h</includedby>
+    <invincdepgraph>
+      <node id="790">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h</label>
+        <link refid="subscriber__filter_8h_source"/>
+        <childnode refid="791" relation="include">
+        </childnode>
+      </node>
+      <node id="787">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h</label>
+        <link refid="loader_fwds.h"/>
+        <childnode refid="788" relation="include">
+        </childnode>
+        <childnode refid="803" relation="include">
+        </childnode>
+      </node>
+      <node id="795">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_publisher.cpp</label>
+        <link refid="my__publisher_8cpp_source"/>
+      </node>
+      <node id="792">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp</label>
+        <link refid="camera__publisher_8cpp_source"/>
+      </node>
+      <node id="789">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/image_transport.h</label>
+        <link refid="image__transport_8h_source"/>
+        <childnode refid="790" relation="include">
+        </childnode>
+        <childnode refid="792" relation="include">
+        </childnode>
+        <childnode refid="793" relation="include">
+        </childnode>
+        <childnode refid="794" relation="include">
+        </childnode>
+        <childnode refid="795" relation="include">
+        </childnode>
+        <childnode refid="796" relation="include">
+        </childnode>
+        <childnode refid="797" relation="include">
+        </childnode>
+        <childnode refid="800" relation="include">
+        </childnode>
+        <childnode refid="799" relation="include">
+        </childnode>
+      </node>
+      <node id="803">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber.h</label>
+        <link refid="subscriber_8h_source"/>
+        <childnode refid="789" relation="include">
+        </childnode>
+        <childnode refid="804" relation="include">
+        </childnode>
+      </node>
+      <node id="796">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_subscriber.cpp</label>
+        <link refid="my__subscriber_8cpp_source"/>
+      </node>
+      <node id="793">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp</label>
+        <link refid="image__transport_8cpp_source"/>
+      </node>
+      <node id="800">
+        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
+        <link refid="navigator_8cpp_source"/>
+      </node>
+      <node id="798">
+        <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="794">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/republish.cpp</label>
+        <link refid="republish_8cpp_source"/>
+      </node>
+      <node id="801">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp</label>
+        <link refid="publisher_8cpp_source"/>
+      </node>
+      <node id="788">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher.h</label>
+        <link refid="publisher_8h_source"/>
+        <childnode refid="789" relation="include">
+        </childnode>
+        <childnode refid="801" relation="include">
+        </childnode>
+        <childnode refid="802" relation="include">
+        </childnode>
+      </node>
+      <node id="804">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp</label>
+        <link refid="subscriber_8cpp_source"/>
+      </node>
+      <node id="797">
+        <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
+        <link refid="tonav__ros_8h_source"/>
+        <childnode refid="798" relation="include">
+        </childnode>
+        <childnode refid="799" relation="include">
+        </childnode>
+      </node>
+      <node id="799">
+        <label>/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</label>
+        <link refid="tonav__ros_8cpp_source"/>
+      </node>
+      <node id="802">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/single_subscriber_publisher.cpp</label>
+        <link refid="single__subscriber__publisher_8cpp_source"/>
+      </node>
+      <node id="791">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp</label>
+        <link refid="camera__subscriber_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classpluginlib_1_1_class_loader" prot="public">pluginlib::ClassLoader</innerclass>
+    <innernamespace refid="namespacepluginlib">pluginlib</innernamespace>
+    <innernamespace refid="namespaceimage__transport">image_transport</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*********************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">*<sp/>Software<sp/>License<sp/>Agreement<sp/>(BSD<sp/>License)</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*<sp/><sp/>Copyright<sp/>(c)<sp/>2009,<sp/>Willow<sp/>Garage,<sp/>Inc.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*<sp/><sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*<sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">*<sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>copyright<sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>disclaimer<sp/>in<sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">*<sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>the<sp/>Willow<sp/>Garage<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment">*<sp/><sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">*<sp/><sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">*<sp/><sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">*<sp/><sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">*<sp/><sp/>COPYRIGHT<sp/>OWNER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">*<sp/><sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">*<sp/><sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">*<sp/><sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">*<sp/><sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">*<sp/><sp/>LIABILITY,<sp/>OR<sp/>TORT<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">*<sp/><sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">*<sp/><sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">*********************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IMAGE_TRANSPORT_LOADER_FWDS_H</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IMAGE_TRANSPORT_LOADER_FWDS_H</highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Forward-declare<sp/>some<sp/>classes<sp/>most<sp/>users<sp/>shouldn&apos;t<sp/>care<sp/>about<sp/>so<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>image_transport.h<sp/>doesn&apos;t<sp/>bring<sp/>them<sp/>in.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">pluginlib<sp/>{</highlight></codeline>
+<codeline lineno="42" refid="classpluginlib_1_1_class_loader" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;<sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classpluginlib_1_1_class_loader" kindref="compound">ClassLoader</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">image_transport<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">PublisherPlugin;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SubscriberPlugin;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classpluginlib_1_1_class_loader" kindref="compound">pluginlib::ClassLoader&lt;PublisherPlugin&gt;</ref><sp/>PubLoader;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;PubLoader&gt;<sp/>PubLoaderPtr;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classpluginlib_1_1_class_loader" kindref="compound">pluginlib::ClassLoader&lt;SubscriberPlugin&gt;</ref><sp/>SubLoader;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;SubLoader&gt;<sp/>SubLoaderPtr;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_transport_hints" kind="class" prot="public">
+    <compoundname>image_transport::TransportHints</compoundname>
+    <includes refid="transport__hints_8h" local="no">transport_hints.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classimage__transport_1_1_transport_hints_1a379636e06d30639bc81a7e29597f47a5" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string image_transport::TransportHints::transport_</definition>
+        <argsstring></argsstring>
+        <name>transport_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" line="87" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimage__transport_1_1_transport_hints_1a1157269f6b395dde7422dbfe1ed749f7" prot="private" static="no" mutable="no">
+        <type>ros::TransportHints</type>
+        <definition>ros::TransportHints image_transport::TransportHints::ros_hints_</definition>
+        <argsstring></argsstring>
+        <name>ros_hints_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" line="88" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimage__transport_1_1_transport_hints_1a53d4131223d1c266a5af57d37faa53a7" prot="private" static="no" mutable="no">
+        <type>ros::NodeHandle</type>
+        <definition>ros::NodeHandle image_transport::TransportHints::parameter_nh_</definition>
+        <argsstring></argsstring>
+        <name>parameter_nh_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" line="89" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_transport_hints_1a1685aa1484249c2a4f70d91a2eac470a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::TransportHints::TransportHints</definition>
+        <argsstring>(const std::string &amp;default_transport=&quot;raw&quot;, const ros::TransportHints &amp;ros_hints=ros::TransportHints(), const ros::NodeHandle &amp;parameter_nh=ros::NodeHandle(&quot;~&quot;), const std::string &amp;parameter_name=&quot;image_transport&quot;)</argsstring>
+        <name>TransportHints</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>default_transport</declname>
+          <defval>&quot;raw&quot;</defval>
+        </param>
+        <param>
+          <type>const ros::TransportHints &amp;</type>
+          <declname>ros_hints</declname>
+          <defval>ros::TransportHints()</defval>
+        </param>
+        <param>
+          <type>const ros::NodeHandle &amp;</type>
+          <declname>parameter_nh</declname>
+          <defval>ros::NodeHandle(&quot;~&quot;)</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>parameter_name</declname>
+          <defval>&quot;image_transport&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The default transport can be overridden by setting a certain parameter to the name of the desired transport. By default this parameter is named &quot;image_transport&quot; in the node&apos;s local namespace. For consistency across ROS applications, the name of this parameter should not be changed without good reason.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>default_transport</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Preferred transport to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ros_hints</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Hints to pass through to ROS subscriptions </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parameter_nh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Node handle to use when looking up the transport parameter. Defaults to the local namespace. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parameter_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the transport parameter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" line="62" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" bodystart="62" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_transport_hints_1a03ac9b94b5d821ad58069de46750429f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; image_transport::TransportHints::getTransport</definition>
+        <argsstring>() const </argsstring>
+        <name>getTransport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" line="71" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_transport_hints_1a69b2353e24790b8e3e25aaa5b7c2ae2c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const ros::TransportHints &amp;</type>
+        <definition>const ros::TransportHints&amp; image_transport::TransportHints::getRosHints</definition>
+        <argsstring>() const </argsstring>
+        <name>getRosHints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" line="76" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_transport_hints_1a6f4f312029db188135e83edd7508cfbd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const ros::NodeHandle &amp;</type>
+        <definition>const ros::NodeHandle&amp; image_transport::TransportHints::getParameterNH</definition>
+        <argsstring>() const </argsstring>
+        <name>getParameterNH</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" line="81" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" bodystart="81" bodyend="84"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Stores transport settings for an image topic subscription. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" line="46" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/transport_hints.h" bodystart="45" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_transport_hints_1a6f4f312029db188135e83edd7508cfbd" prot="public" virt="non-virtual"><scope>image_transport::TransportHints</scope><name>getParameterNH</name></member>
+      <member refid="classimage__transport_1_1_transport_hints_1a69b2353e24790b8e3e25aaa5b7c2ae2c" prot="public" virt="non-virtual"><scope>image_transport::TransportHints</scope><name>getRosHints</name></member>
+      <member refid="classimage__transport_1_1_transport_hints_1a03ac9b94b5d821ad58069de46750429f" prot="public" virt="non-virtual"><scope>image_transport::TransportHints</scope><name>getTransport</name></member>
+      <member refid="classimage__transport_1_1_transport_hints_1a53d4131223d1c266a5af57d37faa53a7" prot="private" virt="non-virtual"><scope>image_transport::TransportHints</scope><name>parameter_nh_</name></member>
+      <member refid="classimage__transport_1_1_transport_hints_1a1157269f6b395dde7422dbfe1ed749f7" prot="private" virt="non-virtual"><scope>image_transport::TransportHints</scope><name>ros_hints_</name></member>
+      <member refid="classimage__transport_1_1_transport_hints_1a379636e06d30639bc81a7e29597f47a5" prot="private" virt="non-virtual"><scope>image_transport::TransportHints</scope><name>transport_</name></member>
+      <member refid="classimage__transport_1_1_transport_hints_1a1685aa1484249c2a4f70d91a2eac470a" prot="public" virt="non-virtual"><scope>image_transport::TransportHints</scope><name>TransportHints</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

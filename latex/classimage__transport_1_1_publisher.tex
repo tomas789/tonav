@@ -1,0 +1,87 @@
+\hypertarget{classimage__transport_1_1_publisher}{\section{image\-\_\-transport\-:\-:Publisher Class Reference}
+\label{classimage__transport_1_1_publisher}\index{image\-\_\-transport\-::\-Publisher@{image\-\_\-transport\-::\-Publisher}}
+}
+
+
+Manages advertisements of multiple transport options on an Image topic.  
+
+
+
+
+{\ttfamily \#include $<$publisher.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structimage__transport_1_1_publisher_1_1_impl}{Impl}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{classimage__transport_1_1_publisher_ac88d47f80afa429ea135f5bca7448dd9}{get\-Num\-Subscribers} () const 
+\begin{DoxyCompactList}\small\item\em Returns the number of subscribers that are currently connected to this \hyperlink{classimage__transport_1_1_publisher}{Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_a9c76ade4e9217ba84b4c5e8f71041a39}{std\-::string \hyperlink{classimage__transport_1_1_publisher_a9c76ade4e9217ba84b4c5e8f71041a39}{get\-Topic} () const }\label{classimage__transport_1_1_publisher_a9c76ade4e9217ba84b4c5e8f71041a39}
+
+\begin{DoxyCompactList}\small\item\em Returns the base topic of this \hyperlink{classimage__transport_1_1_publisher}{Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_adca2507fe8999ccfdfc6d8871f986e10}{void \hyperlink{classimage__transport_1_1_publisher_adca2507fe8999ccfdfc6d8871f986e10}{publish} (const sensor\-\_\-msgs\-::\-Image \&message) const }\label{classimage__transport_1_1_publisher_adca2507fe8999ccfdfc6d8871f986e10}
+
+\begin{DoxyCompactList}\small\item\em Publish an image on the topics associated with this \hyperlink{classimage__transport_1_1_publisher}{Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_aa707c681bc6760150aca17d25f532113}{void \hyperlink{classimage__transport_1_1_publisher_aa707c681bc6760150aca17d25f532113}{publish} (const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&message) const }\label{classimage__transport_1_1_publisher_aa707c681bc6760150aca17d25f532113}
+
+\begin{DoxyCompactList}\small\item\em Publish an image on the topics associated with this \hyperlink{classimage__transport_1_1_publisher}{Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_a072fafb7790734db8ecda3c6704b9396}{void \hyperlink{classimage__transport_1_1_publisher_a072fafb7790734db8ecda3c6704b9396}{shutdown} ()}\label{classimage__transport_1_1_publisher_a072fafb7790734db8ecda3c6704b9396}
+
+\begin{DoxyCompactList}\small\item\em Shutdown the advertisements associated with this \hyperlink{classimage__transport_1_1_publisher}{Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_publisher_abebb98c83a1d185504a528e46011ad5e}{{\bfseries operator void $\ast$} () const }\label{classimage__transport_1_1_publisher_abebb98c83a1d185504a528e46011ad5e}
+
+\item 
+\hypertarget{classimage__transport_1_1_publisher_a48f65b298d5f1127fcf5c0ff44ee23c1}{bool {\bfseries operator$<$} (const \hyperlink{classimage__transport_1_1_publisher}{Publisher} \&rhs) const }\label{classimage__transport_1_1_publisher_a48f65b298d5f1127fcf5c0ff44ee23c1}
+
+\item 
+\hypertarget{classimage__transport_1_1_publisher_a10b1cdd3affd8816707c7f4d14b9c2be}{bool {\bfseries operator!=} (const \hyperlink{classimage__transport_1_1_publisher}{Publisher} \&rhs) const }\label{classimage__transport_1_1_publisher_a10b1cdd3affd8816707c7f4d14b9c2be}
+
+\item 
+\hypertarget{classimage__transport_1_1_publisher_af152f8ef7d37537f4b099315e74ce977}{bool {\bfseries operator==} (const \hyperlink{classimage__transport_1_1_publisher}{Publisher} \&rhs) const }\label{classimage__transport_1_1_publisher_af152f8ef7d37537f4b099315e74ce977}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_publisher_ac010f5a40d98825199e1c5303d0638eb}{class {\bfseries Image\-Transport}}\label{classimage__transport_1_1_publisher_ac010f5a40d98825199e1c5303d0638eb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages advertisements of multiple transport options on an Image topic. 
+
+\hyperlink{classimage__transport_1_1_publisher}{Publisher} is a drop-\/in replacement for ros\-::\-Publisher when publishing Image topics. In a minimally built environment, they behave the same; however, \hyperlink{classimage__transport_1_1_publisher}{Publisher} is extensible via plugins to publish alternative representations of the image on related subtopics. This is especially useful for limiting bandwidth and latency over a network connection, when you might (for example) use the theora plugin to transport the images as streamed video. All topics are published only on demand (i.\-e. if there are subscribers).
+
+A \hyperlink{classimage__transport_1_1_publisher}{Publisher} should always be created through a call to \hyperlink{classimage__transport_1_1_image_transport_aba83e00cf60977d58ac17c2915f2562b}{Image\-Transport\-::advertise()}, or copied from one that was. Once all copies of a specific \hyperlink{classimage__transport_1_1_publisher}{Publisher} go out of scope, any subscriber callbacks associated with that handle will stop being called. Once all \hyperlink{classimage__transport_1_1_publisher}{Publisher} for a given base topic go out of scope the topic (and all subtopics) will be unadvertised. 
+
+Definition at line 63 of file publisher.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_publisher_ac88d47f80afa429ea135f5bca7448dd9}{\index{image\-\_\-transport\-::\-Publisher@{image\-\_\-transport\-::\-Publisher}!get\-Num\-Subscribers@{get\-Num\-Subscribers}}
+\index{get\-Num\-Subscribers@{get\-Num\-Subscribers}!image_transport::Publisher@{image\-\_\-transport\-::\-Publisher}}
+\subsubsection[{get\-Num\-Subscribers}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t image\-\_\-transport\-::\-Publisher\-::get\-Num\-Subscribers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classimage__transport_1_1_publisher_ac88d47f80afa429ea135f5bca7448dd9}
+
+
+Returns the number of subscribers that are currently connected to this \hyperlink{classimage__transport_1_1_publisher}{Publisher}. 
+
+Returns the total number of subscribers to all advertised topics. 
+
+Definition at line 130 of file publisher.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/publisher.\-h\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/src/publisher.\-cpp\end{DoxyCompactItemize}

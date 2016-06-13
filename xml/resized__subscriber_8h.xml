@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="resized__subscriber_8h" kind="file">
+    <compoundname>resized_subscriber.h</compoundname>
+    <includes refid="simple__subscriber__plugin_8h" local="no">image_transport/simple_subscriber_plugin.h</includes>
+    <includes local="no">image_transport_tutorial/ResizedImage.h</includes>
+    <includedby refid="tutorial_2src_2manifest_8cpp" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</includedby>
+    <includedby refid="resized__subscriber_8cpp" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp</includedby>
+    <incdepgraph>
+      <node id="1222">
+        <label>image_transport_tutorial/ResizedImage.h</label>
+      </node>
+      <node id="1218">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1219">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="1216">
+        <label>image_transport/subscriber_plugin.h</label>
+        <link refid="subscriber__plugin_8h_source"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+        <childnode refid="1218" relation="include">
+        </childnode>
+        <childnode refid="1219" relation="include">
+        </childnode>
+        <childnode refid="1220" relation="include">
+        </childnode>
+      </node>
+      <node id="1220">
+        <label>image_transport/transport_hints.h</label>
+        <link refid="transport__hints_8h_source"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+      </node>
+      <node id="1214">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h</label>
+        <link refid="resized_subscriber.h"/>
+        <childnode refid="1215" relation="include">
+        </childnode>
+        <childnode refid="1222" relation="include">
+        </childnode>
+      </node>
+      <node id="1217">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="1221">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+      <node id="1215">
+        <label>image_transport/simple_subscriber_plugin.h</label>
+        <link refid="simple__subscriber__plugin_8h_source"/>
+        <childnode refid="1216" relation="include">
+        </childnode>
+        <childnode refid="1221" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1224">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</label>
+        <link refid="tutorial_2src_2manifest_8cpp_source"/>
+      </node>
+      <node id="1223">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h</label>
+        <link refid="resized_subscriber.h"/>
+        <childnode refid="1224" relation="include">
+        </childnode>
+        <childnode refid="1225" relation="include">
+        </childnode>
+      </node>
+      <node id="1225">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp</label>
+        <link refid="resized__subscriber_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_resized_subscriber" prot="public">ResizedSubscriber</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;image_transport/simple_subscriber_plugin.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;image_transport_tutorial/ResizedImage.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="class_resized_subscriber" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_resized_subscriber" kindref="compound">ResizedSubscriber</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_simple_subscriber_plugin" kindref="compound">image_transport::SimpleSubscriberPlugin</ref>&lt;image_transport_tutorial::ResizedImage&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="class_resized_subscriber" kindref="compound">ResizedSubscriber</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_resized_subscriber_1abe804a1a73e5281d2e60f7ea6a82c9b8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_resized_subscriber_1abe804a1a73e5281d2e60f7ea6a82c9b8" kindref="member">getTransportName</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="10"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;resized&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_resized_subscriber_1ad0a3debf9a2135bbbae6145cebb958e8" kindref="member">internalCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>image_transport_tutorial::ResizedImage::ConstPtr&amp;<sp/>message,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callback&amp;<sp/>user_cb);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h"/>
+  </compounddef>
+</doxygen>

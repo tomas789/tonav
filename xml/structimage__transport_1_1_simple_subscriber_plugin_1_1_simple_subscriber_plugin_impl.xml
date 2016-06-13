@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl" kind="struct" prot="private">
+    <compoundname>image_transport::SimpleSubscriberPlugin::SimpleSubscriberPluginImpl</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl_1a868b6f271f59ba0e48f19ae12a95ee9a" prot="public" static="no" mutable="no">
+        <type>const ros::NodeHandle</type>
+        <definition>const ros::NodeHandle image_transport::SimpleSubscriberPlugin&lt; M &gt;::SimpleSubscriberPluginImpl::param_nh_</definition>
+        <argsstring></argsstring>
+        <name>param_nh_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="132" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl_1af59d0dec0bb619b4e58bcc31846918ef" prot="public" static="no" mutable="no">
+        <type>ros::Subscriber</type>
+        <definition>ros::Subscriber image_transport::SimpleSubscriberPlugin&lt; M &gt;::SimpleSubscriberPluginImpl::sub_</definition>
+        <argsstring></argsstring>
+        <name>sub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="133" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl_1a115253bbda01adfca60c6efb8641f44b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::SimpleSubscriberPlugin&lt; M &gt;::SimpleSubscriberPluginImpl::SimpleSubscriberPluginImpl</definition>
+        <argsstring>(const ros::NodeHandle &amp;nh)</argsstring>
+        <name>SimpleSubscriberPluginImpl</name>
+        <param>
+          <type>const ros::NodeHandle &amp;</type>
+          <declname>nh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="127" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="127" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="126" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="125" bodyend="134"/>
+    <listofallmembers>
+      <member refid="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl_1a868b6f271f59ba0e48f19ae12a95ee9a" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin::SimpleSubscriberPluginImpl</scope><name>param_nh_</name></member>
+      <member refid="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl_1a115253bbda01adfca60c6efb8641f44b" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin::SimpleSubscriberPluginImpl</scope><name>SimpleSubscriberPluginImpl</name></member>
+      <member refid="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl_1af59d0dec0bb619b4e58bcc31846918ef" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin::SimpleSubscriberPluginImpl</scope><name>sub_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

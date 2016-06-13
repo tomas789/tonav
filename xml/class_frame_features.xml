@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="22" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" bodystart="22" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="22" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/frame_features.h" bodystart="22" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_frame_features_1adec4eebbbf23dc00c8420c0f9b94ab42" prot="private" static="no" mutable="no">
         <type>cv::Mat</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="23" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" bodystart="23" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="23" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/frame_features.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="13" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="13" bodyend="26"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="13" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/frame_features.cpp" bodystart="13" bodyend="26"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="63" bodyend="71"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/frame_features.cpp" bodystart="63" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="class_frame_features_1ae36e05c015c5980fb0801fc0b6ee97ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="43" bodyend="52"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="16" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/frame_features.cpp" bodystart="43" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="class_frame_features_1aff3c47e301fde7db68ecac5d852c6edf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; cv::KeyPoint &gt; &amp;</type>
@@ -112,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="73" bodyend="75"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="18" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/frame_features.cpp" bodystart="73" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="class_frame_features_1a29b51fc67b07fe6e5b9236a092d1e17a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const std::vector&lt; cv::KeyPoint &gt; &amp;</type>
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="77" bodyend="79"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="19" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/frame_features.cpp" bodystart="77" bodyend="79"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="55" bodyend="57"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="25" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/frame_features.cpp" bodystart="55" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="class_frame_features_1a609ebf1d8a00b77cacec9876576cf13a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="59" bodyend="61"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="26" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/frame_features.cpp" bodystart="59" bodyend="61"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -188,14 +188,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="28" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/frame_features.cpp" bodystart="28" bodyend="41"/>
+        <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/frame_features.cpp" bodystart="28" bodyend="41"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" line="11" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/frame_features.h" bodystart="11" bodyend="29"/>
+    <location file="/home/travis/build/tomas789/tonav/include/frame_features.h" line="11" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/frame_features.h" bodystart="11" bodyend="29"/>
     <listofallmembers>
       <member refid="class_frame_features_1a609ebf1d8a00b77cacec9876576cf13a" prot="private" virt="non-virtual"><scope>FrameFeatures</scope><name>computeDescriptors</name></member>
       <member refid="class_frame_features_1adec4eebbbf23dc00c8420c0f9b94ab42" prot="private" virt="non-virtual"><scope>FrameFeatures</scope><name>descriptors_</name></member>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_35f5f9213e0095ef57676a76f43611ca" kind="dir">
+    <compoundname>/home/travis/catkin_ws/src/image_common/image_transport/src</compoundname>
+    <innerfile refid="camera__common_8cpp">camera_common.cpp</innerfile>
+    <innerfile refid="camera__publisher_8cpp">camera_publisher.cpp</innerfile>
+    <innerfile refid="camera__subscriber_8cpp">camera_subscriber.cpp</innerfile>
+    <innerfile refid="image__transport_8cpp">image_transport.cpp</innerfile>
+    <innerfile refid="list__transports_8cpp">list_transports.cpp</innerfile>
+    <innerfile refid="src_2manifest_8cpp">manifest.cpp</innerfile>
+    <innerfile refid="publisher_8cpp">publisher.cpp</innerfile>
+    <innerfile refid="raw__publisher_8cpp">raw_publisher.cpp</innerfile>
+    <innerfile refid="republish_8cpp">republish.cpp</innerfile>
+    <innerfile refid="single__subscriber__publisher_8cpp">single_subscriber_publisher.cpp</innerfile>
+    <innerfile refid="subscriber_8cpp">subscriber.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/"/>
+  </compounddef>
+</doxygen>

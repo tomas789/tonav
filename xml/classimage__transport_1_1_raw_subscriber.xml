@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_raw_subscriber" kind="class" prot="public">
+    <compoundname>image_transport::RawSubscriber</compoundname>
+    <basecompoundref refid="classimage__transport_1_1_simple_subscriber_plugin" prot="public" virt="non-virtual">image_transport::SimpleSubscriberPlugin&lt; sensor_msgs::Image &gt;</basecompoundref>
+    <includes refid="raw__subscriber_8h" local="no">raw_subscriber.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_raw_subscriber_1a7ebf856194b250d7b3f0b5d685b80f68" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual image_transport::RawSubscriber::~RawSubscriber</definition>
+        <argsstring>()</argsstring>
+        <name>~RawSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" line="51" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_raw_subscriber_1a9c570fff1410a5b3f0fa40bc9705d135" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string image_transport::RawSubscriber::getTransportName</definition>
+        <argsstring>() const </argsstring>
+        <name>getTransportName</name>
+        <reimplements refid="classimage__transport_1_1_subscriber_plugin_1a647dc0f6e0c34f0b4d8b809b3c679f88">getTransportName</reimplements>
+        <briefdescription>
+<para>Get a string identifier for the transport provided by this plugin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" line="53" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" bodystart="53" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classimage__transport_1_1_raw_subscriber_1a66df34f75b6dbab383de759bb0fa60b2" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::RawSubscriber::internalCallback</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;message, const Callback &amp;user_cb)</argsstring>
+        <name>internalCallback</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const Callback &amp;</type>
+          <declname>user_cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" line="59" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_raw_subscriber_1a6da2134193b87fb71afda535a618cc7c" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string image_transport::RawSubscriber::getTopicToSubscribe</definition>
+        <argsstring>(const std::string &amp;base_topic) const </argsstring>
+        <name>getTopicToSubscribe</name>
+        <reimplements refid="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268">getTopicToSubscribe</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <briefdescription>
+<para>Return the communication topic name for a given base topic. </para>        </briefdescription>
+        <detaileddescription>
+<para>Defaults to &lt;base topic&gt;/&lt;transport name&gt;. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" line="64" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" bodystart="64" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The default <ref refid="classimage__transport_1_1_subscriber_plugin" kindref="compound">SubscriberPlugin</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classimage__transport_1_1_raw_subscriber" kindref="compound">RawSubscriber</ref> is a simple wrapper for ros::Subscriber which listens for Image messages and passes them through to the callback. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="98">
+        <label>image_transport::RawSubscriber</label>
+        <link refid="classimage__transport_1_1_raw_subscriber"/>
+        <childnode refid="99" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>image_transport::SimpleSubscriberPlugin&lt; sensor_msgs::Image &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>noncopyable</label>
+      </node>
+      <node id="100">
+        <label>image_transport::SubscriberPlugin</label>
+        <link refid="classimage__transport_1_1_subscriber_plugin"/>
+        <childnode refid="101" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="102">
+        <label>image_transport::RawSubscriber</label>
+        <link refid="classimage__transport_1_1_raw_subscriber"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="103">
+        <label>image_transport::SimpleSubscriberPlugin&lt; sensor_msgs::Image &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>noncopyable</label>
+      </node>
+      <node id="104">
+        <label>image_transport::SubscriberPlugin</label>
+        <link refid="classimage__transport_1_1_subscriber_plugin"/>
+        <childnode refid="105" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" line="49" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h" bodystart="48" bodyend="68"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a0e3d423158a12f55e528b108d6dfda19" prot="public" virt="non-virtual"><scope>image_transport::RawSubscriber</scope><name>Callback</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1ae48e1648e998fe8352ff385c4c132531" prot="public" virt="non-virtual"><scope>image_transport::RawSubscriber</scope><name>getLookupName</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1ae7115a373237561c9896fa93d74fe981" prot="public" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>getNumPublishers</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1ab6e2fa57778770429195a516b78dcb1a" prot="public" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_raw_subscriber_1a6da2134193b87fb71afda535a618cc7c" prot="protected" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>getTopicToSubscribe</name></member>
+      <member refid="classimage__transport_1_1_raw_subscriber_1a9c570fff1410a5b3f0fa40bc9705d135" prot="public" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>getTransportName</name></member>
+      <member refid="classimage__transport_1_1_raw_subscriber_1a66df34f75b6dbab383de759bb0fa60b2" prot="protected" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>internalCallback</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1ae3fbeb43694289e50670d7050da82a1a" prot="protected" virt="pure-virtual" ambiguityscope="SimpleSubscriberPlugin&lt; sensor_msgs::Image &gt;::"><scope>image_transport::RawSubscriber</scope><name>internalCallback</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" prot="protected" virt="non-virtual"><scope>image_transport::RawSubscriber</scope><name>nh</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a559eb7593e56faf92fbfba771e317455" prot="public" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>shutdown</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1abf53246a79405014beab159908a11ec8" prot="public" virt="non-virtual"><scope>image_transport::RawSubscriber</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a699938e88a295ad3ae6d770fceb41690" prot="public" virt="non-virtual"><scope>image_transport::RawSubscriber</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a9cd92f4bac80d9f89d949082581ad4fe" prot="public" virt="non-virtual"><scope>image_transport::RawSubscriber</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1acb23bea81d54ee21cd5fa12ddd871aaa" prot="public" virt="non-virtual"><scope>image_transport::RawSubscriber</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1adead418bf0be6f6511af9e6a03ab8322" prot="protected" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>subscribeImpl</name></member>
+      <member refid="classimage__transport_1_1_raw_subscriber_1a7ebf856194b250d7b3f0b5d685b80f68" prot="public" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>~RawSubscriber</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a147d9de2239a169f7489366b99759569" prot="public" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>~SimpleSubscriberPlugin</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a9eeabaa73afbd2aafa1f4e4f162e8ac7" prot="public" virt="virtual"><scope>image_transport::RawSubscriber</scope><name>~SubscriberPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

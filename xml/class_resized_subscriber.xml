@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_resized_subscriber" kind="class" prot="public">
+    <compoundname>ResizedSubscriber</compoundname>
+    <basecompoundref refid="classimage__transport_1_1_simple_subscriber_plugin" prot="public" virt="non-virtual">image_transport::SimpleSubscriberPlugin&lt; image_transport_tutorial::ResizedImage &gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_resized_subscriber_1a43474798f8d1144e42e6f3ca47a3d539" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual ResizedSubscriber::~ResizedSubscriber</definition>
+        <argsstring>()</argsstring>
+        <name>~ResizedSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h" line="7" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_resized_subscriber_1abe804a1a73e5281d2e60f7ea6a82c9b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string ResizedSubscriber::getTransportName</definition>
+        <argsstring>() const </argsstring>
+        <name>getTransportName</name>
+        <reimplements refid="classimage__transport_1_1_subscriber_plugin_1a647dc0f6e0c34f0b4d8b809b3c679f88">getTransportName</reimplements>
+        <briefdescription>
+<para>Get a string identifier for the transport provided by this plugin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h" line="9" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h" bodystart="9" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_resized_subscriber_1ad0a3debf9a2135bbbae6145cebb958e8" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ResizedSubscriber::internalCallback</definition>
+        <argsstring>(const typename image_transport_tutorial::ResizedImage::ConstPtr &amp;message, const Callback &amp;user_cb)</argsstring>
+        <name>internalCallback</name>
+        <reimplements refid="classimage__transport_1_1_simple_subscriber_plugin_1ae3fbeb43694289e50670d7050da82a1a">internalCallback</reimplements>
+        <param>
+          <type>const typename image_transport_tutorial::ResizedImage::ConstPtr &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const Callback &amp;</type>
+          <declname>user_cb</declname>
+        </param>
+        <briefdescription>
+<para>Process a message. Must be implemented by the subclass. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A message from the PublisherPlugin. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user Image callback to invoke, if appropriate. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h" line="15" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp" bodystart="5" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="117">
+        <label>noncopyable</label>
+      </node>
+      <node id="114">
+        <label>ResizedSubscriber</label>
+        <link refid="class_resized_subscriber"/>
+        <childnode refid="115" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="115">
+        <label>image_transport::SimpleSubscriberPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="116" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="116">
+        <label>image_transport::SubscriberPlugin</label>
+        <link refid="classimage__transport_1_1_subscriber_plugin"/>
+        <childnode refid="117" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="121">
+        <label>noncopyable</label>
+      </node>
+      <node id="118">
+        <label>ResizedSubscriber</label>
+        <link refid="class_resized_subscriber"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="119">
+        <label>image_transport::SimpleSubscriberPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="120" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>image_transport::SubscriberPlugin</label>
+        <link refid="classimage__transport_1_1_subscriber_plugin"/>
+        <childnode refid="121" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h" line="5" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h" bodystart="4" bodyend="17"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a0e3d423158a12f55e528b108d6dfda19" prot="public" virt="non-virtual"><scope>ResizedSubscriber</scope><name>Callback</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1ae48e1648e998fe8352ff385c4c132531" prot="public" virt="non-virtual"><scope>ResizedSubscriber</scope><name>getLookupName</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1ae7115a373237561c9896fa93d74fe981" prot="public" virt="virtual"><scope>ResizedSubscriber</scope><name>getNumPublishers</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1ab6e2fa57778770429195a516b78dcb1a" prot="public" virt="virtual"><scope>ResizedSubscriber</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268" prot="protected" virt="virtual"><scope>ResizedSubscriber</scope><name>getTopicToSubscribe</name></member>
+      <member refid="class_resized_subscriber_1abe804a1a73e5281d2e60f7ea6a82c9b8" prot="public" virt="virtual"><scope>ResizedSubscriber</scope><name>getTransportName</name></member>
+      <member refid="class_resized_subscriber_1ad0a3debf9a2135bbbae6145cebb958e8" prot="protected" virt="virtual"><scope>ResizedSubscriber</scope><name>internalCallback</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" prot="protected" virt="non-virtual"><scope>ResizedSubscriber</scope><name>nh</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a559eb7593e56faf92fbfba771e317455" prot="public" virt="virtual"><scope>ResizedSubscriber</scope><name>shutdown</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1abf53246a79405014beab159908a11ec8" prot="public" virt="non-virtual"><scope>ResizedSubscriber</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a699938e88a295ad3ae6d770fceb41690" prot="public" virt="non-virtual"><scope>ResizedSubscriber</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a9cd92f4bac80d9f89d949082581ad4fe" prot="public" virt="non-virtual"><scope>ResizedSubscriber</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1acb23bea81d54ee21cd5fa12ddd871aaa" prot="public" virt="non-virtual"><scope>ResizedSubscriber</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1adead418bf0be6f6511af9e6a03ab8322" prot="protected" virt="virtual"><scope>ResizedSubscriber</scope><name>subscribeImpl</name></member>
+      <member refid="class_resized_subscriber_1a43474798f8d1144e42e6f3ca47a3d539" prot="public" virt="virtual"><scope>ResizedSubscriber</scope><name>~ResizedSubscriber</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a147d9de2239a169f7489366b99759569" prot="public" virt="virtual"><scope>ResizedSubscriber</scope><name>~SimpleSubscriberPlugin</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a9eeabaa73afbd2aafa1f4e4f162e8ac7" prot="public" virt="virtual"><scope>ResizedSubscriber</scope><name>~SubscriberPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_562d4c285a6168bf6757e75b1c715eba" kind="dir">
+    <compoundname>/home/travis/catkin_ws/src/image_common/image_transport/tutorial</compoundname>
+    <innerdir refid="dir_300e6743ef837aa43b88f53e6cbc72b9">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include</innerdir>
+    <innerdir refid="dir_61245e169d2324ac2301d00630cfce38">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/"/>
+  </compounddef>
+</doxygen>

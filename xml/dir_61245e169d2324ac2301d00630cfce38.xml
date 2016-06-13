@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_61245e169d2324ac2301d00630cfce38" kind="dir">
+    <compoundname>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src</compoundname>
+    <innerfile refid="tutorial_2src_2manifest_8cpp">manifest.cpp</innerfile>
+    <innerfile refid="my__publisher_8cpp">my_publisher.cpp</innerfile>
+    <innerfile refid="my__subscriber_8cpp">my_subscriber.cpp</innerfile>
+    <innerfile refid="resized__publisher_8cpp">resized_publisher.cpp</innerfile>
+    <innerfile refid="resized__subscriber_8cpp">resized_subscriber.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/"/>
+  </compounddef>
+</doxygen>

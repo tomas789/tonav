@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="33" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" bodystart="33" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/navigator.h" line="33" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/navigator.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_navigator_1a4897258895f7bbb7ef040d4bdda4c762" prot="private" static="no" mutable="no">
         <type>boost::program_options::variables_map</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="34" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" bodystart="34" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/navigator.h" line="34" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/navigator.h" bodystart="34" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -67,7 +67,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="27" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp" bodystart="27" bodyend="139"/>
+        <location file="/home/travis/build/tomas789/tonav/include/navigator.h" line="27" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/navigator.cpp" bodystart="27" bodyend="139"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="30" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp" bodystart="141" bodyend="155"/>
+        <location file="/home/travis/build/tomas789/tonav/include/navigator.h" line="30" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/navigator.cpp" bodystart="141" bodyend="155"/>
       </memberdef>
       <memberdef kind="function" id="class_navigator_1ae02f8096eaa90c51330b700c9c036868" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -109,14 +109,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp" bodystart="157" bodyend="160"/>
+        <location file="/home/travis/build/tomas789/tonav/include/navigator.h" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/navigator.cpp" bodystart="157" bodyend="160"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Perform navigation from dataset. </para>    </briefdescription>
     <detaileddescription>
 <para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This is deprecated. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or it&apos;s convenience wrapper <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead. </para></xrefdescription></xrefsect></para>    </detaileddescription>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/navigator.h" bodystart="16" bodyend="35"/>
+    <location file="/home/travis/build/tomas789/tonav/include/navigator.h" line="16" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/navigator.h" bodystart="16" bodyend="35"/>
     <listofallmembers>
       <member refid="class_navigator_1ae92bfd56f6030f8ed1fa8fcdb3e45f7a" prot="private" virt="non-virtual"><scope>Navigator</scope><name>options_description_</name></member>
       <member refid="class_navigator_1ad3dc73ff6148e6c3c6f696577f495391" prot="private" virt="non-virtual"><scope>Navigator</scope><name>parseOptions</name></member>

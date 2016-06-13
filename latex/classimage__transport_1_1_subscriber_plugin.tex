@@ -1,0 +1,76 @@
+\hypertarget{classimage__transport_1_1_subscriber_plugin}{\section{image\-\_\-transport\-:\-:Subscriber\-Plugin Class Reference}
+\label{classimage__transport_1_1_subscriber_plugin}\index{image\-\_\-transport\-::\-Subscriber\-Plugin@{image\-\_\-transport\-::\-Subscriber\-Plugin}}
+}
+
+
+Base class for plugins to \hyperlink{classimage__transport_1_1_subscriber}{Subscriber}.  
+
+
+
+
+{\ttfamily \#include $<$subscriber\-\_\-plugin.\-h$>$}
+
+Inheritance diagram for image\-\_\-transport\-:\-:Subscriber\-Plugin\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.517615cm]{classimage__transport_1_1_subscriber_plugin}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_a0e3d423158a12f55e528b108d6dfda19}{typedef boost\-::function$<$ void(const \\*
+sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&)$>$ {\bfseries Callback}}\label{classimage__transport_1_1_subscriber_plugin_a0e3d423158a12f55e528b108d6dfda19}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_a647dc0f6e0c34f0b4d8b809b3c679f88}{virtual std\-::string \hyperlink{classimage__transport_1_1_subscriber_plugin_a647dc0f6e0c34f0b4d8b809b3c679f88}{get\-Transport\-Name} () const =0}\label{classimage__transport_1_1_subscriber_plugin_a647dc0f6e0c34f0b4d8b809b3c679f88}
+
+\begin{DoxyCompactList}\small\item\em Get a string identifier for the transport provided by this plugin. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_abf53246a79405014beab159908a11ec8}{void \hyperlink{classimage__transport_1_1_subscriber_plugin_abf53246a79405014beab159908a11ec8}{subscribe} (ros\-::\-Node\-Handle \&nh, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Callback \&callback, const ros\-::\-Void\-Ptr \&tracked\-\_\-object=ros\-::\-Void\-Ptr(), const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_subscriber_plugin_abf53246a79405014beab159908a11ec8}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image topic, version for arbitrary boost\-::function object. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_a699938e88a295ad3ae6d770fceb41690}{void \hyperlink{classimage__transport_1_1_subscriber_plugin_a699938e88a295ad3ae6d770fceb41690}{subscribe} (ros\-::\-Node\-Handle \&nh, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void($\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&), const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_subscriber_plugin_a699938e88a295ad3ae6d770fceb41690}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image topic, version for bare function. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_a9cd92f4bac80d9f89d949082581ad4fe}{{\footnotesize template$<$class T $>$ }\\void \hyperlink{classimage__transport_1_1_subscriber_plugin_a9cd92f4bac80d9f89d949082581ad4fe}{subscribe} (ros\-::\-Node\-Handle \&nh, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void(T\-::$\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&), T $\ast$obj, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_subscriber_plugin_a9cd92f4bac80d9f89d949082581ad4fe}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image topic, version for class member function with bare pointer. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_acb23bea81d54ee21cd5fa12ddd871aaa}{{\footnotesize template$<$class T $>$ }\\void \hyperlink{classimage__transport_1_1_subscriber_plugin_acb23bea81d54ee21cd5fa12ddd871aaa}{subscribe} (ros\-::\-Node\-Handle \&nh, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void(T\-::$\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&), const boost\-::shared\-\_\-ptr$<$ T $>$ \&obj, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_subscriber_plugin_acb23bea81d54ee21cd5fa12ddd871aaa}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image topic, version for class member function with shared\-\_\-ptr. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_abb289f564cb993a990626662e65bd9f6}{virtual std\-::string \hyperlink{classimage__transport_1_1_subscriber_plugin_abb289f564cb993a990626662e65bd9f6}{get\-Topic} () const =0}\label{classimage__transport_1_1_subscriber_plugin_abb289f564cb993a990626662e65bd9f6}
+
+\begin{DoxyCompactList}\small\item\em Get the transport-\/specific communication topic. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_a7fae40b302a6493d00b0cd8905484677}{virtual uint32\-\_\-t \hyperlink{classimage__transport_1_1_subscriber_plugin_a7fae40b302a6493d00b0cd8905484677}{get\-Num\-Publishers} () const =0}\label{classimage__transport_1_1_subscriber_plugin_a7fae40b302a6493d00b0cd8905484677}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of publishers this subscriber is connected to. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_aa8af1348748aef7372bf248a69f775a7}{virtual void \hyperlink{classimage__transport_1_1_subscriber_plugin_aa8af1348748aef7372bf248a69f775a7}{shutdown} ()=0}\label{classimage__transport_1_1_subscriber_plugin_aa8af1348748aef7372bf248a69f775a7}
+
+\begin{DoxyCompactList}\small\item\em Unsubscribe the callback associated with this \hyperlink{classimage__transport_1_1_subscriber_plugin}{Subscriber\-Plugin}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_ae48e1648e998fe8352ff385c4c132531}{static std\-::string \hyperlink{classimage__transport_1_1_subscriber_plugin_ae48e1648e998fe8352ff385c4c132531}{get\-Lookup\-Name} (const std\-::string \&transport\-\_\-type)}\label{classimage__transport_1_1_subscriber_plugin_ae48e1648e998fe8352ff385c4c132531}
+
+\begin{DoxyCompactList}\small\item\em Return the lookup name of the \hyperlink{classimage__transport_1_1_subscriber_plugin}{Subscriber\-Plugin} associated with a specific transport identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_plugin_a1cc8b28b99ea0a15c9e58dc6d9bc27f6}{virtual void \hyperlink{classimage__transport_1_1_subscriber_plugin_a1cc8b28b99ea0a15c9e58dc6d9bc27f6}{subscribe\-Impl} (ros\-::\-Node\-Handle \&nh, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Callback \&callback, const ros\-::\-Void\-Ptr \&tracked\-\_\-object, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints)=0}\label{classimage__transport_1_1_subscriber_plugin_a1cc8b28b99ea0a15c9e58dc6d9bc27f6}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image transport topic. Must be implemented by the subclass. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for plugins to \hyperlink{classimage__transport_1_1_subscriber}{Subscriber}. 
+
+Definition at line 48 of file subscriber\-\_\-plugin.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/subscriber\-\_\-plugin.\-h\end{DoxyCompactItemize}

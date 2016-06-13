@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_image_transport_image" kind="class" prot="public">
+    <compoundname>ImageTransportImage</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_image_transport_image_1a3e845cce708fc474bbda45d0e3881a7d" prot="public" static="no" mutable="no">
+        <type>sensor_msgs::Image</type>
+        <definition>sensor_msgs::Image ImageTransportImage::image_</definition>
+        <argsstring></argsstring>
+        <name>image_</name>
+        <briefdescription>
+<para>ROS header. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" line="48" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_image_transport_image_1a8b947bf6752841d10eaa442317f13f0b" prot="public" static="no" mutable="no">
+        <type>const uint8_t *</type>
+        <definition>const uint8_t* ImageTransportImage::data_</definition>
+        <argsstring></argsstring>
+        <name>data_</name>
+        <briefdescription>
+<para>Image data for use with OpenCV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" line="49" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_image_transport_image_1a6c74ec4d27c68370d48d008d561a6f3f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ImageTransportImage::ImageTransportImage</definition>
+        <argsstring>()</argsstring>
+        <name>ImageTransportImage</name>
+        <briefdescription>
+<para>Empty constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" line="54" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_image_transport_image_1a902a6c93889d96ca6c4091605f80caa0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ImageTransportImage::ImageTransportImage</definition>
+        <argsstring>(const sensor_msgs::Image &amp;image, const uint8_t *data)</argsstring>
+        <name>ImageTransportImage</name>
+        <param>
+          <type>const sensor_msgs::Image &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" line="59" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The code in the following namespace copies a lof of code from cv_bridge It does not depend on cv_bridge to not depend on OpenCV It re-defines a CvImage so that we can publish that object and not a sensor_msgs::Image, which requires a memory copy </para>    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" line="46" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/raw_publisher.cpp" bodystart="45" bodyend="63"/>
+    <listofallmembers>
+      <member refid="class_image_transport_image_1a8b947bf6752841d10eaa442317f13f0b" prot="public" virt="non-virtual"><scope>ImageTransportImage</scope><name>data_</name></member>
+      <member refid="class_image_transport_image_1a3e845cce708fc474bbda45d0e3881a7d" prot="public" virt="non-virtual"><scope>ImageTransportImage</scope><name>image_</name></member>
+      <member refid="class_image_transport_image_1a6c74ec4d27c68370d48d008d561a6f3f" prot="public" virt="non-virtual"><scope>ImageTransportImage</scope><name>ImageTransportImage</name></member>
+      <member refid="class_image_transport_image_1a902a6c93889d96ca6c4091605f80caa0" prot="public" virt="non-virtual"><scope>ImageTransportImage</scope><name>ImageTransportImage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

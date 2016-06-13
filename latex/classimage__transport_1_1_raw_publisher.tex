@@ -1,0 +1,116 @@
+\hypertarget{classimage__transport_1_1_raw_publisher}{\section{image\-\_\-transport\-:\-:Raw\-Publisher Class Reference}
+\label{classimage__transport_1_1_raw_publisher}\index{image\-\_\-transport\-::\-Raw\-Publisher@{image\-\_\-transport\-::\-Raw\-Publisher}}
+}
+
+
+The default \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}.  
+
+
+
+
+{\ttfamily \#include $<$raw\-\_\-publisher.\-h$>$}
+
+Inheritance diagram for image\-\_\-transport\-:\-:Raw\-Publisher\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classimage__transport_1_1_raw_publisher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_raw_publisher_adbb149bca794283f80db9df4c32f34dc}{virtual std\-::string \hyperlink{classimage__transport_1_1_raw_publisher_adbb149bca794283f80db9df4c32f34dc}{get\-Transport\-Name} () const }\label{classimage__transport_1_1_raw_publisher_adbb149bca794283f80db9df4c32f34dc}
+
+\begin{DoxyCompactList}\small\item\em Get a string identifier for the transport provided by this plugin. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_raw_publisher_a567f1bc6ddaf5fc191fda71d4e5b4d22}{virtual void \hyperlink{classimage__transport_1_1_raw_publisher_a567f1bc6ddaf5fc191fda71d4e5b4d22}{publish} (const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&message) const }\label{classimage__transport_1_1_raw_publisher_a567f1bc6ddaf5fc191fda71d4e5b4d22}
+
+\begin{DoxyCompactList}\small\item\em Publish an image using the transport associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classimage__transport_1_1_raw_publisher_a62ee9d7dab3a361ad92c70a4df5d6416}{publish} (const sensor\-\_\-msgs\-::\-Image \&message, const uint8\-\_\-t $\ast$data) const 
+\begin{DoxyCompactList}\small\item\em Publish an image using the transport associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. This version of the function can be used to optimize cases where you don't want to fill a R\-O\-S message first to avoid useless copies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classimage__transport_1_1_raw_publisher_a5d82f75d47a79f1df0be82165398e8fa}{publish} (const sensor\-\_\-msgs\-::\-Image \&message, const \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a01bd11cb3ee6b7ce6715a3b57feadf93}{Publish\-Fn} \&publish\-\_\-fn) const 
+\begin{DoxyCompactList}\small\item\em Publish an image using the specified publish function. Must be implemented by the subclass. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classimage__transport_1_1_raw_publisher_a18a9e588fde64cffdf43a3cebba7b471}{get\-Topic\-To\-Advertise} (const std\-::string \&base\-\_\-topic) const 
+\begin{DoxyCompactList}\small\item\em Return the communication topic name for a given base topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The default \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. 
+
+\hyperlink{classimage__transport_1_1_raw_publisher}{Raw\-Publisher} is a simple wrapper for ros\-::\-Publisher, publishing unaltered Image messages on the base topic. 
+
+Definition at line 48 of file raw\-\_\-publisher.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_raw_publisher_a18a9e588fde64cffdf43a3cebba7b471}{\index{image\-\_\-transport\-::\-Raw\-Publisher@{image\-\_\-transport\-::\-Raw\-Publisher}!get\-Topic\-To\-Advertise@{get\-Topic\-To\-Advertise}}
+\index{get\-Topic\-To\-Advertise@{get\-Topic\-To\-Advertise}!image_transport::RawPublisher@{image\-\_\-transport\-::\-Raw\-Publisher}}
+\subsubsection[{get\-Topic\-To\-Advertise}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string image\-\_\-transport\-::\-Raw\-Publisher\-::get\-Topic\-To\-Advertise (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{base\-\_\-topic}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classimage__transport_1_1_raw_publisher_a18a9e588fde64cffdf43a3cebba7b471}
+
+
+Return the communication topic name for a given base topic. 
+
+Defaults to $<$base topic$>$/$<$transport name$>$. 
+
+Reimplemented from \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a46df2b43de62c169d28ac510010d032f}{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin$<$ sensor\-\_\-msgs\-::\-Image $>$}.
+
+
+
+Definition at line 74 of file raw\-\_\-publisher.\-h.
+
+\hypertarget{classimage__transport_1_1_raw_publisher_a62ee9d7dab3a361ad92c70a4df5d6416}{\index{image\-\_\-transport\-::\-Raw\-Publisher@{image\-\_\-transport\-::\-Raw\-Publisher}!publish@{publish}}
+\index{publish@{publish}!image_transport::RawPublisher@{image\-\_\-transport\-::\-Raw\-Publisher}}
+\subsubsection[{publish}]{\setlength{\rightskip}{0pt plus 5cm}virtual void image\-\_\-transport\-::\-Raw\-Publisher\-::publish (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Image \&}]{message, }
+\item[{const uint8\-\_\-t $\ast$}]{data}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classimage__transport_1_1_raw_publisher_a62ee9d7dab3a361ad92c70a4df5d6416}
+
+
+Publish an image using the transport associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. This version of the function can be used to optimize cases where you don't want to fill a R\-O\-S message first to avoid useless copies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & an image message to use information from (but not data) \\
+\hline
+{\em data} & a pointer to the image data to use to fill the Image message \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classimage__transport_1_1_publisher_plugin_add246a58e2cc57ceba3c957f52a95a6d}{image\-\_\-transport\-::\-Publisher\-Plugin}.
+
+\hypertarget{classimage__transport_1_1_raw_publisher_a5d82f75d47a79f1df0be82165398e8fa}{\index{image\-\_\-transport\-::\-Raw\-Publisher@{image\-\_\-transport\-::\-Raw\-Publisher}!publish@{publish}}
+\index{publish@{publish}!image_transport::RawPublisher@{image\-\_\-transport\-::\-Raw\-Publisher}}
+\subsubsection[{publish}]{\setlength{\rightskip}{0pt plus 5cm}virtual void image\-\_\-transport\-::\-Raw\-Publisher\-::publish (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Image \&}]{message, }
+\item[{const {\bf Publish\-Fn} \&}]{publish\-\_\-fn}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classimage__transport_1_1_raw_publisher_a5d82f75d47a79f1df0be82165398e8fa}
+
+
+Publish an image using the specified publish function. Must be implemented by the subclass. 
+
+The Publish\-Fn publishes the transport-\/specific message type. This indirection allows \hyperlink{classimage__transport_1_1_simple_subscriber_plugin}{Simple\-Subscriber\-Plugin} to use this function for both normal broadcast publishing and single subscriber publishing (in subscription callbacks). 
+
+Implements \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a193470dd32092d13e2284052d4fa359a}{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin$<$ sensor\-\_\-msgs\-::\-Image $>$}.
+
+
+
+Definition at line 69 of file raw\-\_\-publisher.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/raw\-\_\-publisher.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="my__publisher_8cpp" kind="file">
+    <compoundname>my_publisher.cpp</compoundname>
+    <includes local="no">ros/ros.h</includes>
+    <includes refid="image__transport_8h" local="no">image_transport/image_transport.h</includes>
+    <includes local="no">opencv2/highgui/highgui.hpp</includes>
+    <includes local="no">cv_bridge/cv_bridge.h</includes>
+    <incdepgraph>
+      <node id="1236">
+        <label>image_transport/loader_fwds.h</label>
+        <link refid="loader__fwds_8h_source"/>
+      </node>
+      <node id="1226">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_publisher.cpp</label>
+        <link refid="my_publisher.cpp"/>
+        <childnode refid="1227" relation="include">
+        </childnode>
+        <childnode refid="1228" relation="include">
+        </childnode>
+        <childnode refid="1242" relation="include">
+        </childnode>
+        <childnode refid="1243" relation="include">
+        </childnode>
+      </node>
+      <node id="1240">
+        <label>sensor_msgs/CameraInfo.h</label>
+      </node>
+      <node id="1239">
+        <label>image_transport/camera_publisher.h</label>
+        <link refid="camera__publisher_8h_source"/>
+        <childnode refid="1227" relation="include">
+        </childnode>
+        <childnode refid="1230" relation="include">
+        </childnode>
+        <childnode refid="1240" relation="include">
+        </childnode>
+        <childnode refid="1231" relation="include">
+        </childnode>
+      </node>
+      <node id="1231">
+        <label>image_transport/single_subscriber_publisher.h</label>
+        <link refid="single__subscriber__publisher_8h_source"/>
+        <childnode refid="1232" relation="include">
+        </childnode>
+        <childnode refid="1233" relation="include">
+        </childnode>
+        <childnode refid="1230" relation="include">
+        </childnode>
+      </node>
+      <node id="1235">
+        <label>stdexcept</label>
+      </node>
+      <node id="1230">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1232">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="1243">
+        <label>cv_bridge/cv_bridge.h</label>
+      </node>
+      <node id="1238">
+        <label>image_transport/transport_hints.h</label>
+        <link refid="transport__hints_8h_source"/>
+        <childnode refid="1227" relation="include">
+        </childnode>
+      </node>
+      <node id="1228">
+        <label>image_transport/image_transport.h</label>
+        <link refid="image__transport_8h_source"/>
+        <childnode refid="1229" relation="include">
+        </childnode>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1239" relation="include">
+        </childnode>
+        <childnode refid="1241" relation="include">
+        </childnode>
+      </node>
+      <node id="1234">
+        <label>image_transport/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="1235" relation="include">
+        </childnode>
+      </node>
+      <node id="1241">
+        <label>image_transport/camera_subscriber.h</label>
+        <link refid="camera__subscriber_8h_source"/>
+        <childnode refid="1227" relation="include">
+        </childnode>
+        <childnode refid="1240" relation="include">
+        </childnode>
+        <childnode refid="1230" relation="include">
+        </childnode>
+        <childnode refid="1238" relation="include">
+        </childnode>
+      </node>
+      <node id="1233">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="1237">
+        <label>image_transport/subscriber.h</label>
+        <link refid="subscriber_8h_source"/>
+        <childnode refid="1227" relation="include">
+        </childnode>
+        <childnode refid="1230" relation="include">
+        </childnode>
+        <childnode refid="1238" relation="include">
+        </childnode>
+        <childnode refid="1234" relation="include">
+        </childnode>
+        <childnode refid="1236" relation="include">
+        </childnode>
+      </node>
+      <node id="1227">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="1242">
+        <label>opencv2/highgui/highgui.hpp</label>
+      </node>
+      <node id="1229">
+        <label>image_transport/publisher.h</label>
+        <link refid="publisher_8h_source"/>
+        <childnode refid="1227" relation="include">
+        </childnode>
+        <childnode refid="1230" relation="include">
+        </childnode>
+        <childnode refid="1231" relation="include">
+        </childnode>
+        <childnode refid="1234" relation="include">
+        </childnode>
+        <childnode refid="1236" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="my__publisher_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char **argv)</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_publisher.cpp" line="6" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_publisher.cpp" bodystart="6" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;image_transport/image_transport.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/highgui/highgui.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cv_bridge/cv_bridge.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>argv)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/>ros::init(argc,<sp/>argv,<sp/></highlight><highlight class="stringliteral">&quot;image_publisher&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>ros::NodeHandle<sp/>nh;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><ref refid="classimage__transport_1_1_image_transport" kindref="compound">image_transport::ImageTransport</ref><sp/>it(nh);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><ref refid="classimage__transport_1_1_publisher" kindref="compound">image_transport::Publisher</ref><sp/>pub<sp/>=<sp/>it.advertise(</highlight><highlight class="stringliteral">&quot;camera/image&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>cv::Mat<sp/>image<sp/>=<sp/>cv::imread(argv[1],<sp/>CV_LOAD_IMAGE_COLOR);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>sensor_msgs::ImagePtr<sp/>msg<sp/>=<sp/>cv_bridge::CvImage(std_msgs::Header(),<sp/></highlight><highlight class="stringliteral">&quot;bgr8&quot;</highlight><highlight class="normal">,<sp/>image).toImageMsg();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>ros::Rate<sp/>loop_rate(5);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(nh.ok())<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>pub.<ref refid="classimage__transport_1_1_publisher_1adca2507fe8999ccfdfc6d8871f986e10" kindref="member">publish</ref>(msg);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>ros::spinOnce();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>loop_rate.sleep();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_publisher.cpp"/>
+  </compounddef>
+</doxygen>

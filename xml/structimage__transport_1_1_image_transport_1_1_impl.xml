@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="structimage__transport_1_1_image_transport_1_1_impl" kind="struct" prot="public">
+    <compoundname>image_transport::ImageTransport::Impl</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structimage__transport_1_1_image_transport_1_1_impl_1a9beb4309b046faa701ed1c02558043ff" prot="public" static="no" mutable="no">
+        <type>ros::NodeHandle</type>
+        <definition>ros::NodeHandle image_transport::ImageTransport::Impl::nh_</definition>
+        <argsstring></argsstring>
+        <name>nh_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" line="47" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_image_transport_1_1_impl_1a89df837150dc5781cd19591860c4f7cd" prot="public" static="no" mutable="no">
+        <type>PubLoaderPtr</type>
+        <definition>PubLoaderPtr image_transport::ImageTransport::Impl::pub_loader_</definition>
+        <argsstring></argsstring>
+        <name>pub_loader_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" line="48" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_image_transport_1_1_impl_1a16184c366e22f87a073490ef88c83d18" prot="public" static="no" mutable="no">
+        <type>SubLoaderPtr</type>
+        <definition>SubLoaderPtr image_transport::ImageTransport::Impl::sub_loader_</definition>
+        <argsstring></argsstring>
+        <name>sub_loader_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" line="49" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structimage__transport_1_1_image_transport_1_1_impl_1a107ebb9cf987b5d10035b593f23a426f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::ImageTransport::Impl::Impl</definition>
+        <argsstring>(const ros::NodeHandle &amp;nh)</argsstring>
+        <name>Impl</name>
+        <param>
+          <type>const ros::NodeHandle &amp;</type>
+          <declname>nh</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" line="51" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" bodystart="51" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" line="46" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp" bodystart="45" bodyend="57"/>
+    <listofallmembers>
+      <member refid="structimage__transport_1_1_image_transport_1_1_impl_1a107ebb9cf987b5d10035b593f23a426f" prot="public" virt="non-virtual"><scope>image_transport::ImageTransport::Impl</scope><name>Impl</name></member>
+      <member refid="structimage__transport_1_1_image_transport_1_1_impl_1a9beb4309b046faa701ed1c02558043ff" prot="public" virt="non-virtual"><scope>image_transport::ImageTransport::Impl</scope><name>nh_</name></member>
+      <member refid="structimage__transport_1_1_image_transport_1_1_impl_1a89df837150dc5781cd19591860c4f7cd" prot="public" virt="non-virtual"><scope>image_transport::ImageTransport::Impl</scope><name>pub_loader_</name></member>
+      <member refid="structimage__transport_1_1_image_transport_1_1_impl_1a16184c366e22f87a073490ef88c83d18" prot="public" virt="non-virtual"><scope>image_transport::ImageTransport::Impl</scope><name>sub_loader_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

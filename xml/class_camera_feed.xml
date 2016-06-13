@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="30" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" bodystart="30" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="30" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_feed.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_camera_feed_1acf108e2036fc37819f0fe6ace6e17e2d" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_camera_item" kindref="compound">CameraItem</ref> &gt;</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" bodystart="31" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_feed.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_camera_feed_1aaab6bb3a35f2dc18e6e70f91315b66a7" prot="private" static="no" mutable="no">
         <type>boost::filesystem::path</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="32" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" bodystart="32" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="32" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_feed.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="20" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="18" bodyend="20"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_feed.cpp" bodystart="18" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_feed_1a175a707efb56c2f3c78c2859129cbc24" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="21" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="22" bodyend="24"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="21" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_feed.cpp" bodystart="22" bodyend="24"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_feed_1ac703c1de71a7bf488f82921177ea4b0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="class_camera_item" kindref="compound">CameraItem</ref> &amp;</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="22" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="26" bodyend="31"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="22" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_feed.cpp" bodystart="26" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_feed_1af761420a0337f52253b23c7d276516f8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>cv::Mat</type>
@@ -98,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="24" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="62" bodyend="74"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="24" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_feed.cpp" bodystart="62" bodyend="74"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -117,7 +117,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="33" bodyend="38"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="26" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_feed.cpp" bodystart="33" bodyend="38"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -136,14 +136,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="28" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp" bodystart="40" bodyend="60"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_feed.cpp" bodystart="40" bodyend="60"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h" bodystart="18" bodyend="33"/>
+    <location file="/home/travis/build/tomas789/tonav/include/camera_feed.h" line="18" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_feed.h" bodystart="18" bodyend="33"/>
     <listofallmembers>
       <member refid="class_camera_feed_1a217aec63b984207a40f460c3c99a66b4" prot="private" virt="non-virtual"><scope>CameraFeed</scope><name>current_item_</name></member>
       <member refid="class_camera_feed_1a38c0ad4632b39babdc99fc65ddc56c36" prot="public" virt="non-virtual"><scope>CameraFeed</scope><name>fromDataset</name></member>

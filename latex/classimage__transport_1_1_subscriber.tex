@@ -1,0 +1,84 @@
+\hypertarget{classimage__transport_1_1_subscriber}{\section{image\-\_\-transport\-:\-:Subscriber Class Reference}
+\label{classimage__transport_1_1_subscriber}\index{image\-\_\-transport\-::\-Subscriber@{image\-\_\-transport\-::\-Subscriber}}
+}
+
+
+Manages a subscription callback on a specific topic that can be interpreted as an Image topic.  
+
+
+
+
+{\ttfamily \#include $<$subscriber.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structimage__transport_1_1_subscriber_1_1_impl}{Impl}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classimage__transport_1_1_subscriber_ae8d6676e24bb42dd4b57484db5770c1b}{get\-Topic} () const 
+\begin{DoxyCompactList}\small\item\em Returns the base image topic. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_ac5b0836c603afc1faa961bbf279e48da}{uint32\-\_\-t \hyperlink{classimage__transport_1_1_subscriber_ac5b0836c603afc1faa961bbf279e48da}{get\-Num\-Publishers} () const }\label{classimage__transport_1_1_subscriber_ac5b0836c603afc1faa961bbf279e48da}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of publishers this subscriber is connected to. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_ac1b8ae33bf243c09e33e293330a2a4b7}{std\-::string \hyperlink{classimage__transport_1_1_subscriber_ac1b8ae33bf243c09e33e293330a2a4b7}{get\-Transport} () const }\label{classimage__transport_1_1_subscriber_ac1b8ae33bf243c09e33e293330a2a4b7}
+
+\begin{DoxyCompactList}\small\item\em Returns the name of the transport being used. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_a014af7126efc24adf6dc4d11ac9bca6b}{void \hyperlink{classimage__transport_1_1_subscriber_a014af7126efc24adf6dc4d11ac9bca6b}{shutdown} ()}\label{classimage__transport_1_1_subscriber_a014af7126efc24adf6dc4d11ac9bca6b}
+
+\begin{DoxyCompactList}\small\item\em Unsubscribe the callback associated with this \hyperlink{classimage__transport_1_1_subscriber}{Subscriber}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_a23659b0b3552134bf47af54e847b6063}{{\bfseries operator void $\ast$} () const }\label{classimage__transport_1_1_subscriber_a23659b0b3552134bf47af54e847b6063}
+
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_aec02fe5a92183fb63e94b0c70739d363}{bool {\bfseries operator$<$} (const \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} \&rhs) const }\label{classimage__transport_1_1_subscriber_aec02fe5a92183fb63e94b0c70739d363}
+
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_a30e373deed0ab800184c5d2c7bac2dba}{bool {\bfseries operator!=} (const \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} \&rhs) const }\label{classimage__transport_1_1_subscriber_a30e373deed0ab800184c5d2c7bac2dba}
+
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_a6428c74a8fc9cabcac2e9f11c50f25cf}{bool {\bfseries operator==} (const \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} \&rhs) const }\label{classimage__transport_1_1_subscriber_a6428c74a8fc9cabcac2e9f11c50f25cf}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_ac010f5a40d98825199e1c5303d0638eb}{class {\bfseries Image\-Transport}}\label{classimage__transport_1_1_subscriber_ac010f5a40d98825199e1c5303d0638eb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a subscription callback on a specific topic that can be interpreted as an Image topic. 
+
+\hyperlink{classimage__transport_1_1_subscriber}{Subscriber} is the client-\/side counterpart to \hyperlink{classimage__transport_1_1_publisher}{Publisher}. By loading the appropriate plugin, it can subscribe to a base image topic using any available transport. The complexity of what transport is actually used is hidden from the user, who sees only a normal Image callback.
+
+A \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} should always be created through a call to \hyperlink{classimage__transport_1_1_image_transport_a1c847a2c719c874f84a78a6a60b98c7f}{Image\-Transport\-::subscribe()}, or copied from one that was. Once all copies of a specific \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} go out of scope, the subscription callback associated with that handle will stop being called. Once all \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} for a given topic go out of scope the topic will be unsubscribed. 
+
+Definition at line 61 of file subscriber.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_subscriber_ae8d6676e24bb42dd4b57484db5770c1b}{\index{image\-\_\-transport\-::\-Subscriber@{image\-\_\-transport\-::\-Subscriber}!get\-Topic@{get\-Topic}}
+\index{get\-Topic@{get\-Topic}!image_transport::Subscriber@{image\-\_\-transport\-::\-Subscriber}}
+\subsubsection[{get\-Topic}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string image\-\_\-transport\-::\-Subscriber\-::get\-Topic (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classimage__transport_1_1_subscriber_ae8d6676e24bb42dd4b57484db5770c1b}
+
+
+Returns the base image topic. 
+
+The \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} may actually be subscribed to some transport-\/specific topic that differs from the base topic. 
+
+Definition at line 114 of file subscriber.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/subscriber.\-h\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/src/subscriber.\-cpp\end{DoxyCompactItemize}

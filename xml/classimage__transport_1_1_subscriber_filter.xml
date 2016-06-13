@@ -1,0 +1,297 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_subscriber_filter" kind="class" prot="public">
+    <compoundname>image_transport::SubscriberFilter</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</basecompoundref>
+    <includes refid="subscriber__filter_8h" local="no">subscriber_filter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classimage__transport_1_1_subscriber_filter_1a731c9d15bb3c78a06e3a01fbc840095a" prot="private" static="no" mutable="no">
+        <type><ref refid="classimage__transport_1_1_subscriber" kindref="compound">Subscriber</ref></type>
+        <definition>Subscriber image_transport::SubscriberFilter::sub_</definition>
+        <argsstring></argsstring>
+        <name>sub_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="158" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1afae6f86755c38b573bc5fa35e43e37f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::SubscriberFilter::SubscriberFilter</definition>
+        <argsstring>(ImageTransport &amp;it, const std::string &amp;base_topic, uint32_t queue_size, const TransportHints &amp;transport_hints=TransportHints())</argsstring>
+        <name>SubscriberFilter</name>
+        <param>
+          <type><ref refid="classimage__transport_1_1_image_transport" kindref="compound">ImageTransport</ref> &amp;</type>
+          <declname>it</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_transport_hints" kindref="compound">TransportHints</ref> &amp;</type>
+          <declname>transport_hints</declname>
+          <defval><ref refid="classimage__transport_1_1_transport_hints" kindref="compound">TransportHints</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>See the ros::NodeHandle::subscribe() variants for more information on the parameters</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ros::NodeHandle to use to subscribe. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base_topic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The topic to subscribe to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queue_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The subscription queue size </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transport_hints</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The transport hints to pass along </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="77" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1a2378a43c41e4fe123193ca637eb49afd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::SubscriberFilter::SubscriberFilter</definition>
+        <argsstring>()</argsstring>
+        <name>SubscriberFilter</name>
+        <briefdescription>
+<para>Empty constructor, use <ref refid="classimage__transport_1_1_subscriber_filter_1a20afdaa28a22ffdbf62226ba1c95e561" kindref="member">subscribe()</ref> to subscribe to a topic. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="86" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1ac4e60218d721bc350a0a51aeba4d7572" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::SubscriberFilter::~SubscriberFilter</definition>
+        <argsstring>()</argsstring>
+        <name>~SubscriberFilter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="90" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1a20afdaa28a22ffdbf62226ba1c95e561" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::SubscriberFilter::subscribe</definition>
+        <argsstring>(ImageTransport &amp;it, const std::string &amp;base_topic, uint32_t queue_size, const TransportHints &amp;transport_hints=TransportHints())</argsstring>
+        <name>subscribe</name>
+        <param>
+          <type><ref refid="classimage__transport_1_1_image_transport" kindref="compound">ImageTransport</ref> &amp;</type>
+          <declname>it</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_transport_hints" kindref="compound">TransportHints</ref> &amp;</type>
+          <declname>transport_hints</declname>
+          <defval><ref refid="classimage__transport_1_1_transport_hints" kindref="compound">TransportHints</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Subscribe to a topic. </para>        </briefdescription>
+        <detaileddescription>
+<para>If this <ref refid="classimage__transport_1_1_subscriber" kindref="compound">Subscriber</ref> is already subscribed to a topic, this function will first unsubscribe.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nh</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The ros::NodeHandle to use to subscribe. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>base_topic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The topic to subscribe to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queue_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The subscription queue size </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transport_hints</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The transport hints to pass along </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="105" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="105" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1a058bfa4c200c90d7cabd18a2d674084b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::SubscriberFilter::unsubscribe</definition>
+        <argsstring>()</argsstring>
+        <name>unsubscribe</name>
+        <briefdescription>
+<para>Force immediate unsubscription of this subscriber from its topic. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="117" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="117" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1a9579b79c3a19cfcbd84586efddad52d5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::SubscriberFilter::getTopic</definition>
+        <argsstring>() const </argsstring>
+        <name>getTopic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="122" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="122" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1abebc23b9066f8c684a1ce6d3906d5f99" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t image_transport::SubscriberFilter::getNumPublishers</definition>
+        <argsstring>() const </argsstring>
+        <name>getNumPublishers</name>
+        <briefdescription>
+<para>Returns the number of publishers this subscriber is connected to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="130" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1a9ba5a0e16e68dc055e0e4aba9679a281" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::SubscriberFilter::getTransport</definition>
+        <argsstring>() const </argsstring>
+        <name>getTransport</name>
+        <briefdescription>
+<para>Returns the name of the transport being used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="138" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1ab0fdf78b86de2231788b74a911892d4c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="classimage__transport_1_1_subscriber" kindref="compound">Subscriber</ref> &amp;</type>
+        <definition>const Subscriber&amp; image_transport::SubscriberFilter::getSubscriber</definition>
+        <argsstring>() const </argsstring>
+        <name>getSubscriber</name>
+        <briefdescription>
+<para>Returns the internal <ref refid="classimage__transport_1_1_subscriber" kindref="compound">image_transport::Subscriber</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="146" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="146" bodyend="149"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classimage__transport_1_1_subscriber_filter_1a2b4fb7932ef2747fccadb45f0ae08c98" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::SubscriberFilter::cb</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;m)</argsstring>
+        <name>cb</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="153" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="153" bodyend="156"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Image subscription filter. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class wraps <ref refid="classimage__transport_1_1_subscriber" kindref="compound">Subscriber</ref> as a &quot;filter&quot; compatible with the message_filters package. It acts as a highest-level filter, simply passing messages from an image transport subscription through to the filters which have connected to it.</para><para>When this object is destroyed it will unsubscribe from the ROS subscription.</para><sect1 id="classimage__transport_1_1_subscriber_filter_1connections">
+<title>CONNECTIONS</title>
+<para><ref refid="classimage__transport_1_1_subscriber_filter" kindref="compound">SubscriberFilter</ref> has no input connection.</para><para>The output connection for the <ref refid="classimage__transport_1_1_subscriber_filter" kindref="compound">SubscriberFilter</ref> object is the same signature as for roscpp subscription callbacks, ie. <verbatim>void callback(const boost::shared_ptr&lt;const sensor_msgs::Image&gt;&amp;);
+</verbatim> </para></sect1>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="145">
+        <label>message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</label>
+      </node>
+      <node id="144">
+        <label>image_transport::SubscriberFilter</label>
+        <link refid="classimage__transport_1_1_subscriber_filter"/>
+        <childnode refid="145" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="147">
+        <label>message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</label>
+      </node>
+      <node id="146">
+        <label>image_transport::SubscriberFilter</label>
+        <link refid="classimage__transport_1_1_subscriber_filter"/>
+        <childnode refid="147" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" line="65" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h" bodystart="64" bodyend="159"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_subscriber_filter_1a2b4fb7932ef2747fccadb45f0ae08c98" prot="private" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>cb</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1abebc23b9066f8c684a1ce6d3906d5f99" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>getNumPublishers</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1ab0fdf78b86de2231788b74a911892d4c" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>getSubscriber</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1a9579b79c3a19cfcbd84586efddad52d5" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1a9ba5a0e16e68dc055e0e4aba9679a281" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>getTransport</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1a731c9d15bb3c78a06e3a01fbc840095a" prot="private" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>sub_</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1a20afdaa28a22ffdbf62226ba1c95e561" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1afae6f86755c38b573bc5fa35e43e37f3" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>SubscriberFilter</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1a2378a43c41e4fe123193ca637eb49afd" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>SubscriberFilter</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1a058bfa4c200c90d7cabd18a2d674084b" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>unsubscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_filter_1ac4e60218d721bc350a0a51aeba4d7572" prot="public" virt="non-virtual"><scope>image_transport::SubscriberFilter</scope><name>~SubscriberFilter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

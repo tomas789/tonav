@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_exception" kind="class" prot="public">
+    <compoundname>image_transport::Exception</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">runtime_error</basecompoundref>
+    <derivedcompoundref refid="classimage__transport_1_1_transport_load_exception" prot="public" virt="non-virtual">image_transport::TransportLoadException</derivedcompoundref>
+    <includes refid="exception_8h" local="no">exception.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_exception_1a84e9a474ba9e6037e383264d96cec958" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::Exception::Exception</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>Exception</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/exception.h" line="48" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/exception.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A base class for all image_transport exceptions inheriting from std::runtime_error. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="28">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="29">
+        <label>image_transport::TransportLoadException</label>
+        <link refid="classimage__transport_1_1_transport_load_exception"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>image_transport::Exception</label>
+        <link refid="classimage__transport_1_1_exception"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="31">
+        <label>std::runtime_error</label>
+      </node>
+      <node id="30">
+        <label>image_transport::Exception</label>
+        <link refid="classimage__transport_1_1_exception"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/exception.h" line="46" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/exception.h" bodystart="45" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_exception_1a84e9a474ba9e6037e383264d96cec958" prot="public" virt="non-virtual"><scope>image_transport::Exception</scope><name>Exception</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

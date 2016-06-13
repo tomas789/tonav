@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="structimage__transport_1_1_publisher_1_1_impl" kind="struct" prot="public">
+    <compoundname>image_transport::Publisher::Impl</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structimage__transport_1_1_publisher_1_1_impl_1af60a4aa961dd8b452809756a4c8c8163" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string image_transport::Publisher::Impl::base_topic_</definition>
+        <argsstring></argsstring>
+        <name>base_topic_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="92" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_publisher_1_1_impl_1aaed1c0cb6c19b601daaa2e14596c5d83" prot="public" static="no" mutable="no">
+        <type>PubLoaderPtr</type>
+        <definition>PubLoaderPtr image_transport::Publisher::Impl::loader_</definition>
+        <argsstring></argsstring>
+        <name>loader_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="93" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_publisher_1_1_impl_1a8f76f925d46b3770fcd29a4799858502" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; boost::shared_ptr&lt; <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;boost::shared_ptr&lt;PublisherPlugin&gt; &gt; image_transport::Publisher::Impl::publishers_</definition>
+        <argsstring></argsstring>
+        <name>publishers_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="94" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_publisher_1_1_impl_1ae0cb1a8d1f7693ef7f6759274c435975" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool image_transport::Publisher::Impl::unadvertised_</definition>
+        <argsstring></argsstring>
+        <name>unadvertised_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="95" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structimage__transport_1_1_publisher_1_1_impl_1a26aa1e4786dd59324fbfb902d2c4bb73" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::Publisher::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="45" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_publisher_1_1_impl_1a3539eca8df40092e9145e9f46b22b241" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::Publisher::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="50" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_publisher_1_1_impl_1ae5fa527c01befd32534c2acedc7d7d06" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t image_transport::Publisher::Impl::getNumSubscribers</definition>
+        <argsstring>() const </argsstring>
+        <name>getNumSubscribers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="55" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="55" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_publisher_1_1_impl_1a194f5bf18612e0808af6dc76bac7312a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::Publisher::Impl::getTopic</definition>
+        <argsstring>() const </argsstring>
+        <name>getTopic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="63" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="63" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_publisher_1_1_impl_1afdeac6f693e980a669722f56f9c263bb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool image_transport::Publisher::Impl::isValid</definition>
+        <argsstring>() const </argsstring>
+        <name>isValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="68" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="68" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_publisher_1_1_impl_1a05762aaca515a039017521dd04763cb6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::Publisher::Impl::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="73" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="73" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_publisher_1_1_impl_1ac32219a7ba5581cf9d8d3cf8dde5a48c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::Publisher::Impl::subscriberCB</definition>
+        <argsstring>(const SingleSubscriberPublisher &amp;plugin_pub, const SubscriberStatusCallback &amp;user_cb)</argsstring>
+        <name>subscriberCB</name>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_single_subscriber_publisher" kindref="compound">SingleSubscriberPublisher</ref> &amp;</type>
+          <declname>plugin_pub</declname>
+        </param>
+        <param>
+          <type>const SubscriberStatusCallback &amp;</type>
+          <declname>user_cb</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="83" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="83" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" line="44" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp" bodystart="43" bodyend="97"/>
+    <listofallmembers>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1af60a4aa961dd8b452809756a4c8c8163" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>base_topic_</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1ae5fa527c01befd32534c2acedc7d7d06" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>getNumSubscribers</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1a194f5bf18612e0808af6dc76bac7312a" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>getTopic</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1a26aa1e4786dd59324fbfb902d2c4bb73" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>Impl</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1afdeac6f693e980a669722f56f9c263bb" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>isValid</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1aaed1c0cb6c19b601daaa2e14596c5d83" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>loader_</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1a8f76f925d46b3770fcd29a4799858502" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>publishers_</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1a05762aaca515a039017521dd04763cb6" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>shutdown</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1ac32219a7ba5581cf9d8d3cf8dde5a48c" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>subscriberCB</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1ae0cb1a8d1f7693ef7f6759274c435975" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>unadvertised_</name></member>
+      <member refid="structimage__transport_1_1_publisher_1_1_impl_1a3539eca8df40092e9145e9f46b22b241" prot="public" virt="non-virtual"><scope>image_transport::Publisher::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

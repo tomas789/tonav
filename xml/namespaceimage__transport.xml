@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespaceimage__transport" kind="namespace">
+    <compoundname>image_transport</compoundname>
+    <innerclass refid="classimage__transport_1_1_camera_publisher" prot="public">image_transport::CameraPublisher</innerclass>
+    <innerclass refid="classimage__transport_1_1_camera_subscriber" prot="public">image_transport::CameraSubscriber</innerclass>
+    <innerclass refid="classimage__transport_1_1_exception" prot="public">image_transport::Exception</innerclass>
+    <innerclass refid="classimage__transport_1_1_transport_load_exception" prot="public">image_transport::TransportLoadException</innerclass>
+    <innerclass refid="classimage__transport_1_1_image_transport" prot="public">image_transport::ImageTransport</innerclass>
+    <innerclass refid="classimage__transport_1_1_publisher" prot="public">image_transport::Publisher</innerclass>
+    <innerclass refid="classimage__transport_1_1_publisher_plugin" prot="public">image_transport::PublisherPlugin</innerclass>
+    <innerclass refid="classimage__transport_1_1_raw_publisher" prot="public">image_transport::RawPublisher</innerclass>
+    <innerclass refid="classimage__transport_1_1_raw_subscriber" prot="public">image_transport::RawSubscriber</innerclass>
+    <innerclass refid="classimage__transport_1_1_simple_publisher_plugin" prot="public">image_transport::SimplePublisherPlugin</innerclass>
+    <innerclass refid="classimage__transport_1_1_simple_subscriber_plugin" prot="public">image_transport::SimpleSubscriberPlugin</innerclass>
+    <innerclass refid="classimage__transport_1_1_single_subscriber_publisher" prot="public">image_transport::SingleSubscriberPublisher</innerclass>
+    <innerclass refid="classimage__transport_1_1_subscriber" prot="public">image_transport::Subscriber</innerclass>
+    <innerclass refid="classimage__transport_1_1_subscriber_filter" prot="public">image_transport::SubscriberFilter</innerclass>
+    <innerclass refid="classimage__transport_1_1_subscriber_plugin" prot="public">image_transport::SubscriberPlugin</innerclass>
+    <innerclass refid="classimage__transport_1_1_transport_hints" prot="public">image_transport::TransportHints</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceimage__transport_1aba1ce07958b215055a96bc29247c6bd0" prot="public" static="no">
+        <type><ref refid="classpluginlib_1_1_class_loader" kindref="compound">pluginlib::ClassLoader</ref>&lt; <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref> &gt;</type>
+        <definition>typedef pluginlib::ClassLoader&lt;PublisherPlugin&gt; image_transport::PubLoader</definition>
+        <argsstring></argsstring>
+        <name>PubLoader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" line="49" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceimage__transport_1a7803c8d8a580e9c9fb972b339baccd0e" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classpluginlib_1_1_class_loader" kindref="compound">PubLoader</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;PubLoader&gt; image_transport::PubLoaderPtr</definition>
+        <argsstring></argsstring>
+        <name>PubLoaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" line="50" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceimage__transport_1a2ee137fbb81e1cd3962bdc80488c2aca" prot="public" static="no">
+        <type><ref refid="classpluginlib_1_1_class_loader" kindref="compound">pluginlib::ClassLoader</ref>&lt; <ref refid="classimage__transport_1_1_subscriber_plugin" kindref="compound">SubscriberPlugin</ref> &gt;</type>
+        <definition>typedef pluginlib::ClassLoader&lt;SubscriberPlugin&gt; image_transport::SubLoader</definition>
+        <argsstring></argsstring>
+        <name>SubLoader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" line="52" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceimage__transport_1a70fa6719e43160ecd44afa7b74c03a61" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classpluginlib_1_1_class_loader" kindref="compound">SubLoader</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;SubLoader&gt; image_transport::SubLoaderPtr</definition>
+        <argsstring></argsstring>
+        <name>SubLoaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" line="53" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceimage__transport_1a2e8a63fa03a118eeea3cbc9398b2ad3f" prot="public" static="no">
+        <type>boost::function&lt; void(const <ref refid="classimage__transport_1_1_single_subscriber_publisher" kindref="compound">SingleSubscriberPublisher</ref> &amp;)&gt;</type>
+        <definition>typedef boost::function&lt;void(const SingleSubscriberPublisher&amp;)&gt; image_transport::SubscriberStatusCallback</definition>
+        <argsstring></argsstring>
+        <name>SubscriberStatusCallback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="76" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceimage__transport_1ad0c3233705e3fb546e9c87b9aa13fc85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::getCameraInfoTopic</definition>
+        <argsstring>(const std::string &amp;base_topic)</argsstring>
+        <name>getCameraInfoTopic</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <briefdescription>
+<para>Form the camera info topic name, sibling to the base topic. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_common.h" line="43" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_common.cpp" bodystart="43" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_common.h" line="40" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_48f79f39efcacd3bd103ae65a014cd57" kind="dir">
+    <compoundname>/home/travis/build/tomas789/tonav/include</compoundname>
+    <innerdir refid="dir_70bb87324dd50ccdffef5b926e19f052">/home/travis/build/tomas789/tonav/include/exceptions</innerdir>
+    <innerfile refid="calibration_8h">calibration.h</innerfile>
+    <innerfile refid="camera__feed_8h">camera_feed.h</innerfile>
+    <innerfile refid="camera__item_8h">camera_item.h</innerfile>
+    <innerfile refid="camera__pose_8h">camera_pose.h</innerfile>
+    <innerfile refid="feature__track_8h">feature_track.h</innerfile>
+    <innerfile refid="feature__tracker_8h">feature_tracker.h</innerfile>
+    <innerfile refid="filter_8h">filter.h</innerfile>
+    <innerfile refid="filter__state_8h">filter_state.h</innerfile>
+    <innerfile refid="frame__features_8h">frame_features.h</innerfile>
+    <innerfile refid="imu__buffer_8h">imu_buffer.h</innerfile>
+    <innerfile refid="imu__device_8h">imu_device.h</innerfile>
+    <innerfile refid="imu__feed_8h">imu_feed.h</innerfile>
+    <innerfile refid="imu__item_8h">imu_item.h</innerfile>
+    <innerfile refid="navigator_8h">navigator.h</innerfile>
+    <innerfile refid="tonav_8h">tonav.h</innerfile>
+    <innerfile refid="tonav__ros_8h">tonav_ros.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/include/"/>
+  </compounddef>
+</doxygen>

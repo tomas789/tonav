@@ -1,0 +1,169 @@
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin}{\section{image\-\_\-transport\-:\-:Simple\-Publisher\-Plugin$<$ M $>$ Class Template Reference}
+\label{classimage__transport_1_1_simple_publisher_plugin}\index{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin$<$ M $>$@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin$<$ M $>$}}
+}
+
+
+Base class to simplify implementing most plugins to \hyperlink{classimage__transport_1_1_publisher}{Publisher}.  
+
+
+
+
+{\ttfamily \#include $<$simple\-\_\-publisher\-\_\-plugin.\-h$>$}
+
+Inheritance diagram for image\-\_\-transport\-:\-:Simple\-Publisher\-Plugin$<$ M $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classimage__transport_1_1_simple_publisher_plugin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a58697b43b16d32531b4f67a7c8709f20}{virtual uint32\-\_\-t \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a58697b43b16d32531b4f67a7c8709f20}{get\-Num\-Subscribers} () const }\label{classimage__transport_1_1_simple_publisher_plugin_a58697b43b16d32531b4f67a7c8709f20}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of subscribers that are currently connected to this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a24f9923dbde675f1693b1be252805918}{virtual std\-::string \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a24f9923dbde675f1693b1be252805918}{get\-Topic} () const }\label{classimage__transport_1_1_simple_publisher_plugin_a24f9923dbde675f1693b1be252805918}
+
+\begin{DoxyCompactList}\small\item\em Returns the communication topic that this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin} will publish on. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a409f2078d4aa3466e843404b88cfe101}{virtual void \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a409f2078d4aa3466e843404b88cfe101}{publish} (const sensor\-\_\-msgs\-::\-Image \&message) const }\label{classimage__transport_1_1_simple_publisher_plugin_a409f2078d4aa3466e843404b88cfe101}
+
+\begin{DoxyCompactList}\small\item\em Publish an image using the transport associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a62e2d4cce1756530fbf6a323b1a00c59}{virtual void \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a62e2d4cce1756530fbf6a323b1a00c59}{shutdown} ()}\label{classimage__transport_1_1_simple_publisher_plugin_a62e2d4cce1756530fbf6a323b1a00c59}
+
+\begin{DoxyCompactList}\small\item\em Shutdown any advertisements associated with this \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a01bd11cb3ee6b7ce6715a3b57feadf93}{typedef boost\-::function$<$ void(const \\*
+M \&)$>$ \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a01bd11cb3ee6b7ce6715a3b57feadf93}{Publish\-Fn}}\label{classimage__transport_1_1_simple_publisher_plugin_a01bd11cb3ee6b7ce6715a3b57feadf93}
+
+\begin{DoxyCompactList}\small\item\em Generic function for publishing the internal message type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_af9ca774ef9d18a9cf745c92762c00d91}{virtual void \hyperlink{classimage__transport_1_1_simple_publisher_plugin_af9ca774ef9d18a9cf745c92762c00d91}{advertise\-Impl} (ros\-::\-Node\-Handle \&\hyperlink{classimage__transport_1_1_simple_publisher_plugin_a5f73a993e871242e51671f3cf82d4e1b}{nh}, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Subscriber\-Status\-Callback \&user\-\_\-connect\-\_\-cb, const Subscriber\-Status\-Callback \&user\-\_\-disconnect\-\_\-cb, const ros\-::\-Void\-Ptr \&tracked\-\_\-object, bool latch)}\label{classimage__transport_1_1_simple_publisher_plugin_af9ca774ef9d18a9cf745c92762c00d91}
+
+\begin{DoxyCompactList}\small\item\em Advertise a topic. Must be implemented by the subclass. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a193470dd32092d13e2284052d4fa359a}{publish} (const sensor\-\_\-msgs\-::\-Image \&message, const \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a01bd11cb3ee6b7ce6715a3b57feadf93}{Publish\-Fn} \&publish\-\_\-fn) const =0
+\begin{DoxyCompactList}\small\item\em Publish an image using the specified publish function. Must be implemented by the subclass. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a46df2b43de62c169d28ac510010d032f}{get\-Topic\-To\-Advertise} (const std\-::string \&base\-\_\-topic) const 
+\begin{DoxyCompactList}\small\item\em Return the communication topic name for a given base topic. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a4329bd192aa03ec8b44e52c6bbe91a11}{connect\-Callback} (const ros\-::\-Single\-Subscriber\-Publisher \&pub)
+\begin{DoxyCompactList}\small\item\em Function called when a subscriber connects to the internal publisher. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classimage__transport_1_1_simple_publisher_plugin_ac02aac90a3a159c1450a298b63a37425}{disconnect\-Callback} (const ros\-::\-Single\-Subscriber\-Publisher \&pub)
+\begin{DoxyCompactList}\small\item\em Function called when a subscriber disconnects from the internal publisher. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a5f73a993e871242e51671f3cf82d4e1b}{const ros\-::\-Node\-Handle \& \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a5f73a993e871242e51671f3cf82d4e1b}{nh} () const }\label{classimage__transport_1_1_simple_publisher_plugin_a5f73a993e871242e51671f3cf82d4e1b}
+
+\begin{DoxyCompactList}\small\item\em Returns the ros\-::\-Node\-Handle to be used for parameter lookup. \end{DoxyCompactList}\item 
+const ros\-::\-Publisher \& \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a11ad943c96711dc4a797a2b577ae9ea3}{get\-Publisher} () const 
+\begin{DoxyCompactList}\small\item\em Returns the internal ros\-::\-Publisher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$class image\-\_\-transport\-::\-Simple\-Publisher\-Plugin$<$ M $>$}
+
+Base class to simplify implementing most plugins to \hyperlink{classimage__transport_1_1_publisher}{Publisher}. 
+
+This base class vastly simplifies implementing a \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin} in the common case that all communication with the matching \hyperlink{classimage__transport_1_1_subscriber_plugin}{Subscriber\-Plugin} happens over a single R\-O\-S topic using a transport-\/specific message type. \hyperlink{classimage__transport_1_1_simple_publisher_plugin}{Simple\-Publisher\-Plugin} is templated on the transport-\/specific message type.
+
+A subclass need implement only two methods\-:
+\begin{DoxyItemize}
+\item \hyperlink{classimage__transport_1_1_publisher_plugin_abe0cd36dc3c170adb6aec8bc6d81d52e}{get\-Transport\-Name()} from \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}
+\item \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a409f2078d4aa3466e843404b88cfe101}{publish()} with an extra Publish\-Fn argument
+\end{DoxyItemize}
+
+For access to the parameter server and name remappings, use \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a5f73a993e871242e51671f3cf82d4e1b}{nh()}.
+
+\hyperlink{classimage__transport_1_1_simple_publisher_plugin_a46df2b43de62c169d28ac510010d032f}{get\-Topic\-To\-Advertise()} controls the name of the internal communication topic. It defaults to $<$base topic$>$/$<$transport name$>$. 
+
+Definition at line 61 of file simple\-\_\-publisher\-\_\-plugin.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a4329bd192aa03ec8b44e52c6bbe91a11}{\index{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}!connect\-Callback@{connect\-Callback}}
+\index{connect\-Callback@{connect\-Callback}!image_transport::SimplePublisherPlugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}}
+\subsubsection[{connect\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ virtual void {\bf image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}$<$ M $>$\-::connect\-Callback (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Single\-Subscriber\-Publisher \&}]{pub}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classimage__transport_1_1_simple_publisher_plugin_a4329bd192aa03ec8b44e52c6bbe91a11}
+
+
+Function called when a subscriber connects to the internal publisher. 
+
+Defaults to noop. 
+
+Definition at line 136 of file simple\-\_\-publisher\-\_\-plugin.\-h.
+
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_ac02aac90a3a159c1450a298b63a37425}{\index{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}!disconnect\-Callback@{disconnect\-Callback}}
+\index{disconnect\-Callback@{disconnect\-Callback}!image_transport::SimplePublisherPlugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}}
+\subsubsection[{disconnect\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ virtual void {\bf image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}$<$ M $>$\-::disconnect\-Callback (
+\begin{DoxyParamCaption}
+\item[{const ros\-::\-Single\-Subscriber\-Publisher \&}]{pub}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classimage__transport_1_1_simple_publisher_plugin_ac02aac90a3a159c1450a298b63a37425}
+
+
+Function called when a subscriber disconnects from the internal publisher. 
+
+Defaults to noop. 
+
+Definition at line 143 of file simple\-\_\-publisher\-\_\-plugin.\-h.
+
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a11ad943c96711dc4a797a2b577ae9ea3}{\index{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}!get\-Publisher@{get\-Publisher}}
+\index{get\-Publisher@{get\-Publisher}!image_transport::SimplePublisherPlugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}}
+\subsubsection[{get\-Publisher}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ const ros\-::\-Publisher\& {\bf image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}$<$ M $>$\-::get\-Publisher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classimage__transport_1_1_simple_publisher_plugin_a11ad943c96711dc4a797a2b577ae9ea3}
+
+
+Returns the internal ros\-::\-Publisher. 
+
+This really only exists so \hyperlink{classimage__transport_1_1_raw_publisher}{Raw\-Publisher} can implement no-\/copy intraprocess message passing easily. 
+
+Definition at line 159 of file simple\-\_\-publisher\-\_\-plugin.\-h.
+
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a46df2b43de62c169d28ac510010d032f}{\index{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}!get\-Topic\-To\-Advertise@{get\-Topic\-To\-Advertise}}
+\index{get\-Topic\-To\-Advertise@{get\-Topic\-To\-Advertise}!image_transport::SimplePublisherPlugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}}
+\subsubsection[{get\-Topic\-To\-Advertise}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ virtual std\-::string {\bf image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}$<$ M $>$\-::get\-Topic\-To\-Advertise (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{base\-\_\-topic}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classimage__transport_1_1_simple_publisher_plugin_a46df2b43de62c169d28ac510010d032f}
+
+
+Return the communication topic name for a given base topic. 
+
+Defaults to $<$base topic$>$/$<$transport name$>$. 
+
+Reimplemented in \hyperlink{classimage__transport_1_1_raw_publisher_a18a9e588fde64cffdf43a3cebba7b471}{image\-\_\-transport\-::\-Raw\-Publisher}.
+
+
+
+Definition at line 126 of file simple\-\_\-publisher\-\_\-plugin.\-h.
+
+\hypertarget{classimage__transport_1_1_simple_publisher_plugin_a193470dd32092d13e2284052d4fa359a}{\index{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}!publish@{publish}}
+\index{publish@{publish}!image_transport::SimplePublisherPlugin@{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}}
+\subsubsection[{publish}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ virtual void {\bf image\-\_\-transport\-::\-Simple\-Publisher\-Plugin}$<$ M $>$\-::publish (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Image \&}]{message, }
+\item[{const {\bf Publish\-Fn} \&}]{publish\-\_\-fn}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classimage__transport_1_1_simple_publisher_plugin_a193470dd32092d13e2284052d4fa359a}
+
+
+Publish an image using the specified publish function. Must be implemented by the subclass. 
+
+The Publish\-Fn publishes the transport-\/specific message type. This indirection allows \hyperlink{classimage__transport_1_1_simple_subscriber_plugin}{Simple\-Subscriber\-Plugin} to use this function for both normal broadcast publishing and single subscriber publishing (in subscription callbacks). 
+
+Implemented in \hyperlink{classimage__transport_1_1_raw_publisher_a5d82f75d47a79f1df0be82165398e8fa}{image\-\_\-transport\-::\-Raw\-Publisher}, and \hyperlink{class_resized_publisher_af0121f511226071f7cb96fb3e50879a6}{Resized\-Publisher}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/simple\-\_\-publisher\-\_\-plugin.\-h\end{DoxyCompactItemize}

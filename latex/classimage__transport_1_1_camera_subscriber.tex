@@ -1,0 +1,100 @@
+\hypertarget{classimage__transport_1_1_camera_subscriber}{\section{image\-\_\-transport\-:\-:Camera\-Subscriber Class Reference}
+\label{classimage__transport_1_1_camera_subscriber}\index{image\-\_\-transport\-::\-Camera\-Subscriber@{image\-\_\-transport\-::\-Camera\-Subscriber}}
+}
+
+
+Manages a subscription callback on synchronized Image and Camera\-Info topics.  
+
+
+
+
+{\ttfamily \#include $<$camera\-\_\-subscriber.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structimage__transport_1_1_camera_subscriber_1_1_impl}{Impl}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_abc533a8b0a84b6412549538100aef653}{typedef boost\-::function$<$ void(const \\*
+sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \\*
+\&, const \\*
+sensor\-\_\-msgs\-::\-Camera\-Info\-Const\-Ptr \&)$>$ {\bfseries Callback}}\label{classimage__transport_1_1_camera_subscriber_abc533a8b0a84b6412549538100aef653}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_a52e7e96c56a813de43e9018cdd4640d4}{std\-::string \hyperlink{classimage__transport_1_1_camera_subscriber_a52e7e96c56a813de43e9018cdd4640d4}{get\-Topic} () const }\label{classimage__transport_1_1_camera_subscriber_a52e7e96c56a813de43e9018cdd4640d4}
+
+\begin{DoxyCompactList}\small\item\em Get the base topic (on which the raw image is published). \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_a427737122aa2fa743523aef215f95dfe}{std\-::string \hyperlink{classimage__transport_1_1_camera_subscriber_a427737122aa2fa743523aef215f95dfe}{get\-Info\-Topic} () const }\label{classimage__transport_1_1_camera_subscriber_a427737122aa2fa743523aef215f95dfe}
+
+\begin{DoxyCompactList}\small\item\em Get the camera info topic. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{classimage__transport_1_1_camera_subscriber_a5dca2655dfe5c885ff992693084530b0}{get\-Num\-Publishers} () const 
+\begin{DoxyCompactList}\small\item\em Returns the number of publishers this subscriber is connected to. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_a31dd4cfcdaaf14d304624d78bcdf4a87}{std\-::string \hyperlink{classimage__transport_1_1_camera_subscriber_a31dd4cfcdaaf14d304624d78bcdf4a87}{get\-Transport} () const }\label{classimage__transport_1_1_camera_subscriber_a31dd4cfcdaaf14d304624d78bcdf4a87}
+
+\begin{DoxyCompactList}\small\item\em Returns the name of the transport being used. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_aa42ceb9613a14d4c2e297674e52ee684}{void \hyperlink{classimage__transport_1_1_camera_subscriber_aa42ceb9613a14d4c2e297674e52ee684}{shutdown} ()}\label{classimage__transport_1_1_camera_subscriber_aa42ceb9613a14d4c2e297674e52ee684}
+
+\begin{DoxyCompactList}\small\item\em Unsubscribe the callback associated with this \hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_af753258daaf280c67bf1c1100bfeb4e4}{{\bfseries operator void $\ast$} () const }\label{classimage__transport_1_1_camera_subscriber_af753258daaf280c67bf1c1100bfeb4e4}
+
+\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_a25fa242f09f9b59190553c73a00ea648}{bool {\bfseries operator$<$} (const \hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} \&rhs) const }\label{classimage__transport_1_1_camera_subscriber_a25fa242f09f9b59190553c73a00ea648}
+
+\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_ad3d21acca9718dc8ef5367bd4eb136b7}{bool {\bfseries operator!=} (const \hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} \&rhs) const }\label{classimage__transport_1_1_camera_subscriber_ad3d21acca9718dc8ef5367bd4eb136b7}
+
+\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_af90db2cfc2ca0a99f543c5dbd4f7d216}{bool {\bfseries operator==} (const \hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} \&rhs) const }\label{classimage__transport_1_1_camera_subscriber_af90db2cfc2ca0a99f543c5dbd4f7d216}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_camera_subscriber_ac010f5a40d98825199e1c5303d0638eb}{class {\bfseries Image\-Transport}}\label{classimage__transport_1_1_camera_subscriber_ac010f5a40d98825199e1c5303d0638eb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a subscription callback on synchronized Image and Camera\-Info topics. 
+
+\hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} is the client-\/side counterpart to \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}, and assumes the same topic naming convention. The callback is of type\-: \begin{DoxyVerb}void callback(const sensor_msgs::ImageConstPtr&, const sensor_msgs::CameraInfoConstPtr&);
+\end{DoxyVerb}
+
+
+A \hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} should always be created through a call to \hyperlink{classimage__transport_1_1_image_transport_a6754562b0ffe99b0cf716e621d2cfa6b}{Image\-Transport\-::subscribe\-Camera()}, or copied from one that was. Once all copies of a specific \hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} go out of scope, the subscription callback associated with that handle will stop being called. Once all \hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} for a given topic go out of scope the topic will be unsubscribed. 
+
+Definition at line 62 of file camera\-\_\-subscriber.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_camera_subscriber_a5dca2655dfe5c885ff992693084530b0}{\index{image\-\_\-transport\-::\-Camera\-Subscriber@{image\-\_\-transport\-::\-Camera\-Subscriber}!get\-Num\-Publishers@{get\-Num\-Publishers}}
+\index{get\-Num\-Publishers@{get\-Num\-Publishers}!image_transport::CameraSubscriber@{image\-\_\-transport\-::\-Camera\-Subscriber}}
+\subsubsection[{get\-Num\-Publishers}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t image\-\_\-transport\-::\-Camera\-Subscriber\-::get\-Num\-Publishers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classimage__transport_1_1_camera_subscriber_a5dca2655dfe5c885ff992693084530b0}
+
+
+Returns the number of publishers this subscriber is connected to. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]Fix this when message\-\_\-filters\-::\-Subscriber has \hyperlink{classimage__transport_1_1_camera_subscriber_a5dca2655dfe5c885ff992693084530b0}{get\-Num\-Publishers()} \end{DoxyRefDesc}
+
+
+Definition at line 136 of file camera\-\_\-subscriber.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/camera\-\_\-subscriber.\-h\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/src/camera\-\_\-subscriber.\-cpp\end{DoxyCompactItemize}

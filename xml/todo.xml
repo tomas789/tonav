@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Todo List</title>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term><anchor id="todo_1_todo000001"/>Member <ref refid="classimage__transport_1_1_camera_subscriber_1a5dca2655dfe5c885ff992693084530b0" kindref="member">image_transport::CameraSubscriber::getNumPublishers</ref>  () const </term></varlistentry>
+<listitem><para>Fix this when message_filters::Subscriber has getNumPublishers() </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

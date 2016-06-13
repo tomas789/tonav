@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="resized__publisher_8h" kind="file">
+    <compoundname>resized_publisher.h</compoundname>
+    <includes refid="simple__publisher__plugin_8h" local="no">image_transport/simple_publisher_plugin.h</includes>
+    <includes local="no">image_transport_tutorial/ResizedImage.h</includes>
+    <includedby refid="tutorial_2src_2manifest_8cpp" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</includedby>
+    <includedby refid="resized__publisher_8cpp" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_publisher.cpp</includedby>
+    <incdepgraph>
+      <node id="1201">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h</label>
+        <link refid="resized_publisher.h"/>
+        <childnode refid="1202" relation="include">
+        </childnode>
+        <childnode refid="1210" relation="include">
+        </childnode>
+      </node>
+      <node id="1202">
+        <label>image_transport/simple_publisher_plugin.h</label>
+        <link refid="simple__publisher__plugin_8h_source"/>
+        <childnode refid="1203" relation="include">
+        </childnode>
+        <childnode refid="1209" relation="include">
+        </childnode>
+      </node>
+      <node id="1210">
+        <label>image_transport_tutorial/ResizedImage.h</label>
+      </node>
+      <node id="1206">
+        <label>image_transport/single_subscriber_publisher.h</label>
+        <link refid="single__subscriber__publisher_8h_source"/>
+        <childnode refid="1207" relation="include">
+        </childnode>
+        <childnode refid="1208" relation="include">
+        </childnode>
+        <childnode refid="1205" relation="include">
+        </childnode>
+      </node>
+      <node id="1205">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1207">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="1208">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="1204">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="1209">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+      <node id="1203">
+        <label>image_transport/publisher_plugin.h</label>
+        <link refid="publisher__plugin_8h_source"/>
+        <childnode refid="1204" relation="include">
+        </childnode>
+        <childnode refid="1205" relation="include">
+        </childnode>
+        <childnode refid="1206" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1211">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h</label>
+        <link refid="resized_publisher.h"/>
+        <childnode refid="1212" relation="include">
+        </childnode>
+        <childnode refid="1213" relation="include">
+        </childnode>
+      </node>
+      <node id="1213">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_publisher.cpp</label>
+        <link refid="resized__publisher_8cpp_source"/>
+      </node>
+      <node id="1212">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</label>
+        <link refid="tutorial_2src_2manifest_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_resized_publisher" prot="public">ResizedPublisher</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;image_transport/simple_publisher_plugin.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;image_transport_tutorial/ResizedImage.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="class_resized_publisher" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_resized_publisher" kindref="compound">ResizedPublisher</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_simple_publisher_plugin" kindref="compound">image_transport::SimplePublisherPlugin</ref>&lt;image_transport_tutorial::ResizedImage&gt;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="7" refid="class_resized_publisher_1a2282c668269cc359be3f1767fa31c1cc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_resized_publisher_1a2282c668269cc359be3f1767fa31c1cc" kindref="member">getTransportName</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="8"><highlight class="keyword"><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;resized&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_resized_publisher_1af0121f511226071f7cb96fb3e50879a6" kindref="member">publish</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::Image&amp;<sp/>message,</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_simple_publisher_plugin_1a01bd11cb3ee6b7ce6715a3b57feadf93" kindref="member">PublishFn</ref>&amp;<sp/>publish_fn)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h"/>
+  </compounddef>
+</doxygen>

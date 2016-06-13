@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>tonav: /home/tomaskrejci/catkin_ws/src/tonav/src/tonav_ros.cpp Source File</title>
+<title>tonav: /home/travis/build/tomas789/tonav/src/tonav_ros.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('tonav__ros_8cpp_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -147,8 +147,8 @@ $(document).ready(function(){initNavTree('tonav__ros_8cpp_source.html','');});
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::string camerainfo_topic = variables_map_[<span class="stringliteral">&quot;camerainfo&quot;</span>].as&lt;std::string&gt;();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string calibration_file = variables_map_[<span class="stringliteral">&quot;calibration&quot;</span>].as&lt;std::string&gt;();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    image_transport::ImageTransport transport(node_handle);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    image_transport::Subscriber camera_subscriber = transport.subscribe(camera_topic, 5, &amp;TonavRos::cameraCallback, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classimage__transport_1_1_image_transport.html">image_transport::ImageTransport</a> transport(node_handle);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classimage__transport_1_1_subscriber.html">image_transport::Subscriber</a> camera_subscriber = transport.subscribe(camera_topic, 5, &amp;TonavRos::cameraCallback, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ros::Subscriber camerainfo_subscriber = node_handle.subscribe(camerainfo_topic, 50, &amp;TonavRos::cameraInfoCallback, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ros::Subscriber imu_subscriber = node_handle.subscribe(imu_topic, 50, &amp;TonavRos::imuCallback, <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    </div>
@@ -287,17 +287,20 @@ $(document).ready(function(){initNavTree('tonav__ros_8cpp_source.html','');});
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    </div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    cv::Mat img = tonav_-&gt;getCurrentImage();</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), <span class="stringliteral">&quot;bgr8&quot;</span>, img).toImageMsg();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    image_publisher_.publish(msg);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    image_publisher_.<a class="code" href="classimage__transport_1_1_publisher.html#adca2507fe8999ccfdfc6d8871f986e10">publish</a>(msg);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
 <div class="ttc" id="class_tonav_html"><div class="ttname"><a href="class_tonav.html">Tonav</a></div><div class="ttdoc">This is main class for communicating with filter. You can pass IMU and camera data to filter through ...</div><div class="ttdef"><b>Definition:</b> <a href="tonav_8h_source.html#l00019">tonav.h:19</a></div></div>
 <div class="ttc" id="class_tonav_ros_html_aa64cf50545f6cf41c538679703809724"><div class="ttname"><a href="class_tonav_ros.html#aa64cf50545f6cf41c538679703809724">TonavRos::run</a></div><div class="ttdeci">int run(int argc, char *argv[])</div><div class="ttdoc">Run navigation node. </div><div class="ttdef"><b>Definition:</b> <a href="tonav__ros_8cpp_source.html#l00020">tonav_ros.cpp:20</a></div></div>
 <div class="ttc" id="class_calibration_html"><div class="ttname"><a href="class_calibration.html">Calibration</a></div><div class="ttdef"><b>Definition:</b> <a href="calibration_8h_source.html#l00013">calibration.h:13</a></div></div>
+<div class="ttc" id="classimage__transport_1_1_subscriber_html"><div class="ttname"><a href="classimage__transport_1_1_subscriber.html">image_transport::Subscriber</a></div><div class="ttdoc">Manages a subscription callback on a specific topic that can be interpreted as an Image topic...</div><div class="ttdef"><b>Definition:</b> <a href="subscriber_8h_source.html#l00061">subscriber.h:61</a></div></div>
+<div class="ttc" id="classimage__transport_1_1_publisher_html_adca2507fe8999ccfdfc6d8871f986e10"><div class="ttname"><a href="classimage__transport_1_1_publisher.html#adca2507fe8999ccfdfc6d8871f986e10">image_transport::Publisher::publish</a></div><div class="ttdeci">void publish(const sensor_msgs::Image &amp;message) const </div><div class="ttdoc">Publish an image on the topics associated with this Publisher. </div><div class="ttdef"><b>Definition:</b> <a href="publisher_8cpp_source.html#l00142">publisher.cpp:142</a></div></div>
+<div class="ttc" id="classimage__transport_1_1_image_transport_html"><div class="ttname"><a href="classimage__transport_1_1_image_transport.html">image_transport::ImageTransport</a></div><div class="ttdoc">Advertise and subscribe to image topics. </div><div class="ttdef"><b>Definition:</b> <a href="image__transport_8h_source.html#l00051">image_transport.h:51</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_ba74edf55eb34ba7b231c772e05b8ff9.html">src</a></li><li class="navelem"><a class="el" href="dir_0b36b3fbd8326eeffd18fd9dd0cae780.html">tonav</a></li><li class="navelem"><a class="el" href="dir_78904803ca055348b96ebbc46a36ff61.html">src</a></li><li class="navelem"><b>tonav_ros.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_4fef79e7177ba769987a8da36c892c5f.html">build</a></li><li class="navelem"><a class="el" href="dir_dd0c4a7dcdf2b5cfb05e637c35244f94.html">tomas789</a></li><li class="navelem"><a class="el" href="dir_4877a4c3b23e5b6e88f2ac94ce08137f.html">tonav</a></li><li class="navelem"><a class="el" href="dir_86f9b15063a11144272c6c377c697b62.html">src</a></li><li class="navelem"><b>tonav_ros.cpp</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>

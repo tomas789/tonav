@@ -86,6 +86,6 @@
 <codeline lineno="77"><highlight class="stringliteral"></highlight></codeline>
 <codeline lineno="78"><highlight class="stringliteral">This<sp/>work<sp/>is<sp/>currently<sp/>distributed<sp/>under<sp/>LGPL<sp/>v3<sp/>license.<sp/>In<sp/>the<sp/>future,<sp/>it<sp/>will<sp/>switch<sp/>to<sp/>GPL.</highlight></codeline>
     </programlisting>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/README.md"/>
+    <location file="/home/travis/build/tomas789/tonav/README.md"/>
   </compounddef>
 </doxygen>

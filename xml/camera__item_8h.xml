@@ -3,23 +3,31 @@
   <compounddef id="camera__item_8h" kind="file">
     <compoundname>camera_item.h</compoundname>
     <includes local="no">string</includes>
-    <includedby refid="camera__feed_8h" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h</includedby>
-    <includedby refid="camera__feed_8cpp" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp</includedby>
-    <includedby refid="camera__item_8cpp" local="yes">/home/tomaskrejci/catkin_ws/src/tonav/src/camera_item.cpp</includedby>
+    <includedby refid="camera__feed_8h" local="yes">/home/travis/build/tomas789/tonav/include/camera_feed.h</includedby>
+    <includedby refid="camera__feed_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/camera_feed.cpp</includedby>
+    <includedby refid="camera__item_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/camera_item.cpp</includedby>
     <incdepgraph>
+      <node id="26">
+        <label>string</label>
+      </node>
       <node id="25">
-        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h</label>
+        <label>/home/travis/build/tomas789/tonav/include/camera_item.h</label>
         <link refid="camera_item.h"/>
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="26">
-        <label>string</label>
-      </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="31">
+        <label>/home/travis/build/tomas789/tonav/src/camera_item.cpp</label>
+        <link refid="camera__item_8cpp_source"/>
+      </node>
+      <node id="29">
+        <label>/home/travis/build/tomas789/tonav/src/camera_feed.cpp</label>
+        <link refid="camera__feed_8cpp_source"/>
+      </node>
       <node id="27">
-        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h</label>
+        <label>/home/travis/build/tomas789/tonav/include/camera_item.h</label>
         <link refid="camera_item.h"/>
         <childnode refid="28" relation="include">
         </childnode>
@@ -28,20 +36,12 @@
         <childnode refid="31" relation="include">
         </childnode>
       </node>
-      <node id="29">
-        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/camera_feed.cpp</label>
-        <link refid="camera__feed_8cpp_source"/>
-      </node>
       <node id="30">
-        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/navigator.cpp</label>
+        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
         <link refid="navigator_8cpp_source"/>
       </node>
-      <node id="31">
-        <label>/home/tomaskrejci/catkin_ws/src/tonav/src/camera_item.cpp</label>
-        <link refid="camera__item_8cpp_source"/>
-      </node>
       <node id="28">
-        <label>/home/tomaskrejci/catkin_ws/src/tonav/include/camera_feed.h</label>
+        <label>/home/travis/build/tomas789/tonav/include/camera_feed.h</label>
         <link refid="camera__feed_8h_source"/>
         <childnode refid="29" relation="include">
         </childnode>
@@ -78,6 +78,6 @@
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_CAMERA_ITEM_H</highlight></codeline>
     </programlisting>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_item.h"/>
+    <location file="/home/travis/build/tomas789/tonav/include/camera_item.h"/>
   </compounddef>
 </doxygen>

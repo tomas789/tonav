@@ -1,0 +1,69 @@
+\hypertarget{classimage__transport_1_1_raw_subscriber}{\section{image\-\_\-transport\-:\-:Raw\-Subscriber Class Reference}
+\label{classimage__transport_1_1_raw_subscriber}\index{image\-\_\-transport\-::\-Raw\-Subscriber@{image\-\_\-transport\-::\-Raw\-Subscriber}}
+}
+
+
+The default \hyperlink{classimage__transport_1_1_subscriber_plugin}{Subscriber\-Plugin}.  
+
+
+
+
+{\ttfamily \#include $<$raw\-\_\-subscriber.\-h$>$}
+
+Inheritance diagram for image\-\_\-transport\-:\-:Raw\-Subscriber\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classimage__transport_1_1_raw_subscriber}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_raw_subscriber_a9c570fff1410a5b3f0fa40bc9705d135}{virtual std\-::string \hyperlink{classimage__transport_1_1_raw_subscriber_a9c570fff1410a5b3f0fa40bc9705d135}{get\-Transport\-Name} () const }\label{classimage__transport_1_1_raw_subscriber_a9c570fff1410a5b3f0fa40bc9705d135}
+
+\begin{DoxyCompactList}\small\item\em Get a string identifier for the transport provided by this plugin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_raw_subscriber_a66df34f75b6dbab383de759bb0fa60b2}{virtual void {\bfseries internal\-Callback} (const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&message, const Callback \&user\-\_\-cb)}\label{classimage__transport_1_1_raw_subscriber_a66df34f75b6dbab383de759bb0fa60b2}
+
+\item 
+virtual std\-::string \hyperlink{classimage__transport_1_1_raw_subscriber_a6da2134193b87fb71afda535a618cc7c}{get\-Topic\-To\-Subscribe} (const std\-::string \&base\-\_\-topic) const 
+\begin{DoxyCompactList}\small\item\em Return the communication topic name for a given base topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The default \hyperlink{classimage__transport_1_1_subscriber_plugin}{Subscriber\-Plugin}. 
+
+\hyperlink{classimage__transport_1_1_raw_subscriber}{Raw\-Subscriber} is a simple wrapper for ros\-::\-Subscriber which listens for Image messages and passes them through to the callback. 
+
+Definition at line 48 of file raw\-\_\-subscriber.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_raw_subscriber_a6da2134193b87fb71afda535a618cc7c}{\index{image\-\_\-transport\-::\-Raw\-Subscriber@{image\-\_\-transport\-::\-Raw\-Subscriber}!get\-Topic\-To\-Subscribe@{get\-Topic\-To\-Subscribe}}
+\index{get\-Topic\-To\-Subscribe@{get\-Topic\-To\-Subscribe}!image_transport::RawSubscriber@{image\-\_\-transport\-::\-Raw\-Subscriber}}
+\subsubsection[{get\-Topic\-To\-Subscribe}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string image\-\_\-transport\-::\-Raw\-Subscriber\-::get\-Topic\-To\-Subscribe (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{base\-\_\-topic}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classimage__transport_1_1_raw_subscriber_a6da2134193b87fb71afda535a618cc7c}
+
+
+Return the communication topic name for a given base topic. 
+
+Defaults to $<$base topic$>$/$<$transport name$>$. 
+
+Reimplemented from \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_a02016ab17568754d5319ae6fd949e268}{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin$<$ sensor\-\_\-msgs\-::\-Image $>$}.
+
+
+
+Definition at line 64 of file raw\-\_\-subscriber.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/raw\-\_\-subscriber.\-h\end{DoxyCompactItemize}

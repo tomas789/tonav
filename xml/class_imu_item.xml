@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="17" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="17" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="17" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/imu_item.h" bodystart="17" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="30" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="30" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="30" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/imu_item.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_imu_item_1a4a3cf6964810f579f70467f5350f0222" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="31" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/imu_item.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_imu_item_1a0df3d67d823f333a0eea8a2673f64cdf" prot="private" static="no" mutable="no">
         <type>Eigen::Vector3d</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="32" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="32" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="32" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/imu_item.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="9" bodyend="67"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="18" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/imu_item.cpp" bodystart="9" bodyend="67"/>
       </memberdef>
       <memberdef kind="function" id="class_imu_item_1a0a28edeccaf5f42fabf05e76c5c46519" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_imu_item" kindref="compound">ImuItem</ref></type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="69" bodyend="75"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="19" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/imu_item.cpp" bodystart="69" bodyend="75"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="21" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="77" bodyend="79"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="21" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/imu_item.cpp" bodystart="77" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="class_imu_item_1adf0603391765e4950651ee67fe2273b7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="23" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="81" bodyend="83"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="23" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/imu_item.cpp" bodystart="81" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="class_imu_item_1a9fe54cf71ea23dc3f044bf849a50743b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="85" bodyend="87"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="25" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/imu_item.cpp" bodystart="85" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="class_imu_item_1af969726f713eb67b6b544133bea5fd21" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -153,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="89" bodyend="91"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="26" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/imu_item.cpp" bodystart="89" bodyend="91"/>
       </memberdef>
       <memberdef kind="function" id="class_imu_item_1af010fd2fd5ecd5868764a760f6040af5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -166,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="27" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="93" bodyend="95"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="27" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/imu_item.cpp" bodystart="93" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="class_imu_item_1a1cd4668ce368cb3b8360f42a1ab97580" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Vector3d</type>
@@ -179,14 +179,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="28" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/imu_item.cpp" bodystart="97" bodyend="99"/>
+        <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/imu_item.cpp" bodystart="97" bodyend="99"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/imu_item.h" bodystart="15" bodyend="33"/>
+    <location file="/home/travis/build/tomas789/tonav/include/imu_item.h" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/imu_item.h" bodystart="15" bodyend="33"/>
     <listofallmembers>
       <member refid="class_imu_item_1a0df3d67d823f333a0eea8a2673f64cdf" prot="private" virt="non-virtual"><scope>ImuItem</scope><name>data_</name></member>
       <member refid="class_imu_item_1a1297a2b71891496d3de357d11bb69d8d" prot="private" virt="non-virtual"><scope>ImuItem</scope><name>device_</name></member>

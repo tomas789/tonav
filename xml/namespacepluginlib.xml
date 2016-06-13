@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespacepluginlib" kind="namespace">
+    <compoundname>pluginlib</compoundname>
+    <innerclass refid="classpluginlib_1_1_class_loader" prot="public">pluginlib::ClassLoader</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/loader_fwds.h" line="41" column="1"/>
+  </compounddef>
+</doxygen>

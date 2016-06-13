@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="70" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="70" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="70" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter.h" bodystart="70" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_1abedd76a53f3f4d1f2d9b97bc388b71b4" prot="private" static="no" mutable="no">
         <type>Eigen::Vector3d</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="72" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="72" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="72" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter.h" bodystart="72" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_1a223764530b5dc708c3ff099d0f20d2b3" prot="private" static="no" mutable="no">
         <type><ref refid="class_filter_state" kindref="compound">FilterState</ref></type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="74" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="74" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="74" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_1a60c590488c3aab36a4d8d3d881e9a6fb" prot="private" static="no" mutable="no">
         <type>Eigen::Matrix&lt; double, 15, 15 &gt;</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="75" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="75" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="75" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_1af53d4ab1a01feab4ffeafb919aa31836" prot="private" static="no" mutable="no">
         <type>FeatureTracker::feature_track_list</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="77" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="77" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="77" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter.h" bodystart="77" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_1a8c60c70e6bc3d329d1423c295e42f722" prot="private" static="no" mutable="no">
         <type><ref refid="class_feature_tracker" kindref="compound">FeatureTracker</ref></type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="91" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="91" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="91" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter.h" bodystart="91" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="14" bodyend="16"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="14" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a5742b1247b9f92a9148d99386cdd3876" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -112,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="33" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="18" bodyend="30"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="33" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="18" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a27176eb65976f98cdc9495b4fdfc3296" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="35" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="32" bodyend="41"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="35" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="32" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a1fad49c62892905f713de0bf66d9f3c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -166,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="36" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="43" bodyend="57"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="36" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="43" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a3ed7acd6fff45ead8b4209d4e31a8097" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -199,7 +199,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="38" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="59" bodyend="99"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="38" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="59" bodyend="99"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a778f444068abe887fd58e02f00be6121" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -232,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="41" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="101" bodyend="124"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="41" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="101" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1ad046b83209a1f03d65ac75f16b538546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -257,7 +257,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="53" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="126" bodyend="128"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="53" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="126" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1aeeb0c2e971a47c73c2f950aa8890f1ac" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Vector3d</type>
@@ -270,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="54" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="130" bodyend="132"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="54" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="130" bodyend="132"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a936ea0f9f4f587d0cd9bc26a4a73df34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Vector3d</type>
@@ -283,7 +283,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="56" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="134" bodyend="136"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="56" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="134" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a7094e57e502a4fc7f124f0d1184eb133" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Quaterniond</type>
@@ -296,7 +296,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="57" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="138" bodyend="140"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="57" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="138" bodyend="140"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a1c7a33a737fafec46d6e98ec1be37a4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -322,7 +322,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="67" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="142" bodyend="144"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="67" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="142" bodyend="144"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -337,7 +337,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="79" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="146" bodyend="154"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="79" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="146" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a314f3e0a340741cb8201a8ae8d53ed28" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -350,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="80" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="156" bodyend="164"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="80" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="156" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1ab0db3877232b9fa66f5dd8ebe4385234" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -363,7 +363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="81" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="166" bodyend="176"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="81" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="166" bodyend="176"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1ab326892073289dc55496876cf56e64ee" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -376,7 +376,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="82" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="178" bodyend="179"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="82" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="178" bodyend="179"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a7c142cfe493dbfdc445f3c5b02b60ccc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -389,7 +389,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="84" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="181" bodyend="184"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="84" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="181" bodyend="184"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -408,7 +408,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="86" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="186" bodyend="192"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="86" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="186" bodyend="192"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a35ead90b530777757cabfd503f608844" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Matrix&lt; double, 3, 3 &gt;</type>
@@ -425,7 +425,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="87" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="194" bodyend="200"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="87" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="194" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a06bea04b55f4483660aa3bd5f4c13619" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Matrix4d</type>
@@ -442,7 +442,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="88" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="202" bodyend="209"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="88" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="202" bodyend="209"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_1a0df9593448ac278363c61fe64e739e3d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Matrix3d</type>
@@ -459,14 +459,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="89" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/filter.cpp" bodystart="211" bodyend="217"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="89" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter.cpp" bodystart="211" bodyend="217"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Implementation of MSCKF. </para>    </briefdescription>
     <detaileddescription>
 <para>This is core functionality of <ref refid="class_tonav" kindref="compound">Tonav</ref>. All methods must be called with caution. It assumes correct order of update steps.</para><para>Don&apos;t use this class directly. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead </para>    </detaileddescription>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" line="29" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/filter.h" bodystart="29" bodyend="92"/>
+    <location file="/home/travis/build/tomas789/tonav/include/filter.h" line="29" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter.h" bodystart="29" bodyend="92"/>
     <listofallmembers>
       <member refid="class_filter_1a7c142cfe493dbfdc445f3c5b02b60ccc" prot="private" virt="non-virtual"><scope>Filter</scope><name>augment</name></member>
       <member refid="class_filter_1a5ce5416c310a3d0cc10b009e8c9cb710" prot="private" virt="non-virtual"><scope>Filter</scope><name>calibration_</name></member>

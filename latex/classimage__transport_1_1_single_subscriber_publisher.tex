@@ -1,0 +1,69 @@
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher}{\section{image\-\_\-transport\-:\-:Single\-Subscriber\-Publisher Class Reference}
+\label{classimage__transport_1_1_single_subscriber_publisher}\index{image\-\_\-transport\-::\-Single\-Subscriber\-Publisher@{image\-\_\-transport\-::\-Single\-Subscriber\-Publisher}}
+}
+
+
+Allows publication of an image to a single subscriber. Only available inside subscriber connection callbacks.  
+
+
+
+
+{\ttfamily \#include $<$single\-\_\-subscriber\-\_\-publisher.\-h$>$}
+
+Inheritance diagram for image\-\_\-transport\-:\-:Single\-Subscriber\-Publisher\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classimage__transport_1_1_single_subscriber_publisher}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a30045c60864ff22374f025a81c2ca9cf}{typedef boost\-::function\\*
+$<$ uint32\-\_\-t()$>$ {\bfseries Get\-Num\-Subscribers\-Fn}}\label{classimage__transport_1_1_single_subscriber_publisher_a30045c60864ff22374f025a81c2ca9cf}
+
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a83df64c8c339546b94b059314c73d939}{typedef boost\-::function$<$ void(const \\*
+sensor\-\_\-msgs\-::\-Image \&)$>$ {\bfseries Publish\-Fn}}\label{classimage__transport_1_1_single_subscriber_publisher_a83df64c8c339546b94b059314c73d939}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a4ed3520bfb119863c33890b1d3d76f7b}{{\bfseries Single\-Subscriber\-Publisher} (const std\-::string \&caller\-\_\-id, const std\-::string \&topic, const Get\-Num\-Subscribers\-Fn \&num\-\_\-subscribers\-\_\-fn, const Publish\-Fn \&publish\-\_\-fn)}\label{classimage__transport_1_1_single_subscriber_publisher_a4ed3520bfb119863c33890b1d3d76f7b}
+
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a1ddcc26cfb38ee6fec7bbc1e573d032d}{std\-::string {\bfseries get\-Subscriber\-Name} () const }\label{classimage__transport_1_1_single_subscriber_publisher_a1ddcc26cfb38ee6fec7bbc1e573d032d}
+
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a345d09ecd9691da5a215751dcde7c529}{std\-::string {\bfseries get\-Topic} () const }\label{classimage__transport_1_1_single_subscriber_publisher_a345d09ecd9691da5a215751dcde7c529}
+
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a5909a3e2feffe1abea5d0133a4d933a5}{uint32\-\_\-t {\bfseries get\-Num\-Subscribers} () const }\label{classimage__transport_1_1_single_subscriber_publisher_a5909a3e2feffe1abea5d0133a4d933a5}
+
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a6e5fb2d5f07e0b6e5fc7a67f7e733d58}{void {\bfseries publish} (const sensor\-\_\-msgs\-::\-Image \&message) const }\label{classimage__transport_1_1_single_subscriber_publisher_a6e5fb2d5f07e0b6e5fc7a67f7e733d58}
+
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a805ee398c71b942665f0e6a8878868f4}{void {\bfseries publish} (const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&message) const }\label{classimage__transport_1_1_single_subscriber_publisher_a805ee398c71b942665f0e6a8878868f4}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_single_subscriber_publisher_a9544c98126549cae8f3a5cd9af6bcfdd}{class {\bfseries Publisher}}\label{classimage__transport_1_1_single_subscriber_publisher_a9544c98126549cae8f3a5cd9af6bcfdd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Allows publication of an image to a single subscriber. Only available inside subscriber connection callbacks. 
+
+Definition at line 48 of file single\-\_\-subscriber\-\_\-publisher.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/single\-\_\-subscriber\-\_\-publisher.\-h\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/src/single\-\_\-subscriber\-\_\-publisher.\-cpp\end{DoxyCompactItemize}

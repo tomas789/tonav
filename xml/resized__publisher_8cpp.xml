@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="resized__publisher_8cpp" kind="file">
+    <compoundname>resized_publisher.cpp</compoundname>
+    <includes refid="resized__publisher_8h" local="no">image_transport_tutorial/resized_publisher.h</includes>
+    <includes local="no">opencv2/imgproc/imgproc.hpp</includes>
+    <includes local="no">cv_bridge/cv_bridge.h</includes>
+    <incdepgraph>
+      <node id="1265">
+        <label>image_transport_tutorial/resized_publisher.h</label>
+        <link refid="resized__publisher_8h_source"/>
+        <childnode refid="1266" relation="include">
+        </childnode>
+        <childnode refid="1274" relation="include">
+        </childnode>
+      </node>
+      <node id="1266">
+        <label>image_transport/simple_publisher_plugin.h</label>
+        <link refid="simple__publisher__plugin_8h_source"/>
+        <childnode refid="1267" relation="include">
+        </childnode>
+        <childnode refid="1273" relation="include">
+        </childnode>
+      </node>
+      <node id="1264">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_publisher.cpp</label>
+        <link refid="resized_publisher.cpp"/>
+        <childnode refid="1265" relation="include">
+        </childnode>
+        <childnode refid="1275" relation="include">
+        </childnode>
+        <childnode refid="1276" relation="include">
+        </childnode>
+      </node>
+      <node id="1274">
+        <label>image_transport_tutorial/ResizedImage.h</label>
+      </node>
+      <node id="1270">
+        <label>image_transport/single_subscriber_publisher.h</label>
+        <link refid="single__subscriber__publisher_8h_source"/>
+        <childnode refid="1271" relation="include">
+        </childnode>
+        <childnode refid="1272" relation="include">
+        </childnode>
+        <childnode refid="1269" relation="include">
+        </childnode>
+      </node>
+      <node id="1269">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1271">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="1276">
+        <label>cv_bridge/cv_bridge.h</label>
+      </node>
+      <node id="1272">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="1275">
+        <label>opencv2/imgproc/imgproc.hpp</label>
+      </node>
+      <node id="1268">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="1273">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+      <node id="1267">
+        <label>image_transport/publisher_plugin.h</label>
+        <link refid="publisher__plugin_8h_source"/>
+        <childnode refid="1268" relation="include">
+        </childnode>
+        <childnode refid="1269" relation="include">
+        </childnode>
+        <childnode refid="1270" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;image_transport_tutorial/resized_publisher.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/imgproc/imgproc.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cv_bridge/cv_bridge.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="class_resized_publisher_1af0121f511226071f7cb96fb3e50879a6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_resized_publisher_1af0121f511226071f7cb96fb3e50879a6" kindref="member">ResizedPublisher::publish</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::Image&amp;<sp/>message,</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classimage__transport_1_1_simple_publisher_plugin_1a01bd11cb3ee6b7ce6715a3b57feadf93" kindref="member">PublishFn</ref>&amp;<sp/>publish_fn)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="7"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/>cv::Mat<sp/>cv_image;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>boost::shared_ptr&lt;void<sp/>const&gt;<sp/>tracked_object;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>cv_image<sp/>=<sp/>cv_bridge::toCvShare(message,<sp/>tracked_object,<sp/>message.encoding)-&gt;image;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(cv::Exception<sp/>&amp;e)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>ROS_ERROR(</highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>convert<sp/>from<sp/>&apos;%s&apos;<sp/>to<sp/>&apos;%s&apos;.&quot;</highlight><highlight class="normal">,<sp/>message.encoding.c_str(),<sp/>message.encoding.c_str());</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Retrieve<sp/>subsampling<sp/>factor<sp/>from<sp/>the<sp/>parameter<sp/>server</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>subsampling_factor;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>std::string<sp/>param_name;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="classimage__transport_1_1_simple_publisher_plugin_1a5f73a993e871242e51671f3cf82d4e1b" kindref="member">nh</ref>().param&lt;</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&gt;(</highlight><highlight class="stringliteral">&quot;resized_image_transport_subsampling_factor&quot;</highlight><highlight class="normal">,<sp/>subsampling_factor,<sp/>2.0);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Rescale<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_width<sp/>=<sp/>cv_image.cols<sp/>/<sp/>subsampling_factor<sp/>+<sp/>0.5;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>new_height<sp/>=<sp/>cv_image.rows<sp/>/<sp/>subsampling_factor<sp/>+<sp/>0.5;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>cv::Mat<sp/>buffer;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>cv::resize(cv_image,<sp/>buffer,<sp/>cv::Size(new_width,<sp/>new_height));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>up<sp/>ResizedImage<sp/>and<sp/>publish</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>image_transport_tutorial::ResizedImage<sp/>resized_image;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>resized_image.original_height<sp/>=<sp/>cv_image.rows;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>resized_image.original_width<sp/>=<sp/>cv_image.cols;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>resized_image.image<sp/>=<sp/>*(cv_bridge::CvImage(message.header,<sp/></highlight><highlight class="stringliteral">&quot;bgr8&quot;</highlight><highlight class="normal">,<sp/>cv_image).toImageMsg());</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>publish_fn(resized_image);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_publisher.cpp"/>
+  </compounddef>
+</doxygen>

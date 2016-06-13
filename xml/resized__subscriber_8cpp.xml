@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="resized__subscriber_8cpp" kind="file">
+    <compoundname>resized_subscriber.cpp</compoundname>
+    <includes refid="resized__subscriber_8h" local="no">image_transport_tutorial/resized_subscriber.h</includes>
+    <includes local="no">cv_bridge/cv_bridge.h</includes>
+    <includes local="no">opencv2/imgproc/imgproc.hpp</includes>
+    <incdepgraph>
+      <node id="1287">
+        <label>image_transport_tutorial/ResizedImage.h</label>
+      </node>
+      <node id="1283">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1284">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="1281">
+        <label>image_transport/subscriber_plugin.h</label>
+        <link refid="subscriber__plugin_8h_source"/>
+        <childnode refid="1282" relation="include">
+        </childnode>
+        <childnode refid="1283" relation="include">
+        </childnode>
+        <childnode refid="1284" relation="include">
+        </childnode>
+        <childnode refid="1285" relation="include">
+        </childnode>
+      </node>
+      <node id="1288">
+        <label>cv_bridge/cv_bridge.h</label>
+      </node>
+      <node id="1285">
+        <label>image_transport/transport_hints.h</label>
+        <link refid="transport__hints_8h_source"/>
+        <childnode refid="1282" relation="include">
+        </childnode>
+      </node>
+      <node id="1279">
+        <label>image_transport_tutorial/resized_subscriber.h</label>
+        <link refid="resized__subscriber_8h_source"/>
+        <childnode refid="1280" relation="include">
+        </childnode>
+        <childnode refid="1287" relation="include">
+        </childnode>
+      </node>
+      <node id="1289">
+        <label>opencv2/imgproc/imgproc.hpp</label>
+      </node>
+      <node id="1282">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="1286">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+      <node id="1278">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp</label>
+        <link refid="resized_subscriber.cpp"/>
+        <childnode refid="1279" relation="include">
+        </childnode>
+        <childnode refid="1288" relation="include">
+        </childnode>
+        <childnode refid="1289" relation="include">
+        </childnode>
+      </node>
+      <node id="1280">
+        <label>image_transport/simple_subscriber_plugin.h</label>
+        <link refid="simple__subscriber__plugin_8h_source"/>
+        <childnode refid="1281" relation="include">
+        </childnode>
+        <childnode refid="1286" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;image_transport_tutorial/resized_subscriber.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cv_bridge/cv_bridge.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/imgproc/imgproc.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="class_resized_subscriber_1ad0a3debf9a2135bbbae6145cebb958e8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_resized_subscriber_1ad0a3debf9a2135bbbae6145cebb958e8" kindref="member">ResizedSubscriber::internalCallback</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>image_transport_tutorial::ResizedImage::ConstPtr&amp;<sp/>msg,</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Callback&amp;<sp/>user_cb)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>only<sp/>for<sp/>optimization,<sp/>not<sp/>to<sp/>copy<sp/>the<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>boost::shared_ptr&lt;void<sp/>const&gt;<sp/>tracked_object_tmp;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>cv::Mat<sp/>img_rsz<sp/>=<sp/>cv_bridge::toCvShare(msg-&gt;image,<sp/>tracked_object_tmp)-&gt;image;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Resize<sp/>the<sp/>image<sp/>to<sp/>its<sp/>original<sp/>size</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/>cv::Mat<sp/>img_restored;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>cv::resize(img_rsz,<sp/>img_restored,<sp/>cv::Size(msg-&gt;original_width,<sp/>msg-&gt;original_height));</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Call<sp/>the<sp/>user<sp/>callback<sp/>with<sp/>the<sp/>restored<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>cv_bridge::CvImage<sp/>cv_img(msg-&gt;image.header,<sp/>msg-&gt;image.encoding,<sp/>img_restored);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>user_cb(cv_img.toImageMsg());</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,72 @@
+\hypertarget{classimage__transport_1_1_transport_hints}{\section{image\-\_\-transport\-:\-:Transport\-Hints Class Reference}
+\label{classimage__transport_1_1_transport_hints}\index{image\-\_\-transport\-::\-Transport\-Hints@{image\-\_\-transport\-::\-Transport\-Hints}}
+}
+
+
+Stores transport settings for an image topic subscription.  
+
+
+
+
+{\ttfamily \#include $<$transport\-\_\-hints.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classimage__transport_1_1_transport_hints_a1685aa1484249c2a4f70d91a2eac470a}{Transport\-Hints} (const std\-::string \&default\-\_\-transport=\char`\"{}raw\char`\"{}, const ros\-::\-Transport\-Hints \&ros\-\_\-hints=ros\-::\-Transport\-Hints(), const ros\-::\-Node\-Handle \&parameter\-\_\-nh=ros\-::\-Node\-Handle(\char`\"{}$\sim$\char`\"{}), const std\-::string \&parameter\-\_\-name=\char`\"{}image\-\_\-transport\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_transport_hints_a03ac9b94b5d821ad58069de46750429f}{const std\-::string \& {\bfseries get\-Transport} () const }\label{classimage__transport_1_1_transport_hints_a03ac9b94b5d821ad58069de46750429f}
+
+\item 
+\hypertarget{classimage__transport_1_1_transport_hints_a69b2353e24790b8e3e25aaa5b7c2ae2c}{const ros\-::\-Transport\-Hints \& {\bfseries get\-Ros\-Hints} () const }\label{classimage__transport_1_1_transport_hints_a69b2353e24790b8e3e25aaa5b7c2ae2c}
+
+\item 
+\hypertarget{classimage__transport_1_1_transport_hints_a6f4f312029db188135e83edd7508cfbd}{const ros\-::\-Node\-Handle \& {\bfseries get\-Parameter\-N\-H} () const }\label{classimage__transport_1_1_transport_hints_a6f4f312029db188135e83edd7508cfbd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores transport settings for an image topic subscription. 
+
+Definition at line 45 of file transport\-\_\-hints.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classimage__transport_1_1_transport_hints_a1685aa1484249c2a4f70d91a2eac470a}{\index{image\-\_\-transport\-::\-Transport\-Hints@{image\-\_\-transport\-::\-Transport\-Hints}!Transport\-Hints@{Transport\-Hints}}
+\index{Transport\-Hints@{Transport\-Hints}!image_transport::TransportHints@{image\-\_\-transport\-::\-Transport\-Hints}}
+\subsubsection[{Transport\-Hints}]{\setlength{\rightskip}{0pt plus 5cm}image\-\_\-transport\-::\-Transport\-Hints\-::\-Transport\-Hints (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{default\-\_\-transport = {\ttfamily \char`\"{}raw\char`\"{}}, }
+\item[{const ros\-::\-Transport\-Hints \&}]{ros\-\_\-hints = {\ttfamily ros\-:\-:TransportHints()}, }
+\item[{const ros\-::\-Node\-Handle \&}]{parameter\-\_\-nh = {\ttfamily ros\-:\-:NodeHandle(\char`\"{}$\sim$\char`\"{})}, }
+\item[{const std\-::string \&}]{parameter\-\_\-name = {\ttfamily \char`\"{}image\-\_\-transport\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classimage__transport_1_1_transport_hints_a1685aa1484249c2a4f70d91a2eac470a}
+
+
+Constructor. 
+
+The default transport can be overridden by setting a certain parameter to the name of the desired transport. By default this parameter is named \char`\"{}image\-\_\-transport\char`\"{} in the node's local namespace. For consistency across R\-O\-S applications, the name of this parameter should not be changed without good reason.
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\-\_\-transport} & Preferred transport to use \\
+\hline
+{\em ros\-\_\-hints} & Hints to pass through to R\-O\-S subscriptions \\
+\hline
+{\em parameter\-\_\-nh} & Node handle to use when looking up the transport parameter. Defaults to the local namespace. \\
+\hline
+{\em parameter\-\_\-name} & The name of the transport parameter \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file transport\-\_\-hints.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/transport\-\_\-hints.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,132 @@
+\hypertarget{classimage__transport_1_1_subscriber_filter}{\section{image\-\_\-transport\-:\-:Subscriber\-Filter Class Reference}
+\label{classimage__transport_1_1_subscriber_filter}\index{image\-\_\-transport\-::\-Subscriber\-Filter@{image\-\_\-transport\-::\-Subscriber\-Filter}}
+}
+
+
+Image subscription filter.  
+
+
+
+
+{\ttfamily \#include $<$subscriber\-\_\-filter.\-h$>$}
+
+Inheritance diagram for image\-\_\-transport\-:\-:Subscriber\-Filter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classimage__transport_1_1_subscriber_filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classimage__transport_1_1_subscriber_filter_afae6f86755c38b573bc5fa35e43e37f3}{Subscriber\-Filter} (\hyperlink{classimage__transport_1_1_image_transport}{Image\-Transport} \&it, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_filter_a2378a43c41e4fe123193ca637eb49afd}{\hyperlink{classimage__transport_1_1_subscriber_filter_a2378a43c41e4fe123193ca637eb49afd}{Subscriber\-Filter} ()}\label{classimage__transport_1_1_subscriber_filter_a2378a43c41e4fe123193ca637eb49afd}
+
+\begin{DoxyCompactList}\small\item\em Empty constructor, use \hyperlink{classimage__transport_1_1_subscriber_filter_a20afdaa28a22ffdbf62226ba1c95e561}{subscribe()} to subscribe to a topic. \end{DoxyCompactList}\item 
+void \hyperlink{classimage__transport_1_1_subscriber_filter_a20afdaa28a22ffdbf62226ba1c95e561}{subscribe} (\hyperlink{classimage__transport_1_1_image_transport}{Image\-Transport} \&it, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())
+\begin{DoxyCompactList}\small\item\em Subscribe to a topic. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_filter_a058bfa4c200c90d7cabd18a2d674084b}{void \hyperlink{classimage__transport_1_1_subscriber_filter_a058bfa4c200c90d7cabd18a2d674084b}{unsubscribe} ()}\label{classimage__transport_1_1_subscriber_filter_a058bfa4c200c90d7cabd18a2d674084b}
+
+\begin{DoxyCompactList}\small\item\em Force immediate unsubscription of this subscriber from its topic. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_filter_a9579b79c3a19cfcbd84586efddad52d5}{std\-::string {\bfseries get\-Topic} () const }\label{classimage__transport_1_1_subscriber_filter_a9579b79c3a19cfcbd84586efddad52d5}
+
+\item 
+\hypertarget{classimage__transport_1_1_subscriber_filter_abebc23b9066f8c684a1ce6d3906d5f99}{uint32\-\_\-t \hyperlink{classimage__transport_1_1_subscriber_filter_abebc23b9066f8c684a1ce6d3906d5f99}{get\-Num\-Publishers} () const }\label{classimage__transport_1_1_subscriber_filter_abebc23b9066f8c684a1ce6d3906d5f99}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of publishers this subscriber is connected to. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_filter_a9ba5a0e16e68dc055e0e4aba9679a281}{std\-::string \hyperlink{classimage__transport_1_1_subscriber_filter_a9ba5a0e16e68dc055e0e4aba9679a281}{get\-Transport} () const }\label{classimage__transport_1_1_subscriber_filter_a9ba5a0e16e68dc055e0e4aba9679a281}
+
+\begin{DoxyCompactList}\small\item\em Returns the name of the transport being used. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_subscriber_filter_ab0fdf78b86de2231788b74a911892d4c}{const \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} \& \hyperlink{classimage__transport_1_1_subscriber_filter_ab0fdf78b86de2231788b74a911892d4c}{get\-Subscriber} () const }\label{classimage__transport_1_1_subscriber_filter_ab0fdf78b86de2231788b74a911892d4c}
+
+\begin{DoxyCompactList}\small\item\em Returns the internal \hyperlink{classimage__transport_1_1_subscriber}{image\-\_\-transport\-::\-Subscriber} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Image subscription filter. 
+
+This class wraps \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} as a \char`\"{}filter\char`\"{} compatible with the message\-\_\-filters package. It acts as a highest-\/level filter, simply passing messages from an image transport subscription through to the filters which have connected to it.
+
+When this object is destroyed it will unsubscribe from the R\-O\-S subscription.\hypertarget{classimage__transport_1_1_subscriber_filter_connections}{}\subsection{C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-S}\label{classimage__transport_1_1_subscriber_filter_connections}
+\hyperlink{classimage__transport_1_1_subscriber_filter}{Subscriber\-Filter} has no input connection.
+
+The output connection for the \hyperlink{classimage__transport_1_1_subscriber_filter}{Subscriber\-Filter} object is the same signature as for roscpp subscription callbacks, ie. \begin{DoxyVerb}void callback(const boost::shared_ptr<const sensor_msgs::Image>&);
+\end{DoxyVerb}
+ 
+
+Definition at line 64 of file subscriber\-\_\-filter.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classimage__transport_1_1_subscriber_filter_afae6f86755c38b573bc5fa35e43e37f3}{\index{image\-\_\-transport\-::\-Subscriber\-Filter@{image\-\_\-transport\-::\-Subscriber\-Filter}!Subscriber\-Filter@{Subscriber\-Filter}}
+\index{Subscriber\-Filter@{Subscriber\-Filter}!image_transport::SubscriberFilter@{image\-\_\-transport\-::\-Subscriber\-Filter}}
+\subsubsection[{Subscriber\-Filter}]{\setlength{\rightskip}{0pt plus 5cm}image\-\_\-transport\-::\-Subscriber\-Filter\-::\-Subscriber\-Filter (
+\begin{DoxyParamCaption}
+\item[{{\bf Image\-Transport} \&}]{it, }
+\item[{const std\-::string \&}]{base\-\_\-topic, }
+\item[{uint32\-\_\-t}]{queue\-\_\-size, }
+\item[{const {\bf Transport\-Hints} \&}]{transport\-\_\-hints = {\ttfamily {\bf Transport\-Hints}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classimage__transport_1_1_subscriber_filter_afae6f86755c38b573bc5fa35e43e37f3}
+
+
+Constructor. 
+
+See the ros\-::\-Node\-Handle\-::subscribe() variants for more information on the parameters
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & The ros\-::\-Node\-Handle to use to subscribe. \\
+\hline
+{\em base\-\_\-topic} & The topic to subscribe to. \\
+\hline
+{\em queue\-\_\-size} & The subscription queue size \\
+\hline
+{\em transport\-\_\-hints} & The transport hints to pass along \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file subscriber\-\_\-filter.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_subscriber_filter_a20afdaa28a22ffdbf62226ba1c95e561}{\index{image\-\_\-transport\-::\-Subscriber\-Filter@{image\-\_\-transport\-::\-Subscriber\-Filter}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!image_transport::SubscriberFilter@{image\-\_\-transport\-::\-Subscriber\-Filter}}
+\subsubsection[{subscribe}]{\setlength{\rightskip}{0pt plus 5cm}void image\-\_\-transport\-::\-Subscriber\-Filter\-::subscribe (
+\begin{DoxyParamCaption}
+\item[{{\bf Image\-Transport} \&}]{it, }
+\item[{const std\-::string \&}]{base\-\_\-topic, }
+\item[{uint32\-\_\-t}]{queue\-\_\-size, }
+\item[{const {\bf Transport\-Hints} \&}]{transport\-\_\-hints = {\ttfamily {\bf Transport\-Hints}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classimage__transport_1_1_subscriber_filter_a20afdaa28a22ffdbf62226ba1c95e561}
+
+
+Subscribe to a topic. 
+
+If this \hyperlink{classimage__transport_1_1_subscriber}{Subscriber} is already subscribed to a topic, this function will first unsubscribe.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nh} & The ros\-::\-Node\-Handle to use to subscribe. \\
+\hline
+{\em base\-\_\-topic} & The topic to subscribe to. \\
+\hline
+{\em queue\-\_\-size} & The subscription queue size \\
+\hline
+{\em transport\-\_\-hints} & The transport hints to pass along \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 105 of file subscriber\-\_\-filter.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/subscriber\-\_\-filter.\-h\end{DoxyCompactItemize}

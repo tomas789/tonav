@@ -1,64 +1,33 @@
-\href{https://travis-ci.org/tomas789/tonav/branches}{\tt !\mbox{[}Travis-\/\-C\-I Tonav\mbox{]}\mbox{[}2\mbox{]}}
-
-Implementation of Multi-\/\-State Constraint Kalman \hyperlink{class_filter}{Filter} (M\-S\-C\-K\-F) for Vision-\/aided Inertial Navigation. This is my master's thesis.
-
-\subsection*{Status}
-
-This is work-\/in-\/progress. It is not able to work out-\/of-\/the-\/box currently. Expected time when it will be able to work out-\/of-\/the-\/box\-: July 2016.
-
-\subsection*{Goals}
-
-As a goal of this work I want to create complete navigation stack without using global position such as G\-P\-S. For local navigation it uses Multi-\/\-State Constraint Kalman \hyperlink{class_filter}{Filter} which is at the time of writing state-\/of-\/the-\/art method. It also has a great computation power to accuracy ratio. Drawback of this approach is that still accumulates (relatively small) drift during time. To compensate for this I want to use mechanism that uses loop closures. It will be based on principles used in O\-R\-B-\/\-S\-L\-A\-M. I have quite a bit experience with it and it works great.
-
-By combining these two approaches I want to create navigation stack that will be able to perform life-\/long navigation using very cheap hardware and with low energy demands. It should be able to run on battery. It should also be able to run on C\-P\-U only.
-
-Goal list\-:
+\hypertarget{index_codeapi}{}\section{Code A\-P\-I}\label{index_codeapi}
+When transporting images, you should use image\-\_\-transport's classes as drop-\/in replacements for ros\-::\-Publisher and ros\-::\-Subscriber.
 \begin{DoxyItemize}
-\item Accurate navigation
-\item Low-\/cost hardware
-\item Life-\/long navigation
-\item Low-\/energy demand (battery)
-\item Global drift compensation (loop closure)
+\item \hyperlink{classimage__transport_1_1_image_transport}{image\-\_\-transport\-::\-Image\-Transport} -\/ use this to create a Publisher or Subscriber
+\item \hyperlink{classimage__transport_1_1_publisher}{image\-\_\-transport\-::\-Publisher} -\/ manage advertisements for an image topic, using all available transport options
+\item \hyperlink{classimage__transport_1_1_subscriber}{image\-\_\-transport\-::\-Subscriber} -\/ manage an Image subscription callback using a particular transport
 \end{DoxyItemize}
 
-\subsection*{Datasets}
+Camera drivers publish a \char`\"{}camera\-\_\-info\char`\"{} sibling topic containing important metadata on how to interpret an image for vision applications. image\-\_\-transport included helper classes to publish (image, info) message pairs and re-\/synchronize them on the client side\-:
+\begin{DoxyItemize}
+\item \hyperlink{classimage__transport_1_1_camera_publisher}{image\-\_\-transport\-::\-Camera\-Publisher} -\/ manage advertisements for camera images
+\item \hyperlink{classimage__transport_1_1_camera_subscriber}{image\-\_\-transport\-::\-Camera\-Subscriber} -\/ manage a single subscription callback to synchronized image (using any transport) and Camera\-Info topics
+\end{DoxyItemize}
 
-For development purpose, I use \href{http://projects.csail.mit.edu/stata/index.php}{\tt M\-I\-T Stata Center Data Set}. It contains rosbag files recorded from P\-R2 robot.
+For other synchronization or filtering needs, see the low-\/level filter class\-:
+\begin{DoxyItemize}
+\item \hyperlink{classimage__transport_1_1_subscriber_filter}{image\-\_\-transport\-::\-Subscriber\-Filter} -\/ a wrapper for \hyperlink{classimage__transport_1_1_subscriber}{image\-\_\-transport\-::\-Subscriber} compatible with message\-\_\-filters
+\end{DoxyItemize}\hypertarget{index_writing_plugin}{}\subsection{Writing a plugin}\label{index_writing_plugin}
+If you are an advanced user implementing your own image transport option, you will need to implement these base-\/level interfaces\-:
+\begin{DoxyItemize}
+\item \hyperlink{classimage__transport_1_1_publisher_plugin}{image\-\_\-transport\-::\-Publisher\-Plugin}
+\item \hyperlink{classimage__transport_1_1_subscriber_plugin}{image\-\_\-transport\-::\-Subscriber\-Plugin}
+\end{DoxyItemize}
 
-Each bag file is quite large because it contains laser scans. They are not needed for the purpose of this work, so I created a filtered version of them using command
+In the common case that all communication between Publisher\-Plugin and Subscriber\-Plugin happens over a single R\-O\-S topic using a transport-\/specific message type, writing the plugins is vastly simplified by using these base classes instead\-:
+\begin{DoxyItemize}
+\item \hyperlink{classimage__transport_1_1_simple_publisher_plugin}{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin} -\/ see \hyperlink{classimage__transport_1_1_raw_publisher}{image\-\_\-transport\-::\-Raw\-Publisher} for a trivial example
+\item \hyperlink{classimage__transport_1_1_simple_subscriber_plugin}{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin} -\/ see \hyperlink{classimage__transport_1_1_raw_subscriber}{image\-\_\-transport\-::\-Raw\-Subscriber} for a trivial example
+\end{DoxyItemize}\hypertarget{index_rosapi}{}\section{R\-O\-S A\-P\-I}\label{index_rosapi}
+\hypertarget{index_pub_sub_rosapi}{}\subsection{Publishers and Subscribers}\label{index_pub_sub_rosapi}
+Because they encapsulate complicated communication behavior, image\-\_\-transport publisher and subscriber classes have a public R\-O\-S A\-P\-I as well as a code A\-P\-I. See the wiki documentation for details.
 
-{\ttfamily \$ rosbag filter 2011-\/01-\/18-\/06-\/37-\/58.\-bag pr2.\-bag 'topic in (\char`\"{}/wide\-\_\-stereo/left/image\-\_\-rect\char`\"{}, \char`\"{}/wide\-\_\-stereo/left/camera\-\_\-info\char`\"{}, \char`\"{}/torso\-\_\-lift    \-\_\-imu/data\char`\"{}, \char`\"{}/tf\char`\"{}, \char`\"{}/robot\-\_\-pose\-\_\-ekf/odom\-\_\-combined\char`\"{})'}
-
-By the way. Can you believe how hard it is to find publically available bagfile that is recorded using some cheap hardware? C'mon!
-
-\subsection*{Installation}
-
-To install this you need to have installed and working R\-O\-S. Then it should be fairly easy to build and run.
-
-``` git clone \href{https://github.com/tomas789/tonav.git}{\tt https\-://github.\-com/tomas789/tonav.\-git} cd tonav mkdir build cd build cmake .. make ```
-
-\subsection*{Run}
-
-I currently don't provide any roslaunch file. Just run {\ttfamily roscore} and then run \hyperlink{class_tonav}{Tonav}
-
-``` ./tonav --image $<$image\-\_\-topic$>$ --camerainfo $<$camerainfo\-\_\-topic$>$ --imu $<$imu\-\_\-topic$>$ ```
-
-For \href{http://projects.csail.mit.edu/stata/index.php}{\tt M\-I\-T Stata Center Data Set} I run it using
-
-``` ./tonav --image /wide\-\_\-stereo/left/image\-\_\-rect --camerainfo /wide\-\_\-stereo/left/camera\-\_\-info --imu /torso\-\_\-lift\-\_\-imu/data ```
-
-\subsection*{Documentation}
-
-At the time of writing there is no good documentation. Actually the best one is this readme. You can also find some useful information in my in-\/source Doxygen documentation. If you have installed Doxygen in version at least 1.\-8.\-8 you can generate it. Just run {\ttfamily make doc} and it will be generated in the folder {\ttfamily build/doc}.
-
-\subsection*{Bug reporting and support}
-
-This is something as alpha-\/dev-\/buggy piece of work. But stay tuned. I do my best. If you want to report a bug or if you want to know something about it just contact me at \href{mailto:tomas789@gmail.com}{\tt tomas789@gmail.\-com} or simply use \href{https://github.com/tomas789/tonav/issues}{\tt Issue tracker of Git\-Hub}.
-
-\subsection*{What does \hyperlink{class_tonav}{Tonav} mean?}
-
-Its Tom's Navigation.
-
-\subsection*{License}
-
-This work is currently distributed under L\-G\-P\-L v3 license. In the future, it will switch to G\-P\-L. 
+Although \hyperlink{classimage__transport_1_1_publisher}{image\-\_\-transport\-::\-Publisher} may publish many topics, in all code interfaces you should use only the name of the \char`\"{}base topic.\char`\"{} The image transport classes will figure out the name of the dedicated R\-O\-S topic to use for the desired transport. 

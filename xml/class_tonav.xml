@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="120" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="120" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="120" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_tonav_1a0ad5267968fc08071f1f23f39ff90a26" prot="private" static="no" mutable="no">
         <type><ref refid="class_filter" kindref="compound">Filter</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="121" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="121" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="121" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_tonav_1a492a3ada76bc0a8c79024d9901b16e7a" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="123" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="123" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="123" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_tonav_1a53c6c1b075b45f4a02c7d90f451bcd81" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="125" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="125" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="125" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_tonav_1a85e1dcbb05b40fc59a30ba27f6853fc0" prot="private" static="no" mutable="no">
         <type>cv::Mat</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="126" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="126" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="126" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_tonav_1a3e587c752f9ea457cd5d077c9bc1e336" prot="private" static="no" mutable="no">
         <type>double</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="128" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="128" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="128" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="128" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_tonav_1aa30d01a89c09cfae84aa82225e953384" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="129" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="129" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="129" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="129" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_tonav_1aab1e1b589665b61f3017d8f2d2f3fa3b" prot="private" static="no" mutable="no">
         <type>std::list&lt; <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &gt;</type>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="131" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="131" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="131" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="131" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_tonav_1ac9203e6d53b20839b120e8ce97e7b6ea" prot="private" static="no" mutable="no">
         <type>std::list&lt; <ref refid="class_imu_item" kindref="compound">ImuItem</ref> &gt;</type>
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="132" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="132" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="132" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="132" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -146,7 +146,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="7" bodyend="11"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="26" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="7" bodyend="11"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1ac458c8712b1eeef1ba169835706d26fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -182,7 +182,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="37" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="13" bodyend="16"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="37" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="13" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a02a596cd5acf1799830499dd97e5e2e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -218,7 +218,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="48" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="18" bodyend="21"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="48" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="18" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1ac7c7cdaa16941df03aca92a3eaa75ed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -265,7 +265,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="63" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="23" bodyend="27"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="63" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="23" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a765f593b621a40052a01b7d0449d9b8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -301,7 +301,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="81" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="29" bodyend="40"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="81" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="29" bodyend="40"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a53fddfad248ab9a75906e310266e1f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -337,7 +337,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="111" column="1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="111" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a6cd97922b947734bca02119a60135c30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -350,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="113" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="42" bodyend="44"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="113" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="42" bodyend="44"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a724c0d36fb1f182023831f70fa166e55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Quaterniond</type>
@@ -363,7 +363,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="115" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="46" bodyend="48"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="115" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="46" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a4717848cb42b3311e19d656de940bc65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Vector3d</type>
@@ -376,7 +376,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="116" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="50" bodyend="52"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="116" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="50" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a3929b594397489b232e77e4344c8675a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>cv::Mat</type>
@@ -389,7 +389,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="117" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="54" bodyend="56"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="117" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="54" bodyend="56"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -404,7 +404,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="134" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="58" bodyend="69"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="134" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="58" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a53d772b2f935be79b9faa05747e88b00" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -417,7 +417,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="135" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="71" bodyend="76"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="135" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="71" bodyend="76"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a99e9d162f55e27b404451164a939b787" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -430,7 +430,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="136" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="78" bodyend="83"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="136" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="78" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a98518b9c4feeefa13fde82e5ed1a1398" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -443,7 +443,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="138" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="85" bodyend="90"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="138" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="85" bodyend="90"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a3b3836ac2a2cf345ab6bcf396907a044" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -456,7 +456,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="139" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="92" bodyend="114"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="139" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="92" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a0d6ce231d4c99c00663df22d786bc95c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -469,7 +469,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="140" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="116" bodyend="118"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="140" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="116" bodyend="118"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1ade1172c34aa02eb74aa6f9853a959165" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -490,7 +490,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="142" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="120" bodyend="129"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="142" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="120" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1afe432d3975844875d514ae3c0cfe8693" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -511,7 +511,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="143" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="131" bodyend="140"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="143" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="131" bodyend="140"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a241dcda5dc09ddd1d9fa8a247e37f39f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -524,7 +524,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="145" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="142" bodyend="153"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="145" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="142" bodyend="153"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a6d7ba76b933a3ab606476010b97bd9c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -537,7 +537,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="146" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="155" bodyend="199"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="146" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="155" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a4cbe91ddd8bd4fb6dc624cd2e45e7ab2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_imu_item" kindref="compound">ImuItem</ref></type>
@@ -562,14 +562,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="148" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/tonav.cpp" bodystart="201" bodyend="208"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="148" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="201" bodyend="208"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>This is main class for communicating with filter. You can pass IMU and camera data to filter through it and get information about current filter state. </para>    </briefdescription>
     <detaileddescription>
 <para>As a user, you should only communicate with this class. </para>    </detaileddescription>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" line="19" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/tonav.h" bodystart="19" bodyend="149"/>
+    <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="19" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/tonav.h" bodystart="19" bodyend="149"/>
     <listofallmembers>
       <member refid="class_tonav_1aab1e1b589665b61f3017d8f2d2f3fa3b" prot="private" virt="non-virtual"><scope>Tonav</scope><name>accel_buffer_</name></member>
       <member refid="class_tonav_1a396f2f4c5b53e742156d7e7a080eb176" prot="private" virt="non-virtual"><scope>Tonav</scope><name>checkGlobalGravity</name></member>

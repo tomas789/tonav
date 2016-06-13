@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['impossibleexception',['ImpossibleException',['../class_impossible_exception.html',1,'']]],
-  ['imubuffer',['ImuBuffer',['../class_imu_buffer.html',1,'']]],
-  ['imufeed',['ImuFeed',['../class_imu_feed.html',1,'']]],
-  ['imuitem',['ImuItem',['../class_imu_item.html',1,'']]]
+  ['featuretrack',['FeatureTrack',['../class_feature_track.html',1,'']]],
+  ['featuretracker',['FeatureTracker',['../class_feature_tracker.html',1,'']]],
+  ['filter',['Filter',['../class_filter.html',1,'']]],
+  ['filterstate',['FilterState',['../class_filter_state.html',1,'']]],
+  ['framefeatures',['FrameFeatures',['../class_frame_features.html',1,'']]]
 ];

@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="structimage__transport_1_1_subscriber_1_1_impl" kind="struct" prot="public">
+    <compoundname>image_transport::Subscriber::Impl</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structimage__transport_1_1_subscriber_1_1_impl_1a1b52f135012fd633ad207fde49d5fd33" prot="public" static="no" mutable="no">
+        <type>SubLoaderPtr</type>
+        <definition>SubLoaderPtr image_transport::Subscriber::Impl::loader_</definition>
+        <argsstring></argsstring>
+        <name>loader_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" line="69" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_subscriber_1_1_impl_1a841399336baa7248a2717880f9daa145" prot="public" static="no" mutable="no">
+        <type>boost::shared_ptr&lt; <ref refid="classimage__transport_1_1_subscriber_plugin" kindref="compound">SubscriberPlugin</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt;SubscriberPlugin&gt; image_transport::Subscriber::Impl::subscriber_</definition>
+        <argsstring></argsstring>
+        <name>subscriber_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" line="70" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structimage__transport_1_1_subscriber_1_1_impl_1a929b85bd75ba4724fb372552aea246c3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool image_transport::Subscriber::Impl::unsubscribed_</definition>
+        <argsstring></argsstring>
+        <name>unsubscribed_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" line="71" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structimage__transport_1_1_subscriber_1_1_impl_1a057ffc974bffae3e0c1e1edcff4c80ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::Subscriber::Impl::Impl</definition>
+        <argsstring>()</argsstring>
+        <name>Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" line="45" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_subscriber_1_1_impl_1a06673c33249b458fc72bb699d82acf60" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::Subscriber::Impl::~Impl</definition>
+        <argsstring>()</argsstring>
+        <name>~Impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" line="50" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_subscriber_1_1_impl_1ab866a0f379c5d0624ffde622f8110ba2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool image_transport::Subscriber::Impl::isValid</definition>
+        <argsstring>() const </argsstring>
+        <name>isValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" line="55" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="structimage__transport_1_1_subscriber_1_1_impl_1abb17966d1360dcd587022eb2a01b6473" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::Subscriber::Impl::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" line="60" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" bodystart="60" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" line="44" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/subscriber.cpp" bodystart="43" bodyend="73"/>
+    <listofallmembers>
+      <member refid="structimage__transport_1_1_subscriber_1_1_impl_1a057ffc974bffae3e0c1e1edcff4c80ab" prot="public" virt="non-virtual"><scope>image_transport::Subscriber::Impl</scope><name>Impl</name></member>
+      <member refid="structimage__transport_1_1_subscriber_1_1_impl_1ab866a0f379c5d0624ffde622f8110ba2" prot="public" virt="non-virtual"><scope>image_transport::Subscriber::Impl</scope><name>isValid</name></member>
+      <member refid="structimage__transport_1_1_subscriber_1_1_impl_1a1b52f135012fd633ad207fde49d5fd33" prot="public" virt="non-virtual"><scope>image_transport::Subscriber::Impl</scope><name>loader_</name></member>
+      <member refid="structimage__transport_1_1_subscriber_1_1_impl_1abb17966d1360dcd587022eb2a01b6473" prot="public" virt="non-virtual"><scope>image_transport::Subscriber::Impl</scope><name>shutdown</name></member>
+      <member refid="structimage__transport_1_1_subscriber_1_1_impl_1a841399336baa7248a2717880f9daa145" prot="public" virt="non-virtual"><scope>image_transport::Subscriber::Impl</scope><name>subscriber_</name></member>
+      <member refid="structimage__transport_1_1_subscriber_1_1_impl_1a929b85bd75ba4724fb372552aea246c3" prot="public" virt="non-virtual"><scope>image_transport::Subscriber::Impl</scope><name>unsubscribed_</name></member>
+      <member refid="structimage__transport_1_1_subscriber_1_1_impl_1a06673c33249b458fc72bb699d82acf60" prot="public" virt="non-virtual"><scope>image_transport::Subscriber::Impl</scope><name>~Impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_simple_subscriber_plugin" kind="class" prot="public" abstract="yes">
+    <compoundname>image_transport::SimpleSubscriberPlugin</compoundname>
+    <basecompoundref refid="classimage__transport_1_1_subscriber_plugin" prot="public" virt="non-virtual">image_transport::SubscriberPlugin</basecompoundref>
+    <includes refid="simple__subscriber__plugin_8h" local="no">simple_subscriber_plugin.h</includes>
+    <innerclass refid="structimage__transport_1_1_simple_subscriber_plugin_1_1_simple_subscriber_plugin_impl" prot="private">image_transport::SimpleSubscriberPlugin::SimpleSubscriberPluginImpl</innerclass>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>M</declname>
+        <defname>M</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classimage__transport_1_1_simple_subscriber_plugin_1a8027e798f84a902fb5f08cfd162fb03f" prot="private" static="no" mutable="no">
+        <type>boost::scoped_ptr&lt; SimpleSubscriberPluginImpl &gt;</type>
+        <definition>boost::scoped_ptr&lt;SimpleSubscriberPluginImpl&gt; image_transport::SimpleSubscriberPlugin&lt; M &gt;::simple_impl_</definition>
+        <argsstring></argsstring>
+        <name>simple_impl_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="136" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_simple_subscriber_plugin_1a147d9de2239a169f7489366b99759569" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual image_transport::SimpleSubscriberPlugin&lt; M &gt;::~SimpleSubscriberPlugin</definition>
+        <argsstring>()</argsstring>
+        <name>~SimpleSubscriberPlugin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="65" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_simple_subscriber_plugin_1ab6e2fa57778770429195a516b78dcb1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string image_transport::SimpleSubscriberPlugin&lt; M &gt;::getTopic</definition>
+        <argsstring>() const </argsstring>
+        <name>getTopic</name>
+        <reimplements refid="classimage__transport_1_1_subscriber_plugin_1abb289f564cb993a990626662e65bd9f6">getTopic</reimplements>
+        <briefdescription>
+<para>Get the transport-specific communication topic. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="67" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="67" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_simple_subscriber_plugin_1ae7115a373237561c9896fa93d74fe981" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t image_transport::SimpleSubscriberPlugin&lt; M &gt;::getNumPublishers</definition>
+        <argsstring>() const </argsstring>
+        <name>getNumPublishers</name>
+        <reimplements refid="classimage__transport_1_1_subscriber_plugin_1a7fae40b302a6493d00b0cd8905484677">getNumPublishers</reimplements>
+        <briefdescription>
+<para>Returns the number of publishers this subscriber is connected to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="73" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="73" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_simple_subscriber_plugin_1a559eb7593e56faf92fbfba771e317455" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::SimpleSubscriberPlugin&lt; M &gt;::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <reimplements refid="classimage__transport_1_1_subscriber_plugin_1aa8af1348748aef7372bf248a69f775a7">shutdown</reimplements>
+        <briefdescription>
+<para>Unsubscribe the callback associated with this <ref refid="classimage__transport_1_1_subscriber_plugin" kindref="compound">SubscriberPlugin</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="79" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="79" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classimage__transport_1_1_simple_subscriber_plugin_1ae3fbeb43694289e50670d7050da82a1a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::SimpleSubscriberPlugin&lt; M &gt;::internalCallback</definition>
+        <argsstring>(const typename M::ConstPtr &amp;message, const Callback &amp;user_cb)=0</argsstring>
+        <name>internalCallback</name>
+        <reimplementedby refid="class_resized_subscriber_1ad0a3debf9a2135bbbae6145cebb958e8">internalCallback</reimplementedby>
+        <param>
+          <type>const typename M::ConstPtr &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const Callback &amp;</type>
+          <declname>user_cb</declname>
+        </param>
+        <briefdescription>
+<para>Process a message. Must be implemented by the subclass. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A message from the <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user_cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The user Image callback to invoke, if appropriate. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="91" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string image_transport::SimpleSubscriberPlugin&lt; M &gt;::getTopicToSubscribe</definition>
+        <argsstring>(const std::string &amp;base_topic) const </argsstring>
+        <name>getTopicToSubscribe</name>
+        <reimplementedby refid="classimage__transport_1_1_raw_subscriber_1a6da2134193b87fb71afda535a618cc7c">getTopicToSubscribe</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <briefdescription>
+<para>Return the communication topic name for a given base topic. </para>        </briefdescription>
+        <detaileddescription>
+<para>Defaults to &lt;base topic&gt;/&lt;transport name&gt;. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="98" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_simple_subscriber_plugin_1adead418bf0be6f6511af9e6a03ab8322" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::SimpleSubscriberPlugin&lt; M &gt;::subscribeImpl</definition>
+        <argsstring>(ros::NodeHandle &amp;nh, const std::string &amp;base_topic, uint32_t queue_size, const Callback &amp;callback, const ros::VoidPtr &amp;tracked_object, const TransportHints &amp;transport_hints)</argsstring>
+        <name>subscribeImpl</name>
+        <reimplements refid="classimage__transport_1_1_subscriber_plugin_1a1cc8b28b99ea0a15c9e58dc6d9bc27f6">subscribeImpl</reimplements>
+        <param>
+          <type>ros::NodeHandle &amp;</type>
+          <declname>nh</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>const Callback &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>const ros::VoidPtr &amp;</type>
+          <declname>tracked_object</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_transport_hints" kindref="compound">TransportHints</ref> &amp;</type>
+          <declname>transport_hints</declname>
+        </param>
+        <briefdescription>
+<para>Subscribe to an image transport topic. Must be implemented by the subclass. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="103" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="103" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const ros::NodeHandle &amp;</type>
+        <definition>const ros::NodeHandle&amp; image_transport::SimpleSubscriberPlugin&lt; M &gt;::nh</definition>
+        <argsstring>() const </argsstring>
+        <name>nh</name>
+        <briefdescription>
+<para>Returns the ros::NodeHandle to be used for parameter lookup. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="119" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="119" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class to simplify implementing most plugins to <ref refid="classimage__transport_1_1_subscriber" kindref="compound">Subscriber</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>The base class simplifies implementing a <ref refid="classimage__transport_1_1_subscriber_plugin" kindref="compound">SubscriberPlugin</ref> in the common case that all communication with the matching <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref> happens over a single ROS topic using a transport-specific message type. <ref refid="classimage__transport_1_1_simple_subscriber_plugin" kindref="compound">SimpleSubscriberPlugin</ref> is templated on the transport-specific message type.</para><para>A subclass need implement only two methods:<itemizedlist>
+<listitem><para><ref refid="classimage__transport_1_1_subscriber_plugin_1a647dc0f6e0c34f0b4d8b809b3c679f88" kindref="member">getTransportName()</ref> from <ref refid="classimage__transport_1_1_subscriber_plugin" kindref="compound">SubscriberPlugin</ref></para></listitem><listitem><para><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1ae3fbeb43694289e50670d7050da82a1a" kindref="member">internalCallback()</ref> - processes a message and invoked the user Image callback if appropriate.</para></listitem></itemizedlist>
+</para><para>For access to the parameter server and name remappings, use <ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" kindref="member">nh()</ref>.</para><para><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268" kindref="member">getTopicToSubscribe()</ref> controls the name of the internal communication topic. It defaults to &lt;base topic&gt;/&lt;transport name&gt;. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="130">
+        <label>image_transport::SimpleSubscriberPlugin&lt; M &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="131" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>noncopyable</label>
+      </node>
+      <node id="131">
+        <label>image_transport::SubscriberPlugin</label>
+        <link refid="classimage__transport_1_1_subscriber_plugin"/>
+        <childnode refid="132" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="133">
+        <label>image_transport::SimpleSubscriberPlugin&lt; M &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="134" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>noncopyable</label>
+      </node>
+      <node id="134">
+        <label>image_transport::SubscriberPlugin</label>
+        <link refid="classimage__transport_1_1_subscriber_plugin"/>
+        <childnode refid="135" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" line="63" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/simple_subscriber_plugin.h" bodystart="62" bodyend="137"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a0e3d423158a12f55e528b108d6dfda19" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>Callback</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1ae48e1648e998fe8352ff385c4c132531" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>getLookupName</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1ae7115a373237561c9896fa93d74fe981" prot="public" virt="virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>getNumPublishers</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1ab6e2fa57778770429195a516b78dcb1a" prot="public" virt="virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268" prot="protected" virt="virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>getTopicToSubscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a647dc0f6e0c34f0b4d8b809b3c679f88" prot="public" virt="pure-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>getTransportName</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1ae3fbeb43694289e50670d7050da82a1a" prot="protected" virt="pure-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>internalCallback</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" prot="protected" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>nh</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a559eb7593e56faf92fbfba771e317455" prot="public" virt="virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>shutdown</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a8027e798f84a902fb5f08cfd162fb03f" prot="private" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>simple_impl_</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1abf53246a79405014beab159908a11ec8" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a699938e88a295ad3ae6d770fceb41690" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a9cd92f4bac80d9f89d949082581ad4fe" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1acb23bea81d54ee21cd5fa12ddd871aaa" prot="public" virt="non-virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>subscribe</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1adead418bf0be6f6511af9e6a03ab8322" prot="protected" virt="virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>subscribeImpl</name></member>
+      <member refid="classimage__transport_1_1_simple_subscriber_plugin_1a147d9de2239a169f7489366b99759569" prot="public" virt="virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>~SimpleSubscriberPlugin</name></member>
+      <member refid="classimage__transport_1_1_subscriber_plugin_1a9eeabaa73afbd2aafa1f4e4f162e8ac7" prot="public" virt="virtual"><scope>image_transport::SimpleSubscriberPlugin</scope><name>~SubscriberPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

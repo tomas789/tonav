@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_camera_subscriber" kind="class" prot="public">
+    <compoundname>image_transport::CameraSubscriber</compoundname>
+    <includes refid="camera__subscriber_8h" local="no">camera_subscriber.h</includes>
+    <innerclass refid="structimage__transport_1_1_camera_subscriber_1_1_impl" prot="public">image_transport::CameraSubscriber::Impl</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classimage__transport_1_1_camera_subscriber_1abc533a8b0a84b6412549538100aef653" prot="public" static="no">
+        <type>boost::function&lt; void(const sensor_msgs::ImageConstPtr &amp;, const sensor_msgs::CameraInfoConstPtr &amp;)&gt;</type>
+        <definition>typedef boost::function&lt;void(const sensor_msgs::ImageConstPtr&amp;, const sensor_msgs::CameraInfoConstPtr&amp;)&gt; image_transport::CameraSubscriber::Callback</definition>
+        <argsstring></argsstring>
+        <name>Callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="66" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classimage__transport_1_1_camera_subscriber_1aaf824661591a9b2f6e2ecfa268001d59" prot="private" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="structimage__transport_1_1_camera_subscriber_1_1_impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;Impl&gt; image_transport::CameraSubscriber::ImplPtr</definition>
+        <argsstring></argsstring>
+        <name>ImplPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="108" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classimage__transport_1_1_camera_subscriber_1af17c4fddf7dd81d1d23a60b0e479e4d8" prot="private" static="no">
+        <type>boost::weak_ptr&lt; <ref refid="structimage__transport_1_1_camera_subscriber_1_1_impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>typedef boost::weak_ptr&lt;Impl&gt; image_transport::CameraSubscriber::ImplWPtr</definition>
+        <argsstring></argsstring>
+        <name>ImplWPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="109" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classimage__transport_1_1_camera_subscriber_1aff387a998145b127f520624c9ece1073" prot="private" static="no" mutable="no">
+        <type>ImplPtr</type>
+        <definition>ImplPtr image_transport::CameraSubscriber::impl_</definition>
+        <argsstring></argsstring>
+        <name>impl_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="111" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classimage__transport_1_1_camera_subscriber_1ac010f5a40d98825199e1c5303d0638eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class ImageTransport</definition>
+        <argsstring></argsstring>
+        <name>ImageTransport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="113" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1a028a0bfea20662b34a18682761fc72ad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::CameraSubscriber::CameraSubscriber</definition>
+        <argsstring>()</argsstring>
+        <name>CameraSubscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="68" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1a52e7e96c56a813de43e9018cdd4640d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::CameraSubscriber::getTopic</definition>
+        <argsstring>() const </argsstring>
+        <name>getTopic</name>
+        <briefdescription>
+<para>Get the base topic (on which the raw image is published). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="73" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp" bodystart="124" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1a427737122aa2fa743523aef215f95dfe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::CameraSubscriber::getInfoTopic</definition>
+        <argsstring>() const </argsstring>
+        <name>getInfoTopic</name>
+        <briefdescription>
+<para>Get the camera info topic. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="78" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp" bodystart="130" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1a5dca2655dfe5c885ff992693084530b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t image_transport::CameraSubscriber::getNumPublishers</definition>
+        <argsstring>() const </argsstring>
+        <name>getNumPublishers</name>
+        <briefdescription>
+<para>Returns the number of publishers this subscriber is connected to. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>Fix this when message_filters::Subscriber has <ref refid="classimage__transport_1_1_camera_subscriber_1a5dca2655dfe5c885ff992693084530b0" kindref="member">getNumPublishers()</ref> </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="83" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp" bodystart="136" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1a31dd4cfcdaaf14d304624d78bcdf4a87" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::CameraSubscriber::getTransport</definition>
+        <argsstring>() const </argsstring>
+        <name>getTransport</name>
+        <briefdescription>
+<para>Returns the name of the transport being used. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="88" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp" bodystart="144" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1aa42ceb9613a14d4c2e297674e52ee684" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::CameraSubscriber::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+<para>Unsubscribe the callback associated with this <ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="93" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1af753258daaf280c67bf1c1100bfeb4e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::CameraSubscriber::operator void *</definition>
+        <argsstring>() const </argsstring>
+        <name>operator void *</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="95" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1a25fa242f09f9b59190553c73a00ea648" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool image_transport::CameraSubscriber::operator&lt;</definition>
+        <argsstring>(const CameraSubscriber &amp;rhs) const </argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="96" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1ad3d21acca9718dc8ef5367bd4eb136b7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool image_transport::CameraSubscriber::operator!=</definition>
+        <argsstring>(const CameraSubscriber &amp;rhs) const </argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="97" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="97" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1af90db2cfc2ca0a99f543c5dbd4f7d216" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool image_transport::CameraSubscriber::operator==</definition>
+        <argsstring>(const CameraSubscriber &amp;rhs) const </argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="98" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="98" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classimage__transport_1_1_camera_subscriber_1add9fc65ed62408204dc590ff7a31d44e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::CameraSubscriber::CameraSubscriber</definition>
+        <argsstring>(ImageTransport &amp;image_it, ros::NodeHandle &amp;info_nh, const std::string &amp;base_topic, uint32_t queue_size, const Callback &amp;callback, const ros::VoidPtr &amp;tracked_object=ros::VoidPtr(), const TransportHints &amp;transport_hints=TransportHints())</argsstring>
+        <name>CameraSubscriber</name>
+        <param>
+          <type><ref refid="classimage__transport_1_1_image_transport" kindref="compound">ImageTransport</ref> &amp;</type>
+          <declname>image_it</declname>
+        </param>
+        <param>
+          <type>ros::NodeHandle &amp;</type>
+          <declname>info_nh</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>const Callback &amp;</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>const ros::VoidPtr &amp;</type>
+          <declname>tracked_object</declname>
+          <defval>ros::VoidPtr()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_transport_hints" kindref="compound">TransportHints</ref> &amp;</type>
+          <declname>transport_hints</declname>
+          <defval><ref refid="classimage__transport_1_1_transport_hints" kindref="compound">TransportHints</ref>()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="101" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp" bodystart="100" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Manages a subscription callback on synchronized Image and CameraInfo topics. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref> is the client-side counterpart to <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref>, and assumes the same topic naming convention. The callback is of type: <verbatim>void callback(const sensor_msgs::ImageConstPtr&amp;, const sensor_msgs::CameraInfoConstPtr&amp;);
+</verbatim></para><para>A <ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref> should always be created through a call to <ref refid="classimage__transport_1_1_image_transport_1a6754562b0ffe99b0cf716e621d2cfa6b" kindref="member">ImageTransport::subscribeCamera()</ref>, or copied from one that was. Once all copies of a specific <ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref> go out of scope, the subscription callback associated with that handle will stop being called. Once all <ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref> for a given topic go out of scope the topic will be unsubscribed. </para>    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" line="63" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_subscriber.h" bodystart="62" bodyend="114"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_camera_subscriber_1abc533a8b0a84b6412549538100aef653" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>Callback</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1a028a0bfea20662b34a18682761fc72ad" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>CameraSubscriber</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1add9fc65ed62408204dc590ff7a31d44e" prot="private" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>CameraSubscriber</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1a427737122aa2fa743523aef215f95dfe" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>getInfoTopic</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1a5dca2655dfe5c885ff992693084530b0" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>getNumPublishers</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1a52e7e96c56a813de43e9018cdd4640d4" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1a31dd4cfcdaaf14d304624d78bcdf4a87" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>getTransport</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1ac010f5a40d98825199e1c5303d0638eb" prot="private" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>ImageTransport</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1aff387a998145b127f520624c9ece1073" prot="private" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>impl_</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1aaf824661591a9b2f6e2ecfa268001d59" prot="private" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>ImplPtr</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1af17c4fddf7dd81d1d23a60b0e479e4d8" prot="private" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>ImplWPtr</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1af753258daaf280c67bf1c1100bfeb4e4" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>operator void *</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1ad3d21acca9718dc8ef5367bd4eb136b7" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>operator!=</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1a25fa242f09f9b59190553c73a00ea648" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>operator&lt;</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1af90db2cfc2ca0a99f543c5dbd4f7d216" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>operator==</name></member>
+      <member refid="classimage__transport_1_1_camera_subscriber_1aa42ceb9613a14d4c2e297674e52ee684" prot="public" virt="non-virtual"><scope>image_transport::CameraSubscriber</scope><name>shutdown</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

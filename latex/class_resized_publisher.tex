@@ -1,0 +1,57 @@
+\hypertarget{class_resized_publisher}{\section{Resized\-Publisher Class Reference}
+\label{class_resized_publisher}\index{Resized\-Publisher@{Resized\-Publisher}}
+}
+Inheritance diagram for Resized\-Publisher\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_resized_publisher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_resized_publisher_a2282c668269cc359be3f1767fa31c1cc}{virtual std\-::string \hyperlink{class_resized_publisher_a2282c668269cc359be3f1767fa31c1cc}{get\-Transport\-Name} () const }\label{class_resized_publisher_a2282c668269cc359be3f1767fa31c1cc}
+
+\begin{DoxyCompactList}\small\item\em Get a string identifier for the transport provided by this plugin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_resized_publisher_af0121f511226071f7cb96fb3e50879a6}{publish} (const sensor\-\_\-msgs\-::\-Image \&message, const \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a01bd11cb3ee6b7ce6715a3b57feadf93}{Publish\-Fn} \&publish\-\_\-fn) const 
+\begin{DoxyCompactList}\small\item\em Publish an image using the specified publish function. Must be implemented by the subclass. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file resized\-\_\-publisher.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_resized_publisher_af0121f511226071f7cb96fb3e50879a6}{\index{Resized\-Publisher@{Resized\-Publisher}!publish@{publish}}
+\index{publish@{publish}!ResizedPublisher@{Resized\-Publisher}}
+\subsubsection[{publish}]{\setlength{\rightskip}{0pt plus 5cm}void Resized\-Publisher\-::publish (
+\begin{DoxyParamCaption}
+\item[{const sensor\-\_\-msgs\-::\-Image \&}]{message, }
+\item[{const {\bf Publish\-Fn} \&}]{publish\-\_\-fn}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_resized_publisher_af0121f511226071f7cb96fb3e50879a6}
+
+
+Publish an image using the specified publish function. Must be implemented by the subclass. 
+
+The Publish\-Fn publishes the transport-\/specific message type. This indirection allows Simple\-Subscriber\-Plugin to use this function for both normal broadcast publishing and single subscriber publishing (in subscription callbacks). 
+
+Implements \hyperlink{classimage__transport_1_1_simple_publisher_plugin_a193470dd32092d13e2284052d4fa359a}{image\-\_\-transport\-::\-Simple\-Publisher\-Plugin$<$ image\-\_\-transport\-\_\-tutorial\-::\-Resized\-Image $>$}.
+
+
+
+Definition at line 5 of file resized\-\_\-publisher.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/tutorial/include/image\-\_\-transport\-\_\-tutorial/resized\-\_\-publisher.\-h\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/tutorial/src/resized\-\_\-publisher.\-cpp\end{DoxyCompactItemize}

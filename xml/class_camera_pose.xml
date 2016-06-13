@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="13" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="13" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="13" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_pose.h" bodystart="13" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="31" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="31" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_pose.h" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_camera_pose_1a77c9ea1d0386f1ca0daac90fa609fd35" prot="private" static="no" mutable="no">
         <type>std::size_t</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="32" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="32" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="32" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_pose.h" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_camera_pose_1a90d2e7704a89768d74b02c01abd28ce9" prot="private" static="no" mutable="no">
         <type>std::size_t</type>
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="33" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="33" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="33" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_pose.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="15" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="8" bodyend="10"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="8" bodyend="10"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1a9393e875cfde4b1587a5f8b06d498466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="16" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="12" bodyend="14"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="16" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="12" bodyend="14"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1a91fe393ed7bd9c638198a7e138e3926c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::size_t</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="18" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="16" bodyend="18"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="18" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="16" bodyend="18"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1ab690a1975e061c75e2431c2f671d5637" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::size_t</type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="20" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="20" bodyend="22"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="20" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1ad52f534b1a0b4841a4c8d5e04471f0a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="21" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="24" bodyend="26"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="21" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="24" bodyend="26"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1acfe976d10448deee4b714506c3ab6357" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="22" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="28" bodyend="30"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="22" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="28" bodyend="30"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1adeec70b16372d5aede066da2b6bf5d4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; CameraPoseType, 4, 1 &gt;</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="24" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="32" bodyend="34"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="24" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="32" bodyend="34"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1af518728cc70c31460a20fc0f6f3f40a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; CameraPoseType, 3, 1 &gt;</type>
@@ -170,7 +170,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="25" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="36" bodyend="38"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="25" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="36" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1ae15933c2b5176d011135164962639a99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; CameraPoseType, 3, 1 &gt;</type>
@@ -183,7 +183,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="26" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="40" bodyend="42"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="26" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="40" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="class_camera_pose_1aea5ef3206eb4f8929495dfc8f3a93571" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -196,14 +196,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="28" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/src/camera_pose.cpp" bodystart="44" bodyend="46"/>
+        <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/camera_pose.cpp" bodystart="44" bodyend="46"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" line="11" column="1" bodyfile="/home/tomaskrejci/catkin_ws/src/tonav/include/camera_pose.h" bodystart="11" bodyend="34"/>
+    <location file="/home/travis/build/tomas789/tonav/include/camera_pose.h" line="11" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/camera_pose.h" bodystart="11" bodyend="34"/>
     <listofallmembers>
       <member refid="class_camera_pose_1ad3adf8335a31145e9905eae1fff0708f" prot="private" virt="non-virtual"><scope>CameraPose</scope><name>camera_pose_</name></member>
       <member refid="class_camera_pose_1aeb6b408cd1298d44c577d4e2d6b7bd56" prot="public" virt="non-virtual"><scope>CameraPose</scope><name>CameraPose</name></member>

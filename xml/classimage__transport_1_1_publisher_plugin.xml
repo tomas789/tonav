@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_publisher_plugin" kind="class" prot="public" abstract="yes">
+    <compoundname>image_transport::PublisherPlugin</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">noncopyable</basecompoundref>
+    <derivedcompoundref refid="classimage__transport_1_1_simple_publisher_plugin" prot="public" virt="non-virtual">image_transport::SimplePublisherPlugin&lt; M &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classimage__transport_1_1_simple_publisher_plugin" prot="public" virt="non-virtual">image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classimage__transport_1_1_simple_publisher_plugin" prot="public" virt="non-virtual">image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</derivedcompoundref>
+    <includes refid="publisher__plugin_8h" local="no">publisher_plugin.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1ae5ad84df1be58ec15cd3cfd645d5097b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual image_transport::PublisherPlugin::~PublisherPlugin</definition>
+        <argsstring>()</argsstring>
+        <name>~PublisherPlugin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="50" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" bodystart="50" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1abe0cd36dc3c170adb6aec8bc6d81d52e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string image_transport::PublisherPlugin::getTransportName</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getTransportName</name>
+        <reimplementedby refid="class_resized_publisher_1a2282c668269cc359be3f1767fa31c1cc">getTransportName</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_raw_publisher_1adbb149bca794283f80db9df4c32f34dc">getTransportName</reimplementedby>
+        <briefdescription>
+<para>Get a string identifier for the transport provided by this plugin. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1aa79894b876115d4993fad934e200ad48" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::PublisherPlugin::advertise</definition>
+        <argsstring>(ros::NodeHandle &amp;nh, const std::string &amp;base_topic, uint32_t queue_size, bool latch=true)</argsstring>
+        <name>advertise</name>
+        <param>
+          <type>ros::NodeHandle &amp;</type>
+          <declname>nh</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>latch</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Advertise a topic, simple version. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="61" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" bodystart="61" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1aa05d1be5ed987a1074b480ef9d6d93ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::PublisherPlugin::advertise</definition>
+        <argsstring>(ros::NodeHandle &amp;nh, const std::string &amp;base_topic, uint32_t queue_size, const SubscriberStatusCallback &amp;connect_cb, const SubscriberStatusCallback &amp;disconnect_cb=SubscriberStatusCallback(), const ros::VoidPtr &amp;tracked_object=ros::VoidPtr(), bool latch=true)</argsstring>
+        <name>advertise</name>
+        <param>
+          <type>ros::NodeHandle &amp;</type>
+          <declname>nh</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>const SubscriberStatusCallback &amp;</type>
+          <declname>connect_cb</declname>
+        </param>
+        <param>
+          <type>const SubscriberStatusCallback &amp;</type>
+          <declname>disconnect_cb</declname>
+          <defval>SubscriberStatusCallback()</defval>
+        </param>
+        <param>
+          <type>const ros::VoidPtr &amp;</type>
+          <declname>tracked_object</declname>
+          <defval>ros::VoidPtr()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>latch</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Advertise a topic with subscriber status callbacks. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="71" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" bodystart="71" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1a10afba12d403ba21536610fce596c856" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>uint32_t</type>
+        <definition>virtual uint32_t image_transport::PublisherPlugin::getNumSubscribers</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getNumSubscribers</name>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a58697b43b16d32531b4f67a7c8709f20">getNumSubscribers</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a58697b43b16d32531b4f67a7c8709f20">getNumSubscribers</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a58697b43b16d32531b4f67a7c8709f20">getNumSubscribers</reimplementedby>
+        <briefdescription>
+<para>Returns the number of subscribers that are currently connected to this <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="83" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1ac00807561a7e3406472273b85f1036e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string image_transport::PublisherPlugin::getTopic</definition>
+        <argsstring>() const =0</argsstring>
+        <name>getTopic</name>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a24f9923dbde675f1693b1be252805918">getTopic</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a24f9923dbde675f1693b1be252805918">getTopic</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a24f9923dbde675f1693b1be252805918">getTopic</reimplementedby>
+        <briefdescription>
+<para>Returns the communication topic that this <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref> will publish on. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1a9c17e85717c5478011c944998d9f1bff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::PublisherPlugin::publish</definition>
+        <argsstring>(const sensor_msgs::Image &amp;message) const =0</argsstring>
+        <name>publish</name>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a409f2078d4aa3466e843404b88cfe101">publish</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a409f2078d4aa3466e843404b88cfe101">publish</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a409f2078d4aa3466e843404b88cfe101">publish</reimplementedby>
+        <param>
+          <type>const sensor_msgs::Image &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Publish an image using the transport associated with this <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="93" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1a5ec0ad17a8f0ef7b966089c3b8f6ee60" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::PublisherPlugin::publish</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;message) const </argsstring>
+        <name>publish</name>
+        <reimplementedby refid="classimage__transport_1_1_raw_publisher_1a567f1bc6ddaf5fc191fda71d4e5b4d22">publish</reimplementedby>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Publish an image using the transport associated with this <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="98" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" bodystart="98" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1add246a58e2cc57ceba3c957f52a95a6d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::PublisherPlugin::publish</definition>
+        <argsstring>(const sensor_msgs::Image &amp;message, const uint8_t *data) const </argsstring>
+        <name>publish</name>
+        <reimplementedby refid="classimage__transport_1_1_raw_publisher_1a62ee9d7dab3a361ad92c70a4df5d6416">publish</reimplementedby>
+        <param>
+          <type>const sensor_msgs::Image &amp;</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>const uint8_t *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Publish an image using the transport associated with this <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. This version of the function can be used to optimize cases where you don&apos;t want to fill a ROS message first to avoid useless copies. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>an image message to use information from (but not data) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a pointer to the image data to use to fill the Image message </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="110" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" bodystart="110" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1aebf86857a6453919807061565f8837d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::PublisherPlugin::shutdown</definition>
+        <argsstring>()=0</argsstring>
+        <name>shutdown</name>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a62e2d4cce1756530fbf6a323b1a00c59">shutdown</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a62e2d4cce1756530fbf6a323b1a00c59">shutdown</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1a62e2d4cce1756530fbf6a323b1a00c59">shutdown</reimplementedby>
+        <briefdescription>
+<para>Shutdown any advertisements associated with this <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="127" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1ac509e7c5ce1a6ce07870968eb1e0a0e3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>static std::string image_transport::PublisherPlugin::getLookupName</definition>
+        <argsstring>(const std::string &amp;transport_name)</argsstring>
+        <name>getLookupName</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>transport_name</declname>
+        </param>
+        <briefdescription>
+<para>Return the lookup name of the <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref> associated with a specific transport identifier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="133" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" bodystart="133" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classimage__transport_1_1_publisher_plugin_1ab6452043d8f51ed52638abf470aa4884" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void image_transport::PublisherPlugin::advertiseImpl</definition>
+        <argsstring>(ros::NodeHandle &amp;nh, const std::string &amp;base_topic, uint32_t queue_size, const SubscriberStatusCallback &amp;connect_cb, const SubscriberStatusCallback &amp;disconnect_cb, const ros::VoidPtr &amp;tracked_object, bool latch)=0</argsstring>
+        <name>advertiseImpl</name>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1af9ca774ef9d18a9cf745c92762c00d91">advertiseImpl</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1af9ca774ef9d18a9cf745c92762c00d91">advertiseImpl</reimplementedby>
+        <reimplementedby refid="classimage__transport_1_1_simple_publisher_plugin_1af9ca774ef9d18a9cf745c92762c00d91">advertiseImpl</reimplementedby>
+        <param>
+          <type>ros::NodeHandle &amp;</type>
+          <declname>nh</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>const SubscriberStatusCallback &amp;</type>
+          <declname>connect_cb</declname>
+        </param>
+        <param>
+          <type>const SubscriberStatusCallback &amp;</type>
+          <declname>disconnect_cb</declname>
+        </param>
+        <param>
+          <type>const ros::VoidPtr &amp;</type>
+          <declname>tracked_object</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>latch</declname>
+        </param>
+        <briefdescription>
+<para>Advertise a topic. Must be implemented by the subclass. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="142" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class for plugins to <ref refid="classimage__transport_1_1_publisher" kindref="compound">Publisher</ref>. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="86">
+        <label>image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</label>
+        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="81">
+        <label>image_transport::PublisherPlugin</label>
+        <link refid="classimage__transport_1_1_publisher_plugin"/>
+        <childnode refid="82" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
+        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>image_transport::SimplePublisherPlugin&lt; M &gt;</label>
+        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>ResizedPublisher</label>
+        <link refid="class_resized_publisher"/>
+        <childnode refid="84" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>image_transport::RawPublisher</label>
+        <link refid="classimage__transport_1_1_raw_publisher"/>
+        <childnode refid="86" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="89">
+        <label>boost::noncopyable</label>
+      </node>
+      <node id="88">
+        <label>image_transport::PublisherPlugin</label>
+        <link refid="classimage__transport_1_1_publisher_plugin"/>
+        <childnode refid="89" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" line="48" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/publisher_plugin.h" bodystart="47" bodyend="146"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_publisher_plugin_1aa79894b876115d4993fad934e200ad48" prot="public" virt="non-virtual"><scope>image_transport::PublisherPlugin</scope><name>advertise</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1aa05d1be5ed987a1074b480ef9d6d93ea" prot="public" virt="non-virtual"><scope>image_transport::PublisherPlugin</scope><name>advertise</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1ab6452043d8f51ed52638abf470aa4884" prot="protected" virt="pure-virtual"><scope>image_transport::PublisherPlugin</scope><name>advertiseImpl</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1ac509e7c5ce1a6ce07870968eb1e0a0e3" prot="public" virt="non-virtual"><scope>image_transport::PublisherPlugin</scope><name>getLookupName</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1a10afba12d403ba21536610fce596c856" prot="public" virt="pure-virtual"><scope>image_transport::PublisherPlugin</scope><name>getNumSubscribers</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1ac00807561a7e3406472273b85f1036e8" prot="public" virt="pure-virtual"><scope>image_transport::PublisherPlugin</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1abe0cd36dc3c170adb6aec8bc6d81d52e" prot="public" virt="pure-virtual"><scope>image_transport::PublisherPlugin</scope><name>getTransportName</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1a9c17e85717c5478011c944998d9f1bff" prot="public" virt="pure-virtual"><scope>image_transport::PublisherPlugin</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1a5ec0ad17a8f0ef7b966089c3b8f6ee60" prot="public" virt="virtual"><scope>image_transport::PublisherPlugin</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1add246a58e2cc57ceba3c957f52a95a6d" prot="public" virt="virtual"><scope>image_transport::PublisherPlugin</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1aebf86857a6453919807061565f8837d2" prot="public" virt="pure-virtual"><scope>image_transport::PublisherPlugin</scope><name>shutdown</name></member>
+      <member refid="classimage__transport_1_1_publisher_plugin_1ae5ad84df1be58ec15cd3cfd645d5097b" prot="public" virt="virtual"><scope>image_transport::PublisherPlugin</scope><name>~PublisherPlugin</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

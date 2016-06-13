@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_camera_publisher" kind="class" prot="public">
+    <compoundname>image_transport::CameraPublisher</compoundname>
+    <includes refid="camera__publisher_8h" local="no">camera_publisher.h</includes>
+    <innerclass refid="structimage__transport_1_1_camera_publisher_1_1_impl" prot="public">image_transport::CameraPublisher::Impl</innerclass>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classimage__transport_1_1_camera_publisher_1a4fd7e92afca5a06ec90eec11747e91db" prot="private" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="structimage__transport_1_1_camera_publisher_1_1_impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;Impl&gt; image_transport::CameraPublisher::ImplPtr</definition>
+        <argsstring></argsstring>
+        <name>ImplPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="125" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classimage__transport_1_1_camera_publisher_1a8697697a5b14634ece5d2ba76f545f24" prot="private" static="no">
+        <type>boost::weak_ptr&lt; <ref refid="structimage__transport_1_1_camera_publisher_1_1_impl" kindref="compound">Impl</ref> &gt;</type>
+        <definition>typedef boost::weak_ptr&lt;Impl&gt; image_transport::CameraPublisher::ImplWPtr</definition>
+        <argsstring></argsstring>
+        <name>ImplWPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="126" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classimage__transport_1_1_camera_publisher_1a4b1cae0c863b5d18cd1acdae173c8bca" prot="private" static="no" mutable="no">
+        <type>ImplPtr</type>
+        <definition>ImplPtr image_transport::CameraPublisher::impl_</definition>
+        <argsstring></argsstring>
+        <name>impl_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="128" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classimage__transport_1_1_camera_publisher_1ac010f5a40d98825199e1c5303d0638eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class ImageTransport</definition>
+        <argsstring></argsstring>
+        <name>ImageTransport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="130" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1a8a229e14eb66e901252b8aa20fdc5c9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::CameraPublisher::CameraPublisher</definition>
+        <argsstring>()</argsstring>
+        <name>CameraPublisher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="65" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1a3ab4f35a2549478be6154bb91c6f62e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t image_transport::CameraPublisher::getNumSubscribers</definition>
+        <argsstring>() const </argsstring>
+        <name>getNumSubscribers</name>
+        <briefdescription>
+<para>Returns the number of subscribers that are currently connected to this <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns max(image topic subscribers, info topic subscribers). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="73" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="92" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1abe9c84e39bb3533e765cd19c9f43607b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::CameraPublisher::getTopic</definition>
+        <argsstring>() const </argsstring>
+        <name>getTopic</name>
+        <briefdescription>
+<para>Returns the base (image) topic of this <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="78" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="99" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1a0d99bf10fb26ca65924160d003e71a94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::CameraPublisher::getInfoTopic</definition>
+        <argsstring>() const </argsstring>
+        <name>getInfoTopic</name>
+        <briefdescription>
+<para>Returns the camera info topic of this <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="83" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="105" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1aaa43f492cde49efe3bfe4192c7ab3c30" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::CameraPublisher::publish</definition>
+        <argsstring>(const sensor_msgs::Image &amp;image, const sensor_msgs::CameraInfo &amp;info) const </argsstring>
+        <name>publish</name>
+        <param>
+          <type>const sensor_msgs::Image &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>const sensor_msgs::CameraInfo &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Publish an (image, info) pair on the topics associated with this <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="88" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="111" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1a9817973953b5c2a4abfcca5e8cdc0417" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::CameraPublisher::publish</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;image, const sensor_msgs::CameraInfoConstPtr &amp;info) const </argsstring>
+        <name>publish</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>const sensor_msgs::CameraInfoConstPtr &amp;</type>
+          <declname>info</declname>
+        </param>
+        <briefdescription>
+<para>Publish an (image, info) pair on the topics associated with this <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="93" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="122" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1a711734f50f1f4d1a73e752c98170bd07" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::CameraPublisher::publish</definition>
+        <argsstring>(sensor_msgs::Image &amp;image, sensor_msgs::CameraInfo &amp;info, ros::Time stamp) const </argsstring>
+        <name>publish</name>
+        <param>
+          <type>sensor_msgs::Image &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>sensor_msgs::CameraInfo &amp;</type>
+          <declname>info</declname>
+        </param>
+        <param>
+          <type>ros::Time</type>
+          <declname>stamp</declname>
+        </param>
+        <briefdescription>
+<para>Publish an (image, info) pair with given timestamp on the topics associated with this <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Convenience version, which sets the timestamps of both image and info to stamp before publishing. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="103" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="134" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1abf00316990194ba126c371b51f6b2ba8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::CameraPublisher::shutdown</definition>
+        <argsstring>()</argsstring>
+        <name>shutdown</name>
+        <briefdescription>
+<para>Shutdown the advertisements associated with this <ref refid="classimage__transport_1_1_publisher" kindref="compound">Publisher</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="108" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="147" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1adba3db904b3a92973643130ba0c06134" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::CameraPublisher::operator void *</definition>
+        <argsstring>() const </argsstring>
+        <name>operator void *</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="110" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1a136a72a44c74bcfa255482c47ece4a0e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool image_transport::CameraPublisher::operator&lt;</definition>
+        <argsstring>(const CameraPublisher &amp;rhs) const </argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="111" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="111" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1a2b156b3a3986144d55389d0c3781c761" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool image_transport::CameraPublisher::operator!=</definition>
+        <argsstring>(const CameraPublisher &amp;rhs) const </argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="112" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="112" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1ad7c4b4e03ba25e3ab2ae5d15f7ac4d7c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool image_transport::CameraPublisher::operator==</definition>
+        <argsstring>(const CameraPublisher &amp;rhs) const </argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="113" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="113" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classimage__transport_1_1_camera_publisher_1a846b1f6f0b753a7fde60a6129b3bf666" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::CameraPublisher::CameraPublisher</definition>
+        <argsstring>(ImageTransport &amp;image_it, ros::NodeHandle &amp;info_nh, const std::string &amp;base_topic, uint32_t queue_size, const SubscriberStatusCallback &amp;image_connect_cb, const SubscriberStatusCallback &amp;image_disconnect_cb, const ros::SubscriberStatusCallback &amp;info_connect_cb, const ros::SubscriberStatusCallback &amp;info_disconnect_cb, const ros::VoidPtr &amp;tracked_object, bool latch)</argsstring>
+        <name>CameraPublisher</name>
+        <param>
+          <type><ref refid="classimage__transport_1_1_image_transport" kindref="compound">ImageTransport</ref> &amp;</type>
+          <declname>image_it</declname>
+        </param>
+        <param>
+          <type>ros::NodeHandle &amp;</type>
+          <declname>info_nh</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>base_topic</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>queue_size</declname>
+        </param>
+        <param>
+          <type>const SubscriberStatusCallback &amp;</type>
+          <declname>image_connect_cb</declname>
+        </param>
+        <param>
+          <type>const SubscriberStatusCallback &amp;</type>
+          <declname>image_disconnect_cb</declname>
+        </param>
+        <param>
+          <type>const ros::SubscriberStatusCallback &amp;</type>
+          <declname>info_connect_cb</declname>
+        </param>
+        <param>
+          <type>const ros::SubscriberStatusCallback &amp;</type>
+          <declname>info_disconnect_cb</declname>
+        </param>
+        <param>
+          <type>const ros::VoidPtr &amp;</type>
+          <declname>tracked_object</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>latch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="116" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp" bodystart="72" bodyend="90"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Manages advertisements for publishing camera images. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref> is a convenience class for publishing synchronized image and camera info topics using the standard topic naming convention, where the info topic name is &quot;camera_info&quot; in the same namespace as the base image topic.</para><para>On the client side, <ref refid="classimage__transport_1_1_camera_subscriber" kindref="compound">CameraSubscriber</ref> simplifies subscribing to camera images.</para><para>A <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref> should always be created through a call to <ref refid="classimage__transport_1_1_image_transport_1ad3b41e47e56b23379043941b2a5ab297" kindref="member">ImageTransport::advertiseCamera()</ref>, or copied from one that was. Once all copies of a specific <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref> go out of scope, any subscriber callbacks associated with that handle will stop being called. Once all <ref refid="classimage__transport_1_1_camera_publisher" kindref="compound">CameraPublisher</ref> for a given base topic go out of scope the topic (and all subtopics) will be unadvertised. </para>    </detaileddescription>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" line="63" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_publisher.h" bodystart="62" bodyend="131"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_camera_publisher_1a8a229e14eb66e901252b8aa20fdc5c9e" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>CameraPublisher</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a846b1f6f0b753a7fde60a6129b3bf666" prot="private" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>CameraPublisher</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a0d99bf10fb26ca65924160d003e71a94" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>getInfoTopic</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a3ab4f35a2549478be6154bb91c6f62e9" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>getNumSubscribers</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1abe9c84e39bb3533e765cd19c9f43607b" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1ac010f5a40d98825199e1c5303d0638eb" prot="private" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>ImageTransport</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a4b1cae0c863b5d18cd1acdae173c8bca" prot="private" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>impl_</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a4fd7e92afca5a06ec90eec11747e91db" prot="private" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>ImplPtr</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a8697697a5b14634ece5d2ba76f545f24" prot="private" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>ImplWPtr</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1adba3db904b3a92973643130ba0c06134" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>operator void *</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a2b156b3a3986144d55389d0c3781c761" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>operator!=</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a136a72a44c74bcfa255482c47ece4a0e" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>operator&lt;</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1ad7c4b4e03ba25e3ab2ae5d15f7ac4d7c" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>operator==</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1aaa43f492cde49efe3bfe4192c7ab3c30" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a9817973953b5c2a4abfcca5e8cdc0417" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1a711734f50f1f4d1a73e752c98170bd07" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_camera_publisher_1abf00316990194ba126c371b51f6b2ba8" prot="public" virt="non-virtual"><scope>image_transport::CameraPublisher</scope><name>shutdown</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

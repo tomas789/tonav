@@ -1,0 +1,101 @@
+\hypertarget{classimage__transport_1_1_image_transport}{\section{image\-\_\-transport\-:\-:Image\-Transport Class Reference}
+\label{classimage__transport_1_1_image_transport}\index{image\-\_\-transport\-::\-Image\-Transport@{image\-\_\-transport\-::\-Image\-Transport}}
+}
+
+
+Advertise and subscribe to image topics.  
+
+
+
+
+{\ttfamily \#include $<$image\-\_\-transport.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structimage__transport_1_1_image_transport_1_1_impl}{Impl}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_image_transport_aeffb763301848fa9ead353568bb1c150}{{\bfseries Image\-Transport} (const ros\-::\-Node\-Handle \&nh)}\label{classimage__transport_1_1_image_transport_aeffb763301848fa9ead353568bb1c150}
+
+\item 
+\hypertarget{classimage__transport_1_1_image_transport_aba83e00cf60977d58ac17c2915f2562b}{\hyperlink{classimage__transport_1_1_publisher}{Publisher} \hyperlink{classimage__transport_1_1_image_transport_aba83e00cf60977d58ac17c2915f2562b}{advertise} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, bool latch=false)}\label{classimage__transport_1_1_image_transport_aba83e00cf60977d58ac17c2915f2562b}
+
+\begin{DoxyCompactList}\small\item\em Advertise an image topic, simple version. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_aa66ce930baa92b21a84956b289340671}{\hyperlink{classimage__transport_1_1_publisher}{Publisher} \hyperlink{classimage__transport_1_1_image_transport_aa66ce930baa92b21a84956b289340671}{advertise} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Subscriber\-Status\-Callback \&connect\-\_\-cb, const Subscriber\-Status\-Callback \&disconnect\-\_\-cb=Subscriber\-Status\-Callback(), const ros\-::\-Void\-Ptr \&tracked\-\_\-object=ros\-::\-Void\-Ptr(), bool latch=false)}\label{classimage__transport_1_1_image_transport_aa66ce930baa92b21a84956b289340671}
+
+\begin{DoxyCompactList}\small\item\em Advertise an image topic with subcriber status callbacks. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_a1c847a2c719c874f84a78a6a60b98c7f}{\hyperlink{classimage__transport_1_1_subscriber}{Subscriber} \hyperlink{classimage__transport_1_1_image_transport_a1c847a2c719c874f84a78a6a60b98c7f}{subscribe} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const boost\-::function$<$ void(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&)$>$ \&callback, const ros\-::\-Void\-Ptr \&tracked\-\_\-object=ros\-::\-Void\-Ptr(), const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_image_transport_a1c847a2c719c874f84a78a6a60b98c7f}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image topic, version for arbitrary boost\-::function object. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_a1a2ae66942f19a127739fe062236e7f3}{\hyperlink{classimage__transport_1_1_subscriber}{Subscriber} \hyperlink{classimage__transport_1_1_image_transport_a1a2ae66942f19a127739fe062236e7f3}{subscribe} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void($\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&), const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_image_transport_a1a2ae66942f19a127739fe062236e7f3}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image topic, version for bare function. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_a0016526367fba9df0ca326d570e84bb2}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classimage__transport_1_1_subscriber}{Subscriber} \hyperlink{classimage__transport_1_1_image_transport_a0016526367fba9df0ca326d570e84bb2}{subscribe} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void(T\-::$\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&), T $\ast$obj, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_image_transport_a0016526367fba9df0ca326d570e84bb2}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image topic, version for class member function with bare pointer. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_aadba56ce8213440b0de988aadd27e2bf}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classimage__transport_1_1_subscriber}{Subscriber} \hyperlink{classimage__transport_1_1_image_transport_aadba56ce8213440b0de988aadd27e2bf}{subscribe} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void(T\-::$\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&), const boost\-::shared\-\_\-ptr$<$ T $>$ \&obj, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_image_transport_aadba56ce8213440b0de988aadd27e2bf}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image topic, version for class member function with shared\-\_\-ptr. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_ad3b41e47e56b23379043941b2a5ab297}{\hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} \hyperlink{classimage__transport_1_1_image_transport_ad3b41e47e56b23379043941b2a5ab297}{advertise\-Camera} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, bool latch=false)}\label{classimage__transport_1_1_image_transport_ad3b41e47e56b23379043941b2a5ab297}
+
+\begin{DoxyCompactList}\small\item\em Advertise a synchronized camera raw image + info topic pair, simple version. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_ab66084afe1acc3e3f7b91bdfe7e125ea}{\hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} \hyperlink{classimage__transport_1_1_image_transport_ab66084afe1acc3e3f7b91bdfe7e125ea}{advertise\-Camera} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Subscriber\-Status\-Callback \&image\-\_\-connect\-\_\-cb, const Subscriber\-Status\-Callback \&image\-\_\-disconnect\-\_\-cb=Subscriber\-Status\-Callback(), const ros\-::\-Subscriber\-Status\-Callback \&info\-\_\-connect\-\_\-cb=ros\-::\-Subscriber\-Status\-Callback(), const ros\-::\-Subscriber\-Status\-Callback \&info\-\_\-disconnect\-\_\-cb=ros\-::\-Subscriber\-Status\-Callback(), const ros\-::\-Void\-Ptr \&tracked\-\_\-object=ros\-::\-Void\-Ptr(), bool latch=false)}\label{classimage__transport_1_1_image_transport_ab66084afe1acc3e3f7b91bdfe7e125ea}
+
+\begin{DoxyCompactList}\small\item\em Advertise a synchronized camera raw image + info topic pair with subscriber status callbacks. \end{DoxyCompactList}\item 
+\hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} \hyperlink{classimage__transport_1_1_image_transport_a6754562b0ffe99b0cf716e621d2cfa6b}{subscribe\-Camera} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Camera\-Subscriber\-::\-Callback \&callback, const ros\-::\-Void\-Ptr \&tracked\-\_\-object=ros\-::\-Void\-Ptr(), const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())
+\begin{DoxyCompactList}\small\item\em Subscribe to a synchronized image \& camera info topic pair, version for arbitrary boost\-::function object. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_a72b710072f3910086edb81e9363d0483}{\hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} \hyperlink{classimage__transport_1_1_image_transport_a72b710072f3910086edb81e9363d0483}{subscribe\-Camera} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void($\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&, const sensor\-\_\-msgs\-::\-Camera\-Info\-Const\-Ptr \&), const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_image_transport_a72b710072f3910086edb81e9363d0483}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to a synchronized image \& camera info topic pair, version for bare function. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_a72d339fee7b99b4db0d2c5c01e259712}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} \hyperlink{classimage__transport_1_1_image_transport_a72d339fee7b99b4db0d2c5c01e259712}{subscribe\-Camera} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void(T\-::$\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&, const sensor\-\_\-msgs\-::\-Camera\-Info\-Const\-Ptr \&), T $\ast$obj, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_image_transport_a72d339fee7b99b4db0d2c5c01e259712}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to a synchronized image \& camera info topic pair, version for class member function with bare pointer. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_a9ae4f85ea9e01e4a2729e88557654038}{{\footnotesize template$<$class T $>$ }\\\hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} \hyperlink{classimage__transport_1_1_image_transport_a9ae4f85ea9e01e4a2729e88557654038}{subscribe\-Camera} (const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, void(T\-::$\ast$fp)(const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&, const sensor\-\_\-msgs\-::\-Camera\-Info\-Const\-Ptr \&), const boost\-::shared\-\_\-ptr$<$ T $>$ \&obj, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints=\hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints}())}\label{classimage__transport_1_1_image_transport_a9ae4f85ea9e01e4a2729e88557654038}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to a synchronized image \& camera info topic pair, version for class member function with shared\-\_\-ptr. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_ab2afc62b0061f6cac30f562a970cf20b}{std\-::vector$<$ std\-::string $>$ \hyperlink{classimage__transport_1_1_image_transport_ab2afc62b0061f6cac30f562a970cf20b}{get\-Declared\-Transports} () const }\label{classimage__transport_1_1_image_transport_ab2afc62b0061f6cac30f562a970cf20b}
+
+\begin{DoxyCompactList}\small\item\em Returns the names of all transports declared in the system. Declared transports are not necessarily built or loadable. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_image_transport_aa7da86fe2fe1b176dd4ce3f3cf6d03ba}{std\-::vector$<$ std\-::string $>$ \hyperlink{classimage__transport_1_1_image_transport_aa7da86fe2fe1b176dd4ce3f3cf6d03ba}{get\-Loadable\-Transports} () const }\label{classimage__transport_1_1_image_transport_aa7da86fe2fe1b176dd4ce3f3cf6d03ba}
+
+\begin{DoxyCompactList}\small\item\em Returns the names of all transports that are loadable in the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Advertise and subscribe to image topics. 
+
+\hyperlink{classimage__transport_1_1_image_transport}{Image\-Transport} is analogous to ros\-::\-Node\-Handle in that it contains \hyperlink{classimage__transport_1_1_image_transport_aba83e00cf60977d58ac17c2915f2562b}{advertise()} and \hyperlink{classimage__transport_1_1_image_transport_a1c847a2c719c874f84a78a6a60b98c7f}{subscribe()} functions for creating advertisements and subscriptions of image topics. 
+
+Definition at line 51 of file image\-\_\-transport.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_image_transport_a6754562b0ffe99b0cf716e621d2cfa6b}{\index{image\-\_\-transport\-::\-Image\-Transport@{image\-\_\-transport\-::\-Image\-Transport}!subscribe\-Camera@{subscribe\-Camera}}
+\index{subscribe\-Camera@{subscribe\-Camera}!image_transport::ImageTransport@{image\-\_\-transport\-::\-Image\-Transport}}
+\subsubsection[{subscribe\-Camera}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera\-Subscriber} image\-\_\-transport\-::\-Image\-Transport\-::subscribe\-Camera (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{base\-\_\-topic, }
+\item[{uint32\-\_\-t}]{queue\-\_\-size, }
+\item[{const Camera\-Subscriber\-::\-Callback \&}]{callback, }
+\item[{const ros\-::\-Void\-Ptr \&}]{tracked\-\_\-object = {\ttfamily ros\-:\-:VoidPtr()}, }
+\item[{const {\bf Transport\-Hints} \&}]{transport\-\_\-hints = {\ttfamily {\bf Transport\-Hints}()}}
+\end{DoxyParamCaption}
+)}}\label{classimage__transport_1_1_image_transport_a6754562b0ffe99b0cf716e621d2cfa6b}
+
+
+Subscribe to a synchronized image \& camera info topic pair, version for arbitrary boost\-::function object. 
+
+This version assumes the standard topic naming scheme, where the info topic is named \char`\"{}camera\-\_\-info\char`\"{} in the same namespace as the base image topic. 
+
+Definition at line 108 of file image\-\_\-transport.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/image\-\_\-transport.\-h\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/src/image\-\_\-transport.\-cpp\end{DoxyCompactItemize}

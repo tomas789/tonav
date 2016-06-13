@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classimage__transport_1_1_single_subscriber_publisher" kind="class" prot="public">
+    <compoundname>image_transport::SingleSubscriberPublisher</compoundname>
+    <basecompoundref prot="private" virt="non-virtual">noncopyable</basecompoundref>
+    <includes refid="single__subscriber__publisher_8h" local="no">single_subscriber_publisher.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classimage__transport_1_1_single_subscriber_publisher_1a30045c60864ff22374f025a81c2ca9cf" prot="public" static="no">
+        <type>boost::function&lt; uint32_t()&gt;</type>
+        <definition>typedef boost::function&lt;uint32_t()&gt; image_transport::SingleSubscriberPublisher::GetNumSubscribersFn</definition>
+        <argsstring></argsstring>
+        <name>GetNumSubscribersFn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="51" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classimage__transport_1_1_single_subscriber_publisher_1a83df64c8c339546b94b059314c73d939" prot="public" static="no">
+        <type>boost::function&lt; void(const sensor_msgs::Image &amp;)&gt;</type>
+        <definition>typedef boost::function&lt;void(const sensor_msgs::Image&amp;)&gt; image_transport::SingleSubscriberPublisher::PublishFn</definition>
+        <argsstring></argsstring>
+        <name>PublishFn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="52" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classimage__transport_1_1_single_subscriber_publisher_1ad9ec91f7b7914b29fad952fded10440d" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string image_transport::SingleSubscriberPublisher::caller_id_</definition>
+        <argsstring></argsstring>
+        <name>caller_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="68" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimage__transport_1_1_single_subscriber_publisher_1a5dc2f9e22c7ded45aa54262bf63d043e" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string image_transport::SingleSubscriberPublisher::topic_</definition>
+        <argsstring></argsstring>
+        <name>topic_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="69" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimage__transport_1_1_single_subscriber_publisher_1a56e26b882b0c3dd92f1309331636640a" prot="private" static="no" mutable="no">
+        <type>GetNumSubscribersFn</type>
+        <definition>GetNumSubscribersFn image_transport::SingleSubscriberPublisher::num_subscribers_fn_</definition>
+        <argsstring></argsstring>
+        <name>num_subscribers_fn_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="70" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classimage__transport_1_1_single_subscriber_publisher_1aef72de8e0db2f4e5745d81f4bc649499" prot="private" static="no" mutable="no">
+        <type>PublishFn</type>
+        <definition>PublishFn image_transport::SingleSubscriberPublisher::publish_fn_</definition>
+        <argsstring></argsstring>
+        <name>publish_fn_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="71" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classimage__transport_1_1_single_subscriber_publisher_1a9544c98126549cae8f3a5cd9af6bcfdd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Publisher</definition>
+        <argsstring></argsstring>
+        <name>Publisher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="73" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classimage__transport_1_1_single_subscriber_publisher_1a4ed3520bfb119863c33890b1d3d76f7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>image_transport::SingleSubscriberPublisher::SingleSubscriberPublisher</definition>
+        <argsstring>(const std::string &amp;caller_id, const std::string &amp;topic, const GetNumSubscribersFn &amp;num_subscribers_fn, const PublishFn &amp;publish_fn)</argsstring>
+        <name>SingleSubscriberPublisher</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>caller_id</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>topic</declname>
+        </param>
+        <param>
+          <type>const GetNumSubscribersFn &amp;</type>
+          <declname>num_subscribers_fn</declname>
+        </param>
+        <param>
+          <type>const PublishFn &amp;</type>
+          <declname>publish_fn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="54" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/single_subscriber_publisher.cpp" bodystart="40" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_single_subscriber_publisher_1a1ddcc26cfb38ee6fec7bbc1e573d032d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::SingleSubscriberPublisher::getSubscriberName</definition>
+        <argsstring>() const </argsstring>
+        <name>getSubscriberName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="58" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/single_subscriber_publisher.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_single_subscriber_publisher_1a345d09ecd9691da5a215751dcde7c529" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string image_transport::SingleSubscriberPublisher::getTopic</definition>
+        <argsstring>() const </argsstring>
+        <name>getTopic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="60" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/single_subscriber_publisher.cpp" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_single_subscriber_publisher_1a5909a3e2feffe1abea5d0133a4d933a5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t image_transport::SingleSubscriberPublisher::getNumSubscribers</definition>
+        <argsstring>() const </argsstring>
+        <name>getNumSubscribers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="62" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/single_subscriber_publisher.cpp" bodystart="59" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_single_subscriber_publisher_1a6e5fb2d5f07e0b6e5fc7a67f7e733d58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::SingleSubscriberPublisher::publish</definition>
+        <argsstring>(const sensor_msgs::Image &amp;message) const </argsstring>
+        <name>publish</name>
+        <param>
+          <type>const sensor_msgs::Image &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="64" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/single_subscriber_publisher.cpp" bodystart="64" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classimage__transport_1_1_single_subscriber_publisher_1a805ee398c71b942665f0e6a8878868f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void image_transport::SingleSubscriberPublisher::publish</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;message) const </argsstring>
+        <name>publish</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="65" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/src/single_subscriber_publisher.cpp" bodystart="69" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Allows publication of an image to a single subscriber. Only available inside subscriber connection callbacks. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="139">
+        <label>noncopyable</label>
+      </node>
+      <node id="138">
+        <label>image_transport::SingleSubscriberPublisher</label>
+        <link refid="classimage__transport_1_1_single_subscriber_publisher"/>
+        <childnode refid="139" relation="private-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="141">
+        <label>noncopyable</label>
+      </node>
+      <node id="140">
+        <label>image_transport::SingleSubscriberPublisher</label>
+        <link refid="classimage__transport_1_1_single_subscriber_publisher"/>
+        <childnode refid="141" relation="private-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" line="49" column="1" bodyfile="/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/single_subscriber_publisher.h" bodystart="48" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1ad9ec91f7b7914b29fad952fded10440d" prot="private" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>caller_id_</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a5909a3e2feffe1abea5d0133a4d933a5" prot="public" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>getNumSubscribers</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a30045c60864ff22374f025a81c2ca9cf" prot="public" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>GetNumSubscribersFn</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a1ddcc26cfb38ee6fec7bbc1e573d032d" prot="public" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>getSubscriberName</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a345d09ecd9691da5a215751dcde7c529" prot="public" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>getTopic</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a56e26b882b0c3dd92f1309331636640a" prot="private" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>num_subscribers_fn_</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a6e5fb2d5f07e0b6e5fc7a67f7e733d58" prot="public" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a805ee398c71b942665f0e6a8878868f4" prot="public" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>publish</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1aef72de8e0db2f4e5745d81f4bc649499" prot="private" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>publish_fn_</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a9544c98126549cae8f3a5cd9af6bcfdd" prot="private" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>Publisher</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a83df64c8c339546b94b059314c73d939" prot="public" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>PublishFn</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a4ed3520bfb119863c33890b1d3d76f7b" prot="public" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>SingleSubscriberPublisher</name></member>
+      <member refid="classimage__transport_1_1_single_subscriber_publisher_1a5dc2f9e22c7ded45aa54262bf63d043e" prot="private" virt="non-virtual"><scope>image_transport::SingleSubscriberPublisher</scope><name>topic_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

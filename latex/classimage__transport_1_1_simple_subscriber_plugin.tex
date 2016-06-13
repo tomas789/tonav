@@ -1,0 +1,115 @@
+\hypertarget{classimage__transport_1_1_simple_subscriber_plugin}{\section{image\-\_\-transport\-:\-:Simple\-Subscriber\-Plugin$<$ M $>$ Class Template Reference}
+\label{classimage__transport_1_1_simple_subscriber_plugin}\index{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin$<$ M $>$@{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin$<$ M $>$}}
+}
+
+
+Base class to simplify implementing most plugins to \hyperlink{classimage__transport_1_1_subscriber}{Subscriber}.  
+
+
+
+
+{\ttfamily \#include $<$simple\-\_\-subscriber\-\_\-plugin.\-h$>$}
+
+Inheritance diagram for image\-\_\-transport\-:\-:Simple\-Subscriber\-Plugin$<$ M $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classimage__transport_1_1_simple_subscriber_plugin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_simple_subscriber_plugin_ab6e2fa57778770429195a516b78dcb1a}{virtual std\-::string \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_ab6e2fa57778770429195a516b78dcb1a}{get\-Topic} () const }\label{classimage__transport_1_1_simple_subscriber_plugin_ab6e2fa57778770429195a516b78dcb1a}
+
+\begin{DoxyCompactList}\small\item\em Get the transport-\/specific communication topic. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_simple_subscriber_plugin_ae7115a373237561c9896fa93d74fe981}{virtual uint32\-\_\-t \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_ae7115a373237561c9896fa93d74fe981}{get\-Num\-Publishers} () const }\label{classimage__transport_1_1_simple_subscriber_plugin_ae7115a373237561c9896fa93d74fe981}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of publishers this subscriber is connected to. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_simple_subscriber_plugin_a559eb7593e56faf92fbfba771e317455}{virtual void \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_a559eb7593e56faf92fbfba771e317455}{shutdown} ()}\label{classimage__transport_1_1_simple_subscriber_plugin_a559eb7593e56faf92fbfba771e317455}
+
+\begin{DoxyCompactList}\small\item\em Unsubscribe the callback associated with this \hyperlink{classimage__transport_1_1_subscriber_plugin}{Subscriber\-Plugin}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_ae3fbeb43694289e50670d7050da82a1a}{internal\-Callback} (const typename M\-::\-Const\-Ptr \&message, const Callback \&user\-\_\-cb)=0
+\begin{DoxyCompactList}\small\item\em Process a message. Must be implemented by the subclass. \end{DoxyCompactList}\item 
+virtual std\-::string \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_a02016ab17568754d5319ae6fd949e268}{get\-Topic\-To\-Subscribe} (const std\-::string \&base\-\_\-topic) const 
+\begin{DoxyCompactList}\small\item\em Return the communication topic name for a given base topic. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_simple_subscriber_plugin_adead418bf0be6f6511af9e6a03ab8322}{virtual void \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_adead418bf0be6f6511af9e6a03ab8322}{subscribe\-Impl} (ros\-::\-Node\-Handle \&\hyperlink{classimage__transport_1_1_simple_subscriber_plugin_a700540fba60461092751c14d4ff27681}{nh}, const std\-::string \&base\-\_\-topic, uint32\-\_\-t queue\-\_\-size, const Callback \&callback, const ros\-::\-Void\-Ptr \&tracked\-\_\-object, const \hyperlink{classimage__transport_1_1_transport_hints}{Transport\-Hints} \&transport\-\_\-hints)}\label{classimage__transport_1_1_simple_subscriber_plugin_adead418bf0be6f6511af9e6a03ab8322}
+
+\begin{DoxyCompactList}\small\item\em Subscribe to an image transport topic. Must be implemented by the subclass. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_simple_subscriber_plugin_a700540fba60461092751c14d4ff27681}{const ros\-::\-Node\-Handle \& \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_a700540fba60461092751c14d4ff27681}{nh} () const }\label{classimage__transport_1_1_simple_subscriber_plugin_a700540fba60461092751c14d4ff27681}
+
+\begin{DoxyCompactList}\small\item\em Returns the ros\-::\-Node\-Handle to be used for parameter lookup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$class image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin$<$ M $>$}
+
+Base class to simplify implementing most plugins to \hyperlink{classimage__transport_1_1_subscriber}{Subscriber}. 
+
+The base class simplifies implementing a \hyperlink{classimage__transport_1_1_subscriber_plugin}{Subscriber\-Plugin} in the common case that all communication with the matching \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin} happens over a single R\-O\-S topic using a transport-\/specific message type. \hyperlink{classimage__transport_1_1_simple_subscriber_plugin}{Simple\-Subscriber\-Plugin} is templated on the transport-\/specific message type.
+
+A subclass need implement only two methods\-:
+\begin{DoxyItemize}
+\item \hyperlink{classimage__transport_1_1_subscriber_plugin_a647dc0f6e0c34f0b4d8b809b3c679f88}{get\-Transport\-Name()} from \hyperlink{classimage__transport_1_1_subscriber_plugin}{Subscriber\-Plugin}
+\item \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_ae3fbeb43694289e50670d7050da82a1a}{internal\-Callback()} -\/ processes a message and invoked the user Image callback if appropriate.
+\end{DoxyItemize}
+
+For access to the parameter server and name remappings, use \hyperlink{classimage__transport_1_1_simple_subscriber_plugin_a700540fba60461092751c14d4ff27681}{nh()}.
+
+\hyperlink{classimage__transport_1_1_simple_subscriber_plugin_a02016ab17568754d5319ae6fd949e268}{get\-Topic\-To\-Subscribe()} controls the name of the internal communication topic. It defaults to $<$base topic$>$/$<$transport name$>$. 
+
+Definition at line 62 of file simple\-\_\-subscriber\-\_\-plugin.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_simple_subscriber_plugin_a02016ab17568754d5319ae6fd949e268}{\index{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin@{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin}!get\-Topic\-To\-Subscribe@{get\-Topic\-To\-Subscribe}}
+\index{get\-Topic\-To\-Subscribe@{get\-Topic\-To\-Subscribe}!image_transport::SimpleSubscriberPlugin@{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin}}
+\subsubsection[{get\-Topic\-To\-Subscribe}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ virtual std\-::string {\bf image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin}$<$ M $>$\-::get\-Topic\-To\-Subscribe (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{base\-\_\-topic}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classimage__transport_1_1_simple_subscriber_plugin_a02016ab17568754d5319ae6fd949e268}
+
+
+Return the communication topic name for a given base topic. 
+
+Defaults to $<$base topic$>$/$<$transport name$>$. 
+
+Reimplemented in \hyperlink{classimage__transport_1_1_raw_subscriber_a6da2134193b87fb71afda535a618cc7c}{image\-\_\-transport\-::\-Raw\-Subscriber}.
+
+
+
+Definition at line 98 of file simple\-\_\-subscriber\-\_\-plugin.\-h.
+
+\hypertarget{classimage__transport_1_1_simple_subscriber_plugin_ae3fbeb43694289e50670d7050da82a1a}{\index{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin@{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin}!internal\-Callback@{internal\-Callback}}
+\index{internal\-Callback@{internal\-Callback}!image_transport::SimpleSubscriberPlugin@{image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin}}
+\subsubsection[{internal\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M$>$ virtual void {\bf image\-\_\-transport\-::\-Simple\-Subscriber\-Plugin}$<$ M $>$\-::internal\-Callback (
+\begin{DoxyParamCaption}
+\item[{const typename M\-::\-Const\-Ptr \&}]{message, }
+\item[{const Callback \&}]{user\-\_\-cb}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classimage__transport_1_1_simple_subscriber_plugin_ae3fbeb43694289e50670d7050da82a1a}
+
+
+Process a message. Must be implemented by the subclass. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & A message from the \hyperlink{classimage__transport_1_1_publisher_plugin}{Publisher\-Plugin}. \\
+\hline
+{\em user\-\_\-cb} & The user Image callback to invoke, if appropriate. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_resized_subscriber_ad0a3debf9a2135bbbae6145cebb958e8}{Resized\-Subscriber}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/simple\-\_\-subscriber\-\_\-plugin.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\hypertarget{classimage__transport_1_1_camera_publisher}{\section{image\-\_\-transport\-:\-:Camera\-Publisher Class Reference}
+\label{classimage__transport_1_1_camera_publisher}\index{image\-\_\-transport\-::\-Camera\-Publisher@{image\-\_\-transport\-::\-Camera\-Publisher}}
+}
+
+
+Manages advertisements for publishing camera images.  
+
+
+
+
+{\ttfamily \#include $<$camera\-\_\-publisher.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structimage__transport_1_1_camera_publisher_1_1_impl}{Impl}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{classimage__transport_1_1_camera_publisher_a3ab4f35a2549478be6154bb91c6f62e9}{get\-Num\-Subscribers} () const 
+\begin{DoxyCompactList}\small\item\em Returns the number of subscribers that are currently connected to this \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_abe9c84e39bb3533e765cd19c9f43607b}{std\-::string \hyperlink{classimage__transport_1_1_camera_publisher_abe9c84e39bb3533e765cd19c9f43607b}{get\-Topic} () const }\label{classimage__transport_1_1_camera_publisher_abe9c84e39bb3533e765cd19c9f43607b}
+
+\begin{DoxyCompactList}\small\item\em Returns the base (image) topic of this \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_a0d99bf10fb26ca65924160d003e71a94}{std\-::string \hyperlink{classimage__transport_1_1_camera_publisher_a0d99bf10fb26ca65924160d003e71a94}{get\-Info\-Topic} () const }\label{classimage__transport_1_1_camera_publisher_a0d99bf10fb26ca65924160d003e71a94}
+
+\begin{DoxyCompactList}\small\item\em Returns the camera info topic of this \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_aaa43f492cde49efe3bfe4192c7ab3c30}{void \hyperlink{classimage__transport_1_1_camera_publisher_aaa43f492cde49efe3bfe4192c7ab3c30}{publish} (const sensor\-\_\-msgs\-::\-Image \&image, const sensor\-\_\-msgs\-::\-Camera\-Info \&info) const }\label{classimage__transport_1_1_camera_publisher_aaa43f492cde49efe3bfe4192c7ab3c30}
+
+\begin{DoxyCompactList}\small\item\em Publish an (image, info) pair on the topics associated with this \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_a9817973953b5c2a4abfcca5e8cdc0417}{void \hyperlink{classimage__transport_1_1_camera_publisher_a9817973953b5c2a4abfcca5e8cdc0417}{publish} (const sensor\-\_\-msgs\-::\-Image\-Const\-Ptr \&image, const sensor\-\_\-msgs\-::\-Camera\-Info\-Const\-Ptr \&info) const }\label{classimage__transport_1_1_camera_publisher_a9817973953b5c2a4abfcca5e8cdc0417}
+
+\begin{DoxyCompactList}\small\item\em Publish an (image, info) pair on the topics associated with this \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}. \end{DoxyCompactList}\item 
+void \hyperlink{classimage__transport_1_1_camera_publisher_a711734f50f1f4d1a73e752c98170bd07}{publish} (sensor\-\_\-msgs\-::\-Image \&image, sensor\-\_\-msgs\-::\-Camera\-Info \&info, ros\-::\-Time stamp) const 
+\begin{DoxyCompactList}\small\item\em Publish an (image, info) pair with given timestamp on the topics associated with this \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_abf00316990194ba126c371b51f6b2ba8}{void \hyperlink{classimage__transport_1_1_camera_publisher_abf00316990194ba126c371b51f6b2ba8}{shutdown} ()}\label{classimage__transport_1_1_camera_publisher_abf00316990194ba126c371b51f6b2ba8}
+
+\begin{DoxyCompactList}\small\item\em Shutdown the advertisements associated with this \hyperlink{classimage__transport_1_1_publisher}{Publisher}. \end{DoxyCompactList}\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_adba3db904b3a92973643130ba0c06134}{{\bfseries operator void $\ast$} () const }\label{classimage__transport_1_1_camera_publisher_adba3db904b3a92973643130ba0c06134}
+
+\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_a136a72a44c74bcfa255482c47ece4a0e}{bool {\bfseries operator$<$} (const \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} \&rhs) const }\label{classimage__transport_1_1_camera_publisher_a136a72a44c74bcfa255482c47ece4a0e}
+
+\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_a2b156b3a3986144d55389d0c3781c761}{bool {\bfseries operator!=} (const \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} \&rhs) const }\label{classimage__transport_1_1_camera_publisher_a2b156b3a3986144d55389d0c3781c761}
+
+\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_ad7c4b4e03ba25e3ab2ae5d15f7ac4d7c}{bool {\bfseries operator==} (const \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} \&rhs) const }\label{classimage__transport_1_1_camera_publisher_ad7c4b4e03ba25e3ab2ae5d15f7ac4d7c}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classimage__transport_1_1_camera_publisher_ac010f5a40d98825199e1c5303d0638eb}{class {\bfseries Image\-Transport}}\label{classimage__transport_1_1_camera_publisher_ac010f5a40d98825199e1c5303d0638eb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages advertisements for publishing camera images. 
+
+\hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} is a convenience class for publishing synchronized image and camera info topics using the standard topic naming convention, where the info topic name is \char`\"{}camera\-\_\-info\char`\"{} in the same namespace as the base image topic.
+
+On the client side, \hyperlink{classimage__transport_1_1_camera_subscriber}{Camera\-Subscriber} simplifies subscribing to camera images.
+
+A \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} should always be created through a call to \hyperlink{classimage__transport_1_1_image_transport_ad3b41e47e56b23379043941b2a5ab297}{Image\-Transport\-::advertise\-Camera()}, or copied from one that was. Once all copies of a specific \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} go out of scope, any subscriber callbacks associated with that handle will stop being called. Once all \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher} for a given base topic go out of scope the topic (and all subtopics) will be unadvertised. 
+
+Definition at line 62 of file camera\-\_\-publisher.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classimage__transport_1_1_camera_publisher_a3ab4f35a2549478be6154bb91c6f62e9}{\index{image\-\_\-transport\-::\-Camera\-Publisher@{image\-\_\-transport\-::\-Camera\-Publisher}!get\-Num\-Subscribers@{get\-Num\-Subscribers}}
+\index{get\-Num\-Subscribers@{get\-Num\-Subscribers}!image_transport::CameraPublisher@{image\-\_\-transport\-::\-Camera\-Publisher}}
+\subsubsection[{get\-Num\-Subscribers}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t image\-\_\-transport\-::\-Camera\-Publisher\-::get\-Num\-Subscribers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classimage__transport_1_1_camera_publisher_a3ab4f35a2549478be6154bb91c6f62e9}
+
+
+Returns the number of subscribers that are currently connected to this \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}. 
+
+Returns max(image topic subscribers, info topic subscribers). 
+
+Definition at line 92 of file camera\-\_\-publisher.\-cpp.
+
+\hypertarget{classimage__transport_1_1_camera_publisher_a711734f50f1f4d1a73e752c98170bd07}{\index{image\-\_\-transport\-::\-Camera\-Publisher@{image\-\_\-transport\-::\-Camera\-Publisher}!publish@{publish}}
+\index{publish@{publish}!image_transport::CameraPublisher@{image\-\_\-transport\-::\-Camera\-Publisher}}
+\subsubsection[{publish}]{\setlength{\rightskip}{0pt plus 5cm}void image\-\_\-transport\-::\-Camera\-Publisher\-::publish (
+\begin{DoxyParamCaption}
+\item[{sensor\-\_\-msgs\-::\-Image \&}]{image, }
+\item[{sensor\-\_\-msgs\-::\-Camera\-Info \&}]{info, }
+\item[{ros\-::\-Time}]{stamp}
+\end{DoxyParamCaption}
+) const}}\label{classimage__transport_1_1_camera_publisher_a711734f50f1f4d1a73e752c98170bd07}
+
+
+Publish an (image, info) pair with given timestamp on the topics associated with this \hyperlink{classimage__transport_1_1_camera_publisher}{Camera\-Publisher}. 
+
+Convenience version, which sets the timestamps of both image and info to stamp before publishing. 
+
+Definition at line 134 of file camera\-\_\-publisher.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/include/image\-\_\-transport/camera\-\_\-publisher.\-h\item 
+/home/travis/catkin\-\_\-ws/src/image\-\_\-common/image\-\_\-transport/src/camera\-\_\-publisher.\-cpp\end{DoxyCompactItemize}
