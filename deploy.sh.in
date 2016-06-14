@@ -10,7 +10,7 @@ fi
 
 rev=$(git rev-parse --short HEAD)
 
-cd ~/catkin_ws/build/tonav_doc
+cd @CMAKE_BINARY_DIR@/tonav_doc
 
 git init
 git config user.name "Travis-ci"
@@ -19,8 +19,6 @@ git config user.email "nobody@nobody.com"
 git remote add upstream "https://$GH_TOKEN@github.com/tomas789/tonav.git"
 git fetch upstream
 git reset upstream/gh-pages
-
-echo "tonav-cname" > CNAME
 
 touch .
 
