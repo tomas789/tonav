@@ -9,11 +9,15 @@
 #include <Eigen/Dense>
 #include <list>
 
+#include "body_state.h"
 #include "camera_pose.h"
 
 class FilterState {
 public:
     using StateType = Eigen::Matrix<double, 57, 1>;
+    
+    BodyState& getBodyStateRef();
+    const BodyState& getBodyStateRef() const;
 
     Eigen::Block<StateType, 4, 1> getRotationBlock();
     Eigen::Quaterniond getRotationQuaternion();
@@ -53,11 +57,19 @@ public:
     void appendCameraPose(const CameraPose& camera_pose);
 
 private:
+    /** @brief Contains body pose */
+    BodyState body_state_;
+    
+    /**
+     * @birief Filter state except body pose and camera poses
+     */
     StateType state_;
+    
     Eigen::Quaterniond rotation_to_this_frame_;
     Eigen::Vector3d rotation_estimate_;
     Eigen::Vector3d acceleration_estimate_;
 
+    /** @brief All camera poses */
     std::list<CameraPose> poses_;
 };
 

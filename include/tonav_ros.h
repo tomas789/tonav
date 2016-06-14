@@ -45,8 +45,8 @@ private:
     Eigen::Matrix3d current_camera_matrix_;
     Eigen::Matrix<double, 5, 1> current_distirtion_params_;
     
-    image_transport::Publisher image_publisher_;
-    tf2_ros::TransformBroadcaster tf_broadcaster_;
+    std::unique_ptr<image_transport::Publisher> image_publisher_;
+    std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
     
     void setAllowedOptionsDescription();
     bool parseCommandLineParams(int argc, char* argv[]);

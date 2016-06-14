@@ -30,6 +30,8 @@ int TonavRos::run(int argc, char* argv[]) {
     }
     ros::NodeHandle node_handle;
     
+    tf_broadcaster_.reset(new tf2_ros::TransformBroadcaster);
+    
     std::string imu_topic = variables_map_["imu"].as<std::string>();
     std::string camera_topic = variables_map_["image"].as<std::string>();
     std::string camerainfo_topic = variables_map_["camerainfo"].as<std::string>();
@@ -40,7 +42,7 @@ int TonavRos::run(int argc, char* argv[]) {
     ros::Subscriber camerainfo_subscriber = node_handle.subscribe(camerainfo_topic, 50, &TonavRos::cameraInfoCallback, this);
     ros::Subscriber imu_subscriber = node_handle.subscribe(imu_topic, 50, &TonavRos::imuCallback, this);
     
-    image_publisher_ = transport.advertise("tonav/image", 5);
+    image_publisher_.reset(new image_transport::Publisher(transport.advertise("tonav/image", 5)));
     
     Calibration calibration = Calibration::fromPath(calibration_file);
     tonav_.reset(new Tonav(calibration));
@@ -164,16 +166,16 @@ void TonavRos::publishResults() {
     transform.header.stamp = ros::Time::now();
     transform.header.frame_id = "map";
     transform.child_frame_id = "tonav";
-    transform.transform.translation.x = position(0, 0) / 100;
-    transform.transform.translation.y = position(1, 0) / 100;
-    transform.transform.translation.z = position(2, 0) / 100;
+    transform.transform.translation.x = position(0, 0);
+    transform.transform.translation.y = position(1, 0);
+    transform.transform.translation.z = position(2, 0);
     transform.transform.rotation.x = attitude.x();
     transform.transform.rotation.y = attitude.y();
     transform.transform.rotation.z = attitude.z();
     transform.transform.rotation.w = attitude.w();
-    tf_broadcaster_.sendTransform(transform);
+    tf_broadcaster_->sendTransform(transform);
     
     cv::Mat img = tonav_->getCurrentImage();
     sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", img).toImageMsg();
-    image_publisher_.publish(msg);
+    image_publisher_->publish(msg);
 }

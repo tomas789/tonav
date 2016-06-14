@@ -53,6 +53,8 @@ set(SOURCE_FILES
         src/tonav.cpp
         include/tonav_ros.h
         src/tonav_ros.cpp
+        include/body_state.h
+        src/body_state.cpp
 )
 add_executable(tonav ${SOURCE_FILES})
 
