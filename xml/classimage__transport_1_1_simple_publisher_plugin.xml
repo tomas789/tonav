@@ -375,36 +375,36 @@
 <listitem><para><ref refid="classimage__transport_1_1_publisher_plugin_1abe0cd36dc3c170adb6aec8bc6d81d52e" kindref="member">getTransportName()</ref> from <ref refid="classimage__transport_1_1_publisher_plugin" kindref="compound">PublisherPlugin</ref></para></listitem><listitem><para><ref refid="classimage__transport_1_1_simple_publisher_plugin_1a409f2078d4aa3466e843404b88cfe101" kindref="member">publish()</ref> with an extra PublishFn argument</para></listitem></itemizedlist>
 </para><para>For access to the parameter server and name remappings, use <ref refid="classimage__transport_1_1_simple_publisher_plugin_1a5f73a993e871242e51671f3cf82d4e1b" kindref="member">nh()</ref>.</para><para><ref refid="classimage__transport_1_1_simple_publisher_plugin_1a46df2b43de62c169d28ac510010d032f" kindref="member">getTopicToAdvertise()</ref> controls the name of the internal communication topic. It defaults to &lt;base topic&gt;/&lt;transport name&gt;. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="124">
+      <node id="126">
         <label>boost::noncopyable</label>
       </node>
-      <node id="123">
+      <node id="125">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="124" relation="private-inheritance">
+        <childnode refid="126" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="122">
+      <node id="124">
         <label>image_transport::SimplePublisherPlugin&lt; M &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="123" relation="public-inheritance">
+        <childnode refid="125" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="127">
+      <node id="129">
         <label>boost::noncopyable</label>
       </node>
-      <node id="126">
+      <node id="128">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="127" relation="private-inheritance">
+        <childnode refid="129" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="125">
+      <node id="127">
         <label>image_transport::SimplePublisherPlugin&lt; M &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="126" relation="public-inheritance">
+        <childnode refid="128" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

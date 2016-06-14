@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "BodyState", "class_body_state.html", null ],
     [ "Calibration", "class_calibration.html", null ],
     [ "CameraFeed", "class_camera_feed.html", null ],
     [ "CameraItem", "class_camera_item.html", null ],

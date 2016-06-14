@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_body_state" kind="class" prot="public">
+    <compoundname>BodyState</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="class_body_state_1ac95355c4974335a6f69da770d2de30e0" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 16, 1 &gt;</type>
+        <definition>using BodyState::BodyStateType =  Eigen::Matrix&lt;double, 16, 1&gt;</definition>
+        <argsstring></argsstring>
+        <name>BodyStateType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="9" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/body_state.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_body_state_1aa7124f16546d39354308de9742d0bea1" prot="private" static="no" mutable="no">
+        <type>BodyStateType</type>
+        <definition>BodyStateType BodyState::body_state_</definition>
+        <argsstring></argsstring>
+        <name>body_state_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/body_state.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_body_state_1a980cbcae469aa1fc0d7efec5248db0d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Block&lt; BodyStateType, 4, 1 &gt;</type>
+        <definition>Eigen::Block&lt; BodyState::BodyStateType, 4, 1 &gt; BodyState::getRotationBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getRotationBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="11" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/body_state.cpp" bodystart="3" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="class_body_state_1a63c1a3704285d7e76a7d7f5a2e4cbafa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Quaterniond</type>
+        <definition>Eigen::Quaterniond BodyState::getRotationQuaternion</definition>
+        <argsstring>()</argsstring>
+        <name>getRotationQuaternion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="12" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/body_state.cpp" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_body_state_1ac1931ea582df06676f52ed72ec26140a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BodyState::setRotationQuaternion</definition>
+        <argsstring>(const Eigen::Quaterniond &amp;quat)</argsstring>
+        <name>setRotationQuaternion</name>
+        <param>
+          <type>const Eigen::Quaterniond &amp;</type>
+          <declname>quat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="13" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/body_state.cpp" bodystart="13" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_body_state_1a1b44594cf450da4c6aa2af1b74fa254a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Block&lt; BodyStateType, 3, 1 &gt;</type>
+        <definition>Eigen::Block&lt; BodyState::BodyStateType, 3, 1 &gt; BodyState::getPositionBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getPositionBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="14" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/body_state.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_body_state_1a732c36a0723224c49a0b2629081bd26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Block&lt; BodyStateType, 3, 1 &gt;</type>
+        <definition>Eigen::Block&lt; BodyState::BodyStateType, 3, 1 &gt; BodyState::getVelocityBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getVelocityBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/body_state.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_body_state_1adfdecc372089f557d447d9d8e910591f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Block&lt; BodyStateType, 3, 1 &gt;</type>
+        <definition>Eigen::Block&lt; BodyState::BodyStateType, 3, 1 &gt; BodyState::getAccelerometerBiasBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getAccelerometerBiasBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="16" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/body_state.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_body_state_1afd17dde9368642923d7d2c0e49b3afd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Eigen::Block&lt; BodyStateType, 3, 1 &gt;</type>
+        <definition>Eigen::Block&lt; BodyState::BodyStateType, 3, 1 &gt; BodyState::getGyroscopeBiasBlock</definition>
+        <argsstring>()</argsstring>
+        <name>getGyroscopeBiasBlock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="17" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/body_state.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/include/body_state.h" line="7" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/body_state.h" bodystart="7" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_body_state_1aa7124f16546d39354308de9742d0bea1" prot="private" virt="non-virtual"><scope>BodyState</scope><name>body_state_</name></member>
+      <member refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" prot="public" virt="non-virtual"><scope>BodyState</scope><name>BodyStateType</name></member>
+      <member refid="class_body_state_1adfdecc372089f557d447d9d8e910591f" prot="public" virt="non-virtual"><scope>BodyState</scope><name>getAccelerometerBiasBlock</name></member>
+      <member refid="class_body_state_1afd17dde9368642923d7d2c0e49b3afd2" prot="public" virt="non-virtual"><scope>BodyState</scope><name>getGyroscopeBiasBlock</name></member>
+      <member refid="class_body_state_1a1b44594cf450da4c6aa2af1b74fa254a" prot="public" virt="non-virtual"><scope>BodyState</scope><name>getPositionBlock</name></member>
+      <member refid="class_body_state_1a980cbcae469aa1fc0d7efec5248db0d1" prot="public" virt="non-virtual"><scope>BodyState</scope><name>getRotationBlock</name></member>
+      <member refid="class_body_state_1a63c1a3704285d7e76a7d7f5a2e4cbafa" prot="public" virt="non-virtual"><scope>BodyState</scope><name>getRotationQuaternion</name></member>
+      <member refid="class_body_state_1a732c36a0723224c49a0b2629081bd26d" prot="public" virt="non-virtual"><scope>BodyState</scope><name>getVelocityBlock</name></member>
+      <member refid="class_body_state_1ac1931ea582df06676f52ed72ec26140a" prot="public" virt="non-virtual"><scope>BodyState</scope><name>setRotationQuaternion</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

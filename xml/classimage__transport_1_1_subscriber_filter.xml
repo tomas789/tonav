@@ -258,17 +258,6 @@
 </verbatim> </para></sect1>
     </detaileddescription>
     <inheritancegraph>
-      <node id="145">
-        <label>message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</label>
-      </node>
-      <node id="144">
-        <label>image_transport::SubscriberFilter</label>
-        <link refid="classimage__transport_1_1_subscriber_filter"/>
-        <childnode refid="145" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="147">
         <label>message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</label>
       </node>
@@ -276,6 +265,17 @@
         <label>image_transport::SubscriberFilter</label>
         <link refid="classimage__transport_1_1_subscriber_filter"/>
         <childnode refid="147" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="149">
+        <label>message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</label>
+      </node>
+      <node id="148">
+        <label>image_transport::SubscriberFilter</label>
+        <link refid="classimage__transport_1_1_subscriber_filter"/>
+        <childnode refid="149" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

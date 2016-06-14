@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="body__state_8h" kind="file">
+    <compoundname>body_state.h</compoundname>
+    <includes local="no">Eigen/Core</includes>
+    <includes local="no">Eigen/Geometry</includes>
+    <includedby refid="filter__state_8h" local="yes">/home/travis/build/tomas789/tonav/include/filter_state.h</includedby>
+    <includedby refid="body__state_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/body_state.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>Eigen/Geometry</label>
+      </node>
+      <node id="1">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="0">
+        <label>/home/travis/build/tomas789/tonav/include/body_state.h</label>
+        <link refid="body_state.h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
+        <link refid="filter_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/travis/build/tomas789/tonav/include/filter_state.h</label>
+        <link refid="filter__state_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/travis/build/tomas789/tonav/include/body_state.h</label>
+        <link refid="body_state.h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
+        <link refid="tonav_8cpp_source"/>
+      </node>
+      <node id="13">
+        <label>/home/travis/build/tomas789/tonav/src/filter_state.cpp</label>
+        <link refid="filter__state_8cpp_source"/>
+      </node>
+      <node id="11">
+        <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
+        <link refid="filter_8cpp_source"/>
+      </node>
+      <node id="12">
+        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
+        <link refid="navigator_8cpp_source"/>
+      </node>
+      <node id="6">
+        <label>/home/travis/build/tomas789/tonav/include/tonav.h</label>
+        <link refid="tonav_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="7">
+        <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
+        <link refid="tonav__ros_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>/home/travis/build/tomas789/tonav/src/body_state.cpp</label>
+        <link refid="body__state_8cpp_source"/>
+      </node>
+      <node id="9">
+        <label>/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</label>
+        <link refid="tonav__ros_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_body_state" prot="public">BodyState</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>TONAV_BODY_STATE_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TONAV_BODY_STATE_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Core&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Geometry&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="class_body_state" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_body_state" kindref="compound">BodyState</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>BodyStateType<sp/>=<sp/>Eigen::Matrix&lt;double,<sp/>16,<sp/>1&gt;;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>4,<sp/>1&gt;<sp/>getRotationBlock();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>getRotationQuaternion();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setRotationQuaternion(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Quaterniond&amp;<sp/>quat);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getPositionBlock();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getVelocityBlock();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getAccelerometerBiasBlock();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getGyroscopeBiasBlock();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>BodyStateType<sp/>body_state_;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_BODY_STATE_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/tomas789/tonav/include/body_state.h"/>
+  </compounddef>
+</doxygen>

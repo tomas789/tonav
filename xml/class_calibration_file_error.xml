@@ -90,36 +90,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="10">
+      <node id="12">
         <label>BaseException</label>
         <link refid="class_base_exception"/>
-        <childnode refid="11" relation="public-inheritance">
+        <childnode refid="13" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="11">
+      <node id="13">
         <label>std::exception</label>
       </node>
-      <node id="9">
+      <node id="11">
         <label>CalibrationFileError</label>
         <link refid="class_calibration_file_error"/>
-        <childnode refid="10" relation="public-inheritance">
+        <childnode refid="12" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="13">
+      <node id="15">
         <label>BaseException</label>
         <link refid="class_base_exception"/>
-        <childnode refid="14" relation="public-inheritance">
+        <childnode refid="16" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
+      <node id="16">
         <label>std::exception</label>
       </node>
-      <node id="12">
+      <node id="14">
         <label>CalibrationFileError</label>
         <link refid="class_calibration_file_error"/>
-        <childnode refid="13" relation="public-inheritance">
+        <childnode refid="15" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

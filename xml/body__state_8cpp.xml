@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="body__state_8cpp" kind="file">
+    <compoundname>body_state.cpp</compoundname>
+    <includes refid="body__state_8h" local="yes">body_state.h</includes>
+    <incdepgraph>
+      <node id="362">
+        <label>Eigen/Geometry</label>
+      </node>
+      <node id="361">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="360">
+        <label>body_state.h</label>
+        <link refid="body__state_8h_source"/>
+        <childnode refid="361" relation="include">
+        </childnode>
+        <childnode refid="362" relation="include">
+        </childnode>
+      </node>
+      <node id="359">
+        <label>/home/travis/build/tomas789/tonav/src/body_state.cpp</label>
+        <link refid="body_state.cpp"/>
+        <childnode refid="360" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;body_state.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal">Eigen::Block&lt;BodyState::BodyStateType,<sp/>4,<sp/>1&gt;<sp/>BodyState::getRotationBlock()<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>body_state_.block&lt;4,<sp/>1&gt;(0,<sp/>0);</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">Eigen::Quaterniond<sp/>BodyState::getRotationQuaternion()<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>4,<sp/>1&gt;<sp/>rotation_block<sp/>=<sp/>getRotationBlock();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>rot(rotation_block(3,<sp/>0),<sp/>rotation_block(0,<sp/>0),<sp/>rotation_block(1,<sp/>0),<sp/>rotation_block(2,<sp/>0));</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rot;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>BodyState::setRotationQuaternion(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Quaterniond<sp/>&amp;quat)<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>4,<sp/>1&gt;<sp/>rotation_block<sp/>=<sp/>getRotationBlock();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>rotation_block(0,<sp/>0)<sp/>=<sp/>quat.x();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>rotation_block(1,<sp/>0)<sp/>=<sp/>quat.y();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>rotation_block(2,<sp/>0)<sp/>=<sp/>quat.z();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>rotation_block(3,<sp/>0)<sp/>=<sp/>quat.w();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">Eigen::Block&lt;BodyState::BodyStateType,<sp/>3,<sp/>1&gt;<sp/>BodyState::getPositionBlock()<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>body_state_.block&lt;3,<sp/>1&gt;(4,<sp/>0);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">Eigen::Block&lt;BodyState::BodyStateType,<sp/>3,<sp/>1&gt;<sp/>BodyState::getVelocityBlock()<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>body_state_.block&lt;3,<sp/>1&gt;(7,<sp/>0);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">Eigen::Block&lt;BodyState::BodyStateType,<sp/>3,<sp/>1&gt;<sp/>BodyState::getAccelerometerBiasBlock()<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>body_state_.block&lt;3,<sp/>1&gt;(10,<sp/>0);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">Eigen::Block&lt;BodyState::BodyStateType,<sp/>3,<sp/>1&gt;<sp/>BodyState::getGyroscopeBiasBlock()<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>body_state_.block&lt;3,<sp/>1&gt;(13,<sp/>0);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/tomas789/tonav/src/body_state.cpp"/>
+  </compounddef>
+</doxygen>

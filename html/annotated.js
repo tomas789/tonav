@@ -22,6 +22,7 @@ var annotated =
       [ "ClassLoader", "classpluginlib_1_1_class_loader.html", null ]
     ] ],
     [ "BaseException", "class_base_exception.html", "class_base_exception" ],
+    [ "BodyState", "class_body_state.html", "class_body_state" ],
     [ "Calibration", "class_calibration.html", "class_calibration" ],
     [ "CalibrationFileError", "class_calibration_file_error.html", "class_calibration_file_error" ],
     [ "CameraFeed", "class_camera_feed.html", "class_camera_feed" ],

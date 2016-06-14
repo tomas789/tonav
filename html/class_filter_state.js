@@ -6,6 +6,8 @@ var class_filter_state =
     [ "getAccelerationEstimateBlock", "class_filter_state.html#a4436166f7dbaf6c002b6fc2832b4f136", null ],
     [ "getAccelerometerBiasBlock", "class_filter_state.html#a43b485d8c02d6eb8e37cd8f2323e9e43", null ],
     [ "getAccelerometerShapeVectorizedBlock", "class_filter_state.html#a57cb64b2b25132c2da38b0313da415c5", null ],
+    [ "getBodyStateRef", "class_filter_state.html#a595c5e8bfb709f9a73346300345728bb", null ],
+    [ "getBodyStateRef", "class_filter_state.html#afae8c864f77190b9a870dfe88d821a77", null ],
     [ "getCameraDelayTimeRef", "class_filter_state.html#a6563a73bad1016317018c85d53380962", null ],
     [ "getCameraReadoutTimeRef", "class_filter_state.html#ab9d3e7cad1ae09ed35bcc528c0e8ef45", null ],
     [ "getCameraToBodyOffsetBlock", "class_filter_state.html#a844855f0fa5ebf0c606a06ea6fdb460b", null ],

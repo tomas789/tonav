@@ -3,6 +3,7 @@
   <compounddef id="dir_48f79f39efcacd3bd103ae65a014cd57" kind="dir">
     <compoundname>/home/travis/build/tomas789/tonav/include</compoundname>
     <innerdir refid="dir_70bb87324dd50ccdffef5b926e19f052">/home/travis/build/tomas789/tonav/include/exceptions</innerdir>
+    <innerfile refid="body__state_8h">body_state.h</innerfile>
     <innerfile refid="calibration_8h">calibration.h</innerfile>
     <innerfile refid="camera__feed_8h">camera_feed.h</innerfile>
     <innerfile refid="camera__item_8h">camera_item.h</innerfile>

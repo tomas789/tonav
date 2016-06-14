@@ -6,61 +6,61 @@
     <includes refid="calibration_8h" local="yes">calibration.h</includes>
     <includes refid="general__exception_8h" local="yes">exceptions/general_exception.h</includes>
     <incdepgraph>
-      <node id="368">
+      <node id="397">
         <label>/home/travis/build/tomas789/tonav/src/camera_item.cpp</label>
         <link refid="camera_item.cpp"/>
-        <childnode refid="369" relation="include">
+        <childnode refid="398" relation="include">
         </childnode>
-        <childnode refid="371" relation="include">
+        <childnode refid="400" relation="include">
         </childnode>
-        <childnode refid="375" relation="include">
+        <childnode refid="404" relation="include">
         </childnode>
       </node>
-      <node id="373">
+      <node id="402">
         <label>Eigen/Core</label>
       </node>
-      <node id="370">
+      <node id="399">
         <label>string</label>
       </node>
-      <node id="377">
+      <node id="406">
         <label>exception</label>
       </node>
-      <node id="375">
+      <node id="404">
         <label>exceptions/general_exception.h</label>
         <link refid="general__exception_8h_source"/>
-        <childnode refid="370" relation="include">
+        <childnode refid="399" relation="include">
         </childnode>
-        <childnode refid="376" relation="include">
+        <childnode refid="405" relation="include">
         </childnode>
       </node>
-      <node id="372">
+      <node id="401">
         <label>boost/filesystem/path.hpp</label>
       </node>
-      <node id="376">
+      <node id="405">
         <label>exceptions/base_exception.h</label>
         <link refid="base__exception_8h_source"/>
-        <childnode refid="377" relation="include">
+        <childnode refid="406" relation="include">
         </childnode>
       </node>
-      <node id="374">
+      <node id="403">
         <label>vector</label>
       </node>
-      <node id="369">
+      <node id="398">
         <label>camera_item.h</label>
         <link refid="camera__item_8h_source"/>
-        <childnode refid="370" relation="include">
+        <childnode refid="399" relation="include">
         </childnode>
       </node>
-      <node id="371">
+      <node id="400">
         <label>calibration.h</label>
         <link refid="calibration_8h_source"/>
-        <childnode refid="372" relation="include">
+        <childnode refid="401" relation="include">
         </childnode>
-        <childnode refid="373" relation="include">
+        <childnode refid="402" relation="include">
         </childnode>
-        <childnode refid="370" relation="include">
+        <childnode refid="399" relation="include">
         </childnode>
-        <childnode refid="374" relation="include">
+        <childnode refid="403" relation="include">
         </childnode>
       </node>
     </incdepgraph>

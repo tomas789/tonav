@@ -6,69 +6,69 @@
     <includes local="no">cv_bridge/cv_bridge.h</includes>
     <includes local="no">opencv2/imgproc/imgproc.hpp</includes>
     <incdepgraph>
-      <node id="1287">
+      <node id="1328">
         <label>image_transport_tutorial/ResizedImage.h</label>
       </node>
-      <node id="1283">
+      <node id="1324">
         <label>sensor_msgs/Image.h</label>
       </node>
-      <node id="1284">
+      <node id="1325">
         <label>boost/noncopyable.hpp</label>
       </node>
-      <node id="1281">
+      <node id="1322">
         <label>image_transport/subscriber_plugin.h</label>
         <link refid="subscriber__plugin_8h_source"/>
-        <childnode refid="1282" relation="include">
+        <childnode refid="1323" relation="include">
         </childnode>
-        <childnode refid="1283" relation="include">
+        <childnode refid="1324" relation="include">
         </childnode>
-        <childnode refid="1284" relation="include">
+        <childnode refid="1325" relation="include">
         </childnode>
-        <childnode refid="1285" relation="include">
+        <childnode refid="1326" relation="include">
         </childnode>
       </node>
-      <node id="1288">
+      <node id="1329">
         <label>cv_bridge/cv_bridge.h</label>
       </node>
-      <node id="1285">
+      <node id="1326">
         <label>image_transport/transport_hints.h</label>
         <link refid="transport__hints_8h_source"/>
-        <childnode refid="1282" relation="include">
+        <childnode refid="1323" relation="include">
         </childnode>
       </node>
-      <node id="1279">
+      <node id="1320">
         <label>image_transport_tutorial/resized_subscriber.h</label>
         <link refid="resized__subscriber_8h_source"/>
-        <childnode refid="1280" relation="include">
+        <childnode refid="1321" relation="include">
         </childnode>
-        <childnode refid="1287" relation="include">
+        <childnode refid="1328" relation="include">
         </childnode>
       </node>
-      <node id="1289">
+      <node id="1330">
         <label>opencv2/imgproc/imgproc.hpp</label>
       </node>
-      <node id="1282">
+      <node id="1323">
         <label>ros/ros.h</label>
       </node>
-      <node id="1286">
+      <node id="1327">
         <label>boost/scoped_ptr.hpp</label>
       </node>
-      <node id="1278">
+      <node id="1319">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp</label>
         <link refid="resized_subscriber.cpp"/>
-        <childnode refid="1279" relation="include">
+        <childnode refid="1320" relation="include">
         </childnode>
-        <childnode refid="1288" relation="include">
+        <childnode refid="1329" relation="include">
         </childnode>
-        <childnode refid="1289" relation="include">
+        <childnode refid="1330" relation="include">
         </childnode>
       </node>
-      <node id="1280">
+      <node id="1321">
         <label>image_transport/simple_subscriber_plugin.h</label>
         <link refid="simple__subscriber__plugin_8h_source"/>
-        <childnode refid="1281" relation="include">
+        <childnode refid="1322" relation="include">
         </childnode>
-        <childnode refid="1286" relation="include">
+        <childnode refid="1327" relation="include">
         </childnode>
       </node>
     </incdepgraph>

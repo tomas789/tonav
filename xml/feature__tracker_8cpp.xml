@@ -11,103 +11,103 @@
     <includes refid="impossible__exception_8h" local="yes">exceptions/impossible_exception.h</includes>
     <includes refid="feature__track_8h" local="yes">feature_track.h</includes>
     <incdepgraph>
-      <node id="415">
+      <node id="444">
         <label>/home/travis/build/tomas789/tonav/src/feature_tracker.cpp</label>
         <link refid="feature_tracker.cpp"/>
-        <childnode refid="416" relation="include">
+        <childnode refid="445" relation="include">
         </childnode>
-        <childnode refid="424" relation="include">
+        <childnode refid="453" relation="include">
         </childnode>
-        <childnode refid="425" relation="include">
+        <childnode refid="454" relation="include">
         </childnode>
-        <childnode refid="417" relation="include">
+        <childnode refid="446" relation="include">
         </childnode>
-        <childnode refid="418" relation="include">
+        <childnode refid="447" relation="include">
         </childnode>
-        <childnode refid="426" relation="include">
+        <childnode refid="455" relation="include">
         </childnode>
-        <childnode refid="430" relation="include">
+        <childnode refid="459" relation="include">
         </childnode>
-        <childnode refid="421" relation="include">
+        <childnode refid="450" relation="include">
         </childnode>
       </node>
-      <node id="424">
+      <node id="453">
         <label>cmath</label>
       </node>
-      <node id="418">
+      <node id="447">
         <label>opencv2/core/core.hpp</label>
       </node>
-      <node id="421">
+      <node id="450">
         <label>feature_track.h</label>
         <link refid="feature__track_8h_source"/>
-        <childnode refid="422" relation="include">
+        <childnode refid="451" relation="include">
         </childnode>
-        <childnode refid="423" relation="include">
+        <childnode refid="452" relation="include">
         </childnode>
       </node>
-      <node id="427">
+      <node id="456">
         <label>string</label>
       </node>
-      <node id="429">
+      <node id="458">
         <label>exception</label>
       </node>
-      <node id="419">
+      <node id="448">
         <label>opencv2/features2d/features2d.hpp</label>
       </node>
-      <node id="422">
+      <node id="451">
         <label>Eigen/Dense</label>
       </node>
-      <node id="426">
+      <node id="455">
         <label>exceptions/general_exception.h</label>
         <link refid="general__exception_8h_source"/>
-        <childnode refid="427" relation="include">
+        <childnode refid="456" relation="include">
         </childnode>
-        <childnode refid="428" relation="include">
+        <childnode refid="457" relation="include">
         </childnode>
       </node>
-      <node id="416">
+      <node id="445">
         <label>feature_tracker.h</label>
         <link refid="feature__tracker_8h_source"/>
-        <childnode refid="417" relation="include">
+        <childnode refid="446" relation="include">
         </childnode>
-        <childnode refid="418" relation="include">
+        <childnode refid="447" relation="include">
         </childnode>
-        <childnode refid="419" relation="include">
+        <childnode refid="448" relation="include">
         </childnode>
-        <childnode refid="420" relation="include">
+        <childnode refid="449" relation="include">
         </childnode>
-        <childnode refid="421" relation="include">
+        <childnode refid="450" relation="include">
         </childnode>
       </node>
-      <node id="420">
+      <node id="449">
         <label>frame_features.h</label>
         <link refid="frame__features_8h_source"/>
-        <childnode refid="418" relation="include">
+        <childnode refid="447" relation="include">
         </childnode>
-        <childnode refid="419" relation="include">
+        <childnode refid="448" relation="include">
         </childnode>
       </node>
-      <node id="428">
+      <node id="457">
         <label>exceptions/base_exception.h</label>
         <link refid="base__exception_8h_source"/>
-        <childnode refid="429" relation="include">
+        <childnode refid="458" relation="include">
         </childnode>
       </node>
-      <node id="423">
+      <node id="452">
         <label>vector</label>
       </node>
-      <node id="430">
+      <node id="459">
         <label>exceptions/impossible_exception.h</label>
         <link refid="impossible__exception_8h_source"/>
-        <childnode refid="427" relation="include">
+        <childnode refid="456" relation="include">
         </childnode>
-        <childnode refid="428" relation="include">
+        <childnode refid="457" relation="include">
         </childnode>
       </node>
-      <node id="425">
+      <node id="454">
         <label>iostream</label>
       </node>
-      <node id="417">
+      <node id="446">
         <label>memory</label>
       </node>
     </incdepgraph>

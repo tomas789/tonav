@@ -9,49 +9,49 @@
     <includedby refid="camera__feed_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/camera_feed.cpp</includedby>
     <includedby refid="navigator_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/navigator.cpp</includedby>
     <incdepgraph>
-      <node id="19">
+      <node id="34">
         <label>string</label>
       </node>
-      <node id="18">
+      <node id="33">
         <label>boost/filesystem/path.hpp</label>
       </node>
-      <node id="20">
+      <node id="35">
         <label>vector</label>
       </node>
-      <node id="21">
+      <node id="36">
         <label>camera_item.h</label>
         <link refid="camera__item_8h_source"/>
-        <childnode refid="19" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
       </node>
-      <node id="17">
+      <node id="32">
         <label>/home/travis/build/tomas789/tonav/include/camera_feed.h</label>
         <link refid="camera_feed.h"/>
-        <childnode refid="18" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="19" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
-        <childnode refid="20" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="23">
+      <node id="38">
         <label>/home/travis/build/tomas789/tonav/src/camera_feed.cpp</label>
         <link refid="camera__feed_8cpp_source"/>
       </node>
-      <node id="24">
+      <node id="39">
         <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
         <link refid="navigator_8cpp_source"/>
       </node>
-      <node id="22">
+      <node id="37">
         <label>/home/travis/build/tomas789/tonav/include/camera_feed.h</label>
         <link refid="camera_feed.h"/>
-        <childnode refid="23" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

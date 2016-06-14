@@ -13,90 +13,90 @@
     <includes refid="general__exception_8h" local="yes">exceptions/general_exception.h</includes>
     <includes refid="camera__item_8h" local="yes">camera_item.h</includes>
     <incdepgraph>
-      <node id="360">
+      <node id="389">
         <label>iterator</label>
       </node>
-      <node id="362">
+      <node id="391">
         <label>opencv2/core/core.hpp</label>
       </node>
-      <node id="355">
+      <node id="384">
         <label>string</label>
       </node>
-      <node id="352">
+      <node id="381">
         <label>/home/travis/build/tomas789/tonav/src/camera_feed.cpp</label>
         <link refid="camera_feed.cpp"/>
-        <childnode refid="353" relation="include">
+        <childnode refid="382" relation="include">
         </childnode>
-        <childnode refid="358" relation="include">
+        <childnode refid="387" relation="include">
         </childnode>
-        <childnode refid="359" relation="include">
+        <childnode refid="388" relation="include">
         </childnode>
-        <childnode refid="360" relation="include">
+        <childnode refid="389" relation="include">
         </childnode>
-        <childnode refid="361" relation="include">
+        <childnode refid="390" relation="include">
         </childnode>
-        <childnode refid="362" relation="include">
+        <childnode refid="391" relation="include">
         </childnode>
-        <childnode refid="363" relation="include">
+        <childnode refid="392" relation="include">
         </childnode>
-        <childnode refid="355" relation="include">
+        <childnode refid="384" relation="include">
         </childnode>
-        <childnode refid="364" relation="include">
+        <childnode refid="393" relation="include">
         </childnode>
-        <childnode refid="357" relation="include">
+        <childnode refid="386" relation="include">
         </childnode>
       </node>
-      <node id="366">
+      <node id="395">
         <label>exception</label>
       </node>
-      <node id="359">
+      <node id="388">
         <label>fstream</label>
       </node>
-      <node id="364">
+      <node id="393">
         <label>exceptions/general_exception.h</label>
         <link refid="general__exception_8h_source"/>
-        <childnode refid="355" relation="include">
+        <childnode refid="384" relation="include">
         </childnode>
-        <childnode refid="365" relation="include">
+        <childnode refid="394" relation="include">
         </childnode>
       </node>
-      <node id="354">
+      <node id="383">
         <label>boost/filesystem/path.hpp</label>
       </node>
-      <node id="365">
+      <node id="394">
         <label>exceptions/base_exception.h</label>
         <link refid="base__exception_8h_source"/>
-        <childnode refid="366" relation="include">
+        <childnode refid="395" relation="include">
         </childnode>
       </node>
-      <node id="356">
+      <node id="385">
         <label>vector</label>
       </node>
-      <node id="357">
+      <node id="386">
         <label>camera_item.h</label>
         <link refid="camera__item_8h_source"/>
-        <childnode refid="355" relation="include">
+        <childnode refid="384" relation="include">
         </childnode>
       </node>
-      <node id="358">
+      <node id="387">
         <label>boost/filesystem.hpp</label>
       </node>
-      <node id="363">
+      <node id="392">
         <label>opencv2/highgui/highgui.hpp</label>
       </node>
-      <node id="361">
+      <node id="390">
         <label>iostream</label>
       </node>
-      <node id="353">
+      <node id="382">
         <label>camera_feed.h</label>
         <link refid="camera__feed_8h_source"/>
-        <childnode refid="354" relation="include">
+        <childnode refid="383" relation="include">
         </childnode>
-        <childnode refid="355" relation="include">
+        <childnode refid="384" relation="include">
         </childnode>
-        <childnode refid="356" relation="include">
+        <childnode refid="385" relation="include">
         </childnode>
-        <childnode refid="357" relation="include">
+        <childnode refid="386" relation="include">
         </childnode>
       </node>
     </incdepgraph>

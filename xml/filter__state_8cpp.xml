@@ -8,56 +8,69 @@
     <includes local="no">Eigen/Core</includes>
     <includes local="no">Eigen/Dense</includes>
     <incdepgraph>
-      <node id="459">
+      <node id="490">
         <label>list</label>
       </node>
-      <node id="462">
+      <node id="496">
         <label>iomanip</label>
       </node>
-      <node id="461">
+      <node id="495">
         <label>limits</label>
       </node>
-      <node id="463">
+      <node id="493">
+        <label>Eigen/Geometry</label>
+      </node>
+      <node id="492">
         <label>Eigen/Core</label>
       </node>
-      <node id="456">
+      <node id="487">
         <label>filter_state.h</label>
         <link refid="filter__state_8h_source"/>
-        <childnode refid="457" relation="include">
+        <childnode refid="488" relation="include">
         </childnode>
-        <childnode refid="458" relation="include">
+        <childnode refid="489" relation="include">
         </childnode>
-        <childnode refid="459" relation="include">
+        <childnode refid="490" relation="include">
         </childnode>
-        <childnode refid="460" relation="include">
+        <childnode refid="491" relation="include">
+        </childnode>
+        <childnode refid="494" relation="include">
         </childnode>
       </node>
-      <node id="458">
+      <node id="491">
+        <label>body_state.h</label>
+        <link refid="body__state_8h_source"/>
+        <childnode refid="492" relation="include">
+        </childnode>
+        <childnode refid="493" relation="include">
+        </childnode>
+      </node>
+      <node id="489">
         <label>Eigen/Dense</label>
       </node>
-      <node id="455">
+      <node id="486">
         <label>/home/travis/build/tomas789/tonav/src/filter_state.cpp</label>
         <link refid="filter_state.cpp"/>
-        <childnode refid="456" relation="include">
+        <childnode refid="487" relation="include">
         </childnode>
-        <childnode refid="457" relation="include">
+        <childnode refid="488" relation="include">
         </childnode>
-        <childnode refid="462" relation="include">
+        <childnode refid="496" relation="include">
         </childnode>
-        <childnode refid="463" relation="include">
+        <childnode refid="492" relation="include">
         </childnode>
-        <childnode refid="458" relation="include">
+        <childnode refid="489" relation="include">
         </childnode>
       </node>
-      <node id="457">
+      <node id="488">
         <label>iostream</label>
       </node>
-      <node id="460">
+      <node id="494">
         <label>camera_pose.h</label>
         <link refid="camera__pose_8h_source"/>
-        <childnode refid="458" relation="include">
+        <childnode refid="489" relation="include">
         </childnode>
-        <childnode refid="461" relation="include">
+        <childnode refid="495" relation="include">
         </childnode>
       </node>
     </incdepgraph>

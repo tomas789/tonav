@@ -325,54 +325,54 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="154">
+      <node id="156">
         <label>image_transport::RawSubscriber</label>
         <link refid="classimage__transport_1_1_raw_subscriber"/>
-        <childnode refid="153" relation="public-inheritance">
+        <childnode refid="155" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="150">
-        <label>image_transport::SimpleSubscriberPlugin&lt; M &gt;</label>
-        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="148" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="153">
-        <label>image_transport::SimpleSubscriberPlugin&lt; sensor_msgs::Image &gt;</label>
-        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="148" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="149">
-        <label>noncopyable</label>
       </node>
       <node id="152">
-        <label>ResizedSubscriber</label>
-        <link refid="class_resized_subscriber"/>
-        <childnode refid="151" relation="public-inheritance">
+        <label>image_transport::SimpleSubscriberPlugin&lt; M &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="150" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="155">
+        <label>image_transport::SimpleSubscriberPlugin&lt; sensor_msgs::Image &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="150" relation="public-inheritance">
         </childnode>
       </node>
       <node id="151">
-        <label>image_transport::SimpleSubscriberPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
-        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="148" relation="public-inheritance">
+        <label>noncopyable</label>
+      </node>
+      <node id="154">
+        <label>ResizedSubscriber</label>
+        <link refid="class_resized_subscriber"/>
+        <childnode refid="153" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="148">
+      <node id="153">
+        <label>image_transport::SimpleSubscriberPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
+        <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
+        <childnode refid="150" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="150">
         <label>image_transport::SubscriberPlugin</label>
         <link refid="classimage__transport_1_1_subscriber_plugin"/>
-        <childnode refid="149" relation="private-inheritance">
+        <childnode refid="151" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="156">
+      <node id="158">
         <label>noncopyable</label>
       </node>
-      <node id="155">
+      <node id="157">
         <label>image_transport::SubscriberPlugin</label>
         <link refid="classimage__transport_1_1_subscriber_plugin"/>
-        <childnode refid="156" relation="private-inheritance">
+        <childnode refid="158" relation="private-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

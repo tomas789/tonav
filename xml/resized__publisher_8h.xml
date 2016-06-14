@@ -7,75 +7,75 @@
     <includedby refid="tutorial_2src_2manifest_8cpp" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</includedby>
     <includedby refid="resized__publisher_8cpp" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_publisher.cpp</includedby>
     <incdepgraph>
-      <node id="1201">
+      <node id="1242">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h</label>
         <link refid="resized_publisher.h"/>
-        <childnode refid="1202" relation="include">
+        <childnode refid="1243" relation="include">
         </childnode>
-        <childnode refid="1210" relation="include">
+        <childnode refid="1251" relation="include">
         </childnode>
       </node>
-      <node id="1202">
+      <node id="1243">
         <label>image_transport/simple_publisher_plugin.h</label>
         <link refid="simple__publisher__plugin_8h_source"/>
-        <childnode refid="1203" relation="include">
+        <childnode refid="1244" relation="include">
         </childnode>
-        <childnode refid="1209" relation="include">
+        <childnode refid="1250" relation="include">
         </childnode>
       </node>
-      <node id="1210">
+      <node id="1251">
         <label>image_transport_tutorial/ResizedImage.h</label>
       </node>
-      <node id="1206">
+      <node id="1247">
         <label>image_transport/single_subscriber_publisher.h</label>
         <link refid="single__subscriber__publisher_8h_source"/>
-        <childnode refid="1207" relation="include">
+        <childnode refid="1248" relation="include">
         </childnode>
-        <childnode refid="1208" relation="include">
+        <childnode refid="1249" relation="include">
         </childnode>
-        <childnode refid="1205" relation="include">
+        <childnode refid="1246" relation="include">
         </childnode>
       </node>
-      <node id="1205">
+      <node id="1246">
         <label>sensor_msgs/Image.h</label>
       </node>
-      <node id="1207">
+      <node id="1248">
         <label>boost/noncopyable.hpp</label>
       </node>
-      <node id="1208">
+      <node id="1249">
         <label>boost/function.hpp</label>
       </node>
-      <node id="1204">
+      <node id="1245">
         <label>ros/ros.h</label>
       </node>
-      <node id="1209">
+      <node id="1250">
         <label>boost/scoped_ptr.hpp</label>
       </node>
-      <node id="1203">
+      <node id="1244">
         <label>image_transport/publisher_plugin.h</label>
         <link refid="publisher__plugin_8h_source"/>
-        <childnode refid="1204" relation="include">
+        <childnode refid="1245" relation="include">
         </childnode>
-        <childnode refid="1205" relation="include">
+        <childnode refid="1246" relation="include">
         </childnode>
-        <childnode refid="1206" relation="include">
+        <childnode refid="1247" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="1211">
+      <node id="1252">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_publisher.h</label>
         <link refid="resized_publisher.h"/>
-        <childnode refid="1212" relation="include">
+        <childnode refid="1253" relation="include">
         </childnode>
-        <childnode refid="1213" relation="include">
+        <childnode refid="1254" relation="include">
         </childnode>
       </node>
-      <node id="1213">
+      <node id="1254">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_publisher.cpp</label>
         <link refid="resized__publisher_8cpp_source"/>
       </node>
-      <node id="1212">
+      <node id="1253">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</label>
         <link refid="tutorial_2src_2manifest_8cpp_source"/>
       </node>

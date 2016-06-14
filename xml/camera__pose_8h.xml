@@ -7,94 +7,94 @@
     <includedby refid="filter__state_8h" local="yes">/home/travis/build/tomas789/tonav/include/filter_state.h</includedby>
     <includedby refid="camera__pose_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/camera_pose.cpp</includedby>
     <incdepgraph>
-      <node id="34">
+      <node id="49">
         <label>limits</label>
       </node>
-      <node id="33">
+      <node id="48">
         <label>Eigen/Dense</label>
       </node>
-      <node id="32">
+      <node id="47">
         <label>/home/travis/build/tomas789/tonav/include/camera_pose.h</label>
         <link refid="camera_pose.h"/>
-        <childnode refid="33" relation="include">
+        <childnode refid="48" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="49" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="37">
+      <node id="52">
         <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
         <link refid="filter_8h_source"/>
-        <childnode refid="38" relation="include">
+        <childnode refid="53" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="58" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
+        <childnode refid="59" relation="include">
         </childnode>
       </node>
-      <node id="36">
+      <node id="51">
         <label>/home/travis/build/tomas789/tonav/include/filter_state.h</label>
         <link refid="filter__state_8h_source"/>
-        <childnode refid="37" relation="include">
+        <childnode refid="52" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="58" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="60" relation="include">
         </childnode>
       </node>
-      <node id="42">
+      <node id="57">
         <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
         <link refid="tonav_8cpp_source"/>
       </node>
-      <node id="45">
+      <node id="60">
         <label>/home/travis/build/tomas789/tonav/src/filter_state.cpp</label>
         <link refid="filter__state_8cpp_source"/>
       </node>
-      <node id="46">
+      <node id="61">
         <label>/home/travis/build/tomas789/tonav/src/camera_pose.cpp</label>
         <link refid="camera__pose_8cpp_source"/>
       </node>
-      <node id="43">
+      <node id="58">
         <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
         <link refid="filter_8cpp_source"/>
       </node>
-      <node id="44">
+      <node id="59">
         <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
         <link refid="navigator_8cpp_source"/>
       </node>
-      <node id="38">
+      <node id="53">
         <label>/home/travis/build/tomas789/tonav/include/tonav.h</label>
         <link refid="tonav_8h_source"/>
-        <childnode refid="39" relation="include">
+        <childnode refid="54" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
+        <childnode refid="57" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="56" relation="include">
         </childnode>
       </node>
-      <node id="40">
+      <node id="55">
         <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
         <link refid="main_8cpp_source"/>
       </node>
-      <node id="39">
+      <node id="54">
         <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
         <link refid="tonav__ros_8h_source"/>
-        <childnode refid="40" relation="include">
+        <childnode refid="55" relation="include">
         </childnode>
-        <childnode refid="41" relation="include">
+        <childnode refid="56" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="56">
         <label>/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</label>
         <link refid="tonav__ros_8cpp_source"/>
       </node>
-      <node id="35">
+      <node id="50">
         <label>/home/travis/build/tomas789/tonav/include/camera_pose.h</label>
         <link refid="camera_pose.h"/>
-        <childnode refid="36" relation="include">
+        <childnode refid="51" relation="include">
         </childnode>
-        <childnode refid="46" relation="include">
+        <childnode refid="61" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

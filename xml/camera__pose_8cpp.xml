@@ -4,24 +4,24 @@
     <compoundname>camera_pose.cpp</compoundname>
     <includes refid="camera__pose_8h" local="yes">camera_pose.h</includes>
     <incdepgraph>
-      <node id="382">
+      <node id="411">
         <label>limits</label>
       </node>
-      <node id="381">
+      <node id="410">
         <label>Eigen/Dense</label>
       </node>
-      <node id="379">
+      <node id="408">
         <label>/home/travis/build/tomas789/tonav/src/camera_pose.cpp</label>
         <link refid="camera_pose.cpp"/>
-        <childnode refid="380" relation="include">
+        <childnode refid="409" relation="include">
         </childnode>
       </node>
-      <node id="380">
+      <node id="409">
         <label>camera_pose.h</label>
         <link refid="camera__pose_8h_source"/>
-        <childnode refid="381" relation="include">
+        <childnode refid="410" relation="include">
         </childnode>
-        <childnode refid="382" relation="include">
+        <childnode refid="411" relation="include">
         </childnode>
       </node>
     </incdepgraph>

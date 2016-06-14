@@ -90,36 +90,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="43">
+      <node id="45">
         <label>BaseException</label>
         <link refid="class_base_exception"/>
-        <childnode refid="44" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="42">
-        <label>GeneralException</label>
-        <link refid="class_general_exception"/>
-        <childnode refid="43" relation="public-inheritance">
+        <childnode refid="46" relation="public-inheritance">
         </childnode>
       </node>
       <node id="44">
+        <label>GeneralException</label>
+        <link refid="class_general_exception"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
         <label>std::exception</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="46">
+      <node id="48">
         <label>BaseException</label>
         <link refid="class_base_exception"/>
-        <childnode refid="47" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="45">
-        <label>GeneralException</label>
-        <link refid="class_general_exception"/>
-        <childnode refid="46" relation="public-inheritance">
+        <childnode refid="49" relation="public-inheritance">
         </childnode>
       </node>
       <node id="47">
+        <label>GeneralException</label>
+        <link refid="class_general_exception"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
         <label>std::exception</label>
       </node>
     </collaborationgraph>

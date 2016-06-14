@@ -142,8 +142,8 @@ $(document).ready(function(){initNavTree('tonav__ros_8h_source.html','');});
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Eigen::Matrix3d current_camera_matrix_;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    Eigen::Matrix&lt;double, 5, 1&gt; current_distirtion_params_;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classimage__transport_1_1_publisher.html">image_transport::Publisher</a> image_publisher_;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    tf2_ros::TransformBroadcaster tf_broadcaster_;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::unique_ptr&lt;image_transport::Publisher&gt; image_publisher_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::unique_ptr&lt;tf2_ros::TransformBroadcaster&gt; tf_broadcaster_;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> setAllowedOptionsDescription();</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> parseCommandLineParams(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
@@ -160,7 +160,6 @@ $(document).ready(function(){initNavTree('tonav__ros_8h_source.html','');});
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif //TONAV_TONAV_ROS_H</span></div>
 <div class="ttc" id="class_tonav_ros_html_aa64cf50545f6cf41c538679703809724"><div class="ttname"><a href="class_tonav_ros.html#aa64cf50545f6cf41c538679703809724">TonavRos::run</a></div><div class="ttdeci">int run(int argc, char *argv[])</div><div class="ttdoc">Run navigation node. </div><div class="ttdef"><b>Definition:</b> <a href="tonav__ros_8cpp_source.html#l00020">tonav_ros.cpp:20</a></div></div>
 <div class="ttc" id="class_tonav_ros_html"><div class="ttname"><a href="class_tonav_ros.html">TonavRos</a></div><div class="ttdoc">Tonav navigation node for ROS. </div><div class="ttdef"><b>Definition:</b> <a href="tonav__ros_8h_source.html#l00023">tonav_ros.h:23</a></div></div>
-<div class="ttc" id="classimage__transport_1_1_publisher_html"><div class="ttname"><a href="classimage__transport_1_1_publisher.html">image_transport::Publisher</a></div><div class="ttdoc">Manages advertisements of multiple transport options on an Image topic. </div><div class="ttdef"><b>Definition:</b> <a href="publisher_8h_source.html#l00063">publisher.h:63</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
