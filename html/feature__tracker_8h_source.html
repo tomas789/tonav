@@ -124,33 +124,37 @@ $(document).ready(function(){initNavTree('feature__tracker_8h_source.html','');}
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;frame_features.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;feature_track.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_feature_tracker.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_feature_tracker.html">FeatureTracker</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">using</span> feature_track_list = std::vector&lt;std::shared_ptr&lt;FeatureTrack&gt;&gt;;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_feature_tracker.html">FeatureTracker</a>();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    feature_track_list processImage(feature_track_list&amp; previous_tracks, cv::Mat&amp; image);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::size_t frame_number_;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    cv::Ptr&lt;cv::FeatureDetector&gt; detector_;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    cv::Ptr&lt;cv::DescriptorExtractor&gt; extractor_;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    cv::Ptr&lt;cv::DescriptorMatcher&gt; matcher_;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_frame_features.html">FrameFeatures</a> previous_frame_features_;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">double</span> computeDistanceLimitForMatch(<span class="keyword">const</span> std::vector&lt;cv::DMatch&gt;&amp; matches) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> drawStats(cv::Mat&amp; image, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; previous_features_matched,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keyword">const</span> std::vector&lt;bool&gt;&amp; current_features_matched, <span class="keyword">const</span> feature_track_list&amp; current_tracks,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keyword">const</span> std::vector&lt;cv::DMatch&gt;&amp; matches) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> markOutOfViewFeatures(std::vector&lt;double&gt;&amp; feature_matched, feature_track_list&amp; feature_tracks) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> createNewFeatureTracks(std::vector&lt;bool&gt;&amp; feature_matched, feature_track_list&amp; feature_tracks,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">const</span> <a class="code" href="class_frame_features.html">FrameFeatures</a>&amp; frame_features) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif //TONAV_FEATURE_TRACKER_H</span></div>
-<div class="ttc" id="class_feature_tracker_html"><div class="ttname"><a href="class_feature_tracker.html">FeatureTracker</a></div><div class="ttdef"><b>Definition:</b> <a href="feature__tracker_8h_source.html#l00015">feature_tracker.h:15</a></div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="class_filter.html">Filter</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_feature_tracker.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_feature_tracker.html">FeatureTracker</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_filter.html">Filter</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">using</span> feature_track_list = std::vector&lt;std::shared_ptr&lt;FeatureTrack&gt;&gt;;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_feature_tracker.html">FeatureTracker</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    feature_track_list processImage(feature_track_list&amp; previous_tracks, cv::Mat&amp; image);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    cv::Ptr&lt;cv::FeatureDetector&gt; detector_;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    cv::Ptr&lt;cv::DescriptorExtractor&gt; extractor_;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    cv::Ptr&lt;cv::DescriptorMatcher&gt; matcher_;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_frame_features.html">FrameFeatures</a> previous_frame_features_;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">double</span> computeDistanceLimitForMatch(<span class="keyword">const</span> std::vector&lt;cv::DMatch&gt;&amp; matches) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> drawStats(cv::Mat&amp; image, <span class="keyword">const</span> std::vector&lt;double&gt;&amp; previous_features_matched,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">const</span> std::vector&lt;bool&gt;&amp; current_features_matched, <span class="keyword">const</span> feature_track_list&amp; current_tracks,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">const</span> std::vector&lt;cv::DMatch&gt;&amp; matches) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> markOutOfViewFeatures(std::vector&lt;double&gt;&amp; feature_matched, feature_track_list&amp; feature_tracks) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> createNewFeatureTracks(std::vector&lt;bool&gt;&amp; feature_matched, feature_track_list&amp; feature_tracks,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> <a class="code" href="class_frame_features.html">FrameFeatures</a>&amp; frame_features) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif //TONAV_FEATURE_TRACKER_H</span></div>
+<div class="ttc" id="class_feature_tracker_html"><div class="ttname"><a href="class_feature_tracker.html">FeatureTracker</a></div><div class="ttdef"><b>Definition:</b> <a href="feature__tracker_8h_source.html#l00017">feature_tracker.h:17</a></div></div>
 <div class="ttc" id="class_frame_features_html"><div class="ttname"><a href="class_frame_features.html">FrameFeatures</a></div><div class="ttdef"><b>Definition:</b> <a href="frame__features_8h_source.html#l00011">frame_features.h:11</a></div></div>
+<div class="ttc" id="class_filter_html"><div class="ttname"><a href="class_filter.html">Filter</a></div><div class="ttdoc">Implementation of MSCKF. </div><div class="ttdef"><b>Definition:</b> <a href="filter_8h_source.html#l00029">filter.h:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

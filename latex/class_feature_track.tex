@@ -4,16 +4,13 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_feature_track_ade7f659359480dab8f8ec7ace7625467}{{\bfseries Feature\-Track} (std\-::size\-\_\-t first\-\_\-frame\-\_\-number)}\label{class_feature_track_ade7f659359480dab8f8ec7ace7625467}
-
-\item 
 \hypertarget{class_feature_track_a5f13b226ac16fb0c9abe692c17f0f0c6}{void {\bfseries add\-Feature\-Position} (double x, double y)}\label{class_feature_track_a5f13b226ac16fb0c9abe692c17f0f0c6}
 
 \item 
 \hypertarget{class_feature_track_aa21cd2b1af1f2aaea1e7d19631f80474}{void {\bfseries revert\-Last\-Position} ()}\label{class_feature_track_aa21cd2b1af1f2aaea1e7d19631f80474}
 
 \item 
-\hypertarget{class_feature_track_a1635683732cdfda103a37d926d2efbf9}{std\-::size\-\_\-t {\bfseries get\-First\-Frame\-Number} () const }\label{class_feature_track_a1635683732cdfda103a37d926d2efbf9}
+\hypertarget{class_feature_track_aa37fc3152eb3320a1161bdc638da2e09}{std\-::size\-\_\-t {\bfseries poses\-Tracked\-Count} () const }\label{class_feature_track_aa37fc3152eb3320a1161bdc638da2e09}
 
 \item 
 \hypertarget{class_feature_track_a966f8f018b7305d764216880f4a6f8ba}{bool {\bfseries is\-Out\-Of\-View} () const }\label{class_feature_track_a966f8f018b7305d764216880f4a6f8ba}
@@ -21,13 +18,41 @@
 \item 
 \hypertarget{class_feature_track_a75a507f6ac11d3a9319523d131c7949d}{void {\bfseries set\-Out\-Of\-View} ()}\label{class_feature_track_a75a507f6ac11d3a9319523d131c7949d}
 
-\end{DoxyCompactItemize}
+\item 
+\hypertarget{class_feature_track_abd64cf7785392e852bb93409fd063917}{bool {\bfseries was\-Used\-For\-Residualization} () const }\label{class_feature_track_abd64cf7785392e852bb93409fd063917}
+
+\item 
+\hypertarget{class_feature_track_a6317ed29fff383fc365d64d6c5ce1aa2}{void {\bfseries set\-Was\-Used\-For\-Residualization} ()}\label{class_feature_track_a6317ed29fff383fc365d64d6c5ce1aa2}
+
+\item 
+int \hyperlink{class_feature_track_aeba4f7f42fe7c065a17bd26e2817dcbe}{get\-Feature\-Id} () const 
+\begin{DoxyCompactList}\small\item\em For debugging purpose only. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
 Definition at line 11 of file feature\-\_\-track.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_feature_track_aeba4f7f42fe7c065a17bd26e2817dcbe}{\index{Feature\-Track@{Feature\-Track}!get\-Feature\-Id@{get\-Feature\-Id}}
+\index{get\-Feature\-Id@{get\-Feature\-Id}!FeatureTrack@{Feature\-Track}}
+\subsubsection[{get\-Feature\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int Feature\-Track\-::get\-Feature\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_feature_track_aeba4f7f42fe7c065a17bd26e2817dcbe}
+
+
+For debugging purpose only. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]This should be deleted in the future. I will keep it here just for case ... \end{DoxyRefDesc}
+
+
+Definition at line 48 of file feature\-\_\-track.\-cpp.
 
 
 

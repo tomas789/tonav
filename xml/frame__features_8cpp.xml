@@ -8,58 +8,58 @@
     <includes local="no">opencv2/imgproc/imgproc.hpp</includes>
     <includes refid="general__exception_8h" local="yes">exceptions/general_exception.h</includes>
     <incdepgraph>
-      <node id="500">
+      <node id="509">
         <label>opencv2/core/core.hpp</label>
       </node>
-      <node id="505">
+      <node id="514">
         <label>string</label>
       </node>
-      <node id="507">
+      <node id="516">
         <label>exception</label>
       </node>
-      <node id="501">
+      <node id="510">
         <label>opencv2/features2d/features2d.hpp</label>
       </node>
-      <node id="504">
+      <node id="513">
         <label>exceptions/general_exception.h</label>
         <link refid="general__exception_8h_source"/>
-        <childnode refid="505" relation="include">
+        <childnode refid="514" relation="include">
         </childnode>
-        <childnode refid="506" relation="include">
+        <childnode refid="515" relation="include">
         </childnode>
       </node>
-      <node id="503">
+      <node id="512">
         <label>opencv2/imgproc/imgproc.hpp</label>
       </node>
-      <node id="499">
+      <node id="508">
         <label>frame_features.h</label>
         <link refid="frame__features_8h_source"/>
-        <childnode refid="500" relation="include">
+        <childnode refid="509" relation="include">
         </childnode>
-        <childnode refid="501" relation="include">
+        <childnode refid="510" relation="include">
         </childnode>
       </node>
-      <node id="506">
+      <node id="515">
         <label>exceptions/base_exception.h</label>
         <link refid="base__exception_8h_source"/>
-        <childnode refid="507" relation="include">
+        <childnode refid="516" relation="include">
         </childnode>
       </node>
-      <node id="502">
+      <node id="511">
         <label>iostream</label>
       </node>
-      <node id="498">
+      <node id="507">
         <label>/home/travis/build/tomas789/tonav/src/frame_features.cpp</label>
         <link refid="frame_features.cpp"/>
-        <childnode refid="499" relation="include">
+        <childnode refid="508" relation="include">
         </childnode>
-        <childnode refid="502" relation="include">
+        <childnode refid="511" relation="include">
         </childnode>
-        <childnode refid="500" relation="include">
+        <childnode refid="509" relation="include">
         </childnode>
-        <childnode refid="503" relation="include">
+        <childnode refid="512" relation="include">
         </childnode>
-        <childnode refid="504" relation="include">
+        <childnode refid="513" relation="include">
         </childnode>
       </node>
     </incdepgraph>

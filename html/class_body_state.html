@@ -117,40 +117,90 @@ $(document).ready(function(){initNavTree('class_body_state.html','');});
 <div class="title">BodyState Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Represents body pose \(x_B\) in filter state.  
+ <a href="class_body_state.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="body__state_8h_source.html">body_state.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:ac95355c4974335a6f69da770d2de30e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac95355c4974335a6f69da770d2de30e0"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>BodyStateType</b> = Eigen::Matrix&lt; double, 16, 1 &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a> = Eigen::Matrix&lt; double, 16, 1 &gt;</td></tr>
+<tr class="memdesc:ac95355c4974335a6f69da770d2de30e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of data structure that holds parameters of <a class="el" href="class_body_state.html" title="Represents body pose  in filter state. ">BodyState</a>. <br/></td></tr>
 <tr class="separator:ac95355c4974335a6f69da770d2de30e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a980cbcae469aa1fc0d7efec5248db0d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a980cbcae469aa1fc0d7efec5248db0d1"></a>
-Eigen::Block&lt; BodyStateType, 4, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationBlock</b> ()</td></tr>
+Eigen::Block&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 4, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body_state.html#a980cbcae469aa1fc0d7efec5248db0d1">getRotationBlock</a> ()</td></tr>
+<tr class="memdesc:a980cbcae469aa1fc0d7efec5248db0d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get part of <a class="el" href="class_body_state.html" title="Represents body pose  in filter state. ">BodyState</a> that represents rotation. <br/></td></tr>
 <tr class="separator:a980cbcae469aa1fc0d7efec5248db0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63c1a3704285d7e76a7d7f5a2e4cbafa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63c1a3704285d7e76a7d7f5a2e4cbafa"></a>
-Eigen::Quaterniond&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationQuaternion</b> ()</td></tr>
-<tr class="separator:a63c1a3704285d7e76a7d7f5a2e4cbafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ed7d0b83717ee344b24e21cfd1e38b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a40ed7d0b83717ee344b24e21cfd1e38b"></a>
+const Eigen::Block&lt; const <br class="typebreak"/>
+<a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 4, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationBlock</b> () const </td></tr>
+<tr class="separator:a40ed7d0b83717ee344b24e21cfd1e38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4210b31a5035b3d9cd64111011a19274"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4210b31a5035b3d9cd64111011a19274"></a>
+Eigen::Quaterniond&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationQuaternion</b> () const </td></tr>
+<tr class="separator:a4210b31a5035b3d9cd64111011a19274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1931ea582df06676f52ed72ec26140a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1931ea582df06676f52ed72ec26140a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setRotationQuaternion</b> (const Eigen::Quaterniond &amp;quat)</td></tr>
 <tr class="separator:ac1931ea582df06676f52ed72ec26140a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b44594cf450da4c6aa2af1b74fa254a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b44594cf450da4c6aa2af1b74fa254a"></a>
-Eigen::Block&lt; BodyStateType, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPositionBlock</b> ()</td></tr>
+Eigen::Block&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPositionBlock</b> ()</td></tr>
 <tr class="separator:a1b44594cf450da4c6aa2af1b74fa254a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8ffc8a6aed56373afaef99cb9f0b69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c8ffc8a6aed56373afaef99cb9f0b69"></a>
+const Eigen::Block&lt; const <br class="typebreak"/>
+<a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPositionBlock</b> () const </td></tr>
+<tr class="separator:a7c8ffc8a6aed56373afaef99cb9f0b69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a732c36a0723224c49a0b2629081bd26d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a732c36a0723224c49a0b2629081bd26d"></a>
-Eigen::Block&lt; BodyStateType, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocityBlock</b> ()</td></tr>
+Eigen::Block&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocityBlock</b> ()</td></tr>
 <tr class="separator:a732c36a0723224c49a0b2629081bd26d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9561a882280672141717c83d8023f31"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9561a882280672141717c83d8023f31"></a>
+const Eigen::Block&lt; const <br class="typebreak"/>
+<a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocityBlock</b> () const </td></tr>
+<tr class="separator:ac9561a882280672141717c83d8023f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfdecc372089f557d447d9d8e910591f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adfdecc372089f557d447d9d8e910591f"></a>
-Eigen::Block&lt; BodyStateType, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAccelerometerBiasBlock</b> ()</td></tr>
+Eigen::Block&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAccelerometerBiasBlock</b> ()</td></tr>
 <tr class="separator:adfdecc372089f557d447d9d8e910591f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b7581478742363dbf597842fdad4e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86b7581478742363dbf597842fdad4e0"></a>
+const Eigen::Block&lt; const <br class="typebreak"/>
+<a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAccelerometerBiasBlock</b> () const </td></tr>
+<tr class="separator:a86b7581478742363dbf597842fdad4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd17dde9368642923d7d2c0e49b3afd2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd17dde9368642923d7d2c0e49b3afd2"></a>
-Eigen::Block&lt; BodyStateType, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGyroscopeBiasBlock</b> ()</td></tr>
+Eigen::Block&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGyroscopeBiasBlock</b> ()</td></tr>
 <tr class="separator:afd17dde9368642923d7d2c0e49b3afd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a299a1a860c42c19d74f8191a2d2241d8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a299a1a860c42c19d74f8191a2d2241d8"></a>
+const Eigen::Block&lt; const <br class="typebreak"/>
+<a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGyroscopeBiasBlock</b> () const </td></tr>
+<tr class="separator:a299a1a860c42c19d74f8191a2d2241d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f08803dcef02a950b09b458231ffbea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f08803dcef02a950b09b458231ffbea"></a>
+Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body_state.html#a4f08803dcef02a950b09b458231ffbea">getRotationEstimateRef</a> ()</td></tr>
+<tr class="memdesc:a4f08803dcef02a950b09b458231ffbea"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( {}^{B_{l}}\hat{\omega}(t) \) <br/></td></tr>
+<tr class="separator:a4f08803dcef02a950b09b458231ffbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa70b22c29e49df42edfc6ff27512e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5fa70b22c29e49df42edfc6ff27512e4"></a>
+const Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationEstimateRef</b> () const </td></tr>
+<tr class="separator:a5fa70b22c29e49df42edfc6ff27512e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eb0e9ec3ae23769abf50f6e75777cd7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9eb0e9ec3ae23769abf50f6e75777cd7"></a>
+Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body_state.html#a9eb0e9ec3ae23769abf50f6e75777cd7">getAccelerationEstimateRef</a> ()</td></tr>
+<tr class="memdesc:a9eb0e9ec3ae23769abf50f6e75777cd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( {}^{B_{l}}\hat{a}(t) \) <br/></td></tr>
+<tr class="separator:a9eb0e9ec3ae23769abf50f6e75777cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169ebe4343b2d213badaa69208cc2eed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a169ebe4343b2d213badaa69208cc2eed"></a>
+const Eigen::Vector3d &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getAccelerationEstimateRef</b> () const </td></tr>
+<tr class="separator:a169ebe4343b2d213badaa69208cc2eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1589f0e96fcf159b77f385157665ef7b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1589f0e96fcf159b77f385157665ef7b"></a>
+Eigen::Quaterniond &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body_state.html#a1589f0e96fcf159b77f385157665ef7b">getRotationToThisFrameRef</a> ()</td></tr>
+<tr class="memdesc:a1589f0e96fcf159b77f385157665ef7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">\( {}_{B_l}^{B_{l+1}}q \) <br/></td></tr>
+<tr class="separator:a1589f0e96fcf159b77f385157665ef7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a482c8b749617c7df011c29f64183db38"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a482c8b749617c7df011c29f64183db38"></a>
+const Eigen::Quaterniond &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationToThisFrameRef</b> () const </td></tr>
+<tr class="separator:a482c8b749617c7df011c29f64183db38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="body__state_8h_source.html#l00007">7</a> of file <a class="el" href="body__state_8h_source.html">body_state.h</a>.</p>
+<div class="textblock"><p>Represents body pose \(x_B\) in filter state. </p>
+<p>I considered merging this with class <a class="el" href="class_camera_pose.html">CameraPose</a> which has a lot in common with this class. I decided not to merge them because <a class="el" href="class_body_state.html" title="Represents body pose  in filter state. ">BodyState</a> has extra \(b_g\) and \(b_a\). </p>
+
+<p>Definition at line <a class="el" href="body__state_8h_source.html#l00014">14</a> of file <a class="el" href="body__state_8h_source.html">body_state.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/tomas789/tonav/include/<a class="el" href="body__state_8h_source.html">body_state.h</a></li>
 <li>/home/travis/build/tomas789/tonav/src/<a class="el" href="body__state_8cpp_source.html">body_state.cpp</a></li>

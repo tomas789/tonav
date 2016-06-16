@@ -11,7 +11,7 @@ var indexSectionsWithContent =
   1: "bcefginprst",
   2: "acdginprstu",
   3: "di",
-  4: "p",
+  4: "bp",
   5: "dt"
 };
 

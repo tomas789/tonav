@@ -1,42 +1,91 @@
 \hypertarget{class_body_state}{\section{Body\-State Class Reference}
 \label{class_body_state}\index{Body\-State@{Body\-State}}
 }
+
+
+Represents body pose $x_B$ in filter state.  
+
+
+
+
+{\ttfamily \#include $<$body\-\_\-state.\-h$>$}
+
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_body_state_ac95355c4974335a6f69da770d2de30e0}{using {\bfseries Body\-State\-Type} = Eigen\-::\-Matrix$<$ double, 16, 1 $>$}\label{class_body_state_ac95355c4974335a6f69da770d2de30e0}
+\hypertarget{class_body_state_ac95355c4974335a6f69da770d2de30e0}{using \hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type} = Eigen\-::\-Matrix$<$ double, 16, 1 $>$}\label{class_body_state_ac95355c4974335a6f69da770d2de30e0}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Type of data structure that holds parameters of \hyperlink{class_body_state}{Body\-State}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_body_state_a980cbcae469aa1fc0d7efec5248db0d1}{Eigen\-::\-Block$<$ Body\-State\-Type, 4, 1 $>$ {\bfseries get\-Rotation\-Block} ()}\label{class_body_state_a980cbcae469aa1fc0d7efec5248db0d1}
+\hypertarget{class_body_state_a980cbcae469aa1fc0d7efec5248db0d1}{Eigen\-::\-Block$<$ \hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 4, 1 $>$ \hyperlink{class_body_state_a980cbcae469aa1fc0d7efec5248db0d1}{get\-Rotation\-Block} ()}\label{class_body_state_a980cbcae469aa1fc0d7efec5248db0d1}
+
+\begin{DoxyCompactList}\small\item\em Get part of \hyperlink{class_body_state}{Body\-State} that represents rotation. \end{DoxyCompactList}\item 
+\hypertarget{class_body_state_a40ed7d0b83717ee344b24e21cfd1e38b}{const Eigen\-::\-Block$<$ const \\*
+\hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 4, 1 $>$ {\bfseries get\-Rotation\-Block} () const }\label{class_body_state_a40ed7d0b83717ee344b24e21cfd1e38b}
 
 \item 
-\hypertarget{class_body_state_a63c1a3704285d7e76a7d7f5a2e4cbafa}{Eigen\-::\-Quaterniond {\bfseries get\-Rotation\-Quaternion} ()}\label{class_body_state_a63c1a3704285d7e76a7d7f5a2e4cbafa}
+\hypertarget{class_body_state_a4210b31a5035b3d9cd64111011a19274}{Eigen\-::\-Quaterniond {\bfseries get\-Rotation\-Quaternion} () const }\label{class_body_state_a4210b31a5035b3d9cd64111011a19274}
 
 \item 
 \hypertarget{class_body_state_ac1931ea582df06676f52ed72ec26140a}{void {\bfseries set\-Rotation\-Quaternion} (const Eigen\-::\-Quaterniond \&quat)}\label{class_body_state_ac1931ea582df06676f52ed72ec26140a}
 
 \item 
-\hypertarget{class_body_state_a1b44594cf450da4c6aa2af1b74fa254a}{Eigen\-::\-Block$<$ Body\-State\-Type, 3, 1 $>$ {\bfseries get\-Position\-Block} ()}\label{class_body_state_a1b44594cf450da4c6aa2af1b74fa254a}
+\hypertarget{class_body_state_a1b44594cf450da4c6aa2af1b74fa254a}{Eigen\-::\-Block$<$ \hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 3, 1 $>$ {\bfseries get\-Position\-Block} ()}\label{class_body_state_a1b44594cf450da4c6aa2af1b74fa254a}
 
 \item 
-\hypertarget{class_body_state_a732c36a0723224c49a0b2629081bd26d}{Eigen\-::\-Block$<$ Body\-State\-Type, 3, 1 $>$ {\bfseries get\-Velocity\-Block} ()}\label{class_body_state_a732c36a0723224c49a0b2629081bd26d}
+\hypertarget{class_body_state_a7c8ffc8a6aed56373afaef99cb9f0b69}{const Eigen\-::\-Block$<$ const \\*
+\hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 3, 1 $>$ {\bfseries get\-Position\-Block} () const }\label{class_body_state_a7c8ffc8a6aed56373afaef99cb9f0b69}
 
 \item 
-\hypertarget{class_body_state_adfdecc372089f557d447d9d8e910591f}{Eigen\-::\-Block$<$ Body\-State\-Type, 3, 1 $>$ {\bfseries get\-Accelerometer\-Bias\-Block} ()}\label{class_body_state_adfdecc372089f557d447d9d8e910591f}
+\hypertarget{class_body_state_a732c36a0723224c49a0b2629081bd26d}{Eigen\-::\-Block$<$ \hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 3, 1 $>$ {\bfseries get\-Velocity\-Block} ()}\label{class_body_state_a732c36a0723224c49a0b2629081bd26d}
 
 \item 
-\hypertarget{class_body_state_afd17dde9368642923d7d2c0e49b3afd2}{Eigen\-::\-Block$<$ Body\-State\-Type, 3, 1 $>$ {\bfseries get\-Gyroscope\-Bias\-Block} ()}\label{class_body_state_afd17dde9368642923d7d2c0e49b3afd2}
+\hypertarget{class_body_state_ac9561a882280672141717c83d8023f31}{const Eigen\-::\-Block$<$ const \\*
+\hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 3, 1 $>$ {\bfseries get\-Velocity\-Block} () const }\label{class_body_state_ac9561a882280672141717c83d8023f31}
+
+\item 
+\hypertarget{class_body_state_adfdecc372089f557d447d9d8e910591f}{Eigen\-::\-Block$<$ \hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 3, 1 $>$ {\bfseries get\-Accelerometer\-Bias\-Block} ()}\label{class_body_state_adfdecc372089f557d447d9d8e910591f}
+
+\item 
+\hypertarget{class_body_state_a86b7581478742363dbf597842fdad4e0}{const Eigen\-::\-Block$<$ const \\*
+\hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 3, 1 $>$ {\bfseries get\-Accelerometer\-Bias\-Block} () const }\label{class_body_state_a86b7581478742363dbf597842fdad4e0}
+
+\item 
+\hypertarget{class_body_state_afd17dde9368642923d7d2c0e49b3afd2}{Eigen\-::\-Block$<$ \hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 3, 1 $>$ {\bfseries get\-Gyroscope\-Bias\-Block} ()}\label{class_body_state_afd17dde9368642923d7d2c0e49b3afd2}
+
+\item 
+\hypertarget{class_body_state_a299a1a860c42c19d74f8191a2d2241d8}{const Eigen\-::\-Block$<$ const \\*
+\hyperlink{class_body_state_ac95355c4974335a6f69da770d2de30e0}{Body\-State\-Type}, 3, 1 $>$ {\bfseries get\-Gyroscope\-Bias\-Block} () const }\label{class_body_state_a299a1a860c42c19d74f8191a2d2241d8}
+
+\item 
+\hypertarget{class_body_state_a4f08803dcef02a950b09b458231ffbea}{Eigen\-::\-Vector3d \& \hyperlink{class_body_state_a4f08803dcef02a950b09b458231ffbea}{get\-Rotation\-Estimate\-Ref} ()}\label{class_body_state_a4f08803dcef02a950b09b458231ffbea}
+
+\begin{DoxyCompactList}\small\item\em $ {}^{B_{l}}\hat{\omega}(t) $ \end{DoxyCompactList}\item 
+\hypertarget{class_body_state_a5fa70b22c29e49df42edfc6ff27512e4}{const Eigen\-::\-Vector3d \& {\bfseries get\-Rotation\-Estimate\-Ref} () const }\label{class_body_state_a5fa70b22c29e49df42edfc6ff27512e4}
+
+\item 
+\hypertarget{class_body_state_a9eb0e9ec3ae23769abf50f6e75777cd7}{Eigen\-::\-Vector3d \& \hyperlink{class_body_state_a9eb0e9ec3ae23769abf50f6e75777cd7}{get\-Acceleration\-Estimate\-Ref} ()}\label{class_body_state_a9eb0e9ec3ae23769abf50f6e75777cd7}
+
+\begin{DoxyCompactList}\small\item\em $ {}^{B_{l}}\hat{a}(t) $ \end{DoxyCompactList}\item 
+\hypertarget{class_body_state_a169ebe4343b2d213badaa69208cc2eed}{const Eigen\-::\-Vector3d \& {\bfseries get\-Acceleration\-Estimate\-Ref} () const }\label{class_body_state_a169ebe4343b2d213badaa69208cc2eed}
+
+\item 
+\hypertarget{class_body_state_a1589f0e96fcf159b77f385157665ef7b}{Eigen\-::\-Quaterniond \& \hyperlink{class_body_state_a1589f0e96fcf159b77f385157665ef7b}{get\-Rotation\-To\-This\-Frame\-Ref} ()}\label{class_body_state_a1589f0e96fcf159b77f385157665ef7b}
+
+\begin{DoxyCompactList}\small\item\em $ {}_{B_l}^{B_{l+1}}q $ \end{DoxyCompactList}\item 
+\hypertarget{class_body_state_a482c8b749617c7df011c29f64183db38}{const Eigen\-::\-Quaterniond \& {\bfseries get\-Rotation\-To\-This\-Frame\-Ref} () const }\label{class_body_state_a482c8b749617c7df011c29f64183db38}
 
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+Represents body pose $x_B$ in filter state. 
 
+I considered merging this with class \hyperlink{class_camera_pose}{Camera\-Pose} which has a lot in common with this class. I decided not to merge them because \hyperlink{class_body_state}{Body\-State} has extra $b_g$ and $b_a$. 
 
-Definition at line 7 of file body\-\_\-state.\-h.
+Definition at line 14 of file body\-\_\-state.\-h.
 
 
 

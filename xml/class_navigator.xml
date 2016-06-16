@@ -49,7 +49,7 @@
         <briefdescription>
 <para>Run navigation node from dataset. </para>        </briefdescription>
         <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This is deprecated. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or it&apos;s convenience wrapper <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
+<para><xrefsect id="deprecated_1_deprecated000004"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This is deprecated. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or it&apos;s convenience wrapper <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead.</para></xrefdescription></xrefsect></para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>argc</parametername>
 </parameternamelist>
@@ -115,7 +115,7 @@
     <briefdescription>
 <para>Perform navigation from dataset. </para>    </briefdescription>
     <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This is deprecated. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or it&apos;s convenience wrapper <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead. </para></xrefdescription></xrefsect></para>    </detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000003"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This is deprecated. Use <ref refid="class_tonav" kindref="compound">Tonav</ref> or it&apos;s convenience wrapper <ref refid="class_tonav_ros" kindref="compound">TonavRos</ref> instead. </para></xrefdescription></xrefsect></para>    </detaileddescription>
     <location file="/home/travis/build/tomas789/tonav/include/navigator.h" line="16" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/navigator.h" bodystart="16" bodyend="35"/>
     <listofallmembers>
       <member refid="class_navigator_1ae92bfd56f6030f8ed1fa8fcdb3e45f7a" prot="private" virt="non-virtual"><scope>Navigator</scope><name>options_description_</name></member>

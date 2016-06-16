@@ -138,9 +138,9 @@ std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getActiveFeatu
 <tr class="memitem:ad52f534b1a0b4841a4c8d5e04471f0a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad52f534b1a0b4841a4c8d5e04471f0a1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setActiveFeaturesCount</b> (std::size_t i)</td></tr>
 <tr class="separator:ad52f534b1a0b4841a4c8d5e04471f0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfe976d10448deee4b714506c3ab6357"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acfe976d10448deee4b714506c3ab6357"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>decreaseActiveFeaturesCount</b> ()</td></tr>
-<tr class="separator:acfe976d10448deee4b714506c3ab6357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44b30ca00553c6f0fbebc4410e40e074"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a44b30ca00553c6f0fbebc4410e40e074"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>decreaseActiveFeaturesCount</b> (int feature_id)</td></tr>
+<tr class="separator:a44b30ca00553c6f0fbebc4410e40e074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adeec70b16372d5aede066da2b6bf5d4a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adeec70b16372d5aede066da2b6bf5d4a"></a>
 Eigen::Block&lt; CameraPoseType, 4, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationForBodyPoseBlock</b> ()</td></tr>
 <tr class="separator:adeec70b16372d5aede066da2b6bf5d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -153,10 +153,13 @@ Eigen::Block&lt; CameraPoseType, 3, 1 &gt;&#160;</td><td class="memItemRight" va
 <tr class="memitem:aea5ef3206eb4f8929495dfc8f3a93571"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea5ef3206eb4f8929495dfc8f3a93571"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isValid</b> () const </td></tr>
 <tr class="separator:aea5ef3206eb4f8929495dfc8f3a93571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f61bc8b640a1cba046dc2c1b5cc93d5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f61bc8b640a1cba046dc2c1b5cc93d5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>rememberFeatureId</b> (int feature_id)</td></tr>
+<tr class="separator:a0f61bc8b640a1cba046dc2c1b5cc93d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="camera__pose_8h_source.html#l00011">11</a> of file <a class="el" href="camera__pose_8h_source.html">camera_pose.h</a>.</p>
+<p>Definition at line <a class="el" href="camera__pose_8h_source.html#l00012">12</a> of file <a class="el" href="camera__pose_8h_source.html">camera_pose.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/tomas789/tonav/include/<a class="el" href="camera__pose_8h_source.html">camera_pose.h</a></li>
 <li>/home/travis/build/tomas789/tonav/src/<a class="el" href="camera__pose_8cpp_source.html">camera_pose.cpp</a></li>

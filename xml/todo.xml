@@ -5,6 +5,8 @@
     <title>Todo List</title>
     <detaileddescription>
 <para><variablelist>
+<varlistentry><term><anchor id="todo_1_todo000002"/>Member <ref refid="class_feature_track_1aeba4f7f42fe7c065a17bd26e2817dcbe" kindref="member">FeatureTrack::getFeatureId</ref>  () const </term></varlistentry>
+<listitem><para>This should be deleted in the future. I will keep it here just for case ...  </para></listitem>
 <varlistentry><term><anchor id="todo_1_todo000001"/>Member <ref refid="classimage__transport_1_1_camera_subscriber_1a5dca2655dfe5c885ff992693084530b0" kindref="member">image_transport::CameraSubscriber::getNumPublishers</ref>  () const </term></varlistentry>
 <listitem><para>Fix this when message_filters::Subscriber has getNumPublishers() </para></listitem>
 </variablelist>

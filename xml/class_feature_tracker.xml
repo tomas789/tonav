@@ -14,23 +14,25 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="17" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="17" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="21" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="21" bodyend="-1"/>
       </memberdef>
       </sectiondef>
-      <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_feature_tracker_1a195dd5e3ad4de16ad308a286b3cad686" prot="private" static="no" mutable="no">
-        <type>std::size_t</type>
-        <definition>std::size_t FeatureTracker::frame_number_</definition>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_feature_tracker_1a34f7bc7cd29643e53d23b7d500d21739" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Filter</definition>
         <argsstring></argsstring>
-        <name>frame_number_</name>
+        <name>Filter</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="23" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="23" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="19" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="19" bodyend="-1"/>
       </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="class_feature_tracker_1a05a821be736f56ca4b7cc843cd8fa749" prot="private" static="no" mutable="no">
         <type>cv::Ptr&lt; cv::FeatureDetector &gt;</type>
         <definition>cv::Ptr&lt;cv::FeatureDetector&gt; FeatureTracker::detector_</definition>
@@ -42,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="24" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="24" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="27" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_feature_tracker_1a4b2e2783b8e4af24c0852d56352e0d21" prot="private" static="no" mutable="no">
         <type>cv::Ptr&lt; cv::DescriptorExtractor &gt;</type>
@@ -55,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="25" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="25" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_feature_tracker_1a82e990668ae9d8638d952dee0b50aebf" prot="private" static="no" mutable="no">
         <type>cv::Ptr&lt; cv::DescriptorMatcher &gt;</type>
@@ -68,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="26" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="26" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="29" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_feature_tracker_1a4de6e5cba3b7fb183c25372224c3d756" prot="private" static="no" mutable="no">
         <type><ref refid="class_frame_features" kindref="compound">FrameFeatures</ref></type>
@@ -81,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="27" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="27" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="30" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="30" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -96,7 +98,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="18" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="16" bodyend="22"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="22" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="16" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="class_feature_tracker_1a1d44cc6cd06ced4f321d2ecebfd7b069" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>feature_track_list</type>
@@ -117,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="24" bodyend="87"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="24" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="22" bodyend="90"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -136,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="29" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="89" bodyend="104"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="32" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="92" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="class_feature_tracker_1ad8132a92654790b056c446b45d7b83f0" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -169,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="30" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="106" bodyend="135"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="33" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="109" bodyend="138"/>
       </memberdef>
       <memberdef kind="function" id="class_feature_tracker_1a000b9142d84d2ca0d7137382cd44cb3f" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -190,7 +192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="33" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="137" bodyend="146"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="36" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="140" bodyend="149"/>
       </memberdef>
       <memberdef kind="function" id="class_feature_tracker_1a4ee2e5f60e9ba9aed83820d5efa2e563" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -215,14 +217,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="34" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="148" bodyend="159"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="37" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_tracker.cpp" bodystart="151" bodyend="162"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="15" bodyend="36"/>
+    <location file="/home/travis/build/tomas789/tonav/include/feature_tracker.h" line="17" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_tracker.h" bodystart="17" bodyend="39"/>
     <listofallmembers>
       <member refid="class_feature_tracker_1ad9e7dee562f7f6c4ec8db2737c80d268" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>computeDistanceLimitForMatch</name></member>
       <member refid="class_feature_tracker_1a4ee2e5f60e9ba9aed83820d5efa2e563" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>createNewFeatureTracks</name></member>
@@ -231,7 +233,7 @@
       <member refid="class_feature_tracker_1a4b2e2783b8e4af24c0852d56352e0d21" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>extractor_</name></member>
       <member refid="class_feature_tracker_1a8c26ba2ee4c3653c6082a6ceec345f8a" prot="public" virt="non-virtual"><scope>FeatureTracker</scope><name>feature_track_list</name></member>
       <member refid="class_feature_tracker_1a8c28706f74ecbee7a3631fae638997e0" prot="public" virt="non-virtual"><scope>FeatureTracker</scope><name>FeatureTracker</name></member>
-      <member refid="class_feature_tracker_1a195dd5e3ad4de16ad308a286b3cad686" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>frame_number_</name></member>
+      <member refid="class_feature_tracker_1a34f7bc7cd29643e53d23b7d500d21739" prot="public" virt="non-virtual"><scope>FeatureTracker</scope><name>Filter</name></member>
       <member refid="class_feature_tracker_1a000b9142d84d2ca0d7137382cd44cb3f" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>markOutOfViewFeatures</name></member>
       <member refid="class_feature_tracker_1a82e990668ae9d8638d952dee0b50aebf" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>matcher_</name></member>
       <member refid="class_feature_tracker_1a4de6e5cba3b7fb183c25372224c3d756" prot="private" virt="non-virtual"><scope>FeatureTracker</scope><name>previous_frame_features_</name></member>

@@ -126,33 +126,38 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>StateType</b> = Eige
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a595c5e8bfb709f9a73346300345728bb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a595c5e8bfb709f9a73346300345728bb"></a>
+<tr class="memitem:a931d62079a89ceacc6e3f62cad16fe77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a931d62079a89ceacc6e3f62cad16fe77"></a>
 <a class="el" href="class_body_state.html">BodyState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getBodyStateRef</b> ()</td></tr>
-<tr class="separator:a595c5e8bfb709f9a73346300345728bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afae8c864f77190b9a870dfe88d821a77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afae8c864f77190b9a870dfe88d821a77"></a>
+<tr class="separator:a931d62079a89ceacc6e3f62cad16fe77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a4b70d8985b4552f4ed8e5d36409e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7a4b70d8985b4552f4ed8e5d36409e3"></a>
 const <a class="el" href="class_body_state.html">BodyState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getBodyStateRef</b> () const </td></tr>
-<tr class="separator:afae8c864f77190b9a870dfe88d821a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a549088ec74cb2262e397b929abc174d2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a549088ec74cb2262e397b929abc174d2"></a>
-Eigen::Block&lt; StateType, 4, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationBlock</b> ()</td></tr>
-<tr class="separator:a549088ec74cb2262e397b929abc174d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:af7a4b70d8985b4552f4ed8e5d36409e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fb9693aac0a091bbcc1555b44902570"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fb9693aac0a091bbcc1555b44902570"></a>
+Eigen::Block<br class="typebreak"/>
+&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyState::BodyStateType</a>, 4, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationBlock</b> ()</td></tr>
+<tr class="separator:a0fb9693aac0a091bbcc1555b44902570"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f61beb08bf43811cebea645c80949ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f61beb08bf43811cebea645c80949ac"></a>
 Eigen::Quaterniond&#160;</td><td class="memItemRight" valign="bottom"><b>getRotationQuaternion</b> ()</td></tr>
 <tr class="separator:a5f61beb08bf43811cebea645c80949ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2a6e477d01da9521267781a73757838"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2a6e477d01da9521267781a73757838"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setRotationQuaternion</b> (const Eigen::Quaterniond &amp;quat)</td></tr>
 <tr class="separator:ab2a6e477d01da9521267781a73757838"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2dd9af9a0722a05cbc59981cf40aead"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af2dd9af9a0722a05cbc59981cf40aead"></a>
-Eigen::Block&lt; StateType, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPositionBlock</b> ()</td></tr>
-<tr class="separator:af2dd9af9a0722a05cbc59981cf40aead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a239c2732f1a3d647c21b96f5d53dd215"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a239c2732f1a3d647c21b96f5d53dd215"></a>
-Eigen::Block&lt; StateType, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocityBlock</b> ()</td></tr>
-<tr class="separator:a239c2732f1a3d647c21b96f5d53dd215"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43b485d8c02d6eb8e37cd8f2323e9e43"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43b485d8c02d6eb8e37cd8f2323e9e43"></a>
-Eigen::Block&lt; StateType, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAccelerometerBiasBlock</b> ()</td></tr>
-<tr class="separator:a43b485d8c02d6eb8e37cd8f2323e9e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bb562801b8b34026dad74bd4223c06e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8bb562801b8b34026dad74bd4223c06e"></a>
-Eigen::Block&lt; StateType, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGyroscopeBiasBlock</b> ()</td></tr>
-<tr class="separator:a8bb562801b8b34026dad74bd4223c06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93091ee18e0421b6b99f6bfe039199d6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93091ee18e0421b6b99f6bfe039199d6"></a>
+Eigen::Block<br class="typebreak"/>
+&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyState::BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getPositionBlock</b> ()</td></tr>
+<tr class="separator:a93091ee18e0421b6b99f6bfe039199d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8b9f3985ea35ba0f9f4f273ae8c1f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1b8b9f3985ea35ba0f9f4f273ae8c1f2"></a>
+Eigen::Block<br class="typebreak"/>
+&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyState::BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocityBlock</b> ()</td></tr>
+<tr class="separator:a1b8b9f3985ea35ba0f9f4f273ae8c1f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a641cf74718074f9334fc88ac9d15169a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a641cf74718074f9334fc88ac9d15169a"></a>
+Eigen::Block<br class="typebreak"/>
+&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyState::BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getAccelerometerBiasBlock</b> ()</td></tr>
+<tr class="separator:a641cf74718074f9334fc88ac9d15169a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94139185d217749e5afe23e6ad79bb12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94139185d217749e5afe23e6ad79bb12"></a>
+Eigen::Block<br class="typebreak"/>
+&lt; <a class="el" href="class_body_state.html#ac95355c4974335a6f69da770d2de30e0">BodyState::BodyStateType</a>, 3, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGyroscopeBiasBlock</b> ()</td></tr>
+<tr class="separator:a94139185d217749e5afe23e6ad79bb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8686bb8e54e2e9902c28095f8c623745"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8686bb8e54e2e9902c28095f8c623745"></a>
 Eigen::Block&lt; StateType, 9, 1 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getGyroscopeShapeVectorizedBlock</b> ()</td></tr>
 <tr class="separator:a8686bb8e54e2e9902c28095f8c623745"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,6 +215,9 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>uglyPri
 <tr class="memitem:a9fdc71df11cf72369b86be2eaffcea27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9fdc71df11cf72369b86be2eaffcea27"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>appendCameraPose</b> (const <a class="el" href="class_camera_pose.html">CameraPose</a> &amp;camera_pose)</td></tr>
 <tr class="separator:a9fdc71df11cf72369b86be2eaffcea27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0638c19679b93d95f812bd38758f05ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0638c19679b93d95f812bd38758f05ca"></a>
+std::list&lt; <a class="el" href="class_camera_pose.html">CameraPose</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraPosesRef</b> ()</td></tr>
+<tr class="separator:a0638c19679b93d95f812bd38758f05ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">

@@ -7,13 +7,28 @@
   <compound refid="class_body_state" kind="class"><name>BodyState</name>
     <member refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" kind="typedef"><name>BodyStateType</name></member>
     <member refid="class_body_state_1aa7124f16546d39354308de9742d0bea1" kind="variable"><name>body_state_</name></member>
+    <member refid="class_body_state_1a26e86fcb36addb8348418ac3fa3cbc32" kind="variable"><name>rotation_estimate_</name></member>
+    <member refid="class_body_state_1a0c3e1b2856e90a0ae73cb6d6fc5d72f3" kind="variable"><name>acceleration_estimate_</name></member>
+    <member refid="class_body_state_1a9630b65843278ad4318686b861fb3893" kind="variable"><name>rotation_to_this_frame_</name></member>
+    <member refid="class_body_state_1ab26f506ebfe127567dc9d8664e6abcb6" kind="function"><name>BodyState</name></member>
     <member refid="class_body_state_1a980cbcae469aa1fc0d7efec5248db0d1" kind="function"><name>getRotationBlock</name></member>
-    <member refid="class_body_state_1a63c1a3704285d7e76a7d7f5a2e4cbafa" kind="function"><name>getRotationQuaternion</name></member>
+    <member refid="class_body_state_1a40ed7d0b83717ee344b24e21cfd1e38b" kind="function"><name>getRotationBlock</name></member>
+    <member refid="class_body_state_1a4210b31a5035b3d9cd64111011a19274" kind="function"><name>getRotationQuaternion</name></member>
     <member refid="class_body_state_1ac1931ea582df06676f52ed72ec26140a" kind="function"><name>setRotationQuaternion</name></member>
     <member refid="class_body_state_1a1b44594cf450da4c6aa2af1b74fa254a" kind="function"><name>getPositionBlock</name></member>
+    <member refid="class_body_state_1a7c8ffc8a6aed56373afaef99cb9f0b69" kind="function"><name>getPositionBlock</name></member>
     <member refid="class_body_state_1a732c36a0723224c49a0b2629081bd26d" kind="function"><name>getVelocityBlock</name></member>
+    <member refid="class_body_state_1ac9561a882280672141717c83d8023f31" kind="function"><name>getVelocityBlock</name></member>
     <member refid="class_body_state_1adfdecc372089f557d447d9d8e910591f" kind="function"><name>getAccelerometerBiasBlock</name></member>
+    <member refid="class_body_state_1a86b7581478742363dbf597842fdad4e0" kind="function"><name>getAccelerometerBiasBlock</name></member>
     <member refid="class_body_state_1afd17dde9368642923d7d2c0e49b3afd2" kind="function"><name>getGyroscopeBiasBlock</name></member>
+    <member refid="class_body_state_1a299a1a860c42c19d74f8191a2d2241d8" kind="function"><name>getGyroscopeBiasBlock</name></member>
+    <member refid="class_body_state_1a4f08803dcef02a950b09b458231ffbea" kind="function"><name>getRotationEstimateRef</name></member>
+    <member refid="class_body_state_1a5fa70b22c29e49df42edfc6ff27512e4" kind="function"><name>getRotationEstimateRef</name></member>
+    <member refid="class_body_state_1a9eb0e9ec3ae23769abf50f6e75777cd7" kind="function"><name>getAccelerationEstimateRef</name></member>
+    <member refid="class_body_state_1a169ebe4343b2d213badaa69208cc2eed" kind="function"><name>getAccelerationEstimateRef</name></member>
+    <member refid="class_body_state_1a1589f0e96fcf159b77f385157665ef7b" kind="function"><name>getRotationToThisFrameRef</name></member>
+    <member refid="class_body_state_1a482c8b749617c7df011c29f64183db38" kind="function"><name>getRotationToThisFrameRef</name></member>
   </compound>
   <compound refid="class_calibration" kind="class"><name>Calibration</name>
     <member refid="class_calibration_1a8ede976d782d5bf475fab7a162c03c5e" kind="variable"><name>max_camera_poses_</name></member>
@@ -83,6 +98,7 @@
   </compound>
   <compound refid="class_camera_pose" kind="class"><name>CameraPose</name>
     <member refid="class_camera_pose_1a6898788bbfddfab4a5bf78d911477bf4" kind="typedef"><name>CameraPoseType</name></member>
+    <member refid="class_camera_pose_1a3b97d378e1e0a08aa208318024f9ee59" kind="variable"><name>feature_ids_</name></member>
     <member refid="class_camera_pose_1ad3adf8335a31145e9905eae1fff0708f" kind="variable"><name>camera_pose_</name></member>
     <member refid="class_camera_pose_1a77c9ea1d0386f1ca0daac90fa609fd35" kind="variable"><name>pose_id_</name></member>
     <member refid="class_camera_pose_1a90d2e7704a89768d74b02c01abd28ce9" kind="variable"><name>features_active_</name></member>
@@ -91,11 +107,12 @@
     <member refid="class_camera_pose_1a91fe393ed7bd9c638198a7e138e3926c" kind="function"><name>poseId</name></member>
     <member refid="class_camera_pose_1ab690a1975e061c75e2431c2f671d5637" kind="function"><name>getActiveFeaturesCount</name></member>
     <member refid="class_camera_pose_1ad52f534b1a0b4841a4c8d5e04471f0a1" kind="function"><name>setActiveFeaturesCount</name></member>
-    <member refid="class_camera_pose_1acfe976d10448deee4b714506c3ab6357" kind="function"><name>decreaseActiveFeaturesCount</name></member>
+    <member refid="class_camera_pose_1a44b30ca00553c6f0fbebc4410e40e074" kind="function"><name>decreaseActiveFeaturesCount</name></member>
     <member refid="class_camera_pose_1adeec70b16372d5aede066da2b6bf5d4a" kind="function"><name>getRotationForBodyPoseBlock</name></member>
     <member refid="class_camera_pose_1af518728cc70c31460a20fc0f6f3f40a4" kind="function"><name>getPositionForBodyPoseBlock</name></member>
     <member refid="class_camera_pose_1ae15933c2b5176d011135164962639a99" kind="function"><name>getVelocityForBodyPoseBlock</name></member>
     <member refid="class_camera_pose_1aea5ef3206eb4f8929495dfc8f3a93571" kind="function"><name>isValid</name></member>
+    <member refid="class_camera_pose_1a0f61bc8b640a1cba046dc2c1b5cc93d5" kind="function"><name>rememberFeatureId</name></member>
   </compound>
   <compound refid="classimage__transport_1_1_camera_publisher" kind="class"><name>image_transport::CameraPublisher</name>
     <member refid="classimage__transport_1_1_camera_publisher_1a4fd7e92afca5a06ec90eec11747e91db" kind="typedef"><name>ImplPtr</name></member>
@@ -140,19 +157,23 @@
     <member refid="classimage__transport_1_1_exception_1a84e9a474ba9e6037e383264d96cec958" kind="function"><name>Exception</name></member>
   </compound>
   <compound refid="class_feature_track" kind="class"><name>FeatureTrack</name>
+    <member refid="class_feature_track_1a6496740a64ec66c5025c067bae047879" kind="variable"><name>feature_id_</name></member>
     <member refid="class_feature_track_1abcd85eb76a80f0bf0fe06403b7a1b418" kind="variable"><name>is_out_of_view_</name></member>
-    <member refid="class_feature_track_1ac2ba060693c052da317ab99c890c765c" kind="variable"><name>first_frame_number_</name></member>
+    <member refid="class_feature_track_1a2fb637d020b11726edaae97c0dc748b1" kind="variable"><name>was_used_for_residualization_</name></member>
     <member refid="class_feature_track_1a9ff68e9bda4336fe891edac8db34f706" kind="variable"><name>positions_</name></member>
-    <member refid="class_feature_track_1ade7f659359480dab8f8ec7ace7625467" kind="function"><name>FeatureTrack</name></member>
+    <member refid="class_feature_track_1a4c902146f4ba3c4942d2ecdfdab2bcba" kind="function"><name>FeatureTrack</name></member>
     <member refid="class_feature_track_1a5f13b226ac16fb0c9abe692c17f0f0c6" kind="function"><name>addFeaturePosition</name></member>
     <member refid="class_feature_track_1aa21cd2b1af1f2aaea1e7d19631f80474" kind="function"><name>revertLastPosition</name></member>
-    <member refid="class_feature_track_1a1635683732cdfda103a37d926d2efbf9" kind="function"><name>getFirstFrameNumber</name></member>
+    <member refid="class_feature_track_1aa37fc3152eb3320a1161bdc638da2e09" kind="function"><name>posesTrackedCount</name></member>
     <member refid="class_feature_track_1a966f8f018b7305d764216880f4a6f8ba" kind="function"><name>isOutOfView</name></member>
     <member refid="class_feature_track_1a75a507f6ac11d3a9319523d131c7949d" kind="function"><name>setOutOfView</name></member>
+    <member refid="class_feature_track_1abd64cf7785392e852bb93409fd063917" kind="function"><name>wasUsedForResidualization</name></member>
+    <member refid="class_feature_track_1a6317ed29fff383fc365d64d6c5ce1aa2" kind="function"><name>setWasUsedForResidualization</name></member>
+    <member refid="class_feature_track_1aeba4f7f42fe7c065a17bd26e2817dcbe" kind="function"><name>getFeatureId</name></member>
   </compound>
   <compound refid="class_feature_tracker" kind="class"><name>FeatureTracker</name>
     <member refid="class_feature_tracker_1a8c26ba2ee4c3653c6082a6ceec345f8a" kind="typedef"><name>feature_track_list</name></member>
-    <member refid="class_feature_tracker_1a195dd5e3ad4de16ad308a286b3cad686" kind="variable"><name>frame_number_</name></member>
+    <member refid="class_feature_tracker_1a34f7bc7cd29643e53d23b7d500d21739" kind="friend"><name>Filter</name></member>
     <member refid="class_feature_tracker_1a05a821be736f56ca4b7cc843cd8fa749" kind="variable"><name>detector_</name></member>
     <member refid="class_feature_tracker_1a4b2e2783b8e4af24c0852d56352e0d21" kind="variable"><name>extractor_</name></member>
     <member refid="class_feature_tracker_1a82e990668ae9d8638d952dee0b50aebf" kind="variable"><name>matcher_</name></member>
@@ -174,9 +195,10 @@
     <member refid="class_filter_1ac00d9ce620e60b2c8b26ca9cad7e1b39" kind="function"><name>Filter</name></member>
     <member refid="class_filter_1a5742b1247b9f92a9148d99386cdd3876" kind="function"><name>initialize</name></member>
     <member refid="class_filter_1a27176eb65976f98cdc9495b4fdfc3296" kind="function"><name>stepInertial</name></member>
-    <member refid="class_filter_1a1fad49c62892905f713de0bf66d9f3c7" kind="function"><name>stepCamera</name></member>
-    <member refid="class_filter_1a3ed7acd6fff45ead8b4209d4e31a8097" kind="function"><name>propagateRotation</name></member>
-    <member refid="class_filter_1a778f444068abe887fd58e02f00be6121" kind="function"><name>propagateVelocityAndPosition</name></member>
+    <member refid="class_filter_1aa28ba41a7503afe19bdcc2a8b85f6adc" kind="function"><name>stepCamera</name></member>
+    <member refid="class_filter_1a2767a830213940f97fad6c472684598d" kind="function"><name>propagateBodyState</name></member>
+    <member refid="class_filter_1ac5c7f21b6a486de46946e296affb00b4" kind="function"><name>propagateRotation</name></member>
+    <member refid="class_filter_1ae98ff24d5d95e65584fa6413f64bb9aa" kind="function"><name>propagateVelocityAndPosition</name></member>
     <member refid="class_filter_1ad046b83209a1f03d65ac75f16b538546" kind="function"><name>setGlobalGravity</name></member>
     <member refid="class_filter_1aeeb0c2e971a47c73c2f950aa8890f1ac" kind="function"><name>getGlobalGravity</name></member>
     <member refid="class_filter_1a936ea0f9f4f587d0cd9bc26a4a73df34" kind="function"><name>getCurrentPosition</name></member>
@@ -187,6 +209,7 @@
     <member refid="class_filter_1ab0db3877232b9fa66f5dd8ebe4385234" kind="function"><name>initializeCameraCalibration</name></member>
     <member refid="class_filter_1ab326892073289dc55496876cf56e64ee" kind="function"><name>initializeBodyPoses</name></member>
     <member refid="class_filter_1a7c142cfe493dbfdc445f3c5b02b60ccc" kind="function"><name>augment</name></member>
+    <member refid="class_filter_1a483bb0345aaaeefe4f9eb33495f4de21" kind="function"><name>pruneCameraPoses</name></member>
     <member refid="class_filter_1a5a67d5f280f4ddd173dff97fb65ae079" kind="function"><name>vectorizeMatrix</name></member>
     <member refid="class_filter_1a35ead90b530777757cabfd503f608844" kind="function"><name>unvectorizeMatrix</name></member>
     <member refid="class_filter_1a06bea04b55f4483660aa3bd5f4c13619" kind="function"><name>omegaMatrix</name></member>
@@ -195,20 +218,23 @@
   <compound refid="class_filter_state" kind="class"><name>FilterState</name>
     <member refid="class_filter_state_1a26539bef949b11d11deb68ab8fba5598" kind="typedef"><name>StateType</name></member>
     <member refid="class_filter_state_1af39228694a2a4a868043e75e8515ca6b" kind="variable"><name>body_state_</name></member>
+    <member refid="class_filter_state_1aaa7d477d4bcbedd89376493eddc454cc" kind="variable"><name>gyroscope_shape_</name></member>
+    <member refid="class_filter_state_1a32f74c5a0e5775ed9a0c50aab66431b0" kind="variable"><name>g_sensitivity_</name></member>
+    <member refid="class_filter_state_1a887796632c100cbfa23166d6e0a05fc7" kind="variable"><name>accelerometer_shape_</name></member>
+    <member refid="class_filter_state_1a629c50bfbab55caef2f0d1e0262481b4" kind="variable"><name>poses_</name></member>
     <member refid="class_filter_state_1a99125bb35efc27cdef7b0301fbe3f1e2" kind="variable"><name>state_</name></member>
     <member refid="class_filter_state_1a53c85f641be38d478116965289636003" kind="variable"><name>rotation_to_this_frame_</name></member>
     <member refid="class_filter_state_1a2ed6fb431a10be370860f4d613eb1bb6" kind="variable"><name>rotation_estimate_</name></member>
     <member refid="class_filter_state_1a7bf9ec3f4726859b9fbdffceee517ad2" kind="variable"><name>acceleration_estimate_</name></member>
-    <member refid="class_filter_state_1a629c50bfbab55caef2f0d1e0262481b4" kind="variable"><name>poses_</name></member>
-    <member refid="class_filter_state_1a595c5e8bfb709f9a73346300345728bb" kind="function"><name>getBodyStateRef</name></member>
-    <member refid="class_filter_state_1afae8c864f77190b9a870dfe88d821a77" kind="function"><name>getBodyStateRef</name></member>
-    <member refid="class_filter_state_1a549088ec74cb2262e397b929abc174d2" kind="function"><name>getRotationBlock</name></member>
+    <member refid="class_filter_state_1a931d62079a89ceacc6e3f62cad16fe77" kind="function"><name>getBodyStateRef</name></member>
+    <member refid="class_filter_state_1af7a4b70d8985b4552f4ed8e5d36409e3" kind="function"><name>getBodyStateRef</name></member>
+    <member refid="class_filter_state_1a0fb9693aac0a091bbcc1555b44902570" kind="function"><name>getRotationBlock</name></member>
     <member refid="class_filter_state_1a5f61beb08bf43811cebea645c80949ac" kind="function"><name>getRotationQuaternion</name></member>
     <member refid="class_filter_state_1ab2a6e477d01da9521267781a73757838" kind="function"><name>setRotationQuaternion</name></member>
-    <member refid="class_filter_state_1af2dd9af9a0722a05cbc59981cf40aead" kind="function"><name>getPositionBlock</name></member>
-    <member refid="class_filter_state_1a239c2732f1a3d647c21b96f5d53dd215" kind="function"><name>getVelocityBlock</name></member>
-    <member refid="class_filter_state_1a43b485d8c02d6eb8e37cd8f2323e9e43" kind="function"><name>getAccelerometerBiasBlock</name></member>
-    <member refid="class_filter_state_1a8bb562801b8b34026dad74bd4223c06e" kind="function"><name>getGyroscopeBiasBlock</name></member>
+    <member refid="class_filter_state_1a93091ee18e0421b6b99f6bfe039199d6" kind="function"><name>getPositionBlock</name></member>
+    <member refid="class_filter_state_1a1b8b9f3985ea35ba0f9f4f273ae8c1f2" kind="function"><name>getVelocityBlock</name></member>
+    <member refid="class_filter_state_1a641cf74718074f9334fc88ac9d15169a" kind="function"><name>getAccelerometerBiasBlock</name></member>
+    <member refid="class_filter_state_1a94139185d217749e5afe23e6ad79bb12" kind="function"><name>getGyroscopeBiasBlock</name></member>
     <member refid="class_filter_state_1a8686bb8e54e2e9902c28095f8c623745" kind="function"><name>getGyroscopeShapeVectorizedBlock</name></member>
     <member refid="class_filter_state_1a1ab46a729807178faf9b6bebb87aa791" kind="function"><name>getGSensitivityVectorizedBlock</name></member>
     <member refid="class_filter_state_1a57cb64b2b25132c2da38b0313da415c5" kind="function"><name>getAccelerometerShapeVectorizedBlock</name></member>
@@ -228,6 +254,7 @@
     <member refid="class_filter_state_1aed4aab3a5133d37924bc5c1284b6cb66" kind="function"><name>uglyPrint</name></member>
     <member refid="class_filter_state_1af33cfbc67284846e3ca9c26a79c227a9" kind="function"><name>deriveNewStateForImuPropagation</name></member>
     <member refid="class_filter_state_1a9fdc71df11cf72369b86be2eaffcea27" kind="function"><name>appendCameraPose</name></member>
+    <member refid="class_filter_state_1a0638c19679b93d95f812bd38758f05ca" kind="function"><name>getCameraPosesRef</name></member>
   </compound>
   <compound refid="class_frame_features" kind="class"><name>FrameFeatures</name>
     <member refid="class_frame_features_1a5ed94b174a59b9aa93299c3b5ce355e4" kind="variable"><name>keypoints_</name></member>

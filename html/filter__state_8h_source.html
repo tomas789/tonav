@@ -131,13 +131,13 @@ $(document).ready(function(){initNavTree('filter__state_8h_source.html','');});
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_body_state.html">BodyState</a>&amp; getBodyStateRef();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> <a class="code" href="class_body_state.html">BodyState</a>&amp; getBodyStateRef() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Eigen::Block&lt;StateType, 4, 1&gt; getRotationBlock();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Eigen::Block&lt;BodyState::BodyStateType, 4, 1&gt; getRotationBlock();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Eigen::Quaterniond getRotationQuaternion();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> setRotationQuaternion(<span class="keyword">const</span> Eigen::Quaterniond&amp; quat);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Eigen::Block&lt;StateType, 3, 1&gt; getPositionBlock();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Eigen::Block&lt;StateType, 3, 1&gt; getVelocityBlock();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Eigen::Block&lt;StateType, 3, 1&gt; getAccelerometerBiasBlock();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Eigen::Block&lt;StateType, 3, 1&gt; getGyroscopeBiasBlock();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    Eigen::Block&lt;BodyState::BodyStateType, 3, 1&gt; getPositionBlock();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Eigen::Block&lt;BodyState::BodyStateType, 3, 1&gt; getVelocityBlock();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Eigen::Block&lt;BodyState::BodyStateType, 3, 1&gt; getAccelerometerBiasBlock();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Eigen::Block&lt;BodyState::BodyStateType, 3, 1&gt; getGyroscopeBiasBlock();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    Eigen::Block&lt;StateType, 9, 1&gt; getGyroscopeShapeVectorizedBlock();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    Eigen::Block&lt;StateType, 9, 1&gt; getGSensitivityVectorizedBlock();</div>
@@ -167,25 +167,36 @@ $(document).ready(function(){initNavTree('filter__state_8h_source.html','');});
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_filter_state.html">FilterState</a> deriveNewStateForImuPropagation() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> appendCameraPose(<span class="keyword">const</span> <a class="code" href="class_camera_pose.html">CameraPose</a>&amp; camera_pose);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_body_state.html">BodyState</a> body_state_;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    StateType state_;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Eigen::Quaterniond rotation_to_this_frame_;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Eigen::Vector3d rotation_estimate_;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    Eigen::Vector3d acceleration_estimate_;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::list&lt;CameraPose&gt; poses_;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;std::ostream&amp; operator&lt;&lt; (std::ostream&amp; out, <a class="code" href="class_filter_state.html">FilterState</a>&amp; state);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif //TONAV_FILTER_STATE_H</span></div>
-<div class="ttc" id="class_body_state_html"><div class="ttname"><a href="class_body_state.html">BodyState</a></div><div class="ttdef"><b>Definition:</b> <a href="body__state_8h_source.html#l00007">body_state.h:7</a></div></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::list&lt;CameraPose&gt;&amp; getCameraPosesRef();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="class_body_state.html">BodyState</a> body_state_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    Eigen::Matrix3d gyroscope_shape_;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Eigen::Matrix3d g_sensitivity_;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    Eigen::Matrix3d accelerometer_shape_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    std::list&lt;CameraPose&gt; poses_;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    StateType state_;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    Eigen::Quaterniond rotation_to_this_frame_;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    Eigen::Vector3d rotation_estimate_;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    Eigen::Vector3d acceleration_estimate_;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;std::ostream&amp; operator&lt;&lt; (std::ostream&amp; out, <a class="code" href="class_filter_state.html">FilterState</a>&amp; state);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif //TONAV_FILTER_STATE_H</span></div>
+<div class="ttc" id="class_body_state_html"><div class="ttname"><a href="class_body_state.html">BodyState</a></div><div class="ttdoc">Represents body pose  in filter state. </div><div class="ttdef"><b>Definition:</b> <a href="body__state_8h_source.html#l00014">body_state.h:14</a></div></div>
 <div class="ttc" id="class_filter_state_html"><div class="ttname"><a href="class_filter_state.html">FilterState</a></div><div class="ttdef"><b>Definition:</b> <a href="filter__state_8h_source.html#l00015">filter_state.h:15</a></div></div>
-<div class="ttc" id="class_camera_pose_html"><div class="ttname"><a href="class_camera_pose.html">CameraPose</a></div><div class="ttdef"><b>Definition:</b> <a href="camera__pose_8h_source.html#l00011">camera_pose.h:11</a></div></div>
+<div class="ttc" id="class_camera_pose_html"><div class="ttname"><a href="class_camera_pose.html">CameraPose</a></div><div class="ttdef"><b>Definition:</b> <a href="camera__pose_8h_source.html#l00012">camera_pose.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -156,7 +156,7 @@
     <briefdescription>
 <para>Buffer of IMU data measurements. </para>    </briefdescription>
     <detaileddescription>
-<para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This class is no longer needed. It is used in <ref refid="class_navigator" kindref="compound">Navigator</ref> class only.</para></xrefdescription></xrefsect></para><para>Using this class you can interpolate IMU measurement at any time in interval [getMinTime(), getMaxTime()] </para>    </detaileddescription>
+<para><xrefsect id="deprecated_1_deprecated000002"><xreftitle>Deprecated</xreftitle><xrefdescription><para>This class is no longer needed. It is used in <ref refid="class_navigator" kindref="compound">Navigator</ref> class only.</para></xrefdescription></xrefsect></para><para>Using this class you can interpolate IMU measurement at any time in interval [getMinTime(), getMaxTime()] </para>    </detaileddescription>
     <location file="/home/travis/build/tomas789/tonav/include/imu_buffer.h" line="22" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/imu_buffer.h" bodystart="22" bodyend="37"/>
     <listofallmembers>
       <member refid="class_imu_buffer_1a03aff5b4ab113232a3fa032115249018" prot="public" virt="non-virtual"><scope>ImuBuffer</scope><name>addMeasurement</name></member>

@@ -7,186 +7,191 @@
     <includes local="no">ros/ros.h</includes>
     <includes local="no">limits</includes>
     <incdepgraph>
-      <node id="673">
+      <node id="684">
         <label>list</label>
       </node>
-      <node id="677">
+      <node id="688">
         <label>limits</label>
       </node>
-      <node id="675">
+      <node id="686">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="686">
+      <node id="698">
         <label>cmath</label>
       </node>
-      <node id="664">
+      <node id="675">
         <label>Eigen/Core</label>
       </node>
-      <node id="663">
+      <node id="674">
         <label>opencv2/core/core.hpp</label>
       </node>
-      <node id="682">
+      <node id="694">
         <label>feature_track.h</label>
         <link refid="feature__track_8h_source"/>
-        <childnode refid="670" relation="include">
+        <childnode refid="681" relation="include">
         </childnode>
-        <childnode refid="668" relation="include">
-        </childnode>
-      </node>
-      <node id="667">
-        <label>string</label>
-      </node>
-      <node id="669">
-        <label>filter.h</label>
-        <link refid="filter_8h_source"/>
-        <childnode refid="670" relation="include">
-        </childnode>
-        <childnode refid="665" relation="include">
-        </childnode>
-        <childnode refid="671" relation="include">
-        </childnode>
-        <childnode refid="678" relation="include">
-        </childnode>
-        <childnode refid="683" relation="include">
-        </childnode>
-      </node>
-      <node id="684">
-        <label>imu_device.h</label>
-        <link refid="imu__device_8h_source"/>
-        <childnode refid="672" relation="include">
-        </childnode>
-      </node>
-      <node id="671">
-        <label>filter_state.h</label>
-        <link refid="filter__state_8h_source"/>
-        <childnode refid="672" relation="include">
-        </childnode>
-        <childnode refid="670" relation="include">
-        </childnode>
-        <childnode refid="673" relation="include">
-        </childnode>
-        <childnode refid="674" relation="include">
-        </childnode>
-        <childnode refid="676" relation="include">
-        </childnode>
-      </node>
-      <node id="674">
-        <label>body_state.h</label>
-        <link refid="body__state_8h_source"/>
-        <childnode refid="664" relation="include">
-        </childnode>
-        <childnode refid="675" relation="include">
-        </childnode>
-      </node>
-      <node id="661">
-        <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
-        <link refid="tonav.cpp"/>
-        <childnode refid="662" relation="include">
-        </childnode>
-        <childnode refid="686" relation="include">
-        </childnode>
-        <childnode refid="687" relation="include">
-        </childnode>
-        <childnode refid="677" relation="include">
-        </childnode>
-      </node>
-      <node id="680">
-        <label>opencv2/features2d/features2d.hpp</label>
-      </node>
-      <node id="670">
-        <label>Eigen/Dense</label>
-      </node>
-      <node id="666">
-        <label>boost/filesystem/path.hpp</label>
-      </node>
-      <node id="685">
-        <label>imu_item.h</label>
-        <link refid="imu__item_8h_source"/>
-        <childnode refid="667" relation="include">
-        </childnode>
-        <childnode refid="664" relation="include">
-        </childnode>
-        <childnode refid="684" relation="include">
+        <childnode refid="679" relation="include">
         </childnode>
       </node>
       <node id="678">
-        <label>feature_tracker.h</label>
-        <link refid="feature__tracker_8h_source"/>
-        <childnode refid="679" relation="include">
-        </childnode>
-        <childnode refid="663" relation="include">
-        </childnode>
-        <childnode refid="680" relation="include">
-        </childnode>
+        <label>string</label>
+      </node>
+      <node id="680">
+        <label>filter.h</label>
+        <link refid="filter_8h_source"/>
         <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
         </childnode>
         <childnode refid="682" relation="include">
         </childnode>
-      </node>
-      <node id="681">
-        <label>frame_features.h</label>
-        <link refid="frame__features_8h_source"/>
-        <childnode refid="663" relation="include">
+        <childnode refid="690" relation="include">
         </childnode>
-        <childnode refid="680" relation="include">
+        <childnode refid="695" relation="include">
         </childnode>
       </node>
-      <node id="668">
-        <label>vector</label>
+      <node id="696">
+        <label>imu_device.h</label>
+        <link refid="imu__device_8h_source"/>
+        <childnode refid="683" relation="include">
+        </childnode>
       </node>
-      <node id="683">
-        <label>imu_buffer.h</label>
-        <link refid="imu__buffer_8h_source"/>
-        <childnode refid="668" relation="include">
+      <node id="682">
+        <label>filter_state.h</label>
+        <link refid="filter__state_8h_source"/>
+        <childnode refid="683" relation="include">
+        </childnode>
+        <childnode refid="681" relation="include">
         </childnode>
         <childnode refid="684" relation="include">
         </childnode>
         <childnode refid="685" relation="include">
         </childnode>
-      </node>
-      <node id="662">
-        <label>tonav.h</label>
-        <link refid="tonav_8h_source"/>
-        <childnode refid="663" relation="include">
-        </childnode>
-        <childnode refid="664" relation="include">
-        </childnode>
-        <childnode refid="665" relation="include">
-        </childnode>
-        <childnode refid="669" relation="include">
-        </childnode>
-        <childnode refid="683" relation="include">
-        </childnode>
-        <childnode refid="684" relation="include">
+        <childnode refid="687" relation="include">
         </childnode>
       </node>
-      <node id="687">
-        <label>ros/ros.h</label>
+      <node id="685">
+        <label>body_state.h</label>
+        <link refid="body__state_8h_source"/>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="686" relation="include">
+        </childnode>
       </node>
       <node id="672">
-        <label>iostream</label>
-      </node>
-      <node id="665">
-        <label>calibration.h</label>
-        <link refid="calibration_8h_source"/>
-        <childnode refid="666" relation="include">
+        <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
+        <link refid="tonav.cpp"/>
+        <childnode refid="673" relation="include">
         </childnode>
-        <childnode refid="664" relation="include">
+        <childnode refid="698" relation="include">
         </childnode>
-        <childnode refid="667" relation="include">
+        <childnode refid="699" relation="include">
         </childnode>
-        <childnode refid="668" relation="include">
+        <childnode refid="688" relation="include">
         </childnode>
       </node>
-      <node id="676">
-        <label>camera_pose.h</label>
-        <link refid="camera__pose_8h_source"/>
-        <childnode refid="670" relation="include">
+      <node id="692">
+        <label>opencv2/features2d/features2d.hpp</label>
+      </node>
+      <node id="681">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="677">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="697">
+        <label>imu_item.h</label>
+        <link refid="imu__item_8h_source"/>
+        <childnode refid="678" relation="include">
         </childnode>
-        <childnode refid="677" relation="include">
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="696" relation="include">
+        </childnode>
+      </node>
+      <node id="690">
+        <label>feature_tracker.h</label>
+        <link refid="feature__tracker_8h_source"/>
+        <childnode refid="691" relation="include">
+        </childnode>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="692" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+      </node>
+      <node id="693">
+        <label>frame_features.h</label>
+        <link refid="frame__features_8h_source"/>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="692" relation="include">
         </childnode>
       </node>
       <node id="679">
+        <label>vector</label>
+      </node>
+      <node id="695">
+        <label>imu_buffer.h</label>
+        <link refid="imu__buffer_8h_source"/>
+        <childnode refid="679" relation="include">
+        </childnode>
+        <childnode refid="696" relation="include">
+        </childnode>
+        <childnode refid="697" relation="include">
+        </childnode>
+      </node>
+      <node id="673">
+        <label>tonav.h</label>
+        <link refid="tonav_8h_source"/>
+        <childnode refid="674" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="676" relation="include">
+        </childnode>
+        <childnode refid="680" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+        <childnode refid="696" relation="include">
+        </childnode>
+      </node>
+      <node id="699">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="683">
+        <label>iostream</label>
+      </node>
+      <node id="689">
+        <label>set</label>
+      </node>
+      <node id="676">
+        <label>calibration.h</label>
+        <link refid="calibration_8h_source"/>
+        <childnode refid="677" relation="include">
+        </childnode>
+        <childnode refid="675" relation="include">
+        </childnode>
+        <childnode refid="678" relation="include">
+        </childnode>
+        <childnode refid="679" relation="include">
+        </childnode>
+      </node>
+      <node id="687">
+        <label>camera_pose.h</label>
+        <link refid="camera__pose_8h_source"/>
+        <childnode refid="681" relation="include">
+        </childnode>
+        <childnode refid="688" relation="include">
+        </childnode>
+        <childnode refid="689" relation="include">
+        </childnode>
+      </node>
+      <node id="691">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -390,19 +395,20 @@
 <codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Update<sp/>image</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_.stepCamera(last_image_capture_time_<sp/>-<sp/>last_update_time_,<sp/>accelerometer_at_image_time,<sp/>gyroscope_at_image_time,<sp/>last_image_);</highlight></codeline>
-<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>last_update_time_<sp/>=<sp/>last_image_capture_time_;</highlight></codeline>
-<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>last_image_capture_time_<sp/>=<sp/>NAN;</highlight></codeline>
-<codeline lineno="199"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>Tonav::interpolate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;earlier,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;later)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time_delta<sp/>=<sp/>later.getTime()<sp/>-<sp/>earlier.getTime();</highlight></codeline>
-<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>(time<sp/>-<sp/>earlier.getTime())<sp/>/<sp/>time_delta;</highlight></codeline>
-<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>ImuDevice<sp/>device<sp/>=<sp/>later.getDevice();</highlight></codeline>
-<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>data<sp/>=<sp/>t<sp/>*<sp/>earlier.getVector()<sp/>+<sp/>(1-t)<sp/>*<sp/>later.getVector();</highlight></codeline>
-<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>interpolated<sp/>=<sp/>ImuItem::fromVector3d(time,<sp/>device,<sp/>data);</highlight></codeline>
-<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>interpolated;</highlight></codeline>
-<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_.stepInertial(last_image_capture_time_<sp/>-<sp/>last_update_time_,<sp/>accelerometer_at_image_time,<sp/>gyroscope_at_image_time);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_.stepCamera(last_image_capture_time_<sp/>-<sp/>last_update_time_,<sp/>last_image_);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>last_update_time_<sp/>=<sp/>last_image_capture_time_;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>last_image_capture_time_<sp/>=<sp/>NAN;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>Tonav::interpolate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;earlier,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>&amp;later)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>time_delta<sp/>=<sp/>later.getTime()<sp/>-<sp/>earlier.getTime();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>(time<sp/>-<sp/>earlier.getTime())<sp/>/<sp/>time_delta;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>ImuDevice<sp/>device<sp/>=<sp/>later.getDevice();</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>data<sp/>=<sp/>t<sp/>*<sp/>earlier.getVector()<sp/>+<sp/>(1-t)<sp/>*<sp/>later.getVector();</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_imu_item" kindref="compound">ImuItem</ref><sp/>interpolated<sp/>=<sp/>ImuItem::fromVector3d(time,<sp/>device,<sp/>data);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>interpolated;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/tomas789/tonav/src/tonav.cpp"/>
   </compounddef>

@@ -6,74 +6,74 @@
     <includes refid="general__exception_8h" local="yes">exceptions/general_exception.h</includes>
     <includes refid="imu__item_8h" local="yes">imu_item.h</includes>
     <incdepgraph>
-      <node id="549">
+      <node id="558">
         <label>/home/travis/build/tomas789/tonav/src/imu_item.cpp</label>
         <link refid="imu_item.cpp"/>
-        <childnode refid="550" relation="include">
-        </childnode>
-        <childnode refid="555" relation="include">
-        </childnode>
-        <childnode refid="558" relation="include">
-        </childnode>
-      </node>
-      <node id="552">
-        <label>Eigen/Core</label>
-      </node>
-      <node id="553">
-        <label>string</label>
-      </node>
-      <node id="559">
-        <label>imu_device.h</label>
-        <link refid="imu__device_8h_source"/>
-        <childnode refid="560" relation="include">
-        </childnode>
-      </node>
-      <node id="557">
-        <label>exception</label>
-      </node>
-      <node id="555">
-        <label>exceptions/general_exception.h</label>
-        <link refid="general__exception_8h_source"/>
-        <childnode refid="553" relation="include">
-        </childnode>
-        <childnode refid="556" relation="include">
-        </childnode>
-      </node>
-      <node id="551">
-        <label>boost/filesystem/path.hpp</label>
-      </node>
-      <node id="558">
-        <label>imu_item.h</label>
-        <link refid="imu__item_8h_source"/>
-        <childnode refid="553" relation="include">
-        </childnode>
-        <childnode refid="552" relation="include">
-        </childnode>
         <childnode refid="559" relation="include">
         </childnode>
-      </node>
-      <node id="556">
-        <label>exceptions/base_exception.h</label>
-        <link refid="base__exception_8h_source"/>
-        <childnode refid="557" relation="include">
+        <childnode refid="564" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
         </childnode>
       </node>
-      <node id="554">
-        <label>vector</label>
+      <node id="561">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="562">
+        <label>string</label>
+      </node>
+      <node id="568">
+        <label>imu_device.h</label>
+        <link refid="imu__device_8h_source"/>
+        <childnode refid="569" relation="include">
+        </childnode>
+      </node>
+      <node id="566">
+        <label>exception</label>
+      </node>
+      <node id="564">
+        <label>exceptions/general_exception.h</label>
+        <link refid="general__exception_8h_source"/>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="565" relation="include">
+        </childnode>
       </node>
       <node id="560">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="567">
+        <label>imu_item.h</label>
+        <link refid="imu__item_8h_source"/>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="561" relation="include">
+        </childnode>
+        <childnode refid="568" relation="include">
+        </childnode>
+      </node>
+      <node id="565">
+        <label>exceptions/base_exception.h</label>
+        <link refid="base__exception_8h_source"/>
+        <childnode refid="566" relation="include">
+        </childnode>
+      </node>
+      <node id="563">
+        <label>vector</label>
+      </node>
+      <node id="569">
         <label>iostream</label>
       </node>
-      <node id="550">
+      <node id="559">
         <label>calibration.h</label>
         <link refid="calibration_8h_source"/>
-        <childnode refid="551" relation="include">
+        <childnode refid="560" relation="include">
         </childnode>
-        <childnode refid="552" relation="include">
+        <childnode refid="561" relation="include">
         </childnode>
-        <childnode refid="553" relation="include">
+        <childnode refid="562" relation="include">
         </childnode>
-        <childnode refid="554" relation="include">
+        <childnode refid="563" relation="include">
         </childnode>
       </node>
     </incdepgraph>

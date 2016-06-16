@@ -110,23 +110,46 @@
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Core&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Eigen/Geometry&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7" refid="class_body_state" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_body_state" kindref="compound">BodyState</ref><sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>BodyStateType<sp/>=<sp/>Eigen::Matrix&lt;double,<sp/>16,<sp/>1&gt;;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>4,<sp/>1&gt;<sp/>getRotationBlock();</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>getRotationQuaternion();</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setRotationQuaternion(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Quaterniond&amp;<sp/>quat);</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getPositionBlock();</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getVelocityBlock();</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getAccelerometerBiasBlock();</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getGyroscopeBiasBlock();</highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>BodyStateType<sp/>body_state_;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_BODY_STATE_H</highlight></codeline>
+<codeline lineno="14" refid="class_body_state" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_body_state" kindref="compound">BodyState</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_body_state" kindref="compound">BodyState</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19" refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" kindref="member">BodyStateType</ref><sp/>=<sp/>Eigen::Matrix&lt;double,<sp/>16,<sp/>1&gt;;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>4,<sp/>1&gt;<sp/><ref refid="class_body_state_1a980cbcae469aa1fc0d7efec5248db0d1" kindref="member">getRotationBlock</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Block&lt;const<sp/>BodyStateType,<sp/>4,<sp/>1&gt;<sp/><ref refid="class_body_state_1a980cbcae469aa1fc0d7efec5248db0d1" kindref="member">getRotationBlock</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>getRotationQuaternion()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setRotationQuaternion(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Quaterniond&amp;<sp/>quat);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getPositionBlock();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Block&lt;const<sp/>BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getPositionBlock()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getVelocityBlock();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Block&lt;const<sp/>BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getVelocityBlock()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getAccelerometerBiasBlock();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Block&lt;const<sp/>BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getAccelerometerBiasBlock()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getGyroscopeBiasBlock();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Block&lt;const<sp/>BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getGyroscopeBiasBlock()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d&amp;<sp/><ref refid="class_body_state_1a4f08803dcef02a950b09b458231ffbea" kindref="member">getRotationEstimateRef</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3d&amp;<sp/><ref refid="class_body_state_1a4f08803dcef02a950b09b458231ffbea" kindref="member">getRotationEstimateRef</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d&amp;<sp/><ref refid="class_body_state_1a9eb0e9ec3ae23769abf50f6e75777cd7" kindref="member">getAccelerationEstimateRef</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3d&amp;<sp/><ref refid="class_body_state_1a9eb0e9ec3ae23769abf50f6e75777cd7" kindref="member">getAccelerationEstimateRef</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond&amp;<sp/><ref refid="class_body_state_1a1589f0e96fcf159b77f385157665ef7b" kindref="member">getRotationToThisFrameRef</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Quaterniond&amp;<sp/><ref refid="class_body_state_1a1589f0e96fcf159b77f385157665ef7b" kindref="member">getRotationToThisFrameRef</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" kindref="member">BodyStateType</ref><sp/>body_state_;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>rotation_estimate_;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>acceleration_estimate_;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>rotation_to_this_frame_;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_BODY_STATE_H</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/tomas789/tonav/include/body_state.h"/>
   </compounddef>

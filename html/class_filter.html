@@ -133,15 +133,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td
 <tr class="memitem:a27176eb65976f98cdc9495b4fdfc3296"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27176eb65976f98cdc9495b4fdfc3296"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stepInertial</b> (double timedelta, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;accel, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;gyro)</td></tr>
 <tr class="separator:a27176eb65976f98cdc9495b4fdfc3296"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fad49c62892905f713de0bf66d9f3c7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1fad49c62892905f713de0bf66d9f3c7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>stepCamera</b> (double timedelta, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;accel, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;gyro, cv::Mat &amp;frame)</td></tr>
-<tr class="separator:a1fad49c62892905f713de0bf66d9f3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ed7acd6fff45ead8b4209d4e31a8097"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3ed7acd6fff45ead8b4209d4e31a8097"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>propagateRotation</b> (<a class="el" href="class_filter_state.html">FilterState</a> &amp;old_state, <a class="el" href="class_filter_state.html">FilterState</a> &amp;new_state, double timedelta, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;accel, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;gyro)</td></tr>
-<tr class="separator:a3ed7acd6fff45ead8b4209d4e31a8097"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a778f444068abe887fd58e02f00be6121"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a778f444068abe887fd58e02f00be6121"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>propagateVelocityAndPosition</b> (<a class="el" href="class_filter_state.html">FilterState</a> &amp;old_state, <a class="el" href="class_filter_state.html">FilterState</a> &amp;new_state, double timedelta, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;accel, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;gyro)</td></tr>
-<tr class="separator:a778f444068abe887fd58e02f00be6121"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa28ba41a7503afe19bdcc2a8b85f6adc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa28ba41a7503afe19bdcc2a8b85f6adc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>stepCamera</b> (double timedelta, cv::Mat &amp;frame)</td></tr>
+<tr class="separator:aa28ba41a7503afe19bdcc2a8b85f6adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2767a830213940f97fad6c472684598d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2767a830213940f97fad6c472684598d"></a>
+<a class="el" href="class_body_state.html">BodyState</a>&#160;</td><td class="memItemRight" valign="bottom"><b>propagateBodyState</b> (const <a class="el" href="class_body_state.html">BodyState</a> &amp;body_state_old, double timedelta, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;accel, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;gyro)</td></tr>
+<tr class="separator:a2767a830213940f97fad6c472684598d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c7f21b6a486de46946e296affb00b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac5c7f21b6a486de46946e296affb00b4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>propagateRotation</b> (const <a class="el" href="class_body_state.html">BodyState</a> &amp;old_state, <a class="el" href="class_body_state.html">BodyState</a> &amp;new_state, double timedelta, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;accel, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;gyro)</td></tr>
+<tr class="separator:ac5c7f21b6a486de46946e296affb00b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98ff24d5d95e65584fa6413f64bb9aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae98ff24d5d95e65584fa6413f64bb9aa"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>propagateVelocityAndPosition</b> (const <a class="el" href="class_body_state.html">BodyState</a> &amp;old_state, <a class="el" href="class_body_state.html">BodyState</a> &amp;new_state, double timedelta, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;accel, const <a class="el" href="class_imu_item.html">ImuItem</a> &amp;gyro)</td></tr>
+<tr class="separator:ae98ff24d5d95e65584fa6413f64bb9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad046b83209a1f03d65ac75f16b538546"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_filter.html#ad046b83209a1f03d65ac75f16b538546">setGlobalGravity</a> (Eigen::Vector3d gravity)</td></tr>
 <tr class="memdesc:ad046b83209a1f03d65ac75f16b538546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set initial estimate of gravity in global frame.  <a href="#ad046b83209a1f03d65ac75f16b538546">More...</a><br/></td></tr>
 <tr class="separator:ad046b83209a1f03d65ac75f16b538546"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,7 +192,7 @@ Eigen::Quaterniond&#160;</td><td class="memItemRight" valign="bottom"><b>getCurr
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Estimated image capture time </dd></dl>
 
-<p>Definition at line <a class="el" href="filter_8cpp_source.html#l00142">142</a> of file <a class="el" href="filter_8cpp_source.html">filter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="filter_8cpp_source.html#l00184">184</a> of file <a class="el" href="filter_8cpp_source.html">filter.cpp</a>.</p>
 
 </div>
 </div>
@@ -216,7 +219,7 @@ Eigen::Quaterniond&#160;</td><td class="memItemRight" valign="bottom"><b>getCurr
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="filter_8cpp_source.html#l00126">126</a> of file <a class="el" href="filter_8cpp_source.html">filter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="filter_8cpp_source.html#l00168">168</a> of file <a class="el" href="filter_8cpp_source.html">filter.cpp</a>.</p>
 
 </div>
 </div>

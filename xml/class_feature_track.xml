@@ -3,6 +3,19 @@
   <compounddef id="class_feature_track" kind="class" prot="public">
     <compoundname>FeatureTrack</compoundname>
       <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_feature_track_1a6496740a64ec66c5025c067bae047879" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int FeatureTrack::feature_id_</definition>
+        <argsstring></argsstring>
+        <name>feature_id_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="34" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="class_feature_track_1abcd85eb76a80f0bf0fe06403b7a1b418" prot="private" static="no" mutable="no">
         <type>bool</type>
         <definition>bool FeatureTrack::is_out_of_view_</definition>
@@ -14,20 +27,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="23" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="23" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="35" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="35" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_feature_track_1ac2ba060693c052da317ab99c890c765c" prot="private" static="no" mutable="no">
-        <type>std::size_t</type>
-        <definition>std::size_t FeatureTrack::first_frame_number_</definition>
+      <memberdef kind="variable" id="class_feature_track_1a2fb637d020b11726edaae97c0dc748b1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool FeatureTrack::was_used_for_residualization_</definition>
         <argsstring></argsstring>
-        <name>first_frame_number_</name>
+        <name>was_used_for_residualization_</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="24" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="24" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="36" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_feature_track_1a9ff68e9bda4336fe891edac8db34f706" prot="private" static="no" mutable="no">
         <type>std::vector&lt; Eigen::Vector2d &gt;</type>
@@ -40,26 +53,22 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="25" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="25" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="37" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="37" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_feature_track_1ade7f659359480dab8f8ec7ace7625467" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_feature_track_1a4c902146f4ba3c4942d2ecdfdab2bcba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>FeatureTrack::FeatureTrack</definition>
-        <argsstring>(std::size_t first_frame_number)</argsstring>
+        <argsstring>()</argsstring>
         <name>FeatureTrack</name>
-        <param>
-          <type>std::size_t</type>
-          <declname>first_frame_number</declname>
-        </param>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="13" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="8" bodyend="11"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="13" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="8" bodyend="14"/>
       </memberdef>
       <memberdef kind="function" id="class_feature_track_1a5f13b226ac16fb0c9abe692c17f0f0c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -80,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="13" bodyend="17"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="16" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="class_feature_track_1aa21cd2b1af1f2aaea1e7d19631f80474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -93,20 +102,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="16" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="19" bodyend="24"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="16" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="22" bodyend="25"/>
       </memberdef>
-      <memberdef kind="function" id="class_feature_track_1a1635683732cdfda103a37d926d2efbf9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_feature_track_1aa37fc3152eb3320a1161bdc638da2e09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::size_t</type>
-        <definition>std::size_t FeatureTrack::getFirstFrameNumber</definition>
+        <definition>std::size_t FeatureTrack::posesTrackedCount</definition>
         <argsstring>() const </argsstring>
-        <name>getFirstFrameNumber</name>
+        <name>posesTrackedCount</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="18" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="26" bodyend="28"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="18" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="27" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="class_feature_track_1a966f8f018b7305d764216880f4a6f8ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -119,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="30" bodyend="32"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="31" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="class_feature_track_1a75a507f6ac11d3a9319523d131c7949d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -132,24 +141,67 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="21" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="34" bodyend="36"/>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="21" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_track_1abd64cf7785392e852bb93409fd063917" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FeatureTrack::wasUsedForResidualization</definition>
+        <argsstring>() const </argsstring>
+        <name>wasUsedForResidualization</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="23" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_track_1a6317ed29fff383fc365d64d6c5ce1aa2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FeatureTrack::setWasUsedForResidualization</definition>
+        <argsstring>()</argsstring>
+        <name>setWasUsedForResidualization</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="24" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_feature_track_1aeba4f7f42fe7c065a17bd26e2817dcbe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int FeatureTrack::getFeatureId</definition>
+        <argsstring>() const </argsstring>
+        <name>getFeatureId</name>
+        <briefdescription>
+<para>For debugging purpose only. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>This should be deleted in the future. I will keep it here just for case ... </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/feature_track.cpp" bodystart="48" bodyend="50"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="11" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="11" bodyend="26"/>
+    <location file="/home/travis/build/tomas789/tonav/include/feature_track.h" line="11" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/feature_track.h" bodystart="11" bodyend="38"/>
     <listofallmembers>
       <member refid="class_feature_track_1a5f13b226ac16fb0c9abe692c17f0f0c6" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>addFeaturePosition</name></member>
-      <member refid="class_feature_track_1ade7f659359480dab8f8ec7ace7625467" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>FeatureTrack</name></member>
-      <member refid="class_feature_track_1ac2ba060693c052da317ab99c890c765c" prot="private" virt="non-virtual"><scope>FeatureTrack</scope><name>first_frame_number_</name></member>
-      <member refid="class_feature_track_1a1635683732cdfda103a37d926d2efbf9" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>getFirstFrameNumber</name></member>
+      <member refid="class_feature_track_1a6496740a64ec66c5025c067bae047879" prot="private" virt="non-virtual"><scope>FeatureTrack</scope><name>feature_id_</name></member>
+      <member refid="class_feature_track_1a4c902146f4ba3c4942d2ecdfdab2bcba" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>FeatureTrack</name></member>
+      <member refid="class_feature_track_1aeba4f7f42fe7c065a17bd26e2817dcbe" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>getFeatureId</name></member>
       <member refid="class_feature_track_1abcd85eb76a80f0bf0fe06403b7a1b418" prot="private" virt="non-virtual"><scope>FeatureTrack</scope><name>is_out_of_view_</name></member>
       <member refid="class_feature_track_1a966f8f018b7305d764216880f4a6f8ba" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>isOutOfView</name></member>
+      <member refid="class_feature_track_1aa37fc3152eb3320a1161bdc638da2e09" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>posesTrackedCount</name></member>
       <member refid="class_feature_track_1a9ff68e9bda4336fe891edac8db34f706" prot="private" virt="non-virtual"><scope>FeatureTrack</scope><name>positions_</name></member>
       <member refid="class_feature_track_1aa21cd2b1af1f2aaea1e7d19631f80474" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>revertLastPosition</name></member>
       <member refid="class_feature_track_1a75a507f6ac11d3a9319523d131c7949d" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>setOutOfView</name></member>
+      <member refid="class_feature_track_1a6317ed29fff383fc365d64d6c5ce1aa2" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>setWasUsedForResidualization</name></member>
+      <member refid="class_feature_track_1a2fb637d020b11726edaae97c0dc748b1" prot="private" virt="non-virtual"><scope>FeatureTrack</scope><name>was_used_for_residualization_</name></member>
+      <member refid="class_feature_track_1abd64cf7785392e852bb93409fd063917" prot="public" virt="non-virtual"><scope>FeatureTrack</scope><name>wasUsedForResidualization</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

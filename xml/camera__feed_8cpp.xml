@@ -13,22 +13,83 @@
     <includes refid="general__exception_8h" local="yes">exceptions/general_exception.h</includes>
     <includes refid="camera__item_8h" local="yes">camera_item.h</includes>
     <incdepgraph>
-      <node id="389">
+      <node id="394">
         <label>iterator</label>
       </node>
-      <node id="391">
+      <node id="396">
         <label>opencv2/core/core.hpp</label>
       </node>
-      <node id="384">
+      <node id="389">
         <label>string</label>
       </node>
-      <node id="381">
+      <node id="386">
         <label>/home/travis/build/tomas789/tonav/src/camera_feed.cpp</label>
         <link refid="camera_feed.cpp"/>
-        <childnode refid="382" relation="include">
-        </childnode>
         <childnode refid="387" relation="include">
         </childnode>
+        <childnode refid="392" relation="include">
+        </childnode>
+        <childnode refid="393" relation="include">
+        </childnode>
+        <childnode refid="394" relation="include">
+        </childnode>
+        <childnode refid="395" relation="include">
+        </childnode>
+        <childnode refid="396" relation="include">
+        </childnode>
+        <childnode refid="397" relation="include">
+        </childnode>
+        <childnode refid="389" relation="include">
+        </childnode>
+        <childnode refid="398" relation="include">
+        </childnode>
+        <childnode refid="391" relation="include">
+        </childnode>
+      </node>
+      <node id="400">
+        <label>exception</label>
+      </node>
+      <node id="393">
+        <label>fstream</label>
+      </node>
+      <node id="398">
+        <label>exceptions/general_exception.h</label>
+        <link refid="general__exception_8h_source"/>
+        <childnode refid="389" relation="include">
+        </childnode>
+        <childnode refid="399" relation="include">
+        </childnode>
+      </node>
+      <node id="388">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="399">
+        <label>exceptions/base_exception.h</label>
+        <link refid="base__exception_8h_source"/>
+        <childnode refid="400" relation="include">
+        </childnode>
+      </node>
+      <node id="390">
+        <label>vector</label>
+      </node>
+      <node id="391">
+        <label>camera_item.h</label>
+        <link refid="camera__item_8h_source"/>
+        <childnode refid="389" relation="include">
+        </childnode>
+      </node>
+      <node id="392">
+        <label>boost/filesystem.hpp</label>
+      </node>
+      <node id="397">
+        <label>opencv2/highgui/highgui.hpp</label>
+      </node>
+      <node id="395">
+        <label>iostream</label>
+      </node>
+      <node id="387">
+        <label>camera_feed.h</label>
+        <link refid="camera__feed_8h_source"/>
         <childnode refid="388" relation="include">
         </childnode>
         <childnode refid="389" relation="include">
@@ -36,67 +97,6 @@
         <childnode refid="390" relation="include">
         </childnode>
         <childnode refid="391" relation="include">
-        </childnode>
-        <childnode refid="392" relation="include">
-        </childnode>
-        <childnode refid="384" relation="include">
-        </childnode>
-        <childnode refid="393" relation="include">
-        </childnode>
-        <childnode refid="386" relation="include">
-        </childnode>
-      </node>
-      <node id="395">
-        <label>exception</label>
-      </node>
-      <node id="388">
-        <label>fstream</label>
-      </node>
-      <node id="393">
-        <label>exceptions/general_exception.h</label>
-        <link refid="general__exception_8h_source"/>
-        <childnode refid="384" relation="include">
-        </childnode>
-        <childnode refid="394" relation="include">
-        </childnode>
-      </node>
-      <node id="383">
-        <label>boost/filesystem/path.hpp</label>
-      </node>
-      <node id="394">
-        <label>exceptions/base_exception.h</label>
-        <link refid="base__exception_8h_source"/>
-        <childnode refid="395" relation="include">
-        </childnode>
-      </node>
-      <node id="385">
-        <label>vector</label>
-      </node>
-      <node id="386">
-        <label>camera_item.h</label>
-        <link refid="camera__item_8h_source"/>
-        <childnode refid="384" relation="include">
-        </childnode>
-      </node>
-      <node id="387">
-        <label>boost/filesystem.hpp</label>
-      </node>
-      <node id="392">
-        <label>opencv2/highgui/highgui.hpp</label>
-      </node>
-      <node id="390">
-        <label>iostream</label>
-      </node>
-      <node id="382">
-        <label>camera_feed.h</label>
-        <link refid="camera__feed_8h_source"/>
-        <childnode refid="383" relation="include">
-        </childnode>
-        <childnode refid="384" relation="include">
-        </childnode>
-        <childnode refid="385" relation="include">
-        </childnode>
-        <childnode refid="386" relation="include">
         </childnode>
       </node>
     </incdepgraph>

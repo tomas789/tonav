@@ -4,24 +4,29 @@
     <compoundname>camera_pose.cpp</compoundname>
     <includes refid="camera__pose_8h" local="yes">camera_pose.h</includes>
     <incdepgraph>
-      <node id="411">
+      <node id="416">
         <label>limits</label>
       </node>
-      <node id="410">
+      <node id="415">
         <label>Eigen/Dense</label>
       </node>
-      <node id="408">
+      <node id="413">
         <label>/home/travis/build/tomas789/tonav/src/camera_pose.cpp</label>
         <link refid="camera_pose.cpp"/>
-        <childnode refid="409" relation="include">
+        <childnode refid="414" relation="include">
         </childnode>
       </node>
-      <node id="409">
+      <node id="417">
+        <label>set</label>
+      </node>
+      <node id="414">
         <label>camera_pose.h</label>
         <link refid="camera__pose_8h_source"/>
-        <childnode refid="410" relation="include">
+        <childnode refid="415" relation="include">
         </childnode>
-        <childnode refid="411" relation="include">
+        <childnode refid="416" relation="include">
+        </childnode>
+        <childnode refid="417" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -57,34 +62,34 @@
 <codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>features_active_<sp/>=<sp/>i;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CameraPose::decreaseActiveFeaturesCount()<sp/>{</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>features_active_<sp/>-=<sp/>1;</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal">Eigen::Block&lt;CameraPose::CameraPoseType,<sp/>4,<sp/>1&gt;<sp/>CameraPose::getRotationForBodyPoseBlock()<sp/>{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>camera_pose_.block&lt;4,<sp/>1&gt;(0,<sp/>0);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CameraPose::decreaseActiveFeaturesCount(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>feature_id)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(feature_ids_.find(feature_id)<sp/>!=<sp/>std::end(feature_ids_));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>feature_ids_.erase(feature_ids_.find(feature_id));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(features_active_<sp/>&gt;<sp/>0);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>features_active_<sp/>-=<sp/>1;</highlight></codeline>
 <codeline lineno="34"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal">Eigen::Block&lt;CameraPose::CameraPoseType,<sp/>3,<sp/>1&gt;<sp/>CameraPose::getPositionForBodyPoseBlock()<sp/>{</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>camera_pose_.block&lt;3,<sp/>1&gt;(4,<sp/>0);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">Eigen::Block&lt;CameraPose::CameraPoseType,<sp/>4,<sp/>1&gt;<sp/>CameraPose::getRotationForBodyPoseBlock()<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>camera_pose_.block&lt;4,<sp/>1&gt;(0,<sp/>0);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal">Eigen::Block&lt;CameraPose::CameraPoseType,<sp/>3,<sp/>1&gt;<sp/>CameraPose::getVelocityForBodyPoseBlock()<sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>camera_pose_.block&lt;3,<sp/>1&gt;(7,<sp/>0);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">Eigen::Block&lt;CameraPose::CameraPoseType,<sp/>3,<sp/>1&gt;<sp/>CameraPose::getPositionForBodyPoseBlock()<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>camera_pose_.block&lt;3,<sp/>1&gt;(4,<sp/>0);</highlight></codeline>
 <codeline lineno="42"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>CameraPose::isValid()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pose_id_<sp/>!=<sp/>std::numeric_limits&lt;std::size_t&gt;::max()<sp/>&amp;&amp;<sp/>features_active_<sp/>&gt;<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">Eigen::Block&lt;CameraPose::CameraPoseType,<sp/>3,<sp/>1&gt;<sp/>CameraPose::getVelocityForBodyPoseBlock()<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>camera_pose_.block&lt;3,<sp/>1&gt;(7,<sp/>0);</highlight></codeline>
 <codeline lineno="46"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48"><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>CameraPose::isValid()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pose_id_<sp/>!=<sp/>std::numeric_limits&lt;std::size_t&gt;::max()<sp/>&amp;&amp;<sp/>features_active_<sp/>&gt;<sp/>0;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CameraPose::rememberFeatureId(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>feature_id)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(feature_ids_.find(feature_id)<sp/>==<sp/>std::end(feature_ids_));</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>feature_ids_.insert(feature_id);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight></codeline>
@@ -94,6 +99,12 @@
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
 <codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/tomas789/tonav/src/camera_pose.cpp"/>
   </compounddef>

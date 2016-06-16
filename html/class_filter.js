@@ -6,9 +6,10 @@ var class_filter =
     [ "getGlobalGravity", "class_filter.html#aeeb0c2e971a47c73c2f950aa8890f1ac", null ],
     [ "getImageCaptureTime", "class_filter.html#a1c7a33a737fafec46d6e98ec1be37a4c", null ],
     [ "initialize", "class_filter.html#a5742b1247b9f92a9148d99386cdd3876", null ],
-    [ "propagateRotation", "class_filter.html#a3ed7acd6fff45ead8b4209d4e31a8097", null ],
-    [ "propagateVelocityAndPosition", "class_filter.html#a778f444068abe887fd58e02f00be6121", null ],
+    [ "propagateBodyState", "class_filter.html#a2767a830213940f97fad6c472684598d", null ],
+    [ "propagateRotation", "class_filter.html#ac5c7f21b6a486de46946e296affb00b4", null ],
+    [ "propagateVelocityAndPosition", "class_filter.html#ae98ff24d5d95e65584fa6413f64bb9aa", null ],
     [ "setGlobalGravity", "class_filter.html#ad046b83209a1f03d65ac75f16b538546", null ],
-    [ "stepCamera", "class_filter.html#a1fad49c62892905f713de0bf66d9f3c7", null ],
+    [ "stepCamera", "class_filter.html#aa28ba41a7503afe19bdcc2a8b85f6adc", null ],
     [ "stepInertial", "class_filter.html#a27176eb65976f98cdc9495b4fdfc3296", null ]
 ];

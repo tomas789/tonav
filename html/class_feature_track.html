@@ -119,29 +119,56 @@ $(document).ready(function(){initNavTree('class_feature_track.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ade7f659359480dab8f8ec7ace7625467"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade7f659359480dab8f8ec7ace7625467"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>FeatureTrack</b> (std::size_t first_frame_number)</td></tr>
-<tr class="separator:ade7f659359480dab8f8ec7ace7625467"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f13b226ac16fb0c9abe692c17f0f0c6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f13b226ac16fb0c9abe692c17f0f0c6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addFeaturePosition</b> (double x, double y)</td></tr>
 <tr class="separator:a5f13b226ac16fb0c9abe692c17f0f0c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa21cd2b1af1f2aaea1e7d19631f80474"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa21cd2b1af1f2aaea1e7d19631f80474"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>revertLastPosition</b> ()</td></tr>
 <tr class="separator:aa21cd2b1af1f2aaea1e7d19631f80474"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1635683732cdfda103a37d926d2efbf9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1635683732cdfda103a37d926d2efbf9"></a>
-std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getFirstFrameNumber</b> () const </td></tr>
-<tr class="separator:a1635683732cdfda103a37d926d2efbf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37fc3152eb3320a1161bdc638da2e09"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa37fc3152eb3320a1161bdc638da2e09"></a>
+std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>posesTrackedCount</b> () const </td></tr>
+<tr class="separator:aa37fc3152eb3320a1161bdc638da2e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a966f8f018b7305d764216880f4a6f8ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a966f8f018b7305d764216880f4a6f8ba"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isOutOfView</b> () const </td></tr>
 <tr class="separator:a966f8f018b7305d764216880f4a6f8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75a507f6ac11d3a9319523d131c7949d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75a507f6ac11d3a9319523d131c7949d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setOutOfView</b> ()</td></tr>
 <tr class="separator:a75a507f6ac11d3a9319523d131c7949d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd64cf7785392e852bb93409fd063917"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd64cf7785392e852bb93409fd063917"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>wasUsedForResidualization</b> () const </td></tr>
+<tr class="separator:abd64cf7785392e852bb93409fd063917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6317ed29fff383fc365d64d6c5ce1aa2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6317ed29fff383fc365d64d6c5ce1aa2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setWasUsedForResidualization</b> ()</td></tr>
+<tr class="separator:a6317ed29fff383fc365d64d6c5ce1aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeba4f7f42fe7c065a17bd26e2817dcbe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_feature_track.html#aeba4f7f42fe7c065a17bd26e2817dcbe">getFeatureId</a> () const </td></tr>
+<tr class="memdesc:aeba4f7f42fe7c065a17bd26e2817dcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">For debugging purpose only.  <a href="#aeba4f7f42fe7c065a17bd26e2817dcbe">More...</a><br/></td></tr>
+<tr class="separator:aeba4f7f42fe7c065a17bd26e2817dcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="feature__track_8h_source.html#l00011">11</a> of file <a class="el" href="feature__track_8h_source.html">feature_track.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aeba4f7f42fe7c065a17bd26e2817dcbe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int FeatureTrack::getFeatureId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For debugging purpose only. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>This should be deleted in the future. I will keep it here just for case ... </dd></dl>
+
+<p>Definition at line <a class="el" href="feature__track_8cpp_source.html#l00048">48</a> of file <a class="el" href="feature__track_8cpp_source.html">feature_track.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/tomas789/tonav/include/<a class="el" href="feature__track_8h_source.html">feature_track.h</a></li>
 <li>/home/travis/build/tomas789/tonav/src/<a class="el" href="feature__track_8cpp_source.html">feature_track.cpp</a></li>
 </ul>

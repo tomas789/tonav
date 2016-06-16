@@ -164,7 +164,7 @@
         <briefdescription>
 <para>Perform navigation step with data from accelerometer. </para>        </briefdescription>
         <detaileddescription>
-<para>Parameter <computeroutput>accel</computeroutput> is vector <formula id="1">$(x, y, z)$</formula> measured in <formula id="2">$\frac{m}{s^2}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Parameter <computeroutput>accel</computeroutput> is vector <formula id="10">$(x, y, z)$</formula> measured in <formula id="11">$\frac{m}{s^2}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>time</parametername>
 </parameternamelist>
@@ -200,7 +200,7 @@
         <briefdescription>
 <para>Perform navigation step with data from gyroscope. </para>        </briefdescription>
         <detaileddescription>
-<para>Parameter <computeroutput>gyro</computeroutput> is vector <formula id="1">$(x, y, z)$</formula> measured in <formula id="3">$\frac{rad}{s}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Parameter <computeroutput>gyro</computeroutput> is vector <formula id="10">$(x, y, z)$</formula> measured in <formula id="12">$\frac{rad}{s}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>time</parametername>
 </parameternamelist>
@@ -240,7 +240,7 @@
         <briefdescription>
 <para>Perform navigation step with data from both accelerometer and gyroscore. </para>        </briefdescription>
         <detaileddescription>
-<para>Parameter <computeroutput>accel</computeroutput> is vector <formula id="1">$(x, y, z)$</formula> measured in <formula id="2">$\frac{m}{s^2}$</formula>. Parameter <computeroutput>gyro</computeroutput> is vector <formula id="1">$(x, y, z)$</formula> measured in <formula id="3">$\frac{rad}{s}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Parameter <computeroutput>accel</computeroutput> is vector <formula id="10">$(x, y, z)$</formula> measured in <formula id="11">$\frac{m}{s^2}$</formula>. Parameter <computeroutput>gyro</computeroutput> is vector <formula id="10">$(x, y, z)$</formula> measured in <formula id="12">$\frac{rad}{s}$</formula>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>time</parametername>
 </parameternamelist>
@@ -319,7 +319,7 @@
         <briefdescription>
 <para>Set camera model params. </para>        </briefdescription>
         <detaileddescription>
-<para><ref refid="class_tonav" kindref="compound">Tonav</ref> is using pinhole camera modes as implemented in OpenCV. Using this function, you can set camera intrinsics parameters.</para><para>Camera matrix:</para><para><formula id="4">$ \begin{pmatrix} f_x &amp; 0 &amp; c_x \\ 0 &amp; f_y &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{pmatrix} $</formula></para><para>Distortion params:</para><para><formula id="5">$ \begin{pmatrix} k_1 &amp; k_2 &amp; p_1 &amp; p_2 &amp; k_3 \end{pmatrix} $</formula></para><para><parameterlist kind="param"><parameteritem>
+<para><ref refid="class_tonav" kindref="compound">Tonav</ref> is using pinhole camera modes as implemented in OpenCV. Using this function, you can set camera intrinsics parameters.</para><para>Camera matrix:</para><para><formula id="13">$ \begin{pmatrix} f_x &amp; 0 &amp; c_x \\ 0 &amp; f_y &amp; c_y \\ 0 &amp; 0 &amp; 1 \end{pmatrix} $</formula></para><para>Distortion params:</para><para><formula id="14">$ \begin{pmatrix} k_1 &amp; k_2 &amp; p_1 &amp; p_2 &amp; k_3 \end{pmatrix} $</formula></para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>camera_matrix</parametername>
 </parameternamelist>
@@ -537,7 +537,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="146" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="155" bodyend="199"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="146" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="155" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="class_tonav_1a4cbe91ddd8bd4fb6dc624cd2e45e7ab2" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_imu_item" kindref="compound">ImuItem</ref></type>
@@ -562,7 +562,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="148" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="201" bodyend="208"/>
+        <location file="/home/travis/build/tomas789/tonav/include/tonav.h" line="148" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/tonav.cpp" bodystart="202" bodyend="209"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

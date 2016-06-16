@@ -11,115 +11,120 @@
     <includedby refid="filter_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/filter.cpp</includedby>
     <includedby refid="filter__state_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/filter_state.cpp</includedby>
     <incdepgraph>
-      <node id="182">
+      <node id="184">
         <label>list</label>
       </node>
-      <node id="187">
+      <node id="189">
         <label>limits</label>
       </node>
-      <node id="185">
+      <node id="187">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="184">
+      <node id="186">
         <label>Eigen/Core</label>
       </node>
-      <node id="179">
+      <node id="181">
         <label>/home/travis/build/tomas789/tonav/include/filter_state.h</label>
         <link refid="filter_state.h"/>
-        <childnode refid="180" relation="include">
-        </childnode>
-        <childnode refid="181" relation="include">
-        </childnode>
         <childnode refid="182" relation="include">
         </childnode>
         <childnode refid="183" relation="include">
         </childnode>
-        <childnode refid="186" relation="include">
-        </childnode>
-      </node>
-      <node id="183">
-        <label>body_state.h</label>
-        <link refid="body__state_8h_source"/>
         <childnode refid="184" relation="include">
         </childnode>
         <childnode refid="185" relation="include">
         </childnode>
+        <childnode refid="188" relation="include">
+        </childnode>
       </node>
-      <node id="181">
-        <label>Eigen/Dense</label>
-      </node>
-      <node id="180">
-        <label>iostream</label>
-      </node>
-      <node id="186">
-        <label>camera_pose.h</label>
-        <link refid="camera__pose_8h_source"/>
-        <childnode refid="181" relation="include">
+      <node id="185">
+        <label>body_state.h</label>
+        <link refid="body__state_8h_source"/>
+        <childnode refid="186" relation="include">
         </childnode>
         <childnode refid="187" relation="include">
         </childnode>
       </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="189">
-        <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
-        <link refid="filter_8h_source"/>
+      <node id="183">
+        <label>Eigen/Dense</label>
+      </node>
+      <node id="182">
+        <label>iostream</label>
+      </node>
+      <node id="190">
+        <label>set</label>
+      </node>
+      <node id="188">
+        <label>camera_pose.h</label>
+        <link refid="camera__pose_8h_source"/>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="189" relation="include">
+        </childnode>
         <childnode refid="190" relation="include">
         </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="192">
+        <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
+        <link refid="filter_8h_source"/>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>/home/travis/build/tomas789/tonav/include/filter_state.h</label>
+        <link refid="filter_state.h"/>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+      </node>
+      <node id="197">
+        <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
+        <link refid="tonav_8cpp_source"/>
+      </node>
+      <node id="200">
+        <label>/home/travis/build/tomas789/tonav/src/filter_state.cpp</label>
+        <link refid="filter__state_8cpp_source"/>
+      </node>
+      <node id="198">
+        <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
+        <link refid="filter_8cpp_source"/>
+      </node>
+      <node id="199">
+        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
+        <link refid="navigator_8cpp_source"/>
+      </node>
+      <node id="193">
+        <label>/home/travis/build/tomas789/tonav/include/tonav.h</label>
+        <link refid="tonav_8h_source"/>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="196" relation="include">
+        </childnode>
+      </node>
+      <node id="195">
+        <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="194">
+        <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
+        <link refid="tonav__ros_8h_source"/>
         <childnode refid="195" relation="include">
         </childnode>
         <childnode refid="196" relation="include">
         </childnode>
       </node>
-      <node id="188">
-        <label>/home/travis/build/tomas789/tonav/include/filter_state.h</label>
-        <link refid="filter_state.h"/>
-        <childnode refid="189" relation="include">
-        </childnode>
-        <childnode refid="195" relation="include">
-        </childnode>
-        <childnode refid="197" relation="include">
-        </childnode>
-      </node>
-      <node id="194">
-        <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
-        <link refid="tonav_8cpp_source"/>
-      </node>
-      <node id="197">
-        <label>/home/travis/build/tomas789/tonav/src/filter_state.cpp</label>
-        <link refid="filter__state_8cpp_source"/>
-      </node>
-      <node id="195">
-        <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
-        <link refid="filter_8cpp_source"/>
-      </node>
       <node id="196">
-        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
-        <link refid="navigator_8cpp_source"/>
-      </node>
-      <node id="190">
-        <label>/home/travis/build/tomas789/tonav/include/tonav.h</label>
-        <link refid="tonav_8h_source"/>
-        <childnode refid="191" relation="include">
-        </childnode>
-        <childnode refid="194" relation="include">
-        </childnode>
-        <childnode refid="193" relation="include">
-        </childnode>
-      </node>
-      <node id="192">
-        <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
-        <link refid="main_8cpp_source"/>
-      </node>
-      <node id="191">
-        <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
-        <link refid="tonav__ros_8h_source"/>
-        <childnode refid="192" relation="include">
-        </childnode>
-        <childnode refid="193" relation="include">
-        </childnode>
-      </node>
-      <node id="193">
         <label>/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</label>
         <link refid="tonav__ros_8cpp_source"/>
       </node>
@@ -145,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="76" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="132" bodyend="164"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="92" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="138" bodyend="170"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -174,13 +179,13 @@
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_body_state" kindref="compound">BodyState</ref>&amp;<sp/>getBodyStateRef();</highlight></codeline>
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_body_state" kindref="compound">BodyState</ref>&amp;<sp/>getBodyStateRef()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;StateType,<sp/>4,<sp/>1&gt;<sp/>getRotationBlock();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyState::BodyStateType,<sp/>4,<sp/>1&gt;<sp/>getRotationBlock();</highlight></codeline>
 <codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>getRotationQuaternion();</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setRotationQuaternion(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Quaterniond&amp;<sp/>quat);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;StateType,<sp/>3,<sp/>1&gt;<sp/>getPositionBlock();</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;StateType,<sp/>3,<sp/>1&gt;<sp/>getVelocityBlock();</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;StateType,<sp/>3,<sp/>1&gt;<sp/>getAccelerometerBiasBlock();</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;StateType,<sp/>3,<sp/>1&gt;<sp/>getGyroscopeBiasBlock();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyState::BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getPositionBlock();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyState::BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getVelocityBlock();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyState::BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getAccelerometerBiasBlock();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;BodyState::BodyStateType,<sp/>3,<sp/>1&gt;<sp/>getGyroscopeBiasBlock();</highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;StateType,<sp/>9,<sp/>1&gt;<sp/>getGyroscopeShapeVectorizedBlock();</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Block&lt;StateType,<sp/>9,<sp/>1&gt;<sp/>getGSensitivityVectorizedBlock();</highlight></codeline>
@@ -210,22 +215,33 @@
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_filter_state" kindref="compound">FilterState</ref><sp/>deriveNewStateForImuPropagation()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>appendCameraPose(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_camera_pose" kindref="compound">CameraPose</ref>&amp;<sp/>camera_pose);</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_body_state" kindref="compound">BodyState</ref><sp/>body_state_;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>StateType<sp/>state_;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>rotation_to_this_frame_;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>rotation_estimate_;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>acceleration_estimate_;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;CameraPose&gt;<sp/>poses_;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal">std::ostream&amp;<sp/>operator&lt;&lt;<sp/>(std::ostream&amp;<sp/>out,<sp/><ref refid="class_filter_state" kindref="compound">FilterState</ref>&amp;<sp/>state);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_FILTER_STATE_H</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;CameraPose&gt;&amp;<sp/>getCameraPosesRef();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_body_state" kindref="compound">BodyState</ref><sp/>body_state_;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>gyroscope_shape_;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>g_sensitivity_;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix3d<sp/>accelerometer_shape_;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;CameraPose&gt;<sp/>poses_;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>StateType<sp/>state_;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Quaterniond<sp/>rotation_to_this_frame_;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>rotation_estimate_;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>acceleration_estimate_;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">std::ostream&amp;<sp/>operator&lt;&lt;<sp/>(std::ostream&amp;<sp/>out,<sp/><ref refid="class_filter_state" kindref="compound">FilterState</ref>&amp;<sp/>state);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_FILTER_STATE_H</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/tomas789/tonav/include/filter_state.h"/>
   </compounddef>

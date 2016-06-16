@@ -137,56 +137,61 @@ $(document).ready(function(){initNavTree('filter_8h_source.html','');});
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> initialize();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> stepInertial(<span class="keywordtype">double</span> timedelta, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; accel, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; gyro);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> stepCamera(<span class="keywordtype">double</span> timedelta, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; accel, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; gyro, cv::Mat&amp; frame);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> stepCamera(<span class="keywordtype">double</span> timedelta, cv::Mat&amp; frame);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> propagateRotation(</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="class_filter_state.html">FilterState</a>&amp; old_state, <a class="code" href="class_filter_state.html">FilterState</a>&amp; new_state, <span class="keywordtype">double</span> timedelta, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; accel,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; gyro);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> propagateVelocityAndPosition(</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="class_filter_state.html">FilterState</a>&amp; old_state, <a class="code" href="class_filter_state.html">FilterState</a>&amp; new_state, <span class="keywordtype">double</span> timedelta, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; accel,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_body_state.html">BodyState</a> propagateBodyState(<span class="keyword">const</span> <a class="code" href="class_body_state.html">BodyState</a>&amp; body_state_old, <span class="keywordtype">double</span> timedelta,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; accel, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; gyro);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> propagateRotation(</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keyword">const</span> <a class="code" href="class_body_state.html">BodyState</a>&amp; old_state, <a class="code" href="class_body_state.html">BodyState</a>&amp; new_state, <span class="keywordtype">double</span> timedelta, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; accel,</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; gyro);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_filter.html#ad046b83209a1f03d65ac75f16b538546">setGlobalGravity</a>(Eigen::Vector3d gravity);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    Eigen::Vector3d getGlobalGravity() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    Eigen::Vector3d getCurrentPosition();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Eigen::Quaterniond getCurrentAttitude();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_filter.html#a1c7a33a737fafec46d6e98ec1be37a4c">getImageCaptureTime</a>(<span class="keywordtype">double</span> arrive_time);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="class_calibration.html">Calibration</a> calibration_;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Eigen::Vector3d global_gravity_;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_filter_state.html">FilterState</a> filter_state_;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Eigen::Matrix&lt;double, 15, 15&gt; filter_covar_;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> propagateVelocityAndPosition(</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keyword">const</span> <a class="code" href="class_body_state.html">BodyState</a>&amp; old_state, <a class="code" href="class_body_state.html">BodyState</a>&amp; new_state, <span class="keywordtype">double</span> timedelta, <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; accel,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">const</span> <a class="code" href="class_imu_item.html">ImuItem</a>&amp; gyro);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_filter.html#ad046b83209a1f03d65ac75f16b538546">setGlobalGravity</a>(Eigen::Vector3d gravity);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    Eigen::Vector3d getGlobalGravity() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    Eigen::Vector3d getCurrentPosition();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    Eigen::Quaterniond getCurrentAttitude();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_filter.html#a1c7a33a737fafec46d6e98ec1be37a4c">getImageCaptureTime</a>(<span class="keywordtype">double</span> arrive_time);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_calibration.html">Calibration</a> calibration_;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    Eigen::Vector3d global_gravity_;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    FeatureTracker::feature_track_list features_tracked_;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> initializeBodyFrame();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> initializeImuCalibration();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> initializeCameraCalibration();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> initializeBodyPoses();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> augment();</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">static</span> Eigen::Matrix&lt;double, 9, 1&gt; vectorizeMatrix(<span class="keyword">const</span> Eigen::Matrix&lt;double, 3, 3&gt;&amp; mat);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> Eigen::Matrix&lt;double, 3, 3&gt; unvectorizeMatrix(Eigen::Block&lt;FilterState::StateType, 9, 1&gt; vec);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> Eigen::Matrix4d omegaMatrix(<span class="keyword">const</span> Eigen::Vector3d vec);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> Eigen::Matrix3d crossMatrix(<span class="keyword">const</span> Eigen::Vector3d vec);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="class_feature_tracker.html">FeatureTracker</a> feature_tracker_;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif //TONAV_FILTER_H</span></div>
-<div class="ttc" id="class_feature_tracker_html"><div class="ttname"><a href="class_feature_tracker.html">FeatureTracker</a></div><div class="ttdef"><b>Definition:</b> <a href="feature__tracker_8h_source.html#l00015">feature_tracker.h:15</a></div></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="class_filter_state.html">FilterState</a> filter_state_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Eigen::Matrix&lt;double, 15, 15&gt; filter_covar_;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    FeatureTracker::feature_track_list features_tracked_;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> initializeBodyFrame();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> initializeImuCalibration();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> initializeCameraCalibration();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> initializeBodyPoses();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> augment();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> pruneCameraPoses(<span class="keyword">const</span> FeatureTracker::feature_track_list&amp; residualized_features);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> Eigen::Matrix&lt;double, 9, 1&gt; vectorizeMatrix(<span class="keyword">const</span> Eigen::Matrix&lt;double, 3, 3&gt;&amp; mat);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> Eigen::Matrix&lt;double, 3, 3&gt; unvectorizeMatrix(Eigen::Block&lt;FilterState::StateType, 9, 1&gt; vec);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">static</span> Eigen::Matrix4d omegaMatrix(<span class="keyword">const</span> Eigen::Vector3d vec);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">static</span> Eigen::Matrix3d crossMatrix(<span class="keyword">const</span> Eigen::Vector3d vec);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_feature_tracker.html">FeatureTracker</a> feature_tracker_;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif //TONAV_FILTER_H</span></div>
+<div class="ttc" id="class_feature_tracker_html"><div class="ttname"><a href="class_feature_tracker.html">FeatureTracker</a></div><div class="ttdef"><b>Definition:</b> <a href="feature__tracker_8h_source.html#l00017">feature_tracker.h:17</a></div></div>
 <div class="ttc" id="class_calibration_html"><div class="ttname"><a href="class_calibration.html">Calibration</a></div><div class="ttdef"><b>Definition:</b> <a href="calibration_8h_source.html#l00013">calibration.h:13</a></div></div>
 <div class="ttc" id="class_imu_item_html"><div class="ttname"><a href="class_imu_item.html">ImuItem</a></div><div class="ttdef"><b>Definition:</b> <a href="imu__item_8h_source.html#l00015">imu_item.h:15</a></div></div>
+<div class="ttc" id="class_body_state_html"><div class="ttname"><a href="class_body_state.html">BodyState</a></div><div class="ttdoc">Represents body pose  in filter state. </div><div class="ttdef"><b>Definition:</b> <a href="body__state_8h_source.html#l00014">body_state.h:14</a></div></div>
 <div class="ttc" id="class_filter_state_html"><div class="ttname"><a href="class_filter_state.html">FilterState</a></div><div class="ttdef"><b>Definition:</b> <a href="filter__state_8h_source.html#l00015">filter_state.h:15</a></div></div>
 <div class="ttc" id="class_filter_html"><div class="ttname"><a href="class_filter.html">Filter</a></div><div class="ttdoc">Implementation of MSCKF. </div><div class="ttdef"><b>Definition:</b> <a href="filter_8h_source.html#l00029">filter.h:29</a></div></div>
-<div class="ttc" id="class_filter_html_ad046b83209a1f03d65ac75f16b538546"><div class="ttname"><a href="class_filter.html#ad046b83209a1f03d65ac75f16b538546">Filter::setGlobalGravity</a></div><div class="ttdeci">void setGlobalGravity(Eigen::Vector3d gravity)</div><div class="ttdoc">Set initial estimate of gravity in global frame. </div><div class="ttdef"><b>Definition:</b> <a href="filter_8cpp_source.html#l00126">filter.cpp:126</a></div></div>
-<div class="ttc" id="class_filter_html_a1c7a33a737fafec46d6e98ec1be37a4c"><div class="ttname"><a href="class_filter.html#a1c7a33a737fafec46d6e98ec1be37a4c">Filter::getImageCaptureTime</a></div><div class="ttdeci">double getImageCaptureTime(double arrive_time)</div><div class="ttdoc">Calculate . </div><div class="ttdef"><b>Definition:</b> <a href="filter_8cpp_source.html#l00142">filter.cpp:142</a></div></div>
+<div class="ttc" id="class_filter_html_ad046b83209a1f03d65ac75f16b538546"><div class="ttname"><a href="class_filter.html#ad046b83209a1f03d65ac75f16b538546">Filter::setGlobalGravity</a></div><div class="ttdeci">void setGlobalGravity(Eigen::Vector3d gravity)</div><div class="ttdoc">Set initial estimate of gravity in global frame. </div><div class="ttdef"><b>Definition:</b> <a href="filter_8cpp_source.html#l00168">filter.cpp:168</a></div></div>
+<div class="ttc" id="class_filter_html_a1c7a33a737fafec46d6e98ec1be37a4c"><div class="ttname"><a href="class_filter.html#a1c7a33a737fafec46d6e98ec1be37a4c">Filter::getImageCaptureTime</a></div><div class="ttdeci">double getImageCaptureTime(double arrive_time)</div><div class="ttdoc">Calculate . </div><div class="ttdef"><b>Definition:</b> <a href="filter_8cpp_source.html#l00184">filter.cpp:184</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -22,13 +22,16 @@ Implementation of M\-S\-C\-K\-F.
 \hypertarget{class_filter_a27176eb65976f98cdc9495b4fdfc3296}{void {\bfseries step\-Inertial} (double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_a27176eb65976f98cdc9495b4fdfc3296}
 
 \item 
-\hypertarget{class_filter_a1fad49c62892905f713de0bf66d9f3c7}{void {\bfseries step\-Camera} (double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro, cv\-::\-Mat \&frame)}\label{class_filter_a1fad49c62892905f713de0bf66d9f3c7}
+\hypertarget{class_filter_aa28ba41a7503afe19bdcc2a8b85f6adc}{void {\bfseries step\-Camera} (double timedelta, cv\-::\-Mat \&frame)}\label{class_filter_aa28ba41a7503afe19bdcc2a8b85f6adc}
 
 \item 
-\hypertarget{class_filter_a3ed7acd6fff45ead8b4209d4e31a8097}{void {\bfseries propagate\-Rotation} (\hyperlink{class_filter_state}{Filter\-State} \&old\-\_\-state, \hyperlink{class_filter_state}{Filter\-State} \&new\-\_\-state, double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_a3ed7acd6fff45ead8b4209d4e31a8097}
+\hypertarget{class_filter_a2767a830213940f97fad6c472684598d}{\hyperlink{class_body_state}{Body\-State} {\bfseries propagate\-Body\-State} (const \hyperlink{class_body_state}{Body\-State} \&body\-\_\-state\-\_\-old, double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_a2767a830213940f97fad6c472684598d}
 
 \item 
-\hypertarget{class_filter_a778f444068abe887fd58e02f00be6121}{void {\bfseries propagate\-Velocity\-And\-Position} (\hyperlink{class_filter_state}{Filter\-State} \&old\-\_\-state, \hyperlink{class_filter_state}{Filter\-State} \&new\-\_\-state, double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_a778f444068abe887fd58e02f00be6121}
+\hypertarget{class_filter_ac5c7f21b6a486de46946e296affb00b4}{void {\bfseries propagate\-Rotation} (const \hyperlink{class_body_state}{Body\-State} \&old\-\_\-state, \hyperlink{class_body_state}{Body\-State} \&new\-\_\-state, double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_ac5c7f21b6a486de46946e296affb00b4}
+
+\item 
+\hypertarget{class_filter_ae98ff24d5d95e65584fa6413f64bb9aa}{void {\bfseries propagate\-Velocity\-And\-Position} (const \hyperlink{class_body_state}{Body\-State} \&old\-\_\-state, \hyperlink{class_body_state}{Body\-State} \&new\-\_\-state, double timedelta, const \hyperlink{class_imu_item}{Imu\-Item} \&accel, const \hyperlink{class_imu_item}{Imu\-Item} \&gyro)}\label{class_filter_ae98ff24d5d95e65584fa6413f64bb9aa}
 
 \item 
 void \hyperlink{class_filter_ad046b83209a1f03d65ac75f16b538546}{set\-Global\-Gravity} (Eigen\-::\-Vector3d gravity)
@@ -81,7 +84,7 @@ Estimated image capture time
 \end{DoxyReturn}
 
 
-Definition at line 142 of file filter.\-cpp.
+Definition at line 184 of file filter.\-cpp.
 
 \hypertarget{class_filter_ad046b83209a1f03d65ac75f16b538546}{\index{Filter@{Filter}!set\-Global\-Gravity@{set\-Global\-Gravity}}
 \index{set\-Global\-Gravity@{set\-Global\-Gravity}!Filter@{Filter}}
@@ -103,7 +106,7 @@ This is usually calculated as averate of first few accelerometer measurements. I
 \end{DoxyParams}
 
 
-Definition at line 126 of file filter.\-cpp.
+Definition at line 168 of file filter.\-cpp.
 
 
 
