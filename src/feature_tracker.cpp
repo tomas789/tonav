@@ -17,8 +17,6 @@ FeatureTracker::FeatureTracker() {
     detector_ = cv::FeatureDetector::create("ORB");
     extractor_ = cv::DescriptorExtractor::create("ORB");
     matcher_ = cv::DescriptorMatcher::create("BruteForce-Hamming");
-
-    frame_number_ = 0;
 }
 
 FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_list& previous_tracks, cv::Mat& image) {
@@ -28,18 +26,18 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
         FeatureTracker::feature_track_list current_features;
         for (std::size_t i = 0; i < frame_features.keypoints().size(); ++i) {
             const cv::KeyPoint& keypoint = frame_features.keypoints()[i];
-            current_features.emplace_back(new FeatureTrack(frame_number_));
+            current_features.emplace_back(new FeatureTrack);
             current_features.back()->addFeaturePosition(keypoint.pt.x, keypoint.pt.y);
         }
 
         previous_frame_features_ = frame_features;
-        frame_number_ += 1;
         return current_features;
     }
 
     std::vector<cv::DMatch> matches = frame_features.match(matcher_, previous_frame_features_);
 
     std::vector<double> previous_feature_matched(previous_tracks.size(), INFINITY);
+    std::vector<std::size_t> matched_feature_assigned(previous_tracks.size(), std::numeric_limits<std::size_t>::max());
     std::vector<bool> current_feature_matched(frame_features.keypoints().size(), false);
     feature_track_list current_tracks(frame_features.keypoints().size());
 
@@ -63,11 +61,17 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
             if (!std::isinf(previous_feature_matched[train_idx])) {
                 // Revert previous match
                 previous_tracks[train_idx]->revertLastPosition();
+                
+                std::size_t previous_matched_idx = matched_feature_assigned[train_idx];
+                current_tracks[previous_matched_idx].reset(new FeatureTrack);
+                
+                current_feature_matched[previous_matched_idx] = false;
             }
 
             // Track feature
             const cv::KeyPoint& current_keypoint = frame_features.keypoints()[query_idx];
             current_tracks[query_idx] = previous_tracks[train_idx];
+            matched_feature_assigned[train_idx] = query_idx;
             current_tracks[query_idx]->addFeaturePosition(current_keypoint.pt.x, current_keypoint.pt.y);
 
             previous_feature_matched[train_idx] = match.distance;
@@ -81,7 +85,6 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     drawStats(image, previous_feature_matched, current_feature_matched, current_tracks, matches);
 
     previous_frame_features_ = frame_features;
-    frame_number_ += 1;
 
     return current_tracks;
 }
@@ -122,7 +125,7 @@ void FeatureTracker::drawStats(cv::Mat &image, const std::vector<double> &previo
 
     double average_feature_live = 0.0;
     for (std::size_t i = 0; i < current_tracks.size(); ++i) {
-        average_feature_live += (frame_number_ - current_tracks[i]->getFirstFrameNumber());
+        average_feature_live += current_tracks[i]->posesTrackedCount();
     }
     average_feature_live /= current_tracks.size();
 
@@ -151,7 +154,7 @@ void FeatureTracker::createNewFeatureTracks(std::vector<bool> &feature_matched,
         if (!feature_matched[i]) {
             // This is new feature
             const cv::KeyPoint& current_keypoint = frame_features.keypoints()[i];
-            std::shared_ptr<FeatureTrack> feature_track(new FeatureTrack(frame_number_));
+            std::shared_ptr<FeatureTrack> feature_track(new FeatureTrack);
             feature_track->addFeaturePosition(current_keypoint.pt.x, current_keypoint.pt.y);
             feature_tracks[i] = feature_track;
         }

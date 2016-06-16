@@ -5,6 +5,7 @@
 #include "filter.h"
 
 #include <iostream>
+#include <iterator>
 #include <opencv2/core/core.hpp>
 
 #include "calibration.h"
@@ -33,57 +34,98 @@ void Filter::stepInertial(double timedelta, const ImuItem &accel, const ImuItem 
     FilterState new_state = filter_state_.deriveNewStateForImuPropagation();
     FilterState& old_state = filter_state_;
 
-    propagateRotation(old_state, new_state, timedelta, accel, gyro);
-    propagateVelocityAndPosition(old_state, new_state, timedelta, accel, gyro);
+    BodyState body_state_new = propagateBodyState(old_state.getBodyStateRef(), timedelta, accel, gyro);
+    new_state.getBodyStateRef() = body_state_new;
 
     old_state = new_state;
     // std::cout << filter_state_ << std::endl;
 }
 
-void Filter::stepCamera(double timedelta, const ImuItem& accel, const ImuItem& gyro, cv::Mat &frame) {
+void Filter::stepCamera(double timedelta, cv::Mat &frame) {
     augment();
+    CameraPose& last_camera_pose = filter_state_.getCameraPosesRef().back();
     
     FeatureTracker::feature_track_list current_features_tracked;
+    if (feature_tracker_.previous_frame_features_.keypoints().size() == 0) {
+        assert(filter_state_.getCameraPosesRef().size() == 1);
+    }
     current_features_tracked = feature_tracker_.processImage(features_tracked_, frame);
-
-    FeatureTracker::feature_track_list out_of_view_features;
-    for (std::size_t i = 0; i < features_tracked_.size(); ++i) {
-        if (features_tracked_[i]->isOutOfView()) {
-            out_of_view_features.push_back(features_tracked_[i]);
+    last_camera_pose.setActiveFeaturesCount(current_features_tracked.size());
+    for (std::size_t i = 0; i < current_features_tracked.size(); ++i) {
+        if (current_features_tracked[i]->wasUsedForResidualization()) {
+            last_camera_pose.rememberFeatureId(current_features_tracked[i]->getFeatureId());
+            last_camera_pose.decreaseActiveFeaturesCount(current_features_tracked[i]->getFeatureId());
+        } else {
+            last_camera_pose.rememberFeatureId(current_features_tracked[i]->getFeatureId());
         }
     }
 
+    FeatureTracker::feature_track_list features_to_residualize;
+    for (std::size_t i = 0; i < features_tracked_.size(); ++i) {
+        assert(features_tracked_[i]->posesTrackedCount() <= calibration_.getMaxCameraPoses() + 1 || features_tracked_[i]->wasUsedForResidualization());
+        if (features_tracked_[i]->wasUsedForResidualization()) {
+            continue;
+        }
+        if (features_tracked_[i]->isOutOfView()) {
+            features_tracked_[i]->setWasUsedForResidualization();
+            features_to_residualize.push_back(features_tracked_[i]);
+        } else if (features_tracked_[i]->posesTrackedCount() == calibration_.getMaxCameraPoses() + 1) {
+            features_tracked_[i]->setWasUsedForResidualization();
+            features_tracked_[i]->revertLastPosition();
+            last_camera_pose.decreaseActiveFeaturesCount(features_tracked_[i]->getFeatureId());
+            features_to_residualize.push_back(features_tracked_[i]);
+        }
+    }
+    
+    
+    
+    pruneCameraPoses(features_to_residualize);
     features_tracked_ = current_features_tracked;
+    
+    std::cout << "Cam poses: " << filter_state_.getCameraPosesRef().size() << std::endl;
 }
 
-void Filter::propagateRotation(FilterState &old_state, FilterState &new_state, double timedelta, const ImuItem &accel,
-        const ImuItem &gyro) {
+BodyState Filter::propagateBodyState(const BodyState& body_state_old, double timedelta,
+        const ImuItem& accel, const ImuItem& gyro) {
+    BodyState body_state_new;
+    
+    body_state_new.getGyroscopeBiasBlock() = body_state_old.getGyroscopeBiasBlock();
+    body_state_new.getAccelerometerBiasBlock() = body_state_new.getAccelerometerBiasBlock();
+    
+    propagateRotation(body_state_old, body_state_new, timedelta, accel, gyro);
+    propagateVelocityAndPosition(body_state_old, body_state_new, timedelta, accel, gyro);
+    
+    return body_state_new;
+}
+
+void Filter::propagateRotation(const BodyState& old_state, BodyState& new_state, double timedelta,
+        const ImuItem& accel, const ImuItem& gyro) {
     Eigen::Vector3d rotation_measured;
     rotation_measured << gyro.getX(), gyro.getY(), gyro.getZ();
     Eigen::Vector3d accel_measured;
     accel_measured << accel.getX(), accel.getY(), accel.getZ();
 
-    Eigen::Matrix3d gyro_shape = unvectorizeMatrix(new_state.getGyroscopeShapeVectorizedBlock());
-    Eigen::Matrix3d accel_shape = unvectorizeMatrix(new_state.getAccelerometerShapeVectorizedBlock());
-    Eigen::Matrix3d g_sensitivity = unvectorizeMatrix(new_state.getGSensitivityVectorizedBlock());
+    Eigen::Matrix3d gyro_shape = unvectorizeMatrix(filter_state_.getGyroscopeShapeVectorizedBlock());
+    Eigen::Matrix3d accel_shape = unvectorizeMatrix(filter_state_.getAccelerometerShapeVectorizedBlock());
+    Eigen::Matrix3d g_sensitivity = unvectorizeMatrix(filter_state_.getGSensitivityVectorizedBlock());
 
     Eigen::Vector3d accel_estimate = accel_shape.inverse() * (accel_measured - new_state.getAccelerometerBiasBlock());
     Eigen::Vector3d rotation_estimate_new;
     rotation_estimate_new = gyro_shape.inverse() * (
             rotation_measured - g_sensitivity*accel_estimate - new_state.getGyroscopeBiasBlock()
         );
-    new_state.getRotationEstimateBlock() = rotation_estimate_new;
+    new_state.getRotationEstimateRef() = rotation_estimate_new;
 
     Eigen::Vector4d q0;
     q0 << 0, 0, 0, 1;
 
-    Eigen::Vector4d k1 = 0.5 * Filter::omegaMatrix(old_state.getRotationEstimateBlock()) * q0;
+    Eigen::Vector4d k1 = 0.5 * Filter::omegaMatrix(old_state.getRotationEstimateRef()) * q0;
     Eigen::Matrix4d omega_mat_k2_k3 = Filter::omegaMatrix(
-            (old_state.getRotationEstimateBlock() + new_state.getRotationEstimateBlock())/ 2
+            (old_state.getRotationEstimateRef() + new_state.getRotationEstimateRef())/ 2
         );
     Eigen::Vector4d k2 = 0.5 * omega_mat_k2_k3 * (q0 + (timedelta/2.0)*k1);
     Eigen::Vector4d k3 = 0.5 * omega_mat_k2_k3 * (q0 + (timedelta/2.0)*k2);
-    Eigen::Vector4d k4 = 0.5 * Filter::omegaMatrix(new_state.getRotationEstimateBlock()) * (q0 + timedelta*k3);
+    Eigen::Vector4d k4 = 0.5 * Filter::omegaMatrix(new_state.getRotationEstimateRef()) * (q0 + timedelta*k3);
 
     Eigen::Vector4d trans_to_new_frame_vec = q0 + timedelta/6.0 * (k1 + 2*k2 + 2*k3 + k4);
 
@@ -93,24 +135,24 @@ void Filter::propagateRotation(FilterState &old_state, FilterState &new_state, d
             trans_to_new_frame_vec(2, 0)
         );
     trans_to_new_frame.normalize();
-    new_state.setRotationToThisFrame(trans_to_new_frame);
+    new_state.getRotationToThisFrameRef() = trans_to_new_frame;
     Eigen::Quaterniond to_new_frame = trans_to_new_frame * to_old_frame;
     new_state.setRotationQuaternion(to_new_frame);
 }
 
 void Filter::propagateVelocityAndPosition(
-        FilterState &old_state, FilterState &new_state, double timedelta, const ImuItem &accel, const ImuItem &gyro) {
-    Eigen::Matrix3d accelerometer_shape = Filter::unvectorizeMatrix(new_state.getAccelerometerShapeVectorizedBlock());
+        const BodyState& old_state, BodyState& new_state, double timedelta, const ImuItem &accel, const ImuItem &gyro) {
+    Eigen::Matrix3d accelerometer_shape = Filter::unvectorizeMatrix(filter_state_.getAccelerometerShapeVectorizedBlock());
     Eigen::Vector3d accelerometer_measurement;
     accelerometer_measurement << accel.getX(), accel.getY(), accel.getZ();
-    new_state.getAccelerationEstimateBlock() = accelerometer_shape.inverse() * (
+    new_state.getAccelerationEstimateRef() = accelerometer_shape.inverse() * (
             accelerometer_measurement - new_state.getAccelerometerBiasBlock()
         );
 
-    Eigen::Matrix3d rotation_backwards = new_state.getRotationToThisFrame().toRotationMatrix().transpose();
+    Eigen::Matrix3d rotation_backwards = new_state.getRotationToThisFrameRef().toRotationMatrix().transpose();
 
     Eigen::Vector3d s_estimate = timedelta/2.0 * (
-            rotation_backwards*new_state.getAccelerationEstimateBlock() + old_state.getAccelerationEstimateBlock()
+            rotation_backwards*new_state.getAccelerationEstimateRef() + old_state.getAccelerationEstimateRef()
         );
     Eigen::Vector3d y_estimate = timedelta/2.0 * s_estimate;
 
@@ -180,7 +222,30 @@ void Filter::initializeBodyPoses() {
 
 void Filter::augment() {
     CameraPose pose;
+    BodyState& body_state = filter_state_.getBodyStateRef();
+    pose.getRotationForBodyPoseBlock() = body_state.getRotationBlock();
+    pose.getPositionForBodyPoseBlock() = body_state.getPositionBlock();
+    pose.getVelocityForBodyPoseBlock() = body_state.getVelocityBlock();
+    filter_state_.getCameraPosesRef().push_back(pose);
+}
+
+void Filter::pruneCameraPoses(const FeatureTracker::feature_track_list& residualized_features) {
+    for (std::size_t i = 0; i < residualized_features.size(); ++i) {
+        std::list<CameraPose>::iterator it = std::end(filter_state_.getCameraPosesRef());
+        it = std::prev(it, 2);
+        
+        for (std::size_t j = 0; j < residualized_features[i]->posesTrackedCount(); ++j) {
+            it->decreaseActiveFeaturesCount(residualized_features[i]->getFeatureId());
+            it = std::prev(it);
+        }
+    }
     
+    std::list<CameraPose>& poses = filter_state_.getCameraPosesRef();
+    while (!poses.empty() && poses.front().getActiveFeaturesCount() == 0) {
+        poses.pop_front();
+    }
+    
+    assert(poses.size() <= calibration_.getMaxCameraPoses());
 }
 
 Eigen::Matrix<double, 9, 1> Filter::vectorizeMatrix(const Eigen::Matrix<double, 3, 3> &mat) {

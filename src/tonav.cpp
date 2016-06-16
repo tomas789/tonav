@@ -193,7 +193,8 @@ void Tonav::performUpdate() {
     }
     
     // Update image
-    filter_.stepCamera(last_image_capture_time_ - last_update_time_, accelerometer_at_image_time, gyroscope_at_image_time, last_image_);
+    filter_.stepInertial(last_image_capture_time_ - last_update_time_, accelerometer_at_image_time, gyroscope_at_image_time);
+    filter_.stepCamera(last_image_capture_time_ - last_update_time_, last_image_);
     last_update_time_ = last_image_capture_time_;
     last_image_capture_time_ = NAN;
 }

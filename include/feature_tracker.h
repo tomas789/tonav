@@ -12,15 +12,18 @@
 #include "frame_features.h"
 #include "feature_track.h"
 
+class Filter;
+
 class FeatureTracker {
 public:
+    friend class Filter;
+    
     using feature_track_list = std::vector<std::shared_ptr<FeatureTrack>>;
     FeatureTracker();
 
     feature_track_list processImage(feature_track_list& previous_tracks, cv::Mat& image);
 
 private:
-    std::size_t frame_number_;
     cv::Ptr<cv::FeatureDetector> detector_;
     cv::Ptr<cv::DescriptorExtractor> extractor_;
     cv::Ptr<cv::DescriptorMatcher> matcher_;

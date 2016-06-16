@@ -9,38 +9,40 @@
 #include <Eigen/Core>
 #include <Eigen/Dense>
 
-Eigen::Block<FilterState::StateType, 4, 1> FilterState::getRotationBlock() {
-    return state_.block<4, 1>(0, 0);
+BodyState& FilterState::getBodyStateRef() {
+    return body_state_;
+}
+
+const BodyState& FilterState::getBodyStateRef() const {
+    return body_state_;
+}
+
+Eigen::Block<BodyState::BodyStateType, 4, 1> FilterState::getRotationBlock() {
+    return body_state_.getRotationBlock();
 }
 
 Eigen::Quaterniond FilterState::getRotationQuaternion() {
-    Eigen::Block<StateType, 4, 1> rotation_block = getRotationBlock();
-    Eigen::Quaterniond rot(rotation_block(3, 0), rotation_block(0, 0), rotation_block(1, 0), rotation_block(2, 0));
-    return rot;
+    return body_state_.getRotationQuaternion();
 }
 
 void FilterState::setRotationQuaternion(const Eigen::Quaterniond &quat) {
-    Eigen::Block<StateType, 4, 1> rotation_block = getRotationBlock();
-    rotation_block(0, 0) = quat.x();
-    rotation_block(1, 0) = quat.y();
-    rotation_block(2, 0) = quat.z();
-    rotation_block(3, 0) = quat.w();
+    body_state_.setRotationQuaternion(quat);
 }
 
-Eigen::Block<FilterState::StateType, 3, 1> FilterState::getPositionBlock() {
-    return state_.block<3, 1>(4, 0);
+Eigen::Block<BodyState::BodyStateType, 3, 1> FilterState::getPositionBlock() {
+    return body_state_.getPositionBlock();
 }
 
-Eigen::Block<FilterState::StateType, 3, 1> FilterState::getVelocityBlock() {
-    return state_.block<3, 1>(7, 0);
+Eigen::Block<BodyState::BodyStateType, 3, 1> FilterState::getVelocityBlock() {
+    return body_state_.getVelocityBlock();
 }
 
-Eigen::Block<FilterState::StateType, 3, 1> FilterState::getAccelerometerBiasBlock() {
-    return state_.block<3, 1>(10, 0);
+Eigen::Block<BodyState::BodyStateType, 3, 1> FilterState::getAccelerometerBiasBlock() {
+    return body_state_.getAccelerometerBiasBlock();
 }
 
-Eigen::Block<FilterState::StateType, 3, 1> FilterState::getGyroscopeBiasBlock() {
-    return state_.block<3, 1>(13, 0);
+Eigen::Block<BodyState::BodyStateType, 3, 1> FilterState::getGyroscopeBiasBlock() {
+    return body_state_.getGyroscopeBiasBlock();
 }
 
 Eigen::Block<FilterState::StateType, 9, 1> FilterState::getGyroscopeShapeVectorizedBlock() {
@@ -116,9 +118,9 @@ std::ostream &FilterState::uglyPrint(std::ostream &out) const {
 
 FilterState FilterState::deriveNewStateForImuPropagation() const {
     FilterState new_state(*this);
-    new_state.getRotationBlock().setZero();
-    new_state.getPositionBlock().setZero();
-    new_state.getVelocityBlock().setZero();
+    // new_state.getRotationBlock().setZero();
+    // new_state.getPositionBlock().setZero();
+    // new_state.getVelocityBlock().setZero();
     new_state.setRotationToThisFrame(Eigen::Quaterniond::Identity());
     new_state.getRotationEstimateBlock().setZero();
     new_state.getAccelerationEstimateBlock().setZero();
@@ -127,6 +129,10 @@ FilterState FilterState::deriveNewStateForImuPropagation() const {
 
 void FilterState::appendCameraPose(const CameraPose &camera_pose) {
     poses_.push_back(camera_pose);
+}
+
+std::list<CameraPose>& FilterState::getCameraPosesRef() {
+    return poses_;
 }
 
 std::ostream& operator<< (std::ostream& out, FilterState& state) {

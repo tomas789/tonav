@@ -33,13 +33,16 @@ public:
     void initialize();
 
     void stepInertial(double timedelta, const ImuItem& accel, const ImuItem& gyro);
-    void stepCamera(double timedelta, const ImuItem& accel, const ImuItem& gyro, cv::Mat& frame);
+    void stepCamera(double timedelta, cv::Mat& frame);
 
+    BodyState propagateBodyState(const BodyState& body_state_old, double timedelta,
+        const ImuItem& accel, const ImuItem& gyro);
+    
     void propagateRotation(
-            FilterState& old_state, FilterState& new_state, double timedelta, const ImuItem& accel,
+            const BodyState& old_state, BodyState& new_state, double timedelta, const ImuItem& accel,
             const ImuItem& gyro);
     void propagateVelocityAndPosition(
-            FilterState& old_state, FilterState& new_state, double timedelta, const ImuItem& accel,
+            const BodyState& old_state, BodyState& new_state, double timedelta, const ImuItem& accel,
             const ImuItem& gyro);
 
     /**
@@ -81,7 +84,11 @@ private:
     void initializeCameraCalibration();
     void initializeBodyPoses();
     
+    /**
+     * @todo Implement this
+     */
     void augment();
+    void pruneCameraPoses(const FeatureTracker::feature_track_list& residualized_features);
 
     static Eigen::Matrix<double, 9, 1> vectorizeMatrix(const Eigen::Matrix<double, 3, 3>& mat);
     static Eigen::Matrix<double, 3, 3> unvectorizeMatrix(Eigen::Block<FilterState::StateType, 9, 1> vec);

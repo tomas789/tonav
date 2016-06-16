@@ -19,13 +19,13 @@ public:
     BodyState& getBodyStateRef();
     const BodyState& getBodyStateRef() const;
 
-    Eigen::Block<StateType, 4, 1> getRotationBlock();
+    Eigen::Block<BodyState::BodyStateType, 4, 1> getRotationBlock();
     Eigen::Quaterniond getRotationQuaternion();
     void setRotationQuaternion(const Eigen::Quaterniond& quat);
-    Eigen::Block<StateType, 3, 1> getPositionBlock();
-    Eigen::Block<StateType, 3, 1> getVelocityBlock();
-    Eigen::Block<StateType, 3, 1> getAccelerometerBiasBlock();
-    Eigen::Block<StateType, 3, 1> getGyroscopeBiasBlock();
+    Eigen::Block<BodyState::BodyStateType, 3, 1> getPositionBlock();
+    Eigen::Block<BodyState::BodyStateType, 3, 1> getVelocityBlock();
+    Eigen::Block<BodyState::BodyStateType, 3, 1> getAccelerometerBiasBlock();
+    Eigen::Block<BodyState::BodyStateType, 3, 1> getGyroscopeBiasBlock();
 
     Eigen::Block<StateType, 9, 1> getGyroscopeShapeVectorizedBlock();
     Eigen::Block<StateType, 9, 1> getGSensitivityVectorizedBlock();
@@ -55,13 +55,30 @@ public:
     FilterState deriveNewStateForImuPropagation() const;
 
     void appendCameraPose(const CameraPose& camera_pose);
+    std::list<CameraPose>& getCameraPosesRef();
 
 private:
     /** @brief Contains body pose */
     BodyState body_state_;
     
+    /** @brief \f$T_g\f$ */
+    Eigen::Matrix3d gyroscope_shape_;
+    
+    /** @brief \f$T_s\f$ */
+    Eigen::Matrix3d g_sensitivity_;
+    
+    /** @brief \f$T_a\f$ */
+    Eigen::Matrix3d accelerometer_shape_;
+    
+    
+    
+    /** @brief All camera poses */
+    std::list<CameraPose> poses_;
+    
     /**
      * @birief Filter state except body pose and camera poses
+     *
+     * @deprecated
      */
     StateType state_;
     
@@ -69,8 +86,7 @@ private:
     Eigen::Vector3d rotation_estimate_;
     Eigen::Vector3d acceleration_estimate_;
 
-    /** @brief All camera poses */
-    std::list<CameraPose> poses_;
+    
 };
 
 std::ostream& operator<< (std::ostream& out, FilterState& state);

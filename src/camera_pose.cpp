@@ -25,7 +25,11 @@ void CameraPose::setActiveFeaturesCount(std::size_t i) {
     features_active_ = i;
 }
 
-void CameraPose::decreaseActiveFeaturesCount() {
+void CameraPose::decreaseActiveFeaturesCount(int feature_id) {
+    assert(feature_ids_.find(feature_id) != std::end(feature_ids_));
+    feature_ids_.erase(feature_ids_.find(feature_id));
+    
+    assert(features_active_ > 0);
     features_active_ -= 1;
 }
 
@@ -45,8 +49,10 @@ bool CameraPose::isValid() const {
     return pose_id_ != std::numeric_limits<std::size_t>::max() && features_active_ > 0;
 }
 
-
-
+void CameraPose::rememberFeatureId(int feature_id) {
+    assert(feature_ids_.find(feature_id) == std::end(feature_ids_));
+    feature_ids_.insert(feature_id);
+}
 
 
 

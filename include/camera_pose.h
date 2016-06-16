@@ -7,6 +7,7 @@
 
 #include <Eigen/Dense>
 #include <limits>
+#include <set>
 
 class CameraPose {
 public:
@@ -19,15 +20,17 @@ public:
 
     std::size_t getActiveFeaturesCount() const;
     void setActiveFeaturesCount(std::size_t i);
-    void decreaseActiveFeaturesCount();
+    void decreaseActiveFeaturesCount(int feature_id);
 
     Eigen::Block<CameraPoseType, 4, 1> getRotationForBodyPoseBlock();
     Eigen::Block<CameraPoseType, 3, 1> getPositionForBodyPoseBlock();
     Eigen::Block<CameraPoseType, 3, 1> getVelocityForBodyPoseBlock();
 
     bool isValid() const;
+    void rememberFeatureId(int feature_id);
 
 private:
+    std::set<int> feature_ids_;
     CameraPoseType camera_pose_;
     std::size_t pose_id_ = std::numeric_limits<std::size_t>::max();
     std::size_t features_active_;

@@ -164,7 +164,7 @@ void TonavRos::publishResults() {
     Eigen::Quaterniond attitude = tonav_->getCurrentOrientation();
     Eigen::Vector3d position = tonav_->getCurrentPosition();
     transform.header.stamp = ros::Time::now();
-    transform.header.frame_id = "map";
+    transform.header.frame_id = "world";
     transform.child_frame_id = "tonav";
     transform.transform.translation.x = position(0, 0);
     transform.transform.translation.y = position(1, 0);
