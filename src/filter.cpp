@@ -13,7 +13,7 @@
 #include "imu_item.h"
 
 Filter::Filter(const Calibration &calibration)
-: calibration_(calibration) {
+: calibration_(calibration), filter_state_(calibration_.getMaxCameraPoses()) {
 }
 
 void Filter::initialize() {
@@ -43,11 +43,11 @@ void Filter::stepInertial(double timedelta, const ImuItem &accel, const ImuItem 
 
 void Filter::stepCamera(double timedelta, cv::Mat &frame) {
     augment();
-    CameraPose& last_camera_pose = filter_state_.getCameraPosesRef().back();
+    CameraPose& last_camera_pose = filter_state_.poses().back();
     
     FeatureTracker::feature_track_list current_features_tracked;
     if (feature_tracker_.previous_frame_features_.keypoints().size() == 0) {
-        assert(filter_state_.getCameraPosesRef().size() == 1);
+        assert(filter_state_.poses().size() == 1);
     }
     current_features_tracked = feature_tracker_.processImage(features_tracked_, frame);
     last_camera_pose.setActiveFeaturesCount(current_features_tracked.size());
@@ -82,7 +82,7 @@ void Filter::stepCamera(double timedelta, cv::Mat &frame) {
     pruneCameraPoses(features_to_residualize);
     features_tracked_ = current_features_tracked;
     
-    std::cout << "Cam poses: " << filter_state_.getCameraPosesRef().size() << std::endl;
+    std::cout << "Cam poses: " << filter_state_.poses().size() << std::endl;
 }
 
 BodyState Filter::propagateBodyState(const BodyState& body_state_old, double timedelta,
@@ -226,12 +226,12 @@ void Filter::augment() {
     pose.getRotationForBodyPoseBlock() = body_state.getRotationBlock();
     pose.getPositionForBodyPoseBlock() = body_state.getPositionBlock();
     pose.getVelocityForBodyPoseBlock() = body_state.getVelocityBlock();
-    filter_state_.getCameraPosesRef().push_back(pose);
+    filter_state_.poses().push_back(pose);
 }
 
 void Filter::pruneCameraPoses(const FeatureTracker::feature_track_list& residualized_features) {
     for (std::size_t i = 0; i < residualized_features.size(); ++i) {
-        std::list<CameraPose>::iterator it = std::end(filter_state_.getCameraPosesRef());
+        RingBuffer<CameraPose>::iterator it = std::end(filter_state_.poses());
         it = std::prev(it, 2);
         
         for (std::size_t j = 0; j < residualized_features[i]->posesTrackedCount(); ++j) {
@@ -240,7 +240,7 @@ void Filter::pruneCameraPoses(const FeatureTracker::feature_track_list& residual
         }
     }
     
-    std::list<CameraPose>& poses = filter_state_.getCameraPosesRef();
+    RingBuffer<CameraPose>& poses = filter_state_.poses();
     while (!poses.empty() && poses.front().getActiveFeaturesCount() == 0) {
         poses.pop_front();
     }
@@ -281,10 +281,39 @@ Eigen::Matrix3d Filter::crossMatrix(const Eigen::Vector3d vec) {
     return mat;
 }
 
-
-
-
-
+Eigen::Vector3d Filter::triangulateGlobalFeaturePosition(const FeatureTrack &feature_track) {
+    std::size_t n = feature_track.posesTrackedCount();
+    std::size_t max_iter = static_cast<std::size_t>(calibration_.getMaxTriangulationIterations());
+    RingBuffer<CameraPose>& poses = filter_state_.poses();
+    
+    /** \f$ f \f$ */
+    Eigen::Matrix<double, Eigen::Dynamic, 1> measurement_errors;
+    measurement_errors.resize(2*n, Eigen::NoChange);
+    /** \f$ J_{f_i} \f$ */
+    Eigen::Matrix<double, Eigen::Dynamic, 3> measurement_error_jacobian;
+    measurement_error_jacobian.resize(2*n, Eigen::NoChange);
+    
+    /** @todo Make better initial guess */
+    Eigen::Vector3d parameters_est;
+    parameters_est << 1, 1, 1;
+    
+    for (std::size_t i = 0; i < max_iter; ++i) {
+        RingBuffer<CameraPose>::iterator it = std::end(poses);
+        it = std::prev(it, 2);
+        
+        for (std::size_t pose_counter = 0; pose_counter < n; ++pose_counter) {
+            /** \f$ z_i \f$ */
+            const Eigen::Vector2d& position = feature_track[n - pose_counter - 1];
+            CameraPose& pose = *it;
+            
+            
+            
+            it = std::prev(it);
+        }
+    }
+    
+    
+}
 
 
 

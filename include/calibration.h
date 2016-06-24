@@ -14,6 +14,9 @@ class Calibration {
 public:
     int getMaxCameraPoses() const;
     int getBufferSize() const;
+    int getMaxTriangulationIterations() const;
+    
+    Eigen::Matrix3d getRotationFromBodyToCameraFrame() const;
 
     Eigen::Matrix<double, 3, 3> getGSensitivityMatrix() const;
     Eigen::Matrix<double, 3, 3> getGyroscopeShapeMatrix() const;
@@ -40,6 +43,7 @@ public:
 private:
     int max_camera_poses_;
     int buffer_size_;
+    int max_triangulation_iterations_;
 
     double f_x_;
     double f_y_;
@@ -62,6 +66,8 @@ private:
     Eigen::Matrix3d t_s_;
     Eigen::Matrix3d t_a_;
     Eigen::Matrix3d t_g_;
+    
+    Eigen::Matrix3d rotation_from_body_to_camera_frame_;
 
     static const std::vector<std::string> allowed_params_;
 };

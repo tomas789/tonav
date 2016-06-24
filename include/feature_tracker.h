@@ -20,7 +20,7 @@ public:
     
     using feature_track_list = std::vector<std::shared_ptr<FeatureTrack>>;
     FeatureTracker();
-
+    
     feature_track_list processImage(feature_track_list& previous_tracks, cv::Mat& image);
 
 private:

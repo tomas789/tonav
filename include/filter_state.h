@@ -7,14 +7,22 @@
 
 #include <iostream>
 #include <Eigen/Dense>
-#include <list>
+#include <vector>
 
 #include "body_state.h"
 #include "camera_pose.h"
+#include "ring_buffer.h"
 
 class FilterState {
 public:
     using StateType = Eigen::Matrix<double, 57, 1>;
+    
+    FilterState(int max_camera_poses);
+    FilterState(const FilterState& other) = default;
+    FilterState(FilterState&& other) = default;
+    
+    FilterState& operator= (const FilterState& other) = default;
+    FilterState& operator= (FilterState&& other) = default;
     
     BodyState& getBodyStateRef();
     const BodyState& getBodyStateRef() const;
@@ -54,9 +62,7 @@ public:
 
     FilterState deriveNewStateForImuPropagation() const;
 
-    void appendCameraPose(const CameraPose& camera_pose);
-    std::list<CameraPose>& getCameraPosesRef();
-
+    RingBuffer<CameraPose>& poses();
 private:
     /** @brief Contains body pose */
     BodyState body_state_;
@@ -70,10 +76,8 @@ private:
     /** @brief \f$T_a\f$ */
     Eigen::Matrix3d accelerometer_shape_;
     
-    
-    
     /** @brief All camera poses */
-    std::list<CameraPose> poses_;
+    RingBuffer<CameraPose> poses_;
     
     /**
      * @birief Filter state except body pose and camera poses

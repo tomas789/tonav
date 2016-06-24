@@ -13,6 +13,11 @@ FeatureTrack::FeatureTrack() {
     was_used_for_residualization_ = false;
 }
 
+const Eigen::Vector2d& FeatureTrack::operator[](std::size_t i) const {
+    assert(i < positions_.size());
+    return positions_[i];
+}
+
 void FeatureTrack::addFeaturePosition(double x, double y) {
     Eigen::Vector2d position;
     position << x, y;

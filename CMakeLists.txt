@@ -13,7 +13,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 set (CMAKE_INSTALL_RPATH /opt/ros/jade/lib)
 
 set(SOURCE_FILES
-        src/main.cpp
         src/calibration.cpp
         include/calibration.h
         include/filter.h
@@ -55,11 +54,26 @@ set(SOURCE_FILES
         src/tonav_ros.cpp
         include/body_state.h
         src/body_state.cpp
+        include/ring_buffer.h
+        src/ring_buffer.cpp
 )
-add_executable(tonav ${SOURCE_FILES})
+add_executable(tonav src/main.cpp ${SOURCE_FILES})
 
 find_package(Eigen3 REQUIRED)
 include_directories (AFTER "${EIGEN3_INCLUDE_DIR}")
+
+find_package(GTest)
+if (${GTEST_FOUND})
+  set (TEST_FILES
+    tests/ring_buffer.cpp
+  )
+  enable_testing()
+  include_directories(${GTEST_INCLUDE_DIRS})
+
+  add_executable(tonav-test ${SOURCE_FILES} ${TEST_FILES})
+  target_link_libraries(tonav-test ${GTEST_BOTH_LIBRARIES})
+  add_test(TestsTonavAll tonav-test)
+endif()
 
 
 catkin_package(
@@ -70,22 +84,37 @@ catkin_package(
 find_package(Boost REQUIRED COMPONENTS program_options filesystem)
 include_directories (AFTER "${Boost_INCLUDE_DIRS}")
 target_link_libraries(tonav ${Boost_LIBRARIES})
+if (${GTEST_FOUND})
+  target_link_libraries(tonav-test ${Boost_LIBRARIES})
+endif ()
 
 find_package(OpenCV REQUIRED)
 message (STATUS "${OpenCV_INCLUDE_DIRS}")
 message (STATUS "${OpenCV_LIBS}")
 include_directories (AFTER "${OpenCV_INCLUDE_DIRS}")
 target_link_libraries(tonav ${OpenCV_LIBS})
+if (${GTEST_FOUND})
+  target_link_libraries(tonav-test ${OpenCV_LIBS})
+endif ()
 
 find_package(image_transport REQUIRED)
 include_directories (AFTER ${image_transport_INCLUDE_DIRS})
 target_link_libraries(tonav ${image_transport_LIBRARIES})
+if (${GTEST_FOUND})
+  target_link_libraries(tonav-test ${image_transport_LIBRARIES})
+endif ()
 
 find_package(cv_bridge REQUIRED)
 target_link_libraries(tonav ${cv_bridge_LIBRARIES})
+if (${GTEST_FOUND})
+  target_link_libraries(tonav-test ${cv_bridge_LIBRARIES})
+endif ()
 
 find_package(tf2_ros REQUIRED)
 target_link_libraries(tonav ${tf2_ros_LIBRARIES})
+if (${GTEST_FOUND})
+  target_link_libraries(tonav-test ${tf2_ros_LIBRARIES})
+endif ()
 
 find_package(Doxygen 1.8.6)
 if(DOXYGEN_FOUND)

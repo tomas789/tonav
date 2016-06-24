@@ -9,6 +9,9 @@
 #include <Eigen/Core>
 #include <Eigen/Dense>
 
+FilterState::FilterState(int max_camera_poses) : poses_(max_camera_poses + 1) {
+}
+
 BodyState& FilterState::getBodyStateRef() {
     return body_state_;
 }
@@ -127,11 +130,7 @@ FilterState FilterState::deriveNewStateForImuPropagation() const {
     return new_state;
 }
 
-void FilterState::appendCameraPose(const CameraPose &camera_pose) {
-    poses_.push_back(camera_pose);
-}
-
-std::list<CameraPose>& FilterState::getCameraPosesRef() {
+RingBuffer<CameraPose>& FilterState::poses() {
     return poses_;
 }
 

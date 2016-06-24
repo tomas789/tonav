@@ -11,6 +11,8 @@
 class FeatureTrack {
 public:
     FeatureTrack();
+    
+    const Eigen::Vector2d& operator[] (std::size_t i) const;
 
     void addFeaturePosition(double x, double y);
     void revertLastPosition();

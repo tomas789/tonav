@@ -11,9 +11,9 @@
 #include <string>
 #include <stdexcept>
 #include <vector>
-#include <exceptions/impossible_exception.h>
 #include <iostream>
 
+#include "exceptions/impossible_exception.h"
 #include "exceptions/calibration_file_error.h"
 
 const std::vector<std::string> Calibration::allowed_params_ = {
@@ -23,7 +23,8 @@ const std::vector<std::string> Calibration::allowed_params_ = {
         "Camera.td", "Camera.tr",
         "ORBextractor.nFeatures",
         "Imu.Ts", "Imu.Tg", "Imu.Ta",
-        "Filter.maxCameraPoses", "Filter.bufferSize"
+        "Filter.maxCameraPoses", "Filter.bufferSize", "Filter.maxTriangulationIterations",
+        "Filter.imuToCameraFrameRotation"
 };
 
 Calibration Calibration::fromPath(boost::filesystem::path fname) {
@@ -148,6 +149,14 @@ Calibration Calibration::fromPath(boost::filesystem::path fname) {
             }
         } else if (key == "Filter.bufferSize") {
             if (!Calibration::tryParseInt(value, calib.buffer_size_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Filter.maxTriangulationIterations") {
+            if (!Calibration::tryParseInt(value, calib.max_triangulation_iterations_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Filter.imuToCameraFrameRotation") {
+            if (!Calibration::tryParseMatrix3d(value, calib.rotation_from_body_to_camera_frame_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
         } else {
@@ -303,18 +312,16 @@ int Calibration::getBufferSize() const {
     return buffer_size_;
 }
 
+int Calibration::getMaxTriangulationIterations() const {
+    if (max_triangulation_iterations_ < 3) {
+        throw CalibrationFileError("Expected Filter.maxTriangulationIterations >= 2. Got " + std::to_string(max_triangulation_iterations_));
+    }
+    return max_triangulation_iterations_;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+Eigen::Matrix3d Calibration::getRotationFromBodyToCameraFrame() const {
+    return rotation_from_body_to_camera_frame_;
+}
 
 
 

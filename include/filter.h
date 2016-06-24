@@ -95,6 +95,8 @@ private:
     static Eigen::Matrix4d omegaMatrix(const Eigen::Vector3d vec);
     static Eigen::Matrix3d crossMatrix(const Eigen::Vector3d vec);
 
+    Eigen::Vector3d triangulateGlobalFeaturePosition(const FeatureTrack& feature_track);
+    
     FeatureTracker feature_tracker_;
 };
 
