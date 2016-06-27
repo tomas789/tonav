@@ -14,83 +14,83 @@
     <includedby refid="imu__feed_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/imu_feed.cpp</includedby>
     <includedby refid="imu__item_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/imu_item.cpp</includedby>
     <incdepgraph>
-      <node id="92">
+      <node id="113">
         <label>string</label>
       </node>
-      <node id="94">
+      <node id="115">
         <label>exception</label>
       </node>
-      <node id="91">
+      <node id="112">
         <label>/home/travis/build/tomas789/tonav/include/exceptions/general_exception.h</label>
         <link refid="general_exception.h"/>
-        <childnode refid="92" relation="include">
+        <childnode refid="113" relation="include">
         </childnode>
-        <childnode refid="93" relation="include">
+        <childnode refid="114" relation="include">
         </childnode>
       </node>
-      <node id="93">
+      <node id="114">
         <label>exceptions/base_exception.h</label>
         <link refid="base__exception_8h_source"/>
-        <childnode refid="94" relation="include">
+        <childnode refid="115" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="104">
+      <node id="125">
         <label>/home/travis/build/tomas789/tonav/src/imu_item.cpp</label>
         <link refid="imu__item_8cpp_source"/>
       </node>
-      <node id="100">
+      <node id="121">
         <label>/home/travis/build/tomas789/tonav/src/feature_tracker.cpp</label>
         <link refid="feature__tracker_8cpp_source"/>
       </node>
-      <node id="97">
+      <node id="118">
         <label>/home/travis/build/tomas789/tonav/src/camera_item.cpp</label>
         <link refid="camera__item_8cpp_source"/>
       </node>
-      <node id="96">
+      <node id="117">
         <label>/home/travis/build/tomas789/tonav/src/camera_feed.cpp</label>
         <link refid="camera__feed_8cpp_source"/>
       </node>
-      <node id="98">
+      <node id="119">
         <label>/home/travis/build/tomas789/tonav/src/exceptions/general_exception.cpp</label>
         <link refid="general__exception_8cpp_source"/>
       </node>
-      <node id="102">
+      <node id="123">
         <label>/home/travis/build/tomas789/tonav/src/imu_buffer.cpp</label>
         <link refid="imu__buffer_8cpp_source"/>
       </node>
-      <node id="95">
+      <node id="116">
         <label>/home/travis/build/tomas789/tonav/include/exceptions/general_exception.h</label>
         <link refid="general_exception.h"/>
-        <childnode refid="96" relation="include">
+        <childnode refid="117" relation="include">
         </childnode>
-        <childnode refid="97" relation="include">
+        <childnode refid="118" relation="include">
         </childnode>
-        <childnode refid="98" relation="include">
+        <childnode refid="119" relation="include">
         </childnode>
-        <childnode refid="99" relation="include">
+        <childnode refid="120" relation="include">
         </childnode>
-        <childnode refid="100" relation="include">
+        <childnode refid="121" relation="include">
         </childnode>
-        <childnode refid="101" relation="include">
+        <childnode refid="122" relation="include">
         </childnode>
-        <childnode refid="102" relation="include">
+        <childnode refid="123" relation="include">
         </childnode>
-        <childnode refid="103" relation="include">
+        <childnode refid="124" relation="include">
         </childnode>
-        <childnode refid="104" relation="include">
+        <childnode refid="125" relation="include">
         </childnode>
       </node>
-      <node id="99">
+      <node id="120">
         <label>/home/travis/build/tomas789/tonav/src/feature_track.cpp</label>
         <link refid="feature__track_8cpp_source"/>
       </node>
-      <node id="101">
+      <node id="122">
         <label>/home/travis/build/tomas789/tonav/src/frame_features.cpp</label>
         <link refid="frame__features_8cpp_source"/>
       </node>
-      <node id="103">
+      <node id="124">
         <label>/home/travis/build/tomas789/tonav/src/imu_feed.cpp</label>
         <link refid="imu__feed_8cpp_source"/>
       </node>

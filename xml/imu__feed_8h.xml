@@ -9,64 +9,64 @@
     <includedby refid="imu__feed_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/imu_feed.cpp</includedby>
     <includedby refid="navigator_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/navigator.cpp</includedby>
     <incdepgraph>
-      <node id="251">
+      <node id="277">
         <label>/home/travis/build/tomas789/tonav/include/imu_feed.h</label>
         <link refid="imu_feed.h"/>
-        <childnode refid="252" relation="include">
+        <childnode refid="278" relation="include">
         </childnode>
-        <childnode refid="253" relation="include">
+        <childnode refid="279" relation="include">
         </childnode>
-        <childnode refid="254" relation="include">
+        <childnode refid="280" relation="include">
         </childnode>
-        <childnode refid="255" relation="include">
+        <childnode refid="281" relation="include">
         </childnode>
       </node>
-      <node id="256">
+      <node id="282">
         <label>Eigen/Core</label>
       </node>
-      <node id="253">
+      <node id="279">
         <label>string</label>
       </node>
-      <node id="257">
+      <node id="283">
         <label>imu_device.h</label>
         <link refid="imu__device_8h_source"/>
-        <childnode refid="258" relation="include">
+        <childnode refid="284" relation="include">
         </childnode>
       </node>
-      <node id="252">
+      <node id="278">
         <label>boost/filesystem/path.hpp</label>
       </node>
-      <node id="255">
+      <node id="281">
         <label>imu_item.h</label>
         <link refid="imu__item_8h_source"/>
-        <childnode refid="253" relation="include">
+        <childnode refid="279" relation="include">
         </childnode>
-        <childnode refid="256" relation="include">
+        <childnode refid="282" relation="include">
         </childnode>
-        <childnode refid="257" relation="include">
+        <childnode refid="283" relation="include">
         </childnode>
       </node>
-      <node id="254">
+      <node id="280">
         <label>vector</label>
       </node>
-      <node id="258">
+      <node id="284">
         <label>iostream</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="259">
+      <node id="285">
         <label>/home/travis/build/tomas789/tonav/include/imu_feed.h</label>
         <link refid="imu_feed.h"/>
-        <childnode refid="260" relation="include">
+        <childnode refid="286" relation="include">
         </childnode>
-        <childnode refid="261" relation="include">
+        <childnode refid="287" relation="include">
         </childnode>
       </node>
-      <node id="261">
+      <node id="287">
         <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
         <link refid="navigator_8cpp_source"/>
       </node>
-      <node id="260">
+      <node id="286">
         <label>/home/travis/build/tomas789/tonav/src/imu_feed.cpp</label>
         <link refid="imu__feed_8cpp_source"/>
       </node>

@@ -10,8 +10,10 @@ var class_calibration =
     [ "getGSensitivityMatrix", "class_calibration.html#ad3edc4101a92835c6eed1dcfa004b592", null ],
     [ "getGyroscopeShapeMatrix", "class_calibration.html#a645b1a1cd460d493756669392ac71b78", null ],
     [ "getMaxCameraPoses", "class_calibration.html#a0273a577bae64d0833262103580e4a38", null ],
+    [ "getMaxTriangulationIterations", "class_calibration.html#a681582420d47807e4d8b1c8608e35aef", null ],
     [ "getOpticalCenterX", "class_calibration.html#aa101a7999e6eec103dce4ec651c2218b", null ],
     [ "getOpticalCenterY", "class_calibration.html#a7486353559a45d424afb1aa6fbfa9f24", null ],
     [ "getRadialDistortionParameters", "class_calibration.html#a57798a33c441afe2e0b675008e962af6", null ],
+    [ "getRotationFromBodyToCameraFrame", "class_calibration.html#a871a481190b4ac5a4bb3ae1d5426726e", null ],
     [ "getTangentialDistortionParameters", "class_calibration.html#ab42ba1d8120e3c22b85204c5dfd98f7f", null ]
 ];

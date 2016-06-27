@@ -12,126 +12,126 @@
     <includedby refid="imu__feed_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/imu_feed.cpp</includedby>
     <includedby refid="imu__item_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/imu_item.cpp</includedby>
     <incdepgraph>
-      <node id="264">
+      <node id="290">
         <label>Eigen/Core</label>
       </node>
-      <node id="263">
+      <node id="289">
         <label>string</label>
       </node>
-      <node id="265">
+      <node id="291">
         <label>imu_device.h</label>
         <link refid="imu__device_8h_source"/>
-        <childnode refid="266" relation="include">
+        <childnode refid="292" relation="include">
         </childnode>
       </node>
-      <node id="262">
+      <node id="288">
         <label>/home/travis/build/tomas789/tonav/include/imu_item.h</label>
         <link refid="imu_item.h"/>
-        <childnode refid="263" relation="include">
+        <childnode refid="289" relation="include">
         </childnode>
-        <childnode refid="264" relation="include">
+        <childnode refid="290" relation="include">
         </childnode>
-        <childnode refid="265" relation="include">
+        <childnode refid="291" relation="include">
         </childnode>
       </node>
-      <node id="266">
+      <node id="292">
         <label>iostream</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="278">
+      <node id="304">
         <label>/home/travis/build/tomas789/tonav/include/imu_feed.h</label>
         <link refid="imu__feed_8h_source"/>
-        <childnode refid="279" relation="include">
+        <childnode refid="305" relation="include">
         </childnode>
-        <childnode refid="276" relation="include">
+        <childnode refid="302" relation="include">
         </childnode>
       </node>
-      <node id="280">
+      <node id="306">
         <label>/home/travis/build/tomas789/tonav/src/imu_item.cpp</label>
         <link refid="imu__item_8cpp_source"/>
       </node>
-      <node id="269">
+      <node id="295">
         <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
         <link refid="filter_8h_source"/>
-        <childnode refid="270" relation="include">
+        <childnode refid="296" relation="include">
         </childnode>
-        <childnode refid="275" relation="include">
+        <childnode refid="301" relation="include">
         </childnode>
-        <childnode refid="276" relation="include">
+        <childnode refid="302" relation="include">
         </childnode>
       </node>
-      <node id="274">
+      <node id="300">
         <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
         <link refid="tonav_8cpp_source"/>
       </node>
-      <node id="277">
+      <node id="303">
         <label>/home/travis/build/tomas789/tonav/src/imu_buffer.cpp</label>
         <link refid="imu__buffer_8cpp_source"/>
       </node>
-      <node id="267">
+      <node id="293">
         <label>/home/travis/build/tomas789/tonav/include/imu_item.h</label>
         <link refid="imu_item.h"/>
-        <childnode refid="268" relation="include">
+        <childnode refid="294" relation="include">
         </childnode>
-        <childnode refid="278" relation="include">
+        <childnode refid="304" relation="include">
         </childnode>
-        <childnode refid="275" relation="include">
+        <childnode refid="301" relation="include">
         </childnode>
-        <childnode refid="277" relation="include">
+        <childnode refid="303" relation="include">
         </childnode>
-        <childnode refid="279" relation="include">
+        <childnode refid="305" relation="include">
         </childnode>
-        <childnode refid="280" relation="include">
+        <childnode refid="306" relation="include">
         </childnode>
       </node>
-      <node id="275">
+      <node id="301">
         <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
         <link refid="filter_8cpp_source"/>
       </node>
-      <node id="268">
+      <node id="294">
         <label>/home/travis/build/tomas789/tonav/include/imu_buffer.h</label>
         <link refid="imu__buffer_8h_source"/>
-        <childnode refid="269" relation="include">
+        <childnode refid="295" relation="include">
         </childnode>
-        <childnode refid="270" relation="include">
+        <childnode refid="296" relation="include">
         </childnode>
-        <childnode refid="277" relation="include">
+        <childnode refid="303" relation="include">
         </childnode>
-        <childnode refid="276" relation="include">
+        <childnode refid="302" relation="include">
         </childnode>
       </node>
-      <node id="276">
+      <node id="302">
         <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
         <link refid="navigator_8cpp_source"/>
       </node>
-      <node id="270">
+      <node id="296">
         <label>/home/travis/build/tomas789/tonav/include/tonav.h</label>
         <link refid="tonav_8h_source"/>
-        <childnode refid="271" relation="include">
+        <childnode refid="297" relation="include">
         </childnode>
-        <childnode refid="274" relation="include">
+        <childnode refid="300" relation="include">
         </childnode>
-        <childnode refid="273" relation="include">
+        <childnode refid="299" relation="include">
         </childnode>
       </node>
-      <node id="272">
+      <node id="298">
         <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
         <link refid="main_8cpp_source"/>
       </node>
-      <node id="279">
+      <node id="305">
         <label>/home/travis/build/tomas789/tonav/src/imu_feed.cpp</label>
         <link refid="imu__feed_8cpp_source"/>
       </node>
-      <node id="271">
+      <node id="297">
         <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
         <link refid="tonav__ros_8h_source"/>
-        <childnode refid="272" relation="include">
+        <childnode refid="298" relation="include">
         </childnode>
-        <childnode refid="273" relation="include">
+        <childnode refid="299" relation="include">
         </childnode>
       </node>
-      <node id="273">
+      <node id="299">
         <label>/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</label>
         <link refid="tonav__ros_8cpp_source"/>
       </node>

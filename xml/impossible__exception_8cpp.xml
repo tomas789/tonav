@@ -6,34 +6,34 @@
     <includes local="no">exception</includes>
     <includes local="no">string</includes>
     <incdepgraph>
-      <node id="435">
+      <node id="475">
         <label>/home/travis/build/tomas789/tonav/src/exceptions/impossible_exception.cpp</label>
         <link refid="impossible_exception.cpp"/>
-        <childnode refid="436" relation="include">
+        <childnode refid="476" relation="include">
         </childnode>
-        <childnode refid="439" relation="include">
+        <childnode refid="479" relation="include">
         </childnode>
-        <childnode refid="437" relation="include">
+        <childnode refid="477" relation="include">
         </childnode>
       </node>
-      <node id="437">
+      <node id="477">
         <label>string</label>
       </node>
-      <node id="439">
+      <node id="479">
         <label>exception</label>
       </node>
-      <node id="438">
+      <node id="478">
         <label>exceptions/base_exception.h</label>
         <link refid="base__exception_8h_source"/>
-        <childnode refid="439" relation="include">
+        <childnode refid="479" relation="include">
         </childnode>
       </node>
-      <node id="436">
+      <node id="476">
         <label>exceptions/impossible_exception.h</label>
         <link refid="impossible__exception_8h_source"/>
-        <childnode refid="437" relation="include">
+        <childnode refid="477" relation="include">
         </childnode>
-        <childnode refid="438" relation="include">
+        <childnode refid="478" relation="include">
         </childnode>
       </node>
     </incdepgraph>

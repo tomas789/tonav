@@ -5,6 +5,7 @@ var hierarchy =
     [ "CameraFeed", "class_camera_feed.html", null ],
     [ "CameraItem", "class_camera_item.html", null ],
     [ "CameraPose", "class_camera_pose.html", null ],
+    [ "CameraPoseBuffer", "class_camera_pose_buffer.html", null ],
     [ "image_transport::CameraPublisher", "classimage__transport_1_1_camera_publisher.html", null ],
     [ "image_transport::CameraSubscriber", "classimage__transport_1_1_camera_subscriber.html", null ],
     [ "pluginlib::ClassLoader< T >", "classpluginlib_1_1_class_loader.html", null ],

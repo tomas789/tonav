@@ -1,7 +1,9 @@
 var class_filter_state =
 [
     [ "StateType", "class_filter_state.html#a26539bef949b11d11deb68ab8fba5598", null ],
-    [ "appendCameraPose", "class_filter_state.html#a9fdc71df11cf72369b86be2eaffcea27", null ],
+    [ "FilterState", "class_filter_state.html#a96a6a62727b41b89cd1020fccde8bf51", null ],
+    [ "FilterState", "class_filter_state.html#a787e83cc2d2a29b1a63e6a563c68ec64", null ],
+    [ "FilterState", "class_filter_state.html#a276c5ef3144894bbbb875104d229ee33", null ],
     [ "deriveNewStateForImuPropagation", "class_filter_state.html#af33cfbc67284846e3ca9c26a79c227a9", null ],
     [ "getAccelerationEstimateBlock", "class_filter_state.html#a4436166f7dbaf6c002b6fc2832b4f136", null ],
     [ "getAccelerometerBiasBlock", "class_filter_state.html#a641cf74718074f9334fc88ac9d15169a", null ],
@@ -9,7 +11,6 @@ var class_filter_state =
     [ "getBodyStateRef", "class_filter_state.html#a931d62079a89ceacc6e3f62cad16fe77", null ],
     [ "getBodyStateRef", "class_filter_state.html#af7a4b70d8985b4552f4ed8e5d36409e3", null ],
     [ "getCameraDelayTimeRef", "class_filter_state.html#a6563a73bad1016317018c85d53380962", null ],
-    [ "getCameraPosesRef", "class_filter_state.html#a0638c19679b93d95f812bd38758f05ca", null ],
     [ "getCameraReadoutTimeRef", "class_filter_state.html#ab9d3e7cad1ae09ed35bcc528c0e8ef45", null ],
     [ "getCameraToBodyOffsetBlock", "class_filter_state.html#a844855f0fa5ebf0c606a06ea6fdb460b", null ],
     [ "getFocalLengthXRef", "class_filter_state.html#a3b65a9649366c853ffd99784fe9bef72", null ],
@@ -27,6 +28,9 @@ var class_filter_state =
     [ "getRotationToThisFrame", "class_filter_state.html#ab3d02580cdbd89bc64276467d7c1c854", null ],
     [ "getTangentialDistortionParametersBlock", "class_filter_state.html#ad4b9c49509f2cc303c554969a8264c89", null ],
     [ "getVelocityBlock", "class_filter_state.html#a1b8b9f3985ea35ba0f9f4f273ae8c1f2", null ],
+    [ "operator=", "class_filter_state.html#a3559980125f96c1498b6047f97a59498", null ],
+    [ "operator=", "class_filter_state.html#a979c282e7e50b6549679bca9ffa4b474", null ],
+    [ "poses", "class_filter_state.html#acde2164859104e0c291f4eec0e1bcb07", null ],
     [ "setRotationQuaternion", "class_filter_state.html#ab2a6e477d01da9521267781a73757838", null ],
     [ "setRotationToThisFrame", "class_filter_state.html#ae820e97a5a74c7765780bc7bb223796b", null ],
     [ "uglyPrint", "class_filter_state.html#aed4aab3a5133d37924bc5c1284b6cb66", null ]

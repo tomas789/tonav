@@ -135,48 +135,48 @@
     <detaileddescription>
 <para><ref refid="classimage__transport_1_1_raw_publisher" kindref="compound">RawPublisher</ref> is a simple wrapper for ros::Publisher, publishing unaltered Image messages on the base topic. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="93">
+      <node id="95">
         <label>image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="94" relation="public-inheritance">
+        <childnode refid="96" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="95">
+      <node id="97">
         <label>boost::noncopyable</label>
       </node>
-      <node id="94">
+      <node id="96">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="95" relation="private-inheritance">
+        <childnode refid="97" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="92">
+      <node id="94">
         <label>image_transport::RawPublisher</label>
         <link refid="classimage__transport_1_1_raw_publisher"/>
-        <childnode refid="93" relation="public-inheritance">
+        <childnode refid="95" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="97">
+      <node id="99">
         <label>image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="98" relation="public-inheritance">
+        <childnode refid="100" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="99">
+      <node id="101">
         <label>boost::noncopyable</label>
       </node>
-      <node id="98">
+      <node id="100">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="99" relation="private-inheritance">
+        <childnode refid="101" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="96">
+      <node id="98">
         <label>image_transport::RawPublisher</label>
         <link refid="classimage__transport_1_1_raw_publisher"/>
-        <childnode refid="97" relation="public-inheritance">
+        <childnode refid="99" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

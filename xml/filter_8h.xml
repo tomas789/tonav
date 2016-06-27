@@ -11,206 +11,221 @@
     <includedby refid="filter_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/filter.cpp</includedby>
     <includedby refid="navigator_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/navigator.cpp</includedby>
     <incdepgraph>
-      <node id="158">
-        <label>list</label>
-      </node>
-      <node id="162">
+      <node id="182">
         <label>limits</label>
       </node>
-      <node id="160">
+      <node id="180">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="153">
+      <node id="174">
         <label>Eigen/Core</label>
       </node>
-      <node id="166">
+      <node id="189">
         <label>opencv2/core/core.hpp</label>
       </node>
-      <node id="169">
+      <node id="192">
         <label>feature_track.h</label>
         <link refid="feature__track_8h_source"/>
-        <childnode refid="150" relation="include">
-        </childnode>
-        <childnode refid="155" relation="include">
-        </childnode>
-      </node>
-      <node id="154">
-        <label>string</label>
-      </node>
-      <node id="149">
-        <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
-        <link refid="filter.h"/>
-        <childnode refid="150" relation="include">
-        </childnode>
-        <childnode refid="151" relation="include">
-        </childnode>
-        <childnode refid="156" relation="include">
-        </childnode>
-        <childnode refid="164" relation="include">
-        </childnode>
-        <childnode refid="170" relation="include">
-        </childnode>
-      </node>
-      <node id="171">
-        <label>imu_device.h</label>
-        <link refid="imu__device_8h_source"/>
-        <childnode refid="157" relation="include">
-        </childnode>
-      </node>
-      <node id="156">
-        <label>filter_state.h</label>
-        <link refid="filter__state_8h_source"/>
-        <childnode refid="157" relation="include">
-        </childnode>
-        <childnode refid="150" relation="include">
-        </childnode>
-        <childnode refid="158" relation="include">
-        </childnode>
-        <childnode refid="159" relation="include">
-        </childnode>
-        <childnode refid="161" relation="include">
-        </childnode>
-      </node>
-      <node id="159">
-        <label>body_state.h</label>
-        <link refid="body__state_8h_source"/>
-        <childnode refid="153" relation="include">
-        </childnode>
-        <childnode refid="160" relation="include">
-        </childnode>
-      </node>
-      <node id="167">
-        <label>opencv2/features2d/features2d.hpp</label>
-      </node>
-      <node id="150">
-        <label>Eigen/Dense</label>
-      </node>
-      <node id="152">
-        <label>boost/filesystem/path.hpp</label>
-      </node>
-      <node id="172">
-        <label>imu_item.h</label>
-        <link refid="imu__item_8h_source"/>
-        <childnode refid="154" relation="include">
-        </childnode>
-        <childnode refid="153" relation="include">
-        </childnode>
         <childnode refid="171" relation="include">
         </childnode>
-      </node>
-      <node id="164">
-        <label>feature_tracker.h</label>
-        <link refid="feature__tracker_8h_source"/>
-        <childnode refid="165" relation="include">
-        </childnode>
-        <childnode refid="166" relation="include">
-        </childnode>
-        <childnode refid="167" relation="include">
-        </childnode>
-        <childnode refid="168" relation="include">
-        </childnode>
-        <childnode refid="169" relation="include">
+        <childnode refid="176" relation="include">
         </childnode>
       </node>
-      <node id="168">
-        <label>frame_features.h</label>
-        <link refid="frame__features_8h_source"/>
-        <childnode refid="166" relation="include">
-        </childnode>
-        <childnode refid="167" relation="include">
-        </childnode>
-      </node>
-      <node id="155">
-        <label>vector</label>
+      <node id="175">
+        <label>string</label>
       </node>
       <node id="170">
-        <label>imu_buffer.h</label>
-        <link refid="imu__buffer_8h_source"/>
-        <childnode refid="155" relation="include">
-        </childnode>
+        <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
+        <link refid="filter.h"/>
         <childnode refid="171" relation="include">
         </childnode>
         <childnode refid="172" relation="include">
         </childnode>
-      </node>
-      <node id="157">
-        <label>iostream</label>
-      </node>
-      <node id="163">
-        <label>set</label>
-      </node>
-      <node id="151">
-        <label>calibration.h</label>
-        <link refid="calibration_8h_source"/>
-        <childnode refid="152" relation="include">
+        <childnode refid="177" relation="include">
         </childnode>
-        <childnode refid="153" relation="include">
+        <childnode refid="187" relation="include">
         </childnode>
-        <childnode refid="154" relation="include">
-        </childnode>
-        <childnode refid="155" relation="include">
+        <childnode refid="193" relation="include">
         </childnode>
       </node>
-      <node id="161">
-        <label>camera_pose.h</label>
-        <link refid="camera__pose_8h_source"/>
-        <childnode refid="150" relation="include">
-        </childnode>
-        <childnode refid="162" relation="include">
-        </childnode>
-        <childnode refid="163" relation="include">
+      <node id="194">
+        <label>imu_device.h</label>
+        <link refid="imu__device_8h_source"/>
+        <childnode refid="178" relation="include">
         </childnode>
       </node>
-      <node id="165">
-        <label>memory</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="173">
-        <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
-        <link refid="filter.h"/>
-        <childnode refid="174" relation="include">
+      <node id="177">
+        <label>filter_state.h</label>
+        <link refid="filter__state_8h_source"/>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
         </childnode>
         <childnode refid="179" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+      </node>
+      <node id="179">
+        <label>body_state.h</label>
+        <link refid="body__state_8h_source"/>
+        <childnode refid="174" relation="include">
         </childnode>
         <childnode refid="180" relation="include">
         </childnode>
       </node>
-      <node id="178">
-        <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
-        <link refid="tonav_8cpp_source"/>
+      <node id="190">
+        <label>opencv2/features2d/features2d.hpp</label>
       </node>
-      <node id="179">
-        <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
-        <link refid="filter_8cpp_source"/>
+      <node id="185">
+        <label>boost/circular_buffer.hpp</label>
       </node>
-      <node id="180">
-        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
-        <link refid="navigator_8cpp_source"/>
+      <node id="171">
+        <label>Eigen/Dense</label>
       </node>
-      <node id="174">
-        <label>/home/travis/build/tomas789/tonav/include/tonav.h</label>
-        <link refid="tonav_8h_source"/>
+      <node id="173">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="195">
+        <label>imu_item.h</label>
+        <link refid="imu__item_8h_source"/>
         <childnode refid="175" relation="include">
         </childnode>
-        <childnode refid="178" relation="include">
+        <childnode refid="174" relation="include">
         </childnode>
-        <childnode refid="177" relation="include">
+        <childnode refid="194" relation="include">
+        </childnode>
+      </node>
+      <node id="187">
+        <label>feature_tracker.h</label>
+        <link refid="feature__tracker_8h_source"/>
+        <childnode refid="188" relation="include">
+        </childnode>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>frame_features.h</label>
+        <link refid="frame__features_8h_source"/>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="190" relation="include">
         </childnode>
       </node>
       <node id="176">
+        <label>vector</label>
+      </node>
+      <node id="193">
+        <label>imu_buffer.h</label>
+        <link refid="imu__buffer_8h_source"/>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+      </node>
+      <node id="186">
+        <label>utility</label>
+      </node>
+      <node id="178">
+        <label>iostream</label>
+      </node>
+      <node id="184">
+        <label>camera_pose_buffer.h</label>
+        <link refid="camera__pose__buffer_8h_source"/>
+        <childnode refid="185" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+      </node>
+      <node id="183">
+        <label>set</label>
+      </node>
+      <node id="172">
+        <label>calibration.h</label>
+        <link refid="calibration_8h_source"/>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>camera_pose.h</label>
+        <link refid="camera__pose_8h_source"/>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+        <childnode refid="183" relation="include">
+        </childnode>
+      </node>
+      <node id="188">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="196">
+        <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
+        <link refid="filter.h"/>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+      </node>
+      <node id="201">
+        <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
+        <link refid="tonav_8cpp_source"/>
+      </node>
+      <node id="202">
+        <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
+        <link refid="filter_8cpp_source"/>
+      </node>
+      <node id="203">
+        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
+        <link refid="navigator_8cpp_source"/>
+      </node>
+      <node id="197">
+        <label>/home/travis/build/tomas789/tonav/include/tonav.h</label>
+        <link refid="tonav_8h_source"/>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+      </node>
+      <node id="199">
         <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
         <link refid="main_8cpp_source"/>
       </node>
-      <node id="175">
+      <node id="198">
         <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
         <link refid="tonav__ros_8h_source"/>
-        <childnode refid="176" relation="include">
+        <childnode refid="199" relation="include">
         </childnode>
-        <childnode refid="177" relation="include">
+        <childnode refid="200" relation="include">
         </childnode>
       </node>
-      <node id="177">
+      <node id="200">
         <label>/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</label>
         <link refid="tonav__ros_8cpp_source"/>
       </node>
@@ -292,10 +307,12 @@
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Eigen::Matrix4d<sp/>omegaMatrix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3d<sp/>vec);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Eigen::Matrix3d<sp/>crossMatrix(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector3d<sp/>vec);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_feature_tracker" kindref="compound">FeatureTracker</ref><sp/>feature_tracker_;</highlight></codeline>
-<codeline lineno="99"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_FILTER_H</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>triangulateGlobalFeaturePosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_feature_track" kindref="compound">FeatureTrack</ref>&amp;<sp/>feature_track);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_feature_tracker" kindref="compound">FeatureTracker</ref><sp/>feature_tracker_;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_FILTER_H</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/tomas789/tonav/include/filter.h"/>
   </compounddef>

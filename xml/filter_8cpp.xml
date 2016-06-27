@@ -10,178 +10,193 @@
     <includes refid="filter__state_8h" local="yes">filter_state.h</includes>
     <includes refid="imu__item_8h" local="yes">imu_item.h</includes>
     <incdepgraph>
-      <node id="477">
-        <label>list</label>
-      </node>
-      <node id="481">
+      <node id="520">
         <label>limits</label>
       </node>
-      <node id="492">
+      <node id="534">
         <label>iterator</label>
       </node>
-      <node id="479">
+      <node id="518">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="472">
+      <node id="512">
         <label>Eigen/Core</label>
       </node>
-      <node id="485">
+      <node id="527">
         <label>opencv2/core/core.hpp</label>
       </node>
-      <node id="488">
+      <node id="530">
         <label>feature_track.h</label>
         <link refid="feature__track_8h_source"/>
-        <childnode refid="469" relation="include">
+        <childnode refid="509" relation="include">
         </childnode>
-        <childnode refid="474" relation="include">
+        <childnode refid="514" relation="include">
         </childnode>
       </node>
-      <node id="473">
+      <node id="513">
         <label>string</label>
       </node>
-      <node id="468">
+      <node id="508">
         <label>filter.h</label>
         <link refid="filter_8h_source"/>
-        <childnode refid="469" relation="include">
+        <childnode refid="509" relation="include">
         </childnode>
-        <childnode refid="470" relation="include">
+        <childnode refid="510" relation="include">
         </childnode>
-        <childnode refid="475" relation="include">
+        <childnode refid="515" relation="include">
         </childnode>
-        <childnode refid="483" relation="include">
+        <childnode refid="525" relation="include">
         </childnode>
-        <childnode refid="489" relation="include">
+        <childnode refid="531" relation="include">
         </childnode>
       </node>
-      <node id="490">
+      <node id="532">
         <label>imu_device.h</label>
         <link refid="imu__device_8h_source"/>
-        <childnode refid="476" relation="include">
+        <childnode refid="516" relation="include">
         </childnode>
       </node>
-      <node id="475">
+      <node id="515">
         <label>filter_state.h</label>
         <link refid="filter__state_8h_source"/>
-        <childnode refid="476" relation="include">
+        <childnode refid="516" relation="include">
         </childnode>
-        <childnode refid="469" relation="include">
+        <childnode refid="509" relation="include">
         </childnode>
-        <childnode refid="477" relation="include">
+        <childnode refid="514" relation="include">
         </childnode>
-        <childnode refid="478" relation="include">
+        <childnode refid="517" relation="include">
         </childnode>
-        <childnode refid="480" relation="include">
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
         </childnode>
       </node>
-      <node id="478">
+      <node id="517">
         <label>body_state.h</label>
         <link refid="body__state_8h_source"/>
-        <childnode refid="472" relation="include">
+        <childnode refid="512" relation="include">
         </childnode>
-        <childnode refid="479" relation="include">
+        <childnode refid="518" relation="include">
         </childnode>
       </node>
-      <node id="486">
+      <node id="528">
         <label>opencv2/features2d/features2d.hpp</label>
       </node>
-      <node id="469">
+      <node id="523">
+        <label>boost/circular_buffer.hpp</label>
+      </node>
+      <node id="509">
         <label>Eigen/Dense</label>
       </node>
-      <node id="471">
+      <node id="511">
         <label>boost/filesystem/path.hpp</label>
       </node>
-      <node id="491">
+      <node id="533">
         <label>imu_item.h</label>
         <link refid="imu__item_8h_source"/>
-        <childnode refid="473" relation="include">
+        <childnode refid="513" relation="include">
         </childnode>
-        <childnode refid="472" relation="include">
+        <childnode refid="512" relation="include">
         </childnode>
-        <childnode refid="490" relation="include">
+        <childnode refid="532" relation="include">
         </childnode>
       </node>
-      <node id="483">
+      <node id="525">
         <label>feature_tracker.h</label>
         <link refid="feature__tracker_8h_source"/>
-        <childnode refid="484" relation="include">
+        <childnode refid="526" relation="include">
         </childnode>
-        <childnode refid="485" relation="include">
+        <childnode refid="527" relation="include">
         </childnode>
-        <childnode refid="486" relation="include">
+        <childnode refid="528" relation="include">
         </childnode>
-        <childnode refid="487" relation="include">
+        <childnode refid="529" relation="include">
         </childnode>
-        <childnode refid="488" relation="include">
+        <childnode refid="530" relation="include">
         </childnode>
       </node>
-      <node id="487">
+      <node id="529">
         <label>frame_features.h</label>
         <link refid="frame__features_8h_source"/>
-        <childnode refid="485" relation="include">
+        <childnode refid="527" relation="include">
         </childnode>
-        <childnode refid="486" relation="include">
+        <childnode refid="528" relation="include">
         </childnode>
       </node>
-      <node id="474">
+      <node id="514">
         <label>vector</label>
       </node>
-      <node id="467">
+      <node id="507">
         <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
         <link refid="filter.cpp"/>
-        <childnode refid="468" relation="include">
+        <childnode refid="508" relation="include">
         </childnode>
-        <childnode refid="476" relation="include">
+        <childnode refid="516" relation="include">
         </childnode>
-        <childnode refid="492" relation="include">
+        <childnode refid="534" relation="include">
         </childnode>
-        <childnode refid="485" relation="include">
+        <childnode refid="527" relation="include">
         </childnode>
-        <childnode refid="470" relation="include">
+        <childnode refid="510" relation="include">
         </childnode>
-        <childnode refid="475" relation="include">
+        <childnode refid="515" relation="include">
         </childnode>
-        <childnode refid="491" relation="include">
+        <childnode refid="533" relation="include">
         </childnode>
       </node>
-      <node id="489">
+      <node id="531">
         <label>imu_buffer.h</label>
         <link refid="imu__buffer_8h_source"/>
-        <childnode refid="474" relation="include">
+        <childnode refid="514" relation="include">
         </childnode>
-        <childnode refid="490" relation="include">
+        <childnode refid="532" relation="include">
         </childnode>
-        <childnode refid="491" relation="include">
+        <childnode refid="533" relation="include">
         </childnode>
       </node>
-      <node id="476">
+      <node id="524">
+        <label>utility</label>
+      </node>
+      <node id="516">
         <label>iostream</label>
       </node>
-      <node id="482">
+      <node id="522">
+        <label>camera_pose_buffer.h</label>
+        <link refid="camera__pose__buffer_8h_source"/>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+      </node>
+      <node id="521">
         <label>set</label>
       </node>
-      <node id="470">
+      <node id="510">
         <label>calibration.h</label>
         <link refid="calibration_8h_source"/>
-        <childnode refid="471" relation="include">
+        <childnode refid="511" relation="include">
         </childnode>
-        <childnode refid="472" relation="include">
+        <childnode refid="512" relation="include">
         </childnode>
-        <childnode refid="473" relation="include">
+        <childnode refid="513" relation="include">
         </childnode>
-        <childnode refid="474" relation="include">
+        <childnode refid="514" relation="include">
         </childnode>
       </node>
-      <node id="480">
+      <node id="519">
         <label>camera_pose.h</label>
         <link refid="camera__pose_8h_source"/>
-        <childnode refid="469" relation="include">
+        <childnode refid="509" relation="include">
         </childnode>
-        <childnode refid="481" relation="include">
+        <childnode refid="520" relation="include">
         </childnode>
-        <childnode refid="482" relation="include">
+        <childnode refid="521" relation="include">
         </childnode>
       </node>
-      <node id="484">
+      <node id="526">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -205,7 +220,7 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;imu_item.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal">Filter::Filter(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_calibration" kindref="compound">Calibration</ref><sp/>&amp;calibration)</highlight></codeline>
-<codeline lineno="16"><highlight class="normal">:<sp/>calibration_(calibration)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">:<sp/>calibration_(calibration),<sp/>filter_state_(calibration_.getMaxCameraPoses())<sp/>{</highlight></codeline>
 <codeline lineno="17"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::initialize()<sp/>{</highlight></codeline>
@@ -235,11 +250,11 @@
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::stepCamera(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timedelta,<sp/>cv::Mat<sp/>&amp;frame)<sp/>{</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>augment();</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_camera_pose" kindref="compound">CameraPose</ref>&amp;<sp/>last_camera_pose<sp/>=<sp/>filter_state_.getCameraPosesRef().back();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_camera_pose" kindref="compound">CameraPose</ref>&amp;<sp/>last_camera_pose<sp/>=<sp/>filter_state_.poses().back();</highlight></codeline>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>FeatureTracker::feature_track_list<sp/>current_features_tracked;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(feature_tracker_.previous_frame_features_.keypoints().size()<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(filter_state_.getCameraPosesRef().size()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert(filter_state_.poses().size()<sp/>==<sp/>1);</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>current_features_tracked<sp/>=<sp/>feature_tracker_.processImage(features_tracked_,<sp/>frame);</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>last_camera_pose.setActiveFeaturesCount(current_features_tracked.size());</highlight></codeline>
@@ -274,7 +289,7 @@
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>pruneCameraPoses(features_to_residualize);</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>features_tracked_<sp/>=<sp/>current_features_tracked;</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Cam<sp/>poses:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>filter_state_.getCameraPosesRef().size()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Cam<sp/>poses:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>filter_state_.poses().size()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
 <codeline lineno="86"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
 <codeline lineno="88"><highlight class="normal"><ref refid="class_body_state" kindref="compound">BodyState</ref><sp/>Filter::propagateBodyState(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_body_state" kindref="compound">BodyState</ref>&amp;<sp/>body_state_old,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>timedelta,</highlight></codeline>
@@ -418,23 +433,23 @@
 <codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>pose.getRotationForBodyPoseBlock()<sp/>=<sp/>body_state.<ref refid="class_body_state_1a980cbcae469aa1fc0d7efec5248db0d1" kindref="member">getRotationBlock</ref>();</highlight></codeline>
 <codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>pose.getPositionForBodyPoseBlock()<sp/>=<sp/>body_state.getPositionBlock();</highlight></codeline>
 <codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>pose.getVelocityForBodyPoseBlock()<sp/>=<sp/>body_state.getVelocityBlock();</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.getCameraPosesRef().push_back(pose);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/>filter_state_.poses().addNewCameraPose(pose);</highlight></codeline>
 <codeline lineno="230"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
 <codeline lineno="232"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Filter::pruneCameraPoses(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FeatureTracker::feature_track_list&amp;<sp/>residualized_features)<sp/>{</highlight></codeline>
 <codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>residualized_features.size();<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::list&lt;CameraPose&gt;::iterator<sp/>it<sp/>=<sp/>std::end(filter_state_.getCameraPosesRef());</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>std::prev(it,<sp/>2);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CameraPoseBuffer::iterator<sp/>it<sp/>=<sp/>std::end(filter_state_.poses());</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>std::prev(it);</highlight></codeline>
 <codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>residualized_features[i]-&gt;posesTrackedCount();<sp/>++j)<sp/>{</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;decreaseActiveFeaturesCount(residualized_features[i]-&gt;getFeatureId());</highlight></codeline>
-<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>std::prev(it);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>std::prev(it);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;decreaseActiveFeaturesCount(residualized_features[i]-&gt;getFeatureId());</highlight></codeline>
 <codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;CameraPose&gt;&amp;<sp/>poses<sp/>=<sp/>filter_state_.getCameraPosesRef();</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_camera_pose_buffer" kindref="compound">CameraPoseBuffer</ref>&amp;<sp/>poses<sp/>=<sp/>filter_state_.poses();</highlight></codeline>
 <codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!poses.empty()<sp/>&amp;&amp;<sp/>poses.front().getActiveFeaturesCount()<sp/>==<sp/>0)<sp/>{</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poses.pop_front();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>poses.deleteOldestCameraPose();</highlight></codeline>
 <codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/>assert(poses.size()<sp/>&lt;=<sp/>calibration_.getMaxCameraPoses());</highlight></codeline>
@@ -473,13 +488,38 @@
 <codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>mat;</highlight></codeline>
 <codeline lineno="282"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="283"><highlight class="normal"></highlight></codeline>
-<codeline lineno="284"><highlight class="normal"></highlight></codeline>
-<codeline lineno="285"><highlight class="normal"></highlight></codeline>
-<codeline lineno="286"><highlight class="normal"></highlight></codeline>
-<codeline lineno="287"><highlight class="normal"></highlight></codeline>
-<codeline lineno="288"><highlight class="normal"></highlight></codeline>
-<codeline lineno="289"><highlight class="normal"></highlight></codeline>
-<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal">Eigen::Vector3d<sp/>Filter::triangulateGlobalFeaturePosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_feature_track" kindref="compound">FeatureTrack</ref><sp/>&amp;feature_track)<sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>n<sp/>=<sp/>feature_track.posesTrackedCount();</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>max_iter<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">std::size_t</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(calibration_.getMaxTriangulationIterations());</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_camera_pose_buffer" kindref="compound">CameraPoseBuffer</ref>&amp;<sp/>poses<sp/>=<sp/>filter_state_.poses();</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix&lt;double,<sp/>Eigen::Dynamic,<sp/>1&gt;<sp/>measurement_errors;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/>measurement_errors.resize(2*n,<sp/>Eigen::NoChange);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Matrix&lt;double,<sp/>Eigen::Dynamic,<sp/>3&gt;<sp/>measurement_error_jacobian;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/>measurement_error_jacobian.resize(2*n,<sp/>Eigen::NoChange);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/>Eigen::Vector3d<sp/>parameters_est;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>parameters_est<sp/>&lt;&lt;<sp/>1,<sp/>1,<sp/>1;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>max_iter;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CameraPoseBuffer::iterator<sp/>it<sp/>=<sp/>std::end(poses);</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>std::prev(it,<sp/>2);</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(std::size_t<sp/>pose_counter<sp/>=<sp/>0;<sp/>pose_counter<sp/>&lt;<sp/>n;<sp/>++pose_counter)<sp/>{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector2d&amp;<sp/>position<sp/>=<sp/>feature_track[n<sp/>-<sp/>pose_counter<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_camera_pose" kindref="compound">CameraPose</ref>&amp;<sp/>pose<sp/>=<sp/>*it;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>std::prev(it);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="316"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/tomas789/tonav/src/filter.cpp"/>
   </compounddef>

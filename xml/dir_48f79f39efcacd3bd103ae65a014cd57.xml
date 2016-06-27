@@ -8,6 +8,7 @@
     <innerfile refid="camera__feed_8h">camera_feed.h</innerfile>
     <innerfile refid="camera__item_8h">camera_item.h</innerfile>
     <innerfile refid="camera__pose_8h">camera_pose.h</innerfile>
+    <innerfile refid="camera__pose__buffer_8h">camera_pose_buffer.h</innerfile>
     <innerfile refid="feature__track_8h">feature_track.h</innerfile>
     <innerfile refid="feature__tracker_8h">feature_tracker.h</innerfile>
     <innerfile refid="filter_8h">filter.h</innerfile>

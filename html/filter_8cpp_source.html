@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('filter_8cpp_source.html','');});
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;imu_item.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;Filter::Filter(<span class="keyword">const</span> <a class="code" href="class_calibration.html">Calibration</a> &amp;calibration)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;: calibration_(calibration) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;: calibration_(calibration), filter_state_(calibration_.getMaxCameraPoses()) {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span> Filter::initialize() {</div>
@@ -155,11 +155,11 @@ $(document).ready(function(){initNavTree('filter_8cpp_source.html','');});
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> Filter::stepCamera(<span class="keywordtype">double</span> timedelta, cv::Mat &amp;frame) {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    augment();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_camera_pose.html">CameraPose</a>&amp; last_camera_pose = filter_state_.getCameraPosesRef().back();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="class_camera_pose.html">CameraPose</a>&amp; last_camera_pose = filter_state_.poses().back();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    FeatureTracker::feature_track_list current_features_tracked;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span> (feature_tracker_.previous_frame_features_.keypoints().size() == 0) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        assert(filter_state_.getCameraPosesRef().size() == 1);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        assert(filter_state_.poses().size() == 1);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    current_features_tracked = feature_tracker_.processImage(features_tracked_, frame);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    last_camera_pose.setActiveFeaturesCount(current_features_tracked.size());</div>
@@ -194,7 +194,7 @@ $(document).ready(function(){initNavTree('filter_8cpp_source.html','');});
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    pruneCameraPoses(features_to_residualize);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    features_tracked_ = current_features_tracked;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Cam poses: &quot;</span> &lt;&lt; filter_state_.getCameraPosesRef().size() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Cam poses: &quot;</span> &lt;&lt; filter_state_.poses().size() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<a class="code" href="class_body_state.html">BodyState</a> Filter::propagateBodyState(<span class="keyword">const</span> <a class="code" href="class_body_state.html">BodyState</a>&amp; body_state_old, <span class="keywordtype">double</span> timedelta,</div>
@@ -338,23 +338,23 @@ $(document).ready(function(){initNavTree('filter_8cpp_source.html','');});
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    pose.getRotationForBodyPoseBlock() = body_state.<a class="code" href="class_body_state.html#a980cbcae469aa1fc0d7efec5248db0d1">getRotationBlock</a>();</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    pose.getPositionForBodyPoseBlock() = body_state.getPositionBlock();</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    pose.getVelocityForBodyPoseBlock() = body_state.getVelocityBlock();</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    filter_state_.getCameraPosesRef().push_back(pose);</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    filter_state_.poses().addNewCameraPose(pose);</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;}</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keywordtype">void</span> Filter::pruneCameraPoses(<span class="keyword">const</span> FeatureTracker::feature_track_list&amp; residualized_features) {</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; residualized_features.size(); ++i) {</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        std::list&lt;CameraPose&gt;::iterator it = std::end(filter_state_.getCameraPosesRef());</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        it = std::prev(it, 2);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        CameraPoseBuffer::iterator it = std::end(filter_state_.poses());</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        it = std::prev(it);</div>
 <div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        </div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; residualized_features[i]-&gt;posesTrackedCount(); ++j) {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            it-&gt;decreaseActiveFeaturesCount(residualized_features[i]-&gt;getFeatureId());</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            it = std::prev(it);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            it = std::prev(it);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            it-&gt;decreaseActiveFeaturesCount(residualized_features[i]-&gt;getFeatureId());</div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        }</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    std::list&lt;CameraPose&gt;&amp; poses = filter_state_.getCameraPosesRef();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="class_camera_pose_buffer.html">CameraPoseBuffer</a>&amp; poses = filter_state_.poses();</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keywordflow">while</span> (!poses.empty() &amp;&amp; poses.front().getActiveFeaturesCount() == 0) {</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        poses.pop_front();</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        poses.deleteOldestCameraPose();</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    </div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    assert(poses.size() &lt;= calibration_.getMaxCameraPoses());</div>
@@ -393,21 +393,48 @@ $(document).ready(function(){initNavTree('filter_8cpp_source.html','');});
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keywordflow">return</span> mat;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;}</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;Eigen::Vector3d Filter::triangulateGlobalFeaturePosition(<span class="keyword">const</span> <a class="code" href="class_feature_track.html">FeatureTrack</a> &amp;feature_track) {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    std::size_t n = feature_track.posesTrackedCount();</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    std::size_t max_iter = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(calibration_.getMaxTriangulationIterations());</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <a class="code" href="class_camera_pose_buffer.html">CameraPoseBuffer</a>&amp; poses = filter_state_.poses();</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    Eigen::Matrix&lt;double, Eigen::Dynamic, 1&gt; measurement_errors;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    measurement_errors.resize(2*n, Eigen::NoChange);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    Eigen::Matrix&lt;double, Eigen::Dynamic, 3&gt; measurement_error_jacobian;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    measurement_error_jacobian.resize(2*n, Eigen::NoChange);</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    Eigen::Vector3d parameters_est;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    parameters_est &lt;&lt; 1, 1, 1;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; max_iter; ++i) {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        CameraPoseBuffer::iterator it = std::end(poses);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        it = std::prev(it, 2);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="keywordflow">for</span> (std::size_t pose_counter = 0; pose_counter &lt; n; ++pose_counter) {</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            <span class="keyword">const</span> Eigen::Vector2d&amp; position = feature_track[n - pose_counter - 1];</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            <a class="code" href="class_camera_pose.html">CameraPose</a>&amp; pose = *it;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;            </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            </div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            it = std::prev(it);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    </div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;</div>
 <div class="ttc" id="class_body_state_html_a4f08803dcef02a950b09b458231ffbea"><div class="ttname"><a href="class_body_state.html#a4f08803dcef02a950b09b458231ffbea">BodyState::getRotationEstimateRef</a></div><div class="ttdeci">Eigen::Vector3d &amp; getRotationEstimateRef()</div><div class="ttdoc"> </div><div class="ttdef"><b>Definition:</b> <a href="body__state_8cpp_source.html#l00062">body_state.cpp:62</a></div></div>
 <div class="ttc" id="class_calibration_html"><div class="ttname"><a href="class_calibration.html">Calibration</a></div><div class="ttdef"><b>Definition:</b> <a href="calibration_8h_source.html#l00013">calibration.h:13</a></div></div>
+<div class="ttc" id="class_camera_pose_buffer_html"><div class="ttname"><a href="class_camera_pose_buffer.html">CameraPoseBuffer</a></div><div class="ttdef"><b>Definition:</b> <a href="camera__pose__buffer_8h_source.html#l00009">camera_pose_buffer.h:9</a></div></div>
 <div class="ttc" id="class_body_state_html_a980cbcae469aa1fc0d7efec5248db0d1"><div class="ttname"><a href="class_body_state.html#a980cbcae469aa1fc0d7efec5248db0d1">BodyState::getRotationBlock</a></div><div class="ttdeci">Eigen::Block&lt; BodyStateType, 4, 1 &gt; getRotationBlock()</div><div class="ttdoc">Get part of BodyState that represents rotation. </div><div class="ttdef"><b>Definition:</b> <a href="body__state_8cpp_source.html#l00008">body_state.cpp:8</a></div></div>
 <div class="ttc" id="class_imu_item_html"><div class="ttname"><a href="class_imu_item.html">ImuItem</a></div><div class="ttdef"><b>Definition:</b> <a href="imu__item_8h_source.html#l00015">imu_item.h:15</a></div></div>
 <div class="ttc" id="class_body_state_html"><div class="ttname"><a href="class_body_state.html">BodyState</a></div><div class="ttdoc">Represents body pose  in filter state. </div><div class="ttdef"><b>Definition:</b> <a href="body__state_8h_source.html#l00014">body_state.h:14</a></div></div>
-<div class="ttc" id="class_filter_state_html"><div class="ttname"><a href="class_filter_state.html">FilterState</a></div><div class="ttdef"><b>Definition:</b> <a href="filter__state_8h_source.html#l00015">filter_state.h:15</a></div></div>
+<div class="ttc" id="class_filter_state_html"><div class="ttname"><a href="class_filter_state.html">FilterState</a></div><div class="ttdef"><b>Definition:</b> <a href="filter__state_8h_source.html#l00016">filter_state.h:16</a></div></div>
 <div class="ttc" id="class_body_state_html_a1589f0e96fcf159b77f385157665ef7b"><div class="ttname"><a href="class_body_state.html#a1589f0e96fcf159b77f385157665ef7b">BodyState::getRotationToThisFrameRef</a></div><div class="ttdeci">Eigen::Quaterniond &amp; getRotationToThisFrameRef()</div><div class="ttdoc"> </div><div class="ttdef"><b>Definition:</b> <a href="body__state_8cpp_source.html#l00078">body_state.cpp:78</a></div></div>
 <div class="ttc" id="class_camera_pose_html"><div class="ttname"><a href="class_camera_pose.html">CameraPose</a></div><div class="ttdef"><b>Definition:</b> <a href="camera__pose_8h_source.html#l00012">camera_pose.h:12</a></div></div>
+<div class="ttc" id="class_feature_track_html"><div class="ttname"><a href="class_feature_track.html">FeatureTrack</a></div><div class="ttdef"><b>Definition:</b> <a href="feature__track_8h_source.html#l00011">feature_track.h:11</a></div></div>
 <div class="ttc" id="class_body_state_html_a9eb0e9ec3ae23769abf50f6e75777cd7"><div class="ttname"><a href="class_body_state.html#a9eb0e9ec3ae23769abf50f6e75777cd7">BodyState::getAccelerationEstimateRef</a></div><div class="ttdeci">Eigen::Vector3d &amp; getAccelerationEstimateRef()</div><div class="ttdoc"> </div><div class="ttdef"><b>Definition:</b> <a href="body__state_8cpp_source.html#l00070">body_state.cpp:70</a></div></div>
 <div class="ttc" id="class_filter_html_ad046b83209a1f03d65ac75f16b538546"><div class="ttname"><a href="class_filter.html#ad046b83209a1f03d65ac75f16b538546">Filter::setGlobalGravity</a></div><div class="ttdeci">void setGlobalGravity(Eigen::Vector3d gravity)</div><div class="ttdoc">Set initial estimate of gravity in global frame. </div><div class="ttdef"><b>Definition:</b> <a href="filter_8cpp_source.html#l00168">filter.cpp:168</a></div></div>
 <div class="ttc" id="class_filter_html_a1c7a33a737fafec46d6e98ec1be37a4c"><div class="ttname"><a href="class_filter.html#a1c7a33a737fafec46d6e98ec1be37a4c">Filter::getImageCaptureTime</a></div><div class="ttdeci">double getImageCaptureTime(double arrive_time)</div><div class="ttdoc">Calculate . </div><div class="ttdef"><b>Definition:</b> <a href="filter_8cpp_source.html#l00184">filter.cpp:184</a></div></div>

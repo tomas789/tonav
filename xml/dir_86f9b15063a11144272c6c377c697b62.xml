@@ -8,6 +8,7 @@
     <innerfile refid="camera__feed_8cpp">camera_feed.cpp</innerfile>
     <innerfile refid="camera__item_8cpp">camera_item.cpp</innerfile>
     <innerfile refid="camera__pose_8cpp">camera_pose.cpp</innerfile>
+    <innerfile refid="camera__pose__buffer_8cpp">camera_pose_buffer.cpp</innerfile>
     <innerfile refid="feature__track_8cpp">feature_track.cpp</innerfile>
     <innerfile refid="feature__tracker_8cpp">feature_tracker.cpp</innerfile>
     <innerfile refid="filter_8cpp">filter.cpp</innerfile>

@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="17" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="17" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="18" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="18" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="62" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="62" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="68" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="68" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_state_1aaa7d477d4bcbedd89376493eddc454cc" prot="private" static="no" mutable="no">
         <type>Eigen::Matrix3d</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="65" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="65" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="71" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="71" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_state_1a32f74c5a0e5775ed9a0c50aab66431b0" prot="private" static="no" mutable="no">
         <type>Eigen::Matrix3d</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="68" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="68" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="74" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="74" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_state_1a887796632c100cbfa23166d6e0a05fc7" prot="private" static="no" mutable="no">
         <type>Eigen::Matrix3d</type>
@@ -68,11 +68,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="71" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="71" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="77" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="77" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="class_filter_state_1a629c50bfbab55caef2f0d1e0262481b4" prot="private" static="no" mutable="no">
-        <type>std::list&lt; <ref refid="class_camera_pose" kindref="compound">CameraPose</ref> &gt;</type>
-        <definition>std::list&lt;CameraPose&gt; FilterState::poses_</definition>
+      <memberdef kind="variable" id="class_filter_state_1adfacef0fde2681e3f3d4e7559c6da012" prot="private" static="no" mutable="no">
+        <type><ref refid="class_camera_pose_buffer" kindref="compound">CameraPoseBuffer</ref></type>
+        <definition>CameraPoseBuffer FilterState::poses_</definition>
         <argsstring></argsstring>
         <name>poses_</name>
         <briefdescription>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="76" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="76" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="80" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_state_1a99125bb35efc27cdef7b0301fbe3f1e2" prot="private" static="no" mutable="no">
         <type>StateType</type>
@@ -94,7 +94,7 @@
 <para><ref refid="class_filter" kindref="compound">Filter</ref> state except body pose and camera poses</para><para><xrefsect id="deprecated_1_deprecated000001"><xreftitle>Deprecated</xreftitle><xrefdescription></xrefdescription></xrefsect></para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="83" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="83" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="87" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="87" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_state_1a53c85f641be38d478116965289636003" prot="private" static="no" mutable="no">
         <type>Eigen::Quaterniond</type>
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="85" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="85" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="89" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_state_1a2ed6fb431a10be370860f4d613eb1bb6" prot="private" static="no" mutable="no">
         <type>Eigen::Vector3d</type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="86" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="86" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="90" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_filter_state_1a7bf9ec3f4726859b9fbdffceee517ad2" prot="private" static="no" mutable="no">
         <type>Eigen::Vector3d</type>
@@ -133,10 +133,95 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="87" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="87" bodyend="-1"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="91" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="91" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_filter_state_1a96a6a62727b41b89cd1020fccde8bf51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FilterState::FilterState</definition>
+        <argsstring>(int max_camera_poses)</argsstring>
+        <name>FilterState</name>
+        <param>
+          <type>int</type>
+          <declname>max_camera_poses</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="12" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_state_1a787e83cc2d2a29b1a63e6a563c68ec64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FilterState::FilterState</definition>
+        <argsstring>(const FilterState &amp;other)=default</argsstring>
+        <name>FilterState</name>
+        <param>
+          <type>const <ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="21" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_state_1a276c5ef3144894bbbb875104d229ee33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FilterState::FilterState</definition>
+        <argsstring>(FilterState &amp;&amp;other)=default</argsstring>
+        <name>FilterState</name>
+        <param>
+          <type><ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_state_1a3559980125f96c1498b6047f97a59498" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;</type>
+        <definition>FilterState&amp; FilterState::operator=</definition>
+        <argsstring>(const FilterState &amp;other)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="24" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_filter_state_1a979c282e7e50b6549679bca9ffa4b474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;</type>
+        <definition>FilterState&amp; FilterState::operator=</definition>
+        <argsstring>(FilterState &amp;&amp;other)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="class_filter_state" kindref="compound">FilterState</ref> &amp;&amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="25" column="1"/>
+      </memberdef>
       <memberdef kind="function" id="class_filter_state_1a931d62079a89ceacc6e3f62cad16fe77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_body_state" kindref="compound">BodyState</ref> &amp;</type>
         <definition>BodyState &amp; FilterState::getBodyStateRef</definition>
@@ -148,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="19" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="12" bodyend="14"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="27" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="15" bodyend="17"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1af7a4b70d8985b4552f4ed8e5d36409e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>const <ref refid="class_body_state" kindref="compound">BodyState</ref> &amp;</type>
@@ -161,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="16" bodyend="18"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="19" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a0fb9693aac0a091bbcc1555b44902570" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; <ref refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" kindref="member">BodyState::BodyStateType</ref>, 4, 1 &gt;</type>
@@ -174,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="22" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="20" bodyend="22"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="30" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="23" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a5f61beb08bf43811cebea645c80949ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Quaterniond</type>
@@ -187,7 +272,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="23" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="24" bodyend="26"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="27" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1ab2a6e477d01da9521267781a73757838" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -204,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="24" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="28" bodyend="30"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="32" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="31" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a93091ee18e0421b6b99f6bfe039199d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; <ref refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" kindref="member">BodyState::BodyStateType</ref>, 3, 1 &gt;</type>
@@ -217,7 +302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="25" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="32" bodyend="34"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="33" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="35" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a1b8b9f3985ea35ba0f9f4f273ae8c1f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; <ref refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" kindref="member">BodyState::BodyStateType</ref>, 3, 1 &gt;</type>
@@ -230,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="26" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="36" bodyend="38"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="34" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="39" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a641cf74718074f9334fc88ac9d15169a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; <ref refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" kindref="member">BodyState::BodyStateType</ref>, 3, 1 &gt;</type>
@@ -243,7 +328,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="27" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="40" bodyend="42"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="35" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="43" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a94139185d217749e5afe23e6ad79bb12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; <ref refid="class_body_state_1ac95355c4974335a6f69da770d2de30e0" kindref="member">BodyState::BodyStateType</ref>, 3, 1 &gt;</type>
@@ -256,7 +341,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="44" bodyend="46"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="36" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="47" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a8686bb8e54e2e9902c28095f8c623745" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; StateType, 9, 1 &gt;</type>
@@ -269,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="30" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="48" bodyend="50"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="38" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="51" bodyend="53"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a1ab46a729807178faf9b6bebb87aa791" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; StateType, 9, 1 &gt;</type>
@@ -282,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="52" bodyend="54"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="39" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="55" bodyend="57"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a57cb64b2b25132c2da38b0313da415c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; StateType, 9, 1 &gt;</type>
@@ -295,7 +380,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="32" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="56" bodyend="58"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="40" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="59" bodyend="61"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a844855f0fa5ebf0c606a06ea6fdb460b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; StateType, 3, 1 &gt;</type>
@@ -308,7 +393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="34" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="60" bodyend="62"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="42" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="63" bodyend="65"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a3b65a9649366c853ffd99784fe9bef72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double &amp;</type>
@@ -321,7 +406,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="36" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="64" bodyend="66"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="44" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="67" bodyend="69"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1aed71d6cec7d8a101ba10b83f969d28d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double &amp;</type>
@@ -334,7 +419,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="37" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="68" bodyend="70"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="45" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="71" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a3fc41a17c48851340acbfdfc9c164f01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double &amp;</type>
@@ -347,7 +432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="38" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="72" bodyend="74"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="46" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="75" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a7ddf9eca9ab6cad9bee85ee6cfc80de0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double &amp;</type>
@@ -360,7 +445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="39" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="76" bodyend="78"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="47" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="79" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1aa326b846da2b55623e4d219d357e6b57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; StateType, 3, 1 &gt;</type>
@@ -373,7 +458,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="41" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="80" bodyend="82"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="49" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="83" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1ad4b9c49509f2cc303c554969a8264c89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; StateType, 2, 1 &gt;</type>
@@ -386,7 +471,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="42" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="84" bodyend="86"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="50" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="87" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a6563a73bad1016317018c85d53380962" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double &amp;</type>
@@ -399,7 +484,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="44" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="88" bodyend="90"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="52" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="91" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1ab9d3e7cad1ae09ed35bcc528c0e8ef45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double &amp;</type>
@@ -412,7 +497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="45" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="92" bodyend="94"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="53" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="95" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a928bd10a77b39859d6f108f8dd8ae0e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; Eigen::Vector3d, 3, 1 &gt;</type>
@@ -425,7 +510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="47" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="96" bodyend="98"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="55" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="99" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1a4436166f7dbaf6c002b6fc2832b4f136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Block&lt; Eigen::Vector3d, 3, 1 &gt;</type>
@@ -438,7 +523,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="48" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="100" bodyend="102"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="56" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="103" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1ab3d02580cdbd89bc64276467d7c1c854" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Eigen::Quaterniond</type>
@@ -451,7 +536,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="50" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="104" bodyend="106"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="58" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="107" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1ae820e97a5a74c7765780bc7bb223796b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -468,7 +553,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="51" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="108" bodyend="110"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="59" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="111" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1aed4aab3a5133d37924bc5c1284b6cb66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -485,7 +570,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="53" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="112" bodyend="117"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="61" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="115" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="class_filter_state_1af33cfbc67284846e3ca9c26a79c227a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_filter_state" kindref="compound">FilterState</ref></type>
@@ -498,50 +583,35 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="55" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="119" bodyend="128"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="63" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="122" bodyend="131"/>
       </memberdef>
-      <memberdef kind="function" id="class_filter_state_1a9fdc71df11cf72369b86be2eaffcea27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void FilterState::appendCameraPose</definition>
-        <argsstring>(const CameraPose &amp;camera_pose)</argsstring>
-        <name>appendCameraPose</name>
-        <param>
-          <type>const <ref refid="class_camera_pose" kindref="compound">CameraPose</ref> &amp;</type>
-          <declname>camera_pose</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="57" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="130" bodyend="132"/>
-      </memberdef>
-      <memberdef kind="function" id="class_filter_state_1a0638c19679b93d95f812bd38758f05ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>std::list&lt; <ref refid="class_camera_pose" kindref="compound">CameraPose</ref> &gt; &amp;</type>
-        <definition>std::list&lt; CameraPose &gt; &amp; FilterState::getCameraPosesRef</definition>
+      <memberdef kind="function" id="class_filter_state_1acde2164859104e0c291f4eec0e1bcb07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_camera_pose_buffer" kindref="compound">CameraPoseBuffer</ref> &amp;</type>
+        <definition>CameraPoseBuffer &amp; FilterState::poses</definition>
         <argsstring>()</argsstring>
-        <name>getCameraPosesRef</name>
+        <name>poses</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="58" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="134" bodyend="136"/>
+        <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="65" column="1" bodyfile="/home/travis/build/tomas789/tonav/src/filter_state.cpp" bodystart="133" bodyend="135"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="15" bodyend="90"/>
+    <location file="/home/travis/build/tomas789/tonav/include/filter_state.h" line="16" column="1" bodyfile="/home/travis/build/tomas789/tonav/include/filter_state.h" bodystart="16" bodyend="94"/>
     <listofallmembers>
       <member refid="class_filter_state_1a7bf9ec3f4726859b9fbdffceee517ad2" prot="private" virt="non-virtual"><scope>FilterState</scope><name>acceleration_estimate_</name></member>
       <member refid="class_filter_state_1a887796632c100cbfa23166d6e0a05fc7" prot="private" virt="non-virtual"><scope>FilterState</scope><name>accelerometer_shape_</name></member>
-      <member refid="class_filter_state_1a9fdc71df11cf72369b86be2eaffcea27" prot="public" virt="non-virtual"><scope>FilterState</scope><name>appendCameraPose</name></member>
       <member refid="class_filter_state_1af39228694a2a4a868043e75e8515ca6b" prot="private" virt="non-virtual"><scope>FilterState</scope><name>body_state_</name></member>
       <member refid="class_filter_state_1af33cfbc67284846e3ca9c26a79c227a9" prot="public" virt="non-virtual"><scope>FilterState</scope><name>deriveNewStateForImuPropagation</name></member>
+      <member refid="class_filter_state_1a96a6a62727b41b89cd1020fccde8bf51" prot="public" virt="non-virtual"><scope>FilterState</scope><name>FilterState</name></member>
+      <member refid="class_filter_state_1a787e83cc2d2a29b1a63e6a563c68ec64" prot="public" virt="non-virtual"><scope>FilterState</scope><name>FilterState</name></member>
+      <member refid="class_filter_state_1a276c5ef3144894bbbb875104d229ee33" prot="public" virt="non-virtual"><scope>FilterState</scope><name>FilterState</name></member>
       <member refid="class_filter_state_1a32f74c5a0e5775ed9a0c50aab66431b0" prot="private" virt="non-virtual"><scope>FilterState</scope><name>g_sensitivity_</name></member>
       <member refid="class_filter_state_1a4436166f7dbaf6c002b6fc2832b4f136" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getAccelerationEstimateBlock</name></member>
       <member refid="class_filter_state_1a641cf74718074f9334fc88ac9d15169a" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getAccelerometerBiasBlock</name></member>
@@ -549,7 +619,6 @@
       <member refid="class_filter_state_1a931d62079a89ceacc6e3f62cad16fe77" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getBodyStateRef</name></member>
       <member refid="class_filter_state_1af7a4b70d8985b4552f4ed8e5d36409e3" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getBodyStateRef</name></member>
       <member refid="class_filter_state_1a6563a73bad1016317018c85d53380962" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getCameraDelayTimeRef</name></member>
-      <member refid="class_filter_state_1a0638c19679b93d95f812bd38758f05ca" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getCameraPosesRef</name></member>
       <member refid="class_filter_state_1ab9d3e7cad1ae09ed35bcc528c0e8ef45" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getCameraReadoutTimeRef</name></member>
       <member refid="class_filter_state_1a844855f0fa5ebf0c606a06ea6fdb460b" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getCameraToBodyOffsetBlock</name></member>
       <member refid="class_filter_state_1a3b65a9649366c853ffd99784fe9bef72" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getFocalLengthXRef</name></member>
@@ -568,7 +637,10 @@
       <member refid="class_filter_state_1ad4b9c49509f2cc303c554969a8264c89" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getTangentialDistortionParametersBlock</name></member>
       <member refid="class_filter_state_1a1b8b9f3985ea35ba0f9f4f273ae8c1f2" prot="public" virt="non-virtual"><scope>FilterState</scope><name>getVelocityBlock</name></member>
       <member refid="class_filter_state_1aaa7d477d4bcbedd89376493eddc454cc" prot="private" virt="non-virtual"><scope>FilterState</scope><name>gyroscope_shape_</name></member>
-      <member refid="class_filter_state_1a629c50bfbab55caef2f0d1e0262481b4" prot="private" virt="non-virtual"><scope>FilterState</scope><name>poses_</name></member>
+      <member refid="class_filter_state_1a3559980125f96c1498b6047f97a59498" prot="public" virt="non-virtual"><scope>FilterState</scope><name>operator=</name></member>
+      <member refid="class_filter_state_1a979c282e7e50b6549679bca9ffa4b474" prot="public" virt="non-virtual"><scope>FilterState</scope><name>operator=</name></member>
+      <member refid="class_filter_state_1acde2164859104e0c291f4eec0e1bcb07" prot="public" virt="non-virtual"><scope>FilterState</scope><name>poses</name></member>
+      <member refid="class_filter_state_1adfacef0fde2681e3f3d4e7559c6da012" prot="private" virt="non-virtual"><scope>FilterState</scope><name>poses_</name></member>
       <member refid="class_filter_state_1a2ed6fb431a10be370860f4d613eb1bb6" prot="private" virt="non-virtual"><scope>FilterState</scope><name>rotation_estimate_</name></member>
       <member refid="class_filter_state_1a53c85f641be38d478116965289636003" prot="private" virt="non-virtual"><scope>FilterState</scope><name>rotation_to_this_frame_</name></member>
       <member refid="class_filter_state_1ab2a6e477d01da9521267781a73757838" prot="public" virt="non-virtual"><scope>FilterState</scope><name>setRotationQuaternion</name></member>

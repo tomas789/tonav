@@ -28,6 +28,7 @@ var annotated =
     [ "CameraFeed", "class_camera_feed.html", "class_camera_feed" ],
     [ "CameraItem", "class_camera_item.html", "class_camera_item" ],
     [ "CameraPose", "class_camera_pose.html", "class_camera_pose" ],
+    [ "CameraPoseBuffer", "class_camera_pose_buffer.html", "class_camera_pose_buffer" ],
     [ "FeatureTrack", "class_feature_track.html", "class_feature_track" ],
     [ "FeatureTracker", "class_feature_tracker.html", "class_feature_tracker" ],
     [ "Filter", "class_filter.html", "class_filter" ],

@@ -7,136 +7,136 @@
     <includes refid="image__transport_8h" local="yes">image_transport/image_transport.h</includes>
     <includedby refid="camera__subscriber_8cpp" local="yes">/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp</includedby>
     <incdepgraph>
-      <node id="1002">
+      <node id="1059">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h</label>
         <link refid="subscriber_filter.h"/>
-        <childnode refid="1003" relation="include">
+        <childnode refid="1060" relation="include">
         </childnode>
-        <childnode refid="1004" relation="include">
+        <childnode refid="1061" relation="include">
         </childnode>
-        <childnode refid="1005" relation="include">
+        <childnode refid="1062" relation="include">
         </childnode>
       </node>
-      <node id="1013">
+      <node id="1070">
         <label>image_transport/loader_fwds.h</label>
         <link refid="loader__fwds_8h_source"/>
       </node>
-      <node id="1017">
+      <node id="1074">
         <label>sensor_msgs/CameraInfo.h</label>
       </node>
-      <node id="1016">
+      <node id="1073">
         <label>image_transport/camera_publisher.h</label>
         <link refid="camera__publisher_8h_source"/>
-        <childnode refid="1003" relation="include">
+        <childnode refid="1060" relation="include">
         </childnode>
-        <childnode refid="1007" relation="include">
+        <childnode refid="1064" relation="include">
         </childnode>
-        <childnode refid="1017" relation="include">
+        <childnode refid="1074" relation="include">
         </childnode>
-        <childnode refid="1008" relation="include">
+        <childnode refid="1065" relation="include">
         </childnode>
       </node>
-      <node id="1008">
+      <node id="1065">
         <label>image_transport/single_subscriber_publisher.h</label>
         <link refid="single__subscriber__publisher_8h_source"/>
-        <childnode refid="1009" relation="include">
+        <childnode refid="1066" relation="include">
         </childnode>
-        <childnode refid="1010" relation="include">
+        <childnode refid="1067" relation="include">
         </childnode>
-        <childnode refid="1007" relation="include">
+        <childnode refid="1064" relation="include">
         </childnode>
       </node>
-      <node id="1012">
+      <node id="1069">
         <label>stdexcept</label>
       </node>
-      <node id="1007">
+      <node id="1064">
         <label>sensor_msgs/Image.h</label>
       </node>
-      <node id="1009">
+      <node id="1066">
         <label>boost/noncopyable.hpp</label>
       </node>
-      <node id="1015">
+      <node id="1072">
         <label>image_transport/transport_hints.h</label>
         <link refid="transport__hints_8h_source"/>
-        <childnode refid="1003" relation="include">
+        <childnode refid="1060" relation="include">
         </childnode>
       </node>
-      <node id="1005">
+      <node id="1062">
         <label>image_transport/image_transport.h</label>
         <link refid="image__transport_8h_source"/>
-        <childnode refid="1006" relation="include">
+        <childnode refid="1063" relation="include">
         </childnode>
-        <childnode refid="1014" relation="include">
+        <childnode refid="1071" relation="include">
         </childnode>
-        <childnode refid="1016" relation="include">
+        <childnode refid="1073" relation="include">
         </childnode>
-        <childnode refid="1018" relation="include">
+        <childnode refid="1075" relation="include">
         </childnode>
       </node>
-      <node id="1011">
+      <node id="1068">
         <label>image_transport/exception.h</label>
         <link refid="exception_8h_source"/>
-        <childnode refid="1012" relation="include">
+        <childnode refid="1069" relation="include">
         </childnode>
       </node>
-      <node id="1018">
+      <node id="1075">
         <label>image_transport/camera_subscriber.h</label>
         <link refid="camera__subscriber_8h_source"/>
-        <childnode refid="1003" relation="include">
+        <childnode refid="1060" relation="include">
         </childnode>
-        <childnode refid="1017" relation="include">
+        <childnode refid="1074" relation="include">
         </childnode>
-        <childnode refid="1007" relation="include">
+        <childnode refid="1064" relation="include">
         </childnode>
-        <childnode refid="1015" relation="include">
+        <childnode refid="1072" relation="include">
         </childnode>
       </node>
-      <node id="1010">
+      <node id="1067">
         <label>boost/function.hpp</label>
       </node>
-      <node id="1004">
+      <node id="1061">
         <label>message_filters/simple_filter.h</label>
       </node>
-      <node id="1014">
+      <node id="1071">
         <label>image_transport/subscriber.h</label>
         <link refid="subscriber_8h_source"/>
-        <childnode refid="1003" relation="include">
+        <childnode refid="1060" relation="include">
         </childnode>
-        <childnode refid="1007" relation="include">
+        <childnode refid="1064" relation="include">
         </childnode>
-        <childnode refid="1015" relation="include">
+        <childnode refid="1072" relation="include">
         </childnode>
-        <childnode refid="1011" relation="include">
+        <childnode refid="1068" relation="include">
         </childnode>
-        <childnode refid="1013" relation="include">
+        <childnode refid="1070" relation="include">
         </childnode>
       </node>
-      <node id="1003">
+      <node id="1060">
         <label>ros/ros.h</label>
       </node>
-      <node id="1006">
+      <node id="1063">
         <label>image_transport/publisher.h</label>
         <link refid="publisher_8h_source"/>
-        <childnode refid="1003" relation="include">
+        <childnode refid="1060" relation="include">
         </childnode>
-        <childnode refid="1007" relation="include">
+        <childnode refid="1064" relation="include">
         </childnode>
-        <childnode refid="1008" relation="include">
+        <childnode refid="1065" relation="include">
         </childnode>
-        <childnode refid="1011" relation="include">
+        <childnode refid="1068" relation="include">
         </childnode>
-        <childnode refid="1013" relation="include">
+        <childnode refid="1070" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="1019">
+      <node id="1076">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h</label>
         <link refid="subscriber_filter.h"/>
-        <childnode refid="1020" relation="include">
+        <childnode refid="1077" relation="include">
         </childnode>
       </node>
-      <node id="1020">
+      <node id="1077">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp</label>
         <link refid="camera__subscriber_8cpp_source"/>
       </node>

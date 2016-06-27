@@ -8,93 +8,93 @@
     <includedby refid="feature__track_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/feature_track.cpp</includedby>
     <includedby refid="feature__tracker_8cpp" local="yes">/home/travis/build/tomas789/tonav/src/feature_tracker.cpp</includedby>
     <incdepgraph>
-      <node id="116">
+      <node id="137">
         <label>/home/travis/build/tomas789/tonav/include/feature_track.h</label>
         <link refid="feature_track.h"/>
-        <childnode refid="117" relation="include">
+        <childnode refid="138" relation="include">
         </childnode>
-        <childnode refid="118" relation="include">
+        <childnode refid="139" relation="include">
         </childnode>
       </node>
-      <node id="117">
+      <node id="138">
         <label>Eigen/Dense</label>
       </node>
-      <node id="118">
+      <node id="139">
         <label>vector</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="129">
+      <node id="150">
         <label>/home/travis/build/tomas789/tonav/src/feature_tracker.cpp</label>
         <link refid="feature__tracker_8cpp_source"/>
       </node>
-      <node id="119">
+      <node id="140">
         <label>/home/travis/build/tomas789/tonav/include/feature_track.h</label>
         <link refid="feature_track.h"/>
-        <childnode refid="120" relation="include">
+        <childnode refid="141" relation="include">
         </childnode>
-        <childnode refid="130" relation="include">
+        <childnode refid="151" relation="include">
         </childnode>
-        <childnode refid="129" relation="include">
+        <childnode refid="150" relation="include">
         </childnode>
       </node>
-      <node id="121">
+      <node id="142">
         <label>/home/travis/build/tomas789/tonav/include/filter.h</label>
         <link refid="filter_8h_source"/>
-        <childnode refid="122" relation="include">
+        <childnode refid="143" relation="include">
         </childnode>
-        <childnode refid="127" relation="include">
+        <childnode refid="148" relation="include">
         </childnode>
-        <childnode refid="128" relation="include">
+        <childnode refid="149" relation="include">
         </childnode>
       </node>
-      <node id="126">
+      <node id="147">
         <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
         <link refid="tonav_8cpp_source"/>
       </node>
-      <node id="120">
+      <node id="141">
         <label>/home/travis/build/tomas789/tonav/include/feature_tracker.h</label>
         <link refid="feature__tracker_8h_source"/>
-        <childnode refid="121" relation="include">
+        <childnode refid="142" relation="include">
         </childnode>
-        <childnode refid="129" relation="include">
+        <childnode refid="150" relation="include">
         </childnode>
       </node>
-      <node id="127">
+      <node id="148">
         <label>/home/travis/build/tomas789/tonav/src/filter.cpp</label>
         <link refid="filter_8cpp_source"/>
       </node>
-      <node id="128">
+      <node id="149">
         <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
         <link refid="navigator_8cpp_source"/>
       </node>
-      <node id="122">
+      <node id="143">
         <label>/home/travis/build/tomas789/tonav/include/tonav.h</label>
         <link refid="tonav_8h_source"/>
-        <childnode refid="123" relation="include">
+        <childnode refid="144" relation="include">
         </childnode>
-        <childnode refid="126" relation="include">
+        <childnode refid="147" relation="include">
         </childnode>
-        <childnode refid="125" relation="include">
+        <childnode refid="146" relation="include">
         </childnode>
       </node>
-      <node id="124">
+      <node id="145">
         <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
         <link refid="main_8cpp_source"/>
       </node>
-      <node id="130">
+      <node id="151">
         <label>/home/travis/build/tomas789/tonav/src/feature_track.cpp</label>
         <link refid="feature__track_8cpp_source"/>
       </node>
-      <node id="123">
+      <node id="144">
         <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
         <link refid="tonav__ros_8h_source"/>
-        <childnode refid="124" relation="include">
+        <childnode refid="145" relation="include">
         </childnode>
-        <childnode refid="125" relation="include">
+        <childnode refid="146" relation="include">
         </childnode>
       </node>
-      <node id="125">
+      <node id="146">
         <label>/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</label>
         <link refid="tonav__ros_8cpp_source"/>
       </node>
@@ -118,28 +118,30 @@
 <codeline lineno="11" refid="class_feature_track" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_feature_track" kindref="compound">FeatureTrack</ref><sp/>{</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_feature_track" kindref="compound">FeatureTrack</ref>();</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addFeaturePosition(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>revertLastPosition();</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>posesTrackedCount()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Eigen::Vector2d&amp;<sp/>operator[]<sp/>(std::size_t<sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>addFeaturePosition(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>revertLastPosition();</highlight></codeline>
 <codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOutOfView()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setOutOfView();</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wasUsedForResidualization()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setWasUsedForResidualization();</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_feature_track_1aeba4f7f42fe7c065a17bd26e2817dcbe" kindref="member">getFeatureId</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>feature_id_;</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_out_of_view_;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>was_used_for_residualization_;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Eigen::Vector2d&gt;<sp/>positions_;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_FEATURE_TRACK_H</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::size_t<sp/>posesTrackedCount()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isOutOfView()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setOutOfView();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>wasUsedForResidualization()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setWasUsedForResidualization();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_feature_track_1aeba4f7f42fe7c065a17bd26e2817dcbe" kindref="member">getFeatureId</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>feature_id_;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>is_out_of_view_;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>was_used_for_residualization_;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Eigen::Vector2d&gt;<sp/>positions_;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//TONAV_FEATURE_TRACK_H</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/tomas789/tonav/include/feature_track.h"/>
   </compounddef>

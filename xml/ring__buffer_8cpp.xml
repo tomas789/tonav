@@ -1,0 +1,433 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="ring__buffer_8cpp" kind="file">
+    <compoundname>ring_buffer.cpp</compoundname>
+    <includes local="no">gtest/gtest.h</includes>
+    <includes local="yes">ring_buffer.h</includes>
+    <incdepgraph>
+      <node id="804">
+        <label>ring_buffer.h</label>
+      </node>
+      <node id="802">
+        <label>/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp</label>
+        <link refid="ring_buffer.cpp"/>
+        <childnode refid="803" relation="include">
+        </childnode>
+        <childnode refid="804" relation="include">
+        </childnode>
+      </node>
+      <node id="803">
+        <label>gtest/gtest.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="ring__buffer_8cpp_1aa2cd7e4713ac7ab10b32a0e4e7d97969" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, CorrectMaxSize)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>CorrectMaxSize</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="5" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="5" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1a13057d9e59b9238541df0f849b3367ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, EmptyContainer)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>EmptyContainer</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="10" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1a29139c9ba8d4888f98032ace441e9353" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, InsertSingleElementTestNonEmpty)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>InsertSingleElementTestNonEmpty</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="15" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="15" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1a5142bac6269c9f9f7a8edc6d7d9cd689" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, InsertSingleElementTestSizeOne)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>InsertSingleElementTestSizeOne</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="21" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="21" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1afd10c9c8a481f13dc51cbb1fe7534524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, InsertSingleElementTestEqual)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>InsertSingleElementTestEqual</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="27" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="27" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1adbff2ea0e14ad6e2e2d078d1aaefa2f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, InsertOverLimitThrows)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>InsertOverLimitThrows</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="33" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="33" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1ad0c247eceb75a4af3774698128ef3eae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, PopFrontShrinksSize)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>PopFrontShrinksSize</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="41" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="41" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1ae00a86d027bc43ece28c6c23e9051ffc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, InsertOverLimitWithEmptyNoThrow)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>InsertOverLimitWithEmptyNoThrow</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="51" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="51" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1a46b2051f9bad14085568bb54f3ba478a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, CopyConstructCorrectSize)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>CopyConstructCorrectSize</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="64" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="64" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1a5c418fb43241cafb82d7d3579f9287ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, CopyConstructElementsEqual)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>CopyConstructElementsEqual</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="75" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="75" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1a2d563db1a1e78dcc69a9f2121296f554" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, MoveConstructCorrectSize)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>MoveConstructCorrectSize</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="88" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="88" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1a2fe3e2d24cbe87df42c54c4e8b9d1f4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, MoveConstructElementsEqual)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>MoveConstructElementsEqual</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="99" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="99" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1ac72a111b8efea2812387ce0dfd160d6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, IterateElementsWithIterator)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>IterateElementsWithIterator</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="112" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="112" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="ring__buffer_8cpp_1a2107139d9d225aea56d60e23d6f2e5f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TEST</definition>
+        <argsstring>(RingBufferTest, EndIsLesserThenEverything)</argsstring>
+        <name>TEST</name>
+        <param>
+          <type>RingBufferTest</type>
+        </param>
+        <param>
+          <type>EndIsLesserThenEverything</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" line="125" column="1" bodyfile="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp" bodystart="125" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ring_buffer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">TEST(RingBufferTest,<sp/>CorrectMaxSize)<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(5,<sp/>c.max_size());</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">TEST(RingBufferTest,<sp/>EmptyContainer)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_TRUE(c.empty());</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">TEST(RingBufferTest,<sp/>InsertSingleElementTestNonEmpty)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>c.push_back(1);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_FALSE(c.empty());</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">TEST(RingBufferTest,<sp/>InsertSingleElementTestSizeOne)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>c.push_back(1);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(1,<sp/>c.size());</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">TEST(RingBufferTest,<sp/>InsertSingleElementTestEqual)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>c.push_back(1);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(1,<sp/>c[0]);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">TEST(RingBufferTest,<sp/>InsertOverLimitThrows)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_THROW({<sp/>c.push_back(6);<sp/>},<sp/>std::runtime_error);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">TEST(RingBufferTest,<sp/>PopFrontShrinksSize)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(5,<sp/>c.size());</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>c.pop_front();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(4,<sp/>c.size());</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">TEST(RingBufferTest,<sp/>InsertOverLimitWithEmptyNoThrow)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_NO_THROW({</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.pop_front();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i<sp/>+<sp/>5);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">TEST(RingBufferTest,<sp/>CopyConstructCorrectSize)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c2(c);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(c.size(),<sp/>c2.size());</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">TEST(RingBufferTest,<sp/>CopyConstructElementsEqual)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c2(c);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>c2.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXPECT_EQ(c[i],<sp/>c2[i]);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal">TEST(RingBufferTest,<sp/>MoveConstructCorrectSize)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c2<sp/>=<sp/>std::move(c);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>EXPECT_EQ(5,<sp/>c2.size());</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">TEST(RingBufferTest,<sp/>MoveConstructElementsEqual)<sp/>{</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c2<sp/>=<sp/>std::move(c);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>c2.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXPECT_EQ(i,<sp/>c2[i]);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">TEST(RingBufferTest,<sp/>IterateElementsWithIterator)<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>std::begin(c);<sp/>it<sp/>!=<sp/>std::end(c);<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXPECT_EQ(i,<sp/>*it);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal">TEST(RingBufferTest,<sp/>EndIsLesserThenEverything)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>RingBuffer&lt;int&gt;<sp/>c(5);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c.push_back(i);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>std::begin(c);<sp/>it<sp/>!=<sp/>std::end(c);<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXPECT_LT(it,<sp/>std::end(c));</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/tomas789/tonav/tests/ring_buffer.cpp"/>
+  </compounddef>
+</doxygen>

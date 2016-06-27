@@ -29,30 +29,30 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="30">
+      <node id="32">
         <label>std::runtime_error</label>
       </node>
-      <node id="31">
+      <node id="33">
         <label>image_transport::TransportLoadException</label>
         <link refid="classimage__transport_1_1_transport_load_exception"/>
-        <childnode refid="29" relation="public-inheritance">
+        <childnode refid="31" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="29">
+      <node id="31">
         <label>image_transport::Exception</label>
         <link refid="classimage__transport_1_1_exception"/>
-        <childnode refid="30" relation="public-inheritance">
+        <childnode refid="32" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="33">
+      <node id="35">
         <label>std::runtime_error</label>
       </node>
-      <node id="32">
+      <node id="34">
         <label>image_transport::Exception</label>
         <link refid="classimage__transport_1_1_exception"/>
-        <childnode refid="33" relation="public-inheritance">
+        <childnode refid="35" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

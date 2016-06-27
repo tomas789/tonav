@@ -180,16 +180,19 @@ $(document).ready(function(){initNavTree('filter_8h_source.html','');});
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">static</span> Eigen::Matrix4d omegaMatrix(<span class="keyword">const</span> Eigen::Vector3d vec);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">static</span> Eigen::Matrix3d crossMatrix(<span class="keyword">const</span> Eigen::Vector3d vec);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_feature_tracker.html">FeatureTracker</a> feature_tracker_;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif //TONAV_FILTER_H</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    Eigen::Vector3d triangulateGlobalFeaturePosition(<span class="keyword">const</span> <a class="code" href="class_feature_track.html">FeatureTrack</a>&amp; feature_track);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="class_feature_tracker.html">FeatureTracker</a> feature_tracker_;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif //TONAV_FILTER_H</span></div>
 <div class="ttc" id="class_feature_tracker_html"><div class="ttname"><a href="class_feature_tracker.html">FeatureTracker</a></div><div class="ttdef"><b>Definition:</b> <a href="feature__tracker_8h_source.html#l00017">feature_tracker.h:17</a></div></div>
 <div class="ttc" id="class_calibration_html"><div class="ttname"><a href="class_calibration.html">Calibration</a></div><div class="ttdef"><b>Definition:</b> <a href="calibration_8h_source.html#l00013">calibration.h:13</a></div></div>
 <div class="ttc" id="class_imu_item_html"><div class="ttname"><a href="class_imu_item.html">ImuItem</a></div><div class="ttdef"><b>Definition:</b> <a href="imu__item_8h_source.html#l00015">imu_item.h:15</a></div></div>
 <div class="ttc" id="class_body_state_html"><div class="ttname"><a href="class_body_state.html">BodyState</a></div><div class="ttdoc">Represents body pose  in filter state. </div><div class="ttdef"><b>Definition:</b> <a href="body__state_8h_source.html#l00014">body_state.h:14</a></div></div>
-<div class="ttc" id="class_filter_state_html"><div class="ttname"><a href="class_filter_state.html">FilterState</a></div><div class="ttdef"><b>Definition:</b> <a href="filter__state_8h_source.html#l00015">filter_state.h:15</a></div></div>
+<div class="ttc" id="class_filter_state_html"><div class="ttname"><a href="class_filter_state.html">FilterState</a></div><div class="ttdef"><b>Definition:</b> <a href="filter__state_8h_source.html#l00016">filter_state.h:16</a></div></div>
 <div class="ttc" id="class_filter_html"><div class="ttname"><a href="class_filter.html">Filter</a></div><div class="ttdoc">Implementation of MSCKF. </div><div class="ttdef"><b>Definition:</b> <a href="filter_8h_source.html#l00029">filter.h:29</a></div></div>
+<div class="ttc" id="class_feature_track_html"><div class="ttname"><a href="class_feature_track.html">FeatureTrack</a></div><div class="ttdef"><b>Definition:</b> <a href="feature__track_8h_source.html#l00011">feature_track.h:11</a></div></div>
 <div class="ttc" id="class_filter_html_ad046b83209a1f03d65ac75f16b538546"><div class="ttname"><a href="class_filter.html#ad046b83209a1f03d65ac75f16b538546">Filter::setGlobalGravity</a></div><div class="ttdeci">void setGlobalGravity(Eigen::Vector3d gravity)</div><div class="ttdoc">Set initial estimate of gravity in global frame. </div><div class="ttdef"><b>Definition:</b> <a href="filter_8cpp_source.html#l00168">filter.cpp:168</a></div></div>
 <div class="ttc" id="class_filter_html_a1c7a33a737fafec46d6e98ec1be37a4c"><div class="ttname"><a href="class_filter.html#a1c7a33a737fafec46d6e98ec1be37a4c">Filter::getImageCaptureTime</a></div><div class="ttdeci">double getImageCaptureTime(double arrive_time)</div><div class="ttdoc">Calculate . </div><div class="ttdef"><b>Definition:</b> <a href="filter_8cpp_source.html#l00184">filter.cpp:184</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

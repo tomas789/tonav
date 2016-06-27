@@ -7,191 +7,206 @@
     <includes local="no">ros/ros.h</includes>
     <includes local="no">limits</includes>
     <incdepgraph>
-      <node id="684">
-        <label>list</label>
-      </node>
-      <node id="688">
+      <node id="736">
         <label>limits</label>
       </node>
-      <node id="686">
+      <node id="734">
         <label>Eigen/Geometry</label>
       </node>
-      <node id="698">
+      <node id="749">
         <label>cmath</label>
       </node>
-      <node id="675">
+      <node id="724">
         <label>Eigen/Core</label>
       </node>
-      <node id="674">
+      <node id="723">
         <label>opencv2/core/core.hpp</label>
       </node>
-      <node id="694">
+      <node id="745">
         <label>feature_track.h</label>
         <link refid="feature__track_8h_source"/>
-        <childnode refid="681" relation="include">
+        <childnode refid="730" relation="include">
         </childnode>
-        <childnode refid="679" relation="include">
+        <childnode refid="728" relation="include">
         </childnode>
       </node>
-      <node id="678">
+      <node id="727">
         <label>string</label>
       </node>
-      <node id="680">
+      <node id="729">
         <label>filter.h</label>
         <link refid="filter_8h_source"/>
-        <childnode refid="681" relation="include">
+        <childnode refid="730" relation="include">
         </childnode>
-        <childnode refid="676" relation="include">
+        <childnode refid="725" relation="include">
         </childnode>
-        <childnode refid="682" relation="include">
+        <childnode refid="731" relation="include">
         </childnode>
-        <childnode refid="690" relation="include">
+        <childnode refid="741" relation="include">
         </childnode>
-        <childnode refid="695" relation="include">
+        <childnode refid="746" relation="include">
         </childnode>
       </node>
-      <node id="696">
+      <node id="747">
         <label>imu_device.h</label>
         <link refid="imu__device_8h_source"/>
-        <childnode refid="683" relation="include">
+        <childnode refid="732" relation="include">
         </childnode>
       </node>
-      <node id="682">
+      <node id="731">
         <label>filter_state.h</label>
         <link refid="filter__state_8h_source"/>
-        <childnode refid="683" relation="include">
+        <childnode refid="732" relation="include">
         </childnode>
-        <childnode refid="681" relation="include">
+        <childnode refid="730" relation="include">
         </childnode>
-        <childnode refid="684" relation="include">
+        <childnode refid="728" relation="include">
         </childnode>
-        <childnode refid="685" relation="include">
+        <childnode refid="733" relation="include">
         </childnode>
-        <childnode refid="687" relation="include">
+        <childnode refid="735" relation="include">
+        </childnode>
+        <childnode refid="738" relation="include">
         </childnode>
       </node>
-      <node id="685">
+      <node id="733">
         <label>body_state.h</label>
         <link refid="body__state_8h_source"/>
-        <childnode refid="675" relation="include">
+        <childnode refid="724" relation="include">
         </childnode>
-        <childnode refid="686" relation="include">
+        <childnode refid="734" relation="include">
         </childnode>
       </node>
-      <node id="672">
+      <node id="721">
         <label>/home/travis/build/tomas789/tonav/src/tonav.cpp</label>
         <link refid="tonav.cpp"/>
-        <childnode refid="673" relation="include">
+        <childnode refid="722" relation="include">
         </childnode>
-        <childnode refid="698" relation="include">
+        <childnode refid="749" relation="include">
         </childnode>
-        <childnode refid="699" relation="include">
+        <childnode refid="750" relation="include">
         </childnode>
-        <childnode refid="688" relation="include">
+        <childnode refid="736" relation="include">
         </childnode>
       </node>
-      <node id="692">
+      <node id="743">
         <label>opencv2/features2d/features2d.hpp</label>
       </node>
-      <node id="681">
+      <node id="739">
+        <label>boost/circular_buffer.hpp</label>
+      </node>
+      <node id="730">
         <label>Eigen/Dense</label>
       </node>
-      <node id="677">
+      <node id="726">
         <label>boost/filesystem/path.hpp</label>
       </node>
-      <node id="697">
+      <node id="748">
         <label>imu_item.h</label>
         <link refid="imu__item_8h_source"/>
-        <childnode refid="678" relation="include">
+        <childnode refid="727" relation="include">
         </childnode>
-        <childnode refid="675" relation="include">
+        <childnode refid="724" relation="include">
         </childnode>
-        <childnode refid="696" relation="include">
+        <childnode refid="747" relation="include">
         </childnode>
       </node>
-      <node id="690">
+      <node id="741">
         <label>feature_tracker.h</label>
         <link refid="feature__tracker_8h_source"/>
-        <childnode refid="691" relation="include">
+        <childnode refid="742" relation="include">
         </childnode>
-        <childnode refid="674" relation="include">
+        <childnode refid="723" relation="include">
         </childnode>
-        <childnode refid="692" relation="include">
+        <childnode refid="743" relation="include">
         </childnode>
-        <childnode refid="693" relation="include">
+        <childnode refid="744" relation="include">
         </childnode>
-        <childnode refid="694" relation="include">
+        <childnode refid="745" relation="include">
         </childnode>
       </node>
-      <node id="693">
+      <node id="744">
         <label>frame_features.h</label>
         <link refid="frame__features_8h_source"/>
-        <childnode refid="674" relation="include">
+        <childnode refid="723" relation="include">
         </childnode>
-        <childnode refid="692" relation="include">
+        <childnode refid="743" relation="include">
         </childnode>
       </node>
-      <node id="679">
+      <node id="728">
         <label>vector</label>
       </node>
-      <node id="695">
+      <node id="746">
         <label>imu_buffer.h</label>
         <link refid="imu__buffer_8h_source"/>
-        <childnode refid="679" relation="include">
+        <childnode refid="728" relation="include">
         </childnode>
-        <childnode refid="696" relation="include">
+        <childnode refid="747" relation="include">
         </childnode>
-        <childnode refid="697" relation="include">
+        <childnode refid="748" relation="include">
         </childnode>
       </node>
-      <node id="673">
+      <node id="740">
+        <label>utility</label>
+      </node>
+      <node id="722">
         <label>tonav.h</label>
         <link refid="tonav_8h_source"/>
-        <childnode refid="674" relation="include">
+        <childnode refid="723" relation="include">
         </childnode>
-        <childnode refid="675" relation="include">
+        <childnode refid="724" relation="include">
         </childnode>
-        <childnode refid="676" relation="include">
+        <childnode refid="725" relation="include">
         </childnode>
-        <childnode refid="680" relation="include">
+        <childnode refid="729" relation="include">
         </childnode>
-        <childnode refid="695" relation="include">
+        <childnode refid="746" relation="include">
         </childnode>
-        <childnode refid="696" relation="include">
+        <childnode refid="747" relation="include">
         </childnode>
       </node>
-      <node id="699">
+      <node id="750">
         <label>ros/ros.h</label>
       </node>
-      <node id="683">
+      <node id="732">
         <label>iostream</label>
       </node>
-      <node id="689">
+      <node id="738">
+        <label>camera_pose_buffer.h</label>
+        <link refid="camera__pose__buffer_8h_source"/>
+        <childnode refid="739" relation="include">
+        </childnode>
+        <childnode refid="740" relation="include">
+        </childnode>
+        <childnode refid="735" relation="include">
+        </childnode>
+      </node>
+      <node id="737">
         <label>set</label>
       </node>
-      <node id="676">
+      <node id="725">
         <label>calibration.h</label>
         <link refid="calibration_8h_source"/>
-        <childnode refid="677" relation="include">
+        <childnode refid="726" relation="include">
         </childnode>
-        <childnode refid="675" relation="include">
+        <childnode refid="724" relation="include">
         </childnode>
-        <childnode refid="678" relation="include">
+        <childnode refid="727" relation="include">
         </childnode>
-        <childnode refid="679" relation="include">
+        <childnode refid="728" relation="include">
         </childnode>
       </node>
-      <node id="687">
+      <node id="735">
         <label>camera_pose.h</label>
         <link refid="camera__pose_8h_source"/>
-        <childnode refid="681" relation="include">
+        <childnode refid="730" relation="include">
         </childnode>
-        <childnode refid="688" relation="include">
+        <childnode refid="736" relation="include">
         </childnode>
-        <childnode refid="689" relation="include">
+        <childnode refid="737" relation="include">
         </childnode>
       </node>
-      <node id="691">
+      <node id="742">
         <label>memory</label>
       </node>
     </incdepgraph>

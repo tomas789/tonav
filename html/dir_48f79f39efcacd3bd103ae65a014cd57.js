@@ -6,6 +6,7 @@ var dir_48f79f39efcacd3bd103ae65a014cd57 =
     [ "camera_feed.h", "camera__feed_8h_source.html", null ],
     [ "camera_item.h", "camera__item_8h_source.html", null ],
     [ "camera_pose.h", "camera__pose_8h_source.html", null ],
+    [ "camera_pose_buffer.h", "camera__pose__buffer_8h_source.html", null ],
     [ "feature_track.h", "feature__track_8h_source.html", null ],
     [ "feature_tracker.h", "feature__tracker_8h_source.html", null ],
     [ "filter.h", "filter_8h_source.html", null ],

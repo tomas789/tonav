@@ -126,6 +126,21 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>StateType</b> = Eige
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a96a6a62727b41b89cd1020fccde8bf51"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96a6a62727b41b89cd1020fccde8bf51"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FilterState</b> (int max_camera_poses)</td></tr>
+<tr class="separator:a96a6a62727b41b89cd1020fccde8bf51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787e83cc2d2a29b1a63e6a563c68ec64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a787e83cc2d2a29b1a63e6a563c68ec64"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FilterState</b> (const <a class="el" href="class_filter_state.html">FilterState</a> &amp;other)=default</td></tr>
+<tr class="separator:a787e83cc2d2a29b1a63e6a563c68ec64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a276c5ef3144894bbbb875104d229ee33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a276c5ef3144894bbbb875104d229ee33"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>FilterState</b> (<a class="el" href="class_filter_state.html">FilterState</a> &amp;&amp;other)=default</td></tr>
+<tr class="separator:a276c5ef3144894bbbb875104d229ee33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3559980125f96c1498b6047f97a59498"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3559980125f96c1498b6047f97a59498"></a>
+<a class="el" href="class_filter_state.html">FilterState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_filter_state.html">FilterState</a> &amp;other)=default</td></tr>
+<tr class="separator:a3559980125f96c1498b6047f97a59498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a979c282e7e50b6549679bca9ffa4b474"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a979c282e7e50b6549679bca9ffa4b474"></a>
+<a class="el" href="class_filter_state.html">FilterState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="class_filter_state.html">FilterState</a> &amp;&amp;other)=default</td></tr>
+<tr class="separator:a979c282e7e50b6549679bca9ffa4b474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a931d62079a89ceacc6e3f62cad16fe77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a931d62079a89ceacc6e3f62cad16fe77"></a>
 <a class="el" href="class_body_state.html">BodyState</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getBodyStateRef</b> ()</td></tr>
 <tr class="separator:a931d62079a89ceacc6e3f62cad16fe77"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,16 +227,13 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>uglyPri
 <tr class="memitem:af33cfbc67284846e3ca9c26a79c227a9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af33cfbc67284846e3ca9c26a79c227a9"></a>
 <a class="el" href="class_filter_state.html">FilterState</a>&#160;</td><td class="memItemRight" valign="bottom"><b>deriveNewStateForImuPropagation</b> () const </td></tr>
 <tr class="separator:af33cfbc67284846e3ca9c26a79c227a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fdc71df11cf72369b86be2eaffcea27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9fdc71df11cf72369b86be2eaffcea27"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>appendCameraPose</b> (const <a class="el" href="class_camera_pose.html">CameraPose</a> &amp;camera_pose)</td></tr>
-<tr class="separator:a9fdc71df11cf72369b86be2eaffcea27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0638c19679b93d95f812bd38758f05ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0638c19679b93d95f812bd38758f05ca"></a>
-std::list&lt; <a class="el" href="class_camera_pose.html">CameraPose</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getCameraPosesRef</b> ()</td></tr>
-<tr class="separator:a0638c19679b93d95f812bd38758f05ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acde2164859104e0c291f4eec0e1bcb07"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acde2164859104e0c291f4eec0e1bcb07"></a>
+<a class="el" href="class_camera_pose_buffer.html">CameraPoseBuffer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>poses</b> ()</td></tr>
+<tr class="separator:acde2164859104e0c291f4eec0e1bcb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="filter__state_8h_source.html#l00015">15</a> of file <a class="el" href="filter__state_8h_source.html">filter_state.h</a>.</p>
+<p>Definition at line <a class="el" href="filter__state_8h_source.html#l00016">16</a> of file <a class="el" href="filter__state_8h_source.html">filter_state.h</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/travis/build/tomas789/tonav/include/<a class="el" href="filter__state_8h_source.html">filter_state.h</a></li>
 <li>/home/travis/build/tomas789/tonav/src/<a class="el" href="filter__state_8cpp_source.html">filter_state.cpp</a></li>

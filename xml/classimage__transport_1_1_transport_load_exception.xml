@@ -60,36 +60,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="167">
+      <node id="169">
         <label>std::runtime_error</label>
       </node>
-      <node id="165">
+      <node id="167">
         <label>image_transport::TransportLoadException</label>
         <link refid="classimage__transport_1_1_transport_load_exception"/>
-        <childnode refid="166" relation="public-inheritance">
+        <childnode refid="168" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="166">
+      <node id="168">
         <label>image_transport::Exception</label>
         <link refid="classimage__transport_1_1_exception"/>
-        <childnode refid="167" relation="public-inheritance">
+        <childnode refid="169" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="170">
+      <node id="172">
         <label>std::runtime_error</label>
       </node>
-      <node id="168">
+      <node id="170">
         <label>image_transport::TransportLoadException</label>
         <link refid="classimage__transport_1_1_transport_load_exception"/>
-        <childnode refid="169" relation="public-inheritance">
+        <childnode refid="171" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="169">
+      <node id="171">
         <label>image_transport::Exception</label>
         <link refid="classimage__transport_1_1_exception"/>
-        <childnode refid="170" relation="public-inheritance">
+        <childnode refid="172" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

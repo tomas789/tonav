@@ -6,6 +6,7 @@ var dir_86f9b15063a11144272c6c377c697b62 =
     [ "camera_feed.cpp", "camera__feed_8cpp_source.html", null ],
     [ "camera_item.cpp", "camera__item_8cpp_source.html", null ],
     [ "camera_pose.cpp", "camera__pose_8cpp_source.html", null ],
+    [ "camera_pose_buffer.cpp", "camera__pose__buffer_8cpp_source.html", null ],
     [ "feature_track.cpp", "feature__track_8cpp_source.html", null ],
     [ "feature_tracker.cpp", "feature__tracker_8cpp_source.html", null ],
     [ "filter.cpp", "filter_8cpp_source.html", null ],
