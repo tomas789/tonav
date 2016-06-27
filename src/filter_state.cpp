@@ -130,7 +130,7 @@ FilterState FilterState::deriveNewStateForImuPropagation() const {
     return new_state;
 }
 
-RingBuffer<CameraPose>& FilterState::poses() {
+CameraPoseBuffer& FilterState::poses() {
     return poses_;
 }
 

@@ -54,8 +54,8 @@ set(SOURCE_FILES
         src/tonav_ros.cpp
         include/body_state.h
         src/body_state.cpp
-        include/ring_buffer.h
-        src/ring_buffer.cpp
+        include/camera_pose_buffer.h
+        src/camera_pose_buffer.cpp
 )
 add_executable(tonav src/main.cpp ${SOURCE_FILES})
 

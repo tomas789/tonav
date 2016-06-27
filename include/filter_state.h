@@ -11,7 +11,7 @@
 
 #include "body_state.h"
 #include "camera_pose.h"
-#include "ring_buffer.h"
+#include "camera_pose_buffer.h"
 
 class FilterState {
 public:
@@ -62,7 +62,7 @@ public:
 
     FilterState deriveNewStateForImuPropagation() const;
 
-    RingBuffer<CameraPose>& poses();
+    CameraPoseBuffer& poses();
 private:
     /** @brief Contains body pose */
     BodyState body_state_;
@@ -77,7 +77,7 @@ private:
     Eigen::Matrix3d accelerometer_shape_;
     
     /** @brief All camera poses */
-    RingBuffer<CameraPose> poses_;
+    CameraPoseBuffer poses_;
     
     /**
      * @birief Filter state except body pose and camera poses
