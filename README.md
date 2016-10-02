@@ -9,7 +9,7 @@ Implementation of Multi-State Constraint Kalman Filter (MSCKF) for Vision-aided 
 
 ## Status
 
-This is work-in-progress. It is not able to work out-of-the-box currently. Expected time when it will be able to work out-of-the-box: July 2016.
+This is work-in-progress. It is not able to work out-of-the-box currently. Expected time when it will be able to work out-of-the-box: Jan 2017.
 
 ## Goals
 
