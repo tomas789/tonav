@@ -34,6 +34,10 @@ Each bag file is quite large because it contains laser scans. They are not neede
 
 By the way. Can you believe how hard it is to find publically available bagfile that is recorded using some cheap hardware? C'mon!
 
+## Live data from iOS
+
+For development purpose I've created data streaming app that streams IMU events (and video in the future) form iDevice (iPad, iPhone, ...) to RabbitMQ and then another app that picks them up from RabbitMQ and publishes them as ROS topic. Those apps are called [iOSmsg](https://github.com/tomas789/iOSmsg) and [iOSmsg_client](https://github.com/tomas789/iOSmsg_client). You can use them for any purpose you want. And if you like them, remember to give me a start, fork it and tell your friends ;)
+
 ## Installation
 
 To install this you need to have installed and working ROS. Then it should be fairly easy to build and run.
