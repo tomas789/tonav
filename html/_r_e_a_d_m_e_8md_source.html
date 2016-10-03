@@ -146,48 +146,52 @@ $(document).ready(function(){initNavTree('_r_e_a_d_m_e_8md.html','');});
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;By the way. Can you believe how hard it is to find publically available bagfile that is recorded <span class="keyword">using</span> some cheap hardware? C<span class="stringliteral">&#39;mon!</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="stringliteral">## Installation</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="stringliteral">## Live data from iOS</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral">To install this you need to have installed and working ROS. Then it should be fairly easy to build and run.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="stringliteral">```</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="stringliteral">git clone https://github.com/tomas789/tonav.git</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="stringliteral">cd tonav</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="stringliteral">mkdir build</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="stringliteral">cd build</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="stringliteral">cmake ..</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="stringliteral">make</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="stringliteral">```</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="stringliteral">## Run</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="stringliteral">I currently don&#39;</span>t provide any roslaunch file. Just run `roscore` and then run <a class="code" href="class_tonav.html">Tonav</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="stringliteral">For development purpose I&#39;</span>ve created data streaming app that streams IMU events (and video in the future) form iDevice (iPad, iPhone, ...) to RabbitMQ and then another app that picks them up from RabbitMQ and publishes them as ROS topic. Those apps are called [iOSmsg](https:<span class="comment">//github.com/tomas789/iOSmsg) and [iOSmsg_client](https://github.com/tomas789/iOSmsg_client). You can use them for any purpose you want. And if you like them, remember to give me a start, fork it and tell your friends ;)</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">## Installation</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;To install <span class="keyword">this</span> you need to have installed and working ROS. Then it should be fairly easy to build and run.</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;```</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;git clone https:<span class="comment">//github.com/tomas789/tonav.git</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;cd tonav</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;mkdir build</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;cd build</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;cmake ..</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;make</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;```</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;```</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;./tonav --image &lt;image_topic&gt; --camerainfo &lt;camerainfo_topic&gt; --imu &lt;imu_topic&gt;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;```</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;For [MIT Stata Center Data Set](http:<span class="comment">//projects.csail.mit.edu/stata/index.php) I run it using</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;```</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;./tonav --image /wide_stereo/left/image_rect --camerainfo /wide_stereo/left/camera_info --imu /torso_lift_imu/data</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;```</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">## Documentation</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;At the time of writing there is no good documentation. Actually the best one is <span class="keyword">this</span> readme. You can also find some useful information in my in-source Doxygen documentation. If you have installed Doxygen in version at least 1.8.8 you can generate it. Just run `make doc` and it will be generated in the folder `build/doc`.</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;## Bug reporting and support</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;This is something as alpha-dev-buggy piece of work. But stay tuned. I <span class="keywordflow">do</span> my best. If you want to report a bug or <span class="keywordflow">if</span> you want to know something about it just contact me at tomas789@gmail.com or simply use [Issue tracker of GitHub](https:<span class="comment">//github.com/tomas789/tonav/issues).</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">## What does Tonav mean?</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;Its Tom<span class="stringliteral">&#39;s Navigation.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">## Run</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;I currently don<span class="stringliteral">&#39;t provide any roslaunch file. Just run `roscore` and then run Tonav</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="stringliteral">```</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="stringliteral">./tonav --image &lt;image_topic&gt; --camerainfo &lt;camerainfo_topic&gt; --imu &lt;imu_topic&gt;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="stringliteral">```</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="stringliteral">For [MIT Stata Center Data Set](http://projects.csail.mit.edu/stata/index.php) I run it using</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="stringliteral">```</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="stringliteral">./tonav --image /wide_stereo/left/image_rect --camerainfo /wide_stereo/left/camera_info --imu /torso_lift_imu/data</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="stringliteral">```</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="stringliteral">## Documentation</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="stringliteral">At the time of writing there is no good documentation. Actually the best one is this readme. You can also find some useful information in my in-source Doxygen documentation. If you have installed Doxygen in version at least 1.8.8 you can generate it. Just run `make doc` and it will be generated in the folder `build/doc`.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="stringliteral">## Bug reporting and support</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="stringliteral"></span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="stringliteral">This is something as alpha-dev-buggy piece of work. But stay tuned. I do my best. If you want to report a bug or if you want to know something about it just contact me at tomas789@gmail.com or simply use [Issue tracker of GitHub](https://github.com/tomas789/tonav/issues).</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="stringliteral">## License</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="stringliteral">## What does Tonav mean?</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="stringliteral"></span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral">This work is currently distributed under LGPL v3 license. In the future, it will switch to GPL.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="stringliteral">Its Tom&#39;</span>s Navigation.</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;## License</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;This work is currently distributed under LGPL v3 license. In the future, it will <span class="keywordflow">switch</span> to GPL.</div>
 <div class="ttc" id="class_tonav_html"><div class="ttname"><a href="class_tonav.html">Tonav</a></div><div class="ttdoc">This is main class for communicating with filter. You can pass IMU and camera data to filter through ...</div><div class="ttdef"><b>Definition:</b> <a href="tonav_8h_source.html#l00019">tonav.h:19</a></div></div>
 <div class="ttc" id="class_filter_html"><div class="ttname"><a href="class_filter.html">Filter</a></div><div class="ttdoc">Implementation of MSCKF. </div><div class="ttdef"><b>Definition:</b> <a href="filter_8h_source.html#l00029">filter.h:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

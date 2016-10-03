@@ -43,48 +43,52 @@
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal">By<sp/>the<sp/>way.<sp/>Can<sp/>you<sp/>believe<sp/>how<sp/>hard<sp/>it<sp/>is<sp/>to<sp/>find<sp/>publically<sp/>available<sp/>bagfile<sp/>that<sp/>is<sp/>recorded<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>some<sp/>cheap<sp/>hardware?<sp/>C</highlight><highlight class="stringliteral">&apos;mon!</highlight></codeline>
 <codeline lineno="36"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="37"><highlight class="stringliteral">##<sp/>Installation</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral">##<sp/>Live<sp/>data<sp/>from<sp/>iOS</highlight></codeline>
 <codeline lineno="38"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="39"><highlight class="stringliteral">To<sp/>install<sp/>this<sp/>you<sp/>need<sp/>to<sp/>have<sp/>installed<sp/>and<sp/>working<sp/>ROS.<sp/>Then<sp/>it<sp/>should<sp/>be<sp/>fairly<sp/>easy<sp/>to<sp/>build<sp/>and<sp/>run.</highlight></codeline>
-<codeline lineno="40"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="41"><highlight class="stringliteral">```</highlight></codeline>
-<codeline lineno="42"><highlight class="stringliteral">git<sp/>clone<sp/>https://github.com/tomas789/tonav.git</highlight></codeline>
-<codeline lineno="43"><highlight class="stringliteral">cd<sp/>tonav</highlight></codeline>
-<codeline lineno="44"><highlight class="stringliteral">mkdir<sp/>build</highlight></codeline>
-<codeline lineno="45"><highlight class="stringliteral">cd<sp/>build</highlight></codeline>
-<codeline lineno="46"><highlight class="stringliteral">cmake<sp/>..</highlight></codeline>
-<codeline lineno="47"><highlight class="stringliteral">make</highlight></codeline>
-<codeline lineno="48"><highlight class="stringliteral">```</highlight></codeline>
-<codeline lineno="49"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="50"><highlight class="stringliteral">##<sp/>Run</highlight></codeline>
-<codeline lineno="51"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="52"><highlight class="stringliteral">I<sp/>currently<sp/>don&apos;</highlight><highlight class="normal">t<sp/>provide<sp/>any<sp/>roslaunch<sp/>file.<sp/>Just<sp/>run<sp/>`roscore`<sp/>and<sp/>then<sp/>run<sp/><ref refid="class_tonav" kindref="compound">Tonav</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral">For<sp/>development<sp/>purpose<sp/>I&apos;</highlight><highlight class="normal">ve<sp/>created<sp/>data<sp/>streaming<sp/>app<sp/>that<sp/>streams<sp/>IMU<sp/>events<sp/>(and<sp/>video<sp/>in<sp/>the<sp/>future)<sp/>form<sp/>iDevice<sp/>(iPad,<sp/>iPhone,<sp/>...)<sp/>to<sp/>RabbitMQ<sp/>and<sp/>then<sp/>another<sp/>app<sp/>that<sp/>picks<sp/>them<sp/>up<sp/>from<sp/>RabbitMQ<sp/>and<sp/>publishes<sp/>them<sp/>as<sp/>ROS<sp/>topic.<sp/>Those<sp/>apps<sp/>are<sp/>called<sp/>[iOSmsg](https:</highlight><highlight class="comment">//github.com/tomas789/iOSmsg)<sp/>and<sp/>[iOSmsg_client](https://github.com/tomas789/iOSmsg_client).<sp/>You<sp/>can<sp/>use<sp/>them<sp/>for<sp/>any<sp/>purpose<sp/>you<sp/>want.<sp/>And<sp/>if<sp/>you<sp/>like<sp/>them,<sp/>remember<sp/>to<sp/>give<sp/>me<sp/>a<sp/>start,<sp/>fork<sp/>it<sp/>and<sp/>tell<sp/>your<sp/>friends<sp/>;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>Installation</highlight></codeline>
+<codeline lineno="42"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">To<sp/>install<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>you<sp/>need<sp/>to<sp/>have<sp/>installed<sp/>and<sp/>working<sp/>ROS.<sp/>Then<sp/>it<sp/>should<sp/>be<sp/>fairly<sp/>easy<sp/>to<sp/>build<sp/>and<sp/>run.</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">```</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">git<sp/>clone<sp/>https:</highlight><highlight class="comment">//github.com/tomas789/tonav.git</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">cd<sp/>tonav</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">mkdir<sp/>build</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">make</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">```</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal">```</highlight></codeline>
-<codeline lineno="55"><highlight class="normal">./tonav<sp/>--image<sp/>&lt;image_topic&gt;<sp/>--camerainfo<sp/>&lt;camerainfo_topic&gt;<sp/>--imu<sp/>&lt;imu_topic&gt;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">```</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58"><highlight class="normal">For<sp/>[MIT<sp/>Stata<sp/>Center<sp/>Data<sp/>Set](http:</highlight><highlight class="comment">//projects.csail.mit.edu/stata/index.php)<sp/>I<sp/>run<sp/>it<sp/>using</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal">```</highlight></codeline>
-<codeline lineno="61"><highlight class="normal">./tonav<sp/>--image<sp/>/wide_stereo/left/image_rect<sp/>--camerainfo<sp/>/wide_stereo/left/camera_info<sp/>--imu<sp/>/torso_lift_imu/data</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">```</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>Documentation</highlight></codeline>
-<codeline lineno="65"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal">At<sp/>the<sp/>time<sp/>of<sp/>writing<sp/>there<sp/>is<sp/>no<sp/>good<sp/>documentation.<sp/>Actually<sp/>the<sp/>best<sp/>one<sp/>is<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>readme.<sp/>You<sp/>can<sp/>also<sp/>find<sp/>some<sp/>useful<sp/>information<sp/>in<sp/>my<sp/>in-source<sp/>Doxygen<sp/>documentation.<sp/>If<sp/>you<sp/>have<sp/>installed<sp/>Doxygen<sp/>in<sp/>version<sp/>at<sp/>least<sp/>1.8.8<sp/>you<sp/>can<sp/>generate<sp/>it.<sp/>Just<sp/>run<sp/>`make<sp/>doc`<sp/>and<sp/>it<sp/>will<sp/>be<sp/>generated<sp/>in<sp/>the<sp/>folder<sp/>`build/doc`.</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal">##<sp/>Bug<sp/>reporting<sp/>and<sp/>support</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal">This<sp/>is<sp/>something<sp/>as<sp/>alpha-dev-buggy<sp/>piece<sp/>of<sp/>work.<sp/>But<sp/>stay<sp/>tuned.<sp/>I<sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>my<sp/>best.<sp/>If<sp/>you<sp/>want<sp/>to<sp/>report<sp/>a<sp/>bug<sp/>or<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>you<sp/>want<sp/>to<sp/>know<sp/>something<sp/>about<sp/>it<sp/>just<sp/>contact<sp/>me<sp/>at<sp/>tomas789@gmail.com<sp/>or<sp/>simply<sp/>use<sp/>[Issue<sp/>tracker<sp/>of<sp/>GitHub](https:</highlight><highlight class="comment">//github.com/tomas789/tonav/issues).</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>What<sp/>does<sp/>Tonav<sp/>mean?</highlight></codeline>
-<codeline lineno="73"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal">Its<sp/>Tom</highlight><highlight class="stringliteral">&apos;s<sp/>Navigation.</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">##<sp/>Run</highlight></codeline>
+<codeline lineno="55"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">I<sp/>currently<sp/>don</highlight><highlight class="stringliteral">&apos;t<sp/>provide<sp/>any<sp/>roslaunch<sp/>file.<sp/>Just<sp/>run<sp/>`roscore`<sp/>and<sp/>then<sp/>run<sp/>Tonav</highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral">```</highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral">./tonav<sp/>--image<sp/>&lt;image_topic&gt;<sp/>--camerainfo<sp/>&lt;camerainfo_topic&gt;<sp/>--imu<sp/>&lt;imu_topic&gt;</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral">```</highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral">For<sp/>[MIT<sp/>Stata<sp/>Center<sp/>Data<sp/>Set](http://projects.csail.mit.edu/stata/index.php)<sp/>I<sp/>run<sp/>it<sp/>using</highlight></codeline>
+<codeline lineno="63"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="64"><highlight class="stringliteral">```</highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral">./tonav<sp/>--image<sp/>/wide_stereo/left/image_rect<sp/>--camerainfo<sp/>/wide_stereo/left/camera_info<sp/>--imu<sp/>/torso_lift_imu/data</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral">```</highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="68"><highlight class="stringliteral">##<sp/>Documentation</highlight></codeline>
+<codeline lineno="69"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="70"><highlight class="stringliteral">At<sp/>the<sp/>time<sp/>of<sp/>writing<sp/>there<sp/>is<sp/>no<sp/>good<sp/>documentation.<sp/>Actually<sp/>the<sp/>best<sp/>one<sp/>is<sp/>this<sp/>readme.<sp/>You<sp/>can<sp/>also<sp/>find<sp/>some<sp/>useful<sp/>information<sp/>in<sp/>my<sp/>in-source<sp/>Doxygen<sp/>documentation.<sp/>If<sp/>you<sp/>have<sp/>installed<sp/>Doxygen<sp/>in<sp/>version<sp/>at<sp/>least<sp/>1.8.8<sp/>you<sp/>can<sp/>generate<sp/>it.<sp/>Just<sp/>run<sp/>`make<sp/>doc`<sp/>and<sp/>it<sp/>will<sp/>be<sp/>generated<sp/>in<sp/>the<sp/>folder<sp/>`build/doc`.</highlight></codeline>
+<codeline lineno="71"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="72"><highlight class="stringliteral">##<sp/>Bug<sp/>reporting<sp/>and<sp/>support</highlight></codeline>
+<codeline lineno="73"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="74"><highlight class="stringliteral">This<sp/>is<sp/>something<sp/>as<sp/>alpha-dev-buggy<sp/>piece<sp/>of<sp/>work.<sp/>But<sp/>stay<sp/>tuned.<sp/>I<sp/>do<sp/>my<sp/>best.<sp/>If<sp/>you<sp/>want<sp/>to<sp/>report<sp/>a<sp/>bug<sp/>or<sp/>if<sp/>you<sp/>want<sp/>to<sp/>know<sp/>something<sp/>about<sp/>it<sp/>just<sp/>contact<sp/>me<sp/>at<sp/>tomas789@gmail.com<sp/>or<sp/>simply<sp/>use<sp/>[Issue<sp/>tracker<sp/>of<sp/>GitHub](https://github.com/tomas789/tonav/issues).</highlight></codeline>
 <codeline lineno="75"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="76"><highlight class="stringliteral">##<sp/>License</highlight></codeline>
+<codeline lineno="76"><highlight class="stringliteral">##<sp/>What<sp/>does<sp/>Tonav<sp/>mean?</highlight></codeline>
 <codeline lineno="77"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="78"><highlight class="stringliteral">This<sp/>work<sp/>is<sp/>currently<sp/>distributed<sp/>under<sp/>LGPL<sp/>v3<sp/>license.<sp/>In<sp/>the<sp/>future,<sp/>it<sp/>will<sp/>switch<sp/>to<sp/>GPL.</highlight></codeline>
+<codeline lineno="78"><highlight class="stringliteral">Its<sp/>Tom&apos;</highlight><highlight class="normal">s<sp/>Navigation.</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">This<sp/>work<sp/>is<sp/>currently<sp/>distributed<sp/>under<sp/>LGPL<sp/>v3<sp/>license.<sp/>In<sp/>the<sp/>future,<sp/>it<sp/>will<sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>to<sp/>GPL.</highlight></codeline>
     </programlisting>
     <location file="/home/travis/build/tomas789/tonav/README.md"/>
   </compounddef>
