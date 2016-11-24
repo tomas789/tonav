@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespacemsckf" kind="namespace">
+    <compoundname>msckf</compoundname>
+    <innerclass refid="classmsckf_1_1_quaternion" prot="public">msckf::Quaternion</innerclass>
+    <innerclass refid="classmsckf_1_1_imu_device" prot="public">msckf::ImuDevice</innerclass>
+    <innerclass refid="classmsckf_1_1_imu_item" prot="public">msckf::ImuItem</innerclass>
+    <innerclass refid="classmsckf_1_1_camera_item" prot="public">msckf::CameraItem</innerclass>
+    <innerclass refid="classmsckf_1_1_imu_buffer" prot="public">msckf::ImuBuffer</innerclass>
+    <innerclass refid="classmsckf_1_1_pose_get" prot="public">msckf::PoseGet</innerclass>
+    <innerclass refid="classmsckf_1_1_body_state" prot="public">msckf::BodyState</innerclass>
+    <innerclass refid="classmsckf_1_1_state" prot="public">msckf::State</innerclass>
+    <innerclass refid="classmsckf_1_1_feature_track" prot="public">msckf::FeatureTrack</innerclass>
+    <innerclass refid="classmsckf_1_1_image_tracker" prot="public">msckf::ImageTracker</innerclass>
+    <innerclass refid="classmsckf_1_1_msckf" prot="public">msckf::Msckf</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemsckf_1a3ff3a5a997bc1e2c61589e106f96f5af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.null</definition>
+        <argsstring></argsstring>
+        <name>null</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="28" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsckf_1a6620b4738a1ad89364a4c22cb7dbdd9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.print_yellow</definition>
+        <argsstring></argsstring>
+        <name>print_yellow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="36" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsckf_1a1dc6960f431a8be675cb8e616000b43c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.print_yellow_bold</definition>
+        <argsstring></argsstring>
+        <name>print_yellow_bold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="40" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsckf_1af87289ec899f14542a137e2d231a548d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.main</definition>
+        <argsstring></argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1308" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1308" bodyend="1311"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

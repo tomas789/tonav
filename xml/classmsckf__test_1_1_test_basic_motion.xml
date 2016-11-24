@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf__test_1_1_test_basic_motion" kind="class" prot="public">
+    <compoundname>msckf_test::TestBasicMotion</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf__test_1_1_test_basic_motion_1a404257b0be26cb61f9a40c86c3ed9038" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestBasicMotion.test_no_movement</definition>
+        <argsstring></argsstring>
+        <name>test_no_movement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="82" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="82" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_basic_motion_1acef0d837aaee3cc362efeed06df5a5c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestBasicMotion.test_simple_move_in_x_direction</definition>
+        <argsstring></argsstring>
+        <name>test_simple_move_in_x_direction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="94" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="94" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_basic_motion_1a2efc71e9537bf2671bbe4174c57895b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestBasicMotion.test_simple_rotation_about_x_axis</definition>
+        <argsstring></argsstring>
+        <name>test_simple_rotation_about_x_axis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="106" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="106" bodyend="119"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="188">
+        <label>TestCase</label>
+      </node>
+      <node id="187">
+        <label>msckf_test.TestBasicMotion</label>
+        <link refid="classmsckf__test_1_1_test_basic_motion"/>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="190">
+        <label>TestCase</label>
+      </node>
+      <node id="189">
+        <label>msckf_test.TestBasicMotion</label>
+        <link refid="classmsckf__test_1_1_test_basic_motion"/>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="81" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="81" bodyend="120"/>
+    <listofallmembers>
+      <member refid="classmsckf__test_1_1_test_basic_motion_1a404257b0be26cb61f9a40c86c3ed9038" prot="public" virt="non-virtual"><scope>msckf_test::TestBasicMotion</scope><name>test_no_movement</name></member>
+      <member refid="classmsckf__test_1_1_test_basic_motion_1acef0d837aaee3cc362efeed06df5a5c2" prot="public" virt="non-virtual"><scope>msckf_test::TestBasicMotion</scope><name>test_simple_move_in_x_direction</name></member>
+      <member refid="classmsckf__test_1_1_test_basic_motion_1a2efc71e9537bf2671bbe4174c57895b7" prot="public" virt="non-virtual"><scope>msckf_test::TestBasicMotion</scope><name>test_simple_rotation_about_x_axis</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

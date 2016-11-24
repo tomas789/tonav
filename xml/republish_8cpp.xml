@@ -6,135 +6,135 @@
     <includes refid="publisher__plugin_8h" local="yes">image_transport/publisher_plugin.h</includes>
     <includes local="no">pluginlib/class_loader.h</includes>
     <incdepgraph>
-      <node id="1278">
+      <node id="1284">
         <label>image_transport/loader_fwds.h</label>
         <link refid="loader__fwds_8h_source"/>
       </node>
-      <node id="1282">
+      <node id="1288">
         <label>sensor_msgs/CameraInfo.h</label>
       </node>
-      <node id="1281">
+      <node id="1287">
         <label>image_transport/camera_publisher.h</label>
         <link refid="camera__publisher_8h_source"/>
-        <childnode refid="1271" relation="include">
+        <childnode refid="1277" relation="include">
         </childnode>
-        <childnode refid="1272" relation="include">
+        <childnode refid="1278" relation="include">
         </childnode>
-        <childnode refid="1282" relation="include">
-        </childnode>
-        <childnode refid="1273" relation="include">
-        </childnode>
-      </node>
-      <node id="1273">
-        <label>image_transport/single_subscriber_publisher.h</label>
-        <link refid="single__subscriber__publisher_8h_source"/>
-        <childnode refid="1274" relation="include">
-        </childnode>
-        <childnode refid="1275" relation="include">
-        </childnode>
-        <childnode refid="1272" relation="include">
-        </childnode>
-      </node>
-      <node id="1277">
-        <label>stdexcept</label>
-      </node>
-      <node id="1272">
-        <label>sensor_msgs/Image.h</label>
-      </node>
-      <node id="1274">
-        <label>boost/noncopyable.hpp</label>
-      </node>
-      <node id="1280">
-        <label>image_transport/transport_hints.h</label>
-        <link refid="transport__hints_8h_source"/>
-        <childnode refid="1271" relation="include">
-        </childnode>
-      </node>
-      <node id="1269">
-        <label>image_transport/image_transport.h</label>
-        <link refid="image__transport_8h_source"/>
-        <childnode refid="1270" relation="include">
+        <childnode refid="1288" relation="include">
         </childnode>
         <childnode refid="1279" relation="include">
         </childnode>
+      </node>
+      <node id="1279">
+        <label>image_transport/single_subscriber_publisher.h</label>
+        <link refid="single__subscriber__publisher_8h_source"/>
+        <childnode refid="1280" relation="include">
+        </childnode>
         <childnode refid="1281" relation="include">
         </childnode>
-        <childnode refid="1283" relation="include">
-        </childnode>
-      </node>
-      <node id="1276">
-        <label>image_transport/exception.h</label>
-        <link refid="exception_8h_source"/>
-        <childnode refid="1277" relation="include">
+        <childnode refid="1278" relation="include">
         </childnode>
       </node>
       <node id="1283">
-        <label>image_transport/camera_subscriber.h</label>
-        <link refid="camera__subscriber_8h_source"/>
-        <childnode refid="1271" relation="include">
-        </childnode>
-        <childnode refid="1282" relation="include">
-        </childnode>
-        <childnode refid="1272" relation="include">
-        </childnode>
-        <childnode refid="1280" relation="include">
+        <label>stdexcept</label>
+      </node>
+      <node id="1278">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1280">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="1286">
+        <label>image_transport/transport_hints.h</label>
+        <link refid="transport__hints_8h_source"/>
+        <childnode refid="1277" relation="include">
         </childnode>
       </node>
       <node id="1275">
-        <label>boost/function.hpp</label>
-      </node>
-      <node id="1279">
-        <label>image_transport/subscriber.h</label>
-        <link refid="subscriber_8h_source"/>
-        <childnode refid="1271" relation="include">
-        </childnode>
-        <childnode refid="1272" relation="include">
-        </childnode>
-        <childnode refid="1280" relation="include">
-        </childnode>
+        <label>image_transport/image_transport.h</label>
+        <link refid="image__transport_8h_source"/>
         <childnode refid="1276" relation="include">
-        </childnode>
-        <childnode refid="1278" relation="include">
-        </childnode>
-      </node>
-      <node id="1271">
-        <label>ros/ros.h</label>
-      </node>
-      <node id="1268">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/republish.cpp</label>
-        <link refid="republish.cpp"/>
-        <childnode refid="1269" relation="include">
-        </childnode>
-        <childnode refid="1284" relation="include">
         </childnode>
         <childnode refid="1285" relation="include">
         </childnode>
+        <childnode refid="1287" relation="include">
+        </childnode>
+        <childnode refid="1289" relation="include">
+        </childnode>
       </node>
-      <node id="1270">
-        <label>image_transport/publisher.h</label>
-        <link refid="publisher_8h_source"/>
-        <childnode refid="1271" relation="include">
+      <node id="1282">
+        <label>image_transport/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="1283" relation="include">
         </childnode>
-        <childnode refid="1272" relation="include">
+      </node>
+      <node id="1289">
+        <label>image_transport/camera_subscriber.h</label>
+        <link refid="camera__subscriber_8h_source"/>
+        <childnode refid="1277" relation="include">
         </childnode>
-        <childnode refid="1273" relation="include">
-        </childnode>
-        <childnode refid="1276" relation="include">
+        <childnode refid="1288" relation="include">
         </childnode>
         <childnode refid="1278" relation="include">
         </childnode>
+        <childnode refid="1286" relation="include">
+        </childnode>
+      </node>
+      <node id="1281">
+        <label>boost/function.hpp</label>
       </node>
       <node id="1285">
+        <label>image_transport/subscriber.h</label>
+        <link refid="subscriber_8h_source"/>
+        <childnode refid="1277" relation="include">
+        </childnode>
+        <childnode refid="1278" relation="include">
+        </childnode>
+        <childnode refid="1286" relation="include">
+        </childnode>
+        <childnode refid="1282" relation="include">
+        </childnode>
+        <childnode refid="1284" relation="include">
+        </childnode>
+      </node>
+      <node id="1277">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="1274">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/republish.cpp</label>
+        <link refid="republish.cpp"/>
+        <childnode refid="1275" relation="include">
+        </childnode>
+        <childnode refid="1290" relation="include">
+        </childnode>
+        <childnode refid="1291" relation="include">
+        </childnode>
+      </node>
+      <node id="1276">
+        <label>image_transport/publisher.h</label>
+        <link refid="publisher_8h_source"/>
+        <childnode refid="1277" relation="include">
+        </childnode>
+        <childnode refid="1278" relation="include">
+        </childnode>
+        <childnode refid="1279" relation="include">
+        </childnode>
+        <childnode refid="1282" relation="include">
+        </childnode>
+        <childnode refid="1284" relation="include">
+        </childnode>
+      </node>
+      <node id="1291">
         <label>pluginlib/class_loader.h</label>
       </node>
-      <node id="1284">
+      <node id="1290">
         <label>image_transport/publisher_plugin.h</label>
         <link refid="publisher__plugin_8h_source"/>
-        <childnode refid="1271" relation="include">
+        <childnode refid="1277" relation="include">
         </childnode>
-        <childnode refid="1272" relation="include">
+        <childnode refid="1278" relation="include">
         </childnode>
-        <childnode refid="1273" relation="include">
+        <childnode refid="1279" relation="include">
         </childnode>
       </node>
     </incdepgraph>

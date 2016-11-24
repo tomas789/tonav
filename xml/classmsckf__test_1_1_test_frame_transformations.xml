@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf__test_1_1_test_frame_transformations" kind="class" prot="public">
+    <compoundname>msckf_test::TestFrameTransformations</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf__test_1_1_test_frame_transformations_1a723d6acda4eab14e0388203fc4e9f206" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestFrameTransformations.test_initial_setup</definition>
+        <argsstring></argsstring>
+        <name>test_initial_setup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="121" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="121" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_frame_transformations_1a7ab5c8610b77c7aa5954705ff579aebe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestFrameTransformations.test_rotation_of_camera_pose_after_rotation</definition>
+        <argsstring></argsstring>
+        <name>test_rotation_of_camera_pose_after_rotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="130" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="130" bodyend="146"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="192">
+        <label>TestCase</label>
+      </node>
+      <node id="191">
+        <label>msckf_test.TestFrameTransformations</label>
+        <link refid="classmsckf__test_1_1_test_frame_transformations"/>
+        <childnode refid="192" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="194">
+        <label>TestCase</label>
+      </node>
+      <node id="193">
+        <label>msckf_test.TestFrameTransformations</label>
+        <link refid="classmsckf__test_1_1_test_frame_transformations"/>
+        <childnode refid="194" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="120" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="120" bodyend="147"/>
+    <listofallmembers>
+      <member refid="classmsckf__test_1_1_test_frame_transformations_1a723d6acda4eab14e0388203fc4e9f206" prot="public" virt="non-virtual"><scope>msckf_test::TestFrameTransformations</scope><name>test_initial_setup</name></member>
+      <member refid="classmsckf__test_1_1_test_frame_transformations_1a7ab5c8610b77c7aa5954705ff579aebe" prot="public" virt="non-virtual"><scope>msckf_test::TestFrameTransformations</scope><name>test_rotation_of_camera_pose_after_rotation</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

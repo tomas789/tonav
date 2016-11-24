@@ -12,98 +12,98 @@
     <includes refid="imu__device_8h" local="yes">imu_device.h</includes>
     <includes refid="imu__item_8h" local="yes">imu_item.h</includes>
     <incdepgraph>
-      <node id="573">
+      <node id="581">
         <label>iterator</label>
       </node>
-      <node id="572">
+      <node id="580">
         <label>cmath</label>
       </node>
-      <node id="570">
+      <node id="578">
         <label>Eigen/Core</label>
       </node>
-      <node id="569">
+      <node id="577">
         <label>string</label>
       </node>
-      <node id="566">
+      <node id="574">
         <label>imu_device.h</label>
         <link refid="imu__device_8h_source"/>
-        <childnode refid="567" relation="include">
+        <childnode refid="575" relation="include">
         </childnode>
       </node>
-      <node id="576">
+      <node id="584">
         <label>exception</label>
       </node>
-      <node id="563">
+      <node id="571">
         <label>/home/travis/build/tomas789/tonav/src/imu_buffer.cpp</label>
         <link refid="imu_buffer.cpp"/>
-        <childnode refid="564" relation="include">
-        </childnode>
-        <childnode refid="571" relation="include">
-        </childnode>
         <childnode refid="572" relation="include">
+        </childnode>
+        <childnode refid="579" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
         </childnode>
         <childnode refid="573" relation="include">
         </childnode>
-        <childnode refid="565" relation="include">
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
         </childnode>
         <childnode refid="574" relation="include">
         </childnode>
-        <childnode refid="577" relation="include">
-        </childnode>
-        <childnode refid="566" relation="include">
-        </childnode>
-        <childnode refid="568" relation="include">
-        </childnode>
-      </node>
-      <node id="574">
-        <label>exceptions/general_exception.h</label>
-        <link refid="general__exception_8h_source"/>
-        <childnode refid="569" relation="include">
-        </childnode>
-        <childnode refid="575" relation="include">
-        </childnode>
-      </node>
-      <node id="568">
-        <label>imu_item.h</label>
-        <link refid="imu__item_8h_source"/>
-        <childnode refid="569" relation="include">
-        </childnode>
-        <childnode refid="570" relation="include">
-        </childnode>
-        <childnode refid="566" relation="include">
-        </childnode>
-      </node>
-      <node id="575">
-        <label>exceptions/base_exception.h</label>
-        <link refid="base__exception_8h_source"/>
         <childnode refid="576" relation="include">
         </childnode>
       </node>
-      <node id="565">
+      <node id="582">
+        <label>exceptions/general_exception.h</label>
+        <link refid="general__exception_8h_source"/>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="583" relation="include">
+        </childnode>
+      </node>
+      <node id="576">
+        <label>imu_item.h</label>
+        <link refid="imu__item_8h_source"/>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+        <childnode refid="574" relation="include">
+        </childnode>
+      </node>
+      <node id="583">
+        <label>exceptions/base_exception.h</label>
+        <link refid="base__exception_8h_source"/>
+        <childnode refid="584" relation="include">
+        </childnode>
+      </node>
+      <node id="573">
         <label>vector</label>
       </node>
-      <node id="564">
+      <node id="572">
         <label>imu_buffer.h</label>
         <link refid="imu__buffer_8h_source"/>
-        <childnode refid="565" relation="include">
+        <childnode refid="573" relation="include">
         </childnode>
-        <childnode refid="566" relation="include">
+        <childnode refid="574" relation="include">
         </childnode>
-        <childnode refid="568" relation="include">
+        <childnode refid="576" relation="include">
         </childnode>
       </node>
-      <node id="577">
+      <node id="585">
         <label>exceptions/impossible_exception.h</label>
         <link refid="impossible__exception_8h_source"/>
-        <childnode refid="569" relation="include">
+        <childnode refid="577" relation="include">
         </childnode>
-        <childnode refid="575" relation="include">
+        <childnode refid="583" relation="include">
         </childnode>
       </node>
-      <node id="567">
+      <node id="575">
         <label>iostream</label>
       </node>
-      <node id="571">
+      <node id="579">
         <label>algorithm</label>
       </node>
     </incdepgraph>

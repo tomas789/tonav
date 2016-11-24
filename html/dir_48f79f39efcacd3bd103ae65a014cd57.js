@@ -17,6 +17,7 @@ var dir_48f79f39efcacd3bd103ae65a014cd57 =
     [ "imu_feed.h", "imu__feed_8h_source.html", null ],
     [ "imu_item.h", "imu__item_8h_source.html", null ],
     [ "navigator.h", "navigator_8h_source.html", null ],
+    [ "quaternion_tools.h", "quaternion__tools_8h_source.html", null ],
     [ "tonav.h", "tonav_8h_source.html", null ],
     [ "tonav_ros.h", "tonav__ros_8h_source.html", null ]
 ];

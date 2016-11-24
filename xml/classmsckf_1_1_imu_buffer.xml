@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_imu_buffer" kind="class" prot="public">
+    <compoundname>msckf::ImuBuffer</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_imu_buffer_1a32ca4fadfb0ea149595c2e525359dfd1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImuBuffer::device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="161" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_imu_buffer_1a30ea8b12a07b5f7e594867741dcae9b7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImuBuffer::items</definition>
+        <argsstring></argsstring>
+        <name>items</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="162" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1a6a576e23425beb88711a0b6c9fd00d6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="159" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="159" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1a93afe342c8d427e7a7c9bd2f1964308b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.push</definition>
+        <argsstring></argsstring>
+        <name>push</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="164" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="164" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1a698da50c389659d3c762ddc2251296e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.check_integrity</definition>
+        <argsstring></argsstring>
+        <name>check_integrity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="173" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="173" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1a359f10c40136ea9c4e75c6c3cb2f4310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="178" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="178" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1adb77be97e9cfe0e5a3e58c607c9dfebe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.max</definition>
+        <argsstring></argsstring>
+        <name>max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="185" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="185" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1ab0e45309457a41cad3d1783e45c43830" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.mean_value</definition>
+        <argsstring></argsstring>
+        <name>mean_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="192" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="192" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1a747a692ef45bcb6b4c2736e34900453d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.__len__</definition>
+        <argsstring></argsstring>
+        <name>__len__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="200" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="200" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1a368b04188fcaaaf0fea135d733618edb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.__getitem__</definition>
+        <argsstring></argsstring>
+        <name>__getitem__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="203" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="203" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1ad767ec99d974d97547882580f9817698" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.pop_min</definition>
+        <argsstring></argsstring>
+        <name>pop_min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="208" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_buffer_1aa10df9ce04292c14a6d6ff9ee0b1921d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuBuffer.interpolate</definition>
+        <argsstring></argsstring>
+        <name>interpolate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="212" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="212" bodyend="229"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Contains a list of IMU measurements. Times are unique.
+</verbatim> </para>    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="155" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="155" bodyend="230"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_imu_buffer_1a368b04188fcaaaf0fea135d733618edb" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>__getitem__</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1a6a576e23425beb88711a0b6c9fd00d6e" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>__init__</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1a747a692ef45bcb6b4c2736e34900453d" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>__len__</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1a698da50c389659d3c762ddc2251296e3" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>check_integrity</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1a32ca4fadfb0ea149595c2e525359dfd1" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>device</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1aa10df9ce04292c14a6d6ff9ee0b1921d" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>interpolate</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1a30ea8b12a07b5f7e594867741dcae9b7" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>items</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1adb77be97e9cfe0e5a3e58c607c9dfebe" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>max</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1ab0e45309457a41cad3d1783e45c43830" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>mean_value</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1a359f10c40136ea9c4e75c6c3cb2f4310" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>min</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1ad767ec99d974d97547882580f9817698" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>pop_min</name></member>
+      <member refid="classmsckf_1_1_imu_buffer_1a93afe342c8d427e7a7c9bd2f1964308b" prot="public" virt="non-virtual"><scope>msckf::ImuBuffer</scope><name>push</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

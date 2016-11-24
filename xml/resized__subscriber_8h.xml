@@ -7,70 +7,70 @@
     <includedby refid="tutorial_2src_2manifest_8cpp" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</includedby>
     <includedby refid="resized__subscriber_8cpp" local="no">/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp</includedby>
     <incdepgraph>
-      <node id="1333">
+      <node id="1339">
         <label>image_transport_tutorial/ResizedImage.h</label>
       </node>
-      <node id="1329">
+      <node id="1335">
         <label>sensor_msgs/Image.h</label>
       </node>
-      <node id="1330">
+      <node id="1336">
         <label>boost/noncopyable.hpp</label>
       </node>
-      <node id="1327">
+      <node id="1333">
         <label>image_transport/subscriber_plugin.h</label>
         <link refid="subscriber__plugin_8h_source"/>
-        <childnode refid="1328" relation="include">
+        <childnode refid="1334" relation="include">
         </childnode>
-        <childnode refid="1329" relation="include">
-        </childnode>
-        <childnode refid="1330" relation="include">
-        </childnode>
-        <childnode refid="1331" relation="include">
-        </childnode>
-      </node>
-      <node id="1331">
-        <label>image_transport/transport_hints.h</label>
-        <link refid="transport__hints_8h_source"/>
-        <childnode refid="1328" relation="include">
-        </childnode>
-      </node>
-      <node id="1325">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h</label>
-        <link refid="resized_subscriber.h"/>
-        <childnode refid="1326" relation="include">
-        </childnode>
-        <childnode refid="1333" relation="include">
-        </childnode>
-      </node>
-      <node id="1328">
-        <label>ros/ros.h</label>
-      </node>
-      <node id="1332">
-        <label>boost/scoped_ptr.hpp</label>
-      </node>
-      <node id="1326">
-        <label>image_transport/simple_subscriber_plugin.h</label>
-        <link refid="simple__subscriber__plugin_8h_source"/>
-        <childnode refid="1327" relation="include">
-        </childnode>
-        <childnode refid="1332" relation="include">
-        </childnode>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="1335">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</label>
-        <link refid="tutorial_2src_2manifest_8cpp_source"/>
-      </node>
-      <node id="1334">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h</label>
-        <link refid="resized_subscriber.h"/>
         <childnode refid="1335" relation="include">
         </childnode>
         <childnode refid="1336" relation="include">
         </childnode>
+        <childnode refid="1337" relation="include">
+        </childnode>
       </node>
-      <node id="1336">
+      <node id="1337">
+        <label>image_transport/transport_hints.h</label>
+        <link refid="transport__hints_8h_source"/>
+        <childnode refid="1334" relation="include">
+        </childnode>
+      </node>
+      <node id="1331">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h</label>
+        <link refid="resized_subscriber.h"/>
+        <childnode refid="1332" relation="include">
+        </childnode>
+        <childnode refid="1339" relation="include">
+        </childnode>
+      </node>
+      <node id="1334">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="1338">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+      <node id="1332">
+        <label>image_transport/simple_subscriber_plugin.h</label>
+        <link refid="simple__subscriber__plugin_8h_source"/>
+        <childnode refid="1333" relation="include">
+        </childnode>
+        <childnode refid="1338" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1341">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/manifest.cpp</label>
+        <link refid="tutorial_2src_2manifest_8cpp_source"/>
+      </node>
+      <node id="1340">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/include/image_transport_tutorial/resized_subscriber.h</label>
+        <link refid="resized_subscriber.h"/>
+        <childnode refid="1341" relation="include">
+        </childnode>
+        <childnode refid="1342" relation="include">
+        </childnode>
+      </node>
+      <node id="1342">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_subscriber.cpp</label>
         <link refid="resized__subscriber_8cpp_source"/>
       </node>

@@ -76,48 +76,48 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="121">
+      <node id="143">
         <label>noncopyable</label>
       </node>
-      <node id="118">
+      <node id="140">
         <label>ResizedSubscriber</label>
         <link refid="class_resized_subscriber"/>
-        <childnode refid="119" relation="public-inheritance">
+        <childnode refid="141" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="119">
+      <node id="141">
         <label>image_transport::SimpleSubscriberPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
         <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="120" relation="public-inheritance">
+        <childnode refid="142" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="120">
+      <node id="142">
         <label>image_transport::SubscriberPlugin</label>
         <link refid="classimage__transport_1_1_subscriber_plugin"/>
-        <childnode refid="121" relation="private-inheritance">
+        <childnode refid="143" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="125">
+      <node id="147">
         <label>noncopyable</label>
       </node>
-      <node id="122">
+      <node id="144">
         <label>ResizedSubscriber</label>
         <link refid="class_resized_subscriber"/>
-        <childnode refid="123" relation="public-inheritance">
+        <childnode refid="145" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="123">
+      <node id="145">
         <label>image_transport::SimpleSubscriberPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
         <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="124" relation="public-inheritance">
+        <childnode refid="146" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="124">
+      <node id="146">
         <label>image_transport::SubscriberPlugin</label>
         <link refid="classimage__transport_1_1_subscriber_plugin"/>
-        <childnode refid="125" relation="private-inheritance">
+        <childnode refid="147" relation="private-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

@@ -30,6 +30,22 @@
     <member refid="class_body_state_1a1589f0e96fcf159b77f385157665ef7b" kind="function"><name>getRotationToThisFrameRef</name></member>
     <member refid="class_body_state_1a482c8b749617c7df011c29f64183db38" kind="function"><name>getRotationToThisFrameRef</name></member>
   </compound>
+  <compound refid="classmsckf_1_1_body_state" kind="class"><name>msckf::BodyState</name>
+    <member refid="classmsckf_1_1_body_state_1a6ce3e615316fa82782296558cd96e3fb" kind="variable"><name>global_gravity</name></member>
+    <member refid="classmsckf_1_1_body_state_1ae66c70ddae91a648f29efc568f4344da" kind="variable"><name>q_B_G</name></member>
+    <member refid="classmsckf_1_1_body_state_1a0f413de95b39715210b1d88e3d6e707b" kind="variable"><name>p_B_G</name></member>
+    <member refid="classmsckf_1_1_body_state_1aaea8bab90d430f203ff8d8fabd9a16d7" kind="variable"><name>v_B_G</name></member>
+    <member refid="classmsckf_1_1_body_state_1a663d35092ee45633a18a9eab916c7c2a" kind="variable"><name>time</name></member>
+    <member refid="classmsckf_1_1_body_state_1ac4940afd5c65881731a6a03e090c5093" kind="variable"><name>rotation_estimate</name></member>
+    <member refid="classmsckf_1_1_body_state_1a658e340e374f712b049f3197530d3365" kind="variable"><name>acceleration_estimate</name></member>
+    <member refid="classmsckf_1_1_body_state_1a869468e1c496f460ccef10fe473af84c" kind="function"><name>__init__</name></member>
+    <member refid="classmsckf_1_1_body_state_1a7e6fbd3db5a74297588a40ebb9c70fa0" kind="function"><name>time_to</name></member>
+    <member refid="classmsckf_1_1_body_state_1a7b9cebebc5b911a398fe008a17f3f457" kind="function"><name>initialize</name></member>
+    <member refid="classmsckf_1_1_body_state_1ae376c49e3f60498704092e5295a4355f" kind="function"><name>copy</name></member>
+    <member refid="classmsckf_1_1_body_state_1a6edd2c5e28633b9ebf2656a2cd9059d2" kind="function"><name>propagate</name></member>
+    <member refid="classmsckf_1_1_body_state_1a464214001e84d0f98dd2406821acc6da" kind="function"><name>_propagate_gyro</name></member>
+    <member refid="classmsckf_1_1_body_state_1a5f4c10bda1d494e98b815233dc36178d" kind="function"><name>_propagate_accel</name></member>
+  </compound>
   <compound refid="class_calibration" kind="class"><name>Calibration</name>
     <member refid="class_calibration_1a8ede976d782d5bf475fab7a162c03c5e" kind="variable"><name>max_camera_poses_</name></member>
     <member refid="class_calibration_1a5122fb440119b6e1bc679eabc63677ea" kind="variable"><name>buffer_size_</name></member>
@@ -92,6 +108,11 @@
     <member refid="class_camera_feed_1af761420a0337f52253b23c7d276516f8" kind="function"><name>getImage</name></member>
     <member refid="class_camera_feed_1a38c0ad4632b39babdc99fc65ddc56c36" kind="function"><name>fromDataset</name></member>
     <member refid="class_camera_feed_1a81ba81dfe23ef727d19dfef4615a1334" kind="function"><name>loadFile</name></member>
+  </compound>
+  <compound refid="classmsckf_1_1_camera_item" kind="class"><name>msckf::CameraItem</name>
+    <member refid="classmsckf_1_1_camera_item_1ad559a375ad268d16a93220455ecbe38a" kind="variable"><name>time</name></member>
+    <member refid="classmsckf_1_1_camera_item_1a8d1e979360ecbde8620b03be8760dba8" kind="variable"><name>image</name></member>
+    <member refid="classmsckf_1_1_camera_item_1ab25d363d08d1af7d925814b54d2a5933" kind="function"><name>__init__</name></member>
   </compound>
   <compound refid="class_camera_item" kind="class"><name>CameraItem</name>
     <member refid="class_camera_item_1afbae2157e639d87e2643e9c77a1b2be4" kind="variable"><name>time_</name></member>
@@ -188,6 +209,15 @@
     <member refid="class_feature_track_1abd64cf7785392e852bb93409fd063917" kind="function"><name>wasUsedForResidualization</name></member>
     <member refid="class_feature_track_1a6317ed29fff383fc365d64d6c5ce1aa2" kind="function"><name>setWasUsedForResidualization</name></member>
     <member refid="class_feature_track_1aeba4f7f42fe7c065a17bd26e2817dcbe" kind="function"><name>getFeatureId</name></member>
+  </compound>
+  <compound refid="classmsckf_1_1_feature_track" kind="class"><name>msckf::FeatureTrack</name>
+    <member refid="classmsckf_1_1_feature_track_1a664793a76ba15a7c337eb848aed653b5" kind="variable"><name>first_image</name></member>
+    <member refid="classmsckf_1_1_feature_track_1a91d7ca320a1c0273410fbb4d16ded316" kind="variable"><name>last_image</name></member>
+    <member refid="classmsckf_1_1_feature_track_1aa6ac9af251f5d7886075ee3ed2c3d892" kind="variable"><name>pixel_coordinates</name></member>
+    <member refid="classmsckf_1_1_feature_track_1aaf665104d4e01547cafe1042c17e9b79" kind="function"><name>__init__</name></member>
+    <member refid="classmsckf_1_1_feature_track_1a12f372278b1b14f7553540eb1db21f6f" kind="function"><name>next</name></member>
+    <member refid="classmsckf_1_1_feature_track_1a08861367ab5e5cce09ef93d2103ef875" kind="function"><name>track_length</name></member>
+    <member refid="classmsckf_1_1_feature_track_1a04d7bc326bd668bb206eaeb36c4355c9" kind="function"><name>get_pixel_coordinates_in_image</name></member>
   </compound>
   <compound refid="class_feature_tracker" kind="class"><name>FeatureTracker</name>
     <member refid="class_feature_tracker_1a8c26ba2ee4c3653c6082a6ceec345f8a" kind="typedef"><name>feature_track_list</name></member>
@@ -298,6 +328,21 @@
     <member refid="class_general_exception_1a1d8d27063e77fe4658daa8279d0af52c" kind="function"><name>what</name></member>
     <member refid="class_general_exception_1a28131a7d253ed732cce2127435475c61" kind="function"><name>~GeneralException</name></member>
   </compound>
+  <compound refid="classmsckf_1_1_image_tracker" kind="class"><name>msckf::ImageTracker</name>
+    <member refid="classmsckf_1_1_image_tracker_1ac0bdc5e455ec9a9e179f88576444678a" kind="variable"><name>image_counter</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1a5f3fcf1a20788c99f16a3ead38a0931e" kind="variable"><name>last_image</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1a6b825a2e9b42766b1ab8c0781ecc5a41" kind="variable"><name>last_kps</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1a8cd7b9cfc26ad48bc0adfa8da1e0edcb" kind="variable"><name>last_des</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1a2764caa363b3ff3de9f854b47977947d" kind="variable"><name>last_image_was_published</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1a61d25a81ca62500d4b64b3c216817e68" kind="variable"><name>last_matches_image</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1a5c21c3f90f387f6f1d50814105736ad6" kind="variable"><name>last_features</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1af04b2528381cdaa7ad4ff2558f1634f3" kind="variable"><name>orb</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1a3b793e2f18c9c29fe8a584d9974c1b6a" kind="variable"><name>matcher</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1a6cda7073370f94e89f1cf3c5181699be" kind="function"><name>__init__</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1ae642350c572cf0e46ec37d07ba7ee975" kind="function"><name>track_next</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1ab4bc5433e45f2c83c18951fe2a3f5aa1" kind="function"><name>extract_old_features</name></member>
+    <member refid="classmsckf_1_1_image_tracker_1aaae69c20884145a31bb9aca56ad0e475" kind="function"><name>image_to_publish</name></member>
+  </compound>
   <compound refid="classimage__transport_1_1_image_transport" kind="class"><name>image_transport::ImageTransport</name>
     <member refid="classimage__transport_1_1_image_transport_1a5580434830d33b1e7b46d3736dafa459" kind="typedef"><name>ImplPtr</name></member>
     <member refid="classimage__transport_1_1_image_transport_1a82a5747a5e1ae407c40e9602389f3ad1" kind="typedef"><name>ImplWPtr</name></member>
@@ -395,6 +440,24 @@
     <member refid="class_imu_buffer_1aa3f3a11dc21d97386b3154122cb8e296" kind="function"><name>getMaxTime</name></member>
     <member refid="class_imu_buffer_1a4500c72f04ac02e629e77762953c6abc" kind="function"><name>isReady</name></member>
   </compound>
+  <compound refid="classmsckf_1_1_imu_buffer" kind="class"><name>msckf::ImuBuffer</name>
+    <member refid="classmsckf_1_1_imu_buffer_1a32ca4fadfb0ea149595c2e525359dfd1" kind="variable"><name>device</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1a30ea8b12a07b5f7e594867741dcae9b7" kind="variable"><name>items</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1a6a576e23425beb88711a0b6c9fd00d6e" kind="function"><name>__init__</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1a93afe342c8d427e7a7c9bd2f1964308b" kind="function"><name>push</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1a698da50c389659d3c762ddc2251296e3" kind="function"><name>check_integrity</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1a359f10c40136ea9c4e75c6c3cb2f4310" kind="function"><name>min</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1adb77be97e9cfe0e5a3e58c607c9dfebe" kind="function"><name>max</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1ab0e45309457a41cad3d1783e45c43830" kind="function"><name>mean_value</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1a747a692ef45bcb6b4c2736e34900453d" kind="function"><name>__len__</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1a368b04188fcaaaf0fea135d733618edb" kind="function"><name>__getitem__</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1ad767ec99d974d97547882580f9817698" kind="function"><name>pop_min</name></member>
+    <member refid="classmsckf_1_1_imu_buffer_1aa10df9ce04292c14a6d6ff9ee0b1921d" kind="function"><name>interpolate</name></member>
+  </compound>
+  <compound refid="classmsckf_1_1_imu_device" kind="class"><name>msckf::ImuDevice</name>
+    <member refid="classmsckf_1_1_imu_device_1a3faeff4eaaf36e190287606fae61079f" kind="variable"><name>accelerometer</name></member>
+    <member refid="classmsckf_1_1_imu_device_1acad284d6013b952fdd878b8a768e7169" kind="variable"><name>gyroscope</name></member>
+  </compound>
   <compound refid="class_imu_feed" kind="class"><name>ImuFeed</name>
     <member refid="class_imu_feed_1a55500761d6d1640c8d72283efb8deb74" kind="variable"><name>current_item_</name></member>
     <member refid="class_imu_feed_1a36bba19161cda384418f8e6fc28bb3de" kind="variable"><name>items_</name></member>
@@ -418,12 +481,73 @@
     <member refid="class_imu_item_1af010fd2fd5ecd5868764a760f6040af5" kind="function"><name>getZ</name></member>
     <member refid="class_imu_item_1a1cd4668ce368cb3b8360f42a1ab97580" kind="function"><name>getVector</name></member>
   </compound>
+  <compound refid="classmsckf_1_1_imu_item" kind="class"><name>msckf::ImuItem</name>
+    <member refid="classmsckf_1_1_imu_item_1aa14e9d1e337841a3971dcfe0033aab5f" kind="variable"><name>_device</name></member>
+    <member refid="classmsckf_1_1_imu_item_1aba7faf5251926476e7fd0d4171df97a5" kind="variable"><name>_time</name></member>
+    <member refid="classmsckf_1_1_imu_item_1ac145ab092cc5dd7b21741a2a298fe09a" kind="variable"><name>_value</name></member>
+    <member refid="classmsckf_1_1_imu_item_1a0a4c7f19f46f237e89669fa8c9ea43b1" kind="function"><name>__init__</name></member>
+    <member refid="classmsckf_1_1_imu_item_1ae408089f0f3b7be27c0e951ebd5e2190" kind="function"><name>__lt__</name></member>
+    <member refid="classmsckf_1_1_imu_item_1a1142bdc6e7dc7a06bc16f6e359d0bb22" kind="function"><name>__le__</name></member>
+    <member refid="classmsckf_1_1_imu_item_1abeeeda7fc9045aecfa4d700ec406d266" kind="function"><name>__gt__</name></member>
+    <member refid="classmsckf_1_1_imu_item_1aef7d5c469fd651c4542dfc9552388a07" kind="function"><name>__ge__</name></member>
+    <member refid="classmsckf_1_1_imu_item_1a6acb545776a9fa7398760405c6d79c1a" kind="function"><name>__eq__</name></member>
+    <member refid="classmsckf_1_1_imu_item_1a70a0dfe1b2fcbf6eed7282e3bea63271" kind="function"><name>__ne__</name></member>
+    <member refid="classmsckf_1_1_imu_item_1a8546cab5c7c0821391278c48fda88fb3" kind="function"><name>device</name></member>
+    <member refid="classmsckf_1_1_imu_item_1af1453674ea9cba40874df29d17621796" kind="function"><name>time</name></member>
+    <member refid="classmsckf_1_1_imu_item_1a70dbde6767fb3a7adebb1a6af0626aec" kind="function"><name>value</name></member>
+    <member refid="classmsckf_1_1_imu_item_1af0283cdd3b9f291e9a3abcbadc7dcc61" kind="function"><name>_compare</name></member>
+  </compound>
+  <compound refid="classmsckf_1_1_msckf" kind="class"><name>msckf::Msckf</name>
+    <member refid="classmsckf_1_1_msckf_1aa293c70761d866bcdf8e984a1385de64" kind="variable"><name>imu_subscriber</name></member>
+    <member refid="classmsckf_1_1_msckf_1a354aa0dd7846a4787802bf3bb7791173" kind="variable"><name>camera_subscriber</name></member>
+    <member refid="classmsckf_1_1_msckf_1a105ff6012b0df8b799c2be6ab9c76add" kind="variable"><name>pointcloud_publisher</name></member>
+    <member refid="classmsckf_1_1_msckf_1aa175e86a112bcc920bd6b8cf54083e86" kind="variable"><name>br</name></member>
+    <member refid="classmsckf_1_1_msckf_1a5ac0c36ef36e91f2b3a8847145d6e56a" kind="variable"><name>lock</name></member>
+    <member refid="classmsckf_1_1_msckf_1a65e9d1ff1559e16bd18e01212b428252" kind="variable"><name>listener</name></member>
+    <member refid="classmsckf_1_1_msckf_1abe179b3b52794f6c5d4a9598f1286126" kind="variable"><name>cam_to_process</name></member>
+    <member refid="classmsckf_1_1_msckf_1a787a99dcc98a91e5a571f4e313a96b36" kind="variable"><name>state</name></member>
+    <member refid="classmsckf_1_1_msckf_1a14270fb94fe42ea7b3c7238afae4ef22" kind="variable"><name>image_tracker</name></member>
+    <member refid="classmsckf_1_1_msckf_1aa3d7e17f0521408497a79c47039bcdb9" kind="variable"><name>bridge</name></member>
+    <member refid="classmsckf_1_1_msckf_1a9ac9d9d8888316a8b2ebf1b446f17e07" kind="variable"><name>cam_poses</name></member>
+    <member refid="classmsckf_1_1_msckf_1ae967978398f1652655b0ad7edd0f9af1" kind="variable"><name>buffer_size_to_initialize</name></member>
+    <member refid="classmsckf_1_1_msckf_1a8f68a433bdc94aa74889d127d9e91f31" kind="variable"><name>image_rows</name></member>
+    <member refid="classmsckf_1_1_msckf_1a6e69e72653d9941528a1e4cecbc16371" kind="variable"><name>buffers</name></member>
+    <member refid="classmsckf_1_1_msckf_1a2e46d6304ad2781ab231eb5cbaa935a0" kind="variable"><name>t_d</name></member>
+    <member refid="classmsckf_1_1_msckf_1af788a1595dc960d3f58cc28ba33228d4" kind="variable"><name>t_r</name></member>
+    <member refid="classmsckf_1_1_msckf_1a8456c22259389af1d92a3926e7b7020e" kind="variable"><name>image_publisher</name></member>
+    <member refid="classmsckf_1_1_msckf_1af1c0cd63952b6bd0ae751c39c4e6422a" kind="variable"><name>tfBuffer</name></member>
+    <member refid="classmsckf_1_1_msckf_1acece06247a28c9c6cc17228a7471281e" kind="function"><name>__init__</name></member>
+    <member refid="classmsckf_1_1_msckf_1ab718a75ae92fe78165b104903589996b" kind="function"><name>callback_imu</name></member>
+    <member refid="classmsckf_1_1_msckf_1ae226b29e88715596bea9912fa5b9eef9" kind="function"><name>process_imu</name></member>
+    <member refid="classmsckf_1_1_msckf_1a1489f7f6eb9ac6b0478a186fcd05650f" kind="function"><name>callback_camera</name></member>
+    <member refid="classmsckf_1_1_msckf_1abb3ef8cce650ce56470f7f2d23e793c2" kind="function"><name>try_initialize</name></member>
+    <member refid="classmsckf_1_1_msckf_1ac9935613a6c0603529dc051505c19f63" kind="function"><name>try_steps</name></member>
+    <member refid="classmsckf_1_1_msckf_1a5f8d7a1f9f02faaa3ce4dcf23e7024ff" kind="function"><name>propagate_up_to_time_incl</name></member>
+    <member refid="classmsckf_1_1_msckf_1a2a9394d1a3c7220d2804cbb6ca103b4f" kind="function"><name>update</name></member>
+    <member refid="classmsckf_1_1_msckf_1a48162eab93295a3aa9827d02570ecdf3" kind="function"><name>triangulate</name></member>
+    <member refid="classmsckf_1_1_msckf_1a091abe4b54b43f7d11e1ffe2063f7ac9" kind="function"><name>h</name></member>
+    <member refid="classmsckf_1_1_msckf_1aa923443e7b9f8c18963493b1a910025e" kind="function"><name>g</name></member>
+    <member refid="classmsckf_1_1_msckf_1a561f373b33a2c3b7e8b9d6e1e8c95328" kind="function"><name>feature_residual</name></member>
+    <member refid="classmsckf_1_1_msckf_1a67a09f9f462392f3bb707ac698b6ed0e" kind="function"><name>camera_jacobian</name></member>
+    <member refid="classmsckf_1_1_msckf_1a59f002d186ffda17b1a1dcc8d2a723de" kind="function"><name>compute_global_feature_estimate</name></member>
+    <member refid="classmsckf_1_1_msckf_1a45893991d0f6af50e0eb902c6416b623" kind="function"><name>calculate_camera_projection_estimate</name></member>
+    <member refid="classmsckf_1_1_msckf_1a0868335826b7b55548236cd06e7a248c" kind="function"><name>pinhole_model</name></member>
+    <member refid="classmsckf_1_1_msckf_1a18e2cb57b56fdc5f7d66b8e36cc067ce" kind="function"><name>interpolate</name></member>
+    <member refid="classmsckf_1_1_msckf_1acf89b57822a098ee1a650849a37361eb" kind="function"><name>publish_localization</name></member>
+    <member refid="classmsckf_1_1_msckf_1ab55273376c5e47b07ba919d6486a40b2" kind="function"><name>publish_image_if_new_available</name></member>
+    <member refid="classmsckf_1_1_msckf_1a72c2622b8dec25f90ecca34bd759e8af" kind="function"><name>run</name></member>
+  </compound>
   <compound refid="class_navigator" kind="class"><name>Navigator</name>
     <member refid="class_navigator_1ae92bfd56f6030f8ed1fa8fcdb3e45f7a" kind="variable"><name>options_description_</name></member>
     <member refid="class_navigator_1a4897258895f7bbb7ef040d4bdda4c762" kind="variable"><name>vmap_</name></member>
     <member refid="class_navigator_1a614e53f6cf6859608b14057272003cea" kind="function"><name>run</name></member>
     <member refid="class_navigator_1ad3dc73ff6148e6c3c6f696577f495391" kind="function"><name>parseOptions</name></member>
     <member refid="class_navigator_1ae02f8096eaa90c51330b700c9c036868" kind="function"><name>printHelp</name></member>
+  </compound>
+  <compound refid="classmsckf_1_1_pose_get" kind="class"><name>msckf::PoseGet</name>
+    <member refid="classmsckf_1_1_pose_get_1a75b39f2276ee24bc71dbbd5ce43ec585" kind="variable"><name>state</name></member>
+    <member refid="classmsckf_1_1_pose_get_1a3a5b9917934e12b4d6a98a95f87db759" kind="function"><name>__init__</name></member>
+    <member refid="classmsckf_1_1_pose_get_1aa67fbb72a16db07345b41a2d4ca6e9f6" kind="function"><name>__getitem__</name></member>
   </compound>
   <compound refid="classimage__transport_1_1_publisher" kind="class"><name>image_transport::Publisher</name>
     <member refid="classimage__transport_1_1_publisher_1a346a7c0390c358234689552581c4636d" kind="typedef"><name>ImplPtr</name></member>
@@ -457,6 +581,14 @@
     <member refid="classimage__transport_1_1_publisher_plugin_1aebf86857a6453919807061565f8837d2" kind="function"><name>shutdown</name></member>
     <member refid="classimage__transport_1_1_publisher_plugin_1ac509e7c5ce1a6ce07870968eb1e0a0e3" kind="function"><name>getLookupName</name></member>
     <member refid="classimage__transport_1_1_publisher_plugin_1ab6452043d8f51ed52638abf470aa4884" kind="function"><name>advertiseImpl</name></member>
+  </compound>
+  <compound refid="classmsckf_1_1_quaternion" kind="class"><name>msckf::Quaternion</name>
+    <member refid="classmsckf_1_1_quaternion_1a0bd71eee1eb3c21c88e95dd7dad39b2b" kind="function"><name>to_rotation_matrix</name></member>
+    <member refid="classmsckf_1_1_quaternion_1a1ad344e0e8b25fcedcea28e57dd1194b" kind="function"><name>to_euler_angles</name></member>
+    <member refid="classmsckf_1_1_quaternion_1af96060fbd037864de9e4386cf32557f9" kind="function"><name>vector_to_quaternion_form</name></member>
+    <member refid="classmsckf_1_1_quaternion_1a0c8379745cc348059060aed3a8abf67c" kind="function"><name>vector_from_quaternion_form</name></member>
+    <member refid="classmsckf_1_1_quaternion_1aaaa45c31c39141a8fb00c13dfda9635d" kind="function"><name>cross_matrix</name></member>
+    <member refid="classmsckf_1_1_quaternion_1a492071a17aa06a82ab0a30abdc6211bf" kind="function"><name>big_omega_matrix</name></member>
   </compound>
   <compound refid="classimage__transport_1_1_raw_publisher" kind="class"><name>image_transport::RawPublisher</name>
     <member refid="classimage__transport_1_1_raw_publisher_1a1547259e0778b9018c15bd2f284eb556" kind="function"><name>~RawPublisher</name></member>
@@ -538,6 +670,44 @@
     <member refid="classimage__transport_1_1_single_subscriber_publisher_1a6e5fb2d5f07e0b6e5fc7a67f7e733d58" kind="function"><name>publish</name></member>
     <member refid="classimage__transport_1_1_single_subscriber_publisher_1a805ee398c71b942665f0e6a8878868f4" kind="function"><name>publish</name></member>
   </compound>
+  <compound refid="classmsckf_1_1_state" kind="class"><name>msckf::State</name>
+    <member refid="classmsckf_1_1_state_1abde5f106d34d598e79e5130308fd9103" kind="property"><name>time</name></member>
+    <member refid="classmsckf_1_1_state_1aa0757a330d508319925982feed2f20a9" kind="property"><name>q_B_G</name></member>
+    <member refid="classmsckf_1_1_state_1a44862ee855b4fcedd843693f33932374" kind="property"><name>p_B_G</name></member>
+    <member refid="classmsckf_1_1_state_1a4a626bb3ecffdbc910bde67231f5825e" kind="property"><name>v_B_G</name></member>
+    <member refid="classmsckf_1_1_state_1ac75587b0f3c1c263d063e437d75a5384" kind="property"><name>pose</name></member>
+    <member refid="classmsckf_1_1_state_1a4685283913afe8e3762f885b1ee49aaa" kind="variable"><name>b_g</name></member>
+    <member refid="classmsckf_1_1_state_1ab5334519dab92512663743a21325b6d0" kind="variable"><name>b_a</name></member>
+    <member refid="classmsckf_1_1_state_1acb42c97d2bc8b414e1d123c32d3bce7b" kind="variable"><name>T_g</name></member>
+    <member refid="classmsckf_1_1_state_1a55f507697e1df1dc272c3b394c98a594" kind="variable"><name>T_s</name></member>
+    <member refid="classmsckf_1_1_state_1ac10d747d657c748a00dec2fadf730cd4" kind="variable"><name>T_a</name></member>
+    <member refid="classmsckf_1_1_state_1afea15c330a8f44f4081d612fcf5aaca7" kind="variable"><name>p_B_C</name></member>
+    <member refid="classmsckf_1_1_state_1a27095fe241e9cb72ada586d442d6a143" kind="variable"><name>f_y</name></member>
+    <member refid="classmsckf_1_1_state_1aba04b13698fdc6cfe7c2d32324432459" kind="variable"><name>o_y</name></member>
+    <member refid="classmsckf_1_1_state_1ac35ee5c42c4a17b9a219b811b47a876f" kind="variable"><name>k_3</name></member>
+    <member refid="classmsckf_1_1_state_1ae553c742f849304bb8514981a499389c" kind="variable"><name>t_2</name></member>
+    <member refid="classmsckf_1_1_state_1a6a576f30d3a2f42f29adc87e03dd0876" kind="variable"><name>t_r</name></member>
+    <member refid="classmsckf_1_1_state_1a3e5e50676def313ecdc9ba6b0878b039" kind="variable"><name>body_state</name></member>
+    <member refid="classmsckf_1_1_state_1a1e93e259f7390bba92ef3f2445aa2112" kind="variable"><name>sigma</name></member>
+    <member refid="classmsckf_1_1_state_1a6c6b64481b9d723a74afd5b521941c90" kind="variable"><name>camera_poses</name></member>
+    <member refid="classmsckf_1_1_state_1a28ba89e11bae7d996ff4218c826bf376" kind="variable"><name>features_tracked_in_image</name></member>
+    <member refid="classmsckf_1_1_state_1a7b6759e1c42e803e7f9d6a97079c3ec1" kind="variable"><name>first_camera_pose_id</name></member>
+    <member refid="classmsckf_1_1_state_1ae460a78ec25da8e33378372a2dc9943c" kind="variable"><name>past_last_camera_pose_id</name></member>
+    <member refid="classmsckf_1_1_state_1a9eb4d9b6a0b22caf27964aae8321a8e4" kind="function"><name>__init__</name></member>
+    <member refid="classmsckf_1_1_state_1ac6068aa29aaf8c12303feec1b194cee4" kind="function"><name>propagate</name></member>
+    <member refid="classmsckf_1_1_state_1acdb6b5075cf233ff40c38808a4e9b76f" kind="function"><name>initial_attitude_to_empty_state</name></member>
+    <member refid="classmsckf_1_1_state_1a835e12a679c2dc50248383778bbb3d3b" kind="function"><name>estimate_initial_attitude</name></member>
+    <member refid="classmsckf_1_1_state_1ae7c94f98c60ea6ed26d2fcf6e40d4d64" kind="function"><name>augment</name></member>
+    <member refid="classmsckf_1_1_state_1a12ce863f430cec8c26e780341beffa81" kind="function"><name>remove_n_cam_poses</name></member>
+    <member refid="classmsckf_1_1_state_1a4e782e52dd630137558f15c5c3ef0a93" kind="function"><name>get_pose_to_pose_rotation</name></member>
+    <member refid="classmsckf_1_1_state_1a8aa0ea4bfcb8f10a26210779211bc72c" kind="function"><name>get_position_of_pose_in_another_pose</name></member>
+    <member refid="classmsckf_1_1_state_1a675ba96049a53a5b524ec12d6b1db492" kind="function"><name>get_rotation_from_global_to_camera_pose</name></member>
+    <member refid="classmsckf_1_1_state_1a4d73be1dbaa64387ab9914166a1911c7" kind="function"><name>get_position_of_pose_in_global_frame</name></member>
+    <member refid="classmsckf_1_1_state_1a2a4bea03daac8393f9e79478cb1cfc9c" kind="function"><name>time_to</name></member>
+    <member refid="classmsckf_1_1_state_1a87fac63716f6150b0389e14ba5b4f740" kind="function"><name>compute_rotation_estimate</name></member>
+    <member refid="classmsckf_1_1_state_1ab3159f30af3ec38d872f93292a9676ab" kind="function"><name>compute_acceleration_estimate</name></member>
+    <member refid="classmsckf_1_1_state_1af4664b6f5c6b28f190702944cea1b206" kind="function"><name>get_body_to_camera_frame_rotation</name></member>
+  </compound>
   <compound refid="classimage__transport_1_1_subscriber" kind="class"><name>image_transport::Subscriber</name>
     <member refid="classimage__transport_1_1_subscriber_1a759a954949ab8422c627083adbec75e7" kind="typedef"><name>ImplPtr</name></member>
     <member refid="classimage__transport_1_1_subscriber_1a48b93cb867603542e63a4356606ee083" kind="typedef"><name>ImplWPtr</name></member>
@@ -580,6 +750,28 @@
     <member refid="classimage__transport_1_1_subscriber_plugin_1aa8af1348748aef7372bf248a69f775a7" kind="function"><name>shutdown</name></member>
     <member refid="classimage__transport_1_1_subscriber_plugin_1ae48e1648e998fe8352ff385c4c132531" kind="function"><name>getLookupName</name></member>
     <member refid="classimage__transport_1_1_subscriber_plugin_1a1cc8b28b99ea0a15c9e58dc6d9bc27f6" kind="function"><name>subscribeImpl</name></member>
+  </compound>
+  <compound refid="classmsckf__test_1_1_test_basic_motion" kind="class"><name>msckf_test::TestBasicMotion</name>
+    <member refid="classmsckf__test_1_1_test_basic_motion_1a404257b0be26cb61f9a40c86c3ed9038" kind="function"><name>test_no_movement</name></member>
+    <member refid="classmsckf__test_1_1_test_basic_motion_1acef0d837aaee3cc362efeed06df5a5c2" kind="function"><name>test_simple_move_in_x_direction</name></member>
+    <member refid="classmsckf__test_1_1_test_basic_motion_1a2efc71e9537bf2671bbe4174c57895b7" kind="function"><name>test_simple_rotation_about_x_axis</name></member>
+  </compound>
+  <compound refid="classmsckf__test_1_1_test_frame_transformations" kind="class"><name>msckf_test::TestFrameTransformations</name>
+    <member refid="classmsckf__test_1_1_test_frame_transformations_1a723d6acda4eab14e0388203fc4e9f206" kind="function"><name>test_initial_setup</name></member>
+    <member refid="classmsckf__test_1_1_test_frame_transformations_1a7ab5c8610b77c7aa5954705ff579aebe" kind="function"><name>test_rotation_of_camera_pose_after_rotation</name></member>
+  </compound>
+  <compound refid="classmsckf__test_1_1_test_numpy_quaternion" kind="class"><name>msckf_test::TestNumpyQuaternion</name>
+    <member refid="classmsckf__test_1_1_test_numpy_quaternion_1ac120e1e04eb3df181bbe9c6b3ebac999" kind="function"><name>test_multiply_by_unit_quaternion</name></member>
+    <member refid="classmsckf__test_1_1_test_numpy_quaternion_1a48568c2d3071f0c3aa8db91ae2fefdc8" kind="function"><name>test_element_order</name></member>
+  </compound>
+  <compound refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix" kind="class"><name>msckf_test::TestQuaternionToRotationMatrix</name>
+    <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1a5ce323c18ba9e5cf9c2793796ef313a8" kind="function"><name>test_unit_quaternion_is_unit_matrix</name></member>
+    <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1ac776e17660756aeb2029a96d19710c02" kind="function"><name>test_non_unit_quaternion_is_non_unit_matrix</name></member>
+    <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1adb1f5ec79fbb9273b661cbdbbf642c72" kind="function"><name>test_rotation_matrix_of_oposite_quaternion_is_the_same</name></member>
+    <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1aa2d7002bb2a55d8b16e148d16cbc7c0f" kind="function"><name>test_rotation_matrix_of_conjugate_quaternion_is_transposed_rotation_matrix</name></member>
+    <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1ac52b74a18ab3ac86e31c18cfc8e05a66" kind="function"><name>test_rotation_matrix_of_composition_is_dot_product_of_rotation_matrices</name></member>
+    <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1aa7654932fddf9ceff835f95fa592d01d" kind="function"><name>vector_to_quaternion_form_and_back_is_the_same_vector</name></member>
+    <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1a059360bc65644e9013dd18e7eb1ac16e" kind="function"><name>test_transformation_using_sandwich_and_rotation_matrix_are_same</name></member>
   </compound>
   <compound refid="class_tonav" kind="class"><name>Tonav</name>
     <member refid="class_tonav_1ac5d9d1b74ca8bf3af35b06a591576188" kind="variable"><name>initial_delay_</name></member>
@@ -657,6 +849,14 @@
     <member refid="namespaceimage__transport_1a2e8a63fa03a118eeea3cbc9398b2ad3f" kind="typedef"><name>SubscriberStatusCallback</name></member>
     <member refid="namespaceimage__transport_1ad0c3233705e3fb546e9c87b9aa13fc85" kind="function"><name>getCameraInfoTopic</name></member>
   </compound>
+  <compound refid="namespacemsckf" kind="namespace"><name>msckf</name>
+    <member refid="namespacemsckf_1a3ff3a5a997bc1e2c61589e106f96f5af" kind="function"><name>null</name></member>
+    <member refid="namespacemsckf_1a6620b4738a1ad89364a4c22cb7dbdd9b" kind="function"><name>print_yellow</name></member>
+    <member refid="namespacemsckf_1a1dc6960f431a8be675cb8e616000b43c" kind="function"><name>print_yellow_bold</name></member>
+    <member refid="namespacemsckf_1af87289ec899f14542a137e2d231a548d" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespacemsckf__test" kind="namespace"><name>msckf_test</name>
+  </compound>
   <compound refid="namespacepluginlib" kind="namespace"><name>pluginlib</name>
   </compound>
   <compound refid="body__state_8h" kind="file"><name>body_state.h</name>
@@ -704,9 +904,17 @@
   </compound>
   <compound refid="navigator_8h" kind="file"><name>navigator.h</name>
   </compound>
+  <compound refid="quaternion__tools_8h" kind="file"><name>quaternion_tools.h</name>
+  </compound>
   <compound refid="tonav_8h" kind="file"><name>tonav.h</name>
   </compound>
   <compound refid="tonav__ros_8h" kind="file"><name>tonav_ros.h</name>
+  </compound>
+  <compound refid="msckf_8py" kind="file"><name>msckf.py</name>
+  </compound>
+  <compound refid="msckf__test_8py" kind="file"><name>msckf_test.py</name>
+  </compound>
+  <compound refid="prototype_2_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>
   <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>
@@ -755,25 +963,11 @@
   </compound>
   <compound refid="navigator_8cpp" kind="file"><name>navigator.cpp</name>
   </compound>
+  <compound refid="quaternion__tools_8cpp" kind="file"><name>quaternion_tools.cpp</name>
+  </compound>
   <compound refid="tonav_8cpp" kind="file"><name>tonav.cpp</name>
   </compound>
   <compound refid="tonav__ros_8cpp" kind="file"><name>tonav_ros.cpp</name>
-  </compound>
-  <compound refid="ring__buffer_8cpp" kind="file"><name>ring_buffer.cpp</name>
-    <member refid="ring__buffer_8cpp_1aa2cd7e4713ac7ab10b32a0e4e7d97969" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1a13057d9e59b9238541df0f849b3367ea" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1a29139c9ba8d4888f98032ace441e9353" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1a5142bac6269c9f9f7a8edc6d7d9cd689" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1afd10c9c8a481f13dc51cbb1fe7534524" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1adbff2ea0e14ad6e2e2d078d1aaefa2f5" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1ad0c247eceb75a4af3774698128ef3eae" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1ae00a86d027bc43ece28c6c23e9051ffc" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1a46b2051f9bad14085568bb54f3ba478a" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1a5c418fb43241cafb82d7d3579f9287ff" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1a2d563db1a1e78dcc69a9f2121296f554" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1a2fe3e2d24cbe87df42c54c4e8b9d1f4c" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1ac72a111b8efea2812387ce0dfd160d6e" kind="function"><name>TEST</name></member>
-    <member refid="ring__buffer_8cpp_1a2107139d9d225aea56d60e23d6f2e5f3" kind="function"><name>TEST</name></member>
   </compound>
   <compound refid="camera__common_8h" kind="file"><name>camera_common.h</name>
   </compound>
@@ -882,6 +1076,8 @@
   </compound>
   <compound refid="dir_48f79f39efcacd3bd103ae65a014cd57" kind="dir"><name>/home/travis/build/tomas789/tonav/include</name>
   </compound>
+  <compound refid="dir_b9f6e3ee6df303e131d6bdabe9ddb7ac" kind="dir"><name>/home/travis/build/tomas789/tonav/prototype</name>
+  </compound>
   <compound refid="dir_61245e169d2324ac2301d00630cfce38" kind="dir"><name>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src</name>
   </compound>
   <compound refid="dir_35f5f9213e0095ef57676a76f43611ca" kind="dir"><name>/home/travis/catkin_ws/src/image_common/image_transport/src</name>
@@ -889,8 +1085,6 @@
   <compound refid="dir_7c859f3878cb32062c29919224ce2290" kind="dir"><name>/home/travis/catkin_ws/src</name>
   </compound>
   <compound refid="dir_86f9b15063a11144272c6c377c697b62" kind="dir"><name>/home/travis/build/tomas789/tonav/src</name>
-  </compound>
-  <compound refid="dir_804199fa0e4c190069655aa28c0060d8" kind="dir"><name>/home/travis/build/tomas789/tonav/tests</name>
   </compound>
   <compound refid="dir_dd0c4a7dcdf2b5cfb05e637c35244f94" kind="dir"><name>/home/travis/build/tomas789</name>
   </compound>

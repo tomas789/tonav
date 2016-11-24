@@ -184,19 +184,19 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="62">
+      <node id="70">
         <label>message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</label>
       </node>
-      <node id="61">
+      <node id="69">
         <label>image_transport::SubscriberFilter</label>
         <link refid="classimage__transport_1_1_subscriber_filter"/>
-        <childnode refid="62" relation="public-inheritance">
+        <childnode refid="70" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="60">
+      <node id="68">
         <label>image_transport::CameraSubscriber::Impl</label>
         <link refid="structimage__transport_1_1_camera_subscriber_1_1_impl"/>
-        <childnode refid="61" relation="usage">
+        <childnode refid="69" relation="usage">
           <edgelabel>image_sub_</edgelabel>
         </childnode>
       </node>

@@ -18,6 +18,7 @@ var dir_86f9b15063a11144272c6c377c697b62 =
     [ "imu_item.cpp", "imu__item_8cpp_source.html", null ],
     [ "main.cpp", "main_8cpp_source.html", null ],
     [ "navigator.cpp", "navigator_8cpp_source.html", null ],
+    [ "quaternion_tools.cpp", "quaternion__tools_8cpp_source.html", null ],
     [ "tonav.cpp", "tonav_8cpp_source.html", null ],
     [ "tonav_ros.cpp", "tonav__ros_8cpp_source.html", null ]
 ];

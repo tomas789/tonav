@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_quaternion" kind="class" prot="public">
+    <compoundname>msckf::Quaternion</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classmsckf_1_1_quaternion_1a0bd71eee1eb3c21c88e95dd7dad39b2b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Quaternion.to_rotation_matrix</definition>
+        <argsstring></argsstring>
+        <name>to_rotation_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="46" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="46" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_quaternion_1a1ad344e0e8b25fcedcea28e57dd1194b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Quaternion.to_euler_angles</definition>
+        <argsstring></argsstring>
+        <name>to_euler_angles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="55" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="55" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_quaternion_1af96060fbd037864de9e4386cf32557f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Quaternion.vector_to_quaternion_form</definition>
+        <argsstring></argsstring>
+        <name>vector_to_quaternion_form</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="64" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="64" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_quaternion_1a0c8379745cc348059060aed3a8abf67c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Quaternion.vector_from_quaternion_form</definition>
+        <argsstring></argsstring>
+        <name>vector_from_quaternion_form</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="70" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="70" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_quaternion_1aaaa45c31c39141a8fb00c13dfda9635d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Quaternion.cross_matrix</definition>
+        <argsstring></argsstring>
+        <name>cross_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="77" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="77" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_quaternion_1a492071a17aa06a82ab0a30abdc6211bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Quaternion.big_omega_matrix</definition>
+        <argsstring></argsstring>
+        <name>big_omega_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="88" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="88" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="44" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="44" bodyend="97"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_quaternion_1a492071a17aa06a82ab0a30abdc6211bf" prot="public" virt="non-virtual"><scope>msckf::Quaternion</scope><name>big_omega_matrix</name></member>
+      <member refid="classmsckf_1_1_quaternion_1aaaa45c31c39141a8fb00c13dfda9635d" prot="public" virt="non-virtual"><scope>msckf::Quaternion</scope><name>cross_matrix</name></member>
+      <member refid="classmsckf_1_1_quaternion_1a1ad344e0e8b25fcedcea28e57dd1194b" prot="public" virt="non-virtual"><scope>msckf::Quaternion</scope><name>to_euler_angles</name></member>
+      <member refid="classmsckf_1_1_quaternion_1a0bd71eee1eb3c21c88e95dd7dad39b2b" prot="public" virt="non-virtual"><scope>msckf::Quaternion</scope><name>to_rotation_matrix</name></member>
+      <member refid="classmsckf_1_1_quaternion_1a0c8379745cc348059060aed3a8abf67c" prot="public" virt="non-virtual"><scope>msckf::Quaternion</scope><name>vector_from_quaternion_form</name></member>
+      <member refid="classmsckf_1_1_quaternion_1af96060fbd037864de9e4386cf32557f9" prot="public" virt="non-virtual"><scope>msckf::Quaternion</scope><name>vector_to_quaternion_form</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

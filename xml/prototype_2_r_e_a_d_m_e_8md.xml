@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="prototype_2_r_e_a_d_m_e_8md" kind="file">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">This<sp/>is<sp/>prototype<sp/>of<sp/>MSCKF.<sp/>It<sp/>contains<sp/>all<sp/>parts<sp/>necessary<sp/>to<sp/>run<sp/>it.<sp/>In<sp/>my<sp/>simulations<sp/>(Gazebo)<sp/>it<sp/>diverges<sp/>quite<sp/>rapidly.<sp/>It<sp/>might<sp/>be<sp/>a<sp/>problem<sp/>with<sp/>feature<sp/>tracking.<sp/></highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/tomas789/tonav/prototype/README.md"/>
+  </compounddef>
+</doxygen>

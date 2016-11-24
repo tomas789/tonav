@@ -18,6 +18,25 @@ var annotated =
       [ "SubscriberPlugin", "classimage__transport_1_1_subscriber_plugin.html", "classimage__transport_1_1_subscriber_plugin" ],
       [ "TransportHints", "classimage__transport_1_1_transport_hints.html", "classimage__transport_1_1_transport_hints" ]
     ] ],
+    [ "msckf", null, [
+      [ "Quaternion", "classmsckf_1_1_quaternion.html", null ],
+      [ "ImuDevice", "classmsckf_1_1_imu_device.html", null ],
+      [ "ImuItem", "classmsckf_1_1_imu_item.html", "classmsckf_1_1_imu_item" ],
+      [ "CameraItem", "classmsckf_1_1_camera_item.html", "classmsckf_1_1_camera_item" ],
+      [ "ImuBuffer", "classmsckf_1_1_imu_buffer.html", "classmsckf_1_1_imu_buffer" ],
+      [ "PoseGet", "classmsckf_1_1_pose_get.html", "classmsckf_1_1_pose_get" ],
+      [ "BodyState", "classmsckf_1_1_body_state.html", "classmsckf_1_1_body_state" ],
+      [ "State", "classmsckf_1_1_state.html", "classmsckf_1_1_state" ],
+      [ "FeatureTrack", "classmsckf_1_1_feature_track.html", "classmsckf_1_1_feature_track" ],
+      [ "ImageTracker", "classmsckf_1_1_image_tracker.html", "classmsckf_1_1_image_tracker" ],
+      [ "Msckf", "classmsckf_1_1_msckf.html", "classmsckf_1_1_msckf" ]
+    ] ],
+    [ "msckf_test", null, [
+      [ "TestNumpyQuaternion", "classmsckf__test_1_1_test_numpy_quaternion.html", "classmsckf__test_1_1_test_numpy_quaternion" ],
+      [ "TestQuaternionToRotationMatrix", "classmsckf__test_1_1_test_quaternion_to_rotation_matrix.html", "classmsckf__test_1_1_test_quaternion_to_rotation_matrix" ],
+      [ "TestBasicMotion", "classmsckf__test_1_1_test_basic_motion.html", "classmsckf__test_1_1_test_basic_motion" ],
+      [ "TestFrameTransformations", "classmsckf__test_1_1_test_frame_transformations.html", "classmsckf__test_1_1_test_frame_transformations" ]
+    ] ],
     [ "pluginlib", null, [
       [ "ClassLoader", "classpluginlib_1_1_class_loader.html", null ]
     ] ],

@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_body_state" kind="class" prot="public">
+    <compoundname>msckf::BodyState</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_body_state_1a6ce3e615316fa82782296558cd96e3fb" prot="public" static="yes" mutable="no">
+        <type>tuple</type>
+        <definition>tuple msckf.BodyState::global_gravity</definition>
+        <argsstring></argsstring>
+        <name>global_gravity</name>
+        <initializer>= np.asarray([0.0, 0.0, 0])</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="239" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_body_state_1ae66c70ddae91a648f29efc568f4344da" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.BodyState::q_B_G</definition>
+        <argsstring></argsstring>
+        <name>q_B_G</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="242" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="242" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_body_state_1a0f413de95b39715210b1d88e3d6e707b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.BodyState::p_B_G</definition>
+        <argsstring></argsstring>
+        <name>p_B_G</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="243" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_body_state_1aaea8bab90d430f203ff8d8fabd9a16d7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.BodyState::v_B_G</definition>
+        <argsstring></argsstring>
+        <name>v_B_G</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="244" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="244" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_body_state_1a663d35092ee45633a18a9eab916c7c2a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.BodyState::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="245" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_body_state_1ac4940afd5c65881731a6a03e090c5093" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.BodyState::rotation_estimate</definition>
+        <argsstring></argsstring>
+        <name>rotation_estimate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="246" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="246" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_body_state_1a658e340e374f712b049f3197530d3365" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.BodyState::acceleration_estimate</definition>
+        <argsstring></argsstring>
+        <name>acceleration_estimate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="247" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf_1_1_body_state_1a869468e1c496f460ccef10fe473af84c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.BodyState.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="241" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="241" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_body_state_1a7e6fbd3db5a74297588a40ebb9c70fa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.BodyState.time_to</definition>
+        <argsstring></argsstring>
+        <name>time_to</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="249" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="249" bodyend="252"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classmsckf_1_1_body_state_1a7b9cebebc5b911a398fe008a17f3f457" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.BodyState.initialize</definition>
+        <argsstring></argsstring>
+        <name>initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="254" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="254" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_body_state_1ae376c49e3f60498704092e5295a4355f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.BodyState.copy</definition>
+        <argsstring></argsstring>
+        <name>copy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="265" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="265" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_body_state_1a6edd2c5e28633b9ebf2656a2cd9059d2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.BodyState.propagate</definition>
+        <argsstring></argsstring>
+        <name>propagate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="276" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="276" bodyend="288"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classmsckf_1_1_body_state_1a464214001e84d0f98dd2406821acc6da" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.BodyState._propagate_gyro</definition>
+        <argsstring></argsstring>
+        <name>_propagate_gyro</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="290" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="290" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_body_state_1a5f4c10bda1d494e98b815233dc36178d" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.BodyState._propagate_accel</definition>
+        <argsstring></argsstring>
+        <name>_propagate_accel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="307" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="307" bodyend="317"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="238" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="238" bodyend="319"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_body_state_1a869468e1c496f460ccef10fe473af84c" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>__init__</name></member>
+      <member refid="classmsckf_1_1_body_state_1a5f4c10bda1d494e98b815233dc36178d" prot="private" virt="non-virtual"><scope>msckf::BodyState</scope><name>_propagate_accel</name></member>
+      <member refid="classmsckf_1_1_body_state_1a464214001e84d0f98dd2406821acc6da" prot="private" virt="non-virtual"><scope>msckf::BodyState</scope><name>_propagate_gyro</name></member>
+      <member refid="classmsckf_1_1_body_state_1a658e340e374f712b049f3197530d3365" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>acceleration_estimate</name></member>
+      <member refid="classmsckf_1_1_body_state_1ae376c49e3f60498704092e5295a4355f" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>copy</name></member>
+      <member refid="classmsckf_1_1_body_state_1a6ce3e615316fa82782296558cd96e3fb" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>global_gravity</name></member>
+      <member refid="classmsckf_1_1_body_state_1a7b9cebebc5b911a398fe008a17f3f457" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>initialize</name></member>
+      <member refid="classmsckf_1_1_body_state_1a0f413de95b39715210b1d88e3d6e707b" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>p_B_G</name></member>
+      <member refid="classmsckf_1_1_body_state_1a6edd2c5e28633b9ebf2656a2cd9059d2" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>propagate</name></member>
+      <member refid="classmsckf_1_1_body_state_1ae66c70ddae91a648f29efc568f4344da" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>q_B_G</name></member>
+      <member refid="classmsckf_1_1_body_state_1ac4940afd5c65881731a6a03e090c5093" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>rotation_estimate</name></member>
+      <member refid="classmsckf_1_1_body_state_1a663d35092ee45633a18a9eab916c7c2a" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>time</name></member>
+      <member refid="classmsckf_1_1_body_state_1a7e6fbd3db5a74297588a40ebb9c70fa0" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>time_to</name></member>
+      <member refid="classmsckf_1_1_body_state_1aaea8bab90d430f203ff8d8fabd9a16d7" prot="public" virt="non-virtual"><scope>msckf::BodyState</scope><name>v_B_G</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

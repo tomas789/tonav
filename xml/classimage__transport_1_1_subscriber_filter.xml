@@ -258,24 +258,24 @@
 </verbatim> </para></sect1>
     </detaileddescription>
     <inheritancegraph>
-      <node id="149">
+      <node id="175">
         <label>message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</label>
       </node>
-      <node id="148">
+      <node id="174">
         <label>image_transport::SubscriberFilter</label>
         <link refid="classimage__transport_1_1_subscriber_filter"/>
-        <childnode refid="149" relation="public-inheritance">
+        <childnode refid="175" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="151">
+      <node id="177">
         <label>message_filters::SimpleFilter&lt; sensor_msgs::Image &gt;</label>
       </node>
-      <node id="150">
+      <node id="176">
         <label>image_transport::SubscriberFilter</label>
         <link refid="classimage__transport_1_1_subscriber_filter"/>
-        <childnode refid="151" relation="public-inheritance">
+        <childnode refid="177" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

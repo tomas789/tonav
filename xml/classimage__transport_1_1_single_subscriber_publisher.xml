@@ -210,24 +210,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="143">
+      <node id="165">
         <label>noncopyable</label>
       </node>
-      <node id="142">
+      <node id="164">
         <label>image_transport::SingleSubscriberPublisher</label>
         <link refid="classimage__transport_1_1_single_subscriber_publisher"/>
-        <childnode refid="143" relation="private-inheritance">
+        <childnode refid="165" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="145">
+      <node id="167">
         <label>noncopyable</label>
       </node>
-      <node id="144">
+      <node id="166">
         <label>image_transport::SingleSubscriberPublisher</label>
         <link refid="classimage__transport_1_1_single_subscriber_publisher"/>
-        <childnode refid="145" relation="private-inheritance">
+        <childnode refid="167" relation="private-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

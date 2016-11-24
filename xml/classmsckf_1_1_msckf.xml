@@ -1,0 +1,549 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_msckf" kind="class" prot="public">
+    <compoundname>msckf::Msckf</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1aa293c70761d866bcdf8e984a1385de64" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::imu_subscriber</definition>
+        <argsstring></argsstring>
+        <name>imu_subscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="577" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="577" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a354aa0dd7846a4787802bf3bb7791173" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::camera_subscriber</definition>
+        <argsstring></argsstring>
+        <name>camera_subscriber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="578" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="578" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a105ff6012b0df8b799c2be6ab9c76add" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::pointcloud_publisher</definition>
+        <argsstring></argsstring>
+        <name>pointcloud_publisher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="579" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="579" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1aa175e86a112bcc920bd6b8cf54083e86" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::br</definition>
+        <argsstring></argsstring>
+        <name>br</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="580" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="580" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a5ac0c36ef36e91f2b3a8847145d6e56a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::lock</definition>
+        <argsstring></argsstring>
+        <name>lock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="581" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="581" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a65e9d1ff1559e16bd18e01212b428252" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::listener</definition>
+        <argsstring></argsstring>
+        <name>listener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="582" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="582" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1abe179b3b52794f6c5d4a9598f1286126" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::cam_to_process</definition>
+        <argsstring></argsstring>
+        <name>cam_to_process</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="584" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="584" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a787a99dcc98a91e5a571f4e313a96b36" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="585" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="585" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a14270fb94fe42ea7b3c7238afae4ef22" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::image_tracker</definition>
+        <argsstring></argsstring>
+        <name>image_tracker</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="586" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="586" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1aa3d7e17f0521408497a79c47039bcdb9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::bridge</definition>
+        <argsstring></argsstring>
+        <name>bridge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="587" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="587" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a9ac9d9d8888316a8b2ebf1b446f17e07" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::cam_poses</definition>
+        <argsstring></argsstring>
+        <name>cam_poses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="588" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="588" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1ae967978398f1652655b0ad7edd0f9af1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::buffer_size_to_initialize</definition>
+        <argsstring></argsstring>
+        <name>buffer_size_to_initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="589" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="589" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a8f68a433bdc94aa74889d127d9e91f31" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::image_rows</definition>
+        <argsstring></argsstring>
+        <name>image_rows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="590" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="590" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a6e69e72653d9941528a1e4cecbc16371" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::buffers</definition>
+        <argsstring></argsstring>
+        <name>buffers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="591" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="591" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a2e46d6304ad2781ab231eb5cbaa935a0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::t_d</definition>
+        <argsstring></argsstring>
+        <name>t_d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="686" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="686" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1af788a1595dc960d3f58cc28ba33228d4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::t_r</definition>
+        <argsstring></argsstring>
+        <name>t_r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="687" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="687" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1a8456c22259389af1d92a3926e7b7020e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::image_publisher</definition>
+        <argsstring></argsstring>
+        <name>image_publisher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1300" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_msckf_1af1c0cd63952b6bd0ae751c39c4e6422a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.Msckf::tfBuffer</definition>
+        <argsstring></argsstring>
+        <name>tfBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1302" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1302" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1acece06247a28c9c6cc17228a7471281e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="576" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="576" bodyend="595"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1ab718a75ae92fe78165b104903589996b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.callback_imu</definition>
+        <argsstring></argsstring>
+        <name>callback_imu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="596" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="596" bodyend="623"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1ae226b29e88715596bea9912fa5b9eef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.process_imu</definition>
+        <argsstring></argsstring>
+        <name>process_imu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="624" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="624" bodyend="627"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a1489f7f6eb9ac6b0478a186fcd05650f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.callback_camera</definition>
+        <argsstring></argsstring>
+        <name>callback_camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="628" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="628" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1abb3ef8cce650ce56470f7f2d23e793c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.try_initialize</definition>
+        <argsstring></argsstring>
+        <name>try_initialize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="653" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="653" bodyend="708"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1ac9935613a6c0603529dc051505c19f63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.try_steps</definition>
+        <argsstring></argsstring>
+        <name>try_steps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="709" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="709" bodyend="732"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a5f8d7a1f9f02faaa3ce4dcf23e7024ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.propagate_up_to_time_incl</definition>
+        <argsstring></argsstring>
+        <name>propagate_up_to_time_incl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="733" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="733" bodyend="756"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a2a9394d1a3c7220d2804cbb6ca103b4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.update</definition>
+        <argsstring></argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="757" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="757" bodyend="1019"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a48162eab93295a3aa9827d02570ecdf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.triangulate</definition>
+        <argsstring></argsstring>
+        <name>triangulate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1020" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1020" bodyend="1031"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a091abe4b54b43f7d11e1ffe2063f7ac9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1032" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1032" bodyend="1037"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1aa923443e7b9f8c18963493b1a910025e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1038" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1038" bodyend="1047"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a561f373b33a2c3b7e8b9d6e1e8c95328" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.feature_residual</definition>
+        <argsstring></argsstring>
+        <name>feature_residual</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1048" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1048" bodyend="1051"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a67a09f9f462392f3bb707ac698b6ed0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.camera_jacobian</definition>
+        <argsstring></argsstring>
+        <name>camera_jacobian</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1052" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1052" bodyend="1055"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a59f002d186ffda17b1a1dcc8d2a723de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.compute_global_feature_estimate</definition>
+        <argsstring></argsstring>
+        <name>compute_global_feature_estimate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1056" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1056" bodyend="1177"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a45893991d0f6af50e0eb902c6416b623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.calculate_camera_projection_estimate</definition>
+        <argsstring></argsstring>
+        <name>calculate_camera_projection_estimate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1178" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1178" bodyend="1221"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a0868335826b7b55548236cd06e7a248c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.pinhole_model</definition>
+        <argsstring></argsstring>
+        <name>pinhole_model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1222" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1222" bodyend="1244"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a18e2cb57b56fdc5f7d66b8e36cc067ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.interpolate</definition>
+        <argsstring></argsstring>
+        <name>interpolate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1245" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1245" bodyend="1253"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1acf89b57822a098ee1a650849a37361eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.publish_localization</definition>
+        <argsstring></argsstring>
+        <name>publish_localization</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1254" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1254" bodyend="1271"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1ab55273376c5e47b07ba919d6486a40b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.publish_image_if_new_available</definition>
+        <argsstring></argsstring>
+        <name>publish_image_if_new_available</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1272" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1272" bodyend="1278"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_msckf_1a72c2622b8dec25f90ecca34bd759e8af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.Msckf.run</definition>
+        <argsstring></argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="1279" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="1279" bodyend="1307"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="575" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="575" bodyend="1308"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_msckf_1acece06247a28c9c6cc17228a7471281e" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>__init__</name></member>
+      <member refid="classmsckf_1_1_msckf_1aa175e86a112bcc920bd6b8cf54083e86" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>br</name></member>
+      <member refid="classmsckf_1_1_msckf_1aa3d7e17f0521408497a79c47039bcdb9" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>bridge</name></member>
+      <member refid="classmsckf_1_1_msckf_1ae967978398f1652655b0ad7edd0f9af1" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>buffer_size_to_initialize</name></member>
+      <member refid="classmsckf_1_1_msckf_1a6e69e72653d9941528a1e4cecbc16371" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>buffers</name></member>
+      <member refid="classmsckf_1_1_msckf_1a45893991d0f6af50e0eb902c6416b623" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>calculate_camera_projection_estimate</name></member>
+      <member refid="classmsckf_1_1_msckf_1a1489f7f6eb9ac6b0478a186fcd05650f" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>callback_camera</name></member>
+      <member refid="classmsckf_1_1_msckf_1ab718a75ae92fe78165b104903589996b" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>callback_imu</name></member>
+      <member refid="classmsckf_1_1_msckf_1a9ac9d9d8888316a8b2ebf1b446f17e07" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>cam_poses</name></member>
+      <member refid="classmsckf_1_1_msckf_1abe179b3b52794f6c5d4a9598f1286126" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>cam_to_process</name></member>
+      <member refid="classmsckf_1_1_msckf_1a67a09f9f462392f3bb707ac698b6ed0e" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>camera_jacobian</name></member>
+      <member refid="classmsckf_1_1_msckf_1a354aa0dd7846a4787802bf3bb7791173" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>camera_subscriber</name></member>
+      <member refid="classmsckf_1_1_msckf_1a59f002d186ffda17b1a1dcc8d2a723de" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>compute_global_feature_estimate</name></member>
+      <member refid="classmsckf_1_1_msckf_1a561f373b33a2c3b7e8b9d6e1e8c95328" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>feature_residual</name></member>
+      <member refid="classmsckf_1_1_msckf_1aa923443e7b9f8c18963493b1a910025e" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>g</name></member>
+      <member refid="classmsckf_1_1_msckf_1a091abe4b54b43f7d11e1ffe2063f7ac9" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>h</name></member>
+      <member refid="classmsckf_1_1_msckf_1a8456c22259389af1d92a3926e7b7020e" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>image_publisher</name></member>
+      <member refid="classmsckf_1_1_msckf_1a8f68a433bdc94aa74889d127d9e91f31" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>image_rows</name></member>
+      <member refid="classmsckf_1_1_msckf_1a14270fb94fe42ea7b3c7238afae4ef22" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>image_tracker</name></member>
+      <member refid="classmsckf_1_1_msckf_1aa293c70761d866bcdf8e984a1385de64" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>imu_subscriber</name></member>
+      <member refid="classmsckf_1_1_msckf_1a18e2cb57b56fdc5f7d66b8e36cc067ce" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>interpolate</name></member>
+      <member refid="classmsckf_1_1_msckf_1a65e9d1ff1559e16bd18e01212b428252" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>listener</name></member>
+      <member refid="classmsckf_1_1_msckf_1a5ac0c36ef36e91f2b3a8847145d6e56a" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>lock</name></member>
+      <member refid="classmsckf_1_1_msckf_1a0868335826b7b55548236cd06e7a248c" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>pinhole_model</name></member>
+      <member refid="classmsckf_1_1_msckf_1a105ff6012b0df8b799c2be6ab9c76add" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>pointcloud_publisher</name></member>
+      <member refid="classmsckf_1_1_msckf_1ae226b29e88715596bea9912fa5b9eef9" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>process_imu</name></member>
+      <member refid="classmsckf_1_1_msckf_1a5f8d7a1f9f02faaa3ce4dcf23e7024ff" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>propagate_up_to_time_incl</name></member>
+      <member refid="classmsckf_1_1_msckf_1ab55273376c5e47b07ba919d6486a40b2" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>publish_image_if_new_available</name></member>
+      <member refid="classmsckf_1_1_msckf_1acf89b57822a098ee1a650849a37361eb" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>publish_localization</name></member>
+      <member refid="classmsckf_1_1_msckf_1a72c2622b8dec25f90ecca34bd759e8af" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>run</name></member>
+      <member refid="classmsckf_1_1_msckf_1a787a99dcc98a91e5a571f4e313a96b36" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>state</name></member>
+      <member refid="classmsckf_1_1_msckf_1a2e46d6304ad2781ab231eb5cbaa935a0" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>t_d</name></member>
+      <member refid="classmsckf_1_1_msckf_1af788a1595dc960d3f58cc28ba33228d4" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>t_r</name></member>
+      <member refid="classmsckf_1_1_msckf_1af1c0cd63952b6bd0ae751c39c4e6422a" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>tfBuffer</name></member>
+      <member refid="classmsckf_1_1_msckf_1a48162eab93295a3aa9827d02570ecdf3" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>triangulate</name></member>
+      <member refid="classmsckf_1_1_msckf_1abb3ef8cce650ce56470f7f2d23e793c2" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>try_initialize</name></member>
+      <member refid="classmsckf_1_1_msckf_1ac9935613a6c0603529dc051505c19f63" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>try_steps</name></member>
+      <member refid="classmsckf_1_1_msckf_1a2a9394d1a3c7220d2804cbb6ca103b4f" prot="public" virt="non-virtual"><scope>msckf::Msckf</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

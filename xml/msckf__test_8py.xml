@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="msckf__test_8py" kind="file">
+    <compoundname>msckf_test.py</compoundname>
+    <innerclass refid="classmsckf__test_1_1_test_numpy_quaternion" prot="public">msckf_test::TestNumpyQuaternion</innerclass>
+    <innerclass refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix" prot="public">msckf_test::TestQuaternionToRotationMatrix</innerclass>
+    <innerclass refid="classmsckf__test_1_1_test_basic_motion" prot="public">msckf_test::TestBasicMotion</innerclass>
+    <innerclass refid="classmsckf__test_1_1_test_frame_transformations" prot="public">msckf_test::TestFrameTransformations</innerclass>
+    <innernamespace refid="namespacemsckf__test">msckf_test</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>unittest</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>quaternion</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rospy</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>msckf<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>State,<sp/>Quaternion</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classmsckf__test_1_1_test_numpy_quaternion" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmsckf__test_1_1_test_numpy_quaternion" kindref="compound">TestNumpyQuaternion</ref>(unittest.TestCase):</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_multiply_by_unit_quaternion(self):</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>id<sp/>=<sp/>np.quaternion(1,<sp/>0,<sp/>0,<sp/>0)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q1<sp/>=<sp/>np.quaternion(1,<sp/>2,<sp/>3,<sp/>4)<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(id*q1,<sp/>q1)</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(q1*id,<sp/>q1)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q2<sp/>=<sp/>np.quaternion(5,<sp/>6,<sp/>1000,<sp/>2000)<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(id*q2,<sp/>q2)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(q2*id,<sp/>q2)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_element_order(self):</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q<sp/>=<sp/>np.quaternion(1,<sp/>2,<sp/>3,<sp/>4)<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(q.w,<sp/>1)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(q.x,<sp/>2)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(q.y,<sp/>3)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(q.z,<sp/>4)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix" kindref="compound">TestQuaternionToRotationMatrix</ref>(unittest.TestCase):</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_unit_quaternion_is_unit_matrix(self):</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q<sp/>=<sp/>np.quaternion(1,<sp/>0,<sp/>0,<sp/>0)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>Quaternion.to_rotation_matrix(q)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(m,<sp/>np.eye(3))</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_non_unit_quaternion_is_non_unit_matrix(self):</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q<sp/>=<sp/>np.quaternion(3,<sp/>7,<sp/>-1,<sp/>0.001).normalized()<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>Quaternion.to_rotation_matrix(q)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertNotAlmostEqual(np.power(m<sp/>-<sp/>np.eye(3),<sp/>2).sum(),<sp/>0)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_rotation_matrix_of_oposite_quaternion_is_the_same(self):</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q<sp/>=<sp/>np.quaternion(6.5,<sp/>3.2,<sp/>0,<sp/>0).normalized()<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q_mat<sp/>=<sp/>Quaternion.to_rotation_matrix(q)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q_minus_mat<sp/>=<sp/>Quaternion.to_rotation_matrix(-1<sp/>*<sp/>q)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(q_mat,<sp/>q_minus_mat)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_rotation_matrix_of_conjugate_quaternion_is_transposed_rotation_matrix(self):</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q<sp/>=<sp/>np.quaternion(9.4,<sp/>-1.2,<sp/>-4,<sp/>7.777).normalized()<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m<sp/>=<sp/>Quaternion.to_rotation_matrix(q).T</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_from_conj<sp/>=<sp/>Quaternion.to_rotation_matrix(q.conjugate())</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(m,<sp/>m_from_conj)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_rotation_matrix_of_composition_is_dot_product_of_rotation_matrices(self):</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q1<sp/>=<sp/>np.quaternion(np.pi,<sp/>5.12,<sp/>-np.pi,<sp/>2.56).normalized()<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q2<sp/>=<sp/>np.quaternion(-np.pi,<sp/>0,<sp/>1.1,<sp/>-2.2).normalized()<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_of_composition<sp/>=<sp/>Quaternion.to_rotation_matrix(q1<sp/>*<sp/>q2)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_from_q1<sp/>=<sp/>Quaternion.to_rotation_matrix(q1)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_from_q2<sp/>=<sp/>Quaternion.to_rotation_matrix(q2)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_from_dot<sp/>=<sp/>m_from_q1.dot(m_from_q2)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(m_of_composition,<sp/>m_from_dot)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">vector_to_quaternion_form_and_back_is_the_same_vector(self):</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec<sp/>=<sp/>np.array([1,<sp/>2,<sp/>3])<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec_quat<sp/>=<sp/>Quaternion.vector_to_quaternion_form(vec)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vec_back<sp/>=<sp/>Quaternion.vector_from_quaternion_form(vec_quat)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(vec,<sp/>vec_back)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_transformation_using_sandwich_and_rotation_matrix_are_same(self):</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q<sp/>=<sp/>np.quaternion(-1,<sp/>-8,<sp/>4,<sp/>6).normalized()<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>np.asarray([1.0,<sp/>2.0,<sp/>3.0]).reshape((3,<sp/>1))<sp/></highlight><highlight class="comment">#<sp/>random</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>x<sp/>/<sp/>x.sum()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_quat<sp/>=<sp/>Quaternion.vector_to_quaternion_form(x)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_next_quat_form<sp/>=<sp/>q<sp/>*<sp/>x_quat<sp/>*<sp/>q.conjugate()</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_next_using_quaternions<sp/>=<sp/>Quaternion.vector_from_quaternion_form(x_next_quat_form)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>Quaternion.to_rotation_matrix(q)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x_next_using_matrices<sp/>=<sp/>r.dot(x)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(x_next_using_quaternions,<sp/>x_next_using_matrices)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="classmsckf__test_1_1_test_basic_motion" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmsckf__test_1_1_test_basic_motion" kindref="compound">TestBasicMotion</ref>(unittest.TestCase):</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_no_movement(self):</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accel_item_first<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gyro_item_second<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initial_accel_mean<sp/>=<sp/>np.zeros((3,<sp/>1))</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="classmsckf_1_1_state" kindref="compound">State</ref>(accel_item_first,<sp/>gyro_item_second,<sp/>initial_accel_mean)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accel_item_second<sp/>=<sp/>(1.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gyro_item_second<sp/>=<sp/>(1.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>State.propagate(state,<sp/>accel_item_second,<sp/>gyro_item_second)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(state.q_B_G,<sp/>np.quaternion(1.0,<sp/>0.0,<sp/>0.0,<sp/>0.0))</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(state.p_B_G,<sp/>np.zeros((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(state.v_B_G,<sp/>np.zeros((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_simple_move_in_x_direction(self):</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accel_item_first<sp/>=<sp/>(0.0,<sp/>np.asarray([1.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gyro_item_second<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initial_accel_mean<sp/>=<sp/>np.zeros((3,<sp/>1))</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="classmsckf_1_1_state" kindref="compound">State</ref>(accel_item_first,<sp/>gyro_item_second,<sp/>initial_accel_mean)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accel_item_second<sp/>=<sp/>(1.0,<sp/>np.asarray([1.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gyro_item_second<sp/>=<sp/>(1.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>State.propagate(state,<sp/>accel_item_second,<sp/>gyro_item_second)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(state.q_B_G,<sp/>np.quaternion(1.0,<sp/>0.0,<sp/>0.0,<sp/>0.0))</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(state.p_B_G,<sp/>np.asarray([0.5,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(state.v_B_G,<sp/>np.asarray([1.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_simple_rotation_about_x_axis(self):</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accel_item_first<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gyro_item_second<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>2.0*np.pi]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initial_accel_mean<sp/>=<sp/>np.zeros((3,<sp/>1))</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="classmsckf_1_1_state" kindref="compound">State</ref>(accel_item_first,<sp/>gyro_item_second,<sp/>initial_accel_mean)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(1,<sp/>101):</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accel_item_second<sp/>=<sp/>(i*0.01,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gyro_item_second<sp/>=<sp/>(i*0.01,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>2.0*np.pi]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>State.propagate(state,<sp/>accel_item_second,<sp/>gyro_item_second)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(state.q_B_G.components,<sp/>np.array([-1.0,<sp/>0.0,<sp/>0.0,<sp/>0.0]),<sp/>rtol=0,<sp/>atol=1e-7)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(state.p_B_G,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)),<sp/>rtol=0,<sp/>atol=1e-7)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(state.v_B_G,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)),<sp/>rtol=0,<sp/>atol=1e-7)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="classmsckf__test_1_1_test_frame_transformations" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmsckf__test_1_1_test_frame_transformations" kindref="compound">TestFrameTransformations</ref>(unittest.TestCase):</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_initial_setup(self):</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accel_item_first<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gyro_item_second<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initial_accel_mean<sp/>=<sp/>np.zeros((3,<sp/>1))</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="classmsckf_1_1_state" kindref="compound">State</ref>(accel_item_first,<sp/>gyro_item_second,<sp/>initial_accel_mean)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state.augment()</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q_C_G<sp/>=<sp/>state.get_rotation_from_global_to_camera_pose(0)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(q_C_G,<sp/>np.quaternion(1.0,<sp/>0.0,<sp/>0.0,<sp/>0.0))</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_rotation_of_camera_pose_after_rotation(self):</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accel_item_first<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gyro_item_second<sp/>=<sp/>(0.0,<sp/>np.asarray([0.0,<sp/>0.0,<sp/>np.pi/2.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>initial_accel_mean<sp/>=<sp/>np.zeros((3,<sp/>1))</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/><ref refid="classmsckf_1_1_state" kindref="compound">State</ref>(accel_item_first,<sp/>gyro_item_second,<sp/>initial_accel_mean)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state.p_B_C<sp/>=<sp/>np.asarray([-1.0,<sp/>0.0,<sp/>0.0]).reshape((3,<sp/>1))</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(1,<sp/>101):</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acceleration_estimate<sp/>=<sp/>np.asarray([0.0,<sp/>0.0,<sp/>-9.81]).reshape((3,<sp/>1))</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rotation_estimate<sp/>=<sp/>np.asarray([0.0,<sp/>0.0,<sp/>np.pi/2.0]).reshape((3,<sp/>1))</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state<sp/>=<sp/>State.propagate(state,<sp/>i*0.01,<sp/>rotation_estimate,<sp/>acceleration_estimate)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>state.augment()</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>q_C_G<sp/>=<sp/>state.get_rotation_from_global_to_camera_pose(0)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>angles<sp/>=<sp/>State.quaternion_to_euler_angles(q_C_G)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(angles,<sp/>np.array([0.0,<sp/>0.0,<sp/>-np.pi/2.0]).reshape((3,<sp/>1)))</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_C0_G<sp/>=<sp/>state.get_position_of_pose_in_global_frame(0)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>np.testing.assert_allclose(p_C0_G,<sp/>np.array([0.0,<sp/>-1.0,<sp/>0.0]).reshape((3,<sp/>1)),<sp/>atol=1e-7)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>unittest.main()</highlight></codeline>
+    </programlisting>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py"/>
+  </compounddef>
+</doxygen>

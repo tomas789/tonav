@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['rawpublisher',['RawPublisher',['../classimage__transport_1_1_raw_publisher.html',1,'image_transport']]],
-  ['rawsubscriber',['RawSubscriber',['../classimage__transport_1_1_raw_subscriber.html',1,'image_transport']]],
-  ['resizedpublisher',['ResizedPublisher',['../class_resized_publisher.html',1,'']]],
-  ['resizedsubscriber',['ResizedSubscriber',['../class_resized_subscriber.html',1,'']]]
+  ['poseget',['PoseGet',['../classmsckf_1_1_pose_get.html',1,'msckf']]],
+  ['publisher',['Publisher',['../classimage__transport_1_1_publisher.html',1,'image_transport']]],
+  ['publisherplugin',['PublisherPlugin',['../classimage__transport_1_1_publisher_plugin.html',1,'image_transport']]]
 ];

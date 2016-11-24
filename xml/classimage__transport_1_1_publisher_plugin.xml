@@ -304,54 +304,54 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="90">
+      <node id="110">
         <label>image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="85" relation="public-inheritance">
+        <childnode refid="105" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="86">
+      <node id="106">
         <label>boost::noncopyable</label>
       </node>
-      <node id="85">
+      <node id="105">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="86" relation="private-inheritance">
+        <childnode refid="106" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="88">
+      <node id="108">
         <label>image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="85" relation="public-inheritance">
+        <childnode refid="105" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="87">
+      <node id="107">
         <label>image_transport::SimplePublisherPlugin&lt; M &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="85" relation="public-inheritance">
+        <childnode refid="105" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="89">
+      <node id="109">
         <label>ResizedPublisher</label>
         <link refid="class_resized_publisher"/>
-        <childnode refid="88" relation="public-inheritance">
+        <childnode refid="108" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="91">
+      <node id="111">
         <label>image_transport::RawPublisher</label>
         <link refid="classimage__transport_1_1_raw_publisher"/>
-        <childnode refid="90" relation="public-inheritance">
+        <childnode refid="110" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="93">
+      <node id="113">
         <label>boost::noncopyable</label>
       </node>
-      <node id="92">
+      <node id="112">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="93" relation="private-inheritance">
+        <childnode refid="113" relation="private-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

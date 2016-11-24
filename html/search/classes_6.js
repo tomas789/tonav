@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['navigator',['Navigator',['../class_navigator.html',1,'']]]
+  ['msckf',['Msckf',['../classmsckf_1_1_msckf.html',1,'msckf']]]
 ];

@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf__test_1_1_test_quaternion_to_rotation_matrix" kind="class" prot="public">
+    <compoundname>msckf_test::TestQuaternionToRotationMatrix</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1a5ce323c18ba9e5cf9c2793796ef313a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestQuaternionToRotationMatrix.test_unit_quaternion_is_unit_matrix</definition>
+        <argsstring></argsstring>
+        <name>test_unit_quaternion_is_unit_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="29" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1ac776e17660756aeb2029a96d19710c02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestQuaternionToRotationMatrix.test_non_unit_quaternion_is_non_unit_matrix</definition>
+        <argsstring></argsstring>
+        <name>test_non_unit_quaternion_is_non_unit_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="34" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1adb1f5ec79fbb9273b661cbdbbf642c72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestQuaternionToRotationMatrix.test_rotation_matrix_of_oposite_quaternion_is_the_same</definition>
+        <argsstring></argsstring>
+        <name>test_rotation_matrix_of_oposite_quaternion_is_the_same</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="39" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="39" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1aa2d7002bb2a55d8b16e148d16cbc7c0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestQuaternionToRotationMatrix.test_rotation_matrix_of_conjugate_quaternion_is_transposed_rotation_matrix</definition>
+        <argsstring></argsstring>
+        <name>test_rotation_matrix_of_conjugate_quaternion_is_transposed_rotation_matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="45" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="45" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1ac52b74a18ab3ac86e31c18cfc8e05a66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestQuaternionToRotationMatrix.test_rotation_matrix_of_composition_is_dot_product_of_rotation_matrices</definition>
+        <argsstring></argsstring>
+        <name>test_rotation_matrix_of_composition_is_dot_product_of_rotation_matrices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="51" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="51" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1aa7654932fddf9ceff835f95fa592d01d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestQuaternionToRotationMatrix.vector_to_quaternion_form_and_back_is_the_same_vector</definition>
+        <argsstring></argsstring>
+        <name>vector_to_quaternion_form_and_back_is_the_same_vector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="61" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="61" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1a059360bc65644e9013dd18e7eb1ac16e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestQuaternionToRotationMatrix.test_transformation_using_sandwich_and_rotation_matrix_are_same</definition>
+        <argsstring></argsstring>
+        <name>test_transformation_using_sandwich_and_rotation_matrix_are_same</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="67" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="67" bodyend="80"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="199">
+        <label>msckf_test.TestQuaternionToRotationMatrix</label>
+        <link refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix"/>
+        <childnode refid="200" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="201">
+        <label>msckf_test.TestQuaternionToRotationMatrix</label>
+        <link refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix"/>
+        <childnode refid="202" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="202">
+        <label>TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="28" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="28" bodyend="81"/>
+    <listofallmembers>
+      <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1ac776e17660756aeb2029a96d19710c02" prot="public" virt="non-virtual"><scope>msckf_test::TestQuaternionToRotationMatrix</scope><name>test_non_unit_quaternion_is_non_unit_matrix</name></member>
+      <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1ac52b74a18ab3ac86e31c18cfc8e05a66" prot="public" virt="non-virtual"><scope>msckf_test::TestQuaternionToRotationMatrix</scope><name>test_rotation_matrix_of_composition_is_dot_product_of_rotation_matrices</name></member>
+      <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1aa2d7002bb2a55d8b16e148d16cbc7c0f" prot="public" virt="non-virtual"><scope>msckf_test::TestQuaternionToRotationMatrix</scope><name>test_rotation_matrix_of_conjugate_quaternion_is_transposed_rotation_matrix</name></member>
+      <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1adb1f5ec79fbb9273b661cbdbbf642c72" prot="public" virt="non-virtual"><scope>msckf_test::TestQuaternionToRotationMatrix</scope><name>test_rotation_matrix_of_oposite_quaternion_is_the_same</name></member>
+      <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1a059360bc65644e9013dd18e7eb1ac16e" prot="public" virt="non-virtual"><scope>msckf_test::TestQuaternionToRotationMatrix</scope><name>test_transformation_using_sandwich_and_rotation_matrix_are_same</name></member>
+      <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1a5ce323c18ba9e5cf9c2793796ef313a8" prot="public" virt="non-virtual"><scope>msckf_test::TestQuaternionToRotationMatrix</scope><name>test_unit_quaternion_is_unit_matrix</name></member>
+      <member refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix_1aa7654932fddf9ceff835f95fa592d01d" prot="public" virt="non-virtual"><scope>msckf_test::TestQuaternionToRotationMatrix</scope><name>vector_to_quaternion_form_and_back_is_the_same_vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

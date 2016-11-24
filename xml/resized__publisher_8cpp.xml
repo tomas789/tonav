@@ -6,74 +6,74 @@
     <includes local="no">opencv2/imgproc/imgproc.hpp</includes>
     <includes local="no">cv_bridge/cv_bridge.h</includes>
     <incdepgraph>
-      <node id="1376">
+      <node id="1382">
         <label>image_transport_tutorial/resized_publisher.h</label>
         <link refid="resized__publisher_8h_source"/>
-        <childnode refid="1377" relation="include">
+        <childnode refid="1383" relation="include">
         </childnode>
-        <childnode refid="1385" relation="include">
+        <childnode refid="1391" relation="include">
         </childnode>
       </node>
-      <node id="1377">
+      <node id="1383">
         <label>image_transport/simple_publisher_plugin.h</label>
         <link refid="simple__publisher__plugin_8h_source"/>
-        <childnode refid="1378" relation="include">
-        </childnode>
         <childnode refid="1384" relation="include">
         </childnode>
+        <childnode refid="1390" relation="include">
+        </childnode>
       </node>
-      <node id="1375">
+      <node id="1381">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/resized_publisher.cpp</label>
         <link refid="resized_publisher.cpp"/>
-        <childnode refid="1376" relation="include">
+        <childnode refid="1382" relation="include">
+        </childnode>
+        <childnode refid="1392" relation="include">
+        </childnode>
+        <childnode refid="1393" relation="include">
+        </childnode>
+      </node>
+      <node id="1391">
+        <label>image_transport_tutorial/ResizedImage.h</label>
+      </node>
+      <node id="1387">
+        <label>image_transport/single_subscriber_publisher.h</label>
+        <link refid="single__subscriber__publisher_8h_source"/>
+        <childnode refid="1388" relation="include">
+        </childnode>
+        <childnode refid="1389" relation="include">
+        </childnode>
+        <childnode refid="1386" relation="include">
+        </childnode>
+      </node>
+      <node id="1386">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1388">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="1393">
+        <label>cv_bridge/cv_bridge.h</label>
+      </node>
+      <node id="1389">
+        <label>boost/function.hpp</label>
+      </node>
+      <node id="1392">
+        <label>opencv2/imgproc/imgproc.hpp</label>
+      </node>
+      <node id="1385">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="1390">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+      <node id="1384">
+        <label>image_transport/publisher_plugin.h</label>
+        <link refid="publisher__plugin_8h_source"/>
+        <childnode refid="1385" relation="include">
         </childnode>
         <childnode refid="1386" relation="include">
         </childnode>
         <childnode refid="1387" relation="include">
-        </childnode>
-      </node>
-      <node id="1385">
-        <label>image_transport_tutorial/ResizedImage.h</label>
-      </node>
-      <node id="1381">
-        <label>image_transport/single_subscriber_publisher.h</label>
-        <link refid="single__subscriber__publisher_8h_source"/>
-        <childnode refid="1382" relation="include">
-        </childnode>
-        <childnode refid="1383" relation="include">
-        </childnode>
-        <childnode refid="1380" relation="include">
-        </childnode>
-      </node>
-      <node id="1380">
-        <label>sensor_msgs/Image.h</label>
-      </node>
-      <node id="1382">
-        <label>boost/noncopyable.hpp</label>
-      </node>
-      <node id="1387">
-        <label>cv_bridge/cv_bridge.h</label>
-      </node>
-      <node id="1383">
-        <label>boost/function.hpp</label>
-      </node>
-      <node id="1386">
-        <label>opencv2/imgproc/imgproc.hpp</label>
-      </node>
-      <node id="1379">
-        <label>ros/ros.h</label>
-      </node>
-      <node id="1384">
-        <label>boost/scoped_ptr.hpp</label>
-      </node>
-      <node id="1378">
-        <label>image_transport/publisher_plugin.h</label>
-        <link refid="publisher__plugin_8h_source"/>
-        <childnode refid="1379" relation="include">
-        </childnode>
-        <childnode refid="1380" relation="include">
-        </childnode>
-        <childnode refid="1381" relation="include">
         </childnode>
       </node>
     </incdepgraph>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_imu_device" kind="class" prot="public">
+    <compoundname>msckf::ImuDevice</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Enum</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_imu_device_1a3faeff4eaaf36e190287606fae61079f" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int msckf.ImuDevice::accelerometer</definition>
+        <argsstring></argsstring>
+        <name>accelerometer</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="98" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_imu_device_1acad284d6013b952fdd878b8a768e7169" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int msckf.ImuDevice::gyroscope</definition>
+        <argsstring></argsstring>
+        <name>gyroscope</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="99" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="87">
+        <label>msckf.ImuDevice</label>
+        <link refid="classmsckf_1_1_imu_device"/>
+        <childnode refid="88" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>Enum</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="89">
+        <label>msckf.ImuDevice</label>
+        <link refid="classmsckf_1_1_imu_device"/>
+        <childnode refid="90" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>Enum</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="97" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="97" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_imu_device_1a3faeff4eaaf36e190287606fae61079f" prot="public" virt="non-virtual"><scope>msckf::ImuDevice</scope><name>accelerometer</name></member>
+      <member refid="classmsckf_1_1_imu_device_1acad284d6013b952fdd878b8a768e7169" prot="public" virt="non-virtual"><scope>msckf::ImuDevice</scope><name>gyroscope</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

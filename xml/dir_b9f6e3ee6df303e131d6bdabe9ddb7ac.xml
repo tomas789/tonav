@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_b9f6e3ee6df303e131d6bdabe9ddb7ac" kind="dir">
+    <compoundname>/home/travis/build/tomas789/tonav/prototype</compoundname>
+    <innerfile refid="msckf_8py">msckf.py</innerfile>
+    <innerfile refid="msckf__test_8py">msckf_test.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/"/>
+  </compounddef>
+</doxygen>

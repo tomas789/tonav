@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_image_tracker" kind="class" prot="public">
+    <compoundname>msckf::ImageTracker</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1ac0bdc5e455ec9a9e179f88576444678a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::image_counter</definition>
+        <argsstring></argsstring>
+        <name>image_counter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="488" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="488" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1a5f3fcf1a20788c99f16a3ead38a0931e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::last_image</definition>
+        <argsstring></argsstring>
+        <name>last_image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="489" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="489" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1a6b825a2e9b42766b1ab8c0781ecc5a41" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::last_kps</definition>
+        <argsstring></argsstring>
+        <name>last_kps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="490" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="490" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1a8cd7b9cfc26ad48bc0adfa8da1e0edcb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::last_des</definition>
+        <argsstring></argsstring>
+        <name>last_des</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="491" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1a2764caa363b3ff3de9f854b47977947d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::last_image_was_published</definition>
+        <argsstring></argsstring>
+        <name>last_image_was_published</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="492" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="492" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1a61d25a81ca62500d4b64b3c216817e68" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::last_matches_image</definition>
+        <argsstring></argsstring>
+        <name>last_matches_image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="493" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="493" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1a5c21c3f90f387f6f1d50814105736ad6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::last_features</definition>
+        <argsstring></argsstring>
+        <name>last_features</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="494" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="494" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1af04b2528381cdaa7ad4ff2558f1634f3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::orb</definition>
+        <argsstring></argsstring>
+        <name>orb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="495" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="495" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_image_tracker_1a3b793e2f18c9c29fe8a584d9974c1b6a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImageTracker::matcher</definition>
+        <argsstring></argsstring>
+        <name>matcher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="496" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="496" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf_1_1_image_tracker_1a6cda7073370f94e89f1cf3c5181699be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImageTracker.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="487" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="487" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_image_tracker_1ae642350c572cf0e46ec37d07ba7ee975" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImageTracker.track_next</definition>
+        <argsstring></argsstring>
+        <name>track_next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="498" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="498" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_image_tracker_1ab4bc5433e45f2c83c18951fe2a3f5aa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImageTracker.extract_old_features</definition>
+        <argsstring></argsstring>
+        <name>extract_old_features</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="559" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="559" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_image_tracker_1aaae69c20884145a31bb9aca56ad0e475" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImageTracker.image_to_publish</definition>
+        <argsstring></argsstring>
+        <name>image_to_publish</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="567" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="567" bodyend="574"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="486" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="486" bodyend="575"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_image_tracker_1a6cda7073370f94e89f1cf3c5181699be" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>__init__</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1ab4bc5433e45f2c83c18951fe2a3f5aa1" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>extract_old_features</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1ac0bdc5e455ec9a9e179f88576444678a" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>image_counter</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1aaae69c20884145a31bb9aca56ad0e475" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>image_to_publish</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1a8cd7b9cfc26ad48bc0adfa8da1e0edcb" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>last_des</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1a5c21c3f90f387f6f1d50814105736ad6" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>last_features</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1a5f3fcf1a20788c99f16a3ead38a0931e" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>last_image</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1a2764caa363b3ff3de9f854b47977947d" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>last_image_was_published</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1a6b825a2e9b42766b1ab8c0781ecc5a41" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>last_kps</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1a61d25a81ca62500d4b64b3c216817e68" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>last_matches_image</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1a3b793e2f18c9c29fe8a584d9974c1b6a" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>matcher</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1af04b2528381cdaa7ad4ff2558f1634f3" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>orb</name></member>
+      <member refid="classmsckf_1_1_image_tracker_1ae642350c572cf0e46ec37d07ba7ee975" prot="public" virt="non-virtual"><scope>msckf::ImageTracker</scope><name>track_next</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

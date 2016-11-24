@@ -20,6 +20,7 @@
     <innerfile refid="imu__item_8cpp">imu_item.cpp</innerfile>
     <innerfile refid="main_8cpp">main.cpp</innerfile>
     <innerfile refid="navigator_8cpp">navigator.cpp</innerfile>
+    <innerfile refid="quaternion__tools_8cpp">quaternion_tools.cpp</innerfile>
     <innerfile refid="tonav_8cpp">tonav.cpp</innerfile>
     <innerfile refid="tonav__ros_8cpp">tonav_ros.cpp</innerfile>
     <briefdescription>

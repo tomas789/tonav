@@ -79,48 +79,48 @@
     <detaileddescription>
 <para><ref refid="classimage__transport_1_1_raw_subscriber" kindref="compound">RawSubscriber</ref> is a simple wrapper for ros::Subscriber which listens for Image messages and passes them through to the callback. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="102">
+      <node id="124">
         <label>image_transport::RawSubscriber</label>
         <link refid="classimage__transport_1_1_raw_subscriber"/>
-        <childnode refid="103" relation="public-inheritance">
+        <childnode refid="125" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="103">
+      <node id="125">
         <label>image_transport::SimpleSubscriberPlugin&lt; sensor_msgs::Image &gt;</label>
         <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="104" relation="public-inheritance">
+        <childnode refid="126" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="105">
+      <node id="127">
         <label>noncopyable</label>
       </node>
-      <node id="104">
+      <node id="126">
         <label>image_transport::SubscriberPlugin</label>
         <link refid="classimage__transport_1_1_subscriber_plugin"/>
-        <childnode refid="105" relation="private-inheritance">
+        <childnode refid="127" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="106">
+      <node id="128">
         <label>image_transport::RawSubscriber</label>
         <link refid="classimage__transport_1_1_raw_subscriber"/>
-        <childnode refid="107" relation="public-inheritance">
+        <childnode refid="129" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="107">
+      <node id="129">
         <label>image_transport::SimpleSubscriberPlugin&lt; sensor_msgs::Image &gt;</label>
         <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="108" relation="public-inheritance">
+        <childnode refid="130" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="109">
+      <node id="131">
         <label>noncopyable</label>
       </node>
-      <node id="108">
+      <node id="130">
         <label>image_transport::SubscriberPlugin</label>
         <link refid="classimage__transport_1_1_subscriber_plugin"/>
-        <childnode refid="109" relation="private-inheritance">
+        <childnode refid="131" relation="private-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

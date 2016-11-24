@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_imu_item" kind="class" prot="public">
+    <compoundname>msckf::ImuItem</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_imu_item_1aa14e9d1e337841a3971dcfe0033aab5f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImuItem::_device</definition>
+        <argsstring></argsstring>
+        <name>_device</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="109" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_imu_item_1aba7faf5251926476e7fd0d4171df97a5" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImuItem::_time</definition>
+        <argsstring></argsstring>
+        <name>_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="110" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_imu_item_1ac145ab092cc5dd7b21741a2a298fe09a" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.ImuItem::_value</definition>
+        <argsstring></argsstring>
+        <name>_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="111" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1a0a4c7f19f46f237e89669fa8c9ea43b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="103" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="103" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1ae408089f0f3b7be27c0e951ebd5e2190" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.__lt__</definition>
+        <argsstring></argsstring>
+        <name>__lt__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="113" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="113" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1a1142bdc6e7dc7a06bc16f6e359d0bb22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.__le__</definition>
+        <argsstring></argsstring>
+        <name>__le__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="116" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="116" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1abeeeda7fc9045aecfa4d700ec406d266" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.__gt__</definition>
+        <argsstring></argsstring>
+        <name>__gt__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="119" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="119" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1aef7d5c469fd651c4542dfc9552388a07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.__ge__</definition>
+        <argsstring></argsstring>
+        <name>__ge__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="122" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="122" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1a6acb545776a9fa7398760405c6d79c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.__eq__</definition>
+        <argsstring></argsstring>
+        <name>__eq__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="125" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="125" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1a70a0dfe1b2fcbf6eed7282e3bea63271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.__ne__</definition>
+        <argsstring></argsstring>
+        <name>__ne__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="128" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="128" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1a8546cab5c7c0821391278c48fda88fb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.device</definition>
+        <argsstring></argsstring>
+        <name>device</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="137" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="137" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1af1453674ea9cba40874df29d17621796" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="141" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="141" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1a70dbde6767fb3a7adebb1a6af0626aec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="145" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="145" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmsckf_1_1_imu_item_1af0283cdd3b9f291e9a3abcbadc7dcc61" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.ImuItem._compare</definition>
+        <argsstring></argsstring>
+        <name>_compare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="131" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="131" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="102" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="102" bodyend="149"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_imu_item_1a6acb545776a9fa7398760405c6d79c1a" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>__eq__</name></member>
+      <member refid="classmsckf_1_1_imu_item_1aef7d5c469fd651c4542dfc9552388a07" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>__ge__</name></member>
+      <member refid="classmsckf_1_1_imu_item_1abeeeda7fc9045aecfa4d700ec406d266" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>__gt__</name></member>
+      <member refid="classmsckf_1_1_imu_item_1a0a4c7f19f46f237e89669fa8c9ea43b1" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>__init__</name></member>
+      <member refid="classmsckf_1_1_imu_item_1a1142bdc6e7dc7a06bc16f6e359d0bb22" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>__le__</name></member>
+      <member refid="classmsckf_1_1_imu_item_1ae408089f0f3b7be27c0e951ebd5e2190" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>__lt__</name></member>
+      <member refid="classmsckf_1_1_imu_item_1a70a0dfe1b2fcbf6eed7282e3bea63271" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>__ne__</name></member>
+      <member refid="classmsckf_1_1_imu_item_1af0283cdd3b9f291e9a3abcbadc7dcc61" prot="private" virt="non-virtual"><scope>msckf::ImuItem</scope><name>_compare</name></member>
+      <member refid="classmsckf_1_1_imu_item_1aa14e9d1e337841a3971dcfe0033aab5f" prot="private" virt="non-virtual"><scope>msckf::ImuItem</scope><name>_device</name></member>
+      <member refid="classmsckf_1_1_imu_item_1aba7faf5251926476e7fd0d4171df97a5" prot="private" virt="non-virtual"><scope>msckf::ImuItem</scope><name>_time</name></member>
+      <member refid="classmsckf_1_1_imu_item_1ac145ab092cc5dd7b21741a2a298fe09a" prot="private" virt="non-virtual"><scope>msckf::ImuItem</scope><name>_value</name></member>
+      <member refid="classmsckf_1_1_imu_item_1a8546cab5c7c0821391278c48fda88fb3" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>device</name></member>
+      <member refid="classmsckf_1_1_imu_item_1af1453674ea9cba40874df29d17621796" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>time</name></member>
+      <member refid="classmsckf_1_1_imu_item_1a70dbde6767fb3a7adebb1a6af0626aec" prot="public" virt="non-virtual"><scope>msckf::ImuItem</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

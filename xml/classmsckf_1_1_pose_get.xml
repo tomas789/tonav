@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_pose_get" kind="class" prot="public">
+    <compoundname>msckf::PoseGet</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_pose_get_1a75b39f2276ee24bc71dbbd5ce43ec585" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.PoseGet::state</definition>
+        <argsstring></argsstring>
+        <name>state</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="232" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf_1_1_pose_get_1a3a5b9917934e12b4d6a98a95f87db759" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.PoseGet.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="231" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="231" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_pose_get_1aa67fbb72a16db07345b41a2d4ca6e9f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.PoseGet.__getitem__</definition>
+        <argsstring></argsstring>
+        <name>__getitem__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="234" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="234" bodyend="237"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="230" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="230" bodyend="238"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_pose_get_1aa67fbb72a16db07345b41a2d4ca6e9f6" prot="public" virt="non-virtual"><scope>msckf::PoseGet</scope><name>__getitem__</name></member>
+      <member refid="classmsckf_1_1_pose_get_1a3a5b9917934e12b4d6a98a95f87db759" prot="public" virt="non-virtual"><scope>msckf::PoseGet</scope><name>__init__</name></member>
+      <member refid="classmsckf_1_1_pose_get_1a75b39f2276ee24bc71dbbd5ce43ec585" prot="public" virt="non-virtual"><scope>msckf::PoseGet</scope><name>state</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf__test_1_1_test_numpy_quaternion" kind="class" prot="public">
+    <compoundname>msckf_test::TestNumpyQuaternion</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf__test_1_1_test_numpy_quaternion_1ac120e1e04eb3df181bbe9c6b3ebac999" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestNumpyQuaternion.test_multiply_by_unit_quaternion</definition>
+        <argsstring></argsstring>
+        <name>test_multiply_by_unit_quaternion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="9" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="9" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf__test_1_1_test_numpy_quaternion_1a48568c2d3071f0c3aa8db91ae2fefdc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf_test.TestNumpyQuaternion.test_element_order</definition>
+        <argsstring></argsstring>
+        <name>test_element_order</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="20" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="20" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="195">
+        <label>msckf_test.TestNumpyQuaternion</label>
+        <link refid="classmsckf__test_1_1_test_numpy_quaternion"/>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="196">
+        <label>unittest::TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="197">
+        <label>msckf_test.TestNumpyQuaternion</label>
+        <link refid="classmsckf__test_1_1_test_numpy_quaternion"/>
+        <childnode refid="198" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="198">
+        <label>unittest::TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" line="8" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf_test.py" bodystart="8" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classmsckf__test_1_1_test_numpy_quaternion_1a48568c2d3071f0c3aa8db91ae2fefdc8" prot="public" virt="non-virtual"><scope>msckf_test::TestNumpyQuaternion</scope><name>test_element_order</name></member>
+      <member refid="classmsckf__test_1_1_test_numpy_quaternion_1ac120e1e04eb3df181bbe9c6b3ebac999" prot="public" virt="non-virtual"><scope>msckf_test::TestNumpyQuaternion</scope><name>test_multiply_by_unit_quaternion</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

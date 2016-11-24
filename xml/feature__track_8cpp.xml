@@ -5,46 +5,46 @@
     <includes refid="general__exception_8h" local="yes">exceptions/general_exception.h</includes>
     <includes refid="feature__track_8h" local="yes">feature_track.h</includes>
     <incdepgraph>
-      <node id="486">
+      <node id="494">
         <label>feature_track.h</label>
         <link refid="feature__track_8h_source"/>
-        <childnode refid="487" relation="include">
+        <childnode refid="495" relation="include">
         </childnode>
-        <childnode refid="488" relation="include">
+        <childnode refid="496" relation="include">
         </childnode>
       </node>
-      <node id="483">
+      <node id="491">
         <label>string</label>
       </node>
-      <node id="485">
+      <node id="493">
         <label>exception</label>
       </node>
-      <node id="487">
+      <node id="495">
         <label>Eigen/Dense</label>
       </node>
-      <node id="482">
+      <node id="490">
         <label>exceptions/general_exception.h</label>
         <link refid="general__exception_8h_source"/>
-        <childnode refid="483" relation="include">
+        <childnode refid="491" relation="include">
         </childnode>
-        <childnode refid="484" relation="include">
+        <childnode refid="492" relation="include">
         </childnode>
       </node>
-      <node id="484">
+      <node id="492">
         <label>exceptions/base_exception.h</label>
         <link refid="base__exception_8h_source"/>
-        <childnode refid="485" relation="include">
+        <childnode refid="493" relation="include">
         </childnode>
       </node>
-      <node id="488">
+      <node id="496">
         <label>vector</label>
       </node>
-      <node id="481">
+      <node id="489">
         <label>/home/travis/build/tomas789/tonav/src/feature_track.cpp</label>
         <link refid="feature_track.cpp"/>
-        <childnode refid="482" relation="include">
+        <childnode refid="490" relation="include">
         </childnode>
-        <childnode refid="486" relation="include">
+        <childnode refid="494" relation="include">
         </childnode>
       </node>
     </incdepgraph>

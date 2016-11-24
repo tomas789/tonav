@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classmsckf_1_1_feature_track" kind="class" prot="public">
+    <compoundname>msckf::FeatureTrack</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsckf_1_1_feature_track_1a664793a76ba15a7c337eb848aed653b5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.FeatureTrack::first_image</definition>
+        <argsstring></argsstring>
+        <name>first_image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="469" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="469" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_feature_track_1a91d7ca320a1c0273410fbb4d16ded316" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.FeatureTrack::last_image</definition>
+        <argsstring></argsstring>
+        <name>last_image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="470" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="470" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsckf_1_1_feature_track_1aa6ac9af251f5d7886075ee3ed2c3d892" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msckf.FeatureTrack::pixel_coordinates</definition>
+        <argsstring></argsstring>
+        <name>pixel_coordinates</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="471" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="471" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsckf_1_1_feature_track_1aaf665104d4e01547cafe1042c17e9b79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.FeatureTrack.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="468" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="468" bodyend="472"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_feature_track_1a12f372278b1b14f7553540eb1db21f6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.FeatureTrack.next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="473" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="473" bodyend="476"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_feature_track_1a08861367ab5e5cce09ef93d2103ef875" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.FeatureTrack.track_length</definition>
+        <argsstring></argsstring>
+        <name>track_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="477" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="477" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsckf_1_1_feature_track_1a04d7bc326bd668bb206eaeb36c4355c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def msckf.FeatureTrack.get_pixel_coordinates_in_image</definition>
+        <argsstring></argsstring>
+        <name>get_pixel_coordinates_in_image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="480" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="480" bodyend="485"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/prototype/msckf.py" line="467" column="1" bodyfile="/home/travis/build/tomas789/tonav/prototype/msckf.py" bodystart="467" bodyend="486"/>
+    <listofallmembers>
+      <member refid="classmsckf_1_1_feature_track_1aaf665104d4e01547cafe1042c17e9b79" prot="public" virt="non-virtual"><scope>msckf::FeatureTrack</scope><name>__init__</name></member>
+      <member refid="classmsckf_1_1_feature_track_1a664793a76ba15a7c337eb848aed653b5" prot="public" virt="non-virtual"><scope>msckf::FeatureTrack</scope><name>first_image</name></member>
+      <member refid="classmsckf_1_1_feature_track_1a04d7bc326bd668bb206eaeb36c4355c9" prot="public" virt="non-virtual"><scope>msckf::FeatureTrack</scope><name>get_pixel_coordinates_in_image</name></member>
+      <member refid="classmsckf_1_1_feature_track_1a91d7ca320a1c0273410fbb4d16ded316" prot="public" virt="non-virtual"><scope>msckf::FeatureTrack</scope><name>last_image</name></member>
+      <member refid="classmsckf_1_1_feature_track_1a12f372278b1b14f7553540eb1db21f6f" prot="public" virt="non-virtual"><scope>msckf::FeatureTrack</scope><name>next</name></member>
+      <member refid="classmsckf_1_1_feature_track_1aa6ac9af251f5d7886075ee3ed2c3d892" prot="public" virt="non-virtual"><scope>msckf::FeatureTrack</scope><name>pixel_coordinates</name></member>
+      <member refid="classmsckf_1_1_feature_track_1a08861367ab5e5cce09ef93d2103ef875" prot="public" virt="non-virtual"><scope>msckf::FeatureTrack</scope><name>track_length</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
