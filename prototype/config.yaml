@@ -1,0 +1,59 @@
+orientation:
+  init: [1.0, 0.0, 0.0, 0.0]
+  sigma: [0.01, 0.01, 0.01]
+
+position:
+  init: [0.0, 0.0, 0.0]
+  sigma: [0.01, 0.01, 0.01]
+  
+velocity:
+  init: [0.0, 0.0, 0.0]
+  sigma: [0.001, 0.001, 0.001]
+  
+accelerometer_bias:
+  init: [0.1076844427, 0.0214301212, -0.0654328088]
+  sigma: [0.01, 0.01, 0.01]
+  
+gyroscope_bias:
+  init: [-0.0315657313, 0.0216422673, -0.0206373184]
+  sigma: [0.001, 0.001, 0.001]
+  
+gyroscope_shape:
+  init: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+  sigma: [0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02]
+  
+gyroscope_acceleration_sensitivity:
+  init: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  sigma: [0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001, 0.001]
+  
+accelerometer_shape:
+  init: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+  sigma: [0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02]
+  
+body_position_in_camera_frame:
+  init: [0.0, 0.0, 0.0]
+  sigma: [0.001, 0.001, 0.001]
+  
+focal_length:
+  init: [600.0, 600.0]
+  sigma: [9.0, 9.0]
+  
+optical_center:
+  init: [320, 240]
+  sigma: [11.0, 11.0]
+  
+radial_distortion:
+  init: [0.1, -0.4, 0.2]
+  sigma: [0.00001, 0.00001, 0.00001]
+  
+tangential_distortion:
+  init: [0.0, 0.0]
+  sigma: [0.000001, 0.000001]
+  
+camera_delay_time:
+  init: 0.0114
+  sigma: 0.01
+  
+camera_readout_time:
+  init: -0.03
+  sigma: 0.01
