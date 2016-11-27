@@ -69,36 +69,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="78">
+      <node id="80">
         <label>BaseException</label>
         <link refid="class_base_exception"/>
-        <childnode refid="79" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="77">
-        <label>ImpossibleException</label>
-        <link refid="class_impossible_exception"/>
-        <childnode refid="78" relation="public-inheritance">
+        <childnode refid="81" relation="public-inheritance">
         </childnode>
       </node>
       <node id="79">
+        <label>ImpossibleException</label>
+        <link refid="class_impossible_exception"/>
+        <childnode refid="80" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="81">
         <label>std::exception</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="81">
+      <node id="83">
         <label>BaseException</label>
         <link refid="class_base_exception"/>
-        <childnode refid="82" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="80">
-        <label>ImpossibleException</label>
-        <link refid="class_impossible_exception"/>
-        <childnode refid="81" relation="public-inheritance">
+        <childnode refid="84" relation="public-inheritance">
         </childnode>
       </node>
       <node id="82">
+        <label>ImpossibleException</label>
+        <link refid="class_impossible_exception"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="84">
         <label>std::exception</label>
       </node>
     </collaborationgraph>

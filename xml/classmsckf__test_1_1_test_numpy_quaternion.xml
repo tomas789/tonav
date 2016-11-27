@@ -36,17 +36,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="195">
-        <label>msckf_test.TestNumpyQuaternion</label>
-        <link refid="classmsckf__test_1_1_test_numpy_quaternion"/>
-        <childnode refid="196" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="196">
-        <label>unittest::TestCase</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="197">
         <label>msckf_test.TestNumpyQuaternion</label>
         <link refid="classmsckf__test_1_1_test_numpy_quaternion"/>
@@ -54,6 +43,17 @@
         </childnode>
       </node>
       <node id="198">
+        <label>unittest::TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="199">
+        <label>msckf_test.TestNumpyQuaternion</label>
+        <link refid="classmsckf__test_1_1_test_numpy_quaternion"/>
+        <childnode refid="200" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="200">
         <label>unittest::TestCase</label>
       </node>
     </collaborationgraph>

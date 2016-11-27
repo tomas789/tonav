@@ -8,39 +8,39 @@
     <includes local="no">boost/algorithm/string/join.hpp</includes>
     <includes local="no">vector</includes>
     <incdepgraph>
-      <node id="1127">
+      <node id="1129">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_common.cpp</label>
         <link refid="camera_common.cpp"/>
-        <childnode refid="1128" relation="include">
-        </childnode>
         <childnode refid="1130" relation="include">
-        </childnode>
-        <childnode refid="1131" relation="include">
         </childnode>
         <childnode refid="1132" relation="include">
         </childnode>
         <childnode refid="1133" relation="include">
         </childnode>
-      </node>
-      <node id="1130">
-        <label>boost/algorithm/string/classification.hpp</label>
-      </node>
-      <node id="1128">
-        <label>image_transport/camera_common.h</label>
-        <link refid="camera__common_8h_source"/>
-        <childnode refid="1129" relation="include">
+        <childnode refid="1134" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
         </childnode>
       </node>
-      <node id="1129">
-        <label>string</label>
+      <node id="1132">
+        <label>boost/algorithm/string/classification.hpp</label>
+      </node>
+      <node id="1130">
+        <label>image_transport/camera_common.h</label>
+        <link refid="camera__common_8h_source"/>
+        <childnode refid="1131" relation="include">
+        </childnode>
       </node>
       <node id="1131">
-        <label>boost/algorithm/string/split.hpp</label>
+        <label>string</label>
       </node>
       <node id="1133">
+        <label>boost/algorithm/string/split.hpp</label>
+      </node>
+      <node id="1135">
         <label>vector</label>
       </node>
-      <node id="1132">
+      <node id="1134">
         <label>boost/algorithm/string/join.hpp</label>
       </node>
     </incdepgraph>

@@ -101,17 +101,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="199">
-        <label>msckf_test.TestQuaternionToRotationMatrix</label>
-        <link refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix"/>
-        <childnode refid="200" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="200">
-        <label>TestCase</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="201">
         <label>msckf_test.TestQuaternionToRotationMatrix</label>
         <link refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix"/>
@@ -119,6 +108,17 @@
         </childnode>
       </node>
       <node id="202">
+        <label>TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="203">
+        <label>msckf_test.TestQuaternionToRotationMatrix</label>
+        <link refid="classmsckf__test_1_1_test_quaternion_to_rotation_matrix"/>
+        <childnode refid="204" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="204">
         <label>TestCase</label>
       </node>
     </collaborationgraph>

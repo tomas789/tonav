@@ -48,48 +48,48 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="135">
+      <node id="137">
         <label>boost::noncopyable</label>
       </node>
-      <node id="134">
+      <node id="136">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="135" relation="private-inheritance">
+        <childnode refid="137" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="133">
+      <node id="135">
         <label>image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="134" relation="public-inheritance">
+        <childnode refid="136" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="132">
+      <node id="134">
         <label>ResizedPublisher</label>
         <link refid="class_resized_publisher"/>
-        <childnode refid="133" relation="public-inheritance">
+        <childnode refid="135" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="139">
+      <node id="141">
         <label>boost::noncopyable</label>
       </node>
-      <node id="138">
+      <node id="140">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="139" relation="private-inheritance">
+        <childnode refid="141" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="137">
+      <node id="139">
         <label>image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="138" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="136">
+      <node id="138">
         <label>ResizedPublisher</label>
         <link refid="class_resized_publisher"/>
-        <childnode refid="137" relation="public-inheritance">
+        <childnode refid="139" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

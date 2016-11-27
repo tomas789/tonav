@@ -304,54 +304,54 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="110">
+      <node id="112">
         <label>image_transport::SimplePublisherPlugin&lt; sensor_msgs::Image &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="105" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="106">
-        <label>boost::noncopyable</label>
-      </node>
-      <node id="105">
-        <label>image_transport::PublisherPlugin</label>
-        <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="106" relation="private-inheritance">
+        <childnode refid="107" relation="public-inheritance">
         </childnode>
       </node>
       <node id="108">
-        <label>image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
-        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="105" relation="public-inheritance">
-        </childnode>
+        <label>boost::noncopyable</label>
       </node>
       <node id="107">
-        <label>image_transport::SimplePublisherPlugin&lt; M &gt;</label>
+        <label>image_transport::PublisherPlugin</label>
+        <link refid="classimage__transport_1_1_publisher_plugin"/>
+        <childnode refid="108" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>image_transport::SimplePublisherPlugin&lt; image_transport_tutorial::ResizedImage &gt;</label>
         <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
-        <childnode refid="105" relation="public-inheritance">
+        <childnode refid="107" relation="public-inheritance">
         </childnode>
       </node>
       <node id="109">
-        <label>ResizedPublisher</label>
-        <link refid="class_resized_publisher"/>
-        <childnode refid="108" relation="public-inheritance">
+        <label>image_transport::SimplePublisherPlugin&lt; M &gt;</label>
+        <link refid="classimage__transport_1_1_simple_publisher_plugin"/>
+        <childnode refid="107" relation="public-inheritance">
         </childnode>
       </node>
       <node id="111">
+        <label>ResizedPublisher</label>
+        <link refid="class_resized_publisher"/>
+        <childnode refid="110" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="113">
         <label>image_transport::RawPublisher</label>
         <link refid="classimage__transport_1_1_raw_publisher"/>
-        <childnode refid="110" relation="public-inheritance">
+        <childnode refid="112" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="113">
+      <node id="115">
         <label>boost::noncopyable</label>
       </node>
-      <node id="112">
+      <node id="114">
         <label>image_transport::PublisherPlugin</label>
         <link refid="classimage__transport_1_1_publisher_plugin"/>
-        <childnode refid="113" relation="private-inheritance">
+        <childnode refid="115" relation="private-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

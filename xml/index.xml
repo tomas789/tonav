@@ -191,6 +191,13 @@
   </compound>
   <compound refid="classpluginlib_1_1_class_loader" kind="class"><name>pluginlib::ClassLoader</name>
   </compound>
+  <compound refid="classestimate__imu__bias_1_1_estimate_imu_bias" kind="class"><name>estimate_imu_bias::EstimateImuBias</name>
+    <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1ac85a8cfa7a9b9940e7f6ee5cadda04a0" kind="variable"><name>data</name></member>
+    <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1a40e254ac7e33b9e00766e799c13bfc92" kind="function"><name>__init__</name></member>
+    <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1add0fb351b3990a7a5f48398dbd3398d1" kind="function"><name>callback</name></member>
+    <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1afb5640ffe2885c00f9374d30c282c4ee" kind="function"><name>print_results</name></member>
+    <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1a1a93b692dcc7d2a79ec9dee798fbad65" kind="function"><name>run</name></member>
+  </compound>
   <compound refid="classimage__transport_1_1_exception" kind="class"><name>image_transport::Exception</name>
     <member refid="classimage__transport_1_1_exception_1a84e9a474ba9e6037e383264d96cec958" kind="function"><name>Exception</name></member>
   </compound>
@@ -841,6 +848,9 @@
   </compound>
   <compound refid="namespacecv" kind="namespace"><name>cv</name>
   </compound>
+  <compound refid="namespaceestimate__imu__bias" kind="namespace"><name>estimate_imu_bias</name>
+    <member refid="namespaceestimate__imu__bias_1aa0ca916457de3c987c0763499ce930fa" kind="variable"><name>est</name></member>
+  </compound>
   <compound refid="namespaceimage__transport" kind="namespace"><name>image_transport</name>
     <member refid="namespaceimage__transport_1aba1ce07958b215055a96bc29247c6bd0" kind="typedef"><name>PubLoader</name></member>
     <member refid="namespaceimage__transport_1a7803c8d8a580e9c9fb972b339baccd0e" kind="typedef"><name>PubLoaderPtr</name></member>
@@ -969,6 +979,8 @@
   </compound>
   <compound refid="tonav__ros_8cpp" kind="file"><name>tonav_ros.cpp</name>
   </compound>
+  <compound refid="estimate__imu__bias_8py" kind="file"><name>estimate_imu_bias.py</name>
+  </compound>
   <compound refid="camera__common_8h" kind="file"><name>camera_common.h</name>
   </compound>
   <compound refid="camera__publisher_8h" kind="file"><name>camera_publisher.h</name>
@@ -1089,6 +1101,8 @@
   <compound refid="dir_dd0c4a7dcdf2b5cfb05e637c35244f94" kind="dir"><name>/home/travis/build/tomas789</name>
   </compound>
   <compound refid="dir_4877a4c3b23e5b6e88f2ac94ce08137f" kind="dir"><name>/home/travis/build/tomas789/tonav</name>
+  </compound>
+  <compound refid="dir_274e3e42e12ae15645e54194302cce0c" kind="dir"><name>/home/travis/build/tomas789/tonav/tools</name>
   </compound>
   <compound refid="dir_562d4c285a6168bf6757e75b1c715eba" kind="dir"><name>/home/travis/catkin_ws/src/image_common/image_transport/tutorial</name>
   </compound>

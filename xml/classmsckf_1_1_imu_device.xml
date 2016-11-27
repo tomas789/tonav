@@ -38,17 +38,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="87">
-        <label>msckf.ImuDevice</label>
-        <link refid="classmsckf_1_1_imu_device"/>
-        <childnode refid="88" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="88">
-        <label>Enum</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="89">
         <label>msckf.ImuDevice</label>
         <link refid="classmsckf_1_1_imu_device"/>
@@ -56,6 +45,17 @@
         </childnode>
       </node>
       <node id="90">
+        <label>Enum</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="91">
+        <label>msckf.ImuDevice</label>
+        <link refid="classmsckf_1_1_imu_device"/>
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="92">
         <label>Enum</label>
       </node>
     </collaborationgraph>

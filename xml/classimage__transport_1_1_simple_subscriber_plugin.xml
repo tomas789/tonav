@@ -199,36 +199,36 @@
 <listitem><para><ref refid="classimage__transport_1_1_subscriber_plugin_1a647dc0f6e0c34f0b4d8b809b3c679f88" kindref="member">getTransportName()</ref> from <ref refid="classimage__transport_1_1_subscriber_plugin" kindref="compound">SubscriberPlugin</ref></para></listitem><listitem><para><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1ae3fbeb43694289e50670d7050da82a1a" kindref="member">internalCallback()</ref> - processes a message and invoked the user Image callback if appropriate.</para></listitem></itemizedlist>
 </para><para>For access to the parameter server and name remappings, use <ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a700540fba60461092751c14d4ff27681" kindref="member">nh()</ref>.</para><para><ref refid="classimage__transport_1_1_simple_subscriber_plugin_1a02016ab17568754d5319ae6fd949e268" kindref="member">getTopicToSubscribe()</ref> controls the name of the internal communication topic. It defaults to &lt;base topic&gt;/&lt;transport name&gt;. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="156">
+      <node id="158">
         <label>image_transport::SimpleSubscriberPlugin&lt; M &gt;</label>
         <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="157" relation="public-inheritance">
+        <childnode refid="159" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="158">
+      <node id="160">
         <label>noncopyable</label>
       </node>
-      <node id="157">
+      <node id="159">
         <label>image_transport::SubscriberPlugin</label>
         <link refid="classimage__transport_1_1_subscriber_plugin"/>
-        <childnode refid="158" relation="private-inheritance">
+        <childnode refid="160" relation="private-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="159">
+      <node id="161">
         <label>image_transport::SimpleSubscriberPlugin&lt; M &gt;</label>
         <link refid="classimage__transport_1_1_simple_subscriber_plugin"/>
-        <childnode refid="160" relation="public-inheritance">
+        <childnode refid="162" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="161">
+      <node id="163">
         <label>noncopyable</label>
       </node>
-      <node id="160">
+      <node id="162">
         <label>image_transport::SubscriberPlugin</label>
         <link refid="classimage__transport_1_1_subscriber_plugin"/>
-        <childnode refid="161" relation="private-inheritance">
+        <childnode refid="163" relation="private-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

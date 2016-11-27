@@ -11,6 +11,7 @@ var hierarchy =
     [ "image_transport::CameraPublisher", "classimage__transport_1_1_camera_publisher.html", null ],
     [ "image_transport::CameraSubscriber", "classimage__transport_1_1_camera_subscriber.html", null ],
     [ "pluginlib::ClassLoader< T >", "classpluginlib_1_1_class_loader.html", null ],
+    [ "estimate_imu_bias.EstimateImuBias", "classestimate__imu__bias_1_1_estimate_imu_bias.html", null ],
     [ "exception", null, [
       [ "BaseException", "class_base_exception.html", [
         [ "CalibrationFileError", "class_calibration_file_error.html", null ],

@@ -8,86 +8,86 @@
     <includes local="no">boost/foreach.hpp</includes>
     <includes local="no">boost/algorithm/string/erase.hpp</includes>
     <incdepgraph>
-      <node id="1256">
+      <node id="1258">
         <label>image_transport/loader_fwds.h</label>
         <link refid="loader__fwds_8h_source"/>
       </node>
-      <node id="1259">
+      <node id="1261">
         <label>boost/foreach.hpp</label>
       </node>
-      <node id="1260">
+      <node id="1262">
         <label>boost/algorithm/string/erase.hpp</label>
       </node>
-      <node id="1251">
+      <node id="1253">
         <label>image_transport/single_subscriber_publisher.h</label>
         <link refid="single__subscriber__publisher_8h_source"/>
+        <childnode refid="1254" relation="include">
+        </childnode>
+        <childnode refid="1255" relation="include">
+        </childnode>
         <childnode refid="1252" relation="include">
         </childnode>
-        <childnode refid="1253" relation="include">
-        </childnode>
-        <childnode refid="1250" relation="include">
+      </node>
+      <node id="1257">
+        <label>stdexcept</label>
+      </node>
+      <node id="1252">
+        <label>sensor_msgs/Image.h</label>
+      </node>
+      <node id="1254">
+        <label>boost/noncopyable.hpp</label>
+      </node>
+      <node id="1256">
+        <label>image_transport/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="1257" relation="include">
         </childnode>
       </node>
       <node id="1255">
-        <label>stdexcept</label>
-      </node>
-      <node id="1250">
-        <label>sensor_msgs/Image.h</label>
-      </node>
-      <node id="1252">
-        <label>boost/noncopyable.hpp</label>
-      </node>
-      <node id="1254">
-        <label>image_transport/exception.h</label>
-        <link refid="exception_8h_source"/>
-        <childnode refid="1255" relation="include">
-        </childnode>
-      </node>
-      <node id="1253">
         <label>boost/function.hpp</label>
       </node>
-      <node id="1249">
+      <node id="1251">
         <label>ros/ros.h</label>
       </node>
-      <node id="1247">
+      <node id="1249">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/src/publisher.cpp</label>
         <link refid="publisher.cpp"/>
-        <childnode refid="1248" relation="include">
-        </childnode>
-        <childnode refid="1257" relation="include">
-        </childnode>
-        <childnode refid="1258" relation="include">
+        <childnode refid="1250" relation="include">
         </childnode>
         <childnode refid="1259" relation="include">
         </childnode>
         <childnode refid="1260" relation="include">
         </childnode>
+        <childnode refid="1261" relation="include">
+        </childnode>
+        <childnode refid="1262" relation="include">
+        </childnode>
       </node>
-      <node id="1248">
+      <node id="1250">
         <label>image_transport/publisher.h</label>
         <link refid="publisher_8h_source"/>
-        <childnode refid="1249" relation="include">
-        </childnode>
-        <childnode refid="1250" relation="include">
-        </childnode>
         <childnode refid="1251" relation="include">
         </childnode>
-        <childnode refid="1254" relation="include">
+        <childnode refid="1252" relation="include">
+        </childnode>
+        <childnode refid="1253" relation="include">
         </childnode>
         <childnode refid="1256" relation="include">
         </childnode>
+        <childnode refid="1258" relation="include">
+        </childnode>
       </node>
-      <node id="1258">
+      <node id="1260">
         <label>pluginlib/class_loader.h</label>
       </node>
-      <node id="1257">
+      <node id="1259">
         <label>image_transport/publisher_plugin.h</label>
         <link refid="publisher__plugin_8h_source"/>
-        <childnode refid="1249" relation="include">
-        </childnode>
-        <childnode refid="1250" relation="include">
-        </childnode>
         <childnode refid="1251" relation="include">
+        </childnode>
+        <childnode refid="1252" relation="include">
+        </childnode>
+        <childnode refid="1253" relation="include">
         </childnode>
       </node>
     </incdepgraph>

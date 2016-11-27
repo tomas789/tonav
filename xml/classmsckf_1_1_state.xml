@@ -489,17 +489,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="168">
-        <label>msckf.State</label>
-        <link refid="classmsckf_1_1_state"/>
-        <childnode refid="169" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="169">
-        <label>object</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="170">
         <label>msckf.State</label>
         <link refid="classmsckf_1_1_state"/>
@@ -507,6 +496,17 @@
         </childnode>
       </node>
       <node id="171">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="172">
+        <label>msckf.State</label>
+        <link refid="classmsckf_1_1_state"/>
+        <childnode refid="173" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="173">
         <label>object</label>
       </node>
     </collaborationgraph>

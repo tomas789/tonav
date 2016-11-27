@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classestimate__imu__bias_1_1_estimate_imu_bias" kind="class" prot="public">
+    <compoundname>estimate_imu_bias::EstimateImuBias</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classestimate__imu__bias_1_1_estimate_imu_bias_1ac85a8cfa7a9b9940e7f6ee5cadda04a0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>estimate_imu_bias.EstimateImuBias::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" line="7" column="1" bodyfile="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classestimate__imu__bias_1_1_estimate_imu_bias_1a40e254ac7e33b9e00766e799c13bfc92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def estimate_imu_bias.EstimateImuBias.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" line="6" column="1" bodyfile="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" bodystart="6" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classestimate__imu__bias_1_1_estimate_imu_bias_1add0fb351b3990a7a5f48398dbd3398d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def estimate_imu_bias.EstimateImuBias.callback</definition>
+        <argsstring></argsstring>
+        <name>callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" line="9" column="1" bodyfile="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" bodystart="9" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="classestimate__imu__bias_1_1_estimate_imu_bias_1afb5640ffe2885c00f9374d30c282c4ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def estimate_imu_bias.EstimateImuBias.print_results</definition>
+        <argsstring></argsstring>
+        <name>print_results</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" line="14" column="1" bodyfile="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" bodystart="14" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classestimate__imu__bias_1_1_estimate_imu_bias_1a1a93b692dcc7d2a79ec9dee798fbad65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def estimate_imu_bias.EstimateImuBias.run</definition>
+        <argsstring></argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" line="31" column="1" bodyfile="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" bodystart="31" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" line="5" column="1" bodyfile="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" bodystart="5" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1a40e254ac7e33b9e00766e799c13bfc92" prot="public" virt="non-virtual"><scope>estimate_imu_bias::EstimateImuBias</scope><name>__init__</name></member>
+      <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1add0fb351b3990a7a5f48398dbd3398d1" prot="public" virt="non-virtual"><scope>estimate_imu_bias::EstimateImuBias</scope><name>callback</name></member>
+      <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1ac85a8cfa7a9b9940e7f6ee5cadda04a0" prot="public" virt="non-virtual"><scope>estimate_imu_bias::EstimateImuBias</scope><name>data</name></member>
+      <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1afb5640ffe2885c00f9374d30c282c4ee" prot="public" virt="non-virtual"><scope>estimate_imu_bias::EstimateImuBias</scope><name>print_results</name></member>
+      <member refid="classestimate__imu__bias_1_1_estimate_imu_bias_1a1a93b692dcc7d2a79ec9dee798fbad65" prot="public" virt="non-virtual"><scope>estimate_imu_bias::EstimateImuBias</scope><name>run</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

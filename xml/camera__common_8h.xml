@@ -7,36 +7,36 @@
     <includedby refid="camera__publisher_8cpp" local="yes">/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp</includedby>
     <includedby refid="camera__subscriber_8cpp" local="yes">/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp</includedby>
     <incdepgraph>
-      <node id="812">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_common.h</label>
-        <link refid="camera_common.h"/>
-        <childnode refid="813" relation="include">
-        </childnode>
-      </node>
-      <node id="813">
-        <label>string</label>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="815">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_common.cpp</label>
-        <link refid="camera__common_8cpp_source"/>
-      </node>
       <node id="814">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_common.h</label>
         <link refid="camera_common.h"/>
         <childnode refid="815" relation="include">
         </childnode>
-        <childnode refid="816" relation="include">
-        </childnode>
-        <childnode refid="817" relation="include">
-        </childnode>
+      </node>
+      <node id="815">
+        <label>string</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="817">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_common.cpp</label>
+        <link refid="camera__common_8cpp_source"/>
       </node>
       <node id="816">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/camera_common.h</label>
+        <link refid="camera_common.h"/>
+        <childnode refid="817" relation="include">
+        </childnode>
+        <childnode refid="818" relation="include">
+        </childnode>
+        <childnode refid="819" relation="include">
+        </childnode>
+      </node>
+      <node id="818">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp</label>
         <link refid="camera__publisher_8cpp_source"/>
       </node>
-      <node id="817">
+      <node id="819">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp</label>
         <link refid="camera__subscriber_8cpp_source"/>
       </node>

@@ -5,60 +5,60 @@
     <includes refid="simple__subscriber__plugin_8h" local="yes">image_transport/simple_subscriber_plugin.h</includes>
     <includedby refid="src_2manifest_8cpp" local="yes">/home/travis/catkin_ws/src/image_common/image_transport/src/manifest.cpp</includedby>
     <incdepgraph>
-      <node id="980">
+      <node id="982">
         <label>sensor_msgs/Image.h</label>
       </node>
-      <node id="981">
+      <node id="983">
         <label>boost/noncopyable.hpp</label>
       </node>
-      <node id="978">
+      <node id="980">
         <label>image_transport/subscriber_plugin.h</label>
         <link refid="subscriber__plugin_8h_source"/>
-        <childnode refid="979" relation="include">
-        </childnode>
-        <childnode refid="980" relation="include">
-        </childnode>
         <childnode refid="981" relation="include">
         </childnode>
         <childnode refid="982" relation="include">
         </childnode>
+        <childnode refid="983" relation="include">
+        </childnode>
+        <childnode refid="984" relation="include">
+        </childnode>
       </node>
-      <node id="982">
+      <node id="984">
         <label>image_transport/transport_hints.h</label>
         <link refid="transport__hints_8h_source"/>
+        <childnode refid="981" relation="include">
+        </childnode>
+      </node>
+      <node id="981">
+        <label>ros/ros.h</label>
+      </node>
+      <node id="985">
+        <label>boost/scoped_ptr.hpp</label>
+      </node>
+      <node id="978">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h</label>
+        <link refid="raw_subscriber.h"/>
         <childnode refid="979" relation="include">
         </childnode>
       </node>
       <node id="979">
-        <label>ros/ros.h</label>
-      </node>
-      <node id="983">
-        <label>boost/scoped_ptr.hpp</label>
-      </node>
-      <node id="976">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h</label>
-        <link refid="raw_subscriber.h"/>
-        <childnode refid="977" relation="include">
-        </childnode>
-      </node>
-      <node id="977">
         <label>image_transport/simple_subscriber_plugin.h</label>
         <link refid="simple__subscriber__plugin_8h_source"/>
-        <childnode refid="978" relation="include">
+        <childnode refid="980" relation="include">
         </childnode>
-        <childnode refid="983" relation="include">
+        <childnode refid="985" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="985">
+      <node id="987">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/src/manifest.cpp</label>
         <link refid="src_2manifest_8cpp_source"/>
       </node>
-      <node id="984">
+      <node id="986">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/raw_subscriber.h</label>
         <link refid="raw_subscriber.h"/>
-        <childnode refid="985" relation="include">
+        <childnode refid="987" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

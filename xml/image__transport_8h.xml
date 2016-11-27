@@ -16,138 +16,134 @@
     <includedby refid="navigator_8cpp" local="no">/home/travis/build/tomas789/tonav/src/navigator.cpp</includedby>
     <includedby refid="tonav__ros_8cpp" local="no">/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</includedby>
     <incdepgraph>
-      <node id="885">
+      <node id="887">
         <label>image_transport/loader_fwds.h</label>
         <link refid="loader__fwds_8h_source"/>
       </node>
-      <node id="889">
+      <node id="891">
         <label>sensor_msgs/CameraInfo.h</label>
       </node>
-      <node id="888">
+      <node id="890">
         <label>image_transport/camera_publisher.h</label>
         <link refid="camera__publisher_8h_source"/>
-        <childnode refid="878" relation="include">
-        </childnode>
-        <childnode refid="879" relation="include">
-        </childnode>
-        <childnode refid="889" relation="include">
-        </childnode>
         <childnode refid="880" relation="include">
         </childnode>
-      </node>
-      <node id="880">
-        <label>image_transport/single_subscriber_publisher.h</label>
-        <link refid="single__subscriber__publisher_8h_source"/>
         <childnode refid="881" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
         </childnode>
         <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="879" relation="include">
+      </node>
+      <node id="882">
+        <label>image_transport/single_subscriber_publisher.h</label>
+        <link refid="single__subscriber__publisher_8h_source"/>
+        <childnode refid="883" relation="include">
+        </childnode>
+        <childnode refid="884" relation="include">
+        </childnode>
+        <childnode refid="881" relation="include">
         </childnode>
       </node>
-      <node id="884">
+      <node id="886">
         <label>stdexcept</label>
       </node>
-      <node id="879">
+      <node id="881">
         <label>sensor_msgs/Image.h</label>
       </node>
-      <node id="881">
+      <node id="883">
         <label>boost/noncopyable.hpp</label>
       </node>
-      <node id="887">
+      <node id="889">
         <label>image_transport/transport_hints.h</label>
         <link refid="transport__hints_8h_source"/>
-        <childnode refid="878" relation="include">
+        <childnode refid="880" relation="include">
         </childnode>
       </node>
-      <node id="876">
+      <node id="878">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/image_transport.h</label>
         <link refid="image_transport.h"/>
-        <childnode refid="877" relation="include">
-        </childnode>
-        <childnode refid="886" relation="include">
+        <childnode refid="879" relation="include">
         </childnode>
         <childnode refid="888" relation="include">
         </childnode>
         <childnode refid="890" relation="include">
         </childnode>
-      </node>
-      <node id="883">
-        <label>image_transport/exception.h</label>
-        <link refid="exception_8h_source"/>
-        <childnode refid="884" relation="include">
+        <childnode refid="892" relation="include">
         </childnode>
       </node>
-      <node id="890">
+      <node id="885">
+        <label>image_transport/exception.h</label>
+        <link refid="exception_8h_source"/>
+        <childnode refid="886" relation="include">
+        </childnode>
+      </node>
+      <node id="892">
         <label>image_transport/camera_subscriber.h</label>
         <link refid="camera__subscriber_8h_source"/>
-        <childnode refid="878" relation="include">
+        <childnode refid="880" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+        <childnode refid="881" relation="include">
         </childnode>
         <childnode refid="889" relation="include">
         </childnode>
-        <childnode refid="879" relation="include">
-        </childnode>
-        <childnode refid="887" relation="include">
-        </childnode>
       </node>
-      <node id="882">
+      <node id="884">
         <label>boost/function.hpp</label>
       </node>
-      <node id="886">
+      <node id="888">
         <label>image_transport/subscriber.h</label>
         <link refid="subscriber_8h_source"/>
-        <childnode refid="878" relation="include">
+        <childnode refid="880" relation="include">
         </childnode>
-        <childnode refid="879" relation="include">
+        <childnode refid="881" relation="include">
+        </childnode>
+        <childnode refid="889" relation="include">
+        </childnode>
+        <childnode refid="885" relation="include">
         </childnode>
         <childnode refid="887" relation="include">
         </childnode>
-        <childnode refid="883" relation="include">
-        </childnode>
-        <childnode refid="885" relation="include">
-        </childnode>
       </node>
-      <node id="878">
+      <node id="880">
         <label>ros/ros.h</label>
       </node>
-      <node id="877">
+      <node id="879">
         <label>image_transport/publisher.h</label>
         <link refid="publisher_8h_source"/>
-        <childnode refid="878" relation="include">
-        </childnode>
-        <childnode refid="879" relation="include">
-        </childnode>
         <childnode refid="880" relation="include">
         </childnode>
-        <childnode refid="883" relation="include">
+        <childnode refid="881" relation="include">
+        </childnode>
+        <childnode refid="882" relation="include">
         </childnode>
         <childnode refid="885" relation="include">
+        </childnode>
+        <childnode refid="887" relation="include">
         </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="892">
+      <node id="894">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/subscriber_filter.h</label>
         <link refid="subscriber__filter_8h_source"/>
-        <childnode refid="893" relation="include">
+        <childnode refid="895" relation="include">
         </childnode>
       </node>
-      <node id="897">
+      <node id="899">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_publisher.cpp</label>
         <link refid="my__publisher_8cpp_source"/>
       </node>
-      <node id="894">
+      <node id="896">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_publisher.cpp</label>
         <link refid="camera__publisher_8cpp_source"/>
       </node>
-      <node id="891">
+      <node id="893">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/include/image_transport/image_transport.h</label>
         <link refid="image_transport.h"/>
-        <childnode refid="892" relation="include">
-        </childnode>
         <childnode refid="894" relation="include">
-        </childnode>
-        <childnode refid="895" relation="include">
         </childnode>
         <childnode refid="896" relation="include">
         </childnode>
@@ -157,44 +153,48 @@
         </childnode>
         <childnode refid="899" relation="include">
         </childnode>
-        <childnode refid="902" relation="include">
-        </childnode>
-        <childnode refid="901" relation="include">
-        </childnode>
-      </node>
-      <node id="898">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_subscriber.cpp</label>
-        <link refid="my__subscriber_8cpp_source"/>
-      </node>
-      <node id="895">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp</label>
-        <link refid="image__transport_8cpp_source"/>
-      </node>
-      <node id="902">
-        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
-        <link refid="navigator_8cpp_source"/>
-      </node>
-      <node id="900">
-        <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
-        <link refid="main_8cpp_source"/>
-      </node>
-      <node id="896">
-        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/republish.cpp</label>
-        <link refid="republish_8cpp_source"/>
-      </node>
-      <node id="899">
-        <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
-        <link refid="tonav__ros_8h_source"/>
         <childnode refid="900" relation="include">
         </childnode>
         <childnode refid="901" relation="include">
         </childnode>
+        <childnode refid="904" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+      </node>
+      <node id="900">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/tutorial/src/my_subscriber.cpp</label>
+        <link refid="my__subscriber_8cpp_source"/>
+      </node>
+      <node id="897">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/image_transport.cpp</label>
+        <link refid="image__transport_8cpp_source"/>
+      </node>
+      <node id="904">
+        <label>/home/travis/build/tomas789/tonav/src/navigator.cpp</label>
+        <link refid="navigator_8cpp_source"/>
+      </node>
+      <node id="902">
+        <label>/home/travis/build/tomas789/tonav/src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="898">
+        <label>/home/travis/catkin_ws/src/image_common/image_transport/src/republish.cpp</label>
+        <link refid="republish_8cpp_source"/>
       </node>
       <node id="901">
+        <label>/home/travis/build/tomas789/tonav/include/tonav_ros.h</label>
+        <link refid="tonav__ros_8h_source"/>
+        <childnode refid="902" relation="include">
+        </childnode>
+        <childnode refid="903" relation="include">
+        </childnode>
+      </node>
+      <node id="903">
         <label>/home/travis/build/tomas789/tonav/src/tonav_ros.cpp</label>
         <link refid="tonav__ros_8cpp_source"/>
       </node>
-      <node id="893">
+      <node id="895">
         <label>/home/travis/catkin_ws/src/image_common/image_transport/src/camera_subscriber.cpp</label>
         <link refid="camera__subscriber_8cpp_source"/>
       </node>

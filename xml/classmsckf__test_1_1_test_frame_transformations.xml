@@ -36,17 +36,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="192">
-        <label>TestCase</label>
-      </node>
-      <node id="191">
-        <label>msckf_test.TestFrameTransformations</label>
-        <link refid="classmsckf__test_1_1_test_frame_transformations"/>
-        <childnode refid="192" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="194">
         <label>TestCase</label>
       </node>
@@ -54,6 +43,17 @@
         <label>msckf_test.TestFrameTransformations</label>
         <link refid="classmsckf__test_1_1_test_frame_transformations"/>
         <childnode refid="194" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="196">
+        <label>TestCase</label>
+      </node>
+      <node id="195">
+        <label>msckf_test.TestFrameTransformations</label>
+        <link refid="classmsckf__test_1_1_test_frame_transformations"/>
+        <childnode refid="196" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

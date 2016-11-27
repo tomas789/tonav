@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="namespaceestimate__imu__bias" kind="namespace">
+    <compoundname>estimate_imu_bias</compoundname>
+    <innerclass refid="classestimate__imu__bias_1_1_estimate_imu_bias" prot="public">estimate_imu_bias::EstimateImuBias</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceestimate__imu__bias_1aa0ca916457de3c987c0763499ce930fa" prot="public" static="no" mutable="no">
+        <type>tuple</type>
+        <definition>tuple estimate_imu_bias.est</definition>
+        <argsstring></argsstring>
+        <name>est</name>
+        <initializer>= <ref refid="classestimate__imu__bias_1_1_estimate_imu_bias" kindref="compound">EstimateImuBias</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" line="39" column="1" bodyfile="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/travis/build/tomas789/tonav/tools/estimate_imu_bias.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

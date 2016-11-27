@@ -102,14 +102,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="65">
+      <node id="67">
         <label>image_transport::CameraPublisher::Impl</label>
         <link refid="structimage__transport_1_1_camera_publisher_1_1_impl"/>
-        <childnode refid="66" relation="usage">
+        <childnode refid="68" relation="usage">
           <edgelabel>image_pub_</edgelabel>
         </childnode>
       </node>
-      <node id="66">
+      <node id="68">
         <label>image_transport::Publisher</label>
         <link refid="classimage__transport_1_1_publisher"/>
       </node>

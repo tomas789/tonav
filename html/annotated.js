@@ -1,5 +1,8 @@
 var annotated =
 [
+    [ "estimate_imu_bias", null, [
+      [ "EstimateImuBias", "classestimate__imu__bias_1_1_estimate_imu_bias.html", "classestimate__imu__bias_1_1_estimate_imu_bias" ]
+    ] ],
     [ "image_transport", null, [
       [ "CameraPublisher", "classimage__transport_1_1_camera_publisher.html", "classimage__transport_1_1_camera_publisher" ],
       [ "CameraSubscriber", "classimage__transport_1_1_camera_subscriber.html", "classimage__transport_1_1_camera_subscriber" ],
