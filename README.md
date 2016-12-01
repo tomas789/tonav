@@ -32,6 +32,8 @@ Each bag file is quite large because it contains laser scans. They are not neede
 
 `$ rosbag filter 2011-01-18-06-37-58.bag pr2.bag 'topic in ("/wide_stereo/left/image_rect", "/wide_stereo/left/camera_info", "/torso_lift    _imu/data", "/tf", "/robot_pose_ekf/odom_combined")'`
 
+Another dataset I use is [The KITTI Vision Benchmark Suite](http://www.cvlibs.net/datasets/kitti/). It has accurate IMU sensor and data are provided at relatively low frequency which simplyfies development a lot. Because I was not able to find good tool for replaying this dataset in ROS, I've created one. It is called [kitti2bag](https://github.com/tomas789/kitti2bag). It is written in Python and it is very simple to use. It converts raw dataset files into ROS bag files which you can play any time at any speed. 
+
 By the way. Can you believe how hard it is to find publically available bagfile that is recorded using some cheap hardware? C'mon!
 
 ## Live data from iOS
