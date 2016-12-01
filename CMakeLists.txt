@@ -106,7 +106,6 @@ if(DOXYGEN_FOUND)
 endif(DOXYGEN_FOUND)
 
 if(CATKIN_ENABLE_TESTING)
-  find_package(gmock REQUIRED)
   find_package(rostest REQUIRED)
   SET(TEST_FILES
     test/body_state_test.cpp
