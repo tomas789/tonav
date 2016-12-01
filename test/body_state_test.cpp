@@ -4,8 +4,6 @@
 #include "body_state.h"
 #include "calibration.h"
 
-using ::testing::Return;
-
 class MockCalibration : public Calibration {
 public:
     friend class BodyStateNoMovementTest;
