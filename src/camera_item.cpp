@@ -7,36 +7,36 @@
 #include "calibration.h"
 #include "exceptions/general_exception.h"
 
-CameraItem CameraItem::fromString(std::string line) {
-    CameraItem item;
-    std::size_t pos = 0;
-    for (int i = 0; i < 2; ++i) {
-        if (pos == std::string::npos) {
-            throw GeneralException("Failed parse camera data: Expected 2 columns. Got less.");
-        }
-        std::size_t pos_end = line.find(';', pos);
-        std::string s = line.substr(pos, pos_end - pos);
-        switch (i) {
-            case 0:
-                if (!Calibration::tryParseDouble(s, item.time_)) {
-                    throw GeneralException("Failed parse camera data: Unable to parse as double " + s);
-                }
-                break;
-            case 1:
-                item.file_name_ = s;
-                break;
-            default:
-                throw GeneralException("Failed parse camera data: Expected 2 columns. Got more.");
-        }
-        pos = pos_end + 1;
-    }
-    return item;
+CameraItem::CameraItem() : is_valid_(false) {
+}
+
+CameraItem::CameraItem(double time, cv::Mat image) : is_valid_(true) {
+    time_ = time;
+    image_ = image;
+    was_processed_ = false;
+}
+
+CameraItem::operator bool() const {
+    return is_valid_;
+}
+
+void CameraItem::setIsProcessed() {
+    assert(was_processed_ == false);
+    was_processed_ = true;
+}
+
+bool CameraItem::wasProcessed() const {
+    return was_processed_;
 }
 
 double CameraItem::getTime() const {
     return time_;
 }
 
-std::string CameraItem::getFileName() const {
-    return file_name_;
+cv::Mat& CameraItem::getImage() {
+    return image_;
+}
+
+const cv::Mat& CameraItem::getImage() const {
+    return image_;
 }

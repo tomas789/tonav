@@ -10,87 +10,71 @@
 #include <vector>
 
 #include "body_state.h"
+#include "calibration.h"
 #include "camera_pose.h"
 #include "camera_pose_buffer.h"
 
+class Filter;
+
+/**
+ * @brief Filter state \f$ \mathbf{x}_k \f$.
+ */
 class FilterState {
 public:
-    using StateType = Eigen::Matrix<double, 57, 1>;
+    friend class Filter;
+    friend std::ostream& operator<<(std::ostream&, FilterState&);
+
+    FilterState(std::shared_ptr<const Calibration> caliration);
     
-    FilterState(int max_camera_poses);
-    FilterState(const FilterState& other) = default;
-    FilterState(FilterState&& other) = default;
-    
-    FilterState& operator= (const FilterState& other) = default;
-    FilterState& operator= (FilterState&& other) = default;
-    
-    BodyState& getBodyStateRef();
-    const BodyState& getBodyStateRef() const;
+    double time() const;
 
-    Eigen::Block<BodyState::BodyStateType, 4, 1> getRotationBlock();
-    Eigen::Quaterniond getRotationQuaternion();
-    void setRotationQuaternion(const Eigen::Quaterniond& quat);
-    Eigen::Block<BodyState::BodyStateType, 3, 1> getPositionBlock();
-    Eigen::Block<BodyState::BodyStateType, 3, 1> getVelocityBlock();
-    Eigen::Block<BodyState::BodyStateType, 3, 1> getAccelerometerBiasBlock();
-    Eigen::Block<BodyState::BodyStateType, 3, 1> getGyroscopeBiasBlock();
-
-    Eigen::Block<StateType, 9, 1> getGyroscopeShapeVectorizedBlock();
-    Eigen::Block<StateType, 9, 1> getGSensitivityVectorizedBlock();
-    Eigen::Block<StateType, 9, 1> getAccelerometerShapeVectorizedBlock();
-
-    Eigen::Block<StateType, 3, 1> getCameraToBodyOffsetBlock();
-
-    double& getFocalLengthXRef();
-    double& getFocalLengthYRef();
-    double& getOpticalCenterXRef();
-    double& getOpticalCenterYRef();
-
-    Eigen::Block<StateType, 3, 1> getRadialDistortionParametersBlock();
-    Eigen::Block<StateType, 2, 1> getTangentialDistortionParametersBlock();
-
-    double& getCameraDelayTimeRef();
-    double& getCameraReadoutTimeRef();
-
-    Eigen::Block<Eigen::Vector3d, 3, 1> getRotationEstimateBlock();
-    Eigen::Block<Eigen::Vector3d, 3, 1> getAccelerationEstimateBlock();
-
-    Eigen::Quaterniond getRotationToThisFrame();
-    void setRotationToThisFrame(const Eigen::Quaterniond& quat);
-
-    std::ostream& uglyPrint(std::ostream& out) const;
-
-    FilterState deriveNewStateForImuPropagation() const;
+    const Eigen::Quaterniond& getOrientationInGlobalFrame() const;
+    const Eigen::Vector3d& getPositionInGlobalFrame() const;
+    const Eigen::Vector3d& getVelocityInGlobalFrame() const;
 
     CameraPoseBuffer& poses();
+    const CameraPoseBuffer& poses() const;
 private:
+    /**
+     * Calibration is used to:
+     *  1/ determine maximum number of camera poses stored in filter state
+     *  2/ initialize first `BodyState` instance using
+     */
+    std::shared_ptr<const Calibration> calibration_;
+
     /** @brief Contains body pose */
-    BodyState body_state_;
-    
+    std::shared_ptr<BodyState> body_state_;
+
+    Eigen::Vector3d bias_accelerometer_;
+
+    Eigen::Vector3d bias_gyroscope_;
+
     /** @brief \f$T_g\f$ */
     Eigen::Matrix3d gyroscope_shape_;
     
     /** @brief \f$T_s\f$ */
-    Eigen::Matrix3d g_sensitivity_;
+    Eigen::Matrix3d gyroscope_acceleration_sensitivity_;
     
     /** @brief \f$T_a\f$ */
     Eigen::Matrix3d accelerometer_shape_;
+
+    Eigen::Vector3d position_of_body_in_camera_;
+
+    Eigen::Vector2d focal_point_;
+
+    Eigen::Vector2d optical_center_;
+
+    Eigen::Vector3d radial_distortion_;
+
+    Eigen::Vector2d tangential_distortion_;
+
+    double camera_delay_;
+
+    double camera_readout_;
     
     /** @brief All camera poses */
     CameraPoseBuffer poses_;
-    
-    /**
-     * @birief Filter state except body pose and camera poses
-     *
-     * @deprecated
-     */
-    StateType state_;
-    
-    Eigen::Quaterniond rotation_to_this_frame_;
-    Eigen::Vector3d rotation_estimate_;
-    Eigen::Vector3d acceleration_estimate_;
 
-    
 };
 
 std::ostream& operator<< (std::ostream& out, FilterState& state);

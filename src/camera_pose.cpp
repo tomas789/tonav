@@ -4,17 +4,13 @@
 
 #include "camera_pose.h"
 
+#include <memory>
 
-CameraPose::CameraPose() {
+#include "body_state.h"
+#include "filter.h"
 
-}
-
-CameraPose::CameraPose(std::size_t pose_id) {
-    pose_id_ = pose_id;
-}
-
-std::size_t CameraPose::poseId() const {
-    return pose_id_;
+CameraPose::CameraPose(const BodyState& body_state) {
+    body_state_ = std::make_shared<BodyState>(body_state);
 }
 
 std::size_t CameraPose::getActiveFeaturesCount() const {
@@ -33,20 +29,55 @@ void CameraPose::decreaseActiveFeaturesCount(int feature_id) {
     features_active_ -= 1;
 }
 
-Eigen::Block<CameraPose::CameraPoseType, 4, 1> CameraPose::getRotationForBodyPoseBlock() {
-    return camera_pose_.block<4, 1>(0, 0);
+BodyState& CameraPose::getBodyState() {
+    return *body_state_;
 }
 
-Eigen::Block<CameraPose::CameraPoseType, 3, 1> CameraPose::getPositionForBodyPoseBlock() {
-    return camera_pose_.block<3, 1>(4, 0);
+const BodyState& CameraPose::getBodyState() const {
+    return *body_state_;
 }
 
-Eigen::Block<CameraPose::CameraPoseType, 3, 1> CameraPose::getVelocityForBodyPoseBlock() {
-    return camera_pose_.block<3, 1>(7, 0);
+double CameraPose::time() const {
+    return body_state_->time();
 }
 
-bool CameraPose::isValid() const {
-    return pose_id_ != std::numeric_limits<std::size_t>::max() && features_active_ > 0;
+const Eigen::Quaterniond& CameraPose::getBodyOrientationInGlobalFrame() const {
+    return body_state_->getOrientationInGlobalFrame();
+}
+
+Eigen::Quaterniond CameraPose::getCameraOrientationInGlobalFrame(const Filter& filter) const {
+    Eigen::Quaterniond q_C_B = filter.getBodyToCameraRotation();
+    Eigen::Quaterniond q_B_G = getBodyOrientationInGlobalFrame();
+    return q_C_B * q_B_G;
+}
+
+const Eigen::Vector3d& CameraPose::getBodyPositionInGlobalFrame() const {
+    return body_state_->getPositionInGlobalFrame();
+}
+
+Eigen::Vector3d CameraPose::getCameraPositionInGlobalFrame(const Filter& filter) const {
+    Eigen::Quaterniond q_G_C = getCameraOrientationInGlobalFrame(filter);
+    Eigen::Vector3d p_B_G = body_state_->getPositionInGlobalFrame();
+    Eigen::Vector3d p_B_C = filter.getPositionOfBodyInCameraFrame();
+    return p_B_G - q_G_C.toRotationMatrix() * p_B_C;
+}
+
+const Eigen::Vector3d& CameraPose::getBodyVelocityInGlobalFrame() const {
+    return body_state_->getVelocityInGlobalFrame();
+}
+
+Eigen::Quaterniond CameraPose::getRotationToOtherPose(const CameraPose& other, const Filter& filter) const {
+    Eigen::Quaterniond q_Cto_G = other.getCameraOrientationInGlobalFrame(filter);
+    Eigen::Quaterniond q_Cfrom_G = getCameraOrientationInGlobalFrame(filter);
+    return q_Cto_G * q_Cfrom_G.conjugate();
+}
+
+Eigen::Vector3d CameraPose::getPositionOfAnotherPose(const CameraPose& other, const Filter& filter) const {
+    Eigen::Quaterniond q_Cfrom_G = getCameraOrientationInGlobalFrame(filter);
+    Eigen::Matrix3d R_Cfrom_G = q_Cfrom_G.toRotationMatrix();
+    Eigen::Vector3d p_Cto_G = other.getCameraPositionInGlobalFrame(filter);
+    Eigen::Vector3d p_Cfrom_G = getCameraPositionInGlobalFrame(filter);
+    return R_Cfrom_G * (p_Cto_G - p_Cfrom_G);
 }
 
 void CameraPose::rememberFeatureId(int feature_id) {

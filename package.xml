@@ -20,6 +20,8 @@
     <build_depend>eigen</build_depend>
     <build_depend>tf2_ros</build_depend>
 
+    <test_depend>gtest</test_depend>
+
     <run_depend>cmake_modules</run_depend>
     <run_depend>roscpp</run_depend>
     <run_depend>message_runtime</run_depend>

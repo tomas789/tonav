@@ -13,15 +13,16 @@
 #include "exceptions/impossible_exception.h"
 #include "feature_track.h"
 
-FeatureTracker::FeatureTracker() {
+FeatureTracker::FeatureTracker(int nfeatures_to_track) {
     detector_ = cv::FeatureDetector::create("ORB");
+    detector_->set("nFeatures", nfeatures_to_track);
     extractor_ = cv::DescriptorExtractor::create("ORB");
     matcher_ = cv::DescriptorMatcher::create("BruteForce-Hamming");
 }
 
 FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_list& previous_tracks, cv::Mat& image) {
     FrameFeatures frame_features = FrameFeatures::fromImage(detector_, extractor_, image);
-    frame_features.drawFeatures(image);
+    //frame_features.drawFeatures(image);
     if (previous_frame_features_.keypoints().size() == 0) {
         FeatureTracker::feature_track_list current_features;
         for (std::size_t i = 0; i < frame_features.keypoints().size(); ++i) {
@@ -101,9 +102,9 @@ double FeatureTracker::computeDistanceLimitForMatch(const std::vector<cv::DMatch
             max_distance = match.distance;
         }
     }
-    std::cout << "Min distance: " << min_distance << ", Max distance: " << max_distance << std::endl;
+//    std::cout << "Min distance: " << min_distance << ", Max distance: " << max_distance << std::endl;
 
-    return std::max(2*min_distance, 80.0);
+    return std::max(2*min_distance, 40.0);
 }
 
 void FeatureTracker::drawStats(cv::Mat &image, const std::vector<double> &previous_features_matched,

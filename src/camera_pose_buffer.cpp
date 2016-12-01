@@ -10,6 +10,14 @@ CameraPoseBuffer::CameraPoseBuffer(int max_camera_poses)
 : buffer_(max_camera_poses) {
 }
 
+CameraPose& CameraPoseBuffer::operator[](std::size_t i) {
+    return buffer_[i];
+}
+
+const CameraPose& CameraPoseBuffer::operator[](std::size_t i) const {
+    return buffer_[i];
+}
+
 void CameraPoseBuffer::deleteOldestCameraPose() {
     if (buffer_.empty()) {
         throw std::runtime_error("Trying to delete camera pose from empty CameraPoseBuffer");
@@ -30,6 +38,30 @@ CameraPoseBuffer::iterator CameraPoseBuffer::begin() {
 
 CameraPoseBuffer::iterator CameraPoseBuffer::end() {
     return buffer_.end();
+}
+
+CameraPoseBuffer::const_iterator CameraPoseBuffer::begin() const {
+    return buffer_.begin();
+}
+
+CameraPoseBuffer::const_iterator CameraPoseBuffer::end() const {
+    return buffer_.end();
+}
+
+CameraPoseBuffer::reverse_iterator CameraPoseBuffer::rbegin() noexcept {
+    return buffer_.rbegin();
+}
+
+CameraPoseBuffer::reverse_iterator CameraPoseBuffer::rend() noexcept {
+    return buffer_.rend();
+}
+
+CameraPoseBuffer::const_reverse_iterator CameraPoseBuffer::rbegin() const noexcept {
+    return buffer_.rbegin();
+}
+
+CameraPoseBuffer::const_reverse_iterator CameraPoseBuffer::rend() const noexcept {
+    return buffer_.rend();
 }
 
 CameraPose& CameraPoseBuffer::front() {

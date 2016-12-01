@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
+
 project(tonav)
 set (tonav_CMAKE_DIR "${tonav_SOURCE_DIR}/cmake")
 set (CMAKE_MODULE_PATH ${tonav_CMAKE_DIR} ${CMAKE_MODULE_PATH})
@@ -10,7 +11,7 @@ include_directories("${tonav_SOURCE_DIR}/include")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
-set (CMAKE_INSTALL_RPATH /opt/ros/jade/lib)
+# set (CMAKE_INSTALL_RPATH /opt/ros/jade/lib)
 
 set(SOURCE_FILES
         src/calibration.cpp
@@ -56,25 +57,15 @@ set(SOURCE_FILES
         src/body_state.cpp
         include/camera_pose_buffer.h
         src/camera_pose_buffer.cpp
-)
+        include/quaternion_tools.h
+        src/quaternion_tools.cpp
+        include/camera_reprojection_functor.h
+        src/camera_reprojection_functor.cpp
+      )
 add_executable(tonav src/main.cpp ${SOURCE_FILES})
 
 find_package(Eigen3 REQUIRED)
 include_directories (AFTER "${EIGEN3_INCLUDE_DIR}")
-
-find_package(GTest)
-if (${GTEST_FOUND})
-  set (TEST_FILES
-    tests/ring_buffer.cpp
-  )
-  enable_testing()
-  include_directories(${GTEST_INCLUDE_DIRS})
-
-  add_executable(tonav-test ${SOURCE_FILES} ${TEST_FILES})
-  target_link_libraries(tonav-test ${GTEST_BOTH_LIBRARIES})
-  add_test(TestsTonavAll tonav-test)
-endif()
-
 
 catkin_package(
     CATKIN_DEPENDS message_runtime std_msgs sensor_msgs tf2 tf2_ros roscpp
@@ -84,37 +75,25 @@ catkin_package(
 find_package(Boost REQUIRED COMPONENTS program_options filesystem)
 include_directories (AFTER "${Boost_INCLUDE_DIRS}")
 target_link_libraries(tonav ${Boost_LIBRARIES})
-if (${GTEST_FOUND})
-  target_link_libraries(tonav-test ${Boost_LIBRARIES})
-endif ()
 
 find_package(OpenCV REQUIRED)
 message (STATUS "${OpenCV_INCLUDE_DIRS}")
 message (STATUS "${OpenCV_LIBS}")
 include_directories (AFTER "${OpenCV_INCLUDE_DIRS}")
 target_link_libraries(tonav ${OpenCV_LIBS})
-if (${GTEST_FOUND})
-  target_link_libraries(tonav-test ${OpenCV_LIBS})
-endif ()
 
 find_package(image_transport REQUIRED)
 include_directories (AFTER ${image_transport_INCLUDE_DIRS})
 target_link_libraries(tonav ${image_transport_LIBRARIES})
-if (${GTEST_FOUND})
-  target_link_libraries(tonav-test ${image_transport_LIBRARIES})
-endif ()
 
 find_package(cv_bridge REQUIRED)
 target_link_libraries(tonav ${cv_bridge_LIBRARIES})
-if (${GTEST_FOUND})
-  target_link_libraries(tonav-test ${cv_bridge_LIBRARIES})
-endif ()
 
 find_package(tf2_ros REQUIRED)
 target_link_libraries(tonav ${tf2_ros_LIBRARIES})
-if (${GTEST_FOUND})
-  target_link_libraries(tonav-test ${tf2_ros_LIBRARIES})
-endif ()
+
+find_package(eigen_conversions REQUIRED)
+target_link_libraries(tonav ${eigen_conversions_LIBRARIES})
 
 find_package(Doxygen 1.8.6)
 if(DOXYGEN_FOUND)
@@ -126,3 +105,13 @@ if(DOXYGEN_FOUND)
     )
 endif(DOXYGEN_FOUND)
 
+if(CATKIN_ENABLE_TESTING)
+  find_package(gmock REQUIRED)
+  find_package(rostest REQUIRED)
+  SET(TEST_FILES
+    test/body_state_test.cpp
+    test/quaternion_tools_test.cpp
+    )
+  add_rostest_gtest(${PROJECT_NAME}-test launch/gtest.test ${SOURCE_FILES} ${TEST_FILES})
+  target_link_libraries(${PROJECT_NAME}-test ${catkin_LIBRARIES} ${GTEST_BOTH_LIBRARIES} ${GMOCK_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} ${image_transport_LIBRARIES} ${cv_bridge_LIBRARIES} ${tf2_ros_LIBRARIES} ${eigen_conversions_LIBRARIES})
+endif()

@@ -6,6 +6,8 @@
 #define TONAV_FILTER_H
 
 #include <Eigen/Dense>
+#include <fstream>
+#include <functional>
 
 #include "calibration.h"
 #include "filter_state.h"
@@ -13,10 +15,15 @@
 #include "imu_buffer.h"
 
 class ImuItem;
+class CameraReprojectionFunctor;
 
 namespace cv {
     class Mat;
 }
+
+enum InitialGuessMethod {
+    SVD, QR, normal
+};
 
 /**
  * @brief Implementation of MSCKF.
@@ -28,35 +35,35 @@ namespace cv {
  */
 class Filter {
 public:
-    Filter(const Calibration& calibration);
-
-    void initialize();
-
-    void stepInertial(double timedelta, const ImuItem& accel, const ImuItem& gyro);
-    void stepCamera(double timedelta, cv::Mat& frame);
-
-    BodyState propagateBodyState(const BodyState& body_state_old, double timedelta,
-        const ImuItem& accel, const ImuItem& gyro);
+    friend class CameraReprojectionFunctor;
     
-    void propagateRotation(
-            const BodyState& old_state, BodyState& new_state, double timedelta, const ImuItem& accel,
-            const ImuItem& gyro);
-    void propagateVelocityAndPosition(
-            const BodyState& old_state, BodyState& new_state, double timedelta, const ImuItem& accel,
-            const ImuItem& gyro);
+    Filter(std::shared_ptr<const Calibration> calibration);
 
     /**
-     * @brief Set initial estimate of gravity in global frame.
+     * @brief Propagate filter using accelerometer and gyroscope measurements
      *
-     * This is usually calculated as averate of first few accelerometer measurements.
-     * It assumes, that device don't move for few seconds at the beginning.
-     *
-     * @param gravity Initial estimate of gravity in global frame.
+     * @param time Time at which measurements are valid.
+     * @param accel Accelerometer measurement.
+     * @param gyro Gyroscope measurement.
      */
-    void setGlobalGravity(Eigen::Vector3d gravity);
-    Eigen::Vector3d getGlobalGravity() const;
+    void stepInertial(double time, const ImuItem& accel, const ImuItem& gyro);
+    
+    /**
+     * @brief Update filter using camera image.
+     *
+     * @param time Arrival time of camera image.
+     * @param frame Image captured from camera.
+     */
+    void stepCamera(double time, cv::Mat& frame);
 
+    /** @brief Get current estimated position */
     Eigen::Vector3d getCurrentPosition();
+
+    /**
+     * @brief Get current estimated attitude
+     *
+     * Keep in mind that it returns quaternion as defined by Eigen library. It uses Hamilton's notation of quaternion.
+     */
     Eigen::Quaterniond getCurrentAttitude();
     
     /**
@@ -64,40 +71,153 @@ public:
      *
      * This method calculates image capture time from time when image arrived.
      *
-     * @param arrive_time Time whan image arrived
+     * @param arrive_time Time when image arrived
      * @return Estimated image capture time
      */
     double getImageCaptureTime(double arrive_time);
-
-private:
-    Calibration calibration_;
-    
-    Eigen::Vector3d global_gravity_;
-
-    FilterState filter_state_;
-    Eigen::Matrix<double, 15, 15> filter_covar_;
-
-    FeatureTracker::feature_track_list features_tracked_;
-
-    void initializeBodyFrame();
-    void initializeImuCalibration();
-    void initializeCameraCalibration();
-    void initializeBodyPoses();
     
     /**
+     * @brief Calculate \f$\hat{t} = t + \hat{t}_d - |\hat{t_r}/2|\f$
+     */
+    double getImageFirstLineCaptureTime(double arrive_time);
+    
+    /**
+     * @brief Calculate \f$\hat{t} = t + \hat{t}_d + |\hat{t_r}/2|\f$
+     */
+    double getImageLastLineCaptureTime(double arrive_time);
+    
+    /**
+     * @brief Check if filter is initialized.
+     *
+     * Initialization happens after first `void Filter::stepInertial(double time, const ImuItem& accel, const ImuItem& gyro)` call.
+     */
+    bool isInitialized() const;
+    
+    double time() const;
+    
+    Eigen::Quaterniond getBodyToCameraRotation() const;
+    
+    Eigen::Vector3d getPositionOfBodyInCameraFrame() const;
+    
+    const FilterState& state() const;
+    
+    void setInitialOrientation(const Eigen::Quaterniond& orientation);
+    void setInitialPosition(const Eigen::Vector3d& position);
+    void setInitialBodyPositionInCameraFrame(const Eigen::Vector3d& position);
+    
+    void setGyroscopeInterpolationCallback(std::function<ImuItem(double)> callback);
+    void setAccelerometerInterpolationCallback(std::function<ImuItem(double)> callback);
+private:
+    std::shared_ptr<const Calibration> calibration_;
+    
+    std::ofstream debug_output_;
+    
+    std::function<ImuItem(double)> gyroscope_interpolation_callback_;
+    std::function<ImuItem(double)> accelerometer_interpolation_callback_;
+    
+    Eigen::Quaterniond initial_orientation_ = Eigen::Quaterniond::Identity();
+    
+    Eigen::Vector3d initial_position_ = Eigen::Vector3d::Zero();
+    Eigen::Vector3d initial_body_position_in_camera_frame_ = Eigen::Vector3d::Zero();
+
+    /** @brief Initialization status. For delayed initialization. */
+    bool is_initialized_ = false;
+
+    /** @brief Filter state \f$ \mathbf{x}_k \f$ */
+    FilterState filter_state_;
+
+    /** @brief Filter covariance matrix \f$ \boldsymbol{\Sigma}_k \f$ */
+    Eigen::Matrix<double, 15, 15> filter_covar_;
+
+    FeatureTracker feature_tracker_;
+
+    FeatureTracker::feature_track_list features_tracked_;
+    
+    std::size_t frame_rows_;
+
+    /**
+     * @brief Perform delayed initialization.
+     *
+     * Set all filter parameters from calibration file.
+     *
+     * I call it delayed initialization because it is performed at the time of first imu step. Not as soon
+     * as class instance is created.
+     */
+    void initialize(double time, const ImuItem& accel, const ImuItem& gyro);
+
+    /**
+     * @brief Calculate rotation estimate.
+     *
+     * It returns best estimate for true rotation rate. It is cleared using estimated gyroscope bias, gyroscope
+     * acceleration sensitivity estimate and estimated gyroscope shape matrix.
+     *
+     * @return \f$ \prescript{B}{}{\boldsymbol{\hat{\omega}}}(t) \f$
+     */
+    Eigen::Vector3d computeRotationEstimate(const Eigen::Vector3d& gyro, const Eigen::Vector3d& acceleration_estimate) const;
+
+    /**
+     * @brief Calculate acceleration estimate.
+     *
+     * It returns best estimate for true linear acceleration. It is cleared using estimated accelerometer bias and
+     * estimated accelerometer shape matrix.
+     *
+     * @return \f$ \prescript{B}{}{\boldsymbol{\hat{\omega}}}(t) \f$
+     */
+    Eigen::Vector3d computeAccelerationEstimate(const Eigen::Vector3d& accel) const;
+
+    /**
+     * @brief Augment filter state.
+     *
+     * This is called right before filter update step. It basically does two things. Appends current body state to
+     * camera pose buffer (they are not translated into camera frame but kept in body frame instead) and augments
+     * filter covariance matrix.
+     *
      * @todo Implement this
      */
     void augment();
+
+    /**
+     * @brief Remove unused camera poses from filter state.
+     *
+     * Unused camera poses are those containing no currently tracked feature. Note that camera poses itself does not
+     * store tracked features. It is done in `FeatureTracker` class.
+     */
     void pruneCameraPoses(const FeatureTracker::feature_track_list& residualized_features);
-
-    static Eigen::Matrix<double, 9, 1> vectorizeMatrix(const Eigen::Matrix<double, 3, 3>& mat);
-    static Eigen::Matrix<double, 3, 3> unvectorizeMatrix(Eigen::Block<FilterState::StateType, 9, 1> vec);
-    static Eigen::Matrix4d omegaMatrix(const Eigen::Vector3d vec);
-    static Eigen::Matrix3d crossMatrix(const Eigen::Vector3d vec);
-
-    Eigen::Vector3d triangulateGlobalFeaturePosition(const FeatureTrack& feature_track);
     
-    FeatureTracker feature_tracker_;
+    /**
+     * @brief Initial guess of global feature position from its two measurements.
+     */
+    Eigen::Vector3d initialGuessFeaturePosition(const Eigen::Vector2d& z0, const Eigen::Vector2d& z1, const Eigen::Matrix3d& R_C1_C0, const Eigen::Vector3d& p_C1_C0, InitialGuessMethod method) const;
+
+    /**
+     * @brief Calculate \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$
+     *
+     * This estimates feature position in global frame. It uses Gauss-Newton algorithm (or Levenberg-Marquardt
+     * algorithm) to achieve this. Feature location is described using inverse depth parametrization of feature in
+     * first camera pose that captured it.
+     *
+     * @return Estimate for \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$ and
+     *         rezidual vector.
+     */
+    std::pair<Eigen::Vector3d, Eigen::VectorXd> triangulateGlobalFeaturePosition(const FeatureTrack& feature_track);
+    
+    /**
+     * @brief Transform inverse depth parametrized estimate of feature's 
+     *        position in \f$C_0\f$ to \f$C_i\f$.
+     *
+     * It is implementation of function \f$\mathbf{g}_i\f$.
+     */
+    Eigen::Vector3d transformFeatureInverseDepthEstimateToCameraFrame(const FeatureTrack& feature_track, std::size_t i, const Eigen::Vector3d& est) const;
+    
+    /**
+     * @brief Implementation of camera model.
+     *
+     * It implements pinhole camera model with radial and tangential
+     * distortions;
+     *
+     * It is implementation of function \f$\mathbf{h}\f$
+     */
+    Eigen::Vector2d cameraProject(const Eigen::Vector3d& p) const;
 };
 
 #endif //TONAV_FILTER_H

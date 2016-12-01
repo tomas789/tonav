@@ -3,11 +3,15 @@
 
 #include <opencv2/core/core.hpp>
 #include <Eigen/Core>
+#include <fstream>
 
 #include "calibration.h"
+#include "camera_item.h"
 #include "filter.h"
 #include "imu_buffer.h"
 #include "imu_device.h"
+
+#include <mutex>
 
 /**
  * @brief This is main class for communicating with filter. 
@@ -23,7 +27,7 @@ public:
      *
      * @param calibration Calibration
      */
-    Tonav(Calibration& calibration);
+    Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Quaterniond& orientation, const Eigen::Vector3d& position, const Eigen::Vector3d& p_B_C);
     
     /**
      * @brief Perform navigation step with data from accelerometer.
@@ -33,8 +37,9 @@ public:
      *
      * @param time Time at which accelerometer data were captured.
      * @param accel 3D vector of accelerometer data.
+     * @return `true` if filter was update, `false` otherwise.
      */
-    void updateAcceleration(double time, Eigen::Vector3d accel);
+    bool updateAcceleration(double time, Eigen::Vector3d accel);
     
     /**
      * @brief Perform navigation step with data from gyroscope.
@@ -44,23 +49,9 @@ public:
      *
      * @param time Time at which gyroscope data were captured.
      * @param gyro 3D vector of gyroscope data.
+     * @return `true` if filter was update, `false` otherwise.
      */
-    void updateRotationRate(double time, Eigen::Vector3d gyro);
-    
-    /**
-     * @brief Perform navigation step with data from both accelerometer
-     * and gyroscore.
-     *
-     * Parameter \p accel is vector \f$(x, y, z)\f$ measured
-     * in \f$\frac{m}{s^2}\f$. Parameter \p gyro is vector 
-     * \f$(x, y, z)\f$ measured in \f$\frac{rad}{s}\f$.
-     *
-     * @param time Time at which accelerometer and gyroscope data 
-     *        were  both captured.
-     * @param accel 3D vector of accelerometer data.
-     * @param gyro 3D vector of gyroscope data.
-     */
-    void updateAccelerationAndRotationRate(double time, Eigen::Vector3d accel, Eigen::Vector3d gyro);
+    bool updateRotationRate(double time, Eigen::Vector3d gyro);
     
     /**
      * @brief Perform navigation step with image from camera.
@@ -78,74 +69,31 @@ public:
      * @param time Time at which camera image was captured.
      * @param image Captured image.
      */
-    void updateImage(double time, cv::Mat& image);
-    
-    /**
-     * @brief Set camera model params.
-     *
-     * Tonav is using pinhole camera modes as implemented in OpenCV.
-     * Using this function, you can set camera intrinsics parameters.
-     *
-     * Camera matrix:
-     *
-     *  \f$
-     *    \begin{pmatrix}
-     *      f_x & 0 & c_x \\
-     *      0 & f_y & c_y \\
-     *      0 & 0 & 1
-     *    \end{pmatrix}
-     *  \f$
-     *
-     * Distortion params:
-     *
-     *  \f$
-     *    \begin{pmatrix}
-     *      k_1 & k_2 & p_1 & p_2 & k_3
-     *    \end{pmatrix}
-     *  \f$
-     *
-     *
-     * @param camera_matrix Camera matrix
-     * @param distortion_params Distortion parameters
-     */
-    void setCameraModelParams(const Eigen::Matrix3d& camera_matrix, const Eigen::Matrix<double, 5, 1> distortion_params);
-    
-    bool filterWasUpdated() const;
+    void updateImage(double time, cv::Mat image);
     
     Eigen::Quaterniond getCurrentOrientation();
     Eigen::Vector3d getCurrentPosition();
     cv::Mat getCurrentImage() const;
+    double time() const;
     
 private:
-    std::size_t initial_delay_;
     Filter filter_;
+    std::mutex filter_sync_;
+        
+    CameraItem camera_item_;
+    double next_image_allowed_time_;
     
-    bool has_global_gravity_set_;
+    double initialization_time_;
     
-    double last_image_capture_time_;
-    cv::Mat last_image_;
+    std::map<double, ImuItem> accel_buffer_;
+    std::map<double, ImuItem> gyro_buffer_;
     
-    double last_update_time_;
-    bool filter_was_updated_;
-    
-    std::list<ImuItem> accel_buffer_;
-    std::list<ImuItem> gyro_buffer_;
-    
-    bool checkGlobalGravity();
-    double getMaxAccelerometerTime() const;
-    double getMaxGyroscopeTime() const;
-    
-    void initialize();
-    void initializeGlobalGravity();
-    void initializeLastUpdateTime();
-    
-    void updateAccelerationImpl(double time, Eigen::Vector3d accel);
-    void updateRotationRateImpl(double time, Eigen::Vector3d gyro);
-    
-    void performUpdateIfPossible();
-    void performUpdate();
+    bool tryPropagate();
+    void propagateToTime(double time);
+    void update();
     
     ImuItem interpolate(double time, const ImuItem& earlier, const ImuItem& later) const;
+    ImuItem interpolate_any_time(double time, ImuDevice device);
 };
 
 #endif //TONAV_TONAV_H

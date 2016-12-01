@@ -19,7 +19,7 @@ public:
     friend class Filter;
     
     using feature_track_list = std::vector<std::shared_ptr<FeatureTrack>>;
-    FeatureTracker();
+    FeatureTracker(int nfeatures_to_track);
     
     feature_track_list processImage(feature_track_list& previous_tracks, cv::Mat& image);
 

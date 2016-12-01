@@ -8,31 +8,55 @@
 #include <Eigen/Dense>
 #include <limits>
 #include <set>
+#include <memory>
+
+class BodyState;
+class Filter;
 
 class CameraPose {
 public:
-    using CameraPoseType = Eigen::Matrix<double, 10, 1>;
-
-    CameraPose();
-    CameraPose(std::size_t pose_id);
-
-    std::size_t poseId() const;
+    //CameraPose() = default;
+    //CameraPose(const CameraPose& other) = default;
+    CameraPose(const BodyState& body_state);
+    
+    //CameraPose& operator=(const CameraPose& other) = default;
 
     std::size_t getActiveFeaturesCount() const;
     void setActiveFeaturesCount(std::size_t i);
     void decreaseActiveFeaturesCount(int feature_id);
+    
+    BodyState& getBodyState();
+    const BodyState& getBodyState() const;
 
-    Eigen::Block<CameraPoseType, 4, 1> getRotationForBodyPoseBlock();
-    Eigen::Block<CameraPoseType, 3, 1> getPositionForBodyPoseBlock();
-    Eigen::Block<CameraPoseType, 3, 1> getVelocityForBodyPoseBlock();
+    /**
+     * @brief Time of body state
+     */
+    double time() const;
+    
+    /** @brief Get orientation \f$ {}^G \mathbf{q}_B \f$ of this camera frame in global frame. */
+    const Eigen::Quaterniond& getBodyOrientationInGlobalFrame() const;
+    
+    /** @brief Get orientation \f$ {}^G \mathbf{q}_C \f$ of this camera frame in global frame. */
+    Eigen::Quaterniond getCameraOrientationInGlobalFrame(const Filter& filter) const;
+    
+    /** @brief Get position \f$ {}^G \mathbf{p}_B \f$ of this camera frame in global frame. */
+    const Eigen::Vector3d& getBodyPositionInGlobalFrame() const;
+    
+    /** @brief Get position \f$ {}^G \mathbf{p}_C \f$ of this camera frame in global frame. */
+    Eigen::Vector3d getCameraPositionInGlobalFrame(const Filter& filter) const;
+    
+    /** @brief Get velocity \f$ {}^G\mathbf{v}_B \f$ of this camera frame in global frame. */
+    const Eigen::Vector3d& getBodyVelocityInGlobalFrame() const;
+    
+    Eigen::Quaterniond getRotationToOtherPose(const CameraPose& other, const Filter& filter) const;
+    
+    Eigen::Vector3d getPositionOfAnotherPose(const CameraPose& other, const Filter& filter) const;
 
-    bool isValid() const;
     void rememberFeatureId(int feature_id);
 
 private:
     std::set<int> feature_ids_;
-    CameraPoseType camera_pose_;
-    std::size_t pose_id_ = std::numeric_limits<std::size_t>::max();
+    std::shared_ptr<BodyState> body_state_;
     std::size_t features_active_;
 };
 

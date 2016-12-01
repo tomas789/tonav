@@ -1,14 +1,17 @@
 #ifndef TONAV_TONAV_ROS_H
 #define TONAV_TONAV_ROS_H
 
+#include <boost/program_options.hpp>
 #include <memory>
+#include <Eigen/Core>
+#include <image_transport/image_transport.h>
 #include <ros/ros.h>
 #include <sensor_msgs/CameraInfo.h>
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/Imu.h>
-#include <boost/program_options.hpp>
-#include <image_transport/image_transport.h>
+#include <geometry_msgs/TransformStamped.h>
 #include <tf2_ros/transform_broadcaster.h>
+#include <tf2_ros/transform_listener.h>
 
 #include "tonav.h"
 
@@ -45,8 +48,16 @@ private:
     Eigen::Matrix3d current_camera_matrix_;
     Eigen::Matrix<double, 5, 1> current_distirtion_params_;
     
+    std::string robot_base_link_;
+    std::string camera_frame_id_;
+    std::string imu_frame_id_;
+    
+    bool is_ready_to_filter_ = false;
+    
     std::unique_ptr<image_transport::Publisher> image_publisher_;
     std::unique_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster_;
+    std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
+    std::unique_ptr<tf2_ros::TransformListener> tf_listener_;
     
     void setAllowedOptionsDescription();
     bool parseCommandLineParams(int argc, char* argv[]);
@@ -57,7 +68,7 @@ private:
     void imuCallback(const sensor_msgs::ImuConstPtr& msg);
     double getMessageTime(ros::Time stamp);
     
-    void publishResults();
+    void publishResults(const ros::Time& time);
 };
 
 #endif //TONAV_TONAV_ROS_H

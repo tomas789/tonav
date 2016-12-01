@@ -6,17 +6,30 @@
 #define TONAV_CAMERA_ITEM_H
 
 #include <string>
+#include <opencv2/core/core.hpp>
 
 class CameraItem {
 public:
-    static CameraItem fromString(std::string fname);
+    CameraItem();
+    CameraItem(double time, cv::Mat image);
+    CameraItem(const CameraItem& other) = default;
+    
+    CameraItem& operator=(const CameraItem& oher) = default;
+    
+    operator bool() const;
+    
+    void setIsProcessed();
+    bool wasProcessed() const;
 
     double getTime() const;
-    std::string getFileName() const;
+    cv::Mat& getImage();
+    const cv::Mat& getImage() const;
 
 private:
+    bool is_valid_;
     double time_;
-    std::string file_name_;
+    cv::Mat image_;
+    bool was_processed_;
 };
 
 #endif //TONAV_CAMERA_ITEM_H

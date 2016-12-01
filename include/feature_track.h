@@ -7,6 +7,7 @@
 
 #include <Eigen/Dense>
 #include <vector>
+#include <opencv2/core/core.hpp>
 
 class FeatureTrack {
 public:
@@ -31,6 +32,8 @@ public:
      * @todo This should be deleted in the future. I will keep it here just for case ...
      */
     int getFeatureId() const;
+    
+    void drawFeatureTrack(cv::Mat& image, cv::Scalar color);
     
 private:
     int feature_id_;

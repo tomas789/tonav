@@ -6,71 +6,132 @@
 #define TONAV_CALIBRATION_H
 
 #include <boost/filesystem/path.hpp>
-#include <Eigen/Core>
+#include <Eigen/Dense>
 #include <string>
 #include <vector>
 
+/**
+ * Read calibration file.
+ *
+ * @todo Add comments to all methods.
+ */
 class Calibration {
 public:
-    int getMaxCameraPoses() const;
-    int getBufferSize() const;
-    int getMaxTriangulationIterations() const;
+    Calibration();
+    Calibration(const Calibration& other) = default;
     
-    Eigen::Matrix3d getRotationFromBodyToCameraFrame() const;
+    Calibration& operator=(const Calibration& other) = default;
+    
+    Eigen::Vector2d getCameraFocalPoint() const;
 
-    Eigen::Matrix<double, 3, 3> getGSensitivityMatrix() const;
-    Eigen::Matrix<double, 3, 3> getGyroscopeShapeMatrix() const;
-    Eigen::Matrix<double, 3, 3> getAccelerometerShapeMatrix() const;
+    Eigen::Vector2d getCameraOpticalCenter() const;
 
-    Eigen::Matrix<double, 3, 1> getCameraToBodyOffset() const;
+    Eigen::Vector3d getCameraRadialDistortionParams() const;
 
-    double getFocalLengthX() const;
-    double getFocalLengthY() const;
-    double getOpticalCenterX() const;
-    double getOpticalCenterY() const;
-
-    Eigen::Matrix<double, 3, 1> getRadialDistortionParameters() const;
-    Eigen::Matrix<double, 2, 1> getTangentialDistortionParameters() const;
+    Eigen::Vector2d getCameraTangentialDistortionParams() const;
 
     double getCameraDelayTime() const;
+
     double getCameraReadoutTime() const;
 
-    static Calibration fromPath(boost::filesystem::path fname);
+    int getNumberOfFeaturesToExtract() const;
+
+    Eigen::Matrix3d getGyroscopeAccelerationSensitivityMatrix() const;
+
+    Eigen::Matrix3d getGyroscopeShapeMatrix() const;
+
+    Eigen::Matrix3d getAccelerometerShapeMatrix() const;
+
+    Eigen::Vector3d getGyroscopeBias() const;
+
+    Eigen::Vector3d getAccelerometerBias() const;
+
+    Eigen::Vector3d getGlobalGravity() const;
+
+    int getMaxCameraPoses() const;
+
+    int getMaxTriangulationIterations() const;
+
+    Eigen::Vector3d getOrientationNoise() const;
+
+    Eigen::Vector3d getPositionNoise() const;
+
+    Eigen::Vector3d getVelocityNoise() const;
+
+    Eigen::Vector3d getGyroscopeBiasNoise() const;
+
+    Eigen::Vector3d getAccelerometerBiasNoise() const;
+
+    Eigen::Matrix3d getGyroscopeAccelerationSensitivityMatrixNoise() const;
+
+    Eigen::Matrix3d getGyroscopeShapeMatrixNoise() const;
+
+    Eigen::Matrix3d getAccelerometerShapeMatrixNoise() const;
+
+    Eigen::Vector2d getFocalPointNoise() const;
+
+    Eigen::Vector2d getOpticalCenterNoise() const;
+
+    Eigen::Vector3d getRadialDistortionNoise() const;
+
+    Eigen::Vector2d getTangentialDistortionNoise() const;
+
+    double getCameraDelayTimeNoise() const;
+
+    double getCameraReadoutTimeNoise() const;
+    
+    Eigen::Quaterniond getBodyToCameraRotation() const;
+    
+    void setBodyToCameraRotation(const Eigen::Quaterniond& orientation);
+
+    static std::shared_ptr<Calibration> fromPath(boost::filesystem::path fname);
 
     static bool tryParseInt(const std::string& value, int& out);
     static bool tryParseDouble(const std::string& value, double& out);
+    static bool tryParseVector2d(const std::string& value, Eigen::Vector2d& out);
+    static bool tryParseVector3d(const std::string& value, Eigen::Vector3d& out);
     static bool tryParseMatrix3d(const std::string& value, Eigen::Matrix3d& out);
-private:
+    static bool tryParseString(const std::string& value, std::string& out);
+    
+    ~Calibration() = default;
+protected:
+    Eigen::Vector2d focal_point_;
+    Eigen::Vector2d optical_center_;
+    Eigen::Vector3d radial_distortion_;
+    Eigen::Vector2d tangential_distortion_;
+    double camera_delay_time_;
+    double camera_readout_time_;
+
+    int n_features_to_extract_;
+
+    Eigen::Matrix3d gyroscope_acceleration_sensitivity_matrix_;
+    Eigen::Matrix3d gyroscope_shape_matrix_;
+    Eigen::Matrix3d accelerometer_shape_matrix_;
+    Eigen::Vector3d gyroscope_bias_;
+    Eigen::Vector3d accelerometer_bias_;
+    Eigen::Vector3d global_gravity_;
+
     int max_camera_poses_;
-    int buffer_size_;
     int max_triangulation_iterations_;
 
-    double f_x_;
-    double f_y_;
-    double c_x_;
-    double c_y_;
-    double p_c_b_x_;
-    double p_c_b_y_;
-    double p_c_b_z_;
-    double t_d_;
-    double t_r_;
-
-    double k_1_;
-    double k_2_;
-    double k_3_;
-    double p_1_;
-    double p_2_;
-
-    int orb_nfeatures_;
-
-    Eigen::Matrix3d t_s_;
-    Eigen::Matrix3d t_a_;
-    Eigen::Matrix3d t_g_;
+    Eigen::Vector3d orientation_noise_;
+    Eigen::Vector3d position_noise_;
+    Eigen::Vector3d velocity_noise_;
+    Eigen::Vector3d gyroscope_bias_noise_;
+    Eigen::Vector3d accelerometer_bias_noise_;
+    Eigen::Matrix3d gyroscope_acceleration_sensitivity_matrix_noise_;
+    Eigen::Matrix3d gyroscope_shape_matrix_noise_;
+    Eigen::Matrix3d accelerometer_shape_matrix_noise_;
+    Eigen::Vector2d focal_point_noise_;
+    Eigen::Vector2d optical_center_noise_;
+    Eigen::Vector3d radial_distortion_noise_;
+    Eigen::Vector2d tangential_distortion_noise_;
+    double camera_delay_time_noise_;
+    double camera_readout_time_noise_;
     
-    Eigen::Matrix3d rotation_from_body_to_camera_frame_;
+    Eigen::Quaterniond body_to_camera_rotation_;
 
     static const std::vector<std::string> allowed_params_;
 };
-
 
 #endif //TONAV_CALIBRATION_H
