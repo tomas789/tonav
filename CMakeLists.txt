@@ -25,8 +25,7 @@ set(SOURCE_FILES
         src/exceptions/base_exception.cpp
         include/camera_feed.h
         src/camera_feed.cpp
-        include/imu_feed.h
-        src/imu_feed.cpp include/imu_item.h
+        include/imu_item.h
         include/imu_device.h
         src/imu_device.cpp
         include/exceptions/general_exception.h
@@ -61,6 +60,11 @@ set(SOURCE_FILES
         src/quaternion_tools.cpp
         include/camera_reprojection_functor.h
         src/camera_reprojection_functor.cpp
+        include/feature_rezidualization_result.h
+        src/feature_rezidualization_result.cpp
+        include/chi_squared_ppm.h
+        include/state_initializer.h
+        src/state_initializer.cpp
       )
 add_executable(tonav src/main.cpp ${SOURCE_FILES})
 
@@ -110,6 +114,8 @@ if(CATKIN_ENABLE_TESTING)
   SET(TEST_FILES
     test/body_state_test.cpp
     test/quaternion_tools_test.cpp
+    test/filter_test.cpp
+    test/big_camera_test.cpp
     )
   add_rostest_gtest(${PROJECT_NAME}-test launch/gtest.test ${SOURCE_FILES} ${TEST_FILES})
   target_link_libraries(${PROJECT_NAME}-test ${catkin_LIBRARIES} ${GTEST_BOTH_LIBRARIES} ${GMOCK_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} ${image_transport_LIBRARIES} ${cv_bridge_LIBRARIES} ${tf2_ros_LIBRARIES} ${eigen_conversions_LIBRARIES})

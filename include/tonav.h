@@ -4,14 +4,15 @@
 #include <opencv2/core/core.hpp>
 #include <Eigen/Core>
 #include <fstream>
+#include <list>
+#include <mutex>
 
 #include "calibration.h"
 #include "camera_item.h"
 #include "filter.h"
 #include "imu_buffer.h"
 #include "imu_device.h"
-
-#include <mutex>
+#include "state_initializer.h"
 
 /**
  * @brief This is main class for communicating with filter. 
@@ -21,13 +22,13 @@
  * As a user, you should only communicate with this class.
  */
 class Tonav {
-public:
+public:    
     /**
      * @brief Initialize filter with configuration
      *
      * @param calibration Calibration
      */
-    Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Quaterniond& orientation, const Eigen::Vector3d& position, const Eigen::Vector3d& p_B_C);
+    Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Vector3d& p_B_C);
     
     /**
      * @brief Perform navigation step with data from accelerometer.
@@ -76,24 +77,34 @@ public:
     cv::Mat getCurrentImage() const;
     double time() const;
     
+    std::shared_ptr<StateInitializer> initializer();
+    std::shared_ptr<const StateInitializer> initializer() const;
+    
+    bool isInitialized() const;
 private:
+    std::shared_ptr<StateInitializer> state_initializer_;
+    
     Filter filter_;
     std::mutex filter_sync_;
         
     CameraItem camera_item_;
-    double next_image_allowed_time_;
-    
+
     double initialization_time_;
     
-    std::map<double, ImuItem> accel_buffer_;
-    std::map<double, ImuItem> gyro_buffer_;
+    ImuBuffer accel_buffer_;
+    ImuBuffer gyro_buffer_;
+    ImuBuffer::iterator it_accel_;
+    ImuBuffer::iterator it_gyro_;
     
     bool tryPropagate();
-    void propagateToTime(double time);
+    void propagateToTime(double t);
     void update();
     
-    ImuItem interpolate(double time, const ImuItem& earlier, const ImuItem& later) const;
-    ImuItem interpolate_any_time(double time, ImuDevice device);
+    void incrementBufferPointer();
+    double getMinimalNextPropagationTime() const;
+    
+    double lastGyroscopeTime() const;
+    double lastAccelerometerTime() const;
 };
 
 #endif //TONAV_TONAV_H

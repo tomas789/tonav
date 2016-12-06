@@ -104,7 +104,7 @@ double FeatureTracker::computeDistanceLimitForMatch(const std::vector<cv::DMatch
     }
 //    std::cout << "Min distance: " << min_distance << ", Max distance: " << max_distance << std::endl;
 
-    return std::max(2*min_distance, 40.0);
+    return std::max(2*min_distance, 25.0);
 }
 
 void FeatureTracker::drawStats(cv::Mat &image, const std::vector<double> &previous_features_matched,

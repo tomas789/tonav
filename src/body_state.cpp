@@ -65,6 +65,13 @@ const Eigen::Vector3d& BodyState::getVelocityInGlobalFrame() const {
     return v_B_G_;
 }
 
+void BodyState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
+    Eigen::Quaterniond delta_q(1.0, 0.5*delta_x(0), 0.5*delta_x(1), 0.5*delta_x(2));
+    q_B_G_ = (q_B_G_*delta_q).normalized();
+    p_B_G_ += delta_x.segment<3>(3);
+    v_B_G_ += delta_x.segment<3>(6);
+}
+
 Eigen::Quaterniond BodyState::propagateGyroscope(const BodyState &from_state, BodyState &to_state) {
     Eigen::Vector4d q0;
     q0 << 1.0, 0.0, 0.0, 0.0;

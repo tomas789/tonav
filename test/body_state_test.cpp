@@ -280,6 +280,6 @@ TEST_F(BodyStatePathTrajectoryTest, test_body_state) {
     position << 0.0, 4.0, 0.0;
     ASSERT_TRUE((body_state_->getPositionInGlobalFrame() - position).isZero(1e-3)) << "Got position [" << body_state_->getPositionInGlobalFrame().transpose() << "]^T";
     orientation = Eigen::Quaterniond::Identity();
-    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().angularDistance(orientation) < 1e-5) << "Got orientation [" << body_state_->getOrientationInGlobalFrame().coeffs().transpose() << "]^T";
+    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().angularDistance(orientation) < 1e-3) << "Got orientation [" << body_state_->getOrientationInGlobalFrame().coeffs().transpose() << "]^T";
 }
 

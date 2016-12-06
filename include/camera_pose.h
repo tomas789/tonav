@@ -10,6 +10,8 @@
 #include <set>
 #include <memory>
 
+#include "imu_buffer.h"
+
 class BodyState;
 class Filter;
 
@@ -17,7 +19,7 @@ class CameraPose {
 public:
     //CameraPose() = default;
     //CameraPose(const CameraPose& other) = default;
-    CameraPose(const BodyState& body_state);
+    CameraPose(const BodyState& body_state, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel);
     
     //CameraPose& operator=(const CameraPose& other) = default;
 
@@ -54,10 +56,16 @@ public:
 
     void rememberFeatureId(int feature_id);
 
+    void updateWithStateDelta(const Eigen::VectorXd& delta_x);
+    
+    ImuBuffer::iterator gyroHint();
+    ImuBuffer::iterator accelHint();
 private:
     std::set<int> feature_ids_;
-    std::shared_ptr<BodyState> body_state_;
     std::size_t features_active_;
+    std::shared_ptr<BodyState> body_state_;
+    ImuBuffer::iterator hint_gyro_;
+    ImuBuffer::iterator hint_accel_;
 };
 
 #endif //TONAV_CAMERA_POSE_H

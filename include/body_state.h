@@ -63,6 +63,8 @@ public:
 
     /** @brief Get velocity \f$ \prescript{G}{}{\mathbf{v}}_B \f$ of this body (or camera) frame in global frame. */
     const Eigen::Vector3d& getVelocityInGlobalFrame() const;
+    
+    void updateWithStateDelta(const Eigen::VectorXd& delta_x);
 private:
     std::shared_ptr<const Calibration> calibration_;
 

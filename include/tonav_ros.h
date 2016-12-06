@@ -9,6 +9,7 @@
 #include <sensor_msgs/CameraInfo.h>
 #include <sensor_msgs/Image.h>
 #include <sensor_msgs/Imu.h>
+#include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/TransformStamped.h>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2_ros/transform_listener.h>
@@ -52,6 +53,8 @@ private:
     std::string camera_frame_id_;
     std::string imu_frame_id_;
     
+    int camera_callback_counter_ = 0;
+    
     bool is_ready_to_filter_ = false;
     
     std::unique_ptr<image_transport::Publisher> image_publisher_;
@@ -66,6 +69,7 @@ private:
     void cameraCallback(const sensor_msgs::ImageConstPtr& msg);
     void cameraInfoCallback(const sensor_msgs::CameraInfoConstPtr& msg);
     void imuCallback(const sensor_msgs::ImuConstPtr& msg);
+    void twistCallback(const geometry_msgs::TwistStampedPtr& msg);
     double getMessageTime(ros::Time stamp);
     
     void publishResults(const ros::Time& time);

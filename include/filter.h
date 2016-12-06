@@ -8,11 +8,14 @@
 #include <Eigen/Dense>
 #include <fstream>
 #include <functional>
+#include <list>
 
+#include "imu_buffer.h"
 #include "calibration.h"
 #include "filter_state.h"
+#include "feature_rezidualization_result.h"
 #include "feature_tracker.h"
-#include "imu_buffer.h"
+#include "state_initializer.h"
 
 class ImuItem;
 class CameraReprojectionFunctor;
@@ -37,7 +40,7 @@ class Filter {
 public:
     friend class CameraReprojectionFunctor;
     
-    Filter(std::shared_ptr<const Calibration> calibration);
+    Filter(std::shared_ptr<const Calibration> calibration, std::shared_ptr<const StateInitializer> state_initializer);
 
     /**
      * @brief Propagate filter using accelerometer and gyroscope measurements
@@ -54,7 +57,7 @@ public:
      * @param time Arrival time of camera image.
      * @param frame Image captured from camera.
      */
-    void stepCamera(double time, cv::Mat& frame);
+    void stepCamera(double time, cv::Mat& frame, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel);
 
     /** @brief Get current estimated position */
     Eigen::Vector3d getCurrentPosition();
@@ -99,41 +102,40 @@ public:
     
     Eigen::Vector3d getPositionOfBodyInCameraFrame() const;
     
+    /**
+     * @brief Get a reference to currently valid filter state.
+     */
     const FilterState& state() const;
     
-    void setInitialOrientation(const Eigen::Quaterniond& orientation);
-    void setInitialPosition(const Eigen::Vector3d& position);
     void setInitialBodyPositionInCameraFrame(const Eigen::Vector3d& position);
-    
-    void setGyroscopeInterpolationCallback(std::function<ImuItem(double)> callback);
-    void setAccelerometerInterpolationCallback(std::function<ImuItem(double)> callback);
-private:
+protected:
     std::shared_ptr<const Calibration> calibration_;
+    std::shared_ptr<const StateInitializer> state_initializer_;
     
-    std::ofstream debug_output_;
-    
-    std::function<ImuItem(double)> gyroscope_interpolation_callback_;
-    std::function<ImuItem(double)> accelerometer_interpolation_callback_;
-    
-    Eigen::Quaterniond initial_orientation_ = Eigen::Quaterniond::Identity();
-    
-    Eigen::Vector3d initial_position_ = Eigen::Vector3d::Zero();
     Eigen::Vector3d initial_body_position_in_camera_frame_ = Eigen::Vector3d::Zero();
 
     /** @brief Initialization status. For delayed initialization. */
     bool is_initialized_ = false;
 
     /** @brief Filter state \f$ \mathbf{x}_k \f$ */
-    FilterState filter_state_;
+    std::shared_ptr<FilterState> filter_state_;
 
     /** @brief Filter covariance matrix \f$ \boldsymbol{\Sigma}_k \f$ */
-    Eigen::Matrix<double, 15, 15> filter_covar_;
+    Eigen::MatrixXd filter_covar_;
 
     FeatureTracker feature_tracker_;
 
     FeatureTracker::feature_track_list features_tracked_;
     
+    /** @brief Number of rows in last camera image */
     std::size_t frame_rows_;
+    
+    /**
+     * @brief Get a reference to currently valid filter state.
+     *
+     * This method is here to make it protected.
+     */
+    FilterState& state();
 
     /**
      * @brief Perform delayed initialization.
@@ -174,7 +176,7 @@ private:
      *
      * @todo Implement this
      */
-    void augment();
+    void augment(ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel);
 
     /**
      * @brief Remove unused camera poses from filter state.
@@ -183,6 +185,14 @@ private:
      * store tracked features. It is done in `FeatureTracker` class.
      */
     void pruneCameraPoses(const FeatureTracker::feature_track_list& residualized_features);
+    
+    FeatureRezidualizationResult rezidualizeFeature(const FeatureTrack& feature_track) const;
+    
+    void performUpdate(const FeatureTracker::feature_track_list& features_to_rezidualize);
+    
+    bool gatingTest(const Eigen::VectorXd& r_0_i, const Eigen::MatrixXd H_0_i);
+    
+    void updateState(const Eigen::MatrixXd& T_H, const Eigen::VectorXd& r_q);
     
     /**
      * @brief Initial guess of global feature position from its two measurements.
@@ -196,10 +206,9 @@ private:
      * algorithm) to achieve this. Feature location is described using inverse depth parametrization of feature in
      * first camera pose that captured it.
      *
-     * @return Estimate for \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$ and
-     *         rezidual vector.
+     * @return Estimate for \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$.
      */
-    std::pair<Eigen::Vector3d, Eigen::VectorXd> triangulateGlobalFeaturePosition(const FeatureTrack& feature_track);
+    std::pair<bool, Eigen::Vector3d> triangulateGlobalFeaturePosition(const FeatureTrack& feature_track) const;
     
     /**
      * @brief Transform inverse depth parametrized estimate of feature's 
@@ -218,6 +227,8 @@ private:
      * It is implementation of function \f$\mathbf{h}\f$
      */
     Eigen::Vector2d cameraProject(const Eigen::Vector3d& p) const;
+    
+    Eigen::Matrix<double, 2, 3> cameraProjectJacobian(const Eigen::Vector3d& p) const;
 };
 
 #endif //TONAV_FILTER_H

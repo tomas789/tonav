@@ -5,35 +5,39 @@
 #ifndef TONAV_IMU_BUFFER_H
 #define TONAV_IMU_BUFFER_H
 
-#include <vector>
+#include <list>
 
-#include "imu_device.h"
 #include "imu_item.h"
 
-/**
- * @brief Buffer of IMU data measurements.
- *
- * @deprecated This class is no longer needed. It is used in Navigator
- *             class only.
- *
- * Using this class you can interpolate IMU measurement at any time in
- * interval [getMinTime(), getMaxTime()]
- */
 class ImuBuffer {
 public:
-    ImuBuffer(ImuDevice device, std::size_t size);
-
-    void addMeasurement(ImuItem item);
-    ImuItem interpolateAtTime(double time) const;
-    double getMinTime() const;
-    double getMaxTime() const;
-
-    bool isReady() const;
+    using container_type = std::list<ImuItem>;
+    using iterator = container_type::iterator;
+    using const_iterator = container_type::const_iterator;
+    
+    iterator begin();
+    iterator end();
+    const_iterator begin() const;
+    const_iterator end() const;
+    
+    ImuItem& front();
+    const ImuItem& front() const;
+    ImuItem& back();
+    const ImuItem& back() const;
+    
+    bool empty() const;
+    std::size_t size() const;
+    
+    void push_back(const ImuItem& item);
+    void push_back(ImuItem&& item);
+    
+    void truncateToMinimalInterpolationTime(double time);
+    
+    static ImuItem interpolate(double time, const ImuItem& earlier, const ImuItem& later);
+    static ImuItem interpolateAnyTime(double time, iterator hint);
+    static void shiftToInterpolationInterval(double time, iterator& it);
 private:
-    ImuDevice device_;
-    std::size_t size_;
-    std::size_t cur_pos_;
-    std::vector<ImuItem> items_;
+    container_type buffer_;
 };
 
 #endif //TONAV_IMU_BUFFER_H

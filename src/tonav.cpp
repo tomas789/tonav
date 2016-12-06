@@ -7,33 +7,37 @@
 
 #include "camera_item.h"
 #include "imu_device.h"
+#include "state_initializer.h"
 
-Tonav::Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Quaterniond& orientation, const Eigen::Vector3d& position, const Eigen::Vector3d& p_B_C) : filter_(calibration) {
-    filter_.setInitialOrientation(orientation);
-    filter_.setInitialPosition(position);
+Tonav::Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Vector3d& p_B_C) : state_initializer_(new StateInitializer), filter_(calibration, state_initializer_) {
     filter_.setInitialBodyPositionInCameraFrame(p_B_C);
-    filter_.setGyroscopeInterpolationCallback(std::bind(&Tonav::interpolate_any_time, this, std::placeholders::_1, ImuDevice::GYROSCOPE));
-    filter_.setAccelerometerInterpolationCallback(std::bind(&Tonav::interpolate_any_time, this, std::placeholders::_1, ImuDevice::ACCELEROMETER));
-    next_image_allowed_time_ = 0;
 }
 
 bool Tonav::updateAcceleration(double time, Eigen::Vector3d accel) {
-    if (time <= filter_.time()) {
-        std::cout << "Got accelerometer measurement from time " << time << ", filter time is " << filter_.time() << "Skipping." << std::endl;
-        return false;
+    if (!accel_buffer_.empty()) {
+        double last_accelerometer_time = lastAccelerometerTime();
+        if (time <= last_accelerometer_time) {
+            std::cout << "Got accelerometer measurement from time " << time << ", last item time is " << last_accelerometer_time << ". Skipping." << std::endl;
+            return false;
+        }
     }
+    assert(!std::isnan(accel.maxCoeff()));
     ImuItem item = ImuItem::fromVector3d(time, ImuDevice::ACCELEROMETER, accel);
-    accel_buffer_[time] = item;
+    accel_buffer_.push_back(item);
     return tryPropagate();
 }
 
 bool Tonav::updateRotationRate(double time, Eigen::Vector3d gyro) {
-    if (time <= filter_.time()) {
-        std::cout << "Got gyroscope measurement from time " << time << ", filter time is " << filter_.time() << "Skipping." << std::endl;
-        return false;
+    if (!gyro_buffer_.empty()) {
+        double last_gyroscope_time = lastGyroscopeTime();
+        if (time <= last_gyroscope_time) {
+            std::cout << "Got gyroscope measurement from time " << time << ", last item time is " << last_gyroscope_time << ". Skipping." << std::endl;
+            return false;
+        }
     }
+    assert(!std::isnan(gyro.maxCoeff()));
     ImuItem item = ImuItem::fromVector3d(time, ImuDevice::GYROSCOPE, gyro);
-    gyro_buffer_[time] = item;
+    gyro_buffer_.push_back(item);
     return tryPropagate();
 }
 
@@ -51,14 +55,13 @@ void Tonav::updateImage(double time, cv::Mat image) {
         return;
     }
     
-    if (time < next_image_allowed_time_) {
+    double first_line_capture_time = filter_.getImageFirstLineCaptureTime(time);
+    if (first_line_capture_time < getMinimalNextPropagationTime()) {
         return;
     }
     
-    {
-        std::lock_guard<std::mutex> lock(filter_sync_);
-        camera_item_ = CameraItem(time, image);
-    }
+    std::lock_guard<std::mutex> lock(filter_sync_);
+    camera_item_ = CameraItem(time, image);
 }
 
 Eigen::Quaterniond Tonav::getCurrentOrientation() {
@@ -75,6 +78,18 @@ cv::Mat Tonav::getCurrentImage() const {
 
 double Tonav::time() const {
     return filter_.time();
+}
+
+std::shared_ptr<StateInitializer> Tonav::initializer() {
+    return state_initializer_;
+}
+
+std::shared_ptr<const StateInitializer> Tonav::initializer() const {
+    return state_initializer_;
+}
+
+bool Tonav::isInitialized() const {
+    return filter_.isInitialized();
 }
 
 //void Tonav::performUpdateIfPossible() {
@@ -148,15 +163,20 @@ bool Tonav::tryPropagate() {
     }
     
     if (!filter_.isInitialized()) {
-        double min_accel_time = accel_buffer_.begin()->first;
-        double min_gyro_time = gyro_buffer_.begin()->first;
-        initialization_time_ = std::max(min_accel_time, min_gyro_time);
-        std::map<double, ImuItem>& longer_buffer = min_accel_time < min_gyro_time ? accel_buffer_ : gyro_buffer_;
-        auto lower_it = longer_buffer.begin();
-        // `upper_it` points to first element that should be kept
-        auto upper_it = longer_buffer.lower_bound(initialization_time_);
-        longer_buffer.erase(lower_it, upper_it);
+        double accel_time = accel_buffer_.front().getTime();
+        double gyro_time = gyro_buffer_.front().getTime();
         
+        // Trim history of longer buffer
+        if (accel_time < gyro_time) {
+            accel_buffer_.truncateToMinimalInterpolationTime(gyro_time);
+        } else {
+            gyro_buffer_.truncateToMinimalInterpolationTime(accel_time);
+        }
+        
+        it_accel_ = std::begin(accel_buffer_);
+        it_gyro_ = std::begin(gyro_buffer_);
+        
+        initialization_time_ = std::max(it_accel_->getTime(), it_gyro_->getTime());
         propagateToTime(initialization_time_);
         assert(filter_.isInitialized());
         assert(!camera_item_);
@@ -168,8 +188,8 @@ bool Tonav::tryPropagate() {
     }
     
     double camera_item_last_line_capture_time = filter_.getImageLastLineCaptureTime(camera_item_.getTime());
-    bool accel_ok = accel_buffer_.rbegin()->first > camera_item_last_line_capture_time;
-    bool gyro_ok = gyro_buffer_.rbegin()->first > camera_item_last_line_capture_time;
+    bool accel_ok = lastAccelerometerTime() > camera_item_last_line_capture_time;
+    bool gyro_ok = lastGyroscopeTime() > camera_item_last_line_capture_time;
     
     if (accel_ok && gyro_ok) {
         double camera_item_capture_time = filter_.getImageCaptureTime(camera_item_.getTime());
@@ -185,70 +205,93 @@ bool Tonav::tryPropagate() {
     }
 }
 
-void Tonav::propagateToTime(double time) {
-    std::map<double, ImuItem>::iterator it_accel = accel_buffer_.lower_bound(filter_.time());
-    std::map<double, ImuItem>::iterator it_gyro = gyro_buffer_.lower_bound(filter_.time());
+void Tonav::propagateToTime(double t) {
+    assert(!isInitialized() || time() < t);
+    if (it_accel_->getTime() < it_gyro_->getTime()) {
+        assert(!isInitialized() || it_accel_->getTime() <= time());
+        assert(!isInitialized() || time() < it_gyro_->getTime());
+    } else {
+        double accel_time = it_accel_->getTime();
+        double gyro_time = it_gyro_->getTime();
+        assert(!isInitialized() || time() < it_accel_->getTime());
+        assert(!isInitialized() || it_gyro_->getTime() <= time());
+    }
     
-    double step_time = std::min(it_accel->first, it_gyro->first);
-    
-    std::size_t iter = 0;
-    while (true) {
-        assert(it_accel != std::end(accel_buffer_));
-        assert(std::next(it_accel) != std::end(accel_buffer_));
-        assert(it_gyro != std::end(gyro_buffer_));
-        assert(std::next(it_gyro) != std::end(gyro_buffer_));
+    for (;;) {
+        double step_time = getMinimalNextPropagationTime();
         
-        ImuItem accel_item = interpolate(step_time, it_accel->second, std::next(it_accel)->second);
-        ImuItem gyro_item = interpolate(step_time, it_gyro->second, std::next(it_gyro)->second);
-        
-        filter_.stepInertial(step_time, accel_item, gyro_item);
-        
-        if (step_time == time) {
-            break;
-        } else {
-            step_time = std::min(std::next(it_accel)->first, std::next(it_gyro)->first);
-            if (step_time > time) {
-                step_time = time;
-            } else if (std::abs(it_accel->first - it_gyro->first) < 1e-12 && std::abs(std::next(it_accel)->first - std::next(it_gyro)->first) < 1e-12) {
-                ++it_accel;
-                ++it_gyro;
-            } else if (std::next(it_accel)->first <= std::next(it_gyro)->first) {
-                ++it_accel;
+        if (time() != step_time) {
+            if (it_accel_->getTime() < it_gyro_->getTime()) {
+                assert(!isInitialized() || it_accel_->getTime() <= time());
+                assert(!isInitialized() || time() < it_gyro_->getTime());
             } else {
-                ++it_gyro;
+                double accel_time = it_accel_->getTime();
+                double gyro_time = it_gyro_->getTime();
+                assert(!isInitialized() || time() < it_accel_->getTime());
+                assert(!isInitialized() || it_gyro_->getTime() <= time());
             }
-            assert(it_accel->first <= step_time && step_time <= std::next(it_accel)->first);
-            assert(it_gyro->first <= step_time && step_time <= std::next(it_gyro)->first);
+            assert(std::next(it_accel_) != std::end(accel_buffer_));
+            assert(std::next(it_gyro_) != std::end(gyro_buffer_));
+            ImuItem accel_item = ImuBuffer::interpolate(step_time, *it_accel_, *std::next(it_accel_));
+            ImuItem gyro_item = ImuBuffer::interpolate(step_time, *it_gyro_, *std::next(it_gyro_));
+            filter_.stepInertial(step_time, accel_item, gyro_item);
         }
-        iter += 1;
+        double accel_time = it_accel_->getTime();
+        double gyro_time = it_gyro_->getTime();
+        
+        if (std::min(std::next(it_accel_)->getTime(), std::next(it_gyro_)->getTime()) >= t) {
+            ImuItem accel_item = ImuBuffer::interpolate(t, *it_accel_, *std::next(it_accel_));
+            ImuItem gyro_item = ImuBuffer::interpolate(t, *it_gyro_, *std::next(it_gyro_));
+            filter_.stepInertial(t, accel_item, gyro_item);
+            incrementBufferPointer();
+            if (std::next(it_accel_)->getTime() == t) {
+                incrementBufferPointer();
+            }
+            if (std::next(it_gyro_)->getTime() == t) {
+                incrementBufferPointer();
+            }
+            break;
+        }
+        
+        incrementBufferPointer();
     }
     
-    if (std::abs(filter_.time() - time) >= 1e-6) {
-        std::cerr << "Filter time: " << filter_.time() << std::endl;
-        std::cerr << "Time: " << time << std::endl;
-        assert(std::abs(filter_.time() - time) < 1e-6);
+    if (it_accel_->getTime() < it_gyro_->getTime()) {
+        assert(!isInitialized() || it_accel_->getTime() <= time());
+        assert(!isInitialized() || time() < it_gyro_->getTime());
+    } else {
+        double accel_time = it_accel_->getTime();
+        double gyro_time = it_gyro_->getTime();
+        assert(!isInitialized() || time() < it_accel_->getTime());
+        assert(!isInitialized() || it_gyro_->getTime() <= time());
     }
-    
-    next_image_allowed_time_ = std::max(std::next(it_accel)->first, std::next(it_gyro)->first);
 }
 
 void Tonav::update() {
     assert(filter_.isInitialized());
-    filter_.stepCamera(camera_item_.getTime(), camera_item_.getImage());
+    filter_.stepCamera(camera_item_.getTime(), camera_item_.getImage(), it_gyro_, it_accel_);
 }
 
-ImuItem Tonav::interpolate(double time, const ImuItem &earlier, const ImuItem &later) const {
-    double time_delta = later.getTime() - earlier.getTime();
-    double t = (time - earlier.getTime()) / time_delta;
-    ImuDevice device = later.getDevice();
-    Eigen::Vector3d data = t * earlier.getVector() + (1-t) * later.getVector();
-    ImuItem interpolated = ImuItem::fromVector3d(time, device, data);
-    return interpolated;
+void Tonav::incrementBufferPointer() {
+    if (std::next(it_accel_)->getTime() < std::next(it_gyro_)->getTime()) {
+        ++it_accel_;
+        assert(it_accel_ != std::end(accel_buffer_));
+    } else {
+        ++it_gyro_;
+        assert(it_gyro_ != std::end(gyro_buffer_));
+    }
 }
 
-ImuItem Tonav::interpolate_any_time(double time, ImuDevice device) {
-    const std::map<double, ImuItem>& buffer = device == ImuDevice::ACCELEROMETER ? accel_buffer_ : gyro_buffer_;
-    auto later = buffer.lower_bound(time);
-    auto earlier = std::prev(later);
-    return interpolate(time, earlier->second, later->second);
+double Tonav::lastGyroscopeTime() const {
+    const ImuItem& last_gyro = gyro_buffer_.back();
+    return last_gyro.getTime();
+}
+
+double Tonav::lastAccelerometerTime() const {
+    const ImuItem& last_accel = accel_buffer_.back();
+    return last_accel.getTime();
+}
+
+double Tonav::getMinimalNextPropagationTime() const {
+    return std::max(it_accel_->getTime(), it_gyro_->getTime());
 }

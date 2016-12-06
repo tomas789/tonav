@@ -24,17 +24,19 @@ public:
     friend class Filter;
     friend std::ostream& operator<<(std::ostream&, FilterState&);
 
-    FilterState(std::shared_ptr<const Calibration> caliration);
+    FilterState(std::shared_ptr<const Calibration> calibration);
     
     double time() const;
 
     const Eigen::Quaterniond& getOrientationInGlobalFrame() const;
     const Eigen::Vector3d& getPositionInGlobalFrame() const;
     const Eigen::Vector3d& getVelocityInGlobalFrame() const;
-
+    
     CameraPoseBuffer& poses();
     const CameraPoseBuffer& poses() const;
-private:
+    
+    void updateWithStateDelta(const Eigen::VectorXd& delta_x);
+protected:
     /**
      * Calibration is used to:
      *  1/ determine maximum number of camera poses stored in filter state

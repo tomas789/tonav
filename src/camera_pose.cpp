@@ -9,8 +9,10 @@
 #include "body_state.h"
 #include "filter.h"
 
-CameraPose::CameraPose(const BodyState& body_state) {
+CameraPose::CameraPose(const BodyState& body_state, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel) {
     body_state_ = std::make_shared<BodyState>(body_state);
+    hint_gyro_ = hint_gyro;
+    hint_accel_ = hint_accel;
 }
 
 std::size_t CameraPose::getActiveFeaturesCount() const {
@@ -56,7 +58,7 @@ const Eigen::Vector3d& CameraPose::getBodyPositionInGlobalFrame() const {
 }
 
 Eigen::Vector3d CameraPose::getCameraPositionInGlobalFrame(const Filter& filter) const {
-    Eigen::Quaterniond q_G_C = getCameraOrientationInGlobalFrame(filter);
+    Eigen::Quaterniond q_G_C = getCameraOrientationInGlobalFrame(filter).conjugate();
     Eigen::Vector3d p_B_G = body_state_->getPositionInGlobalFrame();
     Eigen::Vector3d p_B_C = filter.getPositionOfBodyInCameraFrame();
     return p_B_G - q_G_C.toRotationMatrix() * p_B_C;
@@ -85,9 +87,17 @@ void CameraPose::rememberFeatureId(int feature_id) {
     feature_ids_.insert(feature_id);
 }
 
+void CameraPose::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
+    body_state_->updateWithStateDelta(delta_x);
+}
 
+ImuBuffer::iterator CameraPose::gyroHint() {
+    return hint_gyro_;
+}
 
-
+ImuBuffer::iterator CameraPose::accelHint() {
+    return hint_accel_;
+}
 
 
 

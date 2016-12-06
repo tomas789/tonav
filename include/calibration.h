@@ -67,6 +67,8 @@ public:
     Eigen::Matrix3d getGyroscopeShapeMatrixNoise() const;
 
     Eigen::Matrix3d getAccelerometerShapeMatrixNoise() const;
+    
+    Eigen::Vector3d getPositionOfBodyInCameraFrameNoise() const;
 
     Eigen::Vector2d getFocalPointNoise() const;
 
@@ -122,6 +124,7 @@ protected:
     Eigen::Matrix3d gyroscope_acceleration_sensitivity_matrix_noise_;
     Eigen::Matrix3d gyroscope_shape_matrix_noise_;
     Eigen::Matrix3d accelerometer_shape_matrix_noise_;
+    Eigen::Vector3d position_of_body_in_camera_frame_noise_;
     Eigen::Vector2d focal_point_noise_;
     Eigen::Vector2d optical_center_noise_;
     Eigen::Vector3d radial_distortion_noise_;

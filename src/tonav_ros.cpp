@@ -40,6 +40,7 @@ int TonavRos::run(int argc, char* argv[]) {
     std::string camerainfo_topic = variables_map_["camerainfo"].as<std::string>();
     std::string calibration_file = variables_map_["calibration"].as<std::string>();
     robot_base_link_ = variables_map_["robot_base_link"].as<std::string>();
+    std::string twist_topic = variables_map_["twist"].as<std::string>();
     
     ros::Subscriber camerainfo_subscriber = node_handle.subscribe(camerainfo_topic, 50, &TonavRos::cameraInfoCallback, this);
     
@@ -47,6 +48,7 @@ int TonavRos::run(int argc, char* argv[]) {
     image_transport::Subscriber camera_subscriber = transport.subscribe(camera_topic, 5, &TonavRos::cameraCallback, this);
     
     ros::Subscriber imu_subscriber = node_handle.subscribe(imu_topic, 50, &TonavRos::imuCallback, this);
+    ros::Subscriber twist_subscriber = node_handle.subscribe(twist_topic, 50, &TonavRos::twistCallback, this);
     
     ros::Rate rate(15);
     while (true) {
@@ -55,6 +57,7 @@ int TonavRos::run(int argc, char* argv[]) {
             camerainfo_subscriber.shutdown();
             break;
         }
+        rate.sleep();
         ros::spinOnce();
     }
     
@@ -62,40 +65,20 @@ int TonavRos::run(int argc, char* argv[]) {
     
     std::shared_ptr<Calibration> calibration = Calibration::fromPath(calibration_file);
     
-    geometry_msgs::TransformStamped body_to_camera_transform;
+    
+    Eigen::Quaterniond q_C_B;
+    Eigen::Vector3d p_B_C;
     try {
-        body_to_camera_transform = tf_buffer_->lookupTransform(camera_frame_id_, imu_frame_id_, ros::Time(0));
-    } catch (tf2::TransformException& e) {
-        ROS_ERROR("%s", e.what());
-        return 1;
-    }
-    geometry_msgs::TransformStamped camera_to_body_transform;
-    try {
-        camera_to_body_transform = tf_buffer_->lookupTransform(imu_frame_id_, camera_frame_id_, ros::Time(0));
-    } catch (tf2::TransformException& e) {
-        ROS_ERROR("%s", e.what());
-        return 1;
-    }
-    geometry_msgs::TransformStamped base_link_to_imu_transform;
-    try {
-        base_link_to_imu_transform = tf_buffer_->lookupTransform(imu_frame_id_, robot_base_link_, ros::Time(0));
+        geometry_msgs::TransformStamped body_to_camera_transform = tf_buffer_->lookupTransform(camera_frame_id_, imu_frame_id_, ros::Time(0));
+        tf::quaternionMsgToEigen(body_to_camera_transform.transform.rotation, q_C_B);
+        tf::vectorMsgToEigen(body_to_camera_transform.transform.translation, p_B_C);
     } catch (tf2::TransformException& e) {
         ROS_ERROR("%s", e.what());
         return 1;
     }
     
-    Eigen::Quaterniond initial_orientation;
-    tf::quaternionMsgToEigen(base_link_to_imu_transform.transform.rotation, initial_orientation);
-    Eigen::Vector3d initial_position;
-    tf::vectorMsgToEigen(base_link_to_imu_transform.transform.translation, initial_position);
-    Eigen::Vector3d intial_position_of_body_in_camera_frame;
-    tf::vectorMsgToEigen(camera_to_body_transform.transform.translation, intial_position_of_body_in_camera_frame);
-    
-    Eigen::Quaterniond body_to_camera_rotation;
-    tf::quaternionMsgToEigen(body_to_camera_transform.transform.rotation, body_to_camera_rotation);
-    calibration->setBodyToCameraRotation(body_to_camera_rotation);
-    
-    tonav_.reset(new Tonav(calibration, initial_orientation, initial_position, intial_position_of_body_in_camera_frame));
+    calibration->setBodyToCameraRotation(q_C_B);
+    tonav_.reset(new Tonav(calibration, p_B_C));
     
     ros::spin();
     
@@ -110,6 +93,7 @@ void TonavRos::setAllowedOptionsDescription() {
         ("camerainfo", po::value<std::string>(), "camera_info topic")
         ("imu", po::value<std::string>(), "imu topic")
         ("robot_base_link", po::value<std::string>(), "robot base_link frame")
+        ("twist", po::value<std::string>(), "twist topic for initialization")
     ;
 }
 
@@ -155,6 +139,9 @@ bool TonavRos::parseCommandLineParams(int argc, char* argv[]) {
     } else if (variables_map_.count("robot_base_link") > 1) {
         ROS_ERROR("Got multiple occurrences of robot_base_link. Expected one.");
         return false;
+    } else if (variables_map_.count("twist") > 1) {
+        ROS_ERROR("Got multiple occurrences of twist. Expected one.");
+        return false;
     }
     
     return true;
@@ -165,15 +152,20 @@ void TonavRos::printHelp() {
 }
 
 void TonavRos::cameraCallback(const sensor_msgs::ImageConstPtr &msg) {
+    camera_callback_counter_ += 1;
     if (!is_ready_to_filter_) {
         return;
     }
-    ROS_DEBUG_STREAM("Camera Seq: [" << msg->header.seq << "]");
+//    ROS_INFO_STREAM("Camera Seq: [" << msg->header.seq << "]");
     try {
+        if (camera_callback_counter_ % 3 != 0) {
+            return;
+        }
         const std_msgs::Header header = msg->header;
         double timestamp = getMessageTime(header.stamp);
         cv::Mat gray = cv_bridge::toCvShare(msg, "mono8")->image;
         tonav_->updateImage(timestamp, gray);
+            
     } catch (cv_bridge::Exception& e) {
         ROS_ERROR("Could not convert from '%s' to 'mono8'.", msg->encoding.c_str());
     }
@@ -224,6 +216,15 @@ void TonavRos::imuCallback(const sensor_msgs::ImuConstPtr &msg) {
     }
 }
 
+void TonavRos::twistCallback(const geometry_msgs::TwistStampedPtr& msg) {
+    if (!tonav_) {
+        return;
+    }
+    Eigen::Vector3d velocity;
+    velocity << msg->twist.linear.x, msg->twist.linear.y, msg->twist.linear.z;
+    tonav_->initializer()->setVelocity(velocity);
+}
+
 double TonavRos::getMessageTime(ros::Time stamp) {
     if (time_beginning_.isZero()) {
         time_beginning_ = stamp;
@@ -234,8 +235,8 @@ double TonavRos::getMessageTime(ros::Time stamp) {
 
 void TonavRos::publishResults(const ros::Time& time) {
     geometry_msgs::TransformStamped transform;
-    Eigen::Quaterniond attitude = tonav_->getCurrentOrientation();
-    Eigen::Vector3d position = tonav_->getCurrentPosition();
+    Eigen::Quaterniond attitude = tonav_->getCurrentOrientation().conjugate();
+    Eigen::Vector3d position = tonav_->getCurrentPosition() / 50.0;
     transform.header.stamp = time;
     transform.header.frame_id = "map";
     transform.child_frame_id = "base_link";

@@ -24,6 +24,10 @@ int CameraReprojectionFunctor::operator()(const Eigen::VectorXd &x, Eigen::Vecto
     return 0;
 }
 
+Eigen::Vector3d CameraReprojectionFunctor::prehodMiToVoleDoTohoKameraFrejmu(std::size_t i, const Eigen::VectorXd &x) {
+    return g(i, x);
+}
+
 int CameraReprojectionFunctor::inputs() const {
     return 3;
 }

@@ -73,6 +73,10 @@ Eigen::Vector3d Calibration::getGlobalGravity() const {
     return global_gravity_;
 }
 
+Eigen::Vector3d Calibration::getPositionOfBodyInCameraFrameNoise() const {
+    return position_of_body_in_camera_frame_noise_;
+}
+
 int Calibration::getMaxCameraPoses() const {
     return max_camera_poses_;
 }
@@ -155,6 +159,7 @@ const std::vector<std::string> Calibration::allowed_params_ = {
         "Noise.orientation", "Noise.position", "Noise.velocity",
         "Noise.gyroscopeBias", "Noise.accelerometerBias",
         "Noise.Ts", "Noise.Tg", "Noise.Ta",
+        "Noise.positionOfBodyInCameraFrame",
         "Noise.focalPoint", "Noise.opticalCenter",
         "Noise.radialDistortion", "Noise.tangentialDistortion",
         "Noise.cameraDelayTime", "Noise.cameraReadoutTime"
@@ -297,6 +302,10 @@ std::shared_ptr<Calibration> Calibration::fromPath(boost::filesystem::path fname
             }
         } else if (key == "Noise.Ta") {
             if (!Calibration::tryParseMatrix3d(value, calib->accelerometer_shape_matrix_noise_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Noise.positionOfBodyInCameraFrame") {
+            if (!Calibration::tryParseVector3d(value, calib->position_of_body_in_camera_frame_noise_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
         } else if (key == "Noise.focalPoint") {
