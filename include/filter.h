@@ -57,7 +57,7 @@ public:
      * @param time Arrival time of camera image.
      * @param frame Image captured from camera.
      */
-    void stepCamera(double time, cv::Mat& frame, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel);
+    void stepCamera(double time, cv::Mat& frame, const ImuBuffer::iterator& hint_gyro, const ImuBuffer::iterator& hint_accel);
 
     /** @brief Get current estimated position */
     Eigen::Vector3d getCurrentPosition();
@@ -176,7 +176,7 @@ protected:
      *
      * @todo Implement this
      */
-    void augment(ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel);
+    void augment(const ImuBuffer::iterator& hint_gyro, const ImuBuffer::iterator& hint_accel);
 
     /**
      * @brief Remove unused camera poses from filter state.

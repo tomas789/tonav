@@ -42,14 +42,8 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     std::vector<bool> current_feature_matched(frame_features.keypoints().size(), false);
     feature_track_list current_tracks(frame_features.keypoints().size());
 
-    double distance_limit = computeDistanceLimitForMatch(matches);
-
     for (std::size_t i = 0; i < matches.size(); ++i) {
         const cv::DMatch& match = matches[i];
-
-        if (match.distance > distance_limit) {
-            continue;
-        }
 
         int query_idx = match.queryIdx;
         int train_idx = match.trainIdx;
@@ -90,22 +84,6 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     return current_tracks;
 }
 
-double FeatureTracker::computeDistanceLimitForMatch(const std::vector<cv::DMatch>& matches) const {
-    double min_distance = 100;
-    double max_distance = 0;
-    for (std::size_t i = 0; i < matches.size(); ++i) {
-        const cv::DMatch& match = matches[i];
-        if (match.distance < min_distance) {
-            min_distance = match.distance;
-        }
-        if (match.distance > max_distance) {
-            max_distance = match.distance;
-        }
-    }
-//    std::cout << "Min distance: " << min_distance << ", Max distance: " << max_distance << std::endl;
-
-    return std::max(2*min_distance, 25.0);
-}
 
 void FeatureTracker::drawStats(cv::Mat &image, const std::vector<double> &previous_features_matched,
         const std::vector<bool> &current_features_matched, const feature_track_list& current_tracks,

@@ -19,9 +19,7 @@ public:
     CameraReprojectionFunctor(const std::vector<Eigen::Matrix3d>& rotations, const std::vector<Eigen::Vector3d>& positions, const std::vector<Eigen::Vector2d>& measurements, const Filter& filter);
     
     int operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const;
-    
-    Eigen::Vector3d prehodMiToVoleDoTohoKameraFrejmu(std::size_t i, const Eigen::VectorXd &x);
-    
+        
     int inputs() const;
     int values() const;
 private:

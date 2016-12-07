@@ -42,6 +42,9 @@ public:
     std::shared_ptr<MockBodyState> body_state_;
     std::shared_ptr<MockFilter> filter_;
     std::shared_ptr<MockFilterState> filter_state_;
+    std::shared_ptr<ImuBuffer> accel_buffer_;
+    std::shared_ptr<ImuBuffer> gyro_buffer_;
+
     
     CameraProjectionTest() {
         calibration_ = std::make_shared<MockCalibration>();
@@ -83,14 +86,14 @@ public:
     }
     
     void apply_move_backwards() {
-        ImuBuffer accel_buffer;
-        accel_buffer.push_back(ImuItem::fromVector3d(-1.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
-        accel_buffer.push_back(ImuItem::fromVector3d(0.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
-        accel_buffer.push_back(ImuItem::fromVector3d(1.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
-        ImuBuffer gyro_buffer;
-        gyro_buffer.push_back(ImuItem::fromVector3d(-1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
-        gyro_buffer.push_back(ImuItem::fromVector3d(0.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
-        gyro_buffer.push_back(ImuItem::fromVector3d(1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
+        accel_buffer_ = std::make_shared<ImuBuffer>();
+        accel_buffer_->push_back(ImuItem::fromVector3d(-1.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
+        accel_buffer_->push_back(ImuItem::fromVector3d(0.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
+        accel_buffer_->push_back(ImuItem::fromVector3d(1.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
+        gyro_buffer_ = std::make_shared<ImuBuffer>();
+        gyro_buffer_->push_back(ImuItem::fromVector3d(-1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
+        gyro_buffer_->push_back(ImuItem::fromVector3d(0.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
+        gyro_buffer_->push_back(ImuItem::fromVector3d(1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
         
         Eigen::Matrix3d R_C_B = calibration_->body_to_camera_rotation_.toRotationMatrix();
         Eigen::Vector3d p_x_C;
@@ -102,23 +105,23 @@ public:
         // p_B_G: (-1, 0, 0)^T
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Eigen::Quaterniond::Identity(), -1*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
-        filter_->augment(std::next(std::begin(gyro_buffer)), std::next(std::begin(accel_buffer)));
+        filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
         
         
         // p_B_G: (-2, 0, 0)^T
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Eigen::Quaterniond::Identity(), -2*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
-        filter_->augment(std::next(std::begin(gyro_buffer)), std::next(std::begin(accel_buffer)));
+        filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
         
         // p_B_G: (-3, 0, 0)^T
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Eigen::Quaterniond::Identity(), -3*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
-        filter_->augment(std::next(std::begin(gyro_buffer)), std::next(std::begin(accel_buffer)));
+        filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
         
         // p_B_G:(-4, 0, 0)^T
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Eigen::Quaterniond::Identity(), -4*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
-        filter_->augment(std::next(std::begin(gyro_buffer)), std::next(std::begin(accel_buffer)));
+        filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
     }
     
     std::size_t getNumberOfCameraPoses() {

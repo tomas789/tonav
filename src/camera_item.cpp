@@ -10,9 +10,10 @@
 CameraItem::CameraItem() : is_valid_(false) {
 }
 
-CameraItem::CameraItem(double time, cv::Mat image) : is_valid_(true) {
+CameraItem::CameraItem(double time, const cv::Mat& image) : is_valid_(true) {
     time_ = time;
-    image_ = image;
+    //image_ = image;
+    image.copyTo(image_);
     was_processed_ = false;
 }
 

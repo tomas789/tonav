@@ -107,5 +107,3 @@ ImuBuffer::iterator CameraPose::accelHint() {
 
 
 
-
-

@@ -25,7 +25,7 @@ FrameFeatures FrameFeatures::fromImage(cv::Ptr<cv::FeatureDetector> detector,
     return frame_features;
 }
 
-cv::Mat FrameFeatures::toGray(cv::Mat image) {
+cv::Mat FrameFeatures::toGray(const cv::Mat& image) {
     switch (image.channels()) {
         case 3:
             {
@@ -53,21 +53,65 @@ void FrameFeatures::drawFeatures(cv::Mat& image, cv::Scalar color) {
 
 
 void FrameFeatures::detectKeypoints(cv::Ptr<cv::FeatureDetector> detector, cv::Mat gray) {
-    detector->detect(gray, keypoints_);
+     detector->detect(gray, keypoints_);
+//    exp_detector_.detect(gray, keypoints_);
 }
 
 void FrameFeatures::computeDescriptors(cv::Ptr<cv::DescriptorExtractor> extractor, cv::Mat gray) {
-    extractor->compute(gray, keypoints_, descriptors_);
+     extractor->compute(gray, keypoints_, descriptors_);
+//    exp_extractor_.compute(gray, keypoints_, descriptors_);
 }
 
-std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matcher, const FrameFeatures &other) {
+std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matcher, const FrameFeatures &other, float threshold) {
     if (other.descriptors_.rows == 0) {
         return std::vector<cv::DMatch>();
     }
-
-    std::vector<cv::DMatch> matches;
-    matcher->match(descriptors_, other.descriptors_, matches);
-    return matches;
+    
+    bool use_ratio_test = false;
+    if (use_ratio_test) {
+        std::vector<std::vector<cv::DMatch>> matches;
+        matcher->knnMatch(descriptors_, other.descriptors_, matches, 2);
+        std::vector<cv::DMatch> good_matches;
+        for (std::size_t i = 0; i < matches.size(); ++i) {
+            std::vector<cv::DMatch>& feature_matches = matches[i];
+            if (feature_matches.size() != 2) {
+                std::cout << "Skipping feature " << i << " that has only " << feature_matches.size() << " matches" << std::endl;
+                continue;
+            }
+            cv::DMatch better_match;
+            cv::DMatch worser_match;
+            if (feature_matches[0].distance < feature_matches[1].distance) {
+                better_match = feature_matches[0];
+                worser_match = feature_matches[1];
+            } else {
+                better_match = feature_matches[1];
+                worser_match = feature_matches[0];
+            }
+            float ratio = better_match.distance / worser_match.distance;
+            if (ratio < threshold) {
+                if (better_match.distance < 15) {
+                    good_matches.push_back(better_match);
+                }
+            }
+            std::cout << "ratio " << ratio << std::endl;
+        }
+        return good_matches;
+    } else {
+        std::vector<cv::DMatch> matches;
+        matcher->match(descriptors_, other.descriptors_, matches);
+        
+        double distance_limit = computeDistanceLimitForMatch(matches);
+        std::vector<cv::DMatch> good_matches;
+        for (std::size_t i = 0; i < matches.size(); ++i) {
+            if (matches[i].distance < distance_limit) {
+                good_matches.push_back(matches[i]);
+            }
+        }
+        
+        return good_matches;
+    }
+    
+    
 }
 
 std::vector<cv::KeyPoint> &FrameFeatures::keypoints() {
@@ -76,6 +120,27 @@ std::vector<cv::KeyPoint> &FrameFeatures::keypoints() {
 
 const std::vector<cv::KeyPoint> &FrameFeatures::keypoints() const {
     return keypoints_;
+}
+
+double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch>& matches) const {
+    double min_distance = 100;
+    double max_distance = 0;
+    double mean_distance = 0;
+    for (std::size_t i = 0; i < matches.size(); ++i) {
+        const cv::DMatch& match = matches[i];
+        mean_distance += match.distance;
+        if (match.distance < min_distance) {
+            min_distance = match.distance;
+        }
+        if (match.distance > max_distance) {
+            max_distance = match.distance;
+        }
+    }
+    mean_distance /= matches.size();
+    std::cout << "Min distance: " << min_distance << ", Max distance: " << max_distance << ", mean distance: " << mean_distance << std::endl;
+    
+    return 5.0;
+    return std::max(2*min_distance, 5.0);
 }
 
 

@@ -116,6 +116,7 @@ if(CATKIN_ENABLE_TESTING)
     test/quaternion_tools_test.cpp
     test/filter_test.cpp
     test/big_camera_test.cpp
+    test/frame_features_test.cpp
     )
   add_rostest_gtest(${PROJECT_NAME}-test launch/gtest.test ${SOURCE_FILES} ${TEST_FILES})
   target_link_libraries(${PROJECT_NAME}-test ${catkin_LIBRARIES} ${GTEST_BOTH_LIBRARIES} ${GMOCK_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} ${image_transport_LIBRARIES} ${cv_bridge_LIBRARIES} ${tf2_ros_LIBRARIES} ${eigen_conversions_LIBRARIES})

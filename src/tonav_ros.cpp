@@ -40,7 +40,9 @@ int TonavRos::run(int argc, char* argv[]) {
     std::string camerainfo_topic = variables_map_["camerainfo"].as<std::string>();
     std::string calibration_file = variables_map_["calibration"].as<std::string>();
     robot_base_link_ = variables_map_["robot_base_link"].as<std::string>();
-    std::string twist_topic = variables_map_["twist"].as<std::string>();
+    std::string twist_topic = variables_map_.count("twist") != 0
+        ? variables_map_["twist"].as<std::string>()
+        : "";
     
     ros::Subscriber camerainfo_subscriber = node_handle.subscribe(camerainfo_topic, 50, &TonavRos::cameraInfoCallback, this);
     
@@ -48,7 +50,11 @@ int TonavRos::run(int argc, char* argv[]) {
     image_transport::Subscriber camera_subscriber = transport.subscribe(camera_topic, 5, &TonavRos::cameraCallback, this);
     
     ros::Subscriber imu_subscriber = node_handle.subscribe(imu_topic, 50, &TonavRos::imuCallback, this);
-    ros::Subscriber twist_subscriber = node_handle.subscribe(twist_topic, 50, &TonavRos::twistCallback, this);
+    
+    ros::Subscriber twist_subscriber;
+    if (!twist_topic.empty()) {
+        twist_subscriber = node_handle.subscribe(twist_topic, 50, &TonavRos::twistCallback, this);
+    }
     
     ros::Rate rate(15);
     while (true) {
@@ -158,9 +164,6 @@ void TonavRos::cameraCallback(const sensor_msgs::ImageConstPtr &msg) {
     }
 //    ROS_INFO_STREAM("Camera Seq: [" << msg->header.seq << "]");
     try {
-        if (camera_callback_counter_ % 3 != 0) {
-            return;
-        }
         const std_msgs::Header header = msg->header;
         double timestamp = getMessageTime(header.stamp);
         cv::Mat gray = cv_bridge::toCvShare(msg, "mono8")->image;
@@ -249,7 +252,7 @@ void TonavRos::publishResults(const ros::Time& time) {
     transform.transform.rotation.w = attitude.w();
     tf_broadcaster_->sendTransform(transform);
     
-    cv::Mat img = tonav_->getCurrentImage();
+    const cv::Mat& img = tonav_->getCurrentImage();
     sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", img).toImageMsg();
     image_publisher_->publish(msg);
 }

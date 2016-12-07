@@ -41,7 +41,7 @@ bool Tonav::updateRotationRate(double time, Eigen::Vector3d gyro) {
     return tryPropagate();
 }
 
-void Tonav::updateImage(double time, cv::Mat image) {
+void Tonav::updateImage(double time, const cv::Mat& image) {
     if (!filter_.isInitialized()) {
         return;
     }

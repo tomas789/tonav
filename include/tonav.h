@@ -70,7 +70,7 @@ public:
      * @param time Time at which camera image was captured.
      * @param image Captured image.
      */
-    void updateImage(double time, cv::Mat image);
+    void updateImage(double time, const cv::Mat& image);
     
     Eigen::Quaterniond getCurrentOrientation();
     Eigen::Vector3d getCurrentPosition();

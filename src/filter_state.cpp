@@ -59,11 +59,11 @@ void FilterState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
     delta_T_a.block<1, 3>(1, 0) = delta_x.segment<3>(36);
     delta_T_a.block<1, 3>(2, 0) = delta_x.segment<3>(39);
     
-    gyroscope_shape_ += delta_T_g;
-    gyroscope_acceleration_sensitivity_ += delta_T_s;
-    accelerometer_shape_ += delta_T_a;
+//    gyroscope_shape_ += delta_T_g;
+//    gyroscope_acceleration_sensitivity_ += delta_T_s;
+//    accelerometer_shape_ += delta_T_a;
     
-//    position_of_body_in_camera_ += delta_x.segment<3>(42);
+    position_of_body_in_camera_ += delta_x.segment<3>(42);
     focal_point_ += delta_x.segment<2>(45);
     optical_center_ += delta_x.segment<2>(47);
     radial_distortion_ += delta_x.segment<3>(49);

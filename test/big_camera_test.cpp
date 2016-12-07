@@ -42,6 +42,8 @@ public:
     std::shared_ptr<MockBodyState> body_state_;
     std::shared_ptr<MockFilter> filter_;
     std::shared_ptr<MockFilterState> filter_state_;
+    std::shared_ptr<ImuBuffer> accel_buffer_;
+    std::shared_ptr<ImuBuffer> gyro_buffer_;
 
     BigCameraTest() {
         std::cout << "Create BigCameraTest::BigCameraTest()" << std::endl;
@@ -84,14 +86,14 @@ public:
     }
 
     void do_big_test() {
-        ImuBuffer accel_buffer;
-        accel_buffer.push_back(ImuItem::fromVector3d(-1.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
-        accel_buffer.push_back(ImuItem::fromVector3d(0.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
-        accel_buffer.push_back(ImuItem::fromVector3d(1.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
-        ImuBuffer gyro_buffer;
-        gyro_buffer.push_back(ImuItem::fromVector3d(-1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
-        gyro_buffer.push_back(ImuItem::fromVector3d(0.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
-        gyro_buffer.push_back(ImuItem::fromVector3d(1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
+        accel_buffer_ = std::make_shared<ImuBuffer>();
+        accel_buffer_->push_back(ImuItem::fromVector3d(-1.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
+        accel_buffer_->push_back(ImuItem::fromVector3d(0.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
+        accel_buffer_->push_back(ImuItem::fromVector3d(1.0, ImuDevice::ACCELEROMETER, Eigen::Vector3d::Zero()));
+        gyro_buffer_ = std::make_shared<ImuBuffer>();
+        gyro_buffer_->push_back(ImuItem::fromVector3d(-1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
+        gyro_buffer_->push_back(ImuItem::fromVector3d(0.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
+        gyro_buffer_->push_back(ImuItem::fromVector3d(1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
 
         Eigen::Quaterniond delta_q(std::cos(-1*M_PI/4.0), 0.0, 0.0, std::sin(-1*M_PI/4.0));
         ASSERT_NEAR(delta_q.norm(), 1.0, 1e-8);
@@ -115,24 +117,26 @@ public:
         // B_0
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), q_B0_G, p_B0_G, Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
-        filter_->augment(std::next(std::begin(gyro_buffer)), std::next(std::begin(accel_buffer)));
+        filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
 
         // B_1
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), q_B1_G, p_B1_G, Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
-        filter_->augment(std::next(std::begin(gyro_buffer)), std::next(std::begin(accel_buffer)));
+        filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
 
         // B_2
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), q_B2_G, p_B2_G, Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
-        filter_->augment(std::next(std::begin(gyro_buffer)), std::next(std::begin(accel_buffer)));
+        filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
 
         // B_3
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), q_B3_G, p_B3_G, Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
-        filter_->augment(std::next(std::begin(gyro_buffer)), std::next(std::begin(accel_buffer)));
+        filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
+        
+        ASSERT_EQ(filter_state_.get(), std::addressof(filter_->state()));
     }
-
+    
     std::size_t getNumberOfCameraPoses() {
         return filter_->filter_state_->poses().size();
     }
@@ -174,15 +178,14 @@ TEST_F(BigCameraTest, BigTest) {
     p_C3_G << 0.0, 2.0, 0.4;
     ASSERT_TRUE((p_C3_G - filter_state_->poses()[3].getCameraPositionInGlobalFrame(*filter_)).isZero(1e-10));
     
-    
     FeatureTrack feature_track;
-    feature_track.addFeaturePosition(320, 90);
-    feature_track.addFeaturePosition(320, 140);
-    feature_track.addFeaturePosition(320, 165);
+    feature_track.addFeaturePosition(320, 300);
+    feature_track.addFeaturePosition(320, 300);
+    feature_track.addFeaturePosition(320, 300);
     
-//    std::cout << filter_state_->poses()[0].gyroHint()->getTime() << std::endl;
-//    std::cout << filter_state_->poses()[1].gyroHint()->getTime() << std::endl;
-//    std::cout << filter_state_->poses()[2].gyroHint()->getTime() << std::endl;
+    std::cout << filter_state_->poses()[0].gyroHint()->getTime() << std::endl;
+    std::cout << filter_state_->poses()[1].gyroHint()->getTime() << std::endl;
+    std::cout << filter_state_->poses()[2].gyroHint()->getTime() << std::endl;
 //    std::cout << filter_state_->poses()[3].gyroHint()->getTime() << std::endl;
 //    std::cout << filter_state_->poses()[0].accelHint()->getTime() << std::endl;
 //    std::cout << filter_state_->poses()[1].accelHint()->getTime() << std::endl;

@@ -19,7 +19,7 @@ public:
     const CameraPose& operator[](std::size_t i) const;
     
     void deleteOldestCameraPose();
-    void addNewCameraPose(const CameraPose& pose);
+    void addNewCameraPose(CameraPose&& pose);
     
     iterator begin();
     iterator end();

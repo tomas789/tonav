@@ -25,11 +25,11 @@ void CameraPoseBuffer::deleteOldestCameraPose() {
     buffer_.pop_front();
 }
 
-void CameraPoseBuffer::addNewCameraPose(const CameraPose& pose) {
+void CameraPoseBuffer::addNewCameraPose(CameraPose&& pose) {
     if (buffer_.full()) {
         throw std::runtime_error("CameraPoseBuffer is full. Cannot add another CameraPose.");
     }
-    buffer_.push_back(pose);
+    buffer_.push_back(std::move(pose));
 }
 
 CameraPoseBuffer::iterator CameraPoseBuffer::begin() {

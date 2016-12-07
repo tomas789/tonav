@@ -11,7 +11,7 @@
 class CameraItem {
 public:
     CameraItem();
-    CameraItem(double time, cv::Mat image);
+    CameraItem(double time, const cv::Mat& image);
     CameraItem(const CameraItem& other) = default;
     
     CameraItem& operator=(const CameraItem& oher) = default;

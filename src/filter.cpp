@@ -36,7 +36,7 @@ void Filter::stepInertial(double time, const ImuItem &accel, const ImuItem &gyro
             *(state().body_state_.get()), time, rotation_estimate, acceleration_estimate);
 }
 
-void Filter::stepCamera(double time, cv::Mat& frame, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel) {
+void Filter::stepCamera(double time, cv::Mat& frame, const ImuBuffer::iterator& hint_gyro, const ImuBuffer::iterator& hint_accel) {
     if (!is_initialized_) {
         return;
     }
@@ -225,9 +225,9 @@ Eigen::Vector3d Filter::computeAccelerationEstimate(const Eigen::Vector3d &accel
     return res;
 }
 
-void Filter::augment(ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel) {
+void Filter::augment(const ImuBuffer::iterator& hint_gyro, const ImuBuffer::iterator& hint_accel) {
     CameraPose new_pose(*state().body_state_, hint_gyro, hint_accel);
-    state().poses().addNewCameraPose(new_pose);
+    state().poses().addNewCameraPose(std::move(new_pose));
     Eigen::MatrixXd new_covar_(filter_covar_.rows() + 9, filter_covar_.cols() + 9);
     Eigen::MatrixXd J_pi = Eigen::MatrixXd::Identity(9, filter_covar_.cols());
     new_covar_.block(0, 0, filter_covar_.rows(), filter_covar_.cols()) = filter_covar_;
@@ -301,9 +301,6 @@ FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack& feat
         std::shared_ptr<BodyState> body_state_for_feature = BodyState::propagate(pose.getBodyState(), feature_time, rotation_estimate, acceleration_estimate);
         //BodyState* body_state_for_feature = &pose.getBodyState()
         
-        std::cout << "Pos diff " << (body_state_for_feature->getPositionInGlobalFrame() - pose.getBodyState().getPositionInGlobalFrame()).norm() << " m" << std::endl;
-        std::cout << "Att diff " << body_state_for_feature->getOrientationInGlobalFrame().angularDistance(pose.getBodyState().getOrientationInGlobalFrame()) << " rad" << std::endl;
-        
         Eigen::Matrix3d R_C_B = getBodyToCameraRotation().toRotationMatrix();
         Eigen::Matrix3d R_Bj_G = body_state_for_feature->getOrientationInGlobalFrame().toRotationMatrix();
         Eigen::Vector3d p_Bj_G = body_state_for_feature->getPositionInGlobalFrame();
@@ -312,8 +309,6 @@ FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack& feat
         std::cout << "p_B_C " << p_B_C.transpose() << std::endl;
         
         Eigen::Vector3d p_f_C = R_C_B*R_Bj_G*(global_position - p_Bj_G) + p_B_C;
-        
-        std::cout << "q_C_B: [" << getBodyToCameraRotation().coeffs().transpose() << "]^T" << std::endl;
         
         std::cout << "x C_" << j << ": [" << p_f_C.transpose() << "]^T" << std::endl;
         
@@ -413,8 +408,20 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list& features_to
     
     std::size_t num_poses = state().poses().size();
     std::vector<Eigen::Vector3d> global_positions;
+    
+    int hist[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     for (const std::shared_ptr<FeatureTrack>& feature : features_to_rezidualize) {
-        if (feature->posesTrackedCount() < 3) {
+        if (feature->posesTrackedCount() < 10) {
+            hist[feature->posesTrackedCount()] += 1;
+        }
+    }
+    for (std::size_t i = 0; i < 10; ++i) {
+        std::cout << i << " " << hist[i] << " | ";
+    }
+    std::cout << std::endl;
+    
+    for (const std::shared_ptr<FeatureTrack>& feature : features_to_rezidualize) {
+        if (feature->posesTrackedCount() <= 3) {
             continue;
         }
         
@@ -487,7 +494,7 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list& features_to
         r_q = Q_1.transpose() * r;
     }
     
-    //updateState(T_H, r_q);
+    updateState(T_H, r_q);
 }
 
 bool Filter::gatingTest(const Eigen::VectorXd& r_0_i, const Eigen::MatrixXd H_0_i) {
@@ -591,27 +598,6 @@ std::pair<bool, Eigen::Vector3d> Filter::triangulateGlobalFeaturePosition(const 
     Eigen::LevenbergMarquardt<Eigen::NumericalDiff<CameraReprojectionFunctor>> lm(num_diff);
     Eigen::LevenbergMarquardtSpace::Status status = lm.minimize(x);
     
-    for (auto it = it_c0; it != it_end; ++it) {
-        Eigen::Vector3d p_f_Ci = (functor.prehodMiToVoleDoTohoKameraFrejmu(it - it_c0, x) / x(2));
-        std::cout << "C_" << (it - it_c0) << ": [" << p_f_Ci.transpose() << "]^T" << std::endl;
-        
-        
-        Eigen::Matrix3d R_G_Ci = it->getCameraOrientationInGlobalFrame(*this).conjugate().toRotationMatrix();
-        Eigen::Vector3d p_Ci_G = it->getCameraPositionInGlobalFrame(*this);
-        Eigen::Vector3d p_f_G = R_G_Ci*p_f_Ci + p_Ci_G;
-        
-        std::cout << "TT q_B_G: [" << it->getBodyOrientationInGlobalFrame().coeffs().transpose() << "]^T" << std::endl;
-        std::cout << "TT p_Ci_G: [" << p_Ci_G.transpose() << "]^T" << std::endl;
-        std::cout << "TT p_f_G: [" << p_f_G.transpose() << "]^T" << std::endl;
-        
-        Eigen::Matrix3d R_C0_Ci = it->getRotationToOtherPose(*it_c0, *this).toRotationMatrix();
-        Eigen::Vector3d p_C0_Ci = it->getPositionOfAnotherPose(*it_c0, *this);
-        Eigen::Vector3d p_f_C0 = R_C0_Ci*(p_f_Ci - p_C0_Ci);
-        std::cout << "TT p_f_C0: [" << p_f_C0.transpose() << "]^T" << std::endl;
-        std::cout << "TT R_C0_Ci: [" << R_C0_Ci << "]^T" << std::endl;
-        std::cout << "TT p_C0_Ci: [" << p_C0_Ci.transpose() << "]^T" << std::endl;
-    }
-    
     std::string msg;
     switch (status) {
         case Eigen::LevenbergMarquardtSpace::Status::NotStarted:
@@ -673,19 +659,19 @@ std::pair<bool, Eigen::Vector3d> Filter::triangulateGlobalFeaturePosition(const 
         default:
             break;
     }
-    std::cout << "Optimization ended after " << lm.iterations() << " iteration(s) with status " << status_msg << " (" << msg << ")" << std::endl;
+//    std::cout << "Optimization ended after " << lm.iterations() << " iteration(s) with status " << status_msg << " (" << msg << ")" << std::endl;
     
     Eigen::VectorXd fvec;
     fvec.resize(functor.values());
     functor(x, fvec);
-    std::cout << "Residualization maxCoeff " << fvec.maxCoeff() << std::endl;
-    if (fvec.maxCoeff() > 100) {
-        std::cout << "Residualization maxCoeff too big " << fvec.maxCoeff() << std::endl;
-    }
+//    std::cout << "Residualization maxCoeff " << fvec.maxCoeff() << std::endl;
+//    if (fvec.maxCoeff() > 1000) {
+//        std::cout << "Residualization maxCoeff too big " << fvec.maxCoeff() << std::endl;
+//    }
     
     // Global position estimate using from inverse depth parametrization of feature position in first camera pose that observed it.
     Eigen::Quaterniond q_G_C0 = it_c0->getCameraOrientationInGlobalFrame(*this).conjugate();
-    Eigen::Vector3d p_C0_G = it_c0->getBodyPositionInGlobalFrame();
+    Eigen::Vector3d p_C0_G = it_c0->getCameraPositionInGlobalFrame(*this);
     Eigen::Vector3d param;
     param << x(0), x(1), 1.0;
     double rho = x(2);
@@ -695,7 +681,7 @@ std::pair<bool, Eigen::Vector3d> Filter::triangulateGlobalFeaturePosition(const 
         throw std::runtime_error("Global feature position is NaN");
     }
     
-    return std::make_pair(fvec.maxCoeff() <= 100, global_position);
+    return std::make_pair(fvec.maxCoeff() <= 1000, global_position);
 }
 
 Eigen::Vector2d Filter::cameraProject(const Eigen::Vector3d& p) const {
