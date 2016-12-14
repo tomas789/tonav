@@ -1,0 +1,66 @@
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.focalPoint: [984.2439 980.8141]
+Camera.opticalCenter: [690.0000 233.1966]
+
+Camera.radialDistortion: [0.0 0.0 0.0]
+Camera.tangentialDistortion: [0.0 0.0]
+
+Camera.cameraDelayTime: 0
+Camera.cameraReadoutTime: 0
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 400
+
+#--------------------------------------------------------------------------------------------
+# IMU Parameters
+#--------------------------------------------------------------------------------------------
+
+# Gyroscpes acceleration shape matrix (consider using O_3)
+Imu.Ts: [0 0 0; 0 0 0; 0 0 0]
+
+# Gyroscope shape matrix (consider using I_3)
+Imu.Tg: [1 0 0; 0 1 0; 0 0 1]
+
+# Accelerometer shape matrix (consider using I_3)
+Imu.Ta: [1 0 0; 0 1 0; 0 0 1]
+
+Imu.accelerometerBias: [0 0 0]
+Imu.gyroscopeBias: [0 0 0]
+
+Imu.globalGravity: [0.0 0.0 -9.81045223742]
+
+#--------------------------------------------------------------------------------------------
+# Filter Parameters
+#--------------------------------------------------------------------------------------------
+
+Filter.maxCameraPoses: 30   
+
+Filter.maxTriangulationIterations: 30
+
+#--------------------------------------------------------------------------------------------
+# Noise params
+#--------------------------------------------------------------------------------------------
+
+Noise.orientation: [0.3 0.3 0.3]
+Noise.position: [12.0 12.0 12.0]
+Noise.velocity: [12.0 12.0 12.0]
+Noise.gyroscopeBias: [0.01 0.01 0.01]
+Noise.accelerometerBias: [0.1 0.1 0.1]
+Noise.Ts: [0.001 0.001 0.001; 0.001 0.001 0.001; 0.001 0.001 0.001]
+Noise.Tg: [0.001 0.001 0.001; 0.001 0.001 0.001; 0.001 0.001 0.001]
+Noise.Ta: [0.001 0.001 0.001; 0.001 0.001 0.001; 0.001 0.001 0.001]
+Noise.positionOfBodyInCameraFrame: [0.0 0.0 0.0]
+Noise.focalPoint: [13.0 13.0]
+Noise.opticalCenter: [9.0 9.0]
+Noise.radialDistortion: [0.0001 0.0001 0.0001]
+Noise.tangentialDistortion: [0.00001 0.00001]
+Noise.cameraDelayTime: 0.01
+Noise.cameraReadoutTime: 0.01
