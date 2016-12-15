@@ -67,11 +67,11 @@ env:
 
 # Install system dependencies, namely a very barebones ROS setup.
 before_install:
-  - sudo apt-get install texlive-font-utils # epstopdf
-  - sudo apt-get install doxygen
-  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+  - sudo apt-get install -y texlive-font-utils # epstopdf
+  - sudo apt-get install -y doxygen
+  - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo apt-get update
-  - sudo apt-get install gcc-5 g++-5
+  - sudo apt-get install -y gcc-5 g++-5
   - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
   - sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu $ROS_CI_DESKTOP main\" > /etc/apt/sources.list.d/ros-latest.list"
   - wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
