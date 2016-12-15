@@ -22,16 +22,22 @@ public:
     
     Calibration& operator=(const Calibration& other) = default;
     
+    void setCameraFocalPoint(const Eigen::Vector2d& focal_length);
     Eigen::Vector2d getCameraFocalPoint() const;
 
+    void setCameraOpticalCenter(const Eigen::Vector2d& optical_center);
     Eigen::Vector2d getCameraOpticalCenter() const;
 
+    void setCameraRadialDistortionParams(const Eigen::Vector3d& distortion_params);
     Eigen::Vector3d getCameraRadialDistortionParams() const;
 
+    void setCameraTangentialDistortionParams(const Eigen::Vector2d& distortion_params);
     Eigen::Vector2d getCameraTangentialDistortionParams() const;
 
+    void setCameraDelayTime(double delay_time);
     double getCameraDelayTime() const;
 
+    void setCameraReadoutTime(double readout_time);
     double getCameraReadoutTime() const;
 
     int getNumberOfFeaturesToExtract() const;

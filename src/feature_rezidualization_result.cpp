@@ -33,6 +33,14 @@ void FeatureRezidualizationResult::setJacobianByFeaturePosition(std::size_t pose
     H_f_.block<2, 3>(2*pose, 0) = jacobian;
 }
 
+Eigen::Vector3d FeatureRezidualizationResult::getGlobalFeaturePosition() const {
+    return global_position_;
+}
+
+void FeatureRezidualizationResult::setGlobalFeaturePosition(const Eigen::Vector3d& global_position) {
+    global_position_ = global_position;
+}
+
 Eigen::VectorXd FeatureRezidualizationResult::getReziduals() const {
     return r_;
 }

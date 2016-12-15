@@ -4,6 +4,7 @@
 
 #include "feature_track.h"
 
+#include <iostream>
 #include <opencv2/core/core.hpp>
 
 #include "exceptions/general_exception.h"
@@ -57,7 +58,7 @@ int FeatureTrack::getFeatureId() const {
     return feature_id_;
 }
 
-void FeatureTrack::drawFeatureTrack(cv::Mat& image, cv::Scalar color) {
+void FeatureTrack::drawFeatureTrack(cv::Mat& image, cv::Scalar color, int thickness) const {
     if (positions_.size() < 2) {
         return;
     }
@@ -65,7 +66,6 @@ void FeatureTrack::drawFeatureTrack(cv::Mat& image, cv::Scalar color) {
     for (std::size_t i = 1; i < positions_.size(); ++i) {
         const Eigen::Vector2d& from = positions_[i-1];
         const Eigen::Vector2d& to = positions_[i];
-        
-        cv::line(image, cv::Point(from(0), from(1)), cv::Point(to(0), to(1)), color);
+        cv::line(image, cv::Point(from(0), from(1)), cv::Point(to(0), to(1)), color, thickness);
     }
 }

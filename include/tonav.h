@@ -14,6 +14,8 @@
 #include "imu_device.h"
 #include "state_initializer.h"
 
+class FilterState;
+
 /**
  * @brief This is main class for communicating with filter. 
  *        You can pass IMU and camera data to filter through
@@ -74,13 +76,25 @@ public:
     
     Eigen::Quaterniond getCurrentOrientation();
     Eigen::Vector3d getCurrentPosition();
+    Eigen::Vector3d getCurrentVelocity();
     cv::Mat getCurrentImage() const;
     double time() const;
+    
+    const Filter& filter() const;
+    const FilterState& state() const;
+    
+    void orientationCorrection(const Eigen::Quaterniond& orientation);
+    void positionCorrection(const Eigen::Vector3d& position);
+    void velocityCorrection(const Eigen::Vector3d& velocity);
     
     std::shared_ptr<StateInitializer> initializer();
     std::shared_ptr<const StateInitializer> initializer() const;
     
     bool isInitialized() const;
+    
+    std::vector<Eigen::Vector3d> featurePointCloud() const;
+    
+    ~Tonav();
 private:
     std::shared_ptr<StateInitializer> state_initializer_;
     

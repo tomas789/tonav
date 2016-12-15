@@ -27,6 +27,9 @@ public:
     /** @brief \f$H_{f_{i,j}}\f$ */
     void setJacobianByFeaturePosition(std::size_t pose, const Eigen::Matrix<double, 2, 3>& jacobian);
     
+    Eigen::Vector3d getGlobalFeaturePosition() const;
+    void setGlobalFeaturePosition(const Eigen::Vector3d& global_position);
+    
     Eigen::VectorXd getReziduals() const;
     Eigen::MatrixXd getJacobianByState() const;
     Eigen::Matrix<double, Eigen::Dynamic, 3> getJacobianByFeaturePosition() const;
@@ -34,6 +37,7 @@ private:
     bool is_valid_;
     std::size_t track_length_;
     std::size_t poses_in_state_;
+    Eigen::Vector3d global_position_;
     Eigen::VectorXd r_;
     Eigen::MatrixXd H_x_;
     Eigen::Matrix<double, Eigen::Dynamic, 3> H_f_;

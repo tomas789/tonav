@@ -21,24 +21,48 @@ Calibration::Calibration() {
     body_to_camera_rotation_ = Eigen::Quaterniond::Identity();
 }
 
+void Calibration::setCameraFocalPoint(const Eigen::Vector2d& focal_length) {
+    focal_point_ = focal_length;
+}
+
 Eigen::Vector2d Calibration::getCameraFocalPoint() const {
     return focal_point_;
+}
+
+void Calibration::setCameraOpticalCenter(const Eigen::Vector2d& optical_center) {
+    optical_center_ = optical_center;
 }
 
 Eigen::Vector2d Calibration::getCameraOpticalCenter() const {
     return optical_center_;
 }
 
+void Calibration::setCameraRadialDistortionParams(const Eigen::Vector3d& distortion_params) {
+    radial_distortion_ = distortion_params;
+}
+
 Eigen::Vector3d Calibration::getCameraRadialDistortionParams() const {
     return radial_distortion_;
+}
+
+void Calibration::setCameraTangentialDistortionParams(const Eigen::Vector2d& distortion_params) {
+    tangential_distortion_ = distortion_params;
 }
 
 Eigen::Vector2d Calibration::getCameraTangentialDistortionParams() const {
     return tangential_distortion_;
 }
 
+void Calibration::setCameraDelayTime(double delay_time) {
+    camera_delay_time_ = delay_time;
+}
+
 double Calibration::getCameraDelayTime() const {
     return camera_delay_time_;
+}
+
+void Calibration::setCameraReadoutTime(double readout_time) {
+    camera_readout_time_ = readout_time;
 }
 
 double Calibration::getCameraReadoutTime() const {
@@ -246,12 +270,9 @@ std::shared_ptr<Calibration> Calibration::fromPath(boost::filesystem::path fname
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
         } else if (key == "Imu.Ta") {
-            std::cout << "Reading Imu.Ta" << std::endl;
             if (!Calibration::tryParseMatrix3d(value, calib->accelerometer_shape_matrix_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
-            std::cout << "Got: " << std::endl;
-            std::cout << calib->accelerometer_shape_matrix_ << std::endl;
         } else if (key == "Imu.gyroscopeBias") {
             if (!Calibration::tryParseVector3d(value, calib->gyroscope_bias_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");

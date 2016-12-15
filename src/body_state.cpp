@@ -65,6 +65,18 @@ const Eigen::Vector3d& BodyState::getVelocityInGlobalFrame() const {
     return v_B_G_;
 }
 
+void BodyState::orientationCorrection(const Eigen::Quaterniond& orientation) {
+    q_B_G_ = orientation;
+}
+
+void BodyState::positionCorrection(const Eigen::Vector3d& position) {
+    p_B_G_ = position;
+}
+
+void BodyState::velocityCorrection(const Eigen::Vector3d& velocity) {
+    v_B_G_ = velocity;
+}
+
 void BodyState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
     Eigen::Quaterniond delta_q(1.0, 0.5*delta_x(0), 0.5*delta_x(1), 0.5*delta_x(2));
     q_B_G_ = (q_B_G_*delta_q).normalized();

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/calib3d/calib3d.hpp>
 
 #include "exceptions/general_exception.h"
 
@@ -14,8 +15,8 @@ FrameFeatures FrameFeatures::fromImage(cv::Ptr<cv::FeatureDetector> detector,
         cv::Ptr<cv::DescriptorExtractor> extractor, cv::Mat& image) {
     FrameFeatures frame_features;
 
-    cv::cvtColor(image, image, CV_GRAY2BGR);
-
+    assert(image.channels() == 3);
+    
     cv::Mat gray = FrameFeatures::toGray(image);
     frame_features.detectKeypoints(detector, gray);
     frame_features.computeDescriptors(extractor, gray);
@@ -40,11 +41,11 @@ cv::Mat FrameFeatures::toGray(const cv::Mat& image) {
     }
 }
 
-void FrameFeatures::drawFeatures(cv::Mat& image, cv::Scalar color) {
+void FrameFeatures::drawFeatures(cv::Mat& image, cv::Scalar color, double scale_factor) {
     int radius = 2;
     for (const cv::KeyPoint& kpt : keypoints_) {
-        int x = kpt.pt.x;
-        int y = kpt.pt.y;
+        int x = kpt.pt.x/scale_factor;
+        int y = kpt.pt.y/scale_factor;
         cv::line(image, cv::Point(x-radius, y), cv::Point(x+radius, y), color);
         cv::line(image, cv::Point(x, y-radius), cv::Point(x, y+radius), color);
         cv::rectangle(image, cv::Point(x-radius-2, y-radius-2), cv::Point(x+radius+2, y+radius+2), color);
@@ -67,51 +68,32 @@ std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matc
         return std::vector<cv::DMatch>();
     }
     
-    bool use_ratio_test = false;
-    if (use_ratio_test) {
-        std::vector<std::vector<cv::DMatch>> matches;
-        matcher->knnMatch(descriptors_, other.descriptors_, matches, 2);
-        std::vector<cv::DMatch> good_matches;
+    std::vector<cv::DMatch> matches;
+    matcher->match(descriptors_, other.descriptors_, matches);
+    
+    bool use_homography_filter = true;
+    if (use_homography_filter) {
+        std::vector<cv::Point2f> this_pts;
+        std::vector<cv::Point2f> other_pts;
+        this_pts.reserve(matches.size());
+        other_pts.reserve(matches.size());
         for (std::size_t i = 0; i < matches.size(); ++i) {
-            std::vector<cv::DMatch>& feature_matches = matches[i];
-            if (feature_matches.size() != 2) {
-                std::cout << "Skipping feature " << i << " that has only " << feature_matches.size() << " matches" << std::endl;
-                continue;
-            }
-            cv::DMatch better_match;
-            cv::DMatch worser_match;
-            if (feature_matches[0].distance < feature_matches[1].distance) {
-                better_match = feature_matches[0];
-                worser_match = feature_matches[1];
-            } else {
-                better_match = feature_matches[1];
-                worser_match = feature_matches[0];
-            }
-            float ratio = better_match.distance / worser_match.distance;
-            if (ratio < threshold) {
-                if (better_match.distance < 15) {
-                    good_matches.push_back(better_match);
-                }
-            }
-            std::cout << "ratio " << ratio << std::endl;
+            this_pts.push_back(keypoints_[matches[i].queryIdx].pt);
+            other_pts.push_back(other.keypoints_[matches[i].trainIdx].pt);
         }
-        return good_matches;
-    } else {
-        std::vector<cv::DMatch> matches;
-        matcher->match(descriptors_, other.descriptors_, matches);
+        cv::Mat good_features_mask;
+        cv::Mat H = cv::findHomography(this_pts, other_pts, CV_RANSAC, 3, good_features_mask);
         
-        double distance_limit = computeDistanceLimitForMatch(matches);
         std::vector<cv::DMatch> good_matches;
         for (std::size_t i = 0; i < matches.size(); ++i) {
-            if (matches[i].distance < distance_limit) {
+            if (good_features_mask.at<bool>(i, 0)) {
                 good_matches.push_back(matches[i]);
             }
         }
-        
         return good_matches;
+    } else {
+        return matches;
     }
-    
-    
 }
 
 std::vector<cv::KeyPoint> &FrameFeatures::keypoints() {

@@ -53,7 +53,7 @@ void ImuBuffer::push_back(ImuItem&& item) {
 }
 
 void ImuBuffer::truncateToMinimalInterpolationTime(double time) {
-    while (std::next(std::begin(buffer_))->getTime() <= time) {
+    while (std::next(std::begin(buffer_))->getTime() < time) {
         buffer_.pop_front();
     }
 }

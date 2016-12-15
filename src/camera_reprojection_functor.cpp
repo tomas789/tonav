@@ -18,7 +18,7 @@ int CameraReprojectionFunctor::operator()(const Eigen::VectorXd &x, Eigen::Vecto
     assert(fvec.rows() == values());
     
     for (std::size_t i = 0; i < n; ++i) {
-        fvec.segment<2>(2*i) = measurements_[i] - filter_.cameraProject(g(i, x));
+        fvec.segment<2>(2*i) = measurements_[i] - filter_.cameraAlgorithms().cameraProject(g(i, x));
     }
     
     return 0;

@@ -9,9 +9,11 @@
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_ros/transform_broadcaster.h>
 #include <eigen_conversions/eigen_msg.h>
+#include <opencv2/highgui/highgui.hpp>
 
 #include "calibration.h"
 #include "tonav.h"
+#include "stats.h"
 
 TonavRos::TonavRos() {
     current_camera_matrix_.setZero();
@@ -83,7 +85,8 @@ int TonavRos::run(int argc, char* argv[]) {
         return 1;
     }
     
-    calibration->setBodyToCameraRotation(q_C_B);
+    //calibration->setBodyToCameraRotation(q_C_B);
+    calibration->setBodyToCameraRotation(Eigen::Quaterniond(-0.5, -0.5, 0.5, -0.5));
     tonav_.reset(new Tonav(calibration, p_B_C));
     
     ros::spin();
@@ -166,9 +169,8 @@ void TonavRos::cameraCallback(const sensor_msgs::ImageConstPtr &msg) {
     try {
         const std_msgs::Header header = msg->header;
         double timestamp = getMessageTime(header.stamp);
-        cv::Mat gray = cv_bridge::toCvShare(msg, "mono8")->image;
-        tonav_->updateImage(timestamp, gray);
-            
+        cv::Mat image = cv_bridge::toCvCopy(msg, msg->encoding)->image;
+        tonav_->updateImage(timestamp, image);
     } catch (cv_bridge::Exception& e) {
         ROS_ERROR("Could not convert from '%s' to 'mono8'.", msg->encoding.c_str());
     }
@@ -240,6 +242,7 @@ void TonavRos::publishResults(const ros::Time& time) {
     geometry_msgs::TransformStamped transform;
     Eigen::Quaterniond attitude = tonav_->getCurrentOrientation().conjugate();
     Eigen::Vector3d position = tonav_->getCurrentPosition() / 50.0;
+    Eigen::Vector3d velocity = tonav_->getCurrentVelocity();
     transform.header.stamp = time;
     transform.header.frame_id = "map";
     transform.child_frame_id = "base_link";
@@ -255,4 +258,13 @@ void TonavRos::publishResults(const ros::Time& time) {
     const cv::Mat& img = tonav_->getCurrentImage();
     sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", img).toImageMsg();
     image_publisher_->publish(msg);
+    
+    Stats& stats = Stats::getGlobalInstance();
+    stats["times"].add(time.toSec());
+    stats["position_x"].add(position(0, 0));
+    stats["position_y"].add(position(1, 0));
+    stats["position_z"].add(position(2, 0));
+    stats["velocity_x"].add(velocity(0, 0));
+    stats["velocity_y"].add(velocity(1, 0));
+    stats["velocity_z"].add(velocity(2, 0));
 }

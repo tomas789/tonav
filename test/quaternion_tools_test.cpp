@@ -36,24 +36,4 @@ TEST(Quaternion, test_big_omega_matrix) {
     Eigen::Quaterniond q_rhs = Eigen::Quaterniond(0.5, 0.0, 0.0, 0.0) * q * q_perturb;
     
     ASSERT_TRUE(q_lhs.isApprox(q_rhs));
-    
-//    Eigen::Vector3d qqq;
-//    qqq << 1, 2, 3;
-//    std::cout << QuaternionTools::bigOmegaMatrix(qqq) << std::endl << std::endl;
-//    
-//    std::cout << matrix_derivative << std::endl;
-//    std::cout << quaternion_derivative.toRotationMatrix() << std::endl;
-//    
-//    ASSERT_TRUE(matrix_derivative.isApprox(quaternion_derivative.toRotationMatrix()));
-//
-//    ASSERT_TRUE(quaternion_derivative.toRo
-//    
-//    Eigen::Matrix3d r = q.toRotationMatrix();
-//    
-//    auto p1 = (q.w()*q.w() - q.vec().transpose()*q.vec())*Eigen::Matrix3d::Identity();
-//    auto p2 = 2*q.vec()*q.vec().transpose();
-//    auto p3 = 2*q.w()*QuaternionTools::crossMatrix(q.vec());
-//    auto r_from_q = p1 + p2 + p3;
-//    
-//    ASSERT_TRUE(r.isApprox(r_from_q));
 }

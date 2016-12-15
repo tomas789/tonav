@@ -23,7 +23,7 @@ public:
 
     double getTime() const;
     cv::Mat& getImage();
-    const cv::Mat& getImage() const;
+    const cv::Mat& cgetImage() const;
 
 private:
     bool is_valid_;

@@ -12,6 +12,7 @@
 
 #include "imu_buffer.h"
 #include "calibration.h"
+#include "camera_algorithms.h"
 #include "filter_state.h"
 #include "feature_rezidualization_result.h"
 #include "feature_tracker.h"
@@ -23,10 +24,6 @@ class CameraReprojectionFunctor;
 namespace cv {
     class Mat;
 }
-
-enum InitialGuessMethod {
-    SVD, QR, normal
-};
 
 /**
  * @brief Implementation of MSCKF.
@@ -69,6 +66,9 @@ public:
      */
     Eigen::Quaterniond getCurrentAttitude();
     
+    /** @brief Get current estimated velocity */
+    Eigen::Vector3d getCurrentVelocity();
+    
     /**
      * @brief Calculate \f$\hat{t} = t + \hat{t}_d\f$
      *
@@ -102,15 +102,25 @@ public:
     
     Eigen::Vector3d getPositionOfBodyInCameraFrame() const;
     
+    void orientationCorrection(const Eigen::Quaterniond& orientation);
+    void positionCorrection(const Eigen::Vector3d& position);
+    void velocityCorrection(const Eigen::Vector3d& velocity);
+    
     /**
      * @brief Get a reference to currently valid filter state.
      */
     const FilterState& state() const;
     
     void setInitialBodyPositionInCameraFrame(const Eigen::Vector3d& position);
+    
+    std::vector<Eigen::Vector3d> featurePointCloud() const;
+    
+    const CameraAlgorithms& cameraAlgorithms() const;
 protected:
     std::shared_ptr<const Calibration> calibration_;
     std::shared_ptr<const StateInitializer> state_initializer_;
+    
+    std::ofstream debug_ = std::ofstream("/Users/tomaskrejci/debug.txt");
     
     Eigen::Vector3d initial_body_position_in_camera_frame_ = Eigen::Vector3d::Zero();
 
@@ -127,8 +137,12 @@ protected:
 
     FeatureTracker::feature_track_list features_tracked_;
     
+    CameraAlgorithms camera_algorithms_;
+    
     /** @brief Number of rows in last camera image */
     std::size_t frame_rows_;
+    
+    std::vector<Eigen::Vector3d> feature_positions_;
     
     /**
      * @brief Get a reference to currently valid filter state.
@@ -186,49 +200,13 @@ protected:
      */
     void pruneCameraPoses(const FeatureTracker::feature_track_list& residualized_features);
     
-    FeatureRezidualizationResult rezidualizeFeature(const FeatureTrack& feature_track) const;
+    FeatureRezidualizationResult rezidualizeFeature(const FeatureTrack& feature_track, cv::Mat& frame) const;
     
-    void performUpdate(const FeatureTracker::feature_track_list& features_to_rezidualize);
+    void performUpdate(const FeatureTracker::feature_track_list& features_to_rezidualize, cv::Mat& frame);
     
     bool gatingTest(const Eigen::VectorXd& r_0_i, const Eigen::MatrixXd H_0_i);
     
     void updateState(const Eigen::MatrixXd& T_H, const Eigen::VectorXd& r_q);
-    
-    /**
-     * @brief Initial guess of global feature position from its two measurements.
-     */
-    Eigen::Vector3d initialGuessFeaturePosition(const Eigen::Vector2d& z0, const Eigen::Vector2d& z1, const Eigen::Matrix3d& R_C1_C0, const Eigen::Vector3d& p_C1_C0, InitialGuessMethod method) const;
-
-    /**
-     * @brief Calculate \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$
-     *
-     * This estimates feature position in global frame. It uses Gauss-Newton algorithm (or Levenberg-Marquardt
-     * algorithm) to achieve this. Feature location is described using inverse depth parametrization of feature in
-     * first camera pose that captured it.
-     *
-     * @return Estimate for \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$.
-     */
-    std::pair<bool, Eigen::Vector3d> triangulateGlobalFeaturePosition(const FeatureTrack& feature_track) const;
-    
-    /**
-     * @brief Transform inverse depth parametrized estimate of feature's 
-     *        position in \f$C_0\f$ to \f$C_i\f$.
-     *
-     * It is implementation of function \f$\mathbf{g}_i\f$.
-     */
-    Eigen::Vector3d transformFeatureInverseDepthEstimateToCameraFrame(const FeatureTrack& feature_track, std::size_t i, const Eigen::Vector3d& est) const;
-    
-    /**
-     * @brief Implementation of camera model.
-     *
-     * It implements pinhole camera model with radial and tangential
-     * distortions;
-     *
-     * It is implementation of function \f$\mathbf{h}\f$
-     */
-    Eigen::Vector2d cameraProject(const Eigen::Vector3d& p) const;
-    
-    Eigen::Matrix<double, 2, 3> cameraProjectJacobian(const Eigen::Vector3d& p) const;
 };
 
 #endif //TONAV_FILTER_H

@@ -14,6 +14,7 @@
 #include "camera_pose.h"
 #include "camera_pose_buffer.h"
 
+class CameraAlgorithms;
 class Filter;
 
 /**
@@ -21,6 +22,7 @@ class Filter;
  */
 class FilterState {
 public:
+    friend class CameraAlgorithms;
     friend class Filter;
     friend std::ostream& operator<<(std::ostream&, FilterState&);
 
@@ -31,6 +33,10 @@ public:
     const Eigen::Quaterniond& getOrientationInGlobalFrame() const;
     const Eigen::Vector3d& getPositionInGlobalFrame() const;
     const Eigen::Vector3d& getVelocityInGlobalFrame() const;
+    
+    void orientationCorrection(const Eigen::Quaterniond& orientation);
+    void positionCorrection(const Eigen::Vector3d& position);
+    void velocityCorrection(const Eigen::Vector3d& velocity);
     
     CameraPoseBuffer& poses();
     const CameraPoseBuffer& poses() const;

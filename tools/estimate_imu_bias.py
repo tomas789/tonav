@@ -24,6 +24,7 @@ class EstimateImuBias:
             gyro_z.append(data.angular_velocity.z)
 
         gravity = (0.0, 0.0, 9.81)
+        gravity = (0.0, 0.0, 0)
 
         print("Imu.accelerometerBias: [{} {} {}]".format(sum(accel_x)/len(accel_x) - gravity[0], sum(accel_y)/len(accel_y) - gravity[1], sum(accel_z)/len(accel_z) - gravity[2]))
         print("Imu.gyroscopeBias: [{} {} {}]".format(sum(gyro_x)/len(gyro_x), sum(gyro_y)/len(gyro_y), sum(gyro_z)/len(gyro_z)))

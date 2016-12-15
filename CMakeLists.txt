@@ -13,7 +13,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 # set (CMAKE_INSTALL_RPATH /opt/ros/jade/lib)
 
-set(SOURCE_FILES
+set(COMMON_SOURCE_FILES
         src/calibration.cpp
         include/calibration.h
         include/filter.h
@@ -50,8 +50,6 @@ set(SOURCE_FILES
         src/camera_pose.cpp
         include/tonav.h
         src/tonav.cpp
-        include/tonav_ros.h
-        src/tonav_ros.cpp
         include/body_state.h
         src/body_state.cpp
         include/camera_pose_buffer.h
@@ -65,8 +63,28 @@ set(SOURCE_FILES
         include/chi_squared_ppm.h
         include/state_initializer.h
         src/state_initializer.cpp
+        include/stats.h
+        src/stats.cpp
+        include/stats_node.h
+        src/stats_node.cpp
+        include/stats_timer.h
+        src/stats_timer.cpp
+        include/camera_algorithms.h
+        src/camera_algorithms.cpp
       )
-add_executable(tonav src/main.cpp ${SOURCE_FILES})
+set (TONAV_ROS_SOURCE_FILES
+    include/tonav_ros.h
+    src/tonav_ros.cpp
+    src/main.cpp
+  )
+add_executable(tonav ${TONAV_ROS_SOURCE_FILES} ${COMMON_SOURCE_FILES})
+
+set (TONAV_KITTI_SOURCE_FILES
+    include/tonav_kitti.h
+    src/tonav_kitti.cpp
+    src/main_kitti.cpp
+  )
+add_executable(tonavkitti ${TONAV_KITTI_SOURCE_FILES} ${COMMON_SOURCE_FILES})
 
 find_package(Eigen3 REQUIRED)
 include_directories (AFTER "${EIGEN3_INCLUDE_DIR}")
@@ -79,12 +97,14 @@ catkin_package(
 find_package(Boost REQUIRED COMPONENTS program_options filesystem)
 include_directories (AFTER "${Boost_INCLUDE_DIRS}")
 target_link_libraries(tonav ${Boost_LIBRARIES})
+target_link_libraries(tonavkitti ${Boost_LIBRARIES})
 
 find_package(OpenCV REQUIRED)
 message (STATUS "${OpenCV_INCLUDE_DIRS}")
 message (STATUS "${OpenCV_LIBS}")
 include_directories (AFTER "${OpenCV_INCLUDE_DIRS}")
 target_link_libraries(tonav ${OpenCV_LIBS})
+target_link_libraries(tonavkitti ${OpenCV_LIBS})
 
 find_package(image_transport REQUIRED)
 include_directories (AFTER ${image_transport_INCLUDE_DIRS})
@@ -95,9 +115,11 @@ target_link_libraries(tonav ${cv_bridge_LIBRARIES})
 
 find_package(tf2_ros REQUIRED)
 target_link_libraries(tonav ${tf2_ros_LIBRARIES})
+target_link_libraries(tonavkitti ${tf2_ros_LIBRARIES})
 
 find_package(eigen_conversions REQUIRED)
 target_link_libraries(tonav ${eigen_conversions_LIBRARIES})
+target_link_libraries(tonavkitti ${eigen_conversions_LIBRARIES})
 
 find_package(Doxygen 1.8.6)
 if(DOXYGEN_FOUND)
@@ -117,6 +139,7 @@ if(CATKIN_ENABLE_TESTING)
     test/filter_test.cpp
     test/big_camera_test.cpp
     test/frame_features_test.cpp
+    test/stats_test.cpp
     )
   add_rostest_gtest(${PROJECT_NAME}-test launch/gtest.test ${SOURCE_FILES} ${TEST_FILES})
   target_link_libraries(${PROJECT_NAME}-test ${catkin_LIBRARIES} ${GTEST_BOTH_LIBRARIES} ${GMOCK_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} ${image_transport_LIBRARIES} ${cv_bridge_LIBRARIES} ${tf2_ros_LIBRARIES} ${eigen_conversions_LIBRARIES})

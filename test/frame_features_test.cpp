@@ -28,90 +28,22 @@ TEST(FrameFeaturesTest, TwoConsecutiveImages) {
     cv::Mat img1 = cv::imread("/Users/tomaskrejci/kitti/2011_09_30/2011_09_30_drive_0028_sync/image_00/data/0000000000.png");
     cv::Mat img1_resized;
     cv::resize(img1, img1_resized, cv::Size(), scale, scale);
-    cv::Mat img1_gray;
-    cv::cvtColor(img1_resized, img1_gray, CV_BGR2GRAY);
-    FrameFeatures frame_features_1 = FrameFeatures::fromImage(detector, extractor, img1_gray);
+    FrameFeatures frame_features_1 = FrameFeatures::fromImage(detector, extractor, img1_resized);
     
     cv::Mat img2 = cv::imread("/Users/tomaskrejci/kitti/2011_09_30/2011_09_30_drive_0028_sync/image_00/data/0000000001.png");
     cv::Mat img2_resized;
     cv::resize(img2, img2_resized, cv::Size(), scale, scale);
-    cv::Mat img2_gray;
-    cv::cvtColor(img2_resized, img2_gray, CV_BGR2GRAY);
-    FrameFeatures frame_features_2 = FrameFeatures::fromImage(detector, extractor, img2_gray);
+    FrameFeatures frame_features_2 = FrameFeatures::fromImage(detector, extractor, img2_resized);
     
     std::vector<cv::DMatch> matches = frame_features_2.match(matcher, frame_features_1);
     
     
     
     cv::Mat matches_img;
-    cv::drawMatches(img1_gray, frame_features_1.keypoints(), img2_gray, frame_features_2.keypoints(), matches, matches_img);
+    cv::drawMatches(img1_resized, frame_features_1.keypoints(), img2_resized, frame_features_2.keypoints(), matches, matches_img);
     cv::imwrite("/Users/tomaskrejci/FrameFeaturesTest_TwoConsecutiveImages.png", matches_img);
     
     
-}
-
-TEST(FrameFeaturesTest, DrawAffineTransforms) {
-    auto detector = cv::FeatureDetector::create("ORB");
-    detector->set("nFeatures", 500);
-    detector->set("nLevels", 12);
-    detector->set("scaleFactor", 1.2f);
-    detector->set("WTA_K", 4);
-    auto extractor = cv::DescriptorExtractor::create("ORB");
-    
-    //    cv::Ptr<cv::DescriptorMatcher> matcher(new cv::BFMatcher(cv::NORM_HAMMING2, true));
-    //    auto matcher = cv::DescriptorMatcher::create("BruteForce-Hamming");
-    cv::Ptr<cv::DescriptorMatcher> matcher(new cv::FlannBasedMatcher(new cv::flann::LshIndexParams(20,10,2)));
-    
-    double scale = 1.0;
-    
-    cv::Mat img1 = cv::imread("/Users/tomaskrejci/kitti/2011_09_30/2011_09_30_drive_0028_sync/image_00/data/0000000000.png");
-    cv::Mat img1_resized;
-    cv::resize(img1, img1_resized, cv::Size(), scale, scale);
-    cv::Mat img1_gray;
-    cv::cvtColor(img1_resized, img1_gray, CV_BGR2GRAY);
-    FrameFeatures frame_features_1 = FrameFeatures::fromImage(detector, extractor, img1_gray);
-    
-    cv::Mat img2 = cv::imread("/Users/tomaskrejci/kitti/2011_09_30/2011_09_30_drive_0028_sync/image_00/data/0000000001.png");
-    cv::Mat img2_resized;
-    cv::resize(img2, img2_resized, cv::Size(), scale, scale);
-    cv::Mat img2_gray;
-    cv::cvtColor(img2_resized, img2_gray, CV_BGR2GRAY);
-    FrameFeatures frame_features_2 = FrameFeatures::fromImage(detector, extractor, img2_gray);
-    
-    std::vector<cv::DMatch> matches = frame_features_2.match(matcher, frame_features_1, 0.2);
-    
-    std::vector<cv::Point2f> pts_1;
-    std::vector<cv::Point2f> pts_2;
-    for (std::size_t i = 0; i < matches.size(); ++i) {
-        pts_1.push_back(frame_features_1.keypoints()[matches[i].queryIdx].pt);
-        pts_2.push_back(frame_features_2.keypoints()[matches[i].trainIdx].pt);
-    }
-    
-    cv::Mat H_cv = cv::findHomography(pts_1, pts_2);
-    Eigen::Matrix3d H;
-    H << H_cv.at<double>(0, 0), H_cv.at<double>(0, 1), H_cv.at<double>(0, 2),
-    H_cv.at<double>(1, 0), H_cv.at<double>(1, 1), H_cv.at<double>(1, 2),
-    H_cv.at<double>(2, 0), H_cv.at<double>(2, 1), H_cv.at<double>(2, 2);
-    
-    std::cout << "H: " << H << std::endl;
-    
-    cv::Mat img_matches;
-    cv::drawMatches(img1_gray, frame_features_1.keypoints(), img2_gray, frame_features_2.keypoints(),
-                    matches, img_matches, cv::Scalar::all(-1), cv::Scalar::all(-1),
-                    std::vector<char>(), cv::DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS );
-    
-    std::vector<cv::Point2f> source_pts;
-    source_pts.push_back(cv::Point2f(0.0, 0.0));
-    source_pts.push_back(cv::Point2f(50.0, 50.0));
-    std::vector<cv::Point2f> target_pts(source_pts.size());
-    cv::perspectiveTransform(source_pts, target_pts, H_cv);
-    for (std::size_t i = 0; i < source_pts.size(); ++i) {
-        cv::line(img1_gray, source_pts[i] + cv::Point2f(img1_gray.cols, 0), target_pts[i] + cv::Point2f(img1_gray.cols, 0), cv::Scalar(0, 255, 0), 4 );
-        
-        std::cout << "Point " << (source_pts[i] + cv::Point2f(img1_gray.cols, 0)) << " projects to " << (target_pts[i] + cv::Point2f(img1_gray.cols, 0)) << std::endl;
-    }
-    
-    cv::imwrite("/Users/tomaskrejci/FrameFeaturesTest_DrawAffineTransforms.png", img_matches);
 }
 
 TEST(FrameFeaturesTest, DISABLED_MatchFeatures_Detector_ORB_Extractor_ORB_Matcher_BF) {

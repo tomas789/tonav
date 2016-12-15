@@ -58,9 +58,13 @@ public:
 
     void updateWithStateDelta(const Eigen::VectorXd& delta_x);
     
-    ImuBuffer::iterator gyroHint();
-    ImuBuffer::iterator accelHint();
+    ImuBuffer::iterator gyroHint() const;
+    ImuBuffer::iterator accelHint() const;
+    
+    std::size_t getCameraPoseId() const;
 private:
+    static std::size_t camera_pose_counter;
+    std::size_t camera_pose_id_;
     std::set<int> feature_ids_;
     std::size_t features_active_;
     std::shared_ptr<BodyState> body_state_;

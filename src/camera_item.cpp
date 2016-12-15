@@ -4,6 +4,9 @@
 
 #include "camera_item.h"
 
+#include <iostream>
+#include <opencv2/imgproc/imgproc.hpp>
+
 #include "calibration.h"
 #include "exceptions/general_exception.h"
 
@@ -12,8 +15,11 @@ CameraItem::CameraItem() : is_valid_(false) {
 
 CameraItem::CameraItem(double time, const cv::Mat& image) : is_valid_(true) {
     time_ = time;
-    //image_ = image;
-    image.copyTo(image_);
+    if (image.channels() == 1) {
+        cv::cvtColor(image, image_, CV_GRAY2BGR);
+    } else {
+        image_ = image;
+    }
     was_processed_ = false;
 }
 
@@ -38,6 +44,6 @@ cv::Mat& CameraItem::getImage() {
     return image_;
 }
 
-const cv::Mat& CameraItem::getImage() const {
+const cv::Mat& CameraItem::cgetImage() const {
     return image_;
 }

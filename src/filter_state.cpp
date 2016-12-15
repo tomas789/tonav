@@ -31,6 +31,18 @@ const Eigen::Vector3d& FilterState::getVelocityInGlobalFrame() const {
     return body_state_->getVelocityInGlobalFrame();
 }
 
+void FilterState::orientationCorrection(const Eigen::Quaterniond& orientation) {
+    body_state_->orientationCorrection(orientation);
+}
+
+void FilterState::positionCorrection(const Eigen::Vector3d& position) {
+    body_state_->positionCorrection(position);
+}
+
+void FilterState::velocityCorrection(const Eigen::Vector3d& velocity) {
+    body_state_->velocityCorrection(velocity);
+}
+
 CameraPoseBuffer& FilterState::poses() {
     return poses_;
 }
@@ -92,8 +104,8 @@ std::ostream& operator<< (std::ostream& out, FilterState& state) {
     out << "Accel shape:     " << std::endl << state.accelerometer_shape_.format(formatter)
         << std::endl;
     out << "p_B_C:           " << state.position_of_body_in_camera_.transpose().format(formatter) << std::endl;
-//    out << "Focal length:    " << state.getFocalLengthXRef() << ", " << state.getFocalLengthYRef() << std::endl;
-//    out << "Optical center:  " << state.getOpticalCenterXRef() << ", " << state.getOpticalCenterYRef() << std::endl;
+    out << "Focal length:    " << state.focal_point_.transpose().format(formatter) << std::endl;
+    out << "Optical center:  " << state.optical_center_.transpose().format(formatter) << std::endl;
     out << "Radial dist:     " << state.radial_distortion_.transpose().format(formatter) << std::endl;
     out << "Tangential dist: " << state.tangential_distortion_.transpose().format(formatter) << std::endl;
     out << "Cam delay:       " << state.camera_delay_ << std::endl;

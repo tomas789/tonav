@@ -35,7 +35,7 @@ private:
             const std::vector<cv::DMatch>& matches) const;
     void markOutOfViewFeatures(std::vector<double>& feature_matched, feature_track_list& feature_tracks) const;
     void createNewFeatureTracks(std::vector<bool>& feature_matched, feature_track_list& feature_tracks,
-        const FrameFeatures& frame_features) const;
+        const FrameFeatures& frame_features, double scale_factor) const;
 };
 
 

@@ -64,6 +64,10 @@ public:
     /** @brief Get velocity \f$ \prescript{G}{}{\mathbf{v}}_B \f$ of this body (or camera) frame in global frame. */
     const Eigen::Vector3d& getVelocityInGlobalFrame() const;
     
+    void orientationCorrection(const Eigen::Quaterniond& orientation);
+    void positionCorrection(const Eigen::Vector3d& position);
+    void velocityCorrection(const Eigen::Vector3d& velocity);
+    
     void updateWithStateDelta(const Eigen::VectorXd& delta_x);
 private:
     std::shared_ptr<const Calibration> calibration_;

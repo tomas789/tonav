@@ -33,7 +33,7 @@ public:
      */
     int getFeatureId() const;
     
-    void drawFeatureTrack(cv::Mat& image, cv::Scalar color);
+    void drawFeatureTrack(cv::Mat& image, cv::Scalar color, int thickness) const;
     
 private:
     int feature_id_;

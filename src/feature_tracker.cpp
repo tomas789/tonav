@@ -8,6 +8,7 @@
 #include <iostream>
 #include <memory>
 #include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 #include "exceptions/general_exception.h"
 #include "exceptions/impossible_exception.h"
@@ -21,14 +22,20 @@ FeatureTracker::FeatureTracker(int nfeatures_to_track) {
 }
 
 FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_list& previous_tracks, cv::Mat& image) {
-    FrameFeatures frame_features = FrameFeatures::fromImage(detector_, extractor_, image);
-    //frame_features.drawFeatures(image);
+    double scale_factor = 1.0;
+    
+    cv::Mat working_image;
+    cv::resize(image, working_image, cv::Size(), scale_factor, scale_factor, cv::INTER_LINEAR);
+    
+    FrameFeatures frame_features = FrameFeatures::fromImage(detector_, extractor_, working_image);
+    // frame_features.drawFeatures(image);
+    
     if (previous_frame_features_.keypoints().size() == 0) {
         FeatureTracker::feature_track_list current_features;
         for (std::size_t i = 0; i < frame_features.keypoints().size(); ++i) {
             const cv::KeyPoint& keypoint = frame_features.keypoints()[i];
             current_features.emplace_back(new FeatureTrack);
-            current_features.back()->addFeaturePosition(keypoint.pt.x, keypoint.pt.y);
+            current_features.back()->addFeaturePosition(keypoint.pt.x/scale_factor, keypoint.pt.y/scale_factor);
         }
 
         previous_frame_features_ = frame_features;
@@ -67,7 +74,7 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
             const cv::KeyPoint& current_keypoint = frame_features.keypoints()[query_idx];
             current_tracks[query_idx] = previous_tracks[train_idx];
             matched_feature_assigned[train_idx] = query_idx;
-            current_tracks[query_idx]->addFeaturePosition(current_keypoint.pt.x, current_keypoint.pt.y);
+            current_tracks[query_idx]->addFeaturePosition(current_keypoint.pt.x/scale_factor, current_keypoint.pt.y/scale_factor);
 
             previous_feature_matched[train_idx] = match.distance;
             current_feature_matched[query_idx] = true;
@@ -75,7 +82,7 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     }
 
     markOutOfViewFeatures(previous_feature_matched, previous_tracks);
-    createNewFeatureTracks(current_feature_matched, current_tracks, frame_features);
+    createNewFeatureTracks(current_feature_matched, current_tracks, frame_features, scale_factor);
 
     drawStats(image, previous_feature_matched, current_feature_matched, current_tracks, matches);
 
@@ -128,13 +135,13 @@ void FeatureTracker::markOutOfViewFeatures(std::vector<double>& feature_matched,
 }
 
 void FeatureTracker::createNewFeatureTracks(std::vector<bool> &feature_matched,
-        feature_track_list &feature_tracks, const FrameFeatures& frame_features) const {
+        feature_track_list &feature_tracks, const FrameFeatures& frame_features, double scale_factor) const {
     for (std::size_t i = 0; i < feature_tracks.size(); ++i) {
         if (!feature_matched[i]) {
             // This is new feature
             const cv::KeyPoint& current_keypoint = frame_features.keypoints()[i];
             std::shared_ptr<FeatureTrack> feature_track(new FeatureTrack);
-            feature_track->addFeaturePosition(current_keypoint.pt.x, current_keypoint.pt.y);
+            feature_track->addFeaturePosition(current_keypoint.pt.x/scale_factor, current_keypoint.pt.y/scale_factor);
             feature_tracks[i] = feature_track;
         }
     }
