@@ -119,9 +119,7 @@ public:
 protected:
     std::shared_ptr<const Calibration> calibration_;
     std::shared_ptr<const StateInitializer> state_initializer_;
-    
-    std::ofstream debug_ = std::ofstream("/Users/tomaskrejci/debug.txt");
-    
+        
     Eigen::Vector3d initial_body_position_in_camera_frame_ = Eigen::Vector3d::Zero();
 
     /** @brief Initialization status. For delayed initialization. */

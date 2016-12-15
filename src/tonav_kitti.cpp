@@ -57,9 +57,9 @@ int TonavKitti::run(int argc, char *argv[]) {
     initialize();
     std::cout << " ⛳ DONE - START LOCALIZATION ⛳ " << std::endl;
     
-    std::ofstream gt_pos("/Users/tomaskrejci/gt.csv");
-    std::ofstream feature_pc("/Users/tomaskrejci/feature_pc.csv");
-    std::ofstream marker_pts("/Users/tomaskrejci/marker_pts.csv");
+    std::ofstream gt_pos(kitti_dir_ + "/../gt.csv");
+    std::ofstream feature_pc(kitti_dir_ + "/../feature_pc.csv");
+    std::ofstream marker_pts(kitti_dir_ + "/../marker_pts.csv");
     
     bool is_initialized = false;
     for (std::size_t i = 0; i < oxts_timestamps_.size() && ros::ok(); ++i) {
