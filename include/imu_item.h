@@ -15,6 +15,7 @@ class ImuBuffer;
 class ImuItem {
 public:
     friend class ImuBuffer;
+    
     static ImuItem fromVector3d(double time, const ImuDevice& device, const Eigen::Vector3d& data);
 
     ImuDevice getDevice() const;

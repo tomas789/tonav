@@ -1,12 +1,11 @@
 #ifndef TONAV_TONAV_KITTI_H
 #define TONAV_TONAV_KITTI_H
 
-#include <string>
 #include <chrono>
-#include <vector>
-#include <Eigen/Core>
 #include <memory>
+#include <string>
 #include <tf2_ros/transform_broadcaster.h>
+#include <vector>
 
 #include "calibration.h"
 #include "tonav.h"

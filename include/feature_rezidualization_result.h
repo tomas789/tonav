@@ -11,6 +11,11 @@ class FeatureRezidualizationResult {
 public:
     FeatureRezidualizationResult(std::size_t track_length, std::size_t poses_in_state);
     
+    /**
+     * @brief Validity indicator.
+     *
+     * @return true if feature was residualized without erores, false otherwise
+     */
     operator bool() const;
     
     void setIsInvalid();
@@ -33,6 +38,7 @@ public:
     Eigen::VectorXd getReziduals() const;
     Eigen::MatrixXd getJacobianByState() const;
     Eigen::Matrix<double, Eigen::Dynamic, 3> getJacobianByFeaturePosition() const;
+    
 private:
     bool is_valid_;
     std::size_t track_length_;

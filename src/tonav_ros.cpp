@@ -74,19 +74,23 @@ int TonavRos::run(int argc, char* argv[]) {
     std::shared_ptr<Calibration> calibration = Calibration::fromPath(calibration_file);
     
     
-    Eigen::Quaterniond q_C_B;
+    Quaternion q_C_B = Quaternion::identity();
     Eigen::Vector3d p_B_C;
     try {
         geometry_msgs::TransformStamped body_to_camera_transform = tf_buffer_->lookupTransform(camera_frame_id_, imu_frame_id_, ros::Time(0));
-        tf::quaternionMsgToEigen(body_to_camera_transform.transform.rotation, q_C_B);
+        double x = body_to_camera_transform.transform.rotation.x;
+        double y = body_to_camera_transform.transform.rotation.y;
+        double z = body_to_camera_transform.transform.rotation.z;
+        double w = body_to_camera_transform.transform.rotation.w;
+        q_C_B = Quaternion(x, y, z, w);
         tf::vectorMsgToEigen(body_to_camera_transform.transform.translation, p_B_C);
     } catch (tf2::TransformException& e) {
         ROS_ERROR("%s", e.what());
         return 1;
     }
     
-    //calibration->setBodyToCameraRotation(q_C_B);
-    calibration->setBodyToCameraRotation(Eigen::Quaterniond(-0.5, -0.5, 0.5, -0.5));
+    calibration->setBodyToCameraRotation(q_C_B);
+    //calibration->setBodyToCameraRotation(Quaternion(-0.5, -0.5, 0.5, -0.5));
     tonav_.reset(new Tonav(calibration, p_B_C));
     
     ros::spin();
@@ -240,7 +244,7 @@ double TonavRos::getMessageTime(ros::Time stamp) {
 
 void TonavRos::publishResults(const ros::Time& time) {
     geometry_msgs::TransformStamped transform;
-    Eigen::Quaterniond attitude = tonav_->getCurrentOrientation().conjugate();
+    Quaternion attitude = tonav_->getCurrentOrientation().conjugate();
     Eigen::Vector3d position = tonav_->getCurrentPosition() / 50.0;
     Eigen::Vector3d velocity = tonav_->getCurrentVelocity();
     transform.header.stamp = time;

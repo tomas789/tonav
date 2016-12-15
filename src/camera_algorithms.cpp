@@ -1,13 +1,15 @@
 #include "camera_algorithms.h"
 
 #include <Eigen/Core>
-#include <Eigen/Geometry>
+#include <Eigen/SVD>
+#include <Eigen/QR>
+#include <fstream>
 #include <unsupported/Eigen/LevenbergMarquardt>
 
 #include "camera_reprojection_functor.h"
-#include "filter_state.h"
 #include "feature_track.h"
 #include "filter.h"
+#include "filter_state.h"
 
 CameraAlgorithms::CameraAlgorithms(const Filter* filter)
 : filter_(filter) {
@@ -22,8 +24,7 @@ Eigen::Vector3d CameraAlgorithms::initialGuessFeaturePosition(const Eigen::Vecto
     v1.normalize();
     v2.normalize();
     
-    Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic> a;
-    a.resize(3, 2);
+    Eigen::Matrix<double, Eigen::Dynamic, Eigen::Dynamic> a(3, 2);
     a.block<3, 1>(0, 0) = v1;
     a.block<3, 1>(0, 1) = -1*R_C0_C1*v2;
     Eigen::Vector3d b = p_C1_C0;
@@ -40,23 +41,11 @@ Eigen::Vector3d CameraAlgorithms::initialGuessFeaturePosition(const Eigen::Vecto
         throw std::invalid_argument("ReprojectionOptimizer::initialGuess method must be either SVD, QR or normal");
     }
     
-    Eigen::Vector3d initial_guess = x(0) * v1;
-    
-    //    if (initial_guess(2) < 0) {
-    //        std::cout << "Initial guess is [" << initial_guess.transpose() << "]^T. Inverting!" << std::endl;
-    //
-    //        std::cout << "z0: " << z0.transpose() << std::endl;
-    //        std::cout << "z1: " << z1.transpose() << std::endl;
-    //        std::cout << "R_C0_C1: \n" << R_C0_C1 << std::endl;
-    //        std::cout << "p_C1_C0: " << p_C1_C0.transpose() << std::endl;
-    //
-    //        initial_guess = -1*initial_guess;
-    //    }
-    
-    return initial_guess;
+    return x(0) * v1;
 }
 
-std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosition(const FeatureTrack &feature_track) const {
+std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosition(
+        const FeatureTrack &feature_track) const {
     std::size_t n = feature_track.posesTrackedCount();
     
     std::vector<Eigen::Matrix3d> rotations;
@@ -71,7 +60,7 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
         const CameraPose& c0 = *it_c0;
         const CameraPose& ci = *it;
         
-        Eigen::Quaterniond q_Ci_C0 = c0.getRotationToOtherPose(ci, *filter_);
+        Quaternion q_Ci_C0 = c0.getRotationToOtherPose(ci, *filter_);
         Eigen::Vector3d p_C0_Ci = ci.getPositionOfAnotherPose(c0, *filter_);
         Eigen::Vector2d z_i = feature_track[it - it_c0];
         
@@ -84,7 +73,7 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
     const FilterState& state = filter_->state();
     const Eigen::Vector2d& z0 = (feature_track[0].array() - state.optical_center_.array()) / state.focal_point_.array();
     const Eigen::Vector2d& z_last = (feature_track[n-1].array() - state.optical_center_.array()) / state.focal_point_.array();
-    const Eigen::Quaterniond q_Clast_C0 = (it_c0)->getRotationToOtherPose(*(it_c0 + (n-1)), *filter_);
+    const Quaternion q_Clast_C0 = (it_c0)->getRotationToOtherPose(*(it_c0 + (n-1)), *filter_);
     const Eigen::Vector3d& p_Clast_C0 = (it_c0)->getPositionOfAnotherPose(*(it_c0 + (n-1)), *filter_);
     Eigen::Vector3d initial_guess = initialGuessFeaturePosition(z0, z_last, q_Clast_C0.conjugate().toRotationMatrix(), p_Clast_C0, InitialGuessMethod::SVD);
     Eigen::VectorXd x = initial_guess;
@@ -104,7 +93,7 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
         r.block<3, 1>(0, 0) = R_Clast_C0.block<1, 3>(0, 0);
         r.block<3, 1>(3, 0) = R_Clast_C0.block<1, 3>(1, 0);
         r.block<3, 1>(6, 0) = R_Clast_C0.block<1, 3>(2, 0);
-        std::ofstream out("/Users/tomaskrejci/dump/feature_" + std::to_string(feature_track.getFeatureId()) + ".txt");
+        std::ofstream out("~/dump/feature_" + std::to_string(feature_track.getFeatureId()) + ".txt");
         out << "{" << std::endl;
         out << "\"c0_pose_id\": " << it_c0->getCameraPoseId() << "," << std::endl;
         out << "\"z0\": " << z0.transpose().format(formatter) << "," << std::endl;
@@ -195,7 +184,7 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
         default:
             break;
     }
-    //    std::cout << "Optimization ended after " << lm.iterations() << " iteration(s) with status " << status_msg << " (" << msg << ")" << std::endl;
+    // std::cout << "Optimization ended after " << lm.iterations() << " iteration(s) with status " << status_msg << " (" << msg << ")" << std::endl;
     
     Eigen::VectorXd fvec;
     fvec.resize(functor.values());
@@ -205,35 +194,7 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
     fvec_inverted.resize(functor.values());
     functor(-1*x, fvec_inverted);
     
-    //    std::cout << "Residuum non-inverted: " << fvec.cwiseAbs().maxCoeff() << std::endl;
-    //    std::cout << "Residuum inverted: " << fvec_inverted.cwiseAbs().maxCoeff() << std::endl;
-    
-    //    if (initial_guess(2) < 0) {
-    //        for (auto it = it_c0; it != it_end; ++it) {
-    //            const CameraPose& c0 = *it_c0;
-    //            const CameraPose& ci = *it;
-    //
-    //            std::cout << "R_Ci_C0\n" << c0.getRotationToOtherPose(ci, *this).toRotationMatrix() << std::endl;
-    //            std::cout << "p_C0_Ci: " <<
-    //
-    //            Eigen::Quaterniond q_Ci_C0 = c0.getRotationToOtherPose(ci, *this);
-    //            Eigen::Vector3d p_C0_Ci = ci.getPositionOfAnotherPose(c0, *this);
-    //            Eigen::Vector2d z_i = feature_track[it - it_c0];
-    //
-    //            rotations.push_back(q_Ci_C0.toRotationMatrix());
-    //            positions.push_back(p_C0_Ci);
-    //            measurements.push_back(z_i);
-    //        }
-    //    }
-    
-    //    std::cout << "Residualization maxCoeff " << fvec.maxCoeff() << std::endl;
-    //    if (fvec.maxCoeff() > 1000) {
-    //        std::cout << "Residualization maxCoeff too big " << fvec.maxCoeff() << std::endl;
-    //    }
-    
-    // Global position estimate using from inverse depth parametrization of feature position in first camera pose that observed it.
-    
-    Eigen::Quaterniond q_G_C0 = it_c0->getCameraOrientationInGlobalFrame(*filter_).conjugate();
+    Quaternion q_G_C0 = it_c0->getCameraOrientationInGlobalFrame(*filter_).conjugate();
     Eigen::Vector3d p_C0_G = it_c0->getCameraPositionInGlobalFrame(*filter_);
     Eigen::Vector3d param;
     param << x(0), x(1), 1.0;

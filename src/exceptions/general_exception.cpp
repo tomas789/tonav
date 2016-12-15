@@ -5,7 +5,6 @@
 #include "exceptions/general_exception.h"
 
 #include <string>
-#include <exceptions/general_exception.h>
 
 #include "exceptions/base_exception.h"
 

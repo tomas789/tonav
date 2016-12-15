@@ -7,7 +7,11 @@
 #include <iostream>
 #include <iomanip>
 #include <Eigen/Core>
-#include <Eigen/Dense>
+#include <Eigen/Geometry>
+
+#include "body_state.h"
+#include "calibration.h"
+#include "quaternion.h"
 
 FilterState::FilterState(std::shared_ptr<const Calibration> calibration)
     : calibration_(calibration), poses_(calibration->getMaxCameraPoses() + 1) { }
@@ -16,7 +20,7 @@ double FilterState::time() const {
     return body_state_->time();
 }
 
-const Eigen::Quaterniond& FilterState::getOrientationInGlobalFrame() const {
+const Quaternion& FilterState::getOrientationInGlobalFrame() const {
     assert(body_state_.get());
     return body_state_->getOrientationInGlobalFrame();
 }
@@ -31,7 +35,7 @@ const Eigen::Vector3d& FilterState::getVelocityInGlobalFrame() const {
     return body_state_->getVelocityInGlobalFrame();
 }
 
-void FilterState::orientationCorrection(const Eigen::Quaterniond& orientation) {
+void FilterState::orientationCorrection(const Quaternion& orientation) {
     body_state_->orientationCorrection(orientation);
 }
 
@@ -71,6 +75,7 @@ void FilterState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
     delta_T_a.block<1, 3>(1, 0) = delta_x.segment<3>(36);
     delta_T_a.block<1, 3>(2, 0) = delta_x.segment<3>(39);
     
+    // @todo: Shape matrices?
 //    gyroscope_shape_ += delta_T_g;
 //    gyroscope_acceleration_sensitivity_ += delta_T_s;
 //    accelerometer_shape_ += delta_T_a;
@@ -94,7 +99,8 @@ std::ostream& operator<< (std::ostream& out, FilterState& state) {
     out << std::fixed << std::setprecision(4);
     Eigen::Vector3d euler = state.getOrientationInGlobalFrame().toRotationMatrix().eulerAngles(0, 1, 2);
     out << "Euler angles:    " << euler.transpose().format(formatter) << std::endl;
-    out << "Rotation:        " << state.getOrientationInGlobalFrame().coeffs().transpose().format(formatter) << std::endl;
+    out << "Rotation:        " << state.getOrientationInGlobalFrame().coeffs().transpose().format(formatter)
+        << std::endl;
     out << "Position:        " << state.getPositionInGlobalFrame().transpose().format(formatter) << std::endl;
     out << "Velocity:        " << state.getVelocityInGlobalFrame().transpose().format(formatter) << std::endl;
     out << "Gyro bias:       " << state.bias_gyroscope_.transpose().format(formatter) << std::endl;
@@ -110,13 +116,6 @@ std::ostream& operator<< (std::ostream& out, FilterState& state) {
     out << "Tangential dist: " << state.tangential_distortion_.transpose().format(formatter) << std::endl;
     out << "Cam delay:       " << state.camera_delay_ << std::endl;
     out << "Cam readout:     " << state.camera_readout_ << std::endl;
-
-//    for (int i = 0; i < FilterState::getPoses(); ++i) {
-//        out << " * " << std::setw(8) << "Pose " + std::to_string(i) << ": "
-//            << state.getRotationForBodyPoseBlock(i).transpose().format(formatter) << " "
-//            << state.getPositionForBodyPoseBlock(i).transpose().format(formatter) << " "
-//            << state.getVelocityForBodyPoseBlock(i).transpose().format(formatter) << std::endl;
-//    }
 
     return out;
 }

@@ -5,10 +5,12 @@
 #include <iostream>
 
 #include "calibration.h"
+#include "quaternion.h"
 #include "quaternion_tools.h"
 
 BodyState::BodyState(std::shared_ptr<const Calibration> calibration, double time, Eigen::Vector3d rotation_estimate,
-        Eigen::Vector3d acceleration_estimate, Eigen::Quaterniond q_B_G, Eigen::Vector3d p_B_G, Eigen::Vector3d v_B_G) {
+        Eigen::Vector3d acceleration_estimate, Quaternion q_B_G, Eigen::Vector3d p_B_G, Eigen::Vector3d v_B_G)
+: q_B_G_(Quaternion::identity()), rotation_to_this_frame_(Quaternion::identity()) {
     assert(!std::isnan(rotation_estimate.norm()) && rotation_estimate.norm() < 1e6);
     assert(!std::isnan(acceleration_estimate.norm()) && rotation_estimate.norm() < 1e6);
     assert(!std::isnan(q_B_G.norm()));
@@ -22,23 +24,23 @@ BodyState::BodyState(std::shared_ptr<const Calibration> calibration, double time
     v_B_G_ = v_B_G;
     rotation_estimate_ = rotation_estimate;
     acceleration_estimate_ = acceleration_estimate;
-    rotation_to_this_frame_ = Eigen::Quaterniond::Identity();
+    rotation_to_this_frame_ = Quaternion::identity();
 }
 
-std::shared_ptr<BodyState> BodyState::propagate(const BodyState& from_state, double time, Eigen::Vector3d rotation_estimate,
-        Eigen::Vector3d acceleration_estimate) {
+std::shared_ptr<BodyState> BodyState::propagate(const BodyState& from_state, double time,
+        Eigen::Vector3d rotation_estimate, Eigen::Vector3d acceleration_estimate) {
     std::shared_ptr<BodyState> to_state = std::make_shared<BodyState>(from_state);
     to_state->time_ = time;
     to_state->rotation_estimate_ = rotation_estimate;
     to_state->acceleration_estimate_ = acceleration_estimate;
-    Eigen::Quaterniond q_Bcurrent_Bnext = BodyState::propagateGyroscope(from_state, *to_state);
+    Quaternion q_Bnext_Bcurrent = BodyState::propagateGyroscope(from_state, *to_state);
     std::pair<Eigen::Vector3d, Eigen::Vector3d> p_and_v_delta = BodyState::propagateAccelerometer(
-            from_state, *to_state, q_Bcurrent_Bnext.conjugate());
+            from_state, *to_state, q_Bnext_Bcurrent);
     Eigen::Vector3d p_delta = p_and_v_delta.first;
     Eigen::Vector3d v_delta = p_and_v_delta.second;
 
     // Use * instead of *= because quaternion product is not commutative.
-    to_state->q_B_G_ = q_Bcurrent_Bnext.conjugate() * from_state.q_B_G_;
+    to_state->q_B_G_ = q_Bnext_Bcurrent*from_state.q_B_G_;
     to_state->p_B_G_ = from_state.p_B_G_ + p_delta;
     to_state->v_B_G_ = from_state.v_B_G_ + v_delta;
         
@@ -53,7 +55,7 @@ double BodyState::timeTo(const BodyState &to_state) const {
     return to_state.time_ - time_;
 }
 
-const Eigen::Quaterniond& BodyState::getOrientationInGlobalFrame() const {
+const Quaternion& BodyState::getOrientationInGlobalFrame() const {
     return q_B_G_;
 }
 
@@ -65,7 +67,7 @@ const Eigen::Vector3d& BodyState::getVelocityInGlobalFrame() const {
     return v_B_G_;
 }
 
-void BodyState::orientationCorrection(const Eigen::Quaterniond& orientation) {
+void BodyState::orientationCorrection(const Quaternion& orientation) {
     q_B_G_ = orientation;
 }
 
@@ -78,15 +80,15 @@ void BodyState::velocityCorrection(const Eigen::Vector3d& velocity) {
 }
 
 void BodyState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
-    Eigen::Quaterniond delta_q(1.0, 0.5*delta_x(0), 0.5*delta_x(1), 0.5*delta_x(2));
+    Quaternion delta_q(0.5*delta_x(0), 0.5*delta_x(1), 0.5*delta_x(2), 1.0);
     q_B_G_ = (q_B_G_*delta_q).normalized();
     p_B_G_ += delta_x.segment<3>(3);
     v_B_G_ += delta_x.segment<3>(6);
 }
 
-Eigen::Quaterniond BodyState::propagateGyroscope(const BodyState &from_state, BodyState &to_state) {
+Quaternion BodyState::propagateGyroscope(const BodyState &from_state, BodyState &to_state) {
     Eigen::Vector4d q0;
-    q0 << 1.0, 0.0, 0.0, 0.0;
+    q0 << 0.0, 0.0, 0.0, 1.0;
     double delta_t = from_state.timeTo(to_state);
     const Eigen::Vector3d& rotation_est_prev = from_state.rotation_estimate_;
     const Eigen::Vector3d& rotation_est = to_state.rotation_estimate_;
@@ -98,7 +100,7 @@ Eigen::Quaterniond BodyState::propagateGyroscope(const BodyState &from_state, Bo
     Eigen::Vector4d k4 = 0.5 * QuaternionTools::bigOmegaMatrix(rotation_est) * (q0 + delta_t * k3);
 
     Eigen::Vector4d perturb_vec = q0 + delta_t/6.0 * (k1 + 2.0*k2 + 2.0*k3 + k4);
-    Eigen::Quaterniond perturb(perturb_vec(0), perturb_vec(1), perturb_vec(2), perturb_vec(3));
+    Quaternion perturb(perturb_vec(0), perturb_vec(1), perturb_vec(2), perturb_vec(3));
     perturb.normalize();
     
     assert(!std::isnan(perturb.norm()));
@@ -107,7 +109,7 @@ Eigen::Quaterniond BodyState::propagateGyroscope(const BodyState &from_state, Bo
 }
 
 std::pair<Eigen::Vector3d, Eigen::Vector3d> BodyState::propagateAccelerometer(
-        const BodyState &from_state, BodyState &to_state, const Eigen::Quaterniond &q_Bnext_Bcurrent) {
+        const BodyState &from_state, BodyState &to_state, const Quaternion &q_Bnext_Bcurrent) {
     double delta_t = from_state.timeTo(to_state);
     const Eigen::Vector3d global_gravity = from_state.calibration_->getGlobalGravity();
     

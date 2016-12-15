@@ -11,7 +11,8 @@
 #include "stats.h"
 #include "stats_timer.h"
 
-Tonav::Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Vector3d& p_B_C) : state_initializer_(new StateInitializer), filter_(calibration, state_initializer_) {
+Tonav::Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Vector3d& p_B_C)
+        : state_initializer_(new StateInitializer), filter_(calibration, state_initializer_) {
     filter_.setInitialBodyPositionInCameraFrame(p_B_C);
 }
 
@@ -19,7 +20,8 @@ bool Tonav::updateAcceleration(double time, Eigen::Vector3d accel) {
     if (!accel_buffer_.empty()) {
         double last_accelerometer_time = lastAccelerometerTime();
         if (time <= last_accelerometer_time) {
-            std::cout << "Got accelerometer measurement from time " << time << ", last item time is " << last_accelerometer_time << ". Skipping." << std::endl;
+            std::cout << "Got accelerometer measurement from time " << time << ", last item time is "
+                << last_accelerometer_time << ". Skipping." << std::endl;
             return false;
         }
     }
@@ -33,7 +35,8 @@ bool Tonav::updateRotationRate(double time, Eigen::Vector3d gyro) {
     if (!gyro_buffer_.empty()) {
         double last_gyroscope_time = lastGyroscopeTime();
         if (time <= last_gyroscope_time) {
-            std::cout << "Got gyroscope measurement from time " << time << ", last item time is " << last_gyroscope_time << ". Skipping." << std::endl;
+            std::cout << "Got gyroscope measurement from time " << time << ", last item time is " << last_gyroscope_time
+                << ". Skipping." << std::endl;
             return false;
         }
     }
@@ -66,7 +69,7 @@ void Tonav::updateImage(double time, const cv::Mat& image) {
     camera_item_ = CameraItem(time, image);
 }
 
-Eigen::Quaterniond Tonav::getCurrentOrientation() {
+Quaternion Tonav::getCurrentOrientation() {
     return filter_.getCurrentAttitude();
 }
 
@@ -94,7 +97,7 @@ const FilterState& Tonav::state() const {
     return filter_.state();
 }
 
-void Tonav::orientationCorrection(const Eigen::Quaterniond& orientation) {
+void Tonav::orientationCorrection(const Quaternion& orientation) {
     filter_.orientationCorrection(orientation);
 }
 

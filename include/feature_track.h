@@ -5,7 +5,7 @@
 #ifndef TONAV_FEATURE_TRACK_H
 #define TONAV_FEATURE_TRACK_H
 
-#include <Eigen/Dense>
+#include <Eigen/Core>
 #include <vector>
 #include <opencv2/core/core.hpp>
 

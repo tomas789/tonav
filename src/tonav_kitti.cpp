@@ -7,7 +7,6 @@
 #include <utility>
 #include <ctime>
 #include <Eigen/Core>
-#include <Eigen/Geometry>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <ros/ros.h>
@@ -15,10 +14,15 @@
 #include <tf2_ros/transform_broadcaster.h>
 #include <sensor_msgs/PointCloud.h>
 
+#include "quaternion.h"
+
 namespace Kitti {
     OxtsRecord OxtsRecord::parse(const std::string& line) {
         OxtsRecord r;
-        std::sscanf(line.c_str(), "%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %d %d %d %d %d", &r.lat, &r.lon, &r.alt, &r.roll, &r.pitch, &r.yaw, &r.vn, &r.ve, &r.vf, &r.vl, &r.vu, &r.ax, &r.ay, &r.az, &r.af, &r.al, &r.au, &r.wx, &r.wy, &r.wz, &r.wf, &r.wl, &r.wu, &r.pos_accuracy, &r.vel_accuracy, &r.navstat, &r.numsats, &r.posmode, &r.velmode, &r.orimode);
+        std::sscanf(line.c_str(), "%lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %lf %d %d %d %d %d",
+                &r.lat, &r.lon, &r.alt, &r.roll, &r.pitch, &r.yaw, &r.vn, &r.ve, &r.vf, &r.vl, &r.vu, &r.ax, &r.ay,
+                &r.az, &r.af, &r.al, &r.au, &r.wx, &r.wy, &r.wz, &r.wf, &r.wl, &r.wu, &r.pos_accuracy, &r.vel_accuracy,
+                &r.navstat, &r.numsats, &r.posmode, &r.velmode, &r.orimode);
         return r;
     }
 }
@@ -271,7 +275,7 @@ void TonavKitti::initialize() {
     calibration_->setCameraTangentialDistortionParams(Eigen::Vector2d::Zero());
     calibration_->setCameraDelayTime(0.0);
     calibration_->setCameraReadoutTime(0.0);
-    calibration_->setBodyToCameraRotation(Eigen::Quaterniond(R_B_C_.transpose()));
+    calibration_->setBodyToCameraRotation(Quaternion::fromRotationMatrix(R_B_C_.transpose()));
     tonav_.reset(new Tonav(calibration_, p_B_C_));
     Eigen::Vector3d velocity;
     velocity << oxts_[0].vf, oxts_[0].vl, oxts_[0].vu;
@@ -292,7 +296,8 @@ cv::Mat TonavKitti::step(std::size_t i) {
 
     if (tonav_->isInitialized()) {
         //tonav_->positionCorrection(getGroundTruthPosition(i-1));
-        Eigen::Quaterniond gt_orientation(getGroundTruthRotation(i-1)*getGroundTruthRotation(0).transpose());
+        Quaternion gt_orientation = Quaternion::fromRotationMatrix(
+                getGroundTruthRotation(i-1)*getGroundTruthRotation(0).transpose());
         //tonav_->orientationCorrection(gt_orientation.conjugate());
         Eigen::Vector3d gt_velocity;
         gt_velocity << oxts_[i-1].vf, oxts_[i-1].vl, oxts_[i-1].vu;
@@ -347,7 +352,7 @@ std::vector<Eigen::Vector2d> TonavKitti::bodyFrameMarker() const {
 void TonavKitti::publishTransformations(tf2_ros::TransformBroadcaster& broadcaster) {
     {
         Eigen::Vector3d body_position = tonav_->getCurrentPosition() / factor_;
-        Eigen::Quaterniond body_orientation = tonav_->getCurrentOrientation().conjugate();
+        Quaternion body_orientation = tonav_->getCurrentOrientation().conjugate();
         
         geometry_msgs::TransformStamped body;
         body.header.stamp = ros::Time::now();
@@ -368,7 +373,7 @@ void TonavKitti::publishTransformations(tf2_ros::TransformBroadcaster& broadcast
         for (std::size_t i = 0; i < buffer.size(); ++i) {
             const CameraPose& pose = buffer[i];
             
-            Eigen::Quaterniond orientation = pose.getCameraOrientationInGlobalFrame(tonav_->filter()).conjugate();
+            Quaternion orientation = pose.getCameraOrientationInGlobalFrame(tonav_->filter()).conjugate();
             Eigen::Vector3d position = pose.getCameraPositionInGlobalFrame(tonav_->filter()) / factor_;
             geometry_msgs::TransformStamped body;
             body.header.stamp = ros::Time::now();

@@ -1,7 +1,7 @@
 #include "camera_pose_buffer.h"
 
-#include <iostream>
 #include <boost/circular_buffer.hpp>
+#include <stdexcept>
 #include <utility>
 
 #include "camera_pose.h"

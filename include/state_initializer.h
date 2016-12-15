@@ -2,7 +2,8 @@
 #define TONAV_STATE_INITIALIZER_H
 
 #include <Eigen/Core>
-#include <Eigen/Geometry>
+
+#include "quaternion.h"
 
 /**
  * @brief Provides values for initialization of body state
@@ -16,8 +17,8 @@ public:
     
     StateInitializer& operator=(const StateInitializer& other) = default;
     
-    void setOrientation(const Eigen::Quaterniond& orientation);
-    Eigen::Quaterniond getOrientation() const;
+    void setOrientation(const Quaternion& orientation);
+    Quaternion getOrientation() const;
     
     void setPosition(const Eigen::Vector3d& position);
     Eigen::Vector3d getPosition() const;
@@ -26,7 +27,7 @@ public:
     Eigen::Vector3d getVelocity() const;
     
 private:
-    Eigen::Quaterniond orientation_;
+    Quaternion orientation_;
     Eigen::Vector3d position_;
     Eigen::Vector3d velocity_;
 };

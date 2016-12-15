@@ -6,9 +6,11 @@
 #define TONAV_CALIBRATION_H
 
 #include <boost/filesystem/path.hpp>
-#include <Eigen/Dense>
+#include <Eigen/Core>
 #include <string>
 #include <vector>
+
+#include "quaternion.h"
 
 /**
  * Read calibration file.
@@ -88,9 +90,9 @@ public:
 
     double getCameraReadoutTimeNoise() const;
     
-    Eigen::Quaterniond getBodyToCameraRotation() const;
+    Quaternion getBodyToCameraRotation() const;
     
-    void setBodyToCameraRotation(const Eigen::Quaterniond& orientation);
+    void setBodyToCameraRotation(const Quaternion& orientation);
 
     static std::shared_ptr<Calibration> fromPath(boost::filesystem::path fname);
 
@@ -138,7 +140,7 @@ protected:
     double camera_delay_time_noise_;
     double camera_readout_time_noise_;
     
-    Eigen::Quaterniond body_to_camera_rotation_;
+    Quaternion body_to_camera_rotation_;
 
     static const std::vector<std::string> allowed_params_;
 };

@@ -1,7 +1,3 @@
-//
-// Created by Tomas Krejci on 5/3/16.
-//
-
 #ifndef TONAV_BASE_EXCEPTION_H
 #define TONAV_BASE_EXCEPTION_H
 

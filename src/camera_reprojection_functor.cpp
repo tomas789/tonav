@@ -6,8 +6,11 @@
 
 #include "filter.h"
 
-CameraReprojectionFunctor::CameraReprojectionFunctor(const std::vector<Eigen::Matrix3d>& rotations, const std::vector<Eigen::Vector3d>& positions, const std::vector<Eigen::Vector2d>& measurements, const Filter& filter)
-: Eigen::DenseFunctor<double>(), rotations_(rotations), positions_(positions), measurements_(measurements), filter_(filter) {}
+CameraReprojectionFunctor::CameraReprojectionFunctor(
+        const std::vector<Eigen::Matrix3d>& rotations, const std::vector<Eigen::Vector3d>& positions,
+        const std::vector<Eigen::Vector2d>& measurements, const Filter& filter)
+    : Eigen::DenseFunctor<double>(), rotations_(rotations), positions_(positions), measurements_(measurements),
+    filter_(filter) {}
 
 int CameraReprojectionFunctor::operator()(const Eigen::VectorXd &x, Eigen::VectorXd &fvec) const
 {

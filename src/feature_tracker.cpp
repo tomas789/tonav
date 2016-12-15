@@ -5,7 +5,6 @@
 #include "feature_tracker.h"
 
 #include <cmath>
-#include <iostream>
 #include <memory>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -74,7 +73,8 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
             const cv::KeyPoint& current_keypoint = frame_features.keypoints()[query_idx];
             current_tracks[query_idx] = previous_tracks[train_idx];
             matched_feature_assigned[train_idx] = query_idx;
-            current_tracks[query_idx]->addFeaturePosition(current_keypoint.pt.x/scale_factor, current_keypoint.pt.y/scale_factor);
+            current_tracks[query_idx]->addFeaturePosition(
+                current_keypoint.pt.x/scale_factor, current_keypoint.pt.y/scale_factor);
 
             previous_feature_matched[train_idx] = match.distance;
             current_feature_matched[query_idx] = true;
@@ -115,12 +115,16 @@ void FeatureTracker::drawStats(cv::Mat &image, const std::vector<double> &previo
     }
     average_feature_live /= current_tracks.size();
 
-    cv::putText(image, "Out-of-view features: " + std::to_string(out_of_view_features), cv::Point(50, 50), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
-    cv::putText(image, "New features: " + std::to_string(new_features), cv::Point(50, 65), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
-    cv::putText(image, "Matched features: " + std::to_string(current_features_matched.size() - new_features), cv::Point(50, 80), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
-    cv::putText(image, "Matches size: " + std::to_string(matches.size()), cv::Point(50, 95), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
-    cv::putText(image, "Average feature life: " + std::to_string(average_feature_live), cv::Point(50, 110), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
-
+    cv::putText(image, "Out-of-view features: " + std::to_string(out_of_view_features), cv::Point(50, 50),
+            cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
+    cv::putText(image, "New features: " + std::to_string(new_features), cv::Point(50, 65), cv::FONT_HERSHEY_SIMPLEX,
+            0.5, cv::Scalar(0, 255, 0));
+    cv::putText(image, "Matched features: " + std::to_string(current_features_matched.size() - new_features),
+            cv::Point(50, 80), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
+    cv::putText(image, "Matches size: " + std::to_string(matches.size()), cv::Point(50, 95), cv::FONT_HERSHEY_SIMPLEX,
+            0.5, cv::Scalar(0, 255, 0));
+    cv::putText(image, "Average feature life: " + std::to_string(average_feature_live), cv::Point(50, 110),
+            cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0));
 }
 
 void FeatureTracker::markOutOfViewFeatures(std::vector<double>& feature_matched, feature_track_list& feature_tracks)

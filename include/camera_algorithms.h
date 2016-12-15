@@ -17,7 +17,8 @@ public:
     /**
      * @brief Initial guess of global feature position from its two measurements.
      */
-    Eigen::Vector3d initialGuessFeaturePosition(const Eigen::Vector2d& z0, const Eigen::Vector2d& z1, const Eigen::Matrix3d& R_C1_C0, const Eigen::Vector3d& p_C1_C0, InitialGuessMethod method) const;
+    Eigen::Vector3d initialGuessFeaturePosition(const Eigen::Vector2d& z0, const Eigen::Vector2d& z1,
+            const Eigen::Matrix3d& R_C1_C0, const Eigen::Vector3d& p_C1_C0, InitialGuessMethod method) const;
     
     /**
      * @brief Calculate \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$
@@ -36,7 +37,8 @@ public:
      *
      * It is implementation of function \f$\mathbf{g}_i\f$.
      */
-    Eigen::Vector3d transformFeatureInverseDepthEstimateToCameraFrame(const FeatureTrack& feature_track, std::size_t i, const Eigen::Vector3d& est) const;
+    Eigen::Vector3d transformFeatureInverseDepthEstimateToCameraFrame(const FeatureTrack& feature_track, std::size_t i,
+            const Eigen::Vector3d& est) const;
     
     /**
      * @brief Implementation of camera model.
@@ -52,6 +54,7 @@ public:
      * @brief Compute jacobian of camera projection function.
      */
     Eigen::Matrix<double, 2, 3> cameraProjectJacobian(const Eigen::Vector3d& p) const;
+    
 private:
     const Filter* filter_;
 };

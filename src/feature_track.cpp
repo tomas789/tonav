@@ -4,7 +4,6 @@
 
 #include "feature_track.h"
 
-#include <iostream>
 #include <opencv2/core/core.hpp>
 
 #include "exceptions/general_exception.h"

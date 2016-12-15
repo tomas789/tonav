@@ -4,7 +4,6 @@
 
 #include "frame_features.h"
 
-#include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
@@ -28,14 +27,14 @@ FrameFeatures FrameFeatures::fromImage(cv::Ptr<cv::FeatureDetector> detector,
 
 cv::Mat FrameFeatures::toGray(const cv::Mat& image) {
     switch (image.channels()) {
-        case 3:
-            {
-                cv::Mat gray;
-                cv::cvtColor(image, gray, CV_BGR2GRAY);
-                return gray;
-            }
         case 1:
             return image;
+        case 3:
+        {
+            cv::Mat gray;
+            cv::cvtColor(image, gray, CV_BGR2GRAY);
+            return gray;
+        }
         default:
             throw GeneralException("Unknown image format");
     }
@@ -55,12 +54,10 @@ void FrameFeatures::drawFeatures(cv::Mat& image, cv::Scalar color, double scale_
 
 void FrameFeatures::detectKeypoints(cv::Ptr<cv::FeatureDetector> detector, cv::Mat gray) {
      detector->detect(gray, keypoints_);
-//    exp_detector_.detect(gray, keypoints_);
 }
 
 void FrameFeatures::computeDescriptors(cv::Ptr<cv::DescriptorExtractor> extractor, cv::Mat gray) {
      extractor->compute(gray, keypoints_, descriptors_);
-//    exp_extractor_.compute(gray, keypoints_, descriptors_);
 }
 
 std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matcher, const FrameFeatures &other, float threshold) {
@@ -71,6 +68,7 @@ std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matc
     std::vector<cv::DMatch> matches;
     matcher->match(descriptors_, other.descriptors_, matches);
     
+    // @todo: Move use_homography_filter out to the configuration?
     bool use_homography_filter = true;
     if (use_homography_filter) {
         std::vector<cv::Point2f> this_pts;
@@ -119,9 +117,6 @@ double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch>
         }
     }
     mean_distance /= matches.size();
-    std::cout << "Min distance: " << min_distance << ", Max distance: " << max_distance << ", mean distance: " << mean_distance << std::endl;
-    
-    return 5.0;
     return std::max(2*min_distance, 5.0);
 }
 

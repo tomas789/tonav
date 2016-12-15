@@ -5,24 +5,30 @@
 #include "filter.h"
 
 #include <cmath>
+#include <Eigen/Core>
+#include <Eigen/LU>
+#include <Eigen/QR>
+#include <functional>
 #include <iostream>
 #include <iterator>
 #include <opencv2/core/core.hpp>
-#include <functional>
-#include <Eigen/QR>
 
+#include "body_state.h"
 #include "chi_squared_ppm.h"
 #include "calibration.h"
 #include "camera_algorithms.h"
 #include "filter_state.h"
 #include "imu_item.h"
 #include "imu_buffer.h"
+#include "quaternion.h"
 #include "quaternion_tools.h"
 #include "stats.h"
 #include "stats_timer.h"
 
-Filter::Filter(std::shared_ptr<const Calibration> calibration, std::shared_ptr<const StateInitializer> state_initializer)
-: calibration_(calibration), state_initializer_(state_initializer), feature_tracker_(calibration->getNumberOfFeaturesToExtract()), camera_algorithms_(this) {
+Filter::Filter(std::shared_ptr<const Calibration> calibration,
+        std::shared_ptr<const StateInitializer> state_initializer)
+        : calibration_(calibration), state_initializer_(state_initializer),
+            feature_tracker_(calibration->getNumberOfFeaturesToExtract()), camera_algorithms_(this) {
 }
 
 void Filter::stepInertial(double time, const ImuItem &accel, const ImuItem &gyro) {
@@ -100,7 +106,7 @@ Eigen::Vector3d Filter::getCurrentPosition() {
     return state().getPositionInGlobalFrame();
 }
 
-Eigen::Quaterniond Filter::getCurrentAttitude() {
+Quaternion Filter::getCurrentAttitude() {
     return state().getOrientationInGlobalFrame();
 }
 
@@ -131,7 +137,7 @@ double Filter::time() const {
     return state().time();
 }
 
-Eigen::Quaterniond Filter::getBodyToCameraRotation() const {
+Quaternion Filter::getBodyToCameraRotation() const {
     return calibration_->getBodyToCameraRotation();
 }
 
@@ -139,7 +145,7 @@ Eigen::Vector3d Filter::getPositionOfBodyInCameraFrame() const {
     return state().position_of_body_in_camera_;
 }
 
-void Filter::orientationCorrection(const Eigen::Quaterniond& orientation) {
+void Filter::orientationCorrection(const Quaternion& orientation) {
     state().orientationCorrection(orientation);
 }
 
@@ -190,7 +196,7 @@ void Filter::initialize(double time, const ImuItem &accel, const ImuItem &gyro) 
     Eigen::Vector3d acceleration_estiamte = computeAccelerationEstimate(accel.getVector());
     Eigen::Vector3d rotation_estimate = computeRotationEstimate(gyro.getVector(), acceleration_estiamte);
     
-    Eigen::Quaterniond attitude = state_initializer_->getOrientation();
+    Quaternion attitude = state_initializer_->getOrientation();
     Eigen::Vector3d position = state_initializer_->getPosition();
     Eigen::Vector3d velocity = state_initializer_->getVelocity();
     
@@ -368,11 +374,11 @@ FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack& feat
         H_x_Bj_rhs_part.block<3, 3>(0, 6) = (-1.0*k*state().camera_readout_/N)*Eigen::Matrix3d::Identity();
         Eigen::Matrix<double, 2, 9> H_x_Bj = M_i_j * H_x_Bj_rhs_part;
         result.setJacobianByCameraPose(j, H_x_Bj);
-        std::cout << "H_x_Bj(" << j << ") MIN: " << H_x_Bj.minCoeff() << " | MAX: " << H_x_Bj.maxCoeff() << std::endl;
+        //std::cout << "H_x_Bj(" << j << ") MIN: " << H_x_Bj.minCoeff() << " | MAX: " << H_x_Bj.maxCoeff() << std::endl;
         
         Eigen::Matrix<double, 2, 3> H_f_ij = M_i_j;
         result.setJacobianByFeaturePosition(j, H_f_ij);
-        std::cout << "H_f_ij(" << j << ") MIN: " << H_f_ij.minCoeff() << " | MAX: " << H_f_ij.maxCoeff() << std::endl;
+        //std::cout << "H_f_ij(" << j << ") MIN: " << H_f_ij.minCoeff() << " | MAX: " << H_f_ij.maxCoeff() << std::endl;
         
         Eigen::Matrix<double, 2, 3> z_by_p_B_C = J_h;
         Eigen::Matrix3d cross_matrix_part;
@@ -438,7 +444,7 @@ FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack& feat
         
         // std::cout << "H_c(" << j << ") MIN: " << H_c.minCoeff() << " | MAX: " << H_c.maxCoeff() << std::endl;
         // std::cout << "z_by_p_B_C(" << j << ") MIN: " << z_by_p_B_C.minCoeff() << " | MAX: " << z_by_p_B_C.maxCoeff() << std::endl;
-        std::cout << "z_by_x_cam(" << j << ") MIN: " << z_by_x_cam.minCoeff() << " | MAX: " << z_by_x_cam.maxCoeff() << std::endl;
+        //std::cout << "z_by_x_cam(" << j << ") MIN: " << z_by_x_cam.minCoeff() << " | MAX: " << z_by_x_cam.maxCoeff() << std::endl;
         // std::cout << "z_by_td(" << j << ") MIN: " << z_by_td.minCoeff() << " | MAX: " << z_by_td.maxCoeff() << std::endl;
         // std::cout << "z_by_tr(" << j << ") MIN: " << z_by_tr.minCoeff() << " | MAX: " << z_by_tr.maxCoeff() << std::endl;
         
@@ -507,7 +513,7 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list& features_to
             H_rows += H_0_i.rows();
             feature_positions_.push_back(rezidualization_result.getGlobalFeaturePosition());
         } else {
-            std::cout << "Feature is outlier." << std::endl;
+            // std::cout << "Feature is outlier." << std::endl;
         }
     }
     
@@ -530,6 +536,8 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list& features_to
             row_processed += r_list[i].rows();
         }
         
+        std::cout << "r MIN: " << r.minCoeff() << " | MAX: " << r.maxCoeff() << std::endl;
+        
         Eigen::FullPivHouseholderQR<Eigen::MatrixXd> householder_qr = H.fullPivHouseholderQr();
         Eigen::MatrixXd R = householder_qr.matrixQR().triangularView<Eigen::Upper>();
         Eigen::MatrixXd Q = householder_qr.matrixQ();
@@ -551,23 +559,21 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list& features_to
 
 bool Filter::gatingTest(const Eigen::VectorXd& r_0_i, const Eigen::MatrixXd H_0_i) {
     double sigma = 1.0;
-    std::cout << "H_0_i MIN: " << H_0_i.minCoeff() << " | H_0_i MAX: " << H_0_i.maxCoeff() << std::endl;
+    // std::cout << "H_0_i MIN: " << H_0_i.minCoeff() << " | H_0_i MAX: " << H_0_i.maxCoeff() << std::endl;
     auto inner = H_0_i*filter_covar_*H_0_i.transpose() + sigma*Eigen::MatrixXd::Identity(H_0_i.rows(), H_0_i.rows());
-    auto rows = inner.rows();
-    auto cols = inner.cols();
-    assert(rows == cols);
-    std::cout << "INNER MIN: " << inner.minCoeff() << " | INNER MAX: " << inner.maxCoeff() << std::endl;
+    assert(inner.rows() == inner.cols());
+    // std::cout << "INNER MIN: " << inner.minCoeff() << " | INNER MAX: " << inner.maxCoeff() << std::endl;
     Eigen::FullPivLU<Eigen::MatrixXd> full_piv_lu(inner);
     if (!full_piv_lu.isInvertible()) {
         std::cout << "Inner ix " << inner.cols() << "x" << inner.rows() << " with rank " << full_piv_lu.rank() << std::endl;
-        std::cout << "Not invertible" << std::endl;
+        // std::cout << "Not invertible" << std::endl;
         return false;
     }
     auto inner_inverted = inner.inverse();
     Eigen::MatrixXd gamma_i = r_0_i.transpose()*inner_inverted*r_0_i;
     bool test_passed = gamma_i(0, 0) < CHI_SQUARED_PPM_VALUES[r_0_i.rows()];
     if (!test_passed) {
-        std::cout << "Test failed with gamma_i: " << gamma_i(0, 0) << " threshold: " << CHI_SQUARED_PPM_VALUES[r_0_i.cols()] << std::endl;
+        // std::cout << "Test failed with gamma_i: " << gamma_i(0, 0) << " threshold: " << CHI_SQUARED_PPM_VALUES[r_0_i.cols()] << std::endl;
     }
     return test_passed;
 }

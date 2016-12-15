@@ -2,9 +2,9 @@
 #define TONAV_BODY_STATE_H
 
 #include <Eigen/Core>
-#include <Eigen/Geometry>
 
 #include "calibration.h"
+#include "quaternion.h"
 
 /**
  * @brief Represents body pose \f$x_B\f$ or camera pose \f$ \pi_{B_i} \f$ in filter state.
@@ -24,7 +24,7 @@ public:
      * @param v_B_G Velocity of body frame in global frame \f$ \prescript{G}{}{\mathbf{v}}_B \f$
      */
     BodyState(std::shared_ptr<const Calibration> calibration, double time, Eigen::Vector3d rotation_estimate,
-            Eigen::Vector3d acceleration_estimate, Eigen::Quaterniond q_B_G, Eigen::Vector3d p_B_G,
+            Eigen::Vector3d acceleration_estimate, Quaternion q_B_G, Eigen::Vector3d p_B_G,
             Eigen::Vector3d v_B_G);
 
     BodyState(const BodyState& other) = default;
@@ -56,7 +56,7 @@ public:
     double timeTo(const BodyState& to_state) const;
 
     /** @brief Get orientation \f$ \prescript{G}{}{\mathbf{q}}_B \f$ of this body (or camera) frame in global frame. */
-    const Eigen::Quaterniond& getOrientationInGlobalFrame() const;
+    const Quaternion& getOrientationInGlobalFrame() const;
 
     /** @brief Get position \f$ \prescript{G}{}{\mathbf{p}}_B \f$ of this body (or camera) frame in global frame. */
     const Eigen::Vector3d& getPositionInGlobalFrame() const;
@@ -64,7 +64,7 @@ public:
     /** @brief Get velocity \f$ \prescript{G}{}{\mathbf{v}}_B \f$ of this body (or camera) frame in global frame. */
     const Eigen::Vector3d& getVelocityInGlobalFrame() const;
     
-    void orientationCorrection(const Eigen::Quaterniond& orientation);
+    void orientationCorrection(const Quaternion& orientation);
     void positionCorrection(const Eigen::Vector3d& position);
     void velocityCorrection(const Eigen::Vector3d& velocity);
     
@@ -76,7 +76,7 @@ private:
     double time_;
 
     /** @brief \f$ \prescript{G}{}{\mathbf{q}}_B = \prescript{B}{G}{\mathbf{q}} \f$ */
-    Eigen::Quaterniond q_B_G_;
+    Quaternion q_B_G_;
 
     /** @brief \f$ \prescript{G}{}{\mathbf{p}}_B \f$ */
     Eigen::Vector3d p_B_G_;
@@ -91,17 +91,17 @@ private:
     Eigen::Vector3d acceleration_estimate_;
 
     /** @brief \f$ \prescript{B_t}{B_{t-1}}{\hat{q}} \f$ */
-    Eigen::Quaterniond rotation_to_this_frame_;
+    Quaternion rotation_to_this_frame_;
 
     /**
      * @brief Integrate local angular velocity
      *
      * Should return rotation from \f$\{B_{l+1}\}\f$ to \f$\{B_{l}\}\f$
      */
-    static Eigen::Quaterniond propagateGyroscope(const BodyState& from_state, BodyState& to_state);
+    static Quaternion propagateGyroscope(const BodyState& from_state, BodyState& to_state);
 
     static std::pair<Eigen::Vector3d, Eigen::Vector3d> propagateAccelerometer(
-            const BodyState& from_state, BodyState& to_state, const Eigen::Quaterniond& q_Bnext_Bcurrent);
+            const BodyState& from_state, BodyState& to_state, const Quaternion& q_Bnext_Bcurrent);
 };
 
 #endif //TONAV_BODY_STATE_H

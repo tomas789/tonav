@@ -1,7 +1,3 @@
-//
-// Created by Tomas Krejci on 5/3/16.
-//
-
 #include "exceptions/calibration_file_error.h"
 
 #include <string>

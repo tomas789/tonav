@@ -5,18 +5,18 @@
 #ifndef TONAV_FILTER_H
 #define TONAV_FILTER_H
 
-#include <Eigen/Dense>
-#include <fstream>
+#include <Eigen/Core>
 #include <functional>
-#include <list>
 
-#include "imu_buffer.h"
+#include "body_state.h"
 #include "calibration.h"
 #include "camera_algorithms.h"
-#include "filter_state.h"
 #include "feature_rezidualization_result.h"
 #include "feature_tracker.h"
+#include "filter_state.h"
+#include "imu_buffer.h"
 #include "state_initializer.h"
+#include "quaternion.h"
 
 class ImuItem;
 class CameraReprojectionFunctor;
@@ -64,7 +64,7 @@ public:
      *
      * Keep in mind that it returns quaternion as defined by Eigen library. It uses Hamilton's notation of quaternion.
      */
-    Eigen::Quaterniond getCurrentAttitude();
+    Quaternion getCurrentAttitude();
     
     /** @brief Get current estimated velocity */
     Eigen::Vector3d getCurrentVelocity();
@@ -98,11 +98,12 @@ public:
     
     double time() const;
     
-    Eigen::Quaterniond getBodyToCameraRotation() const;
+    Quaternion getBodyToCameraRotation() const;
     
     Eigen::Vector3d getPositionOfBodyInCameraFrame() const;
     
-    void orientationCorrection(const Eigen::Quaterniond& orientation);
+    void orientationCorrection(const Quaternion&
+                               orientation);
     void positionCorrection(const Eigen::Vector3d& position);
     void velocityCorrection(const Eigen::Vector3d& velocity);
     

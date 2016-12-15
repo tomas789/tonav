@@ -23,8 +23,6 @@ set(COMMON_SOURCE_FILES
         src/exceptions/impossible_exception.cpp
         include/exceptions/base_exception.h
         src/exceptions/base_exception.cpp
-        include/camera_feed.h
-        src/camera_feed.cpp
         include/imu_item.h
         include/imu_device.h
         src/imu_device.cpp
@@ -33,8 +31,6 @@ set(COMMON_SOURCE_FILES
         src/imu_item.cpp
         include/camera_item.h
         src/camera_item.cpp
-        include/navigator.h
-        src/navigator.cpp
         include/imu_buffer.h
         src/imu_buffer.cpp
         src/filter.cpp
@@ -71,6 +67,8 @@ set(COMMON_SOURCE_FILES
         src/stats_timer.cpp
         include/camera_algorithms.h
         src/camera_algorithms.cpp
+        include/quaternion.h
+        src/quaternion.cpp
       )
 set (TONAV_ROS_SOURCE_FILES
     include/tonav_ros.h

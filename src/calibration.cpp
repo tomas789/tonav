@@ -6,7 +6,7 @@
 
 #include <boost/filesystem.hpp>
 #include <cctype>
-#include <Eigen/Dense>
+#include <Eigen/Core>
 #include <fstream>
 #include <map>
 #include <string>
@@ -16,9 +16,10 @@
 
 #include "exceptions/impossible_exception.h"
 #include "exceptions/calibration_file_error.h"
+#include "quaternion.h"
 
-Calibration::Calibration() {
-    body_to_camera_rotation_ = Eigen::Quaterniond::Identity();
+Calibration::Calibration()
+: body_to_camera_rotation_(Quaternion::identity()) {
 }
 
 void Calibration::setCameraFocalPoint(const Eigen::Vector2d& focal_length) {
@@ -165,11 +166,11 @@ double Calibration::getCameraReadoutTimeNoise() const {
     return camera_readout_time_noise_;
 }
 
-void Calibration::setBodyToCameraRotation(const Eigen::Quaterniond& rotation) {
+void Calibration::setBodyToCameraRotation(const Quaternion& rotation) {
     body_to_camera_rotation_ = rotation;
 }
 
-Eigen::Quaterniond Calibration::getBodyToCameraRotation() const {
+Quaternion Calibration::getBodyToCameraRotation() const {
     return body_to_camera_rotation_;
 }
 

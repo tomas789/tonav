@@ -8,6 +8,7 @@
 
 #include "body_state.h"
 #include "filter.h"
+#include "quaternion.h"
 
 std::size_t CameraPose::camera_pose_counter = 0;
 
@@ -46,13 +47,13 @@ double CameraPose::time() const {
     return body_state_->time();
 }
 
-const Eigen::Quaterniond& CameraPose::getBodyOrientationInGlobalFrame() const {
+const Quaternion& CameraPose::getBodyOrientationInGlobalFrame() const {
     return body_state_->getOrientationInGlobalFrame();
 }
 
-Eigen::Quaterniond CameraPose::getCameraOrientationInGlobalFrame(const Filter& filter) const {
-    Eigen::Quaterniond q_C_B = filter.getBodyToCameraRotation();
-    Eigen::Quaterniond q_B_G = getBodyOrientationInGlobalFrame();
+Quaternion CameraPose::getCameraOrientationInGlobalFrame(const Filter& filter) const {
+    Quaternion q_C_B = filter.getBodyToCameraRotation();
+    Quaternion q_B_G = getBodyOrientationInGlobalFrame();
     return q_C_B * q_B_G;
 }
 
@@ -61,7 +62,7 @@ const Eigen::Vector3d& CameraPose::getBodyPositionInGlobalFrame() const {
 }
 
 Eigen::Vector3d CameraPose::getCameraPositionInGlobalFrame(const Filter& filter) const {
-    Eigen::Quaterniond q_G_C = getCameraOrientationInGlobalFrame(filter).conjugate();
+    Quaternion q_G_C = getCameraOrientationInGlobalFrame(filter).conjugate();
     Eigen::Vector3d p_B_G = body_state_->getPositionInGlobalFrame();
     Eigen::Vector3d p_B_C = filter.getPositionOfBodyInCameraFrame();
     return p_B_G - q_G_C.toRotationMatrix() * p_B_C;
@@ -71,14 +72,14 @@ const Eigen::Vector3d& CameraPose::getBodyVelocityInGlobalFrame() const {
     return body_state_->getVelocityInGlobalFrame();
 }
 
-Eigen::Quaterniond CameraPose::getRotationToOtherPose(const CameraPose& other, const Filter& filter) const {
-    Eigen::Quaterniond q_Cto_G = other.getCameraOrientationInGlobalFrame(filter);
-    Eigen::Quaterniond q_Cfrom_G = getCameraOrientationInGlobalFrame(filter);
+Quaternion CameraPose::getRotationToOtherPose(const CameraPose& other, const Filter& filter) const {
+    Quaternion q_Cto_G = other.getCameraOrientationInGlobalFrame(filter);
+    Quaternion q_Cfrom_G = getCameraOrientationInGlobalFrame(filter);
     return q_Cto_G * q_Cfrom_G.conjugate();
 }
 
 Eigen::Vector3d CameraPose::getPositionOfAnotherPose(const CameraPose& other, const Filter& filter) const {
-    Eigen::Quaterniond q_Cfrom_G = getCameraOrientationInGlobalFrame(filter);
+    Quaternion q_Cfrom_G = getCameraOrientationInGlobalFrame(filter);
     Eigen::Matrix3d R_Cfrom_G = q_Cfrom_G.toRotationMatrix();
     Eigen::Vector3d p_Cto_G = other.getCameraPositionInGlobalFrame(filter);
     Eigen::Vector3d p_Cfrom_G = getCameraPositionInGlobalFrame(filter);

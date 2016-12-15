@@ -1,7 +1,3 @@
-//
-// Created by Tomas Krejci on 5/3/16.
-//
-
 #ifndef TONAV_CALIBRATION_FILE_ERROR_H
 #define TONAV_CALIBRATION_FILE_ERROR_H
 

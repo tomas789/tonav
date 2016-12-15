@@ -10,7 +10,8 @@
 
 class FrameFeatures {
 public:
-    static FrameFeatures fromImage(cv::Ptr<cv::FeatureDetector> detector, cv::Ptr<cv::DescriptorExtractor> extractor, cv::Mat& image);
+    static FrameFeatures fromImage(cv::Ptr<cv::FeatureDetector> detector, cv::Ptr<cv::DescriptorExtractor> extractor,
+            cv::Mat& image);
 
     /**
      * @brief Match features to other frame
@@ -20,7 +21,9 @@ public:
      * @param threshold Feature quality threshold. Smaller means more strict.
      * @return Matches found.
      */
-    std::vector<cv::DMatch> match(cv::Ptr<cv::DescriptorMatcher> matcher, const FrameFeatures& other, float threshold = 0.5);
+    std::vector<cv::DMatch> match(cv::Ptr<cv::DescriptorMatcher> matcher, const FrameFeatures& other,
+            float threshold = 0.5);
+    
     void drawFeatures(cv::Mat& image, cv::Scalar color = cv::Scalar(255, 0, 0), double scale_factor = 1.0);
 
     std::vector<cv::KeyPoint>& keypoints();
@@ -36,11 +39,6 @@ protected:
     void computeDescriptors(cv::Ptr<cv::DescriptorExtractor> detector, cv::Mat gray);
 
     static cv::Mat toGray(const cv::Mat& image);
-    
-    /* EXPERIMENTAL */
-//    cv::SurfFeatureDetector exp_detector_ = cv::SurfFeatureDetector(400);
-//    cv::SurfDescriptorExtractor exp_extractor_;
-//    cv::FlannBasedMatcher exp_matcher_;
 };
 
 #endif //TONAV_FRAME_FEATURES_H

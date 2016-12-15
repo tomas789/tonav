@@ -7,14 +7,14 @@
 #include <list>
 #include <mutex>
 
-#include "calibration.h"
 #include "camera_item.h"
 #include "filter.h"
 #include "imu_buffer.h"
-#include "imu_device.h"
-#include "state_initializer.h"
+#include "quaternion.h"
 
+class Calibration;
 class FilterState;
+class StateInitializer;
 
 /**
  * @brief This is main class for communicating with filter. 
@@ -74,7 +74,7 @@ public:
      */
     void updateImage(double time, const cv::Mat& image);
     
-    Eigen::Quaterniond getCurrentOrientation();
+    Quaternion getCurrentOrientation();
     Eigen::Vector3d getCurrentPosition();
     Eigen::Vector3d getCurrentVelocity();
     cv::Mat getCurrentImage() const;
@@ -83,7 +83,7 @@ public:
     const Filter& filter() const;
     const FilterState& state() const;
     
-    void orientationCorrection(const Eigen::Quaterniond& orientation);
+    void orientationCorrection(const Quaternion& orientation);
     void positionCorrection(const Eigen::Vector3d& position);
     void velocityCorrection(const Eigen::Vector3d& velocity);
     

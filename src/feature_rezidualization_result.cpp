@@ -21,15 +21,18 @@ void FeatureRezidualizationResult::setPoseRezidual(std::size_t pose, const Eigen
     r_.segment<2>(2*pose) = rezidual;
 }
 
-void FeatureRezidualizationResult::setJacobianByCameraParameters(std::size_t pose, const Eigen::Matrix<double, 2, 14>& jacobian) {
+void FeatureRezidualizationResult::setJacobianByCameraParameters(
+        std::size_t pose, const Eigen::Matrix<double, 2, 14>& jacobian) {
     H_x_.block<2, 14>(2*pose, 15+27) = jacobian;
 }
 
-void FeatureRezidualizationResult::setJacobianByCameraPose(std::size_t pose, const Eigen::Matrix<double, 2, 9>& jacobian) {
+void FeatureRezidualizationResult::setJacobianByCameraPose(
+        std::size_t pose, const Eigen::Matrix<double, 2, 9>& jacobian) {
     H_x_.block<2, 9>(2*pose, 56 + (poses_in_state_ - 1 - track_length_ + pose)*9) = jacobian;
 }
 
-void FeatureRezidualizationResult::setJacobianByFeaturePosition(std::size_t pose, const Eigen::Matrix<double, 2, 3>& jacobian) {
+void FeatureRezidualizationResult::setJacobianByFeaturePosition(
+        std::size_t pose, const Eigen::Matrix<double, 2, 3>& jacobian) {
     H_f_.block<2, 3>(2*pose, 0) = jacobian;
 }
 

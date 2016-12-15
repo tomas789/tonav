@@ -5,17 +5,18 @@
 #ifndef TONAV_FILTER_STATE_H
 #define TONAV_FILTER_STATE_H
 
+#include <Eigen/Core>
 #include <iostream>
-#include <Eigen/Dense>
+#include <memory>
 #include <vector>
 
-#include "body_state.h"
-#include "calibration.h"
-#include "camera_pose.h"
 #include "camera_pose_buffer.h"
 
+class BodyState;
+class Calibration;
 class CameraAlgorithms;
 class Filter;
+class Quaternion;
 
 /**
  * @brief Filter state \f$ \mathbf{x}_k \f$.
@@ -30,11 +31,11 @@ public:
     
     double time() const;
 
-    const Eigen::Quaterniond& getOrientationInGlobalFrame() const;
+    const Quaternion& getOrientationInGlobalFrame() const;
     const Eigen::Vector3d& getPositionInGlobalFrame() const;
     const Eigen::Vector3d& getVelocityInGlobalFrame() const;
     
-    void orientationCorrection(const Eigen::Quaterniond& orientation);
+    void orientationCorrection(const Quaternion& orientation);
     void positionCorrection(const Eigen::Vector3d& position);
     void velocityCorrection(const Eigen::Vector3d& velocity);
     
