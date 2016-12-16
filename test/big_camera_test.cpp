@@ -51,7 +51,7 @@ public:
         Eigen::Vector3d global_gravity;
         global_gravity << 0.0, 0.0, -9.81;
         calibration_->global_gravity_ = global_gravity;
-        calibration_->body_to_camera_rotation_ = Quaternion(-0.5, 0.5, -0.5, -0.5);
+        calibration_->body_to_camera_rotation_ = Quaternion(-0.5, 0.5, -0.5, 0.5);
         std::cout << calibration_->body_to_camera_rotation_.coeffs() << std::endl;
         calibration_->max_camera_poses_ = 4;
 
@@ -93,7 +93,7 @@ public:
         gyro_buffer_->push_back(ImuItem::fromVector3d(0.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
         gyro_buffer_->push_back(ImuItem::fromVector3d(1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
 
-        Quaternion delta_q(0.0, 0.0, std::sin(-1*M_PI/4.0), std::cos(-1*M_PI/4.0));
+        Quaternion delta_q(0.0, 0.0, std::sin(-1*M_PI/4.0), -std::cos(-1*M_PI/4.0));
         ASSERT_NEAR(delta_q.norm(), 1.0, 1e-8);
 
         Quaternion q_B0_G = Quaternion::identity();
@@ -165,7 +165,6 @@ TEST_F(BigCameraTest, BigTest) {
     
     Eigen::Vector3d p_C1_G;
     p_C1_G << 0.0, -2.0, 0.4;
-    std::cout << "Vole" << std::endl;
     std::cout << filter_state_->poses()[1].getBodyPositionInGlobalFrame() << std::endl;
     std::cout << filter_state_->poses()[1].getCameraPositionInGlobalFrame(*filter_) << std::endl;
     ASSERT_TRUE((p_C1_G - filter_state_->poses()[1].getCameraPositionInGlobalFrame(*filter_)).isZero(1e-10));

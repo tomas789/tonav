@@ -58,7 +58,7 @@ public:
         Eigen::Vector3d global_gravity;
         global_gravity << 0.0, 0.0, -9.81;
         calibration_->global_gravity_ = global_gravity;
-        calibration_->body_to_camera_rotation_ = Quaternion(-0.5, 0.5, -0.5, -0.5);
+        calibration_->body_to_camera_rotation_ = Quaternion(-0.5, 0.5, -0.5, 0.5);
         std::cout << calibration_->body_to_camera_rotation_.coeffs() << std::endl;
         calibration_->max_camera_poses_ = 4;
         
@@ -206,7 +206,7 @@ public:
         Eigen::Vector3d global_gravity;
         global_gravity << 0.0, 0.0, -9.81;
         calibration_->global_gravity_ = global_gravity;
-        calibration_->body_to_camera_rotation_ = Quaternion(-0.4992, 0.4966, -0.5029, -0.5013);
+        calibration_->body_to_camera_rotation_ = Quaternion(-0.4992, 0.4966, -0.5029, 0.5013);
         std::cout << calibration_->body_to_camera_rotation_.coeffs() << std::endl;
         calibration_->max_camera_poses_ = 400;
         
@@ -308,7 +308,8 @@ TEST_F(MatlabGlobalFeaturePositionTest, test_load_states) {
     loadTracks();
     
     for (std::size_t i = 0; i < 25; ++i) {
-        Quaternion q_G_B(states_[i][0], states_[i][1], states_[i][2], states_[i][3]);
+        // Matlab uses Hamilton notation so I have to conjugate first.
+        Quaternion q_G_B(-states_[i][0], -states_[i][1], -states_[i][2], states_[i][3]);
         Eigen::Vector3d p_B_G;
         p_B_G << states_[i][4], states_[i][5], states_[i][6];
         std::cout << "R_G_B(" << i << "): \n" << q_G_B.toRotationMatrix() << std::endl;
@@ -319,12 +320,20 @@ TEST_F(MatlabGlobalFeaturePositionTest, test_load_states) {
         std::cout << "q_C_G " << buffer[buffer.size()-1].getCameraOrientationInGlobalFrame(*filter_).coeffs().transpose() << std::endl;
         
         for (std::size_t k = 0; k <= i; ++k) {
-            Quaternion q_G_Bk(states_[k][0], states_[k][1], states_[k][2], states_[k][3]);
+            // Matlab uses Hamilton notation so I have to conjugate first.
+            Quaternion q_G_Bk(-states_[k][0], -states_[k][1], -states_[k][2], states_[k][3]);
             Eigen::Vector3d p_Bk_G;
             p_Bk_G << states_[k][4], states_[k][5], states_[k][6];
             
             ASSERT_TRUE((buffer[k].getBodyPositionInGlobalFrame() - p_Bk_G).isZero());
-            ASSERT_TRUE(buffer[k].getBodyOrientationInGlobalFrame().isApprox(q_G_Bk.conjugate(), 1e-10));
+
+            std::cout << "Body state q: " << buffer[k].getBodyOrientationInGlobalFrame().coeffs().transpose() << std::endl;
+            std::cout << "q_Bk_G: " << q_G_Bk.conjugate().coeffs().transpose() << std::endl;
+
+            Quaternion q1 = buffer[k].getBodyOrientationInGlobalFrame();
+            Quaternion q2 = q_G_Bk.conjugate();
+            bool is_approx = q1.isApprox(q2, 1e-5);
+            ASSERT_TRUE(is_approx);
         }
         
         std::cout << "Augment_" << i << "_(q_B_G: " << q_G_B.conjugate().coeffs().transpose() << ", p_B_G: " << p_B_G.transpose() << ")" << std::endl;

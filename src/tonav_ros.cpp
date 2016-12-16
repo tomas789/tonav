@@ -244,7 +244,7 @@ double TonavRos::getMessageTime(ros::Time stamp) {
 
 void TonavRos::publishResults(const ros::Time& time) {
     geometry_msgs::TransformStamped transform;
-    Quaternion attitude = tonav_->getCurrentOrientation().conjugate();
+    Quaternion attitude = tonav_->getCurrentOrientation();
     Eigen::Vector3d position = tonav_->getCurrentPosition() / 50.0;
     Eigen::Vector3d velocity = tonav_->getCurrentVelocity();
     transform.header.stamp = time;

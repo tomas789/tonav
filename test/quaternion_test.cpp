@@ -29,3 +29,14 @@ TEST(Quaternion, test_multiplication_with_conjugate) {
     Quaternion q_id = q * q.conjugate();
     ASSERT_TRUE(q_id.isApprox(Quaternion::identity(), 1e-5));
 }
+
+TEST(Quaternion, test_to_rotation_matrix_and_back) {
+    Eigen::Quaterniond q_orig(1.23, M_PI, 0.28*M_E, 0.3*M_LN10); // random
+    q_orig.normalize();
+    Eigen::Matrix3d r = q_orig.toRotationMatrix();
+
+    Quaternion q = Quaternion::fromRotationMatrix(r);
+    Eigen::Matrix3d r_converted = q.toRotationMatrix();
+
+    ASSERT_TRUE((r - r_converted).isZero(1e-12));
+}

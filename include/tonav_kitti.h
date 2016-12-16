@@ -100,6 +100,14 @@ private:
     Eigen::Matrix3d getGroundTruthRotation(std::size_t i) const;
     
     std::vector<Eigen::Vector2d> bodyFrameMarker() const;
+
+    /**
+     * @brief Publish localization results to ROS TF
+     *
+     * TF expects quaternion in Hamilton notation that rotates vectors and is right-handed (!). In Tonav, I use JPL
+     * notation that transforms frames and is left-handed. Those two factors cancel out so I should pass directly my
+     * quaternions to ROS.
+     */
     void publishTransformations(tf2_ros::TransformBroadcaster& broadcaster);
     void publishPointCloud(ros::Publisher& publisher);
     

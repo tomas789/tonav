@@ -298,7 +298,7 @@ cv::Mat TonavKitti::step(std::size_t i) {
         //tonav_->positionCorrection(getGroundTruthPosition(i-1));
         Quaternion gt_orientation = Quaternion::fromRotationMatrix(
                 getGroundTruthRotation(i-1)*getGroundTruthRotation(0).transpose());
-        tonav_->orientationCorrection(gt_orientation.conjugate());
+        //tonav_->orientationCorrection(gt_orientation.conjugate());
         Eigen::Vector3d gt_velocity;
         gt_velocity << oxts_[i-1].vf, oxts_[i-1].vl, oxts_[i-1].vu;
         //tonav_->velocityCorrection(gt_velocity);
@@ -352,7 +352,7 @@ std::vector<Eigen::Vector2d> TonavKitti::bodyFrameMarker() const {
 void TonavKitti::publishTransformations(tf2_ros::TransformBroadcaster& broadcaster) {
     {
         Eigen::Vector3d body_position = tonav_->getCurrentPosition() / factor_;
-        Quaternion body_orientation = tonav_->getCurrentOrientation().conjugate();
+        Quaternion body_orientation = tonav_->getCurrentOrientation();
         
         geometry_msgs::TransformStamped body;
         body.header.stamp = ros::Time::now();
@@ -367,13 +367,13 @@ void TonavKitti::publishTransformations(tf2_ros::TransformBroadcaster& broadcast
         body.transform.rotation.w = body_orientation.w();
         broadcaster.sendTransform(body);
     }
-    
+
     const CameraPoseBuffer& buffer = tonav_->state().poses();
     if (!buffer.empty()) {
         for (std::size_t i = 0; i < buffer.size(); ++i) {
             const CameraPose& pose = buffer[i];
             
-            Quaternion orientation = pose.getCameraOrientationInGlobalFrame(tonav_->filter()).conjugate();
+            Quaternion orientation = pose.getCameraOrientationInGlobalFrame(tonav_->filter());
             Eigen::Vector3d position = pose.getCameraPositionInGlobalFrame(tonav_->filter()) / factor_;
             geometry_msgs::TransformStamped body;
             body.header.stamp = ros::Time::now();
