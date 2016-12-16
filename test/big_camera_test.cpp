@@ -21,7 +21,7 @@ public:
 class MockBodyState : public BodyState {
 public:
     friend class BigCameraTest;
-    MockBodyState(std::shared_ptr<const Calibration> calibration, double time, Eigen::Vector3d rotation_estimate, Eigen::Vector3d acceleration_estimate, Eigen::Quaterniond q_B_G, Eigen::Vector3d p_B_G, Eigen::Vector3d v_B_G) : BodyState(calibration, time, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G) { }
+    MockBodyState(std::shared_ptr<const Calibration> calibration, double time, Eigen::Vector3d rotation_estimate, Eigen::Vector3d acceleration_estimate, Quaternion q_B_G, Eigen::Vector3d p_B_G, Eigen::Vector3d v_B_G) : BodyState(calibration, time, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G) { }
 };
 
 class MockFilter : public Filter {
@@ -51,13 +51,11 @@ public:
         Eigen::Vector3d global_gravity;
         global_gravity << 0.0, 0.0, -9.81;
         calibration_->global_gravity_ = global_gravity;
-        calibration_->body_to_camera_rotation_ = Eigen::Quaterniond(-0.5, -0.5, 0.5, -0.5);
+        calibration_->body_to_camera_rotation_ = Quaternion(-0.5, 0.5, -0.5, -0.5);
         std::cout << calibration_->body_to_camera_rotation_.coeffs() << std::endl;
         calibration_->max_camera_poses_ = 4;
 
-        std::cout << "Už to bude rok" << std::endl;
         std::cout << calibration_->body_to_camera_rotation_.toRotationMatrix() << std::endl;
-        std::cout << "co lízal jsem ti pekáč" << std::endl;
 
         filter_ = std::make_shared<MockFilter>(calibration_);
         filter_state_ = std::make_shared<MockFilterState>(calibration_);
@@ -95,22 +93,22 @@ public:
         gyro_buffer_->push_back(ImuItem::fromVector3d(0.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
         gyro_buffer_->push_back(ImuItem::fromVector3d(1.0, ImuDevice::GYROSCOPE, Eigen::Vector3d::Zero()));
 
-        Eigen::Quaterniond delta_q(std::cos(-1*M_PI/4.0), 0.0, 0.0, std::sin(-1*M_PI/4.0));
+        Quaternion delta_q(0.0, 0.0, std::sin(-1*M_PI/4.0), std::cos(-1*M_PI/4.0));
         ASSERT_NEAR(delta_q.norm(), 1.0, 1e-8);
 
-        Eigen::Quaterniond q_B0_G = Eigen::Quaterniond::Identity();
+        Quaternion q_B0_G = Quaternion::identity();
         Eigen::Vector3d p_B0_G;
         p_B0_G << -1.0, 0.0, 0.5;
 
-        Eigen::Quaterniond q_B1_G = delta_q;
+        Quaternion q_B1_G = delta_q;
         Eigen::Vector3d p_B1_G;
         p_B1_G << 0.0, -1.0, 0.5;
 
-        Eigen::Quaterniond q_B2_G = delta_q*delta_q;
+        Quaternion q_B2_G = delta_q*delta_q;
         Eigen::Vector3d p_B2_G;
         p_B2_G << 1.0, 0.0, 0.5;
 
-        Eigen::Quaterniond q_B3_G = delta_q*delta_q*delta_q;
+        Quaternion q_B3_G = delta_q*delta_q*delta_q;
         Eigen::Vector3d p_B3_G;
         //p_B3_G << 0.0, 1.0, 0.5;
         p_B3_G << 100.0, -54022.0, 657570.5;
@@ -143,11 +141,12 @@ public:
     }
     
     std::pair<bool, Eigen::Vector3d> triangulateGlobalFeaturePosition(const FeatureTrack &feature_track) {
-        return filter_->triangulateGlobalFeaturePosition(feature_track);
+        return filter_->cameraAlgorithms().triangulateGlobalFeaturePosition(feature_track);
     }
 
     FeatureRezidualizationResult rezidualizeFeature(const FeatureTrack& feature_track) {
-        return filter_->rezidualizeFeature(feature_track);
+        cv::Mat mat;
+        return filter_->rezidualizeFeature(feature_track, mat);
     }
 };
 

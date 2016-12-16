@@ -298,7 +298,7 @@ cv::Mat TonavKitti::step(std::size_t i) {
         //tonav_->positionCorrection(getGroundTruthPosition(i-1));
         Quaternion gt_orientation = Quaternion::fromRotationMatrix(
                 getGroundTruthRotation(i-1)*getGroundTruthRotation(0).transpose());
-        //tonav_->orientationCorrection(gt_orientation.conjugate());
+        tonav_->orientationCorrection(gt_orientation.conjugate());
         Eigen::Vector3d gt_velocity;
         gt_velocity << oxts_[i-1].vf, oxts_[i-1].vl, oxts_[i-1].vu;
         //tonav_->velocityCorrection(gt_velocity);

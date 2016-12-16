@@ -15,7 +15,7 @@ public:
     Quaternion(const Quaternion& other);
     
     Quaternion& operator=(const Quaternion& other);
-    Quaternion operator*(const Quaternion& rhs);
+    Quaternion operator*(const Quaternion& rhs) const;
     
     double norm() const;
     void normalize();
@@ -30,6 +30,9 @@ public:
     double z() const;
     double w() const;
     Eigen::Vector4d coeffs() const;
+    
+    double angularDistance(const Quaternion& other) const;
+    bool isApprox(const Quaternion& other, double eps = 1e-12) const;
     
     static Quaternion identity();
     static Quaternion fromRotationMatrix(const Eigen::Matrix3d& m);

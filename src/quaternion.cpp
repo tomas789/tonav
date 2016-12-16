@@ -26,7 +26,7 @@ Quaternion& Quaternion::operator=(const Quaternion &other) {
     return *this;
 }
 
-Quaternion Quaternion::operator*(const Quaternion& rhs) {
+Quaternion Quaternion::operator*(const Quaternion& rhs) const {
     double x = w_*rhs.x_ + z_*rhs.y_ - y_*rhs.z_ + x_*rhs.w_;
     double y = -1*z_*rhs.x_ + w_*rhs.y_ + x_*rhs.z_ + y_*rhs.w_;
     double z = y_*rhs.x_ - x_*rhs.y_ + w_*rhs.z_ + z_*rhs.w_;
@@ -98,6 +98,14 @@ Eigen::Vector4d Quaternion::coeffs() const {
     Eigen::Vector4d coeffs;
     coeffs << x_, y_, z_, w_;
     return coeffs;
+}
+
+double Quaternion::angularDistance(const Quaternion& other) const {
+    return 2.0 * acosf((other * this->conjugate()).w());
+}
+
+bool Quaternion::isApprox(const Quaternion& other, double eps) const {
+    return std::abs(angularDistance(other)) < eps;
 }
 
 Quaternion Quaternion::identity() {

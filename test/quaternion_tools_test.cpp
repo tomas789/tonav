@@ -5,7 +5,7 @@
 
 #include "quaternion_tools.h"
 
-TEST(Quaternion, test_cross_matrix) {
+TEST(QuaternionTools, test_cross_matrix) {
     Eigen::Quaterniond q(1.0, 2.0, 3.0, M_PI); // random
     q.normalize();
     
@@ -19,7 +19,7 @@ TEST(Quaternion, test_cross_matrix) {
     ASSERT_TRUE(r.isApprox(r_from_q));
 }
 
-TEST(Quaternion, test_big_omega_matrix) {
+TEST(QuaternionTools, test_big_omega_matrix) {
     Eigen::Quaterniond q(1.0, 2.0, 3.0, M_PI); // random
     q.normalize();
     

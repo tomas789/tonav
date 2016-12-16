@@ -588,7 +588,7 @@ void Filter::updateState(const Eigen::MatrixXd& T_H, const Eigen::VectorXd& r_q)
     filter_covar_ = covar_prop_part*filter_covar_*covar_prop_part.transpose() + K*R_q*K.transpose();
     std::cout << "r_q MIN: " << r_q.minCoeff() << " | MAX: " << r_q.maxCoeff() << std::endl;
     Eigen::VectorXd delta_x = K*r_q;
-    filter_state_->updateWithStateDelta(delta_x);
+    //filter_state_->updateWithStateDelta(delta_x);
 }
 
 

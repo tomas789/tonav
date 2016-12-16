@@ -1,8 +1,10 @@
 #include <gtest/gtest.h>
 #include <cmath>
+#include <Eigen/Core>
 
 #include "body_state.h"
 #include "calibration.h"
+#include "quaternion.h"
 
 class MockCalibration : public Calibration {
 public:
@@ -27,7 +29,7 @@ public:
         rotation_estimate << 0.0, 0.0, 0.0;
         Eigen::Vector3d acceleration_estimate;
         acceleration_estimate << 0.0, 0.0, 0.0;
-        Eigen::Quaterniond q_B_G = Eigen::Quaterniond::Identity();
+        Quaternion q_B_G = Quaternion::identity();
         Eigen::Vector3d p_B_G = Eigen::Vector3d::Zero();
         Eigen::Vector3d v_B_G = Eigen::Vector3d::Zero();
         body_state_ = std::make_shared<BodyState>(calibration_, 0.0, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G);
@@ -38,7 +40,7 @@ public:
         rotation_estimate << 0.0, 0.0, 0.0;
         Eigen::Vector3d acceleration_estimate;
         acceleration_estimate << 0.0, 0.0, 9.81;
-        Eigen::Quaterniond q_B_G = Eigen::Quaterniond::Identity();
+        Quaternion q_B_G = Quaternion::identity();
         Eigen::Vector3d p_B_G = Eigen::Vector3d::Zero();
         Eigen::Vector3d v_B_G = Eigen::Vector3d::Zero();
         body_state_ = std::make_shared<BodyState>(calibration_, 0.0, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G);
@@ -50,7 +52,7 @@ public:
         rotation_estimate << 0.0, 0.0, 0.0;
         Eigen::Vector3d acceleration_estimate;
         acceleration_estimate << 0.0, 0.0, 9.81;
-        Eigen::Quaterniond q_B_G = Eigen::Quaterniond::Identity();
+        Quaternion q_B_G = Quaternion::identity();
         Eigen::Vector3d p_B_G = Eigen::Vector3d::Zero();
         Eigen::Vector3d v_B_G = Eigen::Vector3d::Zero();
         body_state_ = std::make_shared<BodyState>(calibration_, 0.0, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G);
@@ -65,7 +67,7 @@ public:
         rotation_estimate << 0.0, 0.0, 0.0;
         Eigen::Vector3d acceleration_estimate;
         acceleration_estimate << 0.0, 0.0, 0.0;
-        Eigen::Quaterniond q_B_G = Eigen::Quaterniond::Identity();
+        Quaternion q_B_G = Quaternion::identity();
         Eigen::Vector3d p_B_G = Eigen::Vector3d::Zero();
         Eigen::Vector3d v_B_G = Eigen::Vector3d::Zero();
         body_state_ = std::make_shared<BodyState>(calibration_, 0.0, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G);
@@ -80,7 +82,7 @@ public:
         rotation_estimate << 0.0, 0.0, 0.0;
         Eigen::Vector3d acceleration_estimate;
         acceleration_estimate << 1.0, 0.0, 9.81;
-        Eigen::Quaterniond q_B_G = Eigen::Quaterniond::Identity();
+        Quaternion q_B_G = Quaternion::identity();
         Eigen::Vector3d p_B_G = Eigen::Vector3d::Zero();
         Eigen::Vector3d v_B_G = Eigen::Vector3d::Zero();
         body_state_ = std::make_shared<BodyState>(calibration_, 0.0, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G);
@@ -95,7 +97,7 @@ public:
         rotation_estimate << 0.0, 0.0, -0.5*M_PI;
         Eigen::Vector3d acceleration_estimate;
         acceleration_estimate << 0.0, 0.0, 9.81;
-        Eigen::Quaterniond q_B_G = Eigen::Quaterniond::Identity();
+        Quaternion q_B_G = Quaternion::identity();
         Eigen::Vector3d p_B_G = Eigen::Vector3d::Zero();
         Eigen::Vector3d v_B_G = Eigen::Vector3d::Zero();
         body_state_ = std::make_shared<BodyState>(calibration_, 0.0, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G);
@@ -110,7 +112,7 @@ public:
         rotation_estimate << 0.0, 0.0, -0.5*M_PI;
         Eigen::Vector3d acceleration_estimate;
         acceleration_estimate << 0.0, 0.0, 9.81;
-        Eigen::Quaterniond q_B_G = Eigen::Quaterniond::Identity();
+        Quaternion q_B_G = Quaternion::identity();
         Eigen::Vector3d p_B_G = Eigen::Vector3d::Zero();
         Eigen::Vector3d v_B_G = Eigen::Vector3d::Zero();
         body_state_ = std::make_shared<BodyState>(calibration_, 0.0, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G);
@@ -140,7 +142,7 @@ TEST_F(BodyStateNoMovementTest, test_global_gravity) {
 TEST_F(BodyStateNoMovementTest, test_no_movement_time_is_zero) {
     apply_no_movement();
     ASSERT_EQ(body_state_->time(), 0.0);
-    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Eigen::Quaterniond::Identity())) << "Orientation should be identity";
+    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Quaternion::identity())) << "Orientation should be identity";
     ASSERT_TRUE(body_state_->getPositionInGlobalFrame().isZero(1e-12));
     ASSERT_TRUE(body_state_->getVelocityInGlobalFrame().isZero(1e-12));
 }
@@ -148,7 +150,7 @@ TEST_F(BodyStateNoMovementTest, test_no_movement_time_is_zero) {
 TEST_F(BodyStateNoMovementTest, test_no_movement_one_step) {
     apply_no_movement_one_step();
     ASSERT_EQ(body_state_->time(), 1e-2);
-    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Eigen::Quaterniond::Identity())) << "Orientation should be identity";
+    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Quaternion::identity())) << "Orientation should be identity";
     auto position = body_state_->getPositionInGlobalFrame();
     ASSERT_TRUE(position.isZero(1e-12)) << "Got position [" << position.transpose() << "]^T";
     auto velocity = body_state_->getVelocityInGlobalFrame();
@@ -158,7 +160,7 @@ TEST_F(BodyStateNoMovementTest, test_no_movement_one_step) {
 TEST_F(BodyStateNoMovementTest, test_free_fall_for_one_sec_at_100hz) {
     apply_free_fall_for_one_sec_at_100hz();
     ASSERT_EQ(body_state_->time(), 1.0);
-    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Eigen::Quaterniond::Identity())) << "Orientation should be identity";
+    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Quaternion::identity())) << "Orientation should be identity";
     
     Eigen::Vector3d position;
     position << 0.0, 0.0, -9.81/2;
@@ -174,7 +176,7 @@ TEST_F(BodyStateNoMovementTest, test_free_fall_for_one_sec_at_100hz) {
 TEST_F(BodyStateNoMovementTest, test_no_movement_for_one_sec_at_100hz) {
     apply_no_movement_for_one_sec_at_100hz();
     ASSERT_EQ(body_state_->time(), 1.0);
-    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Eigen::Quaterniond::Identity())) << "Orientation should be identity";
+    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Quaternion::identity())) << "Orientation should be identity";
     auto position = body_state_->getPositionInGlobalFrame();
     ASSERT_TRUE(position.isZero(1e-12)) << "Got position [" << position.transpose() << "]^T";
     auto velocity = body_state_->getVelocityInGlobalFrame();
@@ -184,7 +186,7 @@ TEST_F(BodyStateNoMovementTest, test_no_movement_for_one_sec_at_100hz) {
 TEST_F(BodyStateNoMovementTest, test_move_forward_for_one_sec_at_100hz) {
     apply_move_forward_for_one_sec_at_100hz();
     ASSERT_EQ(body_state_->time(), 1.0);
-    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Eigen::Quaterniond::Identity())) << "Orientation should be identity";
+    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(Quaternion::identity())) << "Orientation should be identity";
     Eigen::Vector3d expected_position;
     expected_position << 0.5, 0.0, 0.0;
     auto position = body_state_->getPositionInGlobalFrame();
@@ -198,9 +200,9 @@ TEST_F(BodyStateNoMovementTest, test_move_forward_for_one_sec_at_100hz) {
 TEST_F(BodyStateNoMovementTest, test_rotate_clockwise_for_one_sec_at_100hz) {
     apply_rotate_clockwise_for_one_sec_at_100hz();
     ASSERT_EQ(body_state_->time(), 1.0);
-    Eigen::Quaterniond expected_orientation(std::cos(M_PI/4.0), 0.0, 0.0, std::sin(M_PI/4.0));
+    Quaternion expected_orientation(0.0, 0.0, std::sin(M_PI/4.0), std::cos(M_PI/4.0));
     
-    Eigen::Quaterniond orientation = body_state_->getOrientationInGlobalFrame();
+    Quaternion orientation = body_state_->getOrientationInGlobalFrame();
     ASSERT_TRUE(orientation.isApprox(expected_orientation, 1e-3)) << "Got orientation " << orientation.coeffs();
     
     auto position = body_state_->getPositionInGlobalFrame();
@@ -213,9 +215,9 @@ TEST_F(BodyStateNoMovementTest, test_rotate_clockwise_for_one_sec_at_100hz) {
 TEST_F(BodyStateNoMovementTest, test_rotate_and_go) {
     apply_rotate_and_go();
     ASSERT_EQ(body_state_->time(), 2.0);
-    Eigen::Quaterniond expected_orientation(std::cos(M_PI/4.0), 0.0, 0.0, std::sin(M_PI/4.0));
+    Quaternion expected_orientation(0.0, 0.0, std::sin(M_PI/4.0), std::cos(M_PI/4.0));
     
-    Eigen::Quaterniond orientation = body_state_->getOrientationInGlobalFrame();
+    Quaternion orientation = body_state_->getOrientationInGlobalFrame();
     ASSERT_TRUE(orientation.isApprox(expected_orientation, 1e-3)) << "Got orientation " << orientation.coeffs();
     
     Eigen::Vector3d expected_position;
@@ -256,13 +258,13 @@ TEST_F(BodyStatePathTrajectoryTest, test_body_state) {
     Eigen::Vector3d acceleration_estimate_2;
     acceleration_estimate_2 << 0.0, -1*M_PI*M_PI, 9.81;
     
-    Eigen::Quaterniond q_B_G = Eigen::Quaterniond::Identity();
+    Quaternion q_B_G = Quaternion::identity();
     Eigen::Vector3d p_B_G = Eigen::Vector3d::Zero();
     Eigen::Vector3d v_B_G = M_PI * Eigen::Vector3d::UnitX();
     body_state_ = std::make_shared<BodyState>(calibration_, 0.0, rotation_estimate_1, acceleration_estimate_1, q_B_G, p_B_G, v_B_G);
     
     Eigen::Vector3d position;
-    Eigen::Quaterniond orientation;
+    Quaternion orientation = Quaternion::identity();
     
     for (int i = 1; i < 10001; ++i) {
         body_state_ = BodyState::propagate(*body_state_, i/10000.0, rotation_estimate_1, acceleration_estimate_1);
@@ -270,7 +272,7 @@ TEST_F(BodyStatePathTrajectoryTest, test_body_state) {
     
     position << 0.0, 2.0, 0.0;
     ASSERT_TRUE((body_state_->getPositionInGlobalFrame() - position).isZero(1e-3)) << "Got position [" << body_state_->getPositionInGlobalFrame().transpose() << "]^T";
-    orientation = Eigen::Quaterniond(0, 0, 0, 1);
+    orientation = Quaternion(0, 0, 1, 0);
     ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().angularDistance(orientation) < 1e-5) << "Got orientation [" << body_state_->getOrientationInGlobalFrame().coeffs().transpose() << "]^T";
     
     for (int i = 1; i < 10001; ++i) {
@@ -279,7 +281,7 @@ TEST_F(BodyStatePathTrajectoryTest, test_body_state) {
     
     position << 0.0, 4.0, 0.0;
     ASSERT_TRUE((body_state_->getPositionInGlobalFrame() - position).isZero(1e-3)) << "Got position [" << body_state_->getPositionInGlobalFrame().transpose() << "]^T";
-    orientation = Eigen::Quaterniond::Identity();
+    orientation = Quaternion::identity();
     ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().angularDistance(orientation) < 1e-3) << "Got orientation [" << body_state_->getOrientationInGlobalFrame().coeffs().transpose() << "]^T";
 }
 

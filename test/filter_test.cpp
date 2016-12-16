@@ -26,7 +26,7 @@ class MockBodyState : public BodyState {
 public:
     friend class CameraProjectionTest;
     friend class MatlabGlobalFeaturePositionTest;
-    MockBodyState(std::shared_ptr<const Calibration> calibration, double time, Eigen::Vector3d rotation_estimate, Eigen::Vector3d acceleration_estimate, Eigen::Quaterniond q_B_G, Eigen::Vector3d p_B_G, Eigen::Vector3d v_B_G) : BodyState(calibration, time, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G) { }
+    MockBodyState(std::shared_ptr<const Calibration> calibration, double time, Eigen::Vector3d rotation_estimate, Eigen::Vector3d acceleration_estimate, Quaternion q_B_G, Eigen::Vector3d p_B_G, Eigen::Vector3d v_B_G) : BodyState(calibration, time, rotation_estimate, acceleration_estimate, q_B_G, p_B_G, v_B_G) { }
 };
 
 class MockFilter : public Filter {
@@ -58,7 +58,7 @@ public:
         Eigen::Vector3d global_gravity;
         global_gravity << 0.0, 0.0, -9.81;
         calibration_->global_gravity_ = global_gravity;
-        calibration_->body_to_camera_rotation_ = Eigen::Quaterniond(-0.5, -0.5, 0.5, -0.5);
+        calibration_->body_to_camera_rotation_ = Quaternion(-0.5, 0.5, -0.5, -0.5);
         std::cout << calibration_->body_to_camera_rotation_.coeffs() << std::endl;
         calibration_->max_camera_poses_ = 4;
         
@@ -108,23 +108,23 @@ public:
         ASSERT_TRUE((R_C_B*p_x_B - p_x_C).isZero(1e-12));
         
         // p_B_G: (-1, 0, 0)^T
-        body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Eigen::Quaterniond::Identity(), -1*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
+        body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Quaternion::identity(), -1*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
         filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
         
         
         // p_B_G: (-2, 0, 0)^T
-        body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Eigen::Quaterniond::Identity(), -2*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
+        body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Quaternion::identity(), -2*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
         filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
         
         // p_B_G: (-3, 0, 0)^T
-        body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Eigen::Quaterniond::Identity(), -3*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
+        body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Quaternion::identity(), -3*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
         filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
         
         // p_B_G:(-4, 0, 0)^T
-        body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Eigen::Quaterniond::Identity(), -4*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
+        body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Quaternion::identity(), -4*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
         filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
     }
@@ -134,15 +134,16 @@ public:
     }
     
     std::pair<bool, Eigen::Vector3d> triangulateGlobalFeaturePosition(const FeatureTrack &feature_track) {
-        return filter_->triangulateGlobalFeaturePosition(feature_track);
+        return filter_->cameraAlgorithms().triangulateGlobalFeaturePosition(feature_track);
     }
     
     FeatureRezidualizationResult rezidualizeFeature(const FeatureTrack& feature_track) {
-        return filter_->rezidualizeFeature(feature_track);
+        cv::Mat mat;
+        return filter_->rezidualizeFeature(feature_track, mat);
     }
     
     Eigen::Vector3d initialGuessFeaturePosition(const Eigen::Vector2d& z0, const Eigen::Vector2d& z1, const Eigen::Matrix3d& R_C0_C1, const Eigen::Vector3d& p_C1_C0, InitialGuessMethod method) const {
-        return filter_->initialGuessFeaturePosition(z0, z1, R_C0_C1, p_C1_C0, method);
+        return filter_->cameraAlgorithms().initialGuessFeaturePosition(z0, z1, R_C0_C1, p_C1_C0, method);
     }
 };
 
@@ -151,10 +152,10 @@ TEST_F(CameraProjectionTest, test_runs_ok) {
     
     ASSERT_EQ(getNumberOfCameraPoses(), 4);
     
-    ASSERT_TRUE(Eigen::Quaterniond::Identity().angularDistance(filter_state_->poses()[0].getBodyOrientationInGlobalFrame()) < 1e-12);
-    ASSERT_TRUE(Eigen::Quaterniond::Identity().angularDistance(filter_state_->poses()[1].getBodyOrientationInGlobalFrame()) < 1e-12);
-    ASSERT_TRUE(Eigen::Quaterniond::Identity().angularDistance(filter_state_->poses()[2].getBodyOrientationInGlobalFrame()) < 1e-12);
-    ASSERT_TRUE(Eigen::Quaterniond::Identity().angularDistance(filter_state_->poses()[3].getBodyOrientationInGlobalFrame()) < 1e-12);
+    ASSERT_TRUE(Quaternion::identity().angularDistance(filter_state_->poses()[0].getBodyOrientationInGlobalFrame()) < 1e-12);
+    ASSERT_TRUE(Quaternion::identity().angularDistance(filter_state_->poses()[1].getBodyOrientationInGlobalFrame()) < 1e-12);
+    ASSERT_TRUE(Quaternion::identity().angularDistance(filter_state_->poses()[2].getBodyOrientationInGlobalFrame()) < 1e-12);
+    ASSERT_TRUE(Quaternion::identity().angularDistance(filter_state_->poses()[3].getBodyOrientationInGlobalFrame()) < 1e-12);
     
     FeatureTrack feature_track;
     feature_track.addFeaturePosition(320, 90);
@@ -205,7 +206,7 @@ public:
         Eigen::Vector3d global_gravity;
         global_gravity << 0.0, 0.0, -9.81;
         calibration_->global_gravity_ = global_gravity;
-        calibration_->body_to_camera_rotation_ = Eigen::Quaterniond(-0.5013, -0.4992, 0.4966, -0.5029);
+        calibration_->body_to_camera_rotation_ = Quaternion(-0.4992, 0.4966, -0.5029, -0.5013);
         std::cout << calibration_->body_to_camera_rotation_.coeffs() << std::endl;
         calibration_->max_camera_poses_ = 400;
         
@@ -286,18 +287,19 @@ public:
         }
     }
     
-    void augment(const Eigen::Quaterniond& q_B_G, const Eigen::Vector3d& p_B_G) {
+    void augment(const Quaternion& q_B_G, const Eigen::Vector3d& p_B_G) {
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), q_B_G, p_B_G, Eigen::Vector3d::Zero());
         static_cast<MockFilterState&>(filter_->state()).body_state_ = body_state_;
         filter_->augment(std::next(std::begin(*gyro_buffer_)), std::next(std::begin(*accel_buffer_)));
     }
     
     std::pair<bool, Eigen::Vector3d> triangulateGlobalFeaturePosition(const FeatureTrack &feature_track) {
-        return filter_->triangulateGlobalFeaturePosition(feature_track);
+        return filter_->cameraAlgorithms().triangulateGlobalFeaturePosition(feature_track);
     }
     
     FeatureRezidualizationResult rezidualizeFeature(const FeatureTrack& feature_track) {
-        return filter_->rezidualizeFeature(feature_track);
+        cv::Mat mat;
+        return filter_->rezidualizeFeature(feature_track, mat);
     }
 };
 
@@ -306,7 +308,7 @@ TEST_F(MatlabGlobalFeaturePositionTest, test_load_states) {
     loadTracks();
     
     for (std::size_t i = 0; i < 25; ++i) {
-        Eigen::Quaterniond q_G_B(states_[i][3], states_[i][0], states_[i][1], states_[i][2]);
+        Quaternion q_G_B(states_[i][0], states_[i][1], states_[i][2], states_[i][3]);
         Eigen::Vector3d p_B_G;
         p_B_G << states_[i][4], states_[i][5], states_[i][6];
         std::cout << "R_G_B(" << i << "): \n" << q_G_B.toRotationMatrix() << std::endl;
@@ -317,7 +319,7 @@ TEST_F(MatlabGlobalFeaturePositionTest, test_load_states) {
         std::cout << "q_C_G " << buffer[buffer.size()-1].getCameraOrientationInGlobalFrame(*filter_).coeffs().transpose() << std::endl;
         
         for (std::size_t k = 0; k <= i; ++k) {
-            Eigen::Quaterniond q_G_Bk(states_[k][3], states_[k][0], states_[k][1], states_[k][2]);
+            Quaternion q_G_Bk(states_[k][0], states_[k][1], states_[k][2], states_[k][3]);
             Eigen::Vector3d p_Bk_G;
             p_Bk_G << states_[k][4], states_[k][5], states_[k][6];
             
@@ -344,9 +346,9 @@ TEST_F(MatlabGlobalFeaturePositionTest, test_load_states) {
                 Eigen::Vector3d p_f_G_matlab;
                 p_f_G_matlab << track_data[0][5], track_data[0][6], track_data[0][7];
                 
-                const CameraPose& C0 = filter_state_->poses()[filter_state_->poses().size()-1-track_data.size()];
-                const CameraPose& Clast = filter_state_->poses()[filter_state_->poses().size()-2];
-                Eigen::Matrix3d C_12 = Clast.getRotationToOtherPose(C0, *filter_).toRotationMatrix();
+//                const CameraPose& C0 = filter_state_->poses()[filter_state_->poses().size()-1-track_data.size()];
+//                const CameraPose& Clast = filter_state_->poses()[filter_state_->poses().size()-2];
+//                Eigen::Matrix3d C_12 = Clast.getRotationToOtherPose(C0, *filter_).toRotationMatrix();
 //                std::cout << "C_12: \n" << C_12 << std::endl;
 //                std::cout << "C_12(Matlab version): \n" << (C0.getCameraOrientationInGlobalFrame(*filter_).toRotationMatrix()*Clast.getCameraOrientationInGlobalFrame(*filter_).toRotationMatrix().transpose()) << std::endl;
 //                Eigen::Vector3d t_21_1 = C0.getPositionOfAnotherPose(Clast, *filter_);
