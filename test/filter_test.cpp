@@ -105,7 +105,7 @@ public:
         p_x_C << 1, 2, 3;
         Eigen::Vector3d p_x_B;
         p_x_B << 3, -1, -2;
-        ASSERT_TRUE((R_C_B*p_x_B - p_x_C).isZero(1e-12));
+        ASSERT_TRUE((R_C_B*p_x_B - p_x_C).isZero(1e-6));
         
         // p_B_G: (-1, 0, 0)^T
         body_state_ = std::make_shared<MockBodyState>(calibration_, 0.0, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(), Quaternion::identity(), -1*Eigen::Vector3d::UnitX(), Eigen::Vector3d::Zero());
@@ -152,10 +152,10 @@ TEST_F(CameraProjectionTest, test_runs_ok) {
     
     ASSERT_EQ(getNumberOfCameraPoses(), 4);
     
-    ASSERT_TRUE(Quaternion::identity().angularDistance(filter_state_->poses()[0].getBodyOrientationInGlobalFrame()) < 1e-12);
-    ASSERT_TRUE(Quaternion::identity().angularDistance(filter_state_->poses()[1].getBodyOrientationInGlobalFrame()) < 1e-12);
-    ASSERT_TRUE(Quaternion::identity().angularDistance(filter_state_->poses()[2].getBodyOrientationInGlobalFrame()) < 1e-12);
-    ASSERT_TRUE(Quaternion::identity().angularDistance(filter_state_->poses()[3].getBodyOrientationInGlobalFrame()) < 1e-12);
+    ASSERT_TRUE(Quaternion::identity().isApprox(filter_state_->poses()[0].getBodyOrientationInGlobalFrame(), 1e-12));
+    ASSERT_TRUE(Quaternion::identity().isApprox(filter_state_->poses()[1].getBodyOrientationInGlobalFrame(), 1e-12));
+    ASSERT_TRUE(Quaternion::identity().isApprox(filter_state_->poses()[2].getBodyOrientationInGlobalFrame(), 1e-12));
+    ASSERT_TRUE(Quaternion::identity().isApprox(filter_state_->poses()[3].getBodyOrientationInGlobalFrame(), 1e-12));
     
     FeatureTrack feature_track;
     feature_track.addFeaturePosition(320, 90);
@@ -324,7 +324,7 @@ TEST_F(MatlabGlobalFeaturePositionTest, test_load_states) {
             p_Bk_G << states_[k][4], states_[k][5], states_[k][6];
             
             ASSERT_TRUE((buffer[k].getBodyPositionInGlobalFrame() - p_Bk_G).isZero());
-            ASSERT_TRUE(buffer[k].getBodyOrientationInGlobalFrame().angularDistance(q_G_Bk.conjugate()) < 1e-10);
+            ASSERT_TRUE(buffer[k].getBodyOrientationInGlobalFrame().isApprox(q_G_Bk.conjugate(), 1e-10));
         }
         
         std::cout << "Augment_" << i << "_(q_B_G: " << q_G_B.conjugate().coeffs().transpose() << ", p_B_G: " << p_B_G.transpose() << ")" << std::endl;

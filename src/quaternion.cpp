@@ -94,18 +94,26 @@ double Quaternion::w() const {
     return w_;
 }
 
+Eigen::Vector3d Quaternion::vec() const {
+    Eigen::Vector3d vec;
+    vec << x_, y_, z_;
+    return vec;
+}
+
 Eigen::Vector4d Quaternion::coeffs() const {
     Eigen::Vector4d coeffs;
     coeffs << x_, y_, z_, w_;
     return coeffs;
 }
 
-double Quaternion::angularDistance(const Quaternion& other) const {
-    return 2.0 * acosf((other * this->conjugate()).w());
-}
-
 bool Quaternion::isApprox(const Quaternion& other, double eps) const {
-    return std::abs(angularDistance(other)) < eps;
+    // Because q and -q represent the same rotation, we have to check is w is 1 or -1
+    Quaternion q = *this * other.conjugate();
+    bool x_close = std::abs(q.x()) < eps;
+    bool y_close = std::abs(q.y()) < eps;
+    bool z_close = std::abs(q.z()) < eps;
+    bool w_close = std::abs(std::abs(q.w()) - 1.0) < eps;
+    return x_close && y_close && z_close && w_close;
 }
 
 Quaternion Quaternion::identity() {

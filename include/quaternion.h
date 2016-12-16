@@ -29,9 +29,9 @@ public:
     double y() const;
     double z() const;
     double w() const;
+    Eigen::Vector3d vec() const;
     Eigen::Vector4d coeffs() const;
     
-    double angularDistance(const Quaternion& other) const;
     bool isApprox(const Quaternion& other, double eps = 1e-12) const;
     
     static Quaternion identity();

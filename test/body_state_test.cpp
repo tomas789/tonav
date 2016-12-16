@@ -200,10 +200,10 @@ TEST_F(BodyStateNoMovementTest, test_move_forward_for_one_sec_at_100hz) {
 TEST_F(BodyStateNoMovementTest, test_rotate_clockwise_for_one_sec_at_100hz) {
     apply_rotate_clockwise_for_one_sec_at_100hz();
     ASSERT_EQ(body_state_->time(), 1.0);
-    Quaternion expected_orientation(0.0, 0.0, std::sin(M_PI/4.0), std::cos(M_PI/4.0));
+    Quaternion expected_orientation(0.0, 0.0, std::sin(M_PI/4.0), -std::cos(M_PI/4.0));
     
     Quaternion orientation = body_state_->getOrientationInGlobalFrame();
-    ASSERT_TRUE(orientation.isApprox(expected_orientation, 1e-3)) << "Got orientation " << orientation.coeffs();
+    ASSERT_TRUE(orientation.isApprox(expected_orientation, 1e-9)) << "Got orientation " << orientation.coeffs();
     
     auto position = body_state_->getPositionInGlobalFrame();
     ASSERT_TRUE(position.isZero(1e-12)) << "Got position [" << position.transpose() << "]^T";
@@ -215,7 +215,7 @@ TEST_F(BodyStateNoMovementTest, test_rotate_clockwise_for_one_sec_at_100hz) {
 TEST_F(BodyStateNoMovementTest, test_rotate_and_go) {
     apply_rotate_and_go();
     ASSERT_EQ(body_state_->time(), 2.0);
-    Quaternion expected_orientation(0.0, 0.0, std::sin(M_PI/4.0), std::cos(M_PI/4.0));
+    Quaternion expected_orientation(0.0, 0.0, std::sin(M_PI/4.0), -std::cos(M_PI/4.0));
     
     Quaternion orientation = body_state_->getOrientationInGlobalFrame();
     ASSERT_TRUE(orientation.isApprox(expected_orientation, 1e-3)) << "Got orientation " << orientation.coeffs();
@@ -229,10 +229,6 @@ TEST_F(BodyStateNoMovementTest, test_rotate_and_go) {
     expected_velocity << 0.0, -1.0, 0.0;
     auto velocity = body_state_->getVelocityInGlobalFrame();
     ASSERT_TRUE(velocity.isApprox(expected_velocity, 1e-8)) << "Got velocity [" << velocity.transpose() << "]^T";
-    
-    Eigen::Vector3d test_vector = Eigen::Vector3d::UnitX();
-    Eigen::Vector3d vector = body_state_->getOrientationInGlobalFrame().toRotationMatrix() * test_vector;
-    std::cout << vector << std::endl;
 }
 
 class BodyStatePathTrajectoryTest : public ::testing::Test {
@@ -273,7 +269,7 @@ TEST_F(BodyStatePathTrajectoryTest, test_body_state) {
     position << 0.0, 2.0, 0.0;
     ASSERT_TRUE((body_state_->getPositionInGlobalFrame() - position).isZero(1e-3)) << "Got position [" << body_state_->getPositionInGlobalFrame().transpose() << "]^T";
     orientation = Quaternion(0, 0, 1, 0);
-    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().angularDistance(orientation) < 1e-5) << "Got orientation [" << body_state_->getOrientationInGlobalFrame().coeffs().transpose() << "]^T";
+    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(orientation, 1e-5)) << "Got orientation [" << body_state_->getOrientationInGlobalFrame().coeffs().transpose() << "]^T";
     
     for (int i = 1; i < 10001; ++i) {
         body_state_ = BodyState::propagate(*body_state_, 1 + i/10000.0, rotation_estimate_2, acceleration_estimate_2);
@@ -282,6 +278,6 @@ TEST_F(BodyStatePathTrajectoryTest, test_body_state) {
     position << 0.0, 4.0, 0.0;
     ASSERT_TRUE((body_state_->getPositionInGlobalFrame() - position).isZero(1e-3)) << "Got position [" << body_state_->getPositionInGlobalFrame().transpose() << "]^T";
     orientation = Quaternion::identity();
-    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().angularDistance(orientation) < 1e-3) << "Got orientation [" << body_state_->getOrientationInGlobalFrame().coeffs().transpose() << "]^T";
+    ASSERT_TRUE(body_state_->getOrientationInGlobalFrame().isApprox(orientation, 1e-3)) << "Got orientation [" << body_state_->getOrientationInGlobalFrame().coeffs().transpose() << "]^T";
 }
 
