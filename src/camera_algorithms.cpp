@@ -242,6 +242,25 @@ Eigen::Matrix<double, 2, 3> CameraAlgorithms::cameraProjectJacobian(const Eigen:
     double t1 = state.tangential_distortion_(0);
     double t2 = state.tangential_distortion_(1);
     double dr = 1.0 + k1*r + k2*r*r + k3*std::pow(r, 3.0);
+
+
+
+
+
+
+    Eigen::Matrix<double, 2, 3> d;
+    d(0, 0) = state.focal_point_(0) / z;
+    d(0, 1) = 0;
+    d(0, 2) = -state.focal_point_(0)*x/(z*z);
+    d(1, 0) = 0;
+    d(1, 1) = state.focal_point_(1) / z;
+    d(1, 2) = -state.focal_point_(1)*y/(z*z);
+    return d;
+
+
+
+
+
     
     Eigen::RowVector3d uv_by_xyz;
     uv_by_xyz << y/(z*z), x/(z*z), -2.0*x*y/std::pow(z, 3.0);

@@ -7,6 +7,7 @@
 #include <utility>
 #include <ctime>
 #include <Eigen/Core>
+#include <Eigen/Geometry>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <ros/ros.h>
@@ -62,6 +63,7 @@ int TonavKitti::run(int argc, char *argv[]) {
     std::ofstream gt_pos(kitti_dir_ + "/../gt.csv");
     std::ofstream feature_pc(kitti_dir_ + "/../feature_pc.csv");
     std::ofstream marker_pts(kitti_dir_ + "/../marker_pts.csv");
+    std::ofstream logger(kitti_dir_ + "/../tonavkitti.log");
     
     bool is_initialized = false;
     for (std::size_t i = 0; i < oxts_timestamps_.size() && ros::ok(); ++i) {
@@ -96,8 +98,21 @@ int TonavKitti::run(int argc, char *argv[]) {
                 << marker[1](0) << "," << marker[1](1) << ","
                 << marker[2](0) << "," << marker[2](1) << std::endl;
             
-            publishTransformations(broadcaster);
+            publishTransformations(i, broadcaster);
             publishPointCloud(pointcloud_publisher);
+
+
+            Eigen::Matrix3d R_G_W = getGroundTruthRotation(0).transpose();
+            Eigen::Matrix3d R_Bi_G = getGroundTruthRotation(i-1);
+
+            const Quaternion& q_B_G = tonav_->getCurrentOrientation();
+            const Quaternion& q_B_G_true = Quaternion::fromRotationMatrix(R_Bi_G*R_G_W).conjugate();
+            const Eigen::Vector3d& p_B_G = tonav_->getCurrentPosition();
+            const Eigen::Vector3d& p_B_G_true = getGroundTruthPosition(i-1);
+            const Eigen::Vector3d& v_B_G = tonav_->getCurrentVelocity();
+            const Eigen::Vector3d& v_B_G_true = Eigen::Vector3d::Zero();
+
+            dumpLogs(logger, q_B_G, q_B_G_true, p_B_G, p_B_G_true, v_B_G, v_B_G_true);
         }
         
         time_point_type current_time = clock_type::now();
@@ -295,13 +310,25 @@ cv::Mat TonavKitti::step(std::size_t i) {
     cv::Mat previous_frame = tonav_->isInitialized() ? tonav_->getCurrentImage() : cv::Mat();
 
     if (tonav_->isInitialized()) {
-        //tonav_->positionCorrection(getGroundTruthPosition(i-1));
-        Quaternion gt_orientation = Quaternion::fromRotationMatrix(
-                getGroundTruthRotation(i-1)*getGroundTruthRotation(0).transpose());
-        //tonav_->orientationCorrection(gt_orientation.conjugate());
-        Eigen::Vector3d gt_velocity;
-        gt_velocity << oxts_[i-1].vf, oxts_[i-1].vl, oxts_[i-1].vu;
-        //tonav_->velocityCorrection(gt_velocity);
+        bool use_orientation_ground_truth = false;
+        bool use_position_ground_truth = false;
+        bool use_velocity_ground_truth = false;
+
+        if (use_orientation_ground_truth) {
+            Quaternion gt_orientation = Quaternion::fromRotationMatrix(
+                    getGroundTruthRotation(i-1)*getGroundTruthRotation(0).transpose());
+            tonav_->orientationCorrection(gt_orientation.conjugate());
+        }
+
+        if (use_position_ground_truth) {
+            tonav_->positionCorrection(getGroundTruthPosition(i-1));
+        }
+
+        if (use_velocity_ground_truth) {
+            Eigen::Vector3d gt_velocity;
+            gt_velocity << oxts_[i-1].vf, oxts_[i-1].vl, oxts_[i-1].vu;
+            tonav_->velocityCorrection(gt_velocity);
+        }
     }
     
     cv::Mat image = cv::imread(getCameraImageFileName(i));
@@ -349,7 +376,18 @@ std::vector<Eigen::Vector2d> TonavKitti::bodyFrameMarker() const {
     return { P*(p_B_G + R_G_B*p_x0_B), P*(p_B_G + R_G_B*p_x1_B), P*(p_B_G + R_G_B*p_x2_B) };
 }
 
-void TonavKitti::publishTransformations(tf2_ros::TransformBroadcaster& broadcaster) {
+void TonavKitti::dumpLogs(std::ofstream& out, const Quaternion& q_B_G, const Quaternion& q_B_G_true, const Eigen::Vector3d& p_B_G, const Eigen::Vector3d& p_B_G_true, const Eigen::Vector3d& v_B_G, const Eigen::Vector3d& v_B_G_true) {
+    Quaternion q_error = q_B_G * q_B_G_true.conjugate();
+    double angular_error = 2*std::acos(q_error.w());
+    double position_error = (p_B_G - p_B_G_true).norm();
+    double velocity_error = (v_B_G - v_B_G_true).norm();
+    out << angular_error << "," << position_error << "," << velocity_error << ","
+    << p_B_G(0) << "," << p_B_G(1) << "," << p_B_G(2) << ","
+    << p_B_G_true(0) << "," << p_B_G_true(1) << "," << p_B_G_true(2) << std::endl;
+    out.flush();
+}
+
+void TonavKitti::publishTransformations(std::size_t i, tf2_ros::TransformBroadcaster& broadcaster) {
     {
         Eigen::Vector3d body_position = tonav_->getCurrentPosition() / factor_;
         Quaternion body_orientation = tonav_->getCurrentOrientation();
@@ -367,6 +405,29 @@ void TonavKitti::publishTransformations(tf2_ros::TransformBroadcaster& broadcast
         body.transform.rotation.w = body_orientation.w();
         broadcaster.sendTransform(body);
     }
+
+    {
+        Eigen::Vector3d body_position = getGroundTruthPosition(i-1) / factor_;
+
+        Eigen::Matrix3d R_G_W = getGroundTruthRotation(0).transpose();
+        Eigen::Matrix3d R_Bi_G = getGroundTruthRotation(i-1);
+        Quaternion gt_orientation = Quaternion::fromRotationMatrix(R_Bi_G*R_G_W).conjugate();
+
+        geometry_msgs::TransformStamped body;
+        body.header.stamp = ros::Time::now();
+        body.header.frame_id = "world";
+        body.child_frame_id = "gt";
+        body.transform.translation.x = body_position(0);
+        body.transform.translation.y = body_position(1);
+        body.transform.translation.z = body_position(2);
+        body.transform.rotation.x = gt_orientation.x();
+        body.transform.rotation.y = gt_orientation.y();
+        body.transform.rotation.z = gt_orientation.z();
+        body.transform.rotation.w = gt_orientation.w();
+        broadcaster.sendTransform(body);
+    }
+
+    return;
 
     const CameraPoseBuffer& buffer = tonav_->state().poses();
     if (!buffer.empty()) {

@@ -4,14 +4,13 @@
 
 #include "filter_state.h"
 
-#include <iostream>
-#include <iomanip>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 
 #include "body_state.h"
 #include "calibration.h"
 #include "quaternion.h"
+#include "filter.h"
 
 FilterState::FilterState(std::shared_ptr<const Calibration> calibration)
     : calibration_(calibration), poses_(calibration->getMaxCameraPoses() + 1) { }
@@ -92,30 +91,4 @@ void FilterState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
     for (std::size_t j = 0; j < poses().size(); ++j) {
         poses()[j].updateWithStateDelta(delta_x.segment<9>(56+j*9));
     }
-}
-
-std::ostream& operator<< (std::ostream& out, FilterState& state) {
-    Eigen::IOFormat formatter(4, 0, ", ", "\n", "[", "]");
-    out << std::fixed << std::setprecision(4);
-    Eigen::Vector3d euler = state.getOrientationInGlobalFrame().toRotationMatrix().eulerAngles(0, 1, 2);
-    out << "Euler angles:    " << euler.transpose().format(formatter) << std::endl;
-    out << "Rotation:        " << state.getOrientationInGlobalFrame().coeffs().transpose().format(formatter)
-        << std::endl;
-    out << "Position:        " << state.getPositionInGlobalFrame().transpose().format(formatter) << std::endl;
-    out << "Velocity:        " << state.getVelocityInGlobalFrame().transpose().format(formatter) << std::endl;
-    out << "Gyro bias:       " << state.bias_gyroscope_.transpose().format(formatter) << std::endl;
-    out << "Accel bias:      " << state.bias_accelerometer_.transpose().format(formatter) << std::endl;
-    out << "Gyro shape:      " << std::endl << state.gyroscope_shape_.format(formatter) << std::endl;
-    out << "G-Sensitivity:   " << std::endl << state.gyroscope_acceleration_sensitivity_.format(formatter) << std::endl;
-    out << "Accel shape:     " << std::endl << state.accelerometer_shape_.format(formatter)
-        << std::endl;
-    out << "p_B_C:           " << state.position_of_body_in_camera_.transpose().format(formatter) << std::endl;
-    out << "Focal length:    " << state.focal_point_.transpose().format(formatter) << std::endl;
-    out << "Optical center:  " << state.optical_center_.transpose().format(formatter) << std::endl;
-    out << "Radial dist:     " << state.radial_distortion_.transpose().format(formatter) << std::endl;
-    out << "Tangential dist: " << state.tangential_distortion_.transpose().format(formatter) << std::endl;
-    out << "Cam delay:       " << state.camera_delay_ << std::endl;
-    out << "Cam readout:     " << state.camera_readout_ << std::endl;
-
-    return out;
 }

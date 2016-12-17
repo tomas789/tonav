@@ -101,6 +101,8 @@ private:
     
     std::vector<Eigen::Vector2d> bodyFrameMarker() const;
 
+    void dumpLogs(std::ofstream& out, const Quaternion& q_B_G, const Quaternion& q_B_G_true, const Eigen::Vector3d& p_B_G, const Eigen::Vector3d& p_B_G_true, const Eigen::Vector3d& v_B_G, const Eigen::Vector3d& v_B_G_true);
+
     /**
      * @brief Publish localization results to ROS TF
      *
@@ -108,7 +110,7 @@ private:
      * notation that transforms frames and is left-handed. Those two factors cancel out so I should pass directly my
      * quaternions to ROS.
      */
-    void publishTransformations(tf2_ros::TransformBroadcaster& broadcaster);
+    void publishTransformations(std::size_t i, tf2_ros::TransformBroadcaster& broadcaster);
     void publishPointCloud(ros::Publisher& publisher);
     
     /// This function converts decimal degrees to radians

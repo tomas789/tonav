@@ -25,7 +25,7 @@ class FilterState {
 public:
     friend class CameraAlgorithms;
     friend class Filter;
-    friend std::ostream& operator<<(std::ostream&, FilterState&);
+    friend std::ostream& operator<<(std::ostream&, Filter&);
 
     FilterState(std::shared_ptr<const Calibration> calibration);
     
@@ -86,6 +86,6 @@ protected:
 
 };
 
-std::ostream& operator<< (std::ostream& out, FilterState& state);
+std::ostream& operator<< (std::ostream& out, Filter& filter);
 
 #endif //TONAV_FILTER_STATE_H

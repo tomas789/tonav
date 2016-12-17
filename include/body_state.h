@@ -6,6 +6,8 @@
 #include "calibration.h"
 #include "quaternion.h"
 
+class Filter;
+
 /**
  * @brief Represents body pose \f$x_B\f$ or camera pose \f$ \pi_{B_i} \f$ in filter state.
  */
@@ -46,7 +48,10 @@ public:
     static std::shared_ptr<BodyState> propagate(
             const BodyState& from_state, double time, Eigen::Vector3d rotation_estimate,
             Eigen::Vector3d acceleration_estimate);
-    
+
+    static Eigen::Matrix<double, 56, 56> propagateCovariance(const Filter& filter, const BodyState& from_state,
+            BodyState& to_state, const Eigen::Matrix<double, 56, 56>& covar);
+
     /**
      * @brief Time of body state
      */
@@ -102,6 +107,15 @@ private:
 
     static std::pair<Eigen::Vector3d, Eigen::Vector3d> propagateAccelerometer(
             const BodyState& from_state, BodyState& to_state, const Quaternion& q_Bnext_Bcurrent);
+
+    static Eigen::Matrix<double, 15, 15> bodyStateTransitionMatrix(const Filter& filter, const BodyState& from_state,
+            BodyState& to_state);
+
+    static Eigen::Matrix<double, 15, 27> imuCalibrationParamsTransitionMatrix(const Filter& filter,
+            const BodyState& from_state, BodyState& to_state);
+
+    static Eigen::Matrix<double, 15, 15> propagationNoiseMatrix(const Filter& filter, const BodyState& from_state,
+            BodyState& to_state, const Eigen::Matrix<double, 15, 15>& bodyStateTransitionMatrix);
 };
 
 #endif //TONAV_BODY_STATE_H

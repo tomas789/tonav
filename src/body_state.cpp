@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "calibration.h"
+#include "filter.h"
 #include "quaternion.h"
 #include "quaternion_tools.h"
 
@@ -47,6 +48,24 @@ std::shared_ptr<BodyState> BodyState::propagate(const BodyState& from_state, dou
     return to_state;
 }
 
+Eigen::Matrix<double, 56, 56> BodyState::propagateCovariance(const Filter& filter, const BodyState& from_state,
+        BodyState& to_state, const Eigen::Matrix<double, 56, 56>& covar) {
+    // As in Shelley (6.39)
+
+    Eigen::Matrix<double, 15, 15> phi_Bl = BodyState::bodyStateTransitionMatrix(filter, from_state, to_state);
+    Eigen::Matrix<double, 15, 27> gamma_imu = BodyState::imuCalibrationParamsTransitionMatrix(filter, from_state, to_state);
+    Eigen::Matrix<double, 15, 15> noise_matrix = BodyState::propagationNoiseMatrix(filter, from_state, to_state, phi_Bl);
+
+    Eigen::Matrix<double, 56, 56> phi = Eigen::Matrix<double, 56, 56>::Identity(56, 56);
+    phi.block<15, 15>(0, 0) = phi_Bl;
+    phi.block<15, 27>(0, 15) = gamma_imu;
+
+    Eigen::Matrix<double, 56, 56> new_covar = phi*covar*phi.transpose();
+    new_covar.block<15, 15>(0, 0) += noise_matrix;
+    
+    return new_covar;
+}
+
 double BodyState::time() const {
     return time_;
 }
@@ -81,6 +100,7 @@ void BodyState::velocityCorrection(const Eigen::Vector3d& velocity) {
 
 void BodyState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
     Quaternion delta_q(0.5*delta_x(0), 0.5*delta_x(1), 0.5*delta_x(2), 1.0);
+    delta_q.normalize();
     q_B_G_ = (q_B_G_*delta_q).normalized();
     p_B_G_ += delta_x.segment<3>(3);
     v_B_G_ += delta_x.segment<3>(6);
@@ -129,4 +149,22 @@ std::pair<Eigen::Vector3d, Eigen::Vector3d> BodyState::propagateAccelerometer(
     assert(!std::isnan(v_delta.norm()));
 
     return std::make_pair(p_delta, v_delta);
+}
+
+Eigen::Matrix<double, 15, 15> BodyState::bodyStateTransitionMatrix(const Filter& filter, const BodyState& from_state,
+        BodyState& to_state) {
+    /// @todo Implement this
+    return Eigen::Matrix<double, 15, 15>::Identity();
+}
+
+Eigen::Matrix<double, 15, 27> BodyState::imuCalibrationParamsTransitionMatrix(const Filter& filter,
+        const BodyState& from_state, BodyState& to_state) {
+    /// @todo Implement this
+    return Eigen::Matrix<double, 15, 27>::Zero();
+}
+
+Eigen::Matrix<double, 15, 15> BodyState::propagationNoiseMatrix(const Filter& filter, const BodyState& from_state,
+        BodyState& to_state, const Eigen::Matrix<double, 15, 15>& bodyStateTransitionMatrix) {
+    /// @todo Implement this
+    return Eigen::Matrix<double, 15, 15>::Zero();
 }

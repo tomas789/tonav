@@ -98,6 +98,22 @@ Eigen::Vector3d Calibration::getGlobalGravity() const {
     return global_gravity_;
 }
 
+double Calibration::getAccelerometerVariance() const {
+    return accelerometer_variance_;
+}
+
+double Calibration::getGyroscopeVariance() const {
+    return gyroscope_variance_;
+}
+
+double Calibration::getAccelerometerRandomWalkVariance() const {
+    return accelerometer_random_walk_variance_;
+}
+
+double Calibration::getGyroscopeRandomWalkVariance() const {
+    return gyroscope_random_walk_variance_;
+}
+
 Eigen::Vector3d Calibration::getPositionOfBodyInCameraFrameNoise() const {
     return position_of_body_in_camera_frame_noise_;
 }
@@ -180,6 +196,8 @@ const std::vector<std::string> Calibration::allowed_params_ = {
         "Camera.cameraDelayTime", "Camera.cameraReadoutTime",
         "ORBextractor.nFeatures",
         "Imu.Ts", "Imu.Tg", "Imu.Ta", "Imu.gyroscopeBias", "Imu.accelerometerBias", "Imu.globalGravity",
+        "Imu.accelerometerVariance", "Imu.gyroscopeVariance",
+        "Imu.accelerometerRandomWalkVariance", "Imu.gyroscopeRandomWalkVariance",
         "Filter.maxCameraPoses", "Filter.maxTriangulationIterations",
         "Noise.orientation", "Noise.position", "Noise.velocity",
         "Noise.gyroscopeBias", "Noise.accelerometerBias",
@@ -284,6 +302,22 @@ std::shared_ptr<Calibration> Calibration::fromPath(boost::filesystem::path fname
             }
         } else if (key == "Imu.globalGravity") {
             if (!Calibration::tryParseVector3d(value, calib->global_gravity_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Imu.accelerometerVariance") {
+            if (!Calibration::tryParseDouble(value, calib->accelerometer_variance_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Imu.gyroscopeVariance") {
+            if (!Calibration::tryParseDouble(value, calib->gyroscope_variance_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Imu.accelerometerRandomWalkVariance") {
+            if (!Calibration::tryParseDouble(value, calib->accelerometer_random_walk_variance_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Imu.gyroscopeRandomWalkVariance") {
+            if (!Calibration::tryParseDouble(value, calib->gyroscope_random_walk_variance_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
         } else if (key == "Filter.maxCameraPoses") {

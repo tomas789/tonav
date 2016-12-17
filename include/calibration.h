@@ -56,6 +56,11 @@ public:
 
     Eigen::Vector3d getGlobalGravity() const;
 
+    double getAccelerometerVariance() const;
+    double getGyroscopeVariance() const;
+    double getAccelerometerRandomWalkVariance() const;
+    double getGyroscopeRandomWalkVariance() const;
+
     int getMaxCameraPoses() const;
 
     int getMaxTriangulationIterations() const;
@@ -121,6 +126,11 @@ protected:
     Eigen::Vector3d accelerometer_bias_;
     Eigen::Vector3d global_gravity_;
 
+    double accelerometer_variance_;
+    double gyroscope_variance_;
+    double accelerometer_random_walk_variance_;
+    double gyroscope_random_walk_variance_;
+
     int max_camera_poses_;
     int max_triangulation_iterations_;
 
@@ -139,7 +149,7 @@ protected:
     Eigen::Vector2d tangential_distortion_noise_;
     double camera_delay_time_noise_;
     double camera_readout_time_noise_;
-    
+
     Quaternion body_to_camera_rotation_;
 
     static const std::vector<std::string> allowed_params_;

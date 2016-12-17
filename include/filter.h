@@ -36,6 +36,7 @@ namespace cv {
 class Filter {
 public:
     friend class CameraReprojectionFunctor;
+    friend std::ostream& operator<< (std::ostream& out, Filter& filter);
     
     Filter(std::shared_ptr<const Calibration> calibration, std::shared_ptr<const StateInitializer> state_initializer);
 
@@ -205,7 +206,9 @@ protected:
     
     bool gatingTest(const Eigen::VectorXd& r_0_i, const Eigen::MatrixXd H_0_i);
     
-    void updateState(const Eigen::MatrixXd& T_H, const Eigen::VectorXd& r_q);
+    void updateState(const Eigen::MatrixXd& T_H, const Eigen::VectorXd& r_q, const Eigen::MatrixXd& H, const Eigen::VectorXd& r);
 };
+
+std::ostream& operator<< (std::ostream& out, Filter& filter);
 
 #endif //TONAV_FILTER_H
