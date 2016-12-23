@@ -66,7 +66,9 @@ int TonavKitti::run(int argc, char *argv[]) {
     std::ofstream logger(kitti_dir_ + "/../tonavkitti.log");
     
     bool is_initialized = false;
-    for (std::size_t i = 0; i < oxts_timestamps_.size() && ros::ok(); ++i) {
+    std::size_t max_steps = oxts_timestamps_.size();
+    max_steps = 239;
+    for (std::size_t i = 0; i < max_steps && ros::ok(); ++i) {
         std::cout << " ⛳ STEP " << i << " ⛳ " << std::endl;
         cv::Mat frame = step(i);
         

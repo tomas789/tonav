@@ -34,6 +34,10 @@ public:
     const Quaternion& getOrientationInGlobalFrame() const;
     const Eigen::Vector3d& getPositionInGlobalFrame() const;
     const Eigen::Vector3d& getVelocityInGlobalFrame() const;
+
+    const Eigen::Matrix3d& getGyroscopeShapeMatrix() const;
+    const Eigen::Matrix3d& getGyroscopeAccelerationSensitivityMatrix() const;
+    const Eigen::Matrix3d& getAccelerometerShapeMatrix() const;
     
     void orientationCorrection(const Quaternion& orientation);
     void positionCorrection(const Eigen::Vector3d& position);

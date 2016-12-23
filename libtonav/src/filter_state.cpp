@@ -34,6 +34,18 @@ const Eigen::Vector3d& FilterState::getVelocityInGlobalFrame() const {
     return body_state_->getVelocityInGlobalFrame();
 }
 
+const Eigen::Matrix3d& FilterState::getGyroscopeShapeMatrix() const {
+    return gyroscope_shape_;
+}
+
+const Eigen::Matrix3d& FilterState::getGyroscopeAccelerationSensitivityMatrix() const {
+    return gyroscope_acceleration_sensitivity_;
+}
+
+const Eigen::Matrix3d& FilterState::getAccelerometerShapeMatrix() const {
+    return accelerometer_shape_;
+}
+
 void FilterState::orientationCorrection(const Quaternion& orientation) {
     body_state_->orientationCorrection(orientation);
 }

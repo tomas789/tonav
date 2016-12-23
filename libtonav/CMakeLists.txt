@@ -8,6 +8,7 @@ find_package(catkin REQUIRED
              COMPONENTS message_generation std_msgs sensor_msgs image_transport)
 
 include_directories("${tonav_SOURCE_DIR}/include")
+include_directories("${tonav_SOURCE_DIR}/thirdparty/maishe83/BezierCurve")
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
@@ -139,6 +140,7 @@ if(CATKIN_ENABLE_TESTING)
     test/big_camera_test.cpp
     test/frame_features_test.cpp
     test/stats_test.cpp
+    test/simulation_test.cpp
     )
   add_rostest_gtest(${PROJECT_NAME}-test launch/gtest.test ${COMMON_SOURCE_FILES} ${TEST_FILES})
   target_link_libraries(${PROJECT_NAME}-test ${catkin_LIBRARIES} ${GTEST_BOTH_LIBRARIES} ${GMOCK_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} ${image_transport_LIBRARIES} ${cv_bridge_LIBRARIES} ${tf2_ros_LIBRARIES} ${eigen_conversions_LIBRARIES})

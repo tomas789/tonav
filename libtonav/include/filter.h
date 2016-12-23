@@ -103,8 +103,7 @@ public:
     
     Eigen::Vector3d getPositionOfBodyInCameraFrame() const;
     
-    void orientationCorrection(const Quaternion&
-                               orientation);
+    void orientationCorrection(const Quaternion& orientation);
     void positionCorrection(const Eigen::Vector3d& position);
     void velocityCorrection(const Eigen::Vector3d& velocity);
     
@@ -112,6 +111,8 @@ public:
      * @brief Get a reference to currently valid filter state.
      */
     const FilterState& state() const;
+
+    const Calibration& calibration() const;
     
     void setInitialBodyPositionInCameraFrame(const Eigen::Vector3d& position);
     

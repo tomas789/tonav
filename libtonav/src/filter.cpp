@@ -45,7 +45,9 @@ void Filter::stepInertial(double time, const ImuItem &accel, const ImuItem &gyro
     std::shared_ptr<BodyState> next_body_state = BodyState::propagate(
             *(state().body_state_.get()), time, rotation_estimate, acceleration_estimate);
 
-    filter_covar_.block<56, 56>(0, 0) = BodyState::propagateCovariance(*this, *(state().body_state_.get()), *next_body_state, filter_covar_.block<56, 56>(0, 0));
+    Eigen::Matrix<double, 56, 56> new_covar = BodyState::propagateCovariance(*this, *(state().body_state_.get()), *next_body_state, filter_covar_.block<56, 56>(0, 0));
+    std::cout << "new_covar MIN: " << new_covar.minCoeff() << " | MAX: " << new_covar.maxCoeff() << std::endl;
+    filter_covar_.block<56, 56>(0, 0) = new_covar;
 
     state().body_state_ = next_body_state;
 }
@@ -166,6 +168,10 @@ void Filter::velocityCorrection(const Eigen::Vector3d& velocity) {
 
 const FilterState& Filter::state() const {
     return *filter_state_;
+}
+
+const Calibration& Filter::calibration() const {
+    return *calibration_;
 }
 
 void Filter::setInitialBodyPositionInCameraFrame(const Eigen::Vector3d& position) {
@@ -445,10 +451,6 @@ FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack& feat
         H_c.block<2, 1>(0, 12) = z_by_td;
         H_c.block<2, 1>(0, 13) = z_by_tr;
         
-        if (z_by_x_cam.maxCoeff() > 1e10) {
-            std::cout << "Je to v pici" << std::endl;
-        }
-        
         // std::cout << "H_c(" << j << ") MIN: " << H_c.minCoeff() << " | MAX: " << H_c.maxCoeff() << std::endl;
         // std::cout << "z_by_p_B_C(" << j << ") MIN: " << z_by_p_B_C.minCoeff() << " | MAX: " << z_by_p_B_C.maxCoeff() << std::endl;
         //std::cout << "z_by_x_cam(" << j << ") MIN: " << z_by_x_cam.minCoeff() << " | MAX: " << z_by_x_cam.maxCoeff() << std::endl;
@@ -587,7 +589,8 @@ bool Filter::gatingTest(const Eigen::VectorXd& r_0_i, const Eigen::MatrixXd H_0_
 }
 
 void Filter::updateState(const Eigen::MatrixXd& T_H, const Eigen::VectorXd& r_q, const Eigen::MatrixXd& H, const Eigen::VectorXd& r) {
-    double sigma_squared = 121;
+    double sigma = calibration_->getImageNoiseVariance();
+    double sigma_squared = sigma*sigma;
 
     /*
     Eigen::MatrixXd K_big = filter_covar_*H.transpose()*(H*filter_covar_*H.transpose() + sigma_squared*Eigen::MatrixXd::Identity(H.rows(), H.rows())).inverse();
@@ -626,13 +629,13 @@ std::ostream& operator<< (std::ostream& out, Filter& filter) {
     out << "G-Sensitivity:   " << std::endl << state.gyroscope_acceleration_sensitivity_.format(formatter) << std::endl;
     out << "Accel shape:     " << std::endl << state.accelerometer_shape_.format(formatter)
     << std::endl;
-    out << "p_B_C:           " << state.position_of_body_in_camera_.transpose().format(formatter) << std::endl;
-    out << "Focal length:    " << state.focal_point_.transpose().format(formatter) << std::endl;
-    out << "Optical center:  " << state.optical_center_.transpose().format(formatter) << std::endl;
-    out << "Radial dist:     " << state.radial_distortion_.transpose().format(formatter) << std::endl;
-    out << "Tangential dist: " << state.tangential_distortion_.transpose().format(formatter) << std::endl;
-    out << "Cam delay:       " << state.camera_delay_ << std::endl;
-    out << "Cam readout:     " << state.camera_readout_ << std::endl;
+    out << "p_B_C:           " << state.position_of_body_in_camera_.transpose().format(formatter) << " ± (" << filter.filter_covar_(43, 43) << ", "  << filter.filter_covar_(44, 44) << ", " << filter.filter_covar_(45, 45) << ")" << std::endl;
+    out << "Focal length:    " << state.focal_point_.transpose().format(formatter) << " ± (" << filter.filter_covar_(46, 46) << ", " << filter.filter_covar_(47, 47) << ")" << std::endl;
+    out << "Optical center:  " << state.optical_center_.transpose().format(formatter) << " ± (" << filter.filter_covar_(48, 48) << ", " << filter.filter_covar_(49, 49) << ")" << std::endl;
+    out << "Radial dist:     " << state.radial_distortion_.transpose().format(formatter) << " ± (" << filter.filter_covar_(50, 50) << ", " << filter.filter_covar_(51, 51) << ")" << std::endl;
+    out << "Tangential dist: " << state.tangential_distortion_.transpose().format(formatter) << " ± (" << filter.filter_covar_(52, 52) << ", " << filter.filter_covar_(53, 53) << ")" << std::endl;
+    out << "Cam delay:       " << state.camera_delay_ << " ± (" << filter.filter_covar_(54, 54) << ")" << std::endl;
+    out << "Cam readout:     " << state.camera_readout_ << " ± (" << filter.filter_covar_(55, 55) << ")" << std::endl;
 
     return out;
 }

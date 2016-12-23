@@ -70,6 +70,10 @@ double Calibration::getCameraReadoutTime() const {
     return camera_readout_time_;
 }
 
+double Calibration::getImageNoiseVariance() const {
+    return image_noise_variance_;
+}
+
 int Calibration::getNumberOfFeaturesToExtract() const {
     return n_features_to_extract_;
 }
@@ -194,6 +198,7 @@ const std::vector<std::string> Calibration::allowed_params_ = {
         "Camera.focalPoint", "Camera.opticalCenter",
         "Camera.radialDistortion", "Camera.tangentialDistortion",
         "Camera.cameraDelayTime", "Camera.cameraReadoutTime",
+        "Camera.imageNoiseVariance",
         "ORBextractor.nFeatures",
         "Imu.Ts", "Imu.Tg", "Imu.Ta", "Imu.gyroscopeBias", "Imu.accelerometerBias", "Imu.globalGravity",
         "Imu.accelerometerVariance", "Imu.gyroscopeVariance",
@@ -274,6 +279,10 @@ std::shared_ptr<Calibration> Calibration::fromPath(boost::filesystem::path fname
             }
         } else if (key == "Camera.cameraReadoutTime") {
             if (!Calibration::tryParseDouble(value, calib->camera_readout_time_)) {
+                throw CalibrationFileError(param_loc[key], "Unable to parse value.");
+            }
+        } else if (key == "Camera.imageNoiseVariance") {
+            if (!Calibration::tryParseDouble(value, calib->image_noise_variance_)) {
                 throw CalibrationFileError(param_loc[key], "Unable to parse value.");
             }
         } else if (key == "ORBextractor.nFeatures") {

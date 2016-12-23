@@ -42,6 +42,8 @@ public:
     void setCameraReadoutTime(double readout_time);
     double getCameraReadoutTime() const;
 
+    double getImageNoiseVariance() const;
+
     int getNumberOfFeaturesToExtract() const;
 
     Eigen::Matrix3d getGyroscopeAccelerationSensitivityMatrix() const;
@@ -116,6 +118,7 @@ protected:
     Eigen::Vector2d tangential_distortion_;
     double camera_delay_time_;
     double camera_readout_time_;
+    double image_noise_variance_;
 
     int n_features_to_extract_;
 

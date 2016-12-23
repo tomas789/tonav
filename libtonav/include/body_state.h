@@ -98,6 +98,12 @@ private:
     /** @brief \f$ \prescript{B_t}{B_{t-1}}{\hat{q}} \f$ */
     Quaternion rotation_to_this_frame_;
 
+    /** @brief As in Shelley (6.29) */
+    Eigen::Vector3d s_hat_ = Eigen::Vector3d::Zero();
+
+    /** @brief As in Shelley (6.30) */
+    Eigen::Vector3d y_hat_ = Eigen::Vector3d::Zero();
+
     /**
      * @brief Integrate local angular velocity
      *
