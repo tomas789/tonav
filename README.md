@@ -5,13 +5,9 @@
   [1]: https://travis-ci.org/tomas789/tonav/branches
   [2]: https://travis-ci.org/tomas789/tonav.svg?branch=master (Travis-CI Tonav)
 
-**NEW**: Check out [my wiki page](https://github.com/tomas789/tonav/wiki). I'll add some additional resources there.
+**NEW**: Please fill my [Feedback form](https://goo.gl/forms/UwnD81EACCACfEx43). I'd love to hear from you more. It will help me to make Tonav even better!
 
 Implementation of Multi-State Constraint Kalman Filter (MSCKF) for Vision-aided Inertial Navigation. This is my master's thesis.
-
-## Status
-
-This is work-in-progress. It is not able to work out-of-the-box currently. Expected time when it will be able to work out-of-the-box: Jan 2017.
 
 ## Goals
 
