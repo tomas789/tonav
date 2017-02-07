@@ -282,7 +282,7 @@ Eigen::Matrix<double, 2, 3> CameraAlgorithms::cameraProjectJacobian(const Eigen:
     Eigen::RowVector3d r_cubed_by_xyz;
     r_cubed_by_xyz << 6.0*x*x2_y2*x2_y2/std::pow(z, 6.0), 6.0*y*x2_y2*x2_y2/std::pow(z, 6.0), -6.0*std::pow(x2_y2, 3.0)/std::pow(z, 7.0);
     
-    Eigen::RowVector3d dr_by_xyz = Eigen::RowVector3d::Constant(1.0) + k1*r_by_xyz + k2*r_squared_by_xyz + k3*r_cubed_by_xyz;
+    Eigen::RowVector3d dr_by_xyz = k1*r_by_xyz + k2*r_squared_by_xyz + k3*r_cubed_by_xyz;
     
     Eigen::Matrix<double, 2, 3> dt_by_xyz;
     dt_by_xyz.block<1, 3>(0, 0) = 2.0*t1*uv_by_xyz + t2*r_by_xyz + 4.0*t2*u*u_by_xyz;
