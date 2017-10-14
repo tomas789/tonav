@@ -22,8 +22,8 @@ public:
     
     float getUpdateFrequency() const;
     
-    virtual Eigen::Vector3d getAccelerometerData(float time) const = 0;
-    virtual Eigen::Vector3d getGyroscopeData(float time) const = 0;
+    virtual Eigen::Vector3d getAccelerometerData(double time) const = 0;
+    virtual Eigen::Vector3d getGyroscopeData(double time) const = 0;
     
     virtual ~Imu();
     

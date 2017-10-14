@@ -19,8 +19,8 @@ public:
     
     void initialize(VioSimulation *simulation);
     
-    Eigen::Vector3d getBodyPositionInGlobalFrame(float time);
-    tonav::Quaternion getGlobalToBodyFrameRotation(float time);
+    Eigen::Vector3d getBodyPositionInGlobalFrame(double time);
+    tonav::Quaternion getGlobalToBodyFrameRotation(double time);
     
     virtual ~CircularTrajectory();
 

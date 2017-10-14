@@ -30,7 +30,7 @@ void NumericalDiffImu::initialize(VioSimulation *simulation) {
     simulation_->getRunLoop().registerCallback(0, this);
 }
 
-void NumericalDiffImu::runLoopCallback(float time) {
+void NumericalDiffImu::runLoopCallback(double time) {
     Eigen::Vector3d accel = getAccelerometerData(time);
     Eigen::Vector3d gyro = getGyroscopeData(time);
     
@@ -40,7 +40,7 @@ void NumericalDiffImu::runLoopCallback(float time) {
     simulation_->getRunLoop().registerCallback(time+1.0/update_frequency_, this);
 }
 
-Eigen::Vector3d NumericalDiffImu::getAccelerometerData(float time) const {
+Eigen::Vector3d NumericalDiffImu::getAccelerometerData(double time) const {
     std::function<Eigen::Vector3d(double)> f = [&](double t) {
         return getVelocity(t);
     };
@@ -53,7 +53,7 @@ Eigen::Vector3d NumericalDiffImu::getAccelerometerData(float time) const {
     return a_m;
 }
 
-Eigen::Vector3d NumericalDiffImu::getGyroscopeData(float time) const {
+Eigen::Vector3d NumericalDiffImu::getGyroscopeData(double time) const {
     return Eigen::Vector3d::Zero();
 }
 
@@ -63,7 +63,7 @@ NumericalDiffImu::NumericalDiffImu(SimSetup *sim_setup) : Imu(sim_setup) {
     global_gravity_ << 0, 0, 9.81;
 }
 
-Eigen::Vector3d NumericalDiffImu::getVelocity(float time) const {
+Eigen::Vector3d NumericalDiffImu::getVelocity(double time) const {
     std::function<Eigen::Vector3d(double)> f = [&](double t) {
         return sim_setup_->getTrajectory().getBodyPositionInGlobalFrame(t);
     };

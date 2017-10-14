@@ -73,7 +73,7 @@ void GeneratedFeaturesVision::initialize(VioSimulation *simulation) {
     simulation_->getRunLoop().registerCallback(0, this);
 }
 
-void GeneratedFeaturesVision::runLoopCallback(float time) {
+void GeneratedFeaturesVision::runLoopCallback(double time) {
     
     std::cout << "Vision: Time: " << time << ", Next Time: " << (time+1.0/update_frequency_) << std::endl;
     simulation_->getRunLoop().registerCallback(time+1.0/update_frequency_, this);

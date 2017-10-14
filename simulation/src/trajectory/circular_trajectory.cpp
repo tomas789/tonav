@@ -26,7 +26,7 @@ void CircularTrajectory::initialize(VioSimulation *simulation) {
 
 }
 
-Eigen::Vector3d CircularTrajectory::getBodyPositionInGlobalFrame(float time) {
+Eigen::Vector3d CircularTrajectory::getBodyPositionInGlobalFrame(double time) {
     double t = M_2_PI*time/time_per_revolution_;
     double s = std::sin(t);
     double c = std::cos(t);
@@ -35,7 +35,7 @@ Eigen::Vector3d CircularTrajectory::getBodyPositionInGlobalFrame(float time) {
     return position;
 }
 
-tonav::Quaternion CircularTrajectory::getGlobalToBodyFrameRotation(float time) {
+tonav::Quaternion CircularTrajectory::getGlobalToBodyFrameRotation(double time) {
     double theta = M_2_PI*time/time_per_revolution_;
     return tonav::Quaternion(0, 0, std::sin(theta/2), std::cos(theta/2)).conjugate();
 }

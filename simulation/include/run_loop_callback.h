@@ -7,7 +7,7 @@
 
 class RunLoopCallback {
 public:
-    virtual void runLoopCallback(float time) = 0;
+    virtual void runLoopCallback(double time) = 0;
 };
 
 #endif //TONAV_RUN_LOOP_CALLBACK_H

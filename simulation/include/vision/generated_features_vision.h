@@ -16,7 +16,7 @@ public:
     
     void initialize(VioSimulation *simulation);
     
-    void runLoopCallback(float time);
+    void runLoopCallback(double time);
     
     cv::Matx33d getCameraCalibrationMatrix() const;
     float getUpdateFrequency() const;
