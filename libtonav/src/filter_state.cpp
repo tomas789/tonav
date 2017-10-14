@@ -12,61 +12,63 @@
 #include "quaternion.h"
 #include "filter.h"
 
+namespace tonav {
+
 FilterState::FilterState(std::shared_ptr<const Calibration> calibration)
-    : calibration_(calibration), poses_(calibration->getMaxCameraPoses() + 1) { }
+    : calibration_(calibration), poses_(calibration->getMaxCameraPoses() + 1) {}
 
 double FilterState::time() const {
     return body_state_->time();
 }
 
-const Quaternion& FilterState::getOrientationInGlobalFrame() const {
+const Quaternion &FilterState::getOrientationInGlobalFrame() const {
     assert(body_state_.get());
     return body_state_->getOrientationInGlobalFrame();
 }
 
-const Eigen::Vector3d& FilterState::getPositionInGlobalFrame() const {
+const Eigen::Vector3d &FilterState::getPositionInGlobalFrame() const {
     assert(body_state_.get());
     return body_state_->getPositionInGlobalFrame();
 }
 
-const Eigen::Vector3d& FilterState::getVelocityInGlobalFrame() const {
+const Eigen::Vector3d &FilterState::getVelocityInGlobalFrame() const {
     assert(body_state_.get());
     return body_state_->getVelocityInGlobalFrame();
 }
 
-const Eigen::Matrix3d& FilterState::getGyroscopeShapeMatrix() const {
+const Eigen::Matrix3d &FilterState::getGyroscopeShapeMatrix() const {
     return gyroscope_shape_;
 }
 
-const Eigen::Matrix3d& FilterState::getGyroscopeAccelerationSensitivityMatrix() const {
+const Eigen::Matrix3d &FilterState::getGyroscopeAccelerationSensitivityMatrix() const {
     return gyroscope_acceleration_sensitivity_;
 }
 
-const Eigen::Matrix3d& FilterState::getAccelerometerShapeMatrix() const {
+const Eigen::Matrix3d &FilterState::getAccelerometerShapeMatrix() const {
     return accelerometer_shape_;
 }
 
-void FilterState::orientationCorrection(const Quaternion& orientation) {
+void FilterState::orientationCorrection(const Quaternion &orientation) {
     body_state_->orientationCorrection(orientation);
 }
 
-void FilterState::positionCorrection(const Eigen::Vector3d& position) {
+void FilterState::positionCorrection(const Eigen::Vector3d &position) {
     body_state_->positionCorrection(position);
 }
 
-void FilterState::velocityCorrection(const Eigen::Vector3d& velocity) {
+void FilterState::velocityCorrection(const Eigen::Vector3d &velocity) {
     body_state_->velocityCorrection(velocity);
 }
 
-CameraPoseBuffer& FilterState::poses() {
+CameraPoseBuffer &FilterState::poses() {
     return poses_;
 }
 
-const CameraPoseBuffer& FilterState::poses() const {
+const CameraPoseBuffer &FilterState::poses() const {
     return poses_;
 }
 
-void FilterState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
+void FilterState::updateWithStateDelta(const Eigen::VectorXd &delta_x) {
     assert(!std::isnan(delta_x.maxCoeff()));
     
     body_state_->updateWithStateDelta(delta_x.topRows(9));
@@ -101,6 +103,8 @@ void FilterState::updateWithStateDelta(const Eigen::VectorXd& delta_x) {
     camera_readout_ += delta_x(55);
     
     for (std::size_t j = 0; j < poses().size(); ++j) {
-        poses()[j].updateWithStateDelta(delta_x.segment<9>(56+j*9));
+        poses()[j].updateWithStateDelta(delta_x.segment<9>(56 + j * 9));
     }
+}
+
 }

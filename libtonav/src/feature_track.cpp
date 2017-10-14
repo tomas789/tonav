@@ -5,8 +5,11 @@
 #include "feature_track.h"
 
 #include <opencv2/core/core.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 #include "exceptions/general_exception.h"
+
+namespace tonav {
 
 FeatureTrack::FeatureTrack() {
     static int feature_id = 0;
@@ -16,7 +19,7 @@ FeatureTrack::FeatureTrack() {
     was_used_for_residualization_ = false;
 }
 
-const Eigen::Vector2d& FeatureTrack::operator[](std::size_t i) const {
+const Eigen::Vector2d &FeatureTrack::operator[](std::size_t i) const {
     assert(i < positions_.size());
     return positions_[i];
 }
@@ -57,14 +60,16 @@ int FeatureTrack::getFeatureId() const {
     return feature_id_;
 }
 
-void FeatureTrack::drawFeatureTrack(cv::Mat& image, cv::Scalar color, int thickness) const {
+void FeatureTrack::drawFeatureTrack(cv::Mat &image, cv::Scalar color, int thickness) const {
     if (positions_.size() < 2) {
         return;
     }
     
     for (std::size_t i = 1; i < positions_.size(); ++i) {
-        const Eigen::Vector2d& from = positions_[i-1];
-        const Eigen::Vector2d& to = positions_[i];
+        const Eigen::Vector2d &from = positions_[i - 1];
+        const Eigen::Vector2d &to = positions_[i];
         cv::line(image, cv::Point(from(0), from(1)), cv::Point(to(0), to(1)), color, thickness);
     }
+}
+
 }

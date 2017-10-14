@@ -1,9 +1,9 @@
 #include "tonav.h"
 
 #include <cmath>
-#include <ros/ros.h>
 #include <limits>
 #include <mutex>
+#include <opencv2/core/core.hpp>
 
 #include "camera_item.h"
 #include "imu_device.h"
@@ -11,8 +11,10 @@
 #include "stats.h"
 #include "stats_timer.h"
 
-Tonav::Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Vector3d& p_B_C)
-        : state_initializer_(new StateInitializer), filter_(calibration, state_initializer_) {
+namespace tonav {
+
+Tonav::Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Vector3d &p_B_C)
+    : state_initializer_(new StateInitializer), filter_(calibration, state_initializer_) {
     filter_.setInitialBodyPositionInCameraFrame(p_B_C);
 }
 
@@ -21,7 +23,7 @@ bool Tonav::updateAcceleration(double time, Eigen::Vector3d accel) {
         double last_accelerometer_time = lastAccelerometerTime();
         if (time <= last_accelerometer_time) {
             std::cout << "Got accelerometer measurement from time " << time << ", last item time is "
-                << last_accelerometer_time << ". Skipping." << std::endl;
+                      << last_accelerometer_time << ". Skipping." << std::endl;
             return false;
         }
     }
@@ -36,7 +38,7 @@ bool Tonav::updateRotationRate(double time, Eigen::Vector3d gyro) {
         double last_gyroscope_time = lastGyroscopeTime();
         if (time <= last_gyroscope_time) {
             std::cout << "Got gyroscope measurement from time " << time << ", last item time is " << last_gyroscope_time
-                << ". Skipping." << std::endl;
+                      << ". Skipping." << std::endl;
             return false;
         }
     }
@@ -46,7 +48,7 @@ bool Tonav::updateRotationRate(double time, Eigen::Vector3d gyro) {
     return tryPropagate();
 }
 
-void Tonav::updateImage(double time, const cv::Mat& image) {
+void Tonav::updateImage(double time, const cv::Mat &image) {
     if (!filter_.isInitialized()) {
         return;
     }
@@ -89,23 +91,23 @@ double Tonav::time() const {
     return filter_.time();
 }
 
-const Filter& Tonav::filter() const {
+const Filter &Tonav::filter() const {
     return filter_;
 }
 
-const FilterState& Tonav::state() const {
+const FilterState &Tonav::state() const {
     return filter_.state();
 }
 
-void Tonav::orientationCorrection(const Quaternion& orientation) {
+void Tonav::orientationCorrection(const Quaternion &orientation) {
     filter_.orientationCorrection(orientation);
 }
 
-void Tonav::positionCorrection(const Eigen::Vector3d& position) {
+void Tonav::positionCorrection(const Eigen::Vector3d &position) {
     filter_.positionCorrection(position);
 }
 
-void Tonav::velocityCorrection(const Eigen::Vector3d& velocity) {
+void Tonav::velocityCorrection(const Eigen::Vector3d &velocity) {
     filter_.velocityCorrection(velocity);
 }
 
@@ -126,7 +128,7 @@ std::vector<Eigen::Vector3d> Tonav::featurePointCloud() const {
 }
 
 Tonav::~Tonav() {
-    Stats& stats = Stats::getGlobalInstance();
+    Stats &stats = Stats::getGlobalInstance();
     std::cout << " --== STATS ==--" << std::endl;
     std::cout << stats.str() << std::endl;
 }
@@ -319,15 +321,17 @@ void Tonav::incrementBufferPointer() {
 }
 
 double Tonav::lastGyroscopeTime() const {
-    const ImuItem& last_gyro = gyro_buffer_.back();
+    const ImuItem &last_gyro = gyro_buffer_.back();
     return last_gyro.getTime();
 }
 
 double Tonav::lastAccelerometerTime() const {
-    const ImuItem& last_accel = accel_buffer_.back();
+    const ImuItem &last_accel = accel_buffer_.back();
     return last_accel.getTime();
 }
 
 double Tonav::getMinimalNextPropagationTime() const {
     return std::max(it_accel_->getTime(), it_gyro_->getTime());
+}
+
 }

@@ -18,12 +18,16 @@
 #include "state_initializer.h"
 #include "quaternion.h"
 
+namespace cv {
+class Mat;
+}
+
+namespace tonav {
+
 class ImuItem;
+
 class CameraReprojectionFunctor;
 
-namespace cv {
-    class Mat;
-}
 
 /**
  * @brief Implementation of MSCKF.
@@ -36,10 +40,11 @@ namespace cv {
 class Filter {
 public:
     friend class CameraReprojectionFunctor;
-    friend std::ostream& operator<< (std::ostream& out, Filter& filter);
+    
+    friend std::ostream &operator<<(std::ostream &out, Filter &filter);
     
     Filter(std::shared_ptr<const Calibration> calibration, std::shared_ptr<const StateInitializer> state_initializer);
-
+    
     /**
      * @brief Propagate filter using accelerometer and gyroscope measurements
      *
@@ -47,7 +52,7 @@ public:
      * @param accel Accelerometer measurement.
      * @param gyro Gyroscope measurement.
      */
-    void stepInertial(double time, const ImuItem& accel, const ImuItem& gyro);
+    void stepInertial(double time, const ImuItem &accel, const ImuItem &gyro);
     
     /**
      * @brief Update filter using camera image.
@@ -55,11 +60,13 @@ public:
      * @param time Arrival time of camera image.
      * @param frame Image captured from camera.
      */
-    void stepCamera(double time, cv::Mat& frame, const ImuBuffer::iterator& hint_gyro, const ImuBuffer::iterator& hint_accel);
-
+    void stepCamera(
+        double time, cv::Mat &frame, const ImuBuffer::iterator &hint_gyro, const ImuBuffer::iterator &hint_accel
+    );
+    
     /** @brief Get current estimated position */
     Eigen::Vector3d getCurrentPosition();
-
+    
     /**
      * @brief Get current estimated attitude
      *
@@ -103,39 +110,42 @@ public:
     
     Eigen::Vector3d getPositionOfBodyInCameraFrame() const;
     
-    void orientationCorrection(const Quaternion& orientation);
-    void positionCorrection(const Eigen::Vector3d& position);
-    void velocityCorrection(const Eigen::Vector3d& velocity);
+    void orientationCorrection(const Quaternion &orientation);
+    
+    void positionCorrection(const Eigen::Vector3d &position);
+    
+    void velocityCorrection(const Eigen::Vector3d &velocity);
     
     /**
      * @brief Get a reference to currently valid filter state.
      */
-    const FilterState& state() const;
-
-    const Calibration& calibration() const;
+    const FilterState &state() const;
     
-    void setInitialBodyPositionInCameraFrame(const Eigen::Vector3d& position);
+    const Calibration &calibration() const;
+    
+    void setInitialBodyPositionInCameraFrame(const Eigen::Vector3d &position);
     
     std::vector<Eigen::Vector3d> featurePointCloud() const;
     
-    const CameraAlgorithms& cameraAlgorithms() const;
+    const CameraAlgorithms &cameraAlgorithms() const;
+
 protected:
     std::shared_ptr<const Calibration> calibration_;
     std::shared_ptr<const StateInitializer> state_initializer_;
-        
+    
     Eigen::Vector3d initial_body_position_in_camera_frame_ = Eigen::Vector3d::Zero();
-
+    
     /** @brief Initialization status. For delayed initialization. */
     bool is_initialized_ = false;
-
+    
     /** @brief Filter state \f$ \mathbf{x}_k \f$ */
     std::shared_ptr<FilterState> filter_state_;
-
+    
     /** @brief Filter covariance matrix \f$ \boldsymbol{\Sigma}_k \f$ */
     Eigen::MatrixXd filter_covar_;
-
+    
     FeatureTracker feature_tracker_;
-
+    
     FeatureTracker::feature_track_list features_tracked_;
     
     CameraAlgorithms camera_algorithms_;
@@ -150,8 +160,8 @@ protected:
      *
      * This method is here to make it protected.
      */
-    FilterState& state();
-
+    FilterState &state();
+    
     /**
      * @brief Perform delayed initialization.
      *
@@ -160,8 +170,8 @@ protected:
      * I call it delayed initialization because it is performed at the time of first imu step. Not as soon
      * as class instance is created.
      */
-    void initialize(double time, const ImuItem& accel, const ImuItem& gyro);
-
+    void initialize(double time, const ImuItem &accel, const ImuItem &gyro);
+    
     /**
      * @brief Calculate rotation estimate.
      *
@@ -170,8 +180,9 @@ protected:
      *
      * @return \f$ \prescript{B}{}{\boldsymbol{\hat{\omega}}}(t) \f$
      */
-    Eigen::Vector3d computeRotationEstimate(const Eigen::Vector3d& gyro, const Eigen::Vector3d& acceleration_estimate) const;
-
+    Eigen::Vector3d
+    computeRotationEstimate(const Eigen::Vector3d &gyro, const Eigen::Vector3d &acceleration_estimate) const;
+    
     /**
      * @brief Calculate acceleration estimate.
      *
@@ -180,8 +191,8 @@ protected:
      *
      * @return \f$ \prescript{B}{}{\boldsymbol{\hat{\omega}}}(t) \f$
      */
-    Eigen::Vector3d computeAccelerationEstimate(const Eigen::Vector3d& accel) const;
-
+    Eigen::Vector3d computeAccelerationEstimate(const Eigen::Vector3d &accel) const;
+    
     /**
      * @brief Augment filter state.
      *
@@ -191,25 +202,30 @@ protected:
      *
      * @todo Implement this
      */
-    void augment(const ImuBuffer::iterator& hint_gyro, const ImuBuffer::iterator& hint_accel);
-
+    void augment(const ImuBuffer::iterator &hint_gyro, const ImuBuffer::iterator &hint_accel);
+    
     /**
      * @brief Remove unused camera poses from filter state.
      *
      * Unused camera poses are those containing no currently tracked feature. Note that camera poses itself does not
      * store tracked features. It is done in `FeatureTracker` class.
      */
-    void pruneCameraPoses(const FeatureTracker::feature_track_list& residualized_features);
+    void pruneCameraPoses(const FeatureTracker::feature_track_list &residualized_features);
     
-    FeatureRezidualizationResult rezidualizeFeature(const FeatureTrack& feature_track, cv::Mat& frame) const;
+    FeatureRezidualizationResult rezidualizeFeature(const FeatureTrack &feature_track, cv::Mat &frame) const;
     
-    void performUpdate(const FeatureTracker::feature_track_list& features_to_rezidualize, cv::Mat& frame);
+    void performUpdate(const FeatureTracker::feature_track_list &features_to_rezidualize, cv::Mat &frame);
     
-    bool gatingTest(const Eigen::VectorXd& r_0_i, const Eigen::MatrixXd H_0_i);
+    bool gatingTest(const Eigen::VectorXd &r_0_i, const Eigen::MatrixXd H_0_i);
     
-    void updateState(const Eigen::MatrixXd& T_H, const Eigen::VectorXd& r_q, const Eigen::MatrixXd& H, const Eigen::VectorXd& r);
+    void updateState(
+        const Eigen::MatrixXd &T_H, const Eigen::VectorXd &r_q, const Eigen::MatrixXd &H, const Eigen::VectorXd &r
+    );
 };
 
-std::ostream& operator<< (std::ostream& out, Filter& filter);
+std::ostream &operator<<(std::ostream &out, Filter &filter);
+
+}
+
 
 #endif //TONAV_FILTER_H

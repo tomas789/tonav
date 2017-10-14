@@ -5,24 +5,31 @@
 
 #include "stats_node.h"
 
+namespace tonav {
+
 class Stats {
 public:
     Stats();
     
-    static Stats& getGlobalInstance();
+    static Stats &getGlobalInstance();
     
-    StatsNode& operator[](std::string key);
-    StatsNode& current();
+    StatsNode &operator[](std::string key);
     
-    void openLevel(const std::string& name);
+    StatsNode &current();
+    
+    void openLevel(const std::string &name);
+    
     void closeCurrentLevel();
     
     std::string str() const;
+
 protected:
     static std::unique_ptr<Stats> instance_;
     
     StatsNode stats_tree_;
-    StatsNode* current_node_;
+    StatsNode *current_node_;
 };
+
+}
 
 #endif //TONAV_STATS_H

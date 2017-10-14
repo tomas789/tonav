@@ -10,27 +10,30 @@
 
 #include "exceptions/general_exception.h"
 
-FrameFeatures FrameFeatures::fromImage(cv::Ptr<cv::FeatureDetector> detector,
-        cv::Ptr<cv::DescriptorExtractor> extractor, cv::Mat& image) {
-    FrameFeatures frame_features;
+namespace tonav {
 
+FrameFeatures FrameFeatures::fromImage(
+    cv::Ptr<cv::FeatureDetector> detector,
+    cv::Ptr<cv::DescriptorExtractor> extractor, cv::Mat &image
+) {
+    FrameFeatures frame_features;
+    
     assert(image.channels() == 3);
     
     cv::Mat gray = FrameFeatures::toGray(image);
     frame_features.detectKeypoints(detector, gray);
     frame_features.computeDescriptors(extractor, gray);
-
+    
     frame_features.drawFeatures(image);
-
+    
     return frame_features;
 }
 
-cv::Mat FrameFeatures::toGray(const cv::Mat& image) {
+cv::Mat FrameFeatures::toGray(const cv::Mat &image) {
     switch (image.channels()) {
         case 1:
             return image;
-        case 3:
-        {
+        case 3: {
             cv::Mat gray;
             cv::cvtColor(image, gray, CV_BGR2GRAY);
             return gray;
@@ -40,24 +43,24 @@ cv::Mat FrameFeatures::toGray(const cv::Mat& image) {
     }
 }
 
-void FrameFeatures::drawFeatures(cv::Mat& image, cv::Scalar color, double scale_factor) {
+void FrameFeatures::drawFeatures(cv::Mat &image, cv::Scalar color, double scale_factor) {
     int radius = 2;
-    for (const cv::KeyPoint& kpt : keypoints_) {
-        int x = kpt.pt.x/scale_factor;
-        int y = kpt.pt.y/scale_factor;
-        cv::line(image, cv::Point(x-radius, y), cv::Point(x+radius, y), color);
-        cv::line(image, cv::Point(x, y-radius), cv::Point(x, y+radius), color);
-        cv::rectangle(image, cv::Point(x-radius-2, y-radius-2), cv::Point(x+radius+2, y+radius+2), color);
+    for (const cv::KeyPoint &kpt : keypoints_) {
+        int x = kpt.pt.x / scale_factor;
+        int y = kpt.pt.y / scale_factor;
+        cv::line(image, cv::Point(x - radius, y), cv::Point(x + radius, y), color);
+        cv::line(image, cv::Point(x, y - radius), cv::Point(x, y + radius), color);
+        cv::rectangle(image, cv::Point(x - radius - 2, y - radius - 2), cv::Point(x + radius + 2, y + radius + 2), color);
     }
 }
 
 
 void FrameFeatures::detectKeypoints(cv::Ptr<cv::FeatureDetector> detector, cv::Mat gray) {
-     detector->detect(gray, keypoints_);
+    detector->detect(gray, keypoints_);
 }
 
 void FrameFeatures::computeDescriptors(cv::Ptr<cv::DescriptorExtractor> extractor, cv::Mat gray) {
-     extractor->compute(gray, keypoints_, descriptors_);
+    extractor->compute(gray, keypoints_, descriptors_);
 }
 
 std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matcher, const FrameFeatures &other, float threshold) {
@@ -102,12 +105,12 @@ const std::vector<cv::KeyPoint> &FrameFeatures::keypoints() const {
     return keypoints_;
 }
 
-double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch>& matches) const {
+double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch> &matches) const {
     double min_distance = 100;
     double max_distance = 0;
     double mean_distance = 0;
     for (std::size_t i = 0; i < matches.size(); ++i) {
-        const cv::DMatch& match = matches[i];
+        const cv::DMatch &match = matches[i];
         mean_distance += match.distance;
         if (match.distance < min_distance) {
             min_distance = match.distance;
@@ -117,14 +120,7 @@ double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch>
         }
     }
     mean_distance /= matches.size();
-    return std::max(2*min_distance, 5.0);
+    return std::max(2 * min_distance, 5.0);
 }
 
-
-
-
-
-
-
-
-
+}

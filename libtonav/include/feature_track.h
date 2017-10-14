@@ -9,21 +9,26 @@
 #include <vector>
 #include <opencv2/core/core.hpp>
 
+namespace tonav {
+
 class FeatureTrack {
 public:
     FeatureTrack();
     
-    const Eigen::Vector2d& operator[] (std::size_t i) const;
-
+    const Eigen::Vector2d &operator[](std::size_t i) const;
+    
     void addFeaturePosition(double x, double y);
+    
     void revertLastPosition();
-
+    
     std::size_t posesTrackedCount() const;
-
+    
     bool isOutOfView() const;
+    
     void setOutOfView();
     
     bool wasUsedForResidualization() const;
+    
     void setWasUsedForResidualization();
     
     /**
@@ -33,13 +38,15 @@ public:
      */
     int getFeatureId() const;
     
-    void drawFeatureTrack(cv::Mat& image, cv::Scalar color, int thickness) const;
-    
+    void drawFeatureTrack(cv::Mat &image, cv::Scalar color, int thickness) const;
+
 private:
     int feature_id_;
     bool is_out_of_view_;
     bool was_used_for_residualization_;
     std::vector<Eigen::Vector2d> positions_;
 };
+
+}
 
 #endif //TONAV_FEATURE_TRACK_H

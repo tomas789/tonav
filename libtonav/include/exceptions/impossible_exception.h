@@ -9,16 +9,20 @@
 
 #include "exceptions/base_exception.h"
 
+namespace tonav {
+
 class ImpossibleException : public BaseException {
 public:
-    ImpossibleException(const std::string& msg);
-
-    virtual const char* what() const noexcept;
-
+    ImpossibleException(const std::string &msg);
+    
+    virtual const char *what() const noexcept;
+    
     ~ImpossibleException();
 
 private:
     std::string msg_;
 };
+
+}
 
 #endif //TONAV_IMPOSSIBLE_EXCEPTION_H

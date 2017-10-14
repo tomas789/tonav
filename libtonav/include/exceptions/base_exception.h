@@ -3,10 +3,15 @@
 
 #include <exception>
 
+namespace tonav {
+
 class BaseException : public std::exception {
 public:
     BaseException();
-    virtual const char* what() const noexcept = 0;
+    
+    virtual const char *what() const noexcept = 0;
 };
+
+}
 
 #endif //TONAV_BASE_EXCEPTION_H

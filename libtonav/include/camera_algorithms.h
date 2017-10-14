@@ -3,7 +3,10 @@
 
 #include <Eigen/Core>
 
+namespace tonav {
+
 class Filter;
+
 class FeatureTrack;
 
 enum InitialGuessMethod {
@@ -12,13 +15,15 @@ enum InitialGuessMethod {
 
 class CameraAlgorithms {
 public:
-    CameraAlgorithms(const Filter* filter_);
+    CameraAlgorithms(const Filter *filter_);
     
     /**
      * @brief Initial guess of global feature position from its two measurements.
      */
-    Eigen::Vector3d initialGuessFeaturePosition(const Eigen::Vector2d& z0, const Eigen::Vector2d& z1,
-            const Eigen::Matrix3d& R_C1_C0, const Eigen::Vector3d& p_C1_C0, InitialGuessMethod method) const;
+    Eigen::Vector3d initialGuessFeaturePosition(
+        const Eigen::Vector2d &z0, const Eigen::Vector2d &z1,
+        const Eigen::Matrix3d &R_C1_C0, const Eigen::Vector3d &p_C1_C0, InitialGuessMethod method
+    ) const;
     
     /**
      * @brief Calculate \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$
@@ -29,7 +34,7 @@ public:
      *
      * @return Estimate for \f$ {}^{G}\mathbf{p}_{\mathbf{f}_i} \f$.
      */
-    std::pair<bool, Eigen::Vector3d> triangulateGlobalFeaturePosition(const FeatureTrack& feature_track) const;
+    std::pair<bool, Eigen::Vector3d> triangulateGlobalFeaturePosition(const FeatureTrack &feature_track) const;
     
     /**
      * @brief Transform inverse depth parametrized estimate of feature's
@@ -37,8 +42,10 @@ public:
      *
      * It is implementation of function \f$\mathbf{g}_i\f$.
      */
-    Eigen::Vector3d transformFeatureInverseDepthEstimateToCameraFrame(const FeatureTrack& feature_track, std::size_t i,
-            const Eigen::Vector3d& est) const;
+    Eigen::Vector3d transformFeatureInverseDepthEstimateToCameraFrame(
+        const FeatureTrack &feature_track, std::size_t i,
+        const Eigen::Vector3d &est
+    ) const;
     
     /**
      * @brief Implementation of camera model.
@@ -48,15 +55,17 @@ public:
      *
      * It is implementation of function \f$\mathbf{h}\f$
      */
-    Eigen::Vector2d cameraProject(const Eigen::Vector3d& p) const;
+    Eigen::Vector2d cameraProject(const Eigen::Vector3d &p) const;
     
     /**
      * @brief Compute jacobian of camera projection function.
      */
-    Eigen::Matrix<double, 2, 3> cameraProjectJacobian(const Eigen::Vector3d& p) const;
-    
+    Eigen::Matrix<double, 2, 3> cameraProjectJacobian(const Eigen::Vector3d &p) const;
+
 private:
-    const Filter* filter_;
+    const Filter *filter_;
 };
+
+}
 
 #endif //TONAV_CAMERA_ALGORITHMS_H

@@ -8,22 +8,29 @@
 #include <string>
 #include <opencv2/core/core.hpp>
 
+namespace tonav {
+
 class CameraItem {
 public:
     CameraItem();
-    CameraItem(double time, const cv::Mat& image);
-    CameraItem(const CameraItem& other) = default;
     
-    CameraItem& operator=(const CameraItem& oher) = default;
+    CameraItem(double time, const cv::Mat &image);
+    
+    CameraItem(const CameraItem &other) = default;
+    
+    CameraItem &operator=(const CameraItem &oher) = default;
     
     operator bool() const;
     
     void setIsProcessed();
+    
     bool wasProcessed() const;
-
+    
     double getTime() const;
-    cv::Mat& getImage();
-    const cv::Mat& cgetImage() const;
+    
+    cv::Mat &getImage();
+    
+    const cv::Mat &cgetImage() const;
 
 private:
     bool is_valid_;
@@ -31,5 +38,7 @@ private:
     cv::Mat image_;
     bool was_processed_;
 };
+
+}
 
 #endif //TONAV_CAMERA_ITEM_H

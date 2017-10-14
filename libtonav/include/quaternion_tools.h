@@ -7,10 +7,15 @@
 
 #include <Eigen/Core>
 
+namespace tonav {
+
 class QuaternionTools {
 public:
-    static Eigen::Matrix3d crossMatrix(const Eigen::Vector3d& v);
-    static Eigen::Matrix4d bigOmegaMatrix(const Eigen::Vector3d& v);
+    static Eigen::Matrix3d crossMatrix(const Eigen::Vector3d &v);
+    
+    static Eigen::Matrix4d bigOmegaMatrix(const Eigen::Vector3d &v);
 };
+
+}
 
 #endif //TONAV_QUATERNION_TOOLS_H

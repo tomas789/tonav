@@ -8,7 +8,9 @@
 
 #include "exceptions/impossible_exception.h"
 
-std::ostream& operator<< (std::ostream& out, const ImuDevice& device) {
+namespace tonav {
+
+std::ostream &operator<<(std::ostream &out, const ImuDevice &device) {
     switch (device) {
         case ImuDevice::ACCELEROMETER:
             out << "IMU::Accelerometer";
@@ -20,4 +22,6 @@ std::ostream& operator<< (std::ostream& out, const ImuDevice& device) {
             throw ImpossibleException("Unknown ImuDevice");
     }
     return out;
+}
+
 }

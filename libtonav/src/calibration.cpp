@@ -4,7 +4,6 @@
 
 #include "calibration.h"
 
-#include <boost/filesystem.hpp>
 #include <cctype>
 #include <Eigen/Core>
 #include <fstream>
@@ -18,11 +17,13 @@
 #include "exceptions/calibration_file_error.h"
 #include "quaternion.h"
 
+namespace tonav {
+
 Calibration::Calibration()
-: body_to_camera_rotation_(Quaternion::identity()) {
+    : body_to_camera_rotation_(Quaternion::identity()) {
 }
 
-void Calibration::setCameraFocalPoint(const Eigen::Vector2d& focal_length) {
+void Calibration::setCameraFocalPoint(const Eigen::Vector2d &focal_length) {
     focal_point_ = focal_length;
 }
 
@@ -30,7 +31,7 @@ Eigen::Vector2d Calibration::getCameraFocalPoint() const {
     return focal_point_;
 }
 
-void Calibration::setCameraOpticalCenter(const Eigen::Vector2d& optical_center) {
+void Calibration::setCameraOpticalCenter(const Eigen::Vector2d &optical_center) {
     optical_center_ = optical_center;
 }
 
@@ -38,7 +39,7 @@ Eigen::Vector2d Calibration::getCameraOpticalCenter() const {
     return optical_center_;
 }
 
-void Calibration::setCameraRadialDistortionParams(const Eigen::Vector3d& distortion_params) {
+void Calibration::setCameraRadialDistortionParams(const Eigen::Vector3d &distortion_params) {
     radial_distortion_ = distortion_params;
 }
 
@@ -46,7 +47,7 @@ Eigen::Vector3d Calibration::getCameraRadialDistortionParams() const {
     return radial_distortion_;
 }
 
-void Calibration::setCameraTangentialDistortionParams(const Eigen::Vector2d& distortion_params) {
+void Calibration::setCameraTangentialDistortionParams(const Eigen::Vector2d &distortion_params) {
     tangential_distortion_ = distortion_params;
 }
 
@@ -186,7 +187,7 @@ double Calibration::getCameraReadoutTimeNoise() const {
     return camera_readout_time_noise_;
 }
 
-void Calibration::setBodyToCameraRotation(const Quaternion& rotation) {
+void Calibration::setBodyToCameraRotation(const Quaternion &rotation) {
     body_to_camera_rotation_ = rotation;
 }
 
@@ -195,32 +196,32 @@ Quaternion Calibration::getBodyToCameraRotation() const {
 }
 
 const std::vector<std::string> Calibration::allowed_params_ = {
-        "Camera.focalPoint", "Camera.opticalCenter",
-        "Camera.radialDistortion", "Camera.tangentialDistortion",
-        "Camera.cameraDelayTime", "Camera.cameraReadoutTime",
-        "Camera.imageNoiseVariance",
-        "ORBextractor.nFeatures",
-        "Imu.Ts", "Imu.Tg", "Imu.Ta", "Imu.gyroscopeBias", "Imu.accelerometerBias", "Imu.globalGravity",
-        "Imu.accelerometerVariance", "Imu.gyroscopeVariance",
-        "Imu.accelerometerRandomWalkVariance", "Imu.gyroscopeRandomWalkVariance",
-        "Filter.maxCameraPoses", "Filter.maxTriangulationIterations",
-        "Noise.orientation", "Noise.position", "Noise.velocity",
-        "Noise.gyroscopeBias", "Noise.accelerometerBias",
-        "Noise.Ts", "Noise.Tg", "Noise.Ta",
-        "Noise.positionOfBodyInCameraFrame",
-        "Noise.focalPoint", "Noise.opticalCenter",
-        "Noise.radialDistortion", "Noise.tangentialDistortion",
-        "Noise.cameraDelayTime", "Noise.cameraReadoutTime"
+    "Camera.focalPoint", "Camera.opticalCenter",
+    "Camera.radialDistortion", "Camera.tangentialDistortion",
+    "Camera.cameraDelayTime", "Camera.cameraReadoutTime",
+    "Camera.imageNoiseVariance",
+    "ORBextractor.nFeatures",
+    "Imu.Ts", "Imu.Tg", "Imu.Ta", "Imu.gyroscopeBias", "Imu.accelerometerBias", "Imu.globalGravity",
+    "Imu.accelerometerVariance", "Imu.gyroscopeVariance",
+    "Imu.accelerometerRandomWalkVariance", "Imu.gyroscopeRandomWalkVariance",
+    "Filter.maxCameraPoses", "Filter.maxTriangulationIterations",
+    "Noise.orientation", "Noise.position", "Noise.velocity",
+    "Noise.gyroscopeBias", "Noise.accelerometerBias",
+    "Noise.Ts", "Noise.Tg", "Noise.Ta",
+    "Noise.positionOfBodyInCameraFrame",
+    "Noise.focalPoint", "Noise.opticalCenter",
+    "Noise.radialDistortion", "Noise.tangentialDistortion",
+    "Noise.cameraDelayTime", "Noise.cameraReadoutTime"
 };
 
-std::shared_ptr<Calibration> Calibration::fromPath(boost::filesystem::path fname) {
+std::shared_ptr<Calibration> Calibration::fromPath(std::string fname) {
     std::shared_ptr<Calibration> calib = std::make_shared<Calibration>();
-
+    
     std::ifstream file(fname.c_str());
     if (!file) {
         throw std::runtime_error("Failed to open configuration file.");
     }
-
+    
     int line_counter = 1;
     std::string line;
     std::map<std::string, std::string> params;
@@ -230,12 +231,12 @@ std::shared_ptr<Calibration> Calibration::fromPath(boost::filesystem::path fname
             line_counter += 1;
             continue;
         }
-
+        
         std::size_t delim_pos = line.find_first_of(":");
         if (delim_pos == std::string::npos) {
             throw CalibrationFileError(line_counter, "Missing delimiter.");
         }
-
+        
         std::string key = line.substr(0, delim_pos);
         std::string value = line.substr(delim_pos + 1, std::string::npos);
         if (params.find(key) != std::end(params)) {
@@ -248,13 +249,13 @@ std::shared_ptr<Calibration> Calibration::fromPath(boost::filesystem::path fname
         param_loc[key] = line_counter;
         line_counter += 1;
     }
-    for (const std::string& allowed_param : allowed_params_) {
+    for (const std::string &allowed_param : allowed_params_) {
         if (params.find(allowed_param) == std::end(params)) {
             throw CalibrationFileError("Parameter " + allowed_param + " not set in configuration file.");
         }
     }
-
-    for (const std::pair<const std::string, std::string>& item : params) {
+    
+    for (const std::pair<const std::string, std::string> &item : params) {
         std::string key = item.first;
         std::string value = item.second;
         if (key == "Camera.focalPoint") {
@@ -401,7 +402,7 @@ std::shared_ptr<Calibration> Calibration::fromPath(boost::filesystem::path fname
             throw ImpossibleException("Non-exhaustive enumeration in camera calibration loading.");
         }
     }
-
+    
     return calib;
 }
 
@@ -415,7 +416,7 @@ bool Calibration::tryParseDouble(const std::string &value, double &out) {
             }
         }
         return true;
-    } catch(...) {
+    } catch (...) {
         return false;
     }
 }
@@ -430,13 +431,15 @@ bool Calibration::tryParseInt(const std::string &value, int &out) {
             }
         }
         return true;
-    } catch(...) {
+    } catch (...) {
         return false;
     }
 }
 
 bool Calibration::tryParseVector2d(const std::string &value, Eigen::Vector2d &out) {
-    enum class Expect { OPEN, MAT_ITEM, CLOSE, ONLY_WHITESPACE };
+    enum class Expect {
+        OPEN, MAT_ITEM, CLOSE, ONLY_WHITESPACE
+    };
     out = Eigen::Vector2d::Zero();
     Expect expect = Expect::OPEN;
     int item_counter = 0;
@@ -457,7 +460,7 @@ bool Calibration::tryParseVector2d(const std::string &value, Eigen::Vector2d &ou
                     out(item_counter) = item_parsed;
                     it += after_pos - 1;
                     item_counter += 1;
-                } catch(...) {
+                } catch (...) {
                     return false;
                 }
                 if (item_counter == 2) {
@@ -477,12 +480,14 @@ bool Calibration::tryParseVector2d(const std::string &value, Eigen::Vector2d &ou
                 break;
         }
     }
-
+    
     return true;
 }
 
 bool Calibration::tryParseVector3d(const std::string &value, Eigen::Vector3d &out) {
-    enum class Expect { OPEN, MAT_ITEM, CLOSE, ONLY_WHITESPACE };
+    enum class Expect {
+        OPEN, MAT_ITEM, CLOSE, ONLY_WHITESPACE
+    };
     out = Eigen::Vector3d::Zero();
     Expect expect = Expect::OPEN;
     int item_counter = 0;
@@ -503,7 +508,7 @@ bool Calibration::tryParseVector3d(const std::string &value, Eigen::Vector3d &ou
                     out(item_counter) = item_parsed;
                     it += after_pos - 1;
                     item_counter += 1;
-                } catch(...) {
+                } catch (...) {
                     return false;
                 }
                 if (item_counter == 3) {
@@ -528,7 +533,9 @@ bool Calibration::tryParseVector3d(const std::string &value, Eigen::Vector3d &ou
 
 
 bool Calibration::tryParseMatrix3d(const std::string &value, Eigen::Matrix3d &out) {
-    enum class Expect { OPEN, MAT_ITEM, LINE_SEP, CLOSE, ONLY_WHITESPACE };
+    enum class Expect {
+        OPEN, MAT_ITEM, LINE_SEP, CLOSE, ONLY_WHITESPACE
+    };
     out = Eigen::Matrix3d::Zero();
     Expect expect = Expect::OPEN;
     int item_counter = 0;
@@ -549,7 +556,7 @@ bool Calibration::tryParseMatrix3d(const std::string &value, Eigen::Matrix3d &ou
                     out(item_counter / 3, item_counter % 3) = item_parsed;
                     it += after_pos - 1;
                     item_counter += 1;
-                } catch(...) {
+                } catch (...) {
                     return false;
                 }
                 if (item_counter == 3 || item_counter == 6) {
@@ -576,7 +583,7 @@ bool Calibration::tryParseMatrix3d(const std::string &value, Eigen::Matrix3d &ou
                 break;
         }
     }
-
+    
     return true;
 }
 
@@ -585,57 +592,4 @@ bool Calibration::tryParseString(const std::string &value, std::string &out) {
     return true;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

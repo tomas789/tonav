@@ -12,6 +12,8 @@
 #include "imu_buffer.h"
 #include "quaternion.h"
 
+namespace tonav {
+
 class Calibration;
 class FilterState;
 class StateInitializer;
@@ -120,5 +122,7 @@ private:
     double lastGyroscopeTime() const;
     double lastAccelerometerTime() const;
 };
+
+}
 
 #endif //TONAV_TONAV_H

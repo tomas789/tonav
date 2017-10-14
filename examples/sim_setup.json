@@ -1,0 +1,32 @@
+{
+  "trajectory": {
+    "type": "circular",
+    "params": {
+      "radius": 2.0,
+      "time_per_revolution": 1
+    }
+  },
+  "imu": {
+    "type": "numerical_diff",
+    "params": {
+      "diff_time_delta": 0.000001,
+      "update_frequency": 100
+    }
+  },
+  "vision": {
+    "type": "generated_features",
+    "params": {
+      "minimum_number_of_features": 100,
+      "maximum_number_of_features": 200,
+      "update_frequency": 10,
+      "camera_model": {
+        "fx": 600,
+        "fy": 800,
+        "cx": 320,
+        "cy": 240,
+        "width": 640,
+        "height": 480
+      }
+    }
+  }
+}

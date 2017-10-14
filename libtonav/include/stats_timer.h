@@ -4,13 +4,19 @@
 #include <chrono>
 #include <string>
 
+namespace tonav {
+
 class StatsTimer {
 public:
-    StatsTimer(const std::string& key);
+    StatsTimer(const std::string &key);
+    
     ~StatsTimer();
+
 protected:
     std::chrono::time_point<std::chrono::high_resolution_clock> begin_;
     std::string key_;
 };
+
+}
 
 #endif //TONAV_STATS_TIMER_H

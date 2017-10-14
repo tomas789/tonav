@@ -10,10 +10,12 @@
 #include "calibration.h"
 #include "exceptions/general_exception.h"
 
+namespace tonav {
+
 CameraItem::CameraItem() : is_valid_(false) {
 }
 
-CameraItem::CameraItem(double time, const cv::Mat& image) : is_valid_(true) {
+CameraItem::CameraItem(double time, const cv::Mat &image) : is_valid_(true) {
     time_ = time;
     if (image.channels() == 1) {
         cv::cvtColor(image, image_, CV_GRAY2BGR);
@@ -40,10 +42,12 @@ double CameraItem::getTime() const {
     return time_;
 }
 
-cv::Mat& CameraItem::getImage() {
+cv::Mat &CameraItem::getImage() {
     return image_;
 }
 
-const cv::Mat& CameraItem::cgetImage() const {
+const cv::Mat &CameraItem::cgetImage() const {
     return image_;
+}
+
 }

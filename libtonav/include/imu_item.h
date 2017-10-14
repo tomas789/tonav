@@ -10,26 +10,41 @@
 
 #include "imu_device.h"
 
+namespace tonav {
+
 class ImuBuffer;
 
 class ImuItem {
 public:
     friend class ImuBuffer;
     
-    static ImuItem fromVector3d(double time, const ImuDevice& device, const Eigen::Vector3d& data);
-
+    inline static ImuItem fromVector3d(double time, const ImuDevice &device, const Eigen::Vector3d &data) {
+        assert(!std::isnan(data.maxCoeff()));
+        ImuItem item;
+        item.time_ = time;
+        item.device_ = device;
+        item.data_ = data;
+        return item;
+    }
+    
     ImuDevice getDevice() const;
-
+    
     double getTime() const;
-
+    
     double getX() const;
+    
     double getY() const;
+    
     double getZ() const;
+    
     Eigen::Vector3d getVector() const;
+
 private:
     ImuDevice device_;
     double time_;
     Eigen::Vector3d data_;
 };
+
+}
 
 #endif //TONAV_IMU_ITEM_H

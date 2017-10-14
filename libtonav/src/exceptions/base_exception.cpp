@@ -1,3 +1,7 @@
 #include "exceptions/base_exception.h"
 
-BaseException::BaseException() { }
+namespace tonav {
+
+BaseException::BaseException() {}
+
+}

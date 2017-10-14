@@ -4,6 +4,8 @@
 
 #include "imu_buffer.h"
 
+namespace tonav {
+
 ImuBuffer::iterator ImuBuffer::begin() {
     return std::begin(buffer_);
 }
@@ -20,19 +22,19 @@ ImuBuffer::const_iterator ImuBuffer::end() const {
     return std::end(buffer_);
 }
 
-ImuItem& ImuBuffer::front() {
+ImuItem &ImuBuffer::front() {
     return buffer_.front();
 }
 
-const ImuItem& ImuBuffer::front() const {
+const ImuItem &ImuBuffer::front() const {
     return buffer_.front();
 }
 
-ImuItem& ImuBuffer::back() {
+ImuItem &ImuBuffer::back() {
     return buffer_.back();
 }
 
-const ImuItem& ImuBuffer::back() const {
+const ImuItem &ImuBuffer::back() const {
     return buffer_.back();
 }
 
@@ -48,7 +50,7 @@ void ImuBuffer::push_back(const ImuItem &item) {
     buffer_.push_back(item);
 }
 
-void ImuBuffer::push_back(ImuItem&& item) {
+void ImuBuffer::push_back(ImuItem &&item) {
     buffer_.push_back(std::move(item));
 }
 
@@ -62,7 +64,7 @@ ImuItem ImuBuffer::interpolate(double time, const ImuItem &earlier, const ImuIte
     double time_delta = later.getTime() - earlier.getTime();
     double t = (time - earlier.getTime()) / time_delta;
     ImuDevice device = later.getDevice();
-    Eigen::Vector3d data = t * earlier.getVector() + (1-t) * later.getVector();
+    Eigen::Vector3d data = t * earlier.getVector() + (1 - t) * later.getVector();
     ImuItem interpolated = ImuItem::fromVector3d(time, device, data);
     
     assert(interpolated.getVector().norm() > 1e-100);
@@ -88,4 +90,6 @@ void ImuBuffer::shiftToInterpolationInterval(double time, ImuBuffer::iterator &i
     while (it->getTime() > time || time >= std::next(it)->getTime()) {
         std::advance(it, diff);
     }
+}
+
 }
