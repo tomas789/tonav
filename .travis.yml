@@ -5,6 +5,14 @@ compiler:
   - gcc
   - clang
 
+addons:
+  apt:
+    packages:
+    - cmake
+    - build-essentials
+    - eigen
+    - opencv
+
 before_script:
   - mkdir build
   - cd build
