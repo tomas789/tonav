@@ -56,12 +56,12 @@ void VioSimulation::cameraCallback(float time, cv::Mat frame) {
 void VioSimulation::runLoopCallback(float time) {
     std::cout << ((bool)sim_setup_) << std::endl;
     Trajectory& trajectory = sim_setup_->getTrajectory();
-    Eigen::Vector3d position = trajectory.getBodyPositionInGlobalFrame(time);
-    tonav::Quaternion orientation = trajectory.getGlobalToBodyFrameRotation(time);
+    Eigen::Vector3d p_B_G = trajectory.getCameraPositionInGlobalFrame(time);
+    tonav::Quaternion q_G_B = trajectory.getGlobalToCameraFrameRotation(time).conjugate();
     
     {
         std::lock_guard<std::mutex> _(ui_lock_);
-        window_->setWidgetPose("Camera", getPose(orientation, position));
+        window_->setWidgetPose("Camera", getPose(q_G_B, p_B_G));
     }
 }
 

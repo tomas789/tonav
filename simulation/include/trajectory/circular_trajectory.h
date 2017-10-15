@@ -22,6 +22,9 @@ public:
     Eigen::Vector3d getBodyPositionInGlobalFrame(double time);
     tonav::Quaternion getGlobalToBodyFrameRotation(double time);
     
+    Eigen::Vector3d getCameraPositionInGlobalFrame(double time);
+    tonav::Quaternion getGlobalToCameraFrameRotation(double time);
+    
     virtual ~CircularTrajectory();
 
 protected:
@@ -29,6 +32,9 @@ protected:
     
     double radius_;
     double time_per_revolution_;
+    
+    tonav::Quaternion q_C_B_;
+    Eigen::Vector3d p_C_B_;
 };
 
 #endif //TONAV_CIRCULAR_TRAJECTORY_H

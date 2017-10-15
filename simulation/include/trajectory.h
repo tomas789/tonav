@@ -24,6 +24,9 @@ public:
     virtual Eigen::Vector3d getBodyPositionInGlobalFrame(double time) = 0;
     virtual tonav::Quaternion getGlobalToBodyFrameRotation(double time) = 0;
     
+    virtual Eigen::Vector3d getCameraPositionInGlobalFrame(double time) = 0;
+    virtual tonav::Quaternion getGlobalToCameraFrameRotation(double time) = 0;
+    
     virtual ~Trajectory();
 
 protected:
