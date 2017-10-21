@@ -5,6 +5,8 @@
 #ifndef TONAV_GENERATED_FEATURES_VISION_H
 #define TONAV_GENERATED_FEATURES_VISION_H
 
+#include <opencv2/features2d.hpp>
+
 #include "../vision.h"
 #include "../run_loop_callback.h"
 
@@ -20,10 +22,22 @@ public:
     
     cv::Matx33d getCameraCalibrationMatrix() const;
     
+    cv::Feature2D& getFeature2D();
+    
     virtual ~GeneratedFeaturesVision();
 
 protected:
     GeneratedFeaturesVision(SimSetup *sim_setup);
+    
+    class VirtualFeatures: public cv::Feature2D {
+    public:
+        VirtualFeatures(GeneratedFeaturesVision& vision);
+        
+        virtual ~VirtualFeatures();
+    
+    private:
+        GeneratedFeaturesVision &vision_;
+    };
     
     VioSimulation *simulation_;
     
@@ -32,6 +46,10 @@ protected:
     Eigen::Vector2d image_dimensions_;
     int minimum_number_of_features_;
     int maximum_number_of_features_;
+    
+    VirtualFeatures feature2d_;
+    
+    std::vector<Eigen::Vector3d> visible_features_;
 };
 
 #endif //TONAV_GENERATED_FEATURES_VISION_H

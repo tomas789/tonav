@@ -60,22 +60,11 @@ tonav::Quaternion CircularTrajectory::getGlobalToCameraFrameRotation(double time
     return q_C_B_*q_B_G;
 }
 
-cv::Feature2D& CircularTrajectory::getFeature2D() {
-    return feature2d_;
-}
-
 CircularTrajectory::~CircularTrajectory() = default;
 
 CircularTrajectory::CircularTrajectory(SimSetup *sim_setup)
     : Trajectory(sim_setup),
-      q_C_B_(tonav::Quaternion::identity()),
-      feature2d_(*this) {
+      q_C_B_(tonav::Quaternion::identity()) {
     
 }
 
-CircularTrajectory::VirtualFeatures::VirtualFeatures(CircularTrajectory &trajectory)
-    : trajectory_(trajectory) {
-    
-}
-
-CircularTrajectory::VirtualFeatures::~VirtualFeatures() = default;

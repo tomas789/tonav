@@ -41,5 +41,20 @@ cv::Matx33d GeneratedFeaturesVision::getCameraCalibrationMatrix() const {
     );
 }
 
+cv::Feature2D& GeneratedFeaturesVision::getFeature2D() {
+    return feature2d_;
+}
+
 GeneratedFeaturesVision::~GeneratedFeaturesVision() = default;
-GeneratedFeaturesVision::GeneratedFeaturesVision(SimSetup *sim_setup) : Vision(sim_setup) { }
+
+GeneratedFeaturesVision::GeneratedFeaturesVision(SimSetup *sim_setup)
+    : Vision(sim_setup), feature2d_(*this) {
+    
+}
+
+GeneratedFeaturesVision::VirtualFeatures::VirtualFeatures(GeneratedFeaturesVision &vision)
+    : vision_(vision) {
+    
+}
+
+GeneratedFeaturesVision::VirtualFeatures::~VirtualFeatures() = default;

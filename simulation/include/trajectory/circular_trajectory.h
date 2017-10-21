@@ -6,7 +6,6 @@
 #define TONAV_CIRCULAR_TRAJECTORY_H
 
 #include <json.hpp>
-#include <opencv2/features2d.hpp>
 
 #include "../trajectory.h"
 
@@ -26,30 +25,16 @@ public:
     Eigen::Vector3d getCameraPositionInGlobalFrame(double time);
     tonav::Quaternion getGlobalToCameraFrameRotation(double time);
     
-    cv::Feature2D& getFeature2D();
-    
     virtual ~CircularTrajectory();
 
 protected:
     CircularTrajectory(SimSetup *sim_setup);
-    
-    class VirtualFeatures: public cv::Feature2D {
-    public:
-        VirtualFeatures(CircularTrajectory& trajectory);
-        
-        virtual ~VirtualFeatures();
-        
-    private:
-        CircularTrajectory &trajectory_;
-    };
     
     double radius_;
     double time_per_revolution_;
     
     tonav::Quaternion q_C_B_;
     Eigen::Vector3d p_C_B_;
-    
-    VirtualFeatures feature2d_;
 };
 
 #endif //TONAV_CIRCULAR_TRAJECTORY_H
