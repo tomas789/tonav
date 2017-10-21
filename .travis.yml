@@ -15,7 +15,7 @@ addons:
 before_install:
   - sudo add-apt-repository -y ppa:amarburg/opencv3
   - sudo apt update
-  - sudo apt install opencv
+  - sudo apt install opencv3
 
 before_script:
   - mkdir build
