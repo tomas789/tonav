@@ -7,12 +7,27 @@
 #include "vision/generated_features_vision.h"
 
 std::unique_ptr<Vision> Vision::load(SimSetup *sim_setup, const json& j) {
-    auto& type = j.at("type");
+    std::string type = j.at("type").get<std::string>();
+    json params = j.at("params");
+    
+    std::unique_ptr<Vision> vision;
+    
     if (type == "generated_features") {
-        return GeneratedFeaturesVision::load(sim_setup, j.at("params"));
+        vision = std::move(GeneratedFeaturesVision::load(sim_setup, params));
     } else {
-        throw "Unknown imu type.";
+        throw std::runtime_error("Unknown vision type.");
     }
+    
+    vision->update_frequency_ = params.at("update_frequency").get<double>();
+    if (vision->update_frequency_ <= 0) {
+        throw std::runtime_error("'update_frequency' has to be a positive number.");
+    }
+    
+    return std::move(vision);
+}
+
+double Vision::getUpdateFrequency() const {
+    return update_frequency_;
 }
 
 Vision::~Vision() = default;

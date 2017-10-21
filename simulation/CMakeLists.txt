@@ -7,6 +7,7 @@ set (SRC_FILES
         src/run_loop.cpp
         src/sim_setup.cpp
         src/sim_setup_component.cpp
+        src/tonav_calibration.cpp
         src/trajectory.cpp
         src/vio_simulation.cpp
         src/vision.cpp
@@ -14,7 +15,6 @@ set (SRC_FILES
 add_executable(tonav-simulation ${SRC_FILES})
 target_include_directories (tonav-simulation PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 target_link_libraries (tonav-simulation LINK_PUBLIC tonav)
-
 
 set_target_properties(tonav-simulation PROPERTIES
         CXX_STANDARD 11
@@ -27,6 +27,3 @@ target_include_directories (tonav-simulation PUBLIC ${OpenCV_INCLUDE_DIRS})
 target_link_libraries(tonav-simulation LINK_PUBLIC ${OpenCV_LIBS})
 
 target_include_directories(tonav-simulation PUBLIC "../thirdparty/nlohmann_json")
-
-find_package(Cereal REQUIRED)
-target_include_directories(tonav-simulation PUBLIC ${Cereal_INCLUDE_DIRS})

@@ -9,9 +9,13 @@ addons:
   apt:
     packages:
     - cmake
-    - build-essentials
-    - eigen
-    - opencv
+    - build-essential
+    - libeigen3-dev
+
+before_install:
+  - sudo add-apt-repository ppa:timsc/opencv-3.3
+  - sudo apt update
+  - sudo apt install opencv
 
 before_script:
   - mkdir build

@@ -19,7 +19,6 @@ public:
     void runLoopCallback(double time);
     
     cv::Matx33d getCameraCalibrationMatrix() const;
-    float getUpdateFrequency() const;
     
     virtual ~GeneratedFeaturesVision();
 
@@ -28,7 +27,6 @@ protected:
     
     VioSimulation *simulation_;
     
-    float update_frequency_;
     Eigen::Vector2d focal_length_;
     Eigen::Vector2d optical_center_;
     Eigen::Vector2d image_dimensions_;

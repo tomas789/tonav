@@ -7,13 +7,11 @@
 
 #include <iostream>
 
-namespace {
+namespace tonav {
 
 enum class ImuDevice {
     ACCELEROMETER, GYROSCOPE
 };
-
-std::ostream& operator<<(std::ostream& out, const ImuDevice& device);
 
 }
 

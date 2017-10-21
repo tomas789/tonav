@@ -62,6 +62,7 @@ void VioSimulation::runLoopCallback(float time) {
     {
         std::lock_guard<std::mutex> _(ui_lock_);
         window_->setWidgetPose("Camera", getPose(q_G_B, p_B_G));
+        window_->getCamera().setClip(cv::Vec2d(0.5, 20));
     }
 }
 

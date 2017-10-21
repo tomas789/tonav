@@ -10,17 +10,7 @@
 std::unique_ptr<Imu> NumericalDiffImu::load(SimSetup *sim_setup, const json &j) {
     std::unique_ptr<NumericalDiffImu> imu(new NumericalDiffImu(sim_setup));
     
-    json diff_time_delta_json = j.at("diff_time_delta");
-    if (!diff_time_delta_json.is_number())
-        throw "'diff_time_delta' has to be a number.";
-    imu->diff_time_delta_ = diff_time_delta_json;
-    
-    json update_frequency_json = j.at("update_frequency");
-    if (!update_frequency_json.is_number())
-        throw "'update_frequency' has to be a number.";
-    imu->update_frequency_ = update_frequency_json;
-    if (imu->update_frequency_ <= 0.0)
-        throw "'update_frequency' has to be positive number.";
+    imu->diff_time_delta_ = j.at("diff_time_delta").get<double>();
     
     return std::move(imu);
 }

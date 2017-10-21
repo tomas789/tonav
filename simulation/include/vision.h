@@ -22,12 +22,14 @@ public:
     virtual void initialize(VioSimulation *simulation) = 0;
     
     virtual cv::Matx33d getCameraCalibrationMatrix() const = 0;
-    virtual float getUpdateFrequency() const = 0;
+    double getUpdateFrequency() const;
     
     virtual ~Vision();
 
 protected:
     Vision(SimSetup *sim_setup);
+    
+    double update_frequency_;
 };
 
 #endif //TONAV_TRAJECTORY_H

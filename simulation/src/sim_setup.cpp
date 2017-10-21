@@ -16,24 +16,24 @@ std::shared_ptr<SimSetup> SimSetup::load(std::string filename) {
     
     std::ifstream file_stream(filename);
     if (!file_stream.is_open()) {
-        throw "Cannot open sim_setup file.";
+        throw std::runtime_error("Cannot open sim_setup file.");
     }
     json j;
     file_stream >> j;
     
     std::unique_ptr<Trajectory> trajectory = Trajectory::load(sim_setup.get(), j.at("trajectory"));
     if (!trajectory)
-        throw "Cannot load trajectory.";
+        throw std::runtime_error("Cannot load trajectory.");
     sim_setup->trajectory_ = std::move(trajectory);
     
     std::unique_ptr<Imu> imu = Imu::load(sim_setup.get(), j.at("imu"));
     if (!imu)
-        throw "Cannot load imu.";
+        throw std::runtime_error("Cannot load imu.");
     sim_setup->imu_ = std::move(imu);
     
     std::unique_ptr<Vision> vision = Vision::load(sim_setup.get(), j.at("vision"));
     if (!vision)
-        throw "Cannot load vision.";
+        throw std::runtime_error("Cannot load vision.");
     sim_setup->vision_ = std::move(vision);
     
     return sim_setup;

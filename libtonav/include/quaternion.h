@@ -13,11 +13,15 @@ namespace tonav {
  */
 class Quaternion {
 public:
-    Quaternion(double x, double y, double z, double w);
+    Quaternion(double x = 0, double y = 0, double z = 0, double w = 1);
     
     Quaternion(const Quaternion &other);
     
+    Quaternion(Quaternion &&other);
+    
     Quaternion &operator=(const Quaternion &other);
+    
+    Quaternion &operator=(Quaternion &&other);
     
     Quaternion operator*(const Quaternion &rhs) const;
     

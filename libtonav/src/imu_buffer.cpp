@@ -4,6 +4,9 @@
 
 #include "imu_buffer.h"
 
+#include "imu_item.h"
+#include "imu_device.h"
+
 namespace tonav {
 
 ImuBuffer::iterator ImuBuffer::begin() {

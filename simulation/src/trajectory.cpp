@@ -9,12 +9,18 @@
 #include "trajectory/circular_trajectory.h"
 
 std::unique_ptr<Trajectory> Trajectory::load(SimSetup *sim_setup, const json &j) {
-    auto& type = j.at("type");
+    std::string type = j.at("type").get<std::string>();
+    json params = j.at("params");
+    
+    std::unique_ptr<Trajectory> trajectory;
+    
     if (type == "circular") {
-        return CircularTrajectory::load(sim_setup, j.at("params"));
+        trajectory = std::move(CircularTrajectory::load(sim_setup, params));
     } else {
-        throw "Unknown imu type.";
+        throw "Unknown trajectory type.";
     }
+    
+    return std::move(trajectory);
 }
 
 Trajectory::~Trajectory() = default;

@@ -20,7 +20,22 @@ Quaternion::Quaternion(const Quaternion &other) {
     w_ = other.w_;
 }
 
+Quaternion::Quaternion(Quaternion &&other) {
+    x_ = other.x_;
+    y_ = other.y_;
+    z_ = other.z_;
+    w_ = other.w_;
+}
+
 Quaternion &Quaternion::operator=(const Quaternion &other) {
+    x_ = other.x_;
+    y_ = other.y_;
+    z_ = other.z_;
+    w_ = other.w_;
+    return *this;
+}
+
+Quaternion &Quaternion::operator=(Quaternion &&other) {
     x_ = other.x_;
     y_ = other.y_;
     z_ = other.z_;
