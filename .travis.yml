@@ -13,7 +13,7 @@ addons:
     - libeigen3-dev
 
 before_install:
-  - sudo add-apt-repository ppa:amarburg/opencv3
+  - sudo add-apt-repository -y ppa:amarburg/opencv3
   - sudo apt update
   - sudo apt install opencv
 
