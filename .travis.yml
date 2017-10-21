@@ -13,7 +13,7 @@ addons:
     - libeigen3-dev
 
 before_install:
-  - sudo add-apt-repository ppa:timsc/opencv-3.3
+  - sudo add-apt-repository -y ppa:timsc/opencv-3.3
   - sudo apt update
   - sudo apt install opencv
 
