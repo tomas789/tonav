@@ -5,6 +5,8 @@ compiler:
   - gcc
   - clang
 
+dist: xenial
+
 addons:
   apt:
     packages:
