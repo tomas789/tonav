@@ -36,6 +36,11 @@ std::shared_ptr<SimSetup> SimSetup::load(std::string filename) {
         throw std::runtime_error("Cannot load vision.");
     sim_setup->vision_ = std::move(vision);
     
+    std::unique_ptr<Odometry> odometry = Odometry::load(sim_setup.get(), j.at("odometry"));
+    if (!odometry)
+        throw std::runtime_error("Cannot load odometry.");
+    sim_setup->odometry_ = std::move(odometry);
+    
     return sim_setup;
 }
 
@@ -61,6 +66,14 @@ Vision& SimSetup::getVision() {
 
 const Vision& SimSetup::getVision() const {
     return *vision_;
+}
+
+Odometry& SimSetup::getOdometry() {
+    return *odometry_;
+}
+
+const Odometry& SimSetup::getOdometry() const {
+    return *odometry_;
 }
 
 SimSetup::SimSetup() = default;

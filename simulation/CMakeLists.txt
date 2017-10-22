@@ -1,13 +1,15 @@
 set (SRC_FILES
         src/imu/numerical_diff_imu.cpp
+        src/odometry/tonav_body_state_odometry.cpp
+        src/odometry/tonav_calibration.cpp
         src/trajectory/circular_trajectory.cpp
         src/vision/generated_features_vision.cpp
         src/imu.cpp
         src/main.cpp
+        src/odometry.cpp
         src/run_loop.cpp
         src/sim_setup.cpp
         src/sim_setup_component.cpp
-        src/tonav_calibration.cpp
         src/trajectory.cpp
         src/vio_simulation.cpp
         src/vision.cpp

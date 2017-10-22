@@ -25,6 +25,8 @@ public:
     virtual Eigen::Vector3d getAccelerometerData(double time) const = 0;
     virtual Eigen::Vector3d getGyroscopeData(double time) const = 0;
     
+    virtual Eigen::Vector3d getVelocity(double time) const = 0;
+    
     virtual ~Imu();
     
 protected:

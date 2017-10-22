@@ -8,6 +8,7 @@
 #include <thread>
 #include <mutex>
 #include <opencv2/core/eigen.hpp>
+#include <tonav.h>
 
 VioSimulation::VioSimulation() = default;
 
@@ -30,6 +31,7 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
     sim_setup->getImu().initialize(this);
     sim_setup->getVision().initialize(this);
     sim_setup->getTrajectory().initialize(this);
+    sim_setup->getOdometry().initialize(this);
     
     is_simulation_running_ = true;
     std::thread t(&VioSimulation::startRunLoop, this);
@@ -41,19 +43,21 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
     t.join();
 }
 
-void VioSimulation::accelerometerCallback(float time, Eigen::Vector3d accel) {
+void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
     std::cout << "Accelerometer: [" << accel.transpose() << "]^T" << std::endl;
+    sim_setup_->getOdometry().updateAcceleration(time, accel);
 }
 
-void VioSimulation::gyroscopeCallback(float time, Eigen::Vector3d gyro) {
+void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
     std::cout << "Gyroscope: [" << gyro.transpose() << "]^T" << std::endl;
+    sim_setup_->getOdometry().updateRotationRate(time, gyro);
 }
 
-void VioSimulation::cameraCallback(float time, cv::Mat frame) {
-
+void VioSimulation::cameraCallback(double time, cv::Mat frame) {
+    // Do nothing.
 }
 
-void VioSimulation::runLoopCallback(float time) {
+void VioSimulation::runLoopCallback(double time) {
     std::cout << ((bool)sim_setup_) << std::endl;
     Trajectory& trajectory = sim_setup_->getTrajectory();
     Eigen::Vector3d p_B_G = trajectory.getCameraPositionInGlobalFrame(time);
@@ -62,7 +66,6 @@ void VioSimulation::runLoopCallback(float time) {
     {
         std::lock_guard<std::mutex> _(ui_lock_);
         window_->setWidgetPose("Camera", getPose(q_G_B, p_B_G));
-        window_->getCamera().setClip(cv::Vec2d(0.5, 20));
     }
 }
 

@@ -17,6 +17,7 @@ add_library(tonav
         src/filter.cpp
         src/filter_state.cpp
         src/frame_features.cpp
+        src/geometry.cpp
         src/imu_buffer.cpp
         src/imu_item.cpp
         src/quaternion.cpp

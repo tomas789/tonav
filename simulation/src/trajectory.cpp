@@ -17,7 +17,7 @@ std::unique_ptr<Trajectory> Trajectory::load(SimSetup *sim_setup, const json &j)
     if (type == "circular") {
         trajectory = std::move(CircularTrajectory::load(sim_setup, params));
     } else {
-        throw "Unknown trajectory type.";
+        throw std::runtime_error("Unknown trajectory type.");
     }
     
     return std::move(trajectory);

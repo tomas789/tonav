@@ -70,7 +70,7 @@ ImuItem ImuBuffer::interpolate(double time, const ImuItem &earlier, const ImuIte
     Eigen::Vector3d data = t * earlier.getVector() + (1 - t) * later.getVector();
     ImuItem interpolated = ImuItem::fromVector3d(time, device, data);
     
-    assert(interpolated.getVector().norm() > 1e-100);
+    // assert(interpolated.getVector().norm() > 1e-100);
     assert(interpolated.getVector().norm() < 1e100);
     
     return interpolated;

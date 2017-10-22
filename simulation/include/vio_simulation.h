@@ -9,6 +9,7 @@
 #include <opencv2/viz.hpp>
 #include <thread>
 #include <mutex>
+#include <tonav.h>
 
 #include "sim_setup.h"
 #include "run_loop.h"
@@ -19,10 +20,10 @@ public:
     
     void run(std::shared_ptr<SimSetup> sim_setup);
     
-    void accelerometerCallback(float time, Eigen::Vector3d accel);
-    void gyroscopeCallback(float time, Eigen::Vector3d gyro);
-    void cameraCallback(float time, cv::Mat frame);
-    void runLoopCallback(float time);
+    void accelerometerCallback(double time, Eigen::Vector3d accel);
+    void gyroscopeCallback(double time, Eigen::Vector3d gyro);
+    void cameraCallback(double time, cv::Mat frame);
+    void runLoopCallback(double time);
     
     RunLoop& getRunLoop();
     const RunLoop& getRunLoop() const;

@@ -32,7 +32,7 @@ void CircularTrajectory::initialize(VioSimulation *simulation) {
 
 }
 
-Eigen::Vector3d CircularTrajectory::getBodyPositionInGlobalFrame(double time) {
+Eigen::Vector3d CircularTrajectory::getBodyPositionInGlobalFrame(double time) const {
     double t = M_2_PI*time/time_per_revolution_;
     double s = std::sin(t);
     double c = std::cos(t);
@@ -41,12 +41,12 @@ Eigen::Vector3d CircularTrajectory::getBodyPositionInGlobalFrame(double time) {
     return position;
 }
 
-tonav::Quaternion CircularTrajectory::getGlobalToBodyFrameRotation(double time) {
+tonav::Quaternion CircularTrajectory::getGlobalToBodyFrameRotation(double time) const {
     double theta = M_2_PI*time/time_per_revolution_;
     return tonav::Quaternion(0, 0, std::sin(theta/2), std::cos(theta/2)).conjugate();
 }
 
-Eigen::Vector3d CircularTrajectory::getCameraPositionInGlobalFrame(double time) {
+Eigen::Vector3d CircularTrajectory::getCameraPositionInGlobalFrame(double time) const {
     Eigen::Vector3d p_B_G = getBodyPositionInGlobalFrame(time);
     Eigen::Matrix3d R_B_G = getGlobalToBodyFrameRotation(time).toRotationMatrix();
     Eigen::Matrix3d R_G_B = R_B_G.transpose();
@@ -55,9 +55,17 @@ Eigen::Vector3d CircularTrajectory::getCameraPositionInGlobalFrame(double time) 
     return p_C_G;
 }
 
-tonav::Quaternion CircularTrajectory::getGlobalToCameraFrameRotation(double time) {
+tonav::Quaternion CircularTrajectory::getGlobalToCameraFrameRotation(double time) const {
     tonav::Quaternion q_B_G = getGlobalToBodyFrameRotation(time);
     return q_C_B_*q_B_G;
+}
+
+Eigen::Vector3d CircularTrajectory::getCameraPositionInBodyFrame() const {
+    return p_C_B_;
+}
+
+tonav::Quaternion CircularTrajectory::getBodyToCameraFrameRotation() const {
+    return q_C_B_;
 }
 
 CircularTrajectory::~CircularTrajectory() = default;

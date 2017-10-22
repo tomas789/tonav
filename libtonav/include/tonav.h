@@ -9,6 +9,7 @@
 
 #include "camera_item.h"
 #include "filter.h"
+#include "geometry.h"
 #include "imu_buffer.h"
 #include "quaternion.h"
 
@@ -67,7 +68,7 @@ public:
      * features from image.
      *
      * Image should by in format GRAY8 and should have reasonable
-     * resolution. Full-HD is unnecessarily large. Something about
+     * resolution. Full-HD is unnecessarily large. Something around
      * 640x480 is good enough. It speeds up processing of the image
      * and delivers more real-time localization.
      *

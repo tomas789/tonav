@@ -14,8 +14,12 @@ class TonavCalibration: public tonav::Calibration {
 public:
     static std::shared_ptr<TonavCalibration> prepare(SimSetup* sim_setup);
 
+    Eigen::Vector3d getPositionOfBodyInCameraFrame() const;
+    
 private:
-    TonavCalibration();
+    TonavCalibration(SimSetup *sim_setup);
+    
+    SimSetup *sim_setup_;
 };
 
 #endif //TONAV_TONAV_CALIBRATION_H

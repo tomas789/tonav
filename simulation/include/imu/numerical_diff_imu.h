@@ -22,15 +22,15 @@ public:
     
     void runLoopCallback(double time);
     
-    virtual Eigen::Vector3d getAccelerometerData(double time) const;
-    virtual Eigen::Vector3d getGyroscopeData(double time) const;
+    Eigen::Vector3d getAccelerometerData(double time) const;
+    Eigen::Vector3d getGyroscopeData(double time) const;
+    
+    Eigen::Vector3d getVelocity(double time) const;
     
     virtual ~NumericalDiffImu();
     
 protected:
     NumericalDiffImu(SimSetup *sim_setup);
-    
-    Eigen::Vector3d getVelocity(double time) const;
     
     template <typename T>
     T diff(std::function<T(double)> f, double x, double h) const {

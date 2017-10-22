@@ -6,6 +6,7 @@
 #define TONAV_SIM_SETUP_H
 
 #include "imu.h"
+#include "odometry.h"
 #include "trajectory.h"
 #include "vision.h"
 
@@ -22,12 +23,16 @@ public:
     Vision& getVision();
     const Vision& getVision() const;
     
+    Odometry& getOdometry();
+    const Odometry& getOdometry() const;
+    
 private:
     SimSetup();
     
     std::unique_ptr<Trajectory> trajectory_;
     std::unique_ptr<Imu> imu_;
     std::unique_ptr<Vision> vision_;
+    std::unique_ptr<Odometry> odometry_;
 };
 
 #endif //TONAV_SIM_SETUP_H
