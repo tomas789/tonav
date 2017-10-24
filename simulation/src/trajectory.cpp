@@ -7,6 +7,7 @@
 #include <limits>
 
 #include "trajectory/circular_trajectory.h"
+#include "trajectory/inplace_rotation_trajectory.h"
 #include "trajectory/standstill_trajectory.h"
 
 std::unique_ptr<Trajectory> Trajectory::load(SimSetup *sim_setup, const json &j) {
@@ -19,6 +20,8 @@ std::unique_ptr<Trajectory> Trajectory::load(SimSetup *sim_setup, const json &j)
         trajectory = std::move(CircularTrajectory::load(sim_setup, params));
     } else if (type == "standstill") {
         trajectory = std::move(StandstillTrajectory::load(sim_setup, params));
+    } else if (type == "inplace_rotation") {
+        trajectory = std::move(InplaceRotationTrajectory::load(sim_setup, params));
     } else {
         throw std::runtime_error("Unknown trajectory type.");
     }

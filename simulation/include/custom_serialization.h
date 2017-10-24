@@ -27,9 +27,20 @@ struct adl_serializer<Eigen::Vector2d> {
     static void to_json(json &j, const Eigen::Vector2d &v) {
         j = json { v(0), v(1) };
     }
-
+    
     static void from_json(const json &j, Eigen::Vector2d &v) {
         v << j.at(0), j.at(1);
+    }
+};
+
+template <>
+struct adl_serializer<Eigen::Vector3d> {
+    static void to_json(json &j, const Eigen::Vector3d &v) {
+        j = json { v(0), v(1), v(2) };
+    }
+
+    static void from_json(const json &j, Eigen::Vector3d &v) {
+        v << j.at(0), j.at(1), j.at(2);
     }
 };
 

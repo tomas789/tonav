@@ -3,8 +3,10 @@
     "global_gravity": [0, 0, -9.81]
   },
   "trajectory": {
-    "type": "standstill",
+    "type": "inplace_rotation",
     "params": {
+      "seconds_per_revolution": 2,
+      "axis_of_revolution": [1, 0, 1]
     }
   },
   "imu": {
