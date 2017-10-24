@@ -25,11 +25,11 @@ public:
     void updateRotationRate(double time, const Eigen::Vector3d& gyro);
     void updateFrame(double time, const cv::Mat& frame);
     
-    Eigen::Vector3d getBodyPositionInGlobalFrame();
-    tonav::Quaternion getGlobalToBodyFrameRotation();
+    Eigen::Vector3d getBodyPositionInGlobalFrame() const;
+    tonav::Quaternion getGlobalToBodyFrameRotation() const;
     
-    Eigen::Vector3d getCameraPositionInGlobalFrame();
-    tonav::Quaternion getGlobalToCameraFrameRotation();
+    Eigen::Vector3d getCameraPositionInGlobalFrame() const;
+    tonav::Quaternion getGlobalToCameraFrameRotation() const;
     
     virtual ~TonavBodyStateOdometry();
     

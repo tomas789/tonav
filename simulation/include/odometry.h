@@ -24,11 +24,11 @@ public:
     virtual void updateRotationRate(double time, const Eigen::Vector3d& gyro) = 0;
     virtual void updateFrame(double time, const cv::Mat& frame) = 0;
     
-    virtual Eigen::Vector3d getBodyPositionInGlobalFrame() = 0;
-    virtual tonav::Quaternion getGlobalToBodyFrameRotation() = 0;
+    virtual Eigen::Vector3d getBodyPositionInGlobalFrame() const = 0;
+    virtual tonav::Quaternion getGlobalToBodyFrameRotation() const = 0;
     
-    virtual Eigen::Vector3d getCameraPositionInGlobalFrame() = 0;
-    virtual tonav::Quaternion getGlobalToCameraFrameRotation() = 0;
+    virtual Eigen::Vector3d getCameraPositionInGlobalFrame() const = 0;
+    virtual tonav::Quaternion getGlobalToCameraFrameRotation() const = 0;
     
     virtual ~Odometry();
     

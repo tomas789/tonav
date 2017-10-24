@@ -7,6 +7,9 @@
 std::shared_ptr<TonavCalibration> TonavCalibration::prepare(SimSetup *sim_setup) {
     std::shared_ptr<TonavCalibration> calibration(new TonavCalibration(sim_setup));
     
+    const Trajectory& trajectory = sim_setup->getTrajectory();
+    calibration->global_gravity_ = trajectory.getGlobalGravity();
+    
     return calibration;
 }
 

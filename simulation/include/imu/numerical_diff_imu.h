@@ -44,8 +44,6 @@ protected:
     VioSimulation *simulation_;
     
     double diff_time_delta_;
-    
-    Eigen::Vector3d global_gravity_;
 };
 
 #endif //TONAV_NUMERICAL_DIFF_IMU_H

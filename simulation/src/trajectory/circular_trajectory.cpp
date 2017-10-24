@@ -68,6 +68,12 @@ tonav::Quaternion CircularTrajectory::getBodyToCameraFrameRotation() const {
     return q_C_B_;
 }
 
+Eigen::Vector3d CircularTrajectory::getGlobalGravity() const {
+    Eigen::Vector3d global_gravity;
+    global_gravity << 0, 0, -9.81;
+    return global_gravity;
+}
+
 CircularTrajectory::~CircularTrajectory() = default;
 
 CircularTrajectory::CircularTrajectory(SimSetup *sim_setup)

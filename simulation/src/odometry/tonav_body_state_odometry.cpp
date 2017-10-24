@@ -61,19 +61,19 @@ void TonavBodyStateOdometry::updateFrame(double time, const cv::Mat& frame) {
     // Do nothing.
 }
 
-Eigen::Vector3d TonavBodyStateOdometry::getBodyPositionInGlobalFrame() {
+Eigen::Vector3d TonavBodyStateOdometry::getBodyPositionInGlobalFrame() const {
     return tonav_body_state_->getPositionInGlobalFrame();
 }
 
-tonav::Quaternion TonavBodyStateOdometry::getGlobalToBodyFrameRotation() {
+tonav::Quaternion TonavBodyStateOdometry::getGlobalToBodyFrameRotation() const {
     return tonav_body_state_->getOrientationInGlobalFrame();
 }
 
-Eigen::Vector3d TonavBodyStateOdometry::getCameraPositionInGlobalFrame() {
-    return getCameraPositionInGlobalFrame();
+Eigen::Vector3d TonavBodyStateOdometry::getCameraPositionInGlobalFrame() const {
+    return getBodyPositionInGlobalFrame();
 }
 
-tonav::Quaternion TonavBodyStateOdometry::getGlobalToCameraFrameRotation() {
+tonav::Quaternion TonavBodyStateOdometry::getGlobalToCameraFrameRotation() const {
     return getGlobalToBodyFrameRotation();
 }
 
@@ -82,6 +82,7 @@ TonavBodyStateOdometry::~TonavBodyStateOdometry() = default;
 TonavBodyStateOdometry::TonavBodyStateOdometry(SimSetup *sim_setup) : Odometry(sim_setup) { }
 
 void TonavBodyStateOdometry::propagateBodyState() {
+    std::cout << "Next accel [" << next_accel_.transpose() << "]^T" << std::endl;
     std::shared_ptr<tonav::BodyState> next_body_state = tonav::BodyState::propagate(*tonav_body_state_, next_propagation_time_, next_gyro_, next_accel_);
     tonav_body_state_ = next_body_state;
     next_propagation_time_ = NAN;

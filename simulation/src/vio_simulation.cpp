@@ -23,8 +23,13 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
         window_->showWidget("Coordinate Frame", cv::viz::WCoordinateSystem());
         cv::Affine3d coord_frame_pose = getPose(tonav::Quaternion::identity(), Eigen::Vector3d::Zero());
         window_->setWidgetPose("Coordinate Frame", coord_frame_pose);
-        camera_.reset(new cv::viz::WCameraPosition(sim_setup->getVision().getCameraCalibrationMatrix()));
+    
+        camera_gt_.reset(new cv::viz::WCameraPosition(sim_setup->getVision().getCameraCalibrationMatrix(), 1, cv::viz::Color::green()));
+        window_->showWidget("Camera GT", *camera_gt_);
+        
+        camera_.reset(new cv::viz::WCameraPosition(sim_setup->getVision().getCameraCalibrationMatrix(), 1, cv::viz::Color::yellow()));
         window_->showWidget("Camera", *camera_);
+        
         window_->spinOnce();
     }
     
@@ -60,12 +65,20 @@ void VioSimulation::cameraCallback(double time, cv::Mat frame) {
 void VioSimulation::runLoopCallback(double time) {
     std::cout << ((bool)sim_setup_) << std::endl;
     Trajectory& trajectory = sim_setup_->getTrajectory();
-    Eigen::Vector3d p_B_G = trajectory.getCameraPositionInGlobalFrame(time);
-    tonav::Quaternion q_G_B = trajectory.getGlobalToCameraFrameRotation(time).conjugate();
+    const Odometry& odometry = sim_setup_->getOdometry();
+    
+    Eigen::Vector3d p_B_G_gt = trajectory.getCameraPositionInGlobalFrame(time);
+    tonav::Quaternion q_G_B_gt = trajectory.getGlobalToCameraFrameRotation(time).conjugate();
+    
+    Eigen::Vector3d p_C_G = odometry.getCameraPositionInGlobalFrame();
+    tonav::Quaternion q_G_C = odometry.getGlobalToCameraFrameRotation().conjugate();
+    
+    std::cout << "p_C_G: [" << p_C_G.transpose() << "]^T" << std::endl;
     
     {
         std::lock_guard<std::mutex> _(ui_lock_);
-        window_->setWidgetPose("Camera", getPose(q_G_B, p_B_G));
+        window_->setWidgetPose("Camera GT", getPose(q_G_B_gt, p_B_G_gt));
+        window_->setWidgetPose("Camera", getPose(q_G_C, p_C_G));
     }
 }
 

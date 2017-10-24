@@ -30,6 +30,8 @@ public:
     virtual Eigen::Vector3d getCameraPositionInBodyFrame() const = 0;
     virtual tonav::Quaternion getBodyToCameraFrameRotation() const = 0;
     
+    virtual Eigen::Vector3d getGlobalGravity() const = 0;
+    
     virtual ~Trajectory();
 
 protected:

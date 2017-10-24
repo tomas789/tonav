@@ -1,21 +1,15 @@
 //
-// Created by Tomas Krejci on 10/8/17.
+// Created by Tomas Krejci on 10/24/17.
 //
 
-#ifndef TONAV_CIRCULAR_TRAJECTORY_H
-#define TONAV_CIRCULAR_TRAJECTORY_H
-
-#include <json.hpp>
+#ifndef TONAV_STANDSTILL_TRAJECTORY_H
+#define TONAV_STANDSTILL_TRAJECTORY_H
 
 #include "../trajectory.h"
 
-class VioSimulation;
-
-using json = nlohmann::json;
-
-class CircularTrajectory: public Trajectory {
+class StandstillTrajectory: public Trajectory {
 public:
-    static std::unique_ptr<Trajectory> load(SimSetup* sim_setup, const json& j);
+    static std::unique_ptr<StandstillTrajectory> load(SimSetup *sim_setup, const json& j);
     
     void initialize(VioSimulation *simulation);
     
@@ -30,16 +24,10 @@ public:
     
     Eigen::Vector3d getGlobalGravity() const;
     
-    virtual ~CircularTrajectory();
-
-protected:
-    CircularTrajectory(SimSetup *sim_setup);
+    virtual ~StandstillTrajectory();
     
-    double radius_;
-    double time_per_revolution_;
-    
-    tonav::Quaternion q_C_B_;
-    Eigen::Vector3d p_C_B_;
+private:
+    StandstillTrajectory(SimSetup *sim_setup);
 };
 
-#endif //TONAV_CIRCULAR_TRAJECTORY_H
+#endif //TONAV_STANDSTILL_TRAJECTORY_H

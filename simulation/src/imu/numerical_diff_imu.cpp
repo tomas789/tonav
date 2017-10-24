@@ -36,7 +36,8 @@ Eigen::Vector3d NumericalDiffImu::getAccelerometerData(double time) const {
     };
     Eigen::Vector3d a_g = diff(f, time, diff_time_delta_);
     Eigen::Matrix3d R_B_G = sim_setup_->getTrajectory().getGlobalToBodyFrameRotation(time).toRotationMatrix();
-    Eigen::Vector3d a_b = R_B_G*(a_g + global_gravity_);
+    Eigen::Vector3d global_gravity = sim_setup_->getTrajectory().getGlobalGravity();
+    Eigen::Vector3d a_b = R_B_G*(a_g - global_gravity);
     Eigen::Matrix3d T_a = Eigen::Matrix3d::Identity();
     Eigen::Vector3d b_a = Eigen::Vector3d::Zero();
     Eigen::Vector3d a_m = T_a*a_b + b_a;
@@ -50,7 +51,7 @@ Eigen::Vector3d NumericalDiffImu::getGyroscopeData(double time) const {
 NumericalDiffImu::~NumericalDiffImu() = default;
 
 NumericalDiffImu::NumericalDiffImu(SimSetup *sim_setup) : Imu(sim_setup) {
-    global_gravity_ << 0, 0, 9.81;
+
 }
 
 Eigen::Vector3d NumericalDiffImu::getVelocity(double time) const {

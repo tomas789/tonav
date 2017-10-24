@@ -3,6 +3,7 @@ set (SRC_FILES
         src/odometry/tonav_body_state_odometry.cpp
         src/odometry/tonav_calibration.cpp
         src/trajectory/circular_trajectory.cpp
+        src/trajectory/standstill_trajectory.cpp
         src/vision/generated_features_vision.cpp
         src/imu.cpp
         src/main.cpp
