@@ -3,16 +3,23 @@
     "global_gravity": [0, 0, -9.81]
   },
   "trajectory": {
-    "type": "inplace_rotation",
+    "type": "circular",
     "params": {
-      "seconds_per_revolution": 2,
-      "axis_of_revolution": [1, 0, 0]
+      "radius": 1,
+      "time_per_revolution": 0.5,
+      "body_to_camera_rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "camera_in_body_position": [0, 0, 0]
     }
   },
   "imu": {
     "type": "numerical_diff",
     "params": {
-      "diff_time_delta": 0.00001,
+      "diff_time_delta": 0.1,
       "update_frequency": 100
     }
   },

@@ -6,6 +6,7 @@
 #define TONAV_GENERATED_FEATURES_VISION_H
 
 #include <opencv2/features2d.hpp>
+#include <random>
 
 #include "../vision.h"
 #include "../run_loop_callback.h"
@@ -39,6 +40,9 @@ protected:
         GeneratedFeaturesVision &vision_;
     };
     
+    std::pair<std::size_t, Eigen::Vector3d> generateVisibleFeature(Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G);
+    bool isFeatureInView(Eigen::Vector3d p_f_G, Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) const;
+    
     VioSimulation *simulation_;
     
     Eigen::Vector2d focal_length_;
@@ -49,7 +53,10 @@ protected:
     
     VirtualFeatures feature2d_;
     
-    std::vector<Eigen::Vector3d> visible_features_;
+    std::default_random_engine random_generator_;
+    
+    std::size_t feature_counter_;
+    std::vector<std::pair<std::size_t, Eigen::Vector3d>> visible_features_;
 };
 
 #endif //TONAV_GENERATED_FEATURES_VISION_H
