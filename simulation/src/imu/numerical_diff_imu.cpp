@@ -45,7 +45,14 @@ Eigen::Vector3d NumericalDiffImu::getAccelerometerData(double time) const {
 }
 
 Eigen::Vector3d NumericalDiffImu::getGyroscopeData(double time) const {
-    return Eigen::Vector3d::Zero();
+    // https://math.stackexchange.com/questions/2282938/converting-from-quaternion-to-angular-velocity-then-back-to-quaternion
+    const Trajectory& trajectory = sim_setup_->getTrajectory();
+    tonav::Quaternion q_t = trajectory.getGlobalToBodyFrameRotation(time);
+    tonav::Quaternion q_th = trajectory.getGlobalToBodyFrameRotation(time+diff_time_delta_);
+    Eigen::Vector4d q_diff_vec = (q_th.coeffs() - q_t.coeffs())/diff_time_delta_;
+    tonav::Quaternion q_diff(q_diff_vec(0), q_diff_vec(1), q_diff_vec(2), q_diff_vec(3));
+    Eigen::Vector4d q_omega = 2*(q_t.conjugate()*q_diff).coeffs();
+    return q_omega.block<3, 1>(0, 0);
 }
 
 NumericalDiffImu::~NumericalDiffImu() = default;

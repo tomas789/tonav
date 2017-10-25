@@ -6,7 +6,7 @@
     "type": "inplace_rotation",
     "params": {
       "seconds_per_revolution": 2,
-      "axis_of_revolution": [1, 0, 1]
+      "axis_of_revolution": [1, 0, 0]
     }
   },
   "imu": {
