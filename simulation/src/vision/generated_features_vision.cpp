@@ -27,7 +27,6 @@ std::unique_ptr<Vision> GeneratedFeaturesVision::load(SimSetup *sim_setup, const
 
 void GeneratedFeaturesVision::initialize(VioSimulation *simulation) {
     simulation_ = simulation;
-    simulation_->getRunLoop().registerCallback(0, this);
     feature_counter_ = 0;
     visible_features_.clear();
     random_generator_.seed(42);
@@ -61,9 +60,6 @@ void GeneratedFeaturesVision::runLoopCallback(double time) {
     }
     
     visible_features_ = current_visible_features;
-    
-    std::cout << "Vision: Time: " << time << ", Next Time: " << (time+1.0/update_frequency_) << std::endl;
-    std::cout << "Visible feautres: " << visible_features_.size() << std::endl;
     
     simulation_->getRunLoop().registerCallback(time+1.0/update_frequency_, this);
 }

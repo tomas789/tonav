@@ -23,12 +23,12 @@ private:
     struct Item {
         float time;
         RunLoopCallback *callback;
-        
-        bool operator<(const Item& other) const;
+    
+        bool operator>(const Item& other) const;
     };
     
     VioSimulation *simulation_ = nullptr;
-    std::priority_queue<Item> queue_;
+    std::priority_queue<Item, std::vector<Item>, std::greater<Item>> queue_;
 };
 
 #endif //TONAV_RUN_LOOP_H

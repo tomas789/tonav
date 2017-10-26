@@ -35,13 +35,12 @@ void RunLoop::registerSimulationForUpdates(VioSimulation *simulation) {
 }
 
 void RunLoop::registerCallback(float time, RunLoopCallback *callback) {
-    std::cout << "Scheduling for time: " << time << std::endl;
     Item item;
     item.time = time;
     item.callback = callback;
     queue_.push(item);
 }
 
-bool RunLoop::Item::operator<(const Item &other) const {
-    return time < other.time;
+bool RunLoop::Item::operator>(const Item &other) const {
+    return time > other.time;
 }
