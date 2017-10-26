@@ -44,6 +44,7 @@ private:
     std::shared_ptr<cv::viz::Viz3d> window_;
     std::shared_ptr<cv::viz::WCameraPosition> camera_gt_;
     std::shared_ptr<cv::viz::WCameraPosition> camera_;
+    std::shared_ptr<cv::viz::WCloud> features_cloud_;
 };
 
 #endif //TONAV_VIO_SIMULATION_H

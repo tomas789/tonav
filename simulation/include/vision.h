@@ -23,6 +23,7 @@ public:
     
     virtual cv::Matx33d getCameraCalibrationMatrix() const = 0;
     double getUpdateFrequency() const;
+    virtual std::vector<Eigen::Vector3d> getFeaturesInView() const = 0;
     
     virtual ~Vision();
 

@@ -3,6 +3,10 @@
 //
 
 #include "vision/generated_features_vision.h"
+
+#include <algorithm>
+#include <vector>
+
 #include "vision.h"
 #include "vio_simulation.h"
 #include "run_loop.h"
@@ -72,6 +76,14 @@ cv::Matx33d GeneratedFeaturesVision::getCameraCalibrationMatrix() const {
     );
 }
 
+std::vector<Eigen::Vector3d> GeneratedFeaturesVision::getFeaturesInView() const {
+    std::vector<Eigen::Vector3d> features_in_view;
+    for (const auto& item : visible_features_) {
+        features_in_view.push_back(item.second);
+    }
+    return features_in_view;
+}
+
 cv::Feature2D& GeneratedFeaturesVision::getFeature2D() {
     return feature2d_;
 }
@@ -100,8 +112,8 @@ std::pair<std::size_t, Eigen::Vector3d> GeneratedFeaturesVision::generateVisible
     
     Eigen::Vector3d p_f_C;
     p_f_C <<
-        x*depth/focal_length_(0) - optical_center_(0),
-        y*depth/focal_length_(1) - optical_center_(1),
+        depth*(x - optical_center_(0))/focal_length_(0),
+        depth*(y - optical_center_(1))/focal_length_(1),
         depth;
     
     Eigen::Matrix3d R_G_C = q_C_G.conjugate().toRotationMatrix();
@@ -112,8 +124,8 @@ std::pair<std::size_t, Eigen::Vector3d> GeneratedFeaturesVision::generateVisible
 bool GeneratedFeaturesVision::isFeatureInView(Eigen::Vector3d p_f_G, Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) const {
     Eigen::Matrix3d R_C_G = q_C_G.toRotationMatrix();
     Eigen::Vector3d p_f_C = R_C_G*(p_f_G - p_C_G);
-    double x = focal_length_(0)*p_f_C(0)/p_f_C(2);
-    double y = focal_length_(1)*p_f_C(1)/p_f_C(2);
+    double x = focal_length_(0)*p_f_C(0)/p_f_C(2) + optical_center_(0);
+    double y = focal_length_(1)*p_f_C(1)/p_f_C(2) + optical_center_(1);
     bool x_in_view = x >= 0 && x <= image_dimensions_(0);
     bool y_in_view = y >= 0 && y <= image_dimensions_(1);
     return x_in_view && y_in_view;

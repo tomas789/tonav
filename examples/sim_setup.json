@@ -6,12 +6,12 @@
     "type": "circular",
     "params": {
       "radius": 1,
-      "time_per_revolution": 0.5,
+      "time_per_revolution": 2,
       "body_to_camera_rotation": {
-        "x": 0,
-        "y": 0,
-        "z": 0,
-        "w": 1
+        "x": 0.5,
+        "y": -0.5,
+        "z": 0.5,
+        "w": -0.5
       },
       "camera_in_body_position": [0, 0, 0]
     }
@@ -26,7 +26,7 @@
   "vision": {
     "type": "generated_features",
     "params": {
-      "minimum_number_of_features": 100,
+      "minimum_number_of_features": 160,
       "maximum_number_of_features": 200,
       "update_frequency": 10,
       "camera_model": {

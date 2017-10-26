@@ -18,9 +18,6 @@ void RunLoop::run() {
         RunLoopCallback *callback = item.callback;
         callback->runLoopCallback(time);
         
-        std::cout << time << std::endl;
-        std::cout << queue_.size() << std::endl;
-        
         if (last_simulation_update_time != time) {
             if (simulation_ != nullptr) {
                 simulation_->runLoopCallback(time);

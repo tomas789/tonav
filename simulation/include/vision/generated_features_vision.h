@@ -23,6 +23,8 @@ public:
     
     cv::Matx33d getCameraCalibrationMatrix() const;
     
+    std::vector<Eigen::Vector3d> getFeaturesInView() const;
+    
     cv::Feature2D& getFeature2D();
     
     virtual ~GeneratedFeaturesVision();

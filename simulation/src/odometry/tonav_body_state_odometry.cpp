@@ -82,7 +82,6 @@ TonavBodyStateOdometry::~TonavBodyStateOdometry() = default;
 TonavBodyStateOdometry::TonavBodyStateOdometry(SimSetup *sim_setup) : Odometry(sim_setup) { }
 
 void TonavBodyStateOdometry::propagateBodyState() {
-    std::cout << "Next accel [" << next_accel_.transpose() << "]^T" << std::endl;
     std::shared_ptr<tonav::BodyState> next_body_state = tonav::BodyState::propagate(*tonav_body_state_, next_propagation_time_, next_gyro_, next_accel_);
     tonav_body_state_ = next_body_state;
     next_propagation_time_ = NAN;

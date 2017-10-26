@@ -49,12 +49,10 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
 }
 
 void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
-    std::cout << "Accelerometer: [" << accel.transpose() << "]^T" << std::endl;
     sim_setup_->getOdometry().updateAcceleration(time, accel);
 }
 
 void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
-    std::cout << "Gyroscope: [" << gyro.transpose() << "]^T" << std::endl;
     sim_setup_->getOdometry().updateRotationRate(time, gyro);
 }
 
@@ -63,9 +61,9 @@ void VioSimulation::cameraCallback(double time, cv::Mat frame) {
 }
 
 void VioSimulation::runLoopCallback(double time) {
-    std::cout << ((bool)sim_setup_) << std::endl;
     Trajectory& trajectory = sim_setup_->getTrajectory();
     const Odometry& odometry = sim_setup_->getOdometry();
+    const Vision& vision = sim_setup_->getVision();
     
     Eigen::Vector3d p_B_G_gt = trajectory.getCameraPositionInGlobalFrame(time);
     tonav::Quaternion q_G_B_gt = trajectory.getGlobalToCameraFrameRotation(time).conjugate();
@@ -73,12 +71,27 @@ void VioSimulation::runLoopCallback(double time) {
     Eigen::Vector3d p_C_G = odometry.getCameraPositionInGlobalFrame();
     tonav::Quaternion q_G_C = odometry.getGlobalToCameraFrameRotation().conjugate();
     
-    std::cout << "p_C_G: [" << p_C_G.transpose() << "]^T" << std::endl;
+    std::vector<cv::Affine3d::Vec3> features_in_view;
+    for (const Eigen::Vector3d& p_f_G: vision.getFeaturesInView()) {
+        cv::Affine3d pose = getPose(tonav::Quaternion::identity(), p_f_G);
+        features_in_view.push_back(pose.translation());
+    }
     
     {
         std::lock_guard<std::mutex> _(ui_lock_);
         window_->setWidgetPose("Camera GT", getPose(q_G_B_gt, p_B_G_gt));
         window_->setWidgetPose("Camera", getPose(q_G_C, p_C_G));
+        
+        if (features_cloud_) {
+            window_->removeWidget("Features cloud");
+            features_cloud_.reset();
+        }
+        if (!features_in_view.empty()) {
+            features_cloud_.reset(new cv::viz::WCloud(features_in_view, cv::viz::Color::green()));
+            features_cloud_->setRenderingProperty(cv::viz::POINT_SIZE, 3);
+    
+            window_->showWidget("Features cloud", *features_cloud_);
+        }
     }
 }
 
