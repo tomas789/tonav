@@ -1,6 +1,10 @@
 #ifndef TONAV_CIRCULAR_BUFFER_HPP
 #define TONAV_CIRCULAR_BUFFER_HPP
 
+#include <iterator>
+#include <stdexcept>
+#include <utility>
+
 namespace tonav {
 
 template <typename T>
@@ -11,7 +15,8 @@ public:
     using value_type = T;
     using difference_type = std::ptrdiff_t;
     using pointer = typename std::add_pointer<value_type>::type;
-    using reference = typename std::add_lvalue_reference<value_type>::type;
+    using reference = T&;
+    using const_reference = const T&;
     using iterator = Iterator<false>;
     using const_iterator = Iterator<true>;
     using size_type = std::size_t;
@@ -25,8 +30,10 @@ public:
         using container_pointer_type = typename std::add_pointer<container_type>::type;
         using difference_type = typename container_type::difference_type;
         using value_type = typename container_type::value_type;
-        using pointer = typename container_type::pointer;
-        using reference = typename container_type::reference;
+        using pointer = typename std::conditional<IsConst, const T*, T*>::type;
+        using const_pointer = const T*;
+        using reference = typename std::conditional<IsConst, const T&, T&>::type;
+        using const_reference = const T&;
         
         Iterator()
             : container_(nullptr), it_(0) { }
@@ -50,12 +57,20 @@ public:
         bool operator!=(const Iterator<IsConst>& other) const {
             return !(*this == other);
         }
-        
+    
         pointer operator->() {
             return &(this->operator*());
         }
-        
+    
+        const_pointer operator->() const {
+            return &(this->operator*());
+        }
+    
         reference operator*() {
+            return container_->operator[](it_);
+        }
+    
+        const_reference operator*() const {
             return container_->operator[](it_);
         }
         
@@ -108,7 +123,7 @@ public:
         return buffer_[(begin_it_ + i) % max_size_];
     }
     
-    const reference operator[](size_type i) const {
+    const_reference operator[](size_type i) const {
         return buffer_[(begin_it_ + i) % max_size_];
     }
     
@@ -120,7 +135,7 @@ public:
         begin_it_ += 1;
     }
     
-    void pushBack(const reference pose) {
+    void pushBack(const_reference pose) {
         if (full()) {
             throw std::runtime_error("CircularBuffer is full. Cannot add another item.");
         }
@@ -129,19 +144,19 @@ public:
         end_it_ += 1;
     }
     
-    iterator begin() {
+    iterator begin() noexcept {
         return iterator(this, begin_it_);
     }
     
-    iterator end() {
+    iterator end() noexcept {
         return iterator(this, end_it_);
     }
     
-    const_iterator begin() const {
+    const_iterator begin() const noexcept {
         return const_iterator(this, begin_it_);
     }
     
-    const_iterator end() const {
+    const_iterator end() const noexcept {
         return const_iterator(this, end_it_);
     }
     
@@ -159,14 +174,14 @@ public:
         return buffer_[(end_it_ - 1) % max_size_];
     }
     
-    const reference front() const {
+    const_reference front() const {
         if (empty()) {
             throw std::runtime_error("CircularBuffer is empty. Cannot return front element.");
         }
         return buffer_[begin_it_ % max_size_];
     }
     
-    const reference back() const {
+    const_reference back() const {
         if (empty()) {
             throw std::runtime_error("CameraPoseBuffer is empty. Cannot return back element.");
         }

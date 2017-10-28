@@ -12,6 +12,7 @@
 #include "state_initializer.h"
 
 class BigCameraTest;
+using namespace tonav;
 
 class MockCalibration : public Calibration {
 public:

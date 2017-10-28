@@ -42,3 +42,21 @@ target_include_directories (tonav PUBLIC "${EIGEN3_INCLUDE_DIR}")
 find_package(OpenCV 3 REQUIRED core calib3d features2d imgproc)
 target_include_directories (tonav PUBLIC "${OpenCV_INCLUDE_DIRS}")
 target_link_libraries(tonav LINK_PUBLIC ${OpenCV_LIBS})
+
+enable_testing()
+find_package(GTest REQUIRED)
+
+add_executable(tonavtests
+        test/circular_buffer_test.cpp
+)
+set_target_properties(tonavtests PROPERTIES
+        CXX_STANDARD 11
+        CXX_STANDARD_REQUIRED ON
+        CXX_EXTENSIONS OFF
+)
+target_link_libraries(tonavtests
+        LINK_PUBLIC tonav
+        LINK_PRIVATE ${GTEST_BOTH_LIBRARIES}
+)
+
+add_test(AllTonavTests tonavtests)
