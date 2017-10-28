@@ -43,7 +43,11 @@ public:
     
     friend std::ostream &operator<<(std::ostream &out, Filter &filter);
     
-    Filter(std::shared_ptr<const Calibration> calibration, std::shared_ptr<const StateInitializer> state_initializer, std::shared_ptr<FeatureTracker> feature_tracker = nullptr);
+    Filter(
+        std::shared_ptr<const Calibration> calibration,
+        std::shared_ptr<const StateInitializer> state_initializer,
+        std::shared_ptr<FeatureTracker> feature_tracker = nullptr
+    );
     
     /**
      * @brief Propagate filter using accelerometer and gyroscope measurements

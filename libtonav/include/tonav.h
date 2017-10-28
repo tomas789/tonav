@@ -33,7 +33,11 @@ public:
      *
      * @param calibration Calibration
      */
-    Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Vector3d& p_B_C);
+    Tonav(
+        std::shared_ptr<Calibration> calibration,
+        const Eigen::Vector3d& p_B_C,
+        std::shared_ptr<FeatureTracker> feature_tracker = nullptr
+    );
     
     /**
      * @brief Perform navigation step with data from accelerometer.

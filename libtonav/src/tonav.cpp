@@ -13,8 +13,14 @@
 
 namespace tonav {
 
-Tonav::Tonav(std::shared_ptr<Calibration> calibration, const Eigen::Vector3d &p_B_C)
-    : state_initializer_(new StateInitializer), filter_(calibration, state_initializer_) {
+Tonav::Tonav(
+    std::shared_ptr<Calibration> calibration,
+    const Eigen::Vector3d &p_B_C,
+    std::shared_ptr<FeatureTracker> feature_tracker
+)
+    : state_initializer_(new StateInitializer),
+      filter_(calibration, state_initializer_, feature_tracker)
+{
     filter_.setInitialBodyPositionInCameraFrame(p_B_C);
 }
 
