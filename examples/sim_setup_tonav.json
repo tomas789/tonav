@@ -1,0 +1,48 @@
+{
+  "world": {
+    "global_gravity": [0, 0, -9.81]
+  },
+  "trajectory": {
+    "type": "circular",
+    "params": {
+      "radius": 1,
+      "time_per_revolution": 2,
+      "body_to_camera_rotation": {
+        "x": 0.5,
+        "y": -0.5,
+        "z": 0.5,
+        "w": -0.5
+      },
+      "camera_in_body_position": [0, 0, 0]
+    }
+  },
+  "imu": {
+    "type": "numerical_diff",
+    "params": {
+      "diff_time_delta": 0.1,
+      "update_frequency": 100
+    }
+  },
+  "vision": {
+    "type": "generated_features",
+    "params": {
+      "minimum_number_of_features": 160,
+      "maximum_number_of_features": 200,
+      "update_frequency": 10,
+      "camera_model": {
+        "fx": 600,
+        "fy": 800,
+        "cx": 320,
+        "cy": 240,
+        "width": 640,
+        "height": 480
+      }
+    }
+  },
+  "odometry": {
+    "type": "tonav",
+    "params": {
+
+    }
+  }
+}

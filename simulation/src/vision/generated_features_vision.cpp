@@ -43,14 +43,15 @@ void GeneratedFeaturesVision::runLoopCallback(double time) {
     Eigen::Vector3d p_C_G = trajectory.getBodyPositionInGlobalFrame(time);
     tonav::Quaternion q_C_G = trajectory.getGlobalToCameraFrameRotation(time);
     
-    std::vector<std::pair<std::size_t, Eigen::Vector3d>> current_visible_features;
+    std::vector<VirtualKeyPoint> current_visible_features;
     for (int i = 0; i < visible_features_.size(); ++i) {
-        std::pair<std::size_t, Eigen::Vector3d> feature = visible_features_[i];
-        Eigen::Vector3d p_f_G = feature.second;
+        const VirtualKeyPoint& feature = visible_features_[i];
+        Eigen::Vector3d p_f_G = feature.p_f_G;
         bool is_in_view = isFeatureInView(p_f_G, p_C_G, q_C_G);
         
         if (is_in_view) {
             current_visible_features.push_back(feature);
+            current_visible_features.back().pt_last = projectFeature(feature.p_f_G, p_C_G, q_C_G);
         }
     }
     
@@ -58,12 +59,15 @@ void GeneratedFeaturesVision::runLoopCallback(double time) {
         std::size_t features_to_generate = maximum_number_of_features_ - visible_features_.size();
         
         for (int i = 0; i < features_to_generate; ++i) {
-            std::pair<std::size_t, Eigen::Vector3d> feature = generateVisibleFeature(p_C_G, q_C_G);
+            VirtualKeyPoint feature = generateVisibleFeature(p_C_G, q_C_G);
             current_visible_features.push_back(feature);
         }
     }
     
     visible_features_ = current_visible_features;
+    
+    cv::Mat frame(cv::Size(image_dimensions_(0), image_dimensions_(1)), CV_8UC3, cv::Scalar(0));
+    simulation_->cameraCallback(time, frame);
     
     simulation_->getRunLoop().registerCallback(time+1.0/update_frequency_, this);
 }
@@ -79,30 +83,74 @@ cv::Matx33d GeneratedFeaturesVision::getCameraCalibrationMatrix() const {
 std::vector<Eigen::Vector3d> GeneratedFeaturesVision::getFeaturesInView() const {
     std::vector<Eigen::Vector3d> features_in_view;
     for (const auto& item : visible_features_) {
-        features_in_view.push_back(item.second);
+        features_in_view.push_back(item.p_f_G);
     }
     return features_in_view;
 }
 
-cv::Feature2D& GeneratedFeaturesVision::getFeature2D() {
+cv::Ptr<cv::Feature2D> GeneratedFeaturesVision::getFeature2D() {
     return feature2d_;
+}
+
+Eigen::Vector2d GeneratedFeaturesVision::getFocalLength() const {
+    return focal_length_;
+}
+
+Eigen::Vector2d GeneratedFeaturesVision::getOpticalCenter() const {
+    return optical_center_;
+}
+
+Eigen::Vector3d GeneratedFeaturesVision::getRadialDistortion() const {
+    return Eigen::Vector3d::Zero();
+}
+
+Eigen::Vector2d GeneratedFeaturesVision::getTangentialDistortion() const {
+    return Eigen::Vector2d::Zero();
 }
 
 GeneratedFeaturesVision::~GeneratedFeaturesVision() = default;
 
 GeneratedFeaturesVision::GeneratedFeaturesVision(SimSetup *sim_setup)
-    : Vision(sim_setup), feature2d_(*this) {
+    : Vision(sim_setup), feature2d_(new VirtualFeature2D(*this)) {
     
 }
 
-GeneratedFeaturesVision::VirtualFeatures::VirtualFeatures(GeneratedFeaturesVision &vision)
+GeneratedFeaturesVision::VirtualFeature2D::VirtualFeature2D(GeneratedFeaturesVision &vision)
     : vision_(vision) {
     
 }
 
-GeneratedFeaturesVision::VirtualFeatures::~VirtualFeatures() = default;
+void GeneratedFeaturesVision::VirtualFeature2D::detectAndCompute(
+    cv::InputArray image,
+    cv::InputArray mask,
+    std::vector<cv::KeyPoint>& keypoints,
+    cv::OutputArray descriptors,
+    bool useProvidedKeypoints
+) {
+    if (useProvidedKeypoints) {
+        throw std::runtime_error(
+            "GeneratedFeaturesVision::VirtualFeatures does not support calling detectAndCompute "
+            "with useProvidedKeypoints set to true."
+        );
+    }
+    
+    if (!keypoints.empty()) {
+        throw std::runtime_error("Cannot call detectAndCompute with non-empty keypoints vector.");
+    }
+    
+    descriptors.create((int)vision_.visible_features_.size(), 128, CV_32F);
+    cv::Mat descriptors_mat = descriptors.getMat();
+    for (int i = 0; i < vision_.visible_features_.size(); ++i) {
+        const VirtualKeyPoint& kpt = vision_.visible_features_[i];
+        Eigen::Vector2d pt = kpt.pt_last;
+        keypoints.emplace_back(cv::Point2f(pt(0), pt(1)), 1);
+        kpt.descriptor.copyTo(descriptors_mat.row(i));
+    }
+}
 
-std::pair<std::size_t, Eigen::Vector3d> GeneratedFeaturesVision::generateVisibleFeature(Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) {
+GeneratedFeaturesVision::VirtualFeature2D::~VirtualFeature2D() = default;
+
+GeneratedFeaturesVision::VirtualKeyPoint GeneratedFeaturesVision::generateVisibleFeature(Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) {
     std::uniform_real_distribution<> x_dist(0.2*image_dimensions_(0), 0.8*image_dimensions_(0));
     std::uniform_real_distribution<> y_dist(0.2*image_dimensions_(1), 0.8*image_dimensions_(1));
     std::gamma_distribution<> depth_dist(9.0, 0.5);
@@ -118,14 +166,37 @@ std::pair<std::size_t, Eigen::Vector3d> GeneratedFeaturesVision::generateVisible
     
     Eigen::Matrix3d R_G_C = q_C_G.conjugate().toRotationMatrix();
     Eigen::Vector3d p_f_G = R_G_C*p_f_C + p_C_G;
-    return std::make_pair(feature_counter_++, p_f_G);
+    
+    VirtualKeyPoint feature;
+    feature.feature_id = feature_counter_;
+    feature.pt_last << x, y;
+    feature.p_f_G = p_f_G;
+    feature.descriptor.create(1, 128, CV_32F);
+    
+    std::uniform_real_distribution<float> desc_dist(0, 1);
+    for (int i = 0; i < 128; ++i) {
+        feature.descriptor.at<unsigned char>(0, i) = desc_dist(random_generator_);
+    }
+    
+    feature_counter_ += 1;
+    
+    return feature;
 }
 
-bool GeneratedFeaturesVision::isFeatureInView(Eigen::Vector3d p_f_G, Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) const {
+Eigen::Vector2d GeneratedFeaturesVision::projectFeature(Eigen::Vector3d p_f_G, Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) const {
     Eigen::Matrix3d R_C_G = q_C_G.toRotationMatrix();
     Eigen::Vector3d p_f_C = R_C_G*(p_f_G - p_C_G);
     double x = focal_length_(0)*p_f_C(0)/p_f_C(2) + optical_center_(0);
     double y = focal_length_(1)*p_f_C(1)/p_f_C(2) + optical_center_(1);
+    Eigen::Vector2d pt;
+    pt << x, y;
+    return pt;
+}
+
+bool GeneratedFeaturesVision::isFeatureInView(Eigen::Vector3d p_f_G, Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) const {
+    Eigen::Vector2d pt = projectFeature(p_f_G, p_C_G, q_C_G);
+    double x = pt(0);
+    double y = pt(1);
     bool x_in_view = x >= 0 && x <= image_dimensions_(0);
     bool y_in_view = y >= 0 && y <= image_dimensions_(1);
     return x_in_view && y_in_view;

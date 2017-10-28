@@ -25,24 +25,45 @@ public:
     
     std::vector<Eigen::Vector3d> getFeaturesInView() const;
     
-    cv::Feature2D& getFeature2D();
+    cv::Ptr<cv::Feature2D> getFeature2D();
+    
+    Eigen::Vector2d getFocalLength() const;
+    Eigen::Vector2d getOpticalCenter() const;
+    Eigen::Vector3d getRadialDistortion() const;
+    Eigen::Vector2d getTangentialDistortion() const;
     
     virtual ~GeneratedFeaturesVision();
 
 protected:
     GeneratedFeaturesVision(SimSetup *sim_setup);
     
-    class VirtualFeatures: public cv::Feature2D {
+    class VirtualFeature2D: public cv::Feature2D {
     public:
-        VirtualFeatures(GeneratedFeaturesVision& vision);
+        VirtualFeature2D(GeneratedFeaturesVision& vision);
+    
+        void detectAndCompute(
+            cv::InputArray image,
+            cv::InputArray mask,
+            std::vector<cv::KeyPoint>& keypoints,
+            cv::OutputArray descriptors,
+            bool useProvidedKeypoints=false
+        );
         
-        virtual ~VirtualFeatures();
+        virtual ~VirtualFeature2D();
     
     private:
         GeneratedFeaturesVision &vision_;
     };
     
-    std::pair<std::size_t, Eigen::Vector3d> generateVisibleFeature(Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G);
+    struct VirtualKeyPoint {
+        std::size_t feature_id;
+        Eigen::Vector2d pt_last;
+        Eigen::Vector3d p_f_G;
+        cv::Mat descriptor;
+    };
+    
+    VirtualKeyPoint generateVisibleFeature(Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G);
+    Eigen::Vector2d projectFeature(Eigen::Vector3d p_f_G, Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) const;
     bool isFeatureInView(Eigen::Vector3d p_f_G, Eigen::Vector3d p_C_G, tonav::Quaternion q_C_G) const;
     
     VioSimulation *simulation_;
@@ -53,12 +74,13 @@ protected:
     int minimum_number_of_features_;
     int maximum_number_of_features_;
     
-    VirtualFeatures feature2d_;
+    cv::Ptr<VirtualFeature2D> feature2d_;
     
     std::default_random_engine random_generator_;
     
     std::size_t feature_counter_;
-    std::vector<std::pair<std::size_t, Eigen::Vector3d>> visible_features_;
+    
+    std::vector<VirtualKeyPoint> visible_features_;
 };
 
 #endif //TONAV_GENERATED_FEATURES_VISION_H

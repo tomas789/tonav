@@ -21,8 +21,17 @@ FrameFeatures FrameFeatures::fromImage(
     assert(image.channels() == 3);
     
     cv::Mat gray = FrameFeatures::toGray(image);
-    frame_features.detectKeypoints(detector, gray);
-    frame_features.computeDescriptors(extractor, gray);
+    if (detector.get() == extractor.get()) {
+        detector->detectAndCompute(
+            gray,
+            cv::Mat(),
+            frame_features.keypoints_,
+            frame_features.descriptors_
+        );
+    } else {
+        frame_features.detectKeypoints(detector, gray);
+        frame_features.computeDescriptors(extractor, gray);
+    }
     
     frame_features.drawFeatures(image);
     

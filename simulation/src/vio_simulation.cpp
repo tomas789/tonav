@@ -64,7 +64,7 @@ void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
 }
 
 void VioSimulation::cameraCallback(double time, cv::Mat frame) {
-    // Do nothing.
+    sim_setup_->getOdometry().updateFrame(time, frame);
 }
 
 void VioSimulation::runLoopCallback(double time) {

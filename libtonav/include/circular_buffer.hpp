@@ -116,20 +116,17 @@ public:
         if (empty()) {
             throw std::runtime_error("Trying to delete item from empty CircularBuffer.");
         }
-        begin_it_ += 1;
         buffer_[begin_it_ % max_size_].~value_type();
+        begin_it_ += 1;
     }
     
     void pushBack(const reference pose) {
         if (full()) {
             throw std::runtime_error("CircularBuffer is full. Cannot add another item.");
         }
-        if (end_it_ > max_size_) {
-            buffer_[begin_it_ % max_size_] = pose;
-        } else {
-            pointer it = buffer_ + end_it_;
-            new(it) value_type(pose);
-        }
+        pointer it = buffer_ + (end_it_ % max_size_);
+        new(it) value_type(pose);
+        end_it_ += 1;
     }
     
     iterator begin() {
@@ -189,7 +186,10 @@ public:
     }
     
     ~CircularBuffer() {
-        delete buffer_;
+        while (!empty()) {
+            popFront();
+        }
+        delete (char*)buffer_;
     }
 private:
     size_type begin_it_;

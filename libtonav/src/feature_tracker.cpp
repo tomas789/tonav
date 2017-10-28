@@ -23,6 +23,16 @@ FeatureTracker::FeatureTracker(int nfeatures_to_track) {
     matcher_ = cv::DescriptorMatcher::create("BruteForce-Hamming");
 }
 
+FeatureTracker::FeatureTracker(
+    cv::Ptr<cv::FeatureDetector> detector,
+    cv::Ptr<cv::DescriptorExtractor> extractor,
+    cv::Ptr<cv::DescriptorMatcher> matcher
+) : detector_(detector),
+    extractor_(extractor),
+    matcher_(matcher) {
+    
+}
+
 FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_list &previous_tracks, cv::Mat &image) {
     double scale_factor = 1.0;
     

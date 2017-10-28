@@ -24,6 +24,12 @@ public:
     virtual cv::Matx33d getCameraCalibrationMatrix() const = 0;
     double getUpdateFrequency() const;
     virtual std::vector<Eigen::Vector3d> getFeaturesInView() const = 0;
+    virtual cv::Ptr<cv::Feature2D> getFeature2D() = 0;
+    
+    virtual Eigen::Vector2d getFocalLength() const = 0;
+    virtual Eigen::Vector2d getOpticalCenter() const = 0;
+    virtual Eigen::Vector3d getRadialDistortion() const = 0;
+    virtual Eigen::Vector2d getTangentialDistortion() const = 0;
     
     virtual ~Vision();
 

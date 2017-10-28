@@ -250,6 +250,8 @@ void Filter::initialize(double time, const ImuItem &accel, const ImuItem &gyro) 
     covar_diag(54) = calibration_->getCameraDelayTimeNoise();
     covar_diag(55) = calibration_->getCameraReadoutTimeNoise();
     
+    std::cout << covar_diag << std::endl;
+    
     filter_covar_.resize(56, 56);
     filter_covar_.setZero();
     filter_covar_ = covar_diag.asDiagonal();
