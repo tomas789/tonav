@@ -43,7 +43,7 @@ public:
     
     friend std::ostream &operator<<(std::ostream &out, Filter &filter);
     
-    Filter(std::shared_ptr<const Calibration> calibration, std::shared_ptr<const StateInitializer> state_initializer);
+    Filter(std::shared_ptr<const Calibration> calibration, std::shared_ptr<const StateInitializer> state_initializer, std::shared_ptr<FeatureTracker> feature_tracker = nullptr);
     
     /**
      * @brief Propagate filter using accelerometer and gyroscope measurements
@@ -132,6 +132,7 @@ public:
 protected:
     std::shared_ptr<const Calibration> calibration_;
     std::shared_ptr<const StateInitializer> state_initializer_;
+    std::shared_ptr<FeatureTracker> feature_tracker_;
     
     Eigen::Vector3d initial_body_position_in_camera_frame_ = Eigen::Vector3d::Zero();
     
@@ -144,7 +145,6 @@ protected:
     /** @brief Filter covariance matrix \f$ \boldsymbol{\Sigma}_k \f$ */
     Eigen::MatrixXd filter_covar_;
     
-    FeatureTracker feature_tracker_;
     
     FeatureTracker::feature_track_list features_tracked_;
     

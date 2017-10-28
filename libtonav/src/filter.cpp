@@ -31,10 +31,18 @@ namespace tonav {
 
 Filter::Filter(
     std::shared_ptr<const Calibration> calibration,
-    std::shared_ptr<const StateInitializer> state_initializer
+    std::shared_ptr<const StateInitializer> state_initializer,
+    std::shared_ptr<FeatureTracker> feature_tracker
 )
-    : calibration_(calibration), state_initializer_(state_initializer),
-      feature_tracker_(calibration->getNumberOfFeaturesToExtract()), camera_algorithms_(this) {
+    : calibration_(calibration),
+      state_initializer_(state_initializer),
+      camera_algorithms_(this)
+{
+    if (feature_tracker) {
+        feature_tracker_ = feature_tracker;
+    } else {
+        feature_tracker_.reset(new FeatureTracker(calibration->getNumberOfFeaturesToExtract()));
+    }
 }
 
 void Filter::stepInertial(double time, const ImuItem &accel, const ImuItem &gyro) {
@@ -65,10 +73,10 @@ void Filter::stepCamera(double time, cv::Mat &frame, const ImuBuffer::iterator &
     
     frame_rows_ = frame.rows;
     FeatureTracker::feature_track_list current_features_tracked;
-    if (feature_tracker_.previous_frame_features_.keypoints().size() == 0) {
+    if (feature_tracker_->previous_frame_features_.keypoints().size() == 0) {
         assert(state().poses().size() == 1);
     }
-    current_features_tracked = feature_tracker_.processImage(features_tracked_, frame);
+    current_features_tracked = feature_tracker_->processImage(features_tracked_, frame);
     last_camera_pose.setActiveFeaturesCount(current_features_tracked.size());
     for (std::size_t i = 0; i < current_features_tracked.size(); ++i) {
         if (current_features_tracked[i]->wasUsedForResidualization()) {

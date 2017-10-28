@@ -15,6 +15,7 @@ class RunLoop {
 public:
     float getTime() const;
     void run();
+    void stop();
     
     void registerSimulationForUpdates(VioSimulation *simulation);
     void registerCallback(float time, RunLoopCallback *callback);
@@ -27,6 +28,7 @@ private:
         bool operator>(const Item& other) const;
     };
     
+    bool should_stop_ = false;
     VioSimulation *simulation_ = nullptr;
     std::priority_queue<Item, std::vector<Item>, std::greater<Item>> queue_;
 };

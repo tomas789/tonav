@@ -10,7 +10,7 @@
 
 void RunLoop::run() {
     float last_simulation_update_time = std::numeric_limits<float>::min();
-    while (!queue_.empty()) {
+    while (!queue_.empty() && !should_stop_) {
         Item item = queue_.top();
         queue_.pop();
         
@@ -25,6 +25,10 @@ void RunLoop::run() {
             last_simulation_update_time = time;
         }
     }
+}
+
+void RunLoop::stop() {
+    should_stop_ = true;
 }
 
 void RunLoop::registerSimulationForUpdates(VioSimulation *simulation) {

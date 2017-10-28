@@ -10,6 +10,8 @@
 #include <opencv2/core/eigen.hpp>
 #include <tonav.h>
 
+VioSimulation* VioSimulation::global_vio_simulation_;
+
 VioSimulation::VioSimulation() = default;
 
 void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
@@ -29,10 +31,14 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
         
         camera_.reset(new cv::viz::WCameraPosition(sim_setup->getVision().getCameraCalibrationMatrix(), 1, cv::viz::Color::yellow()));
         window_->showWidget("Camera", *camera_);
+    
+        global_vio_simulation_ = this;
+        window_->registerKeyboardCallback(&VioSimulation::windowKeyboardCallback);
         
         window_->spinOnce();
     }
     
+    global_vio_simulation_ = this;
     sim_setup->getImu().initialize(this);
     sim_setup->getVision().initialize(this);
     sim_setup->getTrajectory().initialize(this);
@@ -41,10 +47,11 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
     is_simulation_running_ = true;
     std::thread t(&VioSimulation::startRunLoop, this);
     
-    while (is_simulation_running_) {
+    while (!window_->wasStopped()) {
         std::lock_guard<std::mutex> _(ui_lock_);
         window_->spinOnce();
     }
+    run_loop_.stop();
     t.join();
 }
 
@@ -117,3 +124,8 @@ cv::Affine3d VioSimulation::getPose(tonav::Quaternion q, Eigen::Vector3d p) cons
     cv::Affine3d pose(R, p_viz);
     return pose;
 }
+
+void VioSimulation::windowKeyboardCallback(const cv::viz::KeyboardEvent& event, void*) {
+    std::cout << "Window keyboard callback" << std::endl;
+}
+

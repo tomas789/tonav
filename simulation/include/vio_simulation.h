@@ -33,6 +33,9 @@ private:
     
     cv::Affine3d getPose(tonav::Quaternion q, Eigen::Vector3d p) const;
     
+    static VioSimulation* global_vio_simulation_;
+    static void windowKeyboardCallback(const cv::viz::KeyboardEvent& event, void*);
+    
     std::shared_ptr<SimSetup> sim_setup_;
     std::atomic<bool> is_simulation_running_;
     
