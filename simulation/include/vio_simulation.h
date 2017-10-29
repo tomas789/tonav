@@ -32,6 +32,7 @@ private:
     void startRunLoop();
     
     cv::Affine3d getPose(tonav::Quaternion q, Eigen::Vector3d p) const;
+    void updateOdometryVisualState(const std::vector<Eigen::Vector3d>& features);
     
     static VioSimulation* global_vio_simulation_;
     static void windowKeyboardCallback(const cv::viz::KeyboardEvent& event, void*);
@@ -46,11 +47,14 @@ private:
     
     std::shared_ptr<cv::viz::Viz3d> window_;
     
+    std::shared_ptr<cv::viz::WCloud> features_cloud_;
+    
     std::shared_ptr<cv::viz::WCameraPosition> camera_gt_;
     std::shared_ptr<cv::viz::WCoordinateSystem> body_gt_;
     std::shared_ptr<cv::viz::WCameraPosition> camera_;
     std::shared_ptr<cv::viz::WCoordinateSystem> body_;
-    std::shared_ptr<cv::viz::WCloud> features_cloud_;
+    std::shared_ptr<cv::viz::WCloudCollection> rezidualized_features_cloud_;
+    std::vector<cv::Point3f> feature_point_cloud_;
 };
 
 #endif //TONAV_VIO_SIMULATION_H

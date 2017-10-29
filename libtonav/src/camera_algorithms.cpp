@@ -96,7 +96,7 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
         r.block<3, 1>(0, 0) = R_Clast_C0.block<1, 3>(0, 0);
         r.block<3, 1>(3, 0) = R_Clast_C0.block<1, 3>(1, 0);
         r.block<3, 1>(6, 0) = R_Clast_C0.block<1, 3>(2, 0);
-        std::ofstream out("~/dump/feature_" + std::to_string(feature_track.getFeatureId()) + ".txt");
+        std::ofstream out("/Users/tomaskrejci/dump/feature_" + std::to_string(feature_track.getFeatureId()) + ".txt");
         out << "{" << std::endl;
         out << "\"c0_pose_id\": " << it_c0->getCameraPoseId() << "," << std::endl;
         out << "\"z0\": " << z0.transpose().format(formatter) << "," << std::endl;
@@ -187,7 +187,7 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
         default:
             break;
     }
-    // std::cout << "Optimization ended after " << lm.iterations() << " iteration(s) with status " << status_msg << " (" << msg << ")" << std::endl;
+    std::cout << "Optimization ended after " << lm.iterations() << " iteration(s) with status " << status_msg << " (" << msg << ")" << std::endl;
     
     Eigen::VectorXd fvec;
     fvec.resize(functor.values());

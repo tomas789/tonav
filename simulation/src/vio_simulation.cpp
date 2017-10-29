@@ -76,6 +76,8 @@ void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
         if (was_updated && tonav_odometry->getTonav()->isInitialized()) {
             cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
             cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
+            
+            updateOdometryVisualState(tonav_odometry->getTonav()->featurePointCloud());
         }
     } else {
         sim_setup_->getOdometry().updateAcceleration(time, accel);
@@ -92,6 +94,8 @@ void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
         if (was_updated && tonav_odometry->getTonav()->isInitialized()) {
             cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
             cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
+            
+            updateOdometryVisualState(tonav_odometry->getTonav()->featurePointCloud());
         }
     } else {
         sim_setup_->getOdometry().updateRotationRate(time, gyro);
@@ -165,6 +169,27 @@ cv::Affine3d VioSimulation::getPose(tonav::Quaternion q, Eigen::Vector3d p) cons
     cv::eigen2cv(p_viz_eigen, p_viz);
     cv::Affine3d pose(R, p_viz);
     return pose;
+}
+
+void VioSimulation::updateOdometryVisualState(const std::vector<Eigen::Vector3d>& features) {
+    if (features.empty()) {
+        return;
+    }
+    if (!rezidualized_features_cloud_) {
+        rezidualized_features_cloud_.reset(new cv::viz::WCloudCollection);
+        window_->showWidget("Rezidualized Features Cloud", *rezidualized_features_cloud_);
+        window_->setWidgetPose("Rezidualized Features Cloud", getPose(tonav::Quaternion::identity(), Eigen::Vector3d::Zero()));
+        rezidualized_features_cloud_->setRenderingProperty(cv::viz::POINT_SIZE, 3);
+    }
+    
+    cv::Mat cloud(1, (int)features.size(), CV_32FC3);
+    cv::Point3f* data = cloud.ptr<cv::Point3f>();
+    for (int i = 0; i < features.size(); ++i) {
+        data[i].x = features[i].x();
+        data[i].y = features[i].y();
+        data[i].z = features[i].z();
+    }
+    rezidualized_features_cloud_->addCloud(cloud, cv::viz::Color::yellow());
 }
 
 void VioSimulation::windowKeyboardCallback(const cv::viz::KeyboardEvent& event, void*) {
