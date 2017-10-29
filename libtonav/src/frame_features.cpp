@@ -4,6 +4,7 @@
 
 #include "frame_features.h"
 
+#include <iostream>
 #include <opencv2/core/core.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/calib3d/calib3d.hpp>
@@ -130,6 +131,10 @@ double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch>
     }
     mean_distance /= matches.size();
     return std::max(2 * min_distance, 5.0);
+}
+
+void FrameFeatures::printDescriptors() const {
+    std::cout << descriptors_.row(0) << std::endl;
 }
 
 }

@@ -8,7 +8,10 @@
 #include <thread>
 #include <mutex>
 #include <opencv2/core/eigen.hpp>
+#include <opencv2/highgui/highgui.hpp>
 #include <tonav.h>
+
+#include "odometry/tonav_odometry.h"
 
 VioSimulation* VioSimulation::global_vio_simulation_;
 
@@ -35,6 +38,8 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
         global_vio_simulation_ = this;
         window_->registerKeyboardCallback(&VioSimulation::windowKeyboardCallback);
         
+        cv::namedWindow("Tonav");
+        
         window_->spinOnce();
     }
     
@@ -56,11 +61,35 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
 }
 
 void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
-    sim_setup_->getOdometry().updateAcceleration(time, accel);
+    Odometry& odometry = sim_setup_->getOdometry();
+    TonavOdometry *tonav_odometry = dynamic_cast<TonavOdometry *>(&odometry);
+    
+    if (tonav_odometry != nullptr) {
+        bool was_updated = false;
+        tonav_odometry->updateAcceleration(time, accel, was_updated);
+        if (was_updated && tonav_odometry->getTonav()->isInitialized()) {
+            cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
+            cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
+        }
+    } else {
+        sim_setup_->getOdometry().updateAcceleration(time, accel);
+    }
 }
 
 void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
-    sim_setup_->getOdometry().updateRotationRate(time, gyro);
+    Odometry& odometry = sim_setup_->getOdometry();
+    TonavOdometry *tonav_odometry = dynamic_cast<TonavOdometry *>(&odometry);
+    
+    if (tonav_odometry != nullptr) {
+        bool was_updated = false;
+        tonav_odometry->updateRotationRate(time, gyro, was_updated);
+        if (was_updated && tonav_odometry->getTonav()->isInitialized()) {
+            cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
+            cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
+        }
+    } else {
+        sim_setup_->getOdometry().updateRotationRate(time, gyro);
+    }
 }
 
 void VioSimulation::cameraCallback(double time, cv::Mat frame) {

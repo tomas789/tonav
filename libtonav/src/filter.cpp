@@ -336,7 +336,7 @@ void Filter::pruneCameraPoses(const FeatureTracker::feature_track_list &residual
 }
 
 FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack &feature_track, cv::Mat &frame) const {
-    CameraPoseBuffer pose_buffer = state().poses();
+    const CameraPoseBuffer& pose_buffer = state().poses();
     std::size_t track_length = feature_track.posesTrackedCount();
     std::size_t poses_in_state = pose_buffer.size();
     FeatureRezidualizationResult result(track_length, poses_in_state);
@@ -538,7 +538,7 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list &features_to
             H_rows += H_0_i.rows();
             feature_positions_.push_back(rezidualization_result.getGlobalFeaturePosition());
         } else {
-            // std::cout << "Feature is outlier." << std::endl;
+            std::cout << "Feature is outlier." << std::endl;
         }
     }
     

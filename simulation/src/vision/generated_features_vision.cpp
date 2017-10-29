@@ -175,7 +175,7 @@ GeneratedFeaturesVision::VirtualKeyPoint GeneratedFeaturesVision::generateVisibl
     
     std::uniform_real_distribution<float> desc_dist(0, 1);
     for (int i = 0; i < 128; ++i) {
-        feature.descriptor.at<unsigned char>(0, i) = desc_dist(random_generator_);
+        feature.descriptor.at<float>(0, i) = desc_dist(random_generator_);
     }
     
     feature_counter_ += 1;

@@ -66,6 +66,8 @@ public:
     ImuBuffer::iterator accelHint() const;
     
     std::size_t getCameraPoseId() const;
+    
+    virtual ~CameraPose();
 
 private:
     static std::size_t camera_pose_counter;

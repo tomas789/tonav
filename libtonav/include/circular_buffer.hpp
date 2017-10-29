@@ -119,6 +119,22 @@ public:
         buffer_ = reinterpret_cast<pointer>(new char[max_size_*sizeof(value_type)]);
     }
     
+    CircularBuffer(const CircularBuffer& other) {
+        *this = other;
+    }
+    
+    CircularBuffer& operator=(const CircularBuffer& other) {
+        max_size_ = other.max_size_;
+        buffer_ = reinterpret_cast<pointer>(new char[max_size_*sizeof(value_type)]);
+        begin_it_ = other.begin_it_;
+        end_it_ = other.end_it_;
+        for (std::size_t i = begin_it_; begin_it_ < end_it_; ++end_it_) {
+            pointer it = buffer_ + (i % max_size_);
+            new(it) value_type(other[i]);
+        }
+        return *this;
+    }
+    
     reference operator[](size_type i) {
         return buffer_[(begin_it_ + i) % max_size_];
     }
@@ -145,19 +161,19 @@ public:
     }
     
     iterator begin() noexcept {
-        return iterator(this, begin_it_);
+        return iterator(this, 0);
     }
     
     iterator end() noexcept {
-        return iterator(this, end_it_);
+        return iterator(this, size());
     }
     
     const_iterator begin() const noexcept {
-        return const_iterator(this, begin_it_);
+        return const_iterator(this, 0);
     }
     
     const_iterator end() const noexcept {
-        return const_iterator(this, end_it_);
+        return const_iterator(this, size());
     }
     
     reference front() {

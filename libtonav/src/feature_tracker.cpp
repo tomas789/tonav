@@ -41,6 +41,7 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     
     FrameFeatures frame_features = FrameFeatures::fromImage(detector_, extractor_, working_image);
     // frame_features.drawFeatures(image);
+    frame_features.printDescriptors();
     
     if (previous_frame_features_.keypoints().size() == 0) {
         FeatureTracker::feature_track_list current_features;
@@ -96,6 +97,8 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     
     markOutOfViewFeatures(previous_feature_matched, previous_tracks);
     createNewFeatureTracks(current_feature_matched, current_tracks, frame_features, scale_factor);
+    
+    frame_features.drawFeatures(image, cv::Scalar(159, 195, 79));
     
     drawStats(image, previous_feature_matched, current_feature_matched, current_tracks, matches);
     

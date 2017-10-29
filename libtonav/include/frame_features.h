@@ -37,6 +37,8 @@ public:
     const std::vector<cv::KeyPoint> &keypoints() const;
     
     double computeDistanceLimitForMatch(const std::vector<cv::DMatch> &matches) const;
+    
+    void printDescriptors() const;
 
 protected:
     std::vector<cv::KeyPoint> keypoints_;

@@ -29,7 +29,7 @@ void TonavOdometry::initialize(VioSimulation *simulation) {
     Eigen::Vector3d p_B_C = Eigen::Vector3d::Zero();
     
     cv::Ptr<cv::Feature2D> feature_2d = vision.getFeature2D();
-    cv::Ptr<cv::DescriptorMatcher> matcher(new cv::FlannBasedMatcher);
+    cv::Ptr<cv::DescriptorMatcher> matcher(new cv::BFMatcher(cv::NORM_L2, true));
     if (!matcher) {
         throw std::runtime_error("Cannot create descriptor matcher.");
     }
@@ -40,11 +40,21 @@ void TonavOdometry::initialize(VioSimulation *simulation) {
 }
 
 void TonavOdometry::updateAcceleration(double time, const Eigen::Vector3d& accel) {
-    tonav_->updateAcceleration(time, accel);
+    bool was_updated = false;
+    updateAcceleration(time, accel, was_updated);
+}
+
+void TonavOdometry::updateAcceleration(double time, const Eigen::Vector3d& accel, bool& was_updated) {
+    was_updated = tonav_->updateAcceleration(time, accel);
 }
 
 void TonavOdometry::updateRotationRate(double time, const Eigen::Vector3d& gyro) {
-    tonav_->updateRotationRate(time, gyro);
+    bool was_updated = false;
+    updateRotationRate(time, gyro, was_updated);
+}
+
+void TonavOdometry::updateRotationRate(double time, const Eigen::Vector3d& gyro, bool& was_updated) {
+    was_updated = tonav_->updateRotationRate(time, gyro);
 }
 
 void TonavOdometry::updateFrame(double time, const cv::Mat& frame) {
@@ -74,5 +84,9 @@ tonav::Quaternion TonavOdometry::getGlobalToCameraFrameRotation() const {
 }
 
 TonavOdometry::~TonavOdometry() = default;
+
+std::shared_ptr<tonav::Tonav> TonavOdometry::getTonav() {
+    return tonav_;
+}
 
 TonavOdometry::TonavOdometry(SimSetup *sim_setup) : Odometry(sim_setup) { }

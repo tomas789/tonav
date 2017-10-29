@@ -23,6 +23,8 @@ public:
     
     void updateAcceleration(double time, const Eigen::Vector3d& accel);
     void updateRotationRate(double time, const Eigen::Vector3d& gyro);
+    void updateAcceleration(double time, const Eigen::Vector3d& accel, bool& was_updated);
+    void updateRotationRate(double time, const Eigen::Vector3d& gyro, bool& was_updated);
     void updateFrame(double time, const cv::Mat& frame);
     
     Eigen::Vector3d getBodyPositionInGlobalFrame() const;
@@ -30,6 +32,8 @@ public:
     
     Eigen::Vector3d getCameraPositionInGlobalFrame() const;
     tonav::Quaternion getGlobalToCameraFrameRotation() const;
+    
+    std::shared_ptr<tonav::Tonav> getTonav();
     
     virtual ~TonavOdometry();
 

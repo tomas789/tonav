@@ -26,8 +26,8 @@
   "vision": {
     "type": "generated_features",
     "params": {
-      "minimum_number_of_features": 160,
-      "maximum_number_of_features": 200,
+      "minimum_number_of_features": 20,
+      "maximum_number_of_features": 30,
       "update_frequency": 10,
       "camera_model": {
         "fx": 600,
