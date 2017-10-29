@@ -22,22 +22,6 @@ tonav::Quaternion StandstillTrajectory::getGlobalToBodyFrameRotation(double time
     return tonav::Quaternion::identity();
 }
 
-Eigen::Vector3d StandstillTrajectory::getCameraPositionInGlobalFrame(double time) const {
-    return getBodyPositionInGlobalFrame(time);
-}
-
-tonav::Quaternion StandstillTrajectory::getGlobalToCameraFrameRotation(double time) const {
-    return getGlobalToBodyFrameRotation(time);
-}
-
-Eigen::Vector3d StandstillTrajectory::getCameraPositionInBodyFrame() const {
-    return Eigen::Vector3d::Zero();
-}
-
-tonav::Quaternion StandstillTrajectory::getBodyToCameraFrameRotation() const {
-    return tonav::Quaternion::identity();
-}
-
 Eigen::Vector3d StandstillTrajectory::getGlobalGravity() const {
     Eigen::Vector3d global_gravity;
     global_gravity << 0, 0, -9.81;

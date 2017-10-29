@@ -58,7 +58,7 @@ std::shared_ptr<TonavCalibration> TonavCalibration::prepare(SimSetup *sim_setup)
     calibration->camera_delay_time_noise_ = 1e-9;
     calibration->camera_readout_time_noise_ = 1e-9;
     
-    calibration->body_to_camera_rotation_ = tonav::Quaternion(0.5, -0.5, 0.5, -0.5).conjugate();
+    calibration->body_to_camera_rotation_ = trajectory.getBodyToCameraFrameRotation();
     
     return calibration;
 }

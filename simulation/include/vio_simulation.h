@@ -45,8 +45,11 @@ private:
     tonav::Quaternion q_viz_sim_ = tonav::Quaternion(0.5, -0.5, 0.5, -0.5).conjugate();
     
     std::shared_ptr<cv::viz::Viz3d> window_;
+    
     std::shared_ptr<cv::viz::WCameraPosition> camera_gt_;
+    std::shared_ptr<cv::viz::WCoordinateSystem> body_gt_;
     std::shared_ptr<cv::viz::WCameraPosition> camera_;
+    std::shared_ptr<cv::viz::WCoordinateSystem> body_;
     std::shared_ptr<cv::viz::WCloud> features_cloud_;
 };
 

@@ -24,11 +24,11 @@ public:
     virtual Eigen::Vector3d getBodyPositionInGlobalFrame(double time) const = 0;
     virtual tonav::Quaternion getGlobalToBodyFrameRotation(double time) const = 0;
     
-    virtual Eigen::Vector3d getCameraPositionInGlobalFrame(double time) const = 0;
-    virtual tonav::Quaternion getGlobalToCameraFrameRotation(double time) const = 0;
+    Eigen::Vector3d getCameraPositionInGlobalFrame(double time) const;
+    tonav::Quaternion getGlobalToCameraFrameRotation(double time) const;
     
-    virtual Eigen::Vector3d getCameraPositionInBodyFrame() const = 0;
-    virtual tonav::Quaternion getBodyToCameraFrameRotation() const = 0;
+    Eigen::Vector3d getCameraPositionInBodyFrame() const;
+    tonav::Quaternion getBodyToCameraFrameRotation() const;
     
     virtual Eigen::Vector3d getGlobalGravity() const = 0;
     
@@ -36,6 +36,9 @@ public:
 
 protected:
     Trajectory(SimSetup *sim_setup);
+    
+    tonav::Quaternion q_C_B_;
+    Eigen::Vector3d p_C_B_;
 };
 
 #endif //TONAV_TRAJECTORY_H

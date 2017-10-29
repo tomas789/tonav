@@ -30,11 +30,6 @@ void CameraPose::setActiveFeaturesCount(std::size_t i) {
 }
 
 void CameraPose::decreaseActiveFeaturesCount(int feature_id) {
-    std::cout << "Camera pose " << camera_pose_id_ << " : decreaseActiveFeaturesCount(" << feature_id << "): ";
-    for (auto it = feature_ids_.begin(); it != feature_ids_.end(); ++it) {
-        std::cout << *it << " ";
-    }
-    std::cout << " END." << std::endl;
     assert(feature_ids_.find(feature_id) != std::end(feature_ids_));
     feature_ids_.erase(feature_ids_.find(feature_id));
     

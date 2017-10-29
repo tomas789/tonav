@@ -32,8 +32,14 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
         camera_gt_.reset(new cv::viz::WCameraPosition(sim_setup->getVision().getCameraCalibrationMatrix(), 1, cv::viz::Color::green()));
         window_->showWidget("Camera GT", *camera_gt_);
         
+        body_gt_.reset(new cv::viz::WCoordinateSystem(0.3));
+        window_->showWidget("Body GT", *body_gt_);
+        
         camera_.reset(new cv::viz::WCameraPosition(sim_setup->getVision().getCameraCalibrationMatrix(), 1, cv::viz::Color::yellow()));
         window_->showWidget("Camera", *camera_);
+        
+        body_.reset(new cv::viz::WCoordinateSystem(0.3));
+        window_->showWidget("Body", *body_);
     
         global_vio_simulation_ = this;
         window_->registerKeyboardCallback(&VioSimulation::windowKeyboardCallback);
@@ -85,7 +91,6 @@ void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
         tonav_odometry->updateRotationRate(time, gyro, was_updated);
         if (was_updated && tonav_odometry->getTonav()->isInitialized()) {
             cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
-            cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
         }
     } else {
         sim_setup_->getOdometry().updateRotationRate(time, gyro);
@@ -101,9 +106,13 @@ void VioSimulation::runLoopCallback(double time) {
     const Odometry& odometry = sim_setup_->getOdometry();
     const Vision& vision = sim_setup_->getVision();
     
-    Eigen::Vector3d p_B_G_gt = trajectory.getCameraPositionInGlobalFrame(time);
-    tonav::Quaternion q_G_B_gt = trajectory.getGlobalToCameraFrameRotation(time).conjugate();
+    Eigen::Vector3d p_B_G_gt = trajectory.getBodyPositionInGlobalFrame(time);
+    tonav::Quaternion q_G_B_gt = trajectory.getGlobalToBodyFrameRotation(time).conjugate();
+    Eigen::Vector3d p_C_G_gt = trajectory.getCameraPositionInGlobalFrame(time);
+    tonav::Quaternion q_G_C_gt = trajectory.getGlobalToCameraFrameRotation(time).conjugate();
     
+    Eigen::Vector3d p_B_G = odometry.getBodyPositionInGlobalFrame();
+    tonav::Quaternion q_G_B = odometry.getGlobalToBodyFrameRotation().conjugate();
     Eigen::Vector3d p_C_G = odometry.getCameraPositionInGlobalFrame();
     tonav::Quaternion q_G_C = odometry.getGlobalToCameraFrameRotation().conjugate();
     
@@ -115,7 +124,10 @@ void VioSimulation::runLoopCallback(double time) {
     
     {
         std::lock_guard<std::mutex> _(ui_lock_);
-        window_->setWidgetPose("Camera GT", getPose(q_G_B_gt, p_B_G_gt));
+        window_->setWidgetPose("Body GT", getPose(q_G_B_gt, p_B_G_gt));
+        window_->setWidgetPose("Camera GT", getPose(q_G_C_gt, p_C_G_gt));
+    
+        window_->setWidgetPose("Body", getPose(q_G_B, p_B_G));
         window_->setWidgetPose("Camera", getPose(q_G_C, p_C_G));
         
         if (features_cloud_) {

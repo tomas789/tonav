@@ -5,6 +5,7 @@
 #include "odometry/tonav_odometry.h"
 
 #include <tonav.h>
+#include <geometry.h>
 
 std::unique_ptr<TonavOdometry> TonavOdometry::load(SimSetup* sim_setup, const json& j) {
     std::unique_ptr<TonavOdometry> odometry(new TonavOdometry(sim_setup));
@@ -82,11 +83,29 @@ tonav::Quaternion TonavOdometry::getGlobalToBodyFrameRotation() const {
 }
 
 Eigen::Vector3d TonavOdometry::getCameraPositionInGlobalFrame() const {
-    return getBodyPositionInGlobalFrame();
+    if (!tonav_->isInitialized()) {
+        return Eigen::Vector3d::Zero();
+    }
+    tonav::Quaternion q_C_B = tonav_->filter().getBodyToCameraRotation();
+    Eigen::Vector3d p_B_C = tonav_->filter().getPositionOfBodyInCameraFrame();
+    Eigen::Vector3d p_B_G = getBodyPositionInGlobalFrame();
+    tonav::Quaternion q_B_G = getGlobalToBodyFrameRotation();
+    tonav::Quaternion q_G_B = q_B_G.conjugate();
+    Eigen::Vector3d p_G_B = tonav::Geometry::switchFrames(p_B_G, q_B_G);
+    tonav::Quaternion q_B_C = q_C_B.conjugate();
+    Eigen::Vector3d p_C_B = tonav::Geometry::switchFrames(p_B_C, q_B_C);
+    Eigen::Vector3d p_C_G = tonav::Geometry::transformFrames(p_C_B, q_G_B, p_G_B);
+    return p_C_G;
 }
 
 tonav::Quaternion TonavOdometry::getGlobalToCameraFrameRotation() const {
-    return getGlobalToBodyFrameRotation();
+    if (!tonav_->isInitialized()) {
+        return tonav::Quaternion::identity();
+    }
+    tonav::Quaternion q_B_G = getGlobalToBodyFrameRotation();
+    tonav::Quaternion q_C_B = tonav_calibration_->getBodyToCameraRotation();
+    tonav::Quaternion q_C_G = q_C_B*q_B_G;
+    return q_C_G;
 }
 
 TonavOdometry::~TonavOdometry() = default;
