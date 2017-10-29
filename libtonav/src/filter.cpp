@@ -347,7 +347,7 @@ FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack &feat
     result.setGlobalFeaturePosition(global_position);
     if (!global_position_success) {
         result.setIsInvalid();
-//        std::cout << "Global position failed" << std::endl;
+        std::cout << "Global position failed " << feature_track.getFeatureId() << std::endl;
         return result;
     }
     

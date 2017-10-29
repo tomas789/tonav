@@ -30,7 +30,7 @@ void TonavOdometry::initialize(VioSimulation *simulation) {
     Eigen::Vector3d p_B_C = Eigen::Vector3d::Zero();
     
     cv::Ptr<cv::Feature2D> feature_2d = vision.getFeature2D();
-    cv::Ptr<cv::DescriptorMatcher> matcher(new cv::BFMatcher(cv::NORM_L2, true));
+    cv::Ptr<cv::DescriptorMatcher> matcher(new cv::FlannBasedMatcher);
     if (!matcher) {
         throw std::runtime_error("Cannot create descriptor matcher.");
     }

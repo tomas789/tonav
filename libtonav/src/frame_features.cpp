@@ -78,11 +78,20 @@ std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matc
         return std::vector<cv::DMatch>();
     }
     
-    std::vector<cv::DMatch> matches;
-    matcher->match(descriptors_, other.descriptors_, matches);
+    std::vector<std::vector<cv::DMatch>> matches;
+    matcher->knnMatch(descriptors_, other.descriptors_, matches, 2);
+    
+    std::vector<cv::DMatch> good_matches;
+    for (int i = 0; i < matches.size(); ++i) {
+        if (matches[i][0].distance <= 0.7*matches[i][1].distance) {
+            good_matches.push_back(matches[i][0]);
+        }
+    }
+    return good_matches;
     
     // @todo: Move use_homography_filter out to the configuration?
-    bool use_homography_filter = true;
+    /*
+    bool use_homography_filter = false;
     if (use_homography_filter) {
         std::vector<cv::Point2f> this_pts;
         std::vector<cv::Point2f> other_pts;
@@ -105,6 +114,7 @@ std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matc
     } else {
         return matches;
     }
+     */
 }
 
 std::vector<cv::KeyPoint> &FrameFeatures::keypoints() {
@@ -113,6 +123,10 @@ std::vector<cv::KeyPoint> &FrameFeatures::keypoints() {
 
 const std::vector<cv::KeyPoint> &FrameFeatures::keypoints() const {
     return keypoints_;
+}
+
+const cv::Mat& FrameFeatures::descriptors() const {
+    return descriptors_;
 }
 
 double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch> &matches) const {
@@ -131,10 +145,6 @@ double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch>
     }
     mean_distance /= matches.size();
     return std::max(2 * min_distance, 5.0);
-}
-
-void FrameFeatures::printDescriptors() const {
-    std::cout << descriptors_.row(0) << std::endl;
 }
 
 }

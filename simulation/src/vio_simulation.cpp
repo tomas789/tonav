@@ -91,6 +91,7 @@ void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
         tonav_odometry->updateRotationRate(time, gyro, was_updated);
         if (was_updated && tonav_odometry->getTonav()->isInitialized()) {
             cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
+            cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
         }
     } else {
         sim_setup_->getOdometry().updateRotationRate(time, gyro);
