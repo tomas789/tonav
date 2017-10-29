@@ -45,6 +45,9 @@ void TonavOdometry::updateAcceleration(double time, const Eigen::Vector3d& accel
 }
 
 void TonavOdometry::updateAcceleration(double time, const Eigen::Vector3d& accel, bool& was_updated) {
+    if (!tonav_->isInitialized()) {
+        updateTonavInitializerFromGroundTruth(time);
+    }
     was_updated = tonav_->updateAcceleration(time, accel);
 }
 
@@ -54,6 +57,9 @@ void TonavOdometry::updateRotationRate(double time, const Eigen::Vector3d& gyro)
 }
 
 void TonavOdometry::updateRotationRate(double time, const Eigen::Vector3d& gyro, bool& was_updated) {
+    if (!tonav_->isInitialized()) {
+        updateTonavInitializerFromGroundTruth(time);
+    }
     was_updated = tonav_->updateRotationRate(time, gyro);
 }
 
@@ -90,3 +96,12 @@ std::shared_ptr<tonav::Tonav> TonavOdometry::getTonav() {
 }
 
 TonavOdometry::TonavOdometry(SimSetup *sim_setup) : Odometry(sim_setup) { }
+
+void TonavOdometry::updateTonavInitializerFromGroundTruth(double time) {
+    const Trajectory& trajectory = sim_setup_->getTrajectory();
+    const Imu& imu = sim_setup_->getImu();
+    std::shared_ptr<tonav::StateInitializer> initializer = tonav_->initializer();
+    initializer->setOrientation(trajectory.getGlobalToBodyFrameRotation(time));
+    initializer->setPosition(trajectory.getBodyPositionInGlobalFrame(time));
+    initializer->setVelocity(imu.getVelocity(time));
+}

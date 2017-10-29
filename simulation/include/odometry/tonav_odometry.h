@@ -40,6 +40,8 @@ public:
 private:
     TonavOdometry(SimSetup *sim_setup);
     
+    void updateTonavInitializerFromGroundTruth(double time);
+    
     VioSimulation *vio_simulation_;
     
     double next_propagation_time_;
