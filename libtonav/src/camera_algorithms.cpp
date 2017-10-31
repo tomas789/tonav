@@ -96,9 +96,10 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
         r.block<3, 1>(0, 0) = R_Clast_C0.block<1, 3>(0, 0);
         r.block<3, 1>(3, 0) = R_Clast_C0.block<1, 3>(1, 0);
         r.block<3, 1>(6, 0) = R_Clast_C0.block<1, 3>(2, 0);
-        std::ofstream out("/Users/tomaskrejci/dump/feature_" + std::to_string(feature_track.getFeatureId()) + ".txt");
+        const FeatureId& feature_id = feature_track.getFeatureId();
+        std::ofstream out("/Users/tomaskrejci/dump/feature_" + std::to_string(feature_id.getFrameId()) + "_" + std::to_string(feature_id.getFeatureId()) + ".txt");
         out << "{" << std::endl;
-        out << "\"c0_pose_id\": " << it_c0->getCameraPoseId() << "," << std::endl;
+        out << "\"c0_frame_id\": " << it_c0->getFrameId() << "," << std::endl;
         out << "\"z0\": " << z0.transpose().format(formatter) << "," << std::endl;
         out << "\"z_last\": " << z_last.transpose().format(formatter) << "," << std::endl;
         out << "\"p_Clast_C0\": " << p_Clast_C0.transpose().format(formatter) << "," << std::endl;

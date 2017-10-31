@@ -32,7 +32,7 @@ private:
     void startRunLoop();
     
     cv::Affine3d getPose(tonav::Quaternion q, Eigen::Vector3d p) const;
-    void updateOdometryVisualState(const std::vector<Eigen::Vector3d>& features);
+    void updateOdometryVisualState(const std::vector<std::pair<tonav::FeatureId, Eigen::Vector3d>>& features);
     
     static VioSimulation* global_vio_simulation_;
     static void windowKeyboardCallback(const cv::viz::KeyboardEvent& event, void*);

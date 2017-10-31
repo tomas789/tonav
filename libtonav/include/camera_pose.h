@@ -10,6 +10,7 @@
 #include <set>
 #include <memory>
 
+#include "feature_id.h"
 #include "imu_buffer.h"
 #include "quaternion.h"
 
@@ -21,13 +22,13 @@ class Filter;
 
 class CameraPose {
 public:
-    CameraPose(const BodyState &body_state, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel);
+    CameraPose(const BodyState &body_state, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel, std::size_t frame_id);
     
     std::size_t getActiveFeaturesCount() const;
     
     void setActiveFeaturesCount(std::size_t i);
     
-    void decreaseActiveFeaturesCount(int feature_id);
+    void decreaseActiveFeaturesCount(const FeatureId& feature_id);
     
     BodyState &getBodyState();
     
@@ -57,7 +58,7 @@ public:
     
     Eigen::Vector3d getPositionOfAnotherPose(const CameraPose &other, const Filter &filter) const;
     
-    void rememberFeatureId(int feature_id);
+    void rememberFeatureId(const FeatureId& feature_id);
     
     void updateWithStateDelta(const Eigen::VectorXd &delta_x);
     
@@ -65,14 +66,13 @@ public:
     
     ImuBuffer::iterator accelHint() const;
     
-    std::size_t getCameraPoseId() const;
+    std::size_t getFrameId() const;
     
     virtual ~CameraPose();
 
 private:
-    static std::size_t camera_pose_counter;
-    std::size_t camera_pose_id_;
-    std::set<int> feature_ids_;
+    std::size_t frame_id_;
+    std::set<FeatureId> feature_ids_;
     std::size_t features_active_;
     std::shared_ptr<BodyState> body_state_;
     ImuBuffer::iterator hint_gyro_;

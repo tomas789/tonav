@@ -30,12 +30,13 @@ public:
     );
     
     feature_track_list processImage(feature_track_list &previous_tracks, cv::Mat &image);
+    std::size_t getLastFrameId() const;
 
 private:
     cv::Ptr<cv::FeatureDetector> detector_;
     cv::Ptr<cv::DescriptorExtractor> extractor_;
     cv::Ptr<cv::DescriptorMatcher> matcher_;
-    FrameFeatures previous_frame_features_;
+    std::shared_ptr<FrameFeatures> previous_frame_features_;
     
     double computeDistanceLimitForMatch(const std::vector<cv::DMatch> &matches) const;
     

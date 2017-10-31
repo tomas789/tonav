@@ -11,12 +11,11 @@
 
 namespace tonav {
 
-FeatureTrack::FeatureTrack() {
-    static int feature_id = 0;
-    feature_id_ = feature_id++;
-    
-    is_out_of_view_ = false;
-    was_used_for_residualization_ = false;
+FeatureTrack::FeatureTrack(const FeatureId& feature_id)
+    : feature_id_(feature_id),
+      is_out_of_view_(false),
+      was_used_for_residualization_(false)
+{
 }
 
 const Eigen::Vector2d &FeatureTrack::operator[](std::size_t i) const {
@@ -56,7 +55,7 @@ void FeatureTrack::setWasUsedForResidualization() {
     was_used_for_residualization_ = true;
 }
 
-int FeatureTrack::getFeatureId() const {
+const FeatureId& FeatureTrack::getFeatureId() const {
     return feature_id_;
 }
 

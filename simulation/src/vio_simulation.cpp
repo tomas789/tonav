@@ -77,7 +77,7 @@ void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
             cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
             cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
             
-            updateOdometryVisualState(tonav_odometry->getTonav()->featurePointCloud());
+            updateOdometryVisualState(tonav_odometry->getTonav()->getFeaturePointCloud());
         }
     } else {
         sim_setup_->getOdometry().updateAcceleration(time, accel);
@@ -95,7 +95,7 @@ void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
             cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
             cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
             
-            updateOdometryVisualState(tonav_odometry->getTonav()->featurePointCloud());
+            updateOdometryVisualState(tonav_odometry->getTonav()->getFeaturePointCloud());
         }
     } else {
         sim_setup_->getOdometry().updateRotationRate(time, gyro);
@@ -171,7 +171,7 @@ cv::Affine3d VioSimulation::getPose(tonav::Quaternion q, Eigen::Vector3d p) cons
     return pose;
 }
 
-void VioSimulation::updateOdometryVisualState(const std::vector<Eigen::Vector3d>& features) {
+void VioSimulation::updateOdometryVisualState(const std::vector<std::pair<tonav::FeatureId, Eigen::Vector3d>>& features) {
     if (features.empty()) {
         return;
     }
@@ -185,9 +185,9 @@ void VioSimulation::updateOdometryVisualState(const std::vector<Eigen::Vector3d>
     cv::Mat cloud(1, (int)features.size(), CV_32FC3);
     cv::Point3f* data = cloud.ptr<cv::Point3f>();
     for (int i = 0; i < features.size(); ++i) {
-        data[i].x = features[i].x();
-        data[i].y = features[i].y();
-        data[i].z = features[i].z();
+        data[i].x = features[i].second.x();
+        data[i].y = features[i].second.y();
+        data[i].z = features[i].second.z();
     }
     rezidualized_features_cloud_->addCloud(cloud, cv::viz::Color::yellow());
 }

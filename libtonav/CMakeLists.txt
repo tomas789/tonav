@@ -11,6 +11,7 @@ add_library(tonav
         src/camera_item.cpp
         src/camera_pose.cpp
         src/camera_reprojection_functor.cpp
+        src/feature_id.cpp
         src/feature_rezidualization_result.cpp
         src/feature_track.cpp
         src/feature_tracker.cpp

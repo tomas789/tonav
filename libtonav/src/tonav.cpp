@@ -129,7 +129,7 @@ bool Tonav::isInitialized() const {
     return filter_.isInitialized();
 }
 
-std::vector<Eigen::Vector3d> Tonav::featurePointCloud() const {
+std::vector<std::pair<FeatureId, Eigen::Vector3d>> Tonav::getFeaturePointCloud() const {
     return filter_.featurePointCloud();
 }
 

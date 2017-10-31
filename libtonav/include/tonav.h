@@ -99,7 +99,7 @@ public:
     
     bool isInitialized() const;
     
-    std::vector<Eigen::Vector3d> featurePointCloud() const;
+    std::vector<std::pair<FeatureId, Eigen::Vector3d>> getFeaturePointCloud() const;
     
     ~Tonav();
 private:

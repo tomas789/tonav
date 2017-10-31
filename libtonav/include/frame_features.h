@@ -8,11 +8,13 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/features2d/features2d.hpp>
 
+#include "feature_id.h"
+
 namespace tonav {
 
 class FrameFeatures {
 public:
-    static FrameFeatures fromImage(
+    static std::shared_ptr<FrameFeatures> fromImage(
         cv::Ptr<cv::FeatureDetector> detector, cv::Ptr<cv::DescriptorExtractor> extractor,
         cv::Mat &image
     );
@@ -38,11 +40,21 @@ public:
     
     const cv::Mat& descriptors() const;
     
+    const std::vector<FeatureId>& getFeatureIds() const;
+    
+    std::size_t getFrameId() const;
+    
     double computeDistanceLimitForMatch(const std::vector<cv::DMatch> &matches) const;
     
 protected:
+    std::size_t frame_id_;
     std::vector<cv::KeyPoint> keypoints_;
     cv::Mat descriptors_;
+    std::vector<FeatureId> feature_ids_;
+    
+    FrameFeatures();
+    
+    static std::size_t frame_counter_;
     
     void detectKeypoints(cv::Ptr<cv::FeatureDetector> detector, cv::Mat gray);
     
@@ -51,6 +63,6 @@ protected:
     static cv::Mat toGray(const cv::Mat &image);
 };
 
-}
+} // namespace tonav
 
 #endif //TONAV_FRAME_FEATURES_H

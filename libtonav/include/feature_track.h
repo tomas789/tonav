@@ -9,11 +9,13 @@
 #include <vector>
 #include <opencv2/core/core.hpp>
 
+#include "feature_id.h"
+
 namespace tonav {
 
 class FeatureTrack {
 public:
-    FeatureTrack();
+    FeatureTrack(const FeatureId& feature_id);
     
     const Eigen::Vector2d &operator[](std::size_t i) const;
     
@@ -36,12 +38,12 @@ public:
      *
      * @todo This should be deleted in the future. I will keep it here just for case ...
      */
-    int getFeatureId() const;
+    const FeatureId& getFeatureId() const;
     
     void drawFeatureTrack(cv::Mat &image, cv::Scalar color, int thickness) const;
 
 private:
-    int feature_id_;
+    FeatureId feature_id_;
     bool is_out_of_view_;
     bool was_used_for_residualization_;
     std::vector<Eigen::Vector2d> positions_;

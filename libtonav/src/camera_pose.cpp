@@ -12,13 +12,11 @@
 
 namespace tonav {
 
-std::size_t CameraPose::camera_pose_counter = 0;
-
-CameraPose::CameraPose(const BodyState &body_state, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel) {
+CameraPose::CameraPose(const BodyState &body_state, ImuBuffer::iterator hint_gyro, ImuBuffer::iterator hint_accel, std::size_t frame_id) {
     body_state_ = std::make_shared<BodyState>(body_state);
     hint_gyro_ = hint_gyro;
     hint_accel_ = hint_accel;
-    camera_pose_id_ = CameraPose::camera_pose_counter++;
+    frame_id_ = frame_id;
 }
 
 std::size_t CameraPose::getActiveFeaturesCount() const {
@@ -29,7 +27,7 @@ void CameraPose::setActiveFeaturesCount(std::size_t i) {
     features_active_ = i;
 }
 
-void CameraPose::decreaseActiveFeaturesCount(int feature_id) {
+void CameraPose::decreaseActiveFeaturesCount(const FeatureId& feature_id) {
     assert(feature_ids_.find(feature_id) != std::end(feature_ids_));
     feature_ids_.erase(feature_ids_.find(feature_id));
     
@@ -88,7 +86,7 @@ Eigen::Vector3d CameraPose::getPositionOfAnotherPose(const CameraPose &other, co
     return R_Cfrom_G * (p_Cto_G - p_Cfrom_G);
 }
 
-void CameraPose::rememberFeatureId(int feature_id) {
+void CameraPose::rememberFeatureId(const FeatureId& feature_id) {
     assert(feature_ids_.find(feature_id) == std::end(feature_ids_));
     feature_ids_.insert(feature_id);
 }
@@ -105,12 +103,12 @@ ImuBuffer::iterator CameraPose::accelHint() const {
     return hint_accel_;
 }
 
-std::size_t CameraPose::getCameraPoseId() const {
-    return camera_pose_id_;
+std::size_t CameraPose::getFrameId() const {
+    return frame_id_;
 }
 
 CameraPose::~CameraPose() {
-    camera_pose_id_ = std::numeric_limits<std::size_t>::max();
+    frame_id_ = std::numeric_limits<std::size_t>::max();
 }
 
 }

@@ -40,14 +40,15 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     cv::Mat working_image;
     cv::resize(image, working_image, cv::Size(), scale_factor, scale_factor, cv::INTER_LINEAR);
     
-    FrameFeatures frame_features = FrameFeatures::fromImage(detector_, extractor_, working_image);
+    std::shared_ptr<FrameFeatures> frame_features = FrameFeatures::fromImage(detector_, extractor_, working_image);
     // frame_features.drawFeatures(image);
     
-    if (previous_frame_features_.keypoints().size() == 0) {
+    if (!previous_frame_features_ || previous_frame_features_->keypoints().size() == 0) {
         FeatureTracker::feature_track_list current_features;
-        for (std::size_t i = 0; i < frame_features.keypoints().size(); ++i) {
-            const cv::KeyPoint &keypoint = frame_features.keypoints()[i];
-            current_features.emplace_back(new FeatureTrack);
+        for (std::size_t i = 0; i < frame_features->keypoints().size(); ++i) {
+            const FeatureId& feature_id = frame_features->getFeatureIds()[i];
+            const cv::KeyPoint &keypoint = frame_features->keypoints()[i];
+            current_features.emplace_back(new FeatureTrack(feature_id));
             current_features.back()->addFeaturePosition(keypoint.pt.x / scale_factor, keypoint.pt.y / scale_factor);
         }
         
@@ -55,24 +56,24 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
         return current_features;
     }
     
-    std::vector<cv::DMatch> matches = frame_features.match(matcher_, previous_frame_features_);
+    std::vector<cv::DMatch> matches = frame_features->match(matcher_, *previous_frame_features_);
     std::size_t matches_size = matches.size();
     
     std::size_t max_y_feat = 0;
-    for (int i = 0; i < previous_frame_features_.keypoints().size(); ++i) {
-        if (previous_frame_features_.keypoints()[i].pt.y > previous_frame_features_.keypoints()[max_y_feat].pt.y) {
+    for (int i = 0; i < previous_frame_features_->keypoints().size(); ++i) {
+        if (previous_frame_features_->keypoints()[i].pt.y > previous_frame_features_->keypoints()[max_y_feat].pt.y) {
             max_y_feat = i;
         }
     }
-    std::cout << "1. " << previous_frame_features_.descriptors().row(max_y_feat) << std::endl;
-    std::cout << "2. " << frame_features.descriptors().row(max_y_feat) << std::endl;
-    auto dist = cv::norm(previous_frame_features_.descriptors().row(max_y_feat), frame_features.descriptors().row(max_y_feat), cv::NORM_L2);
+    std::cout << "1. " << previous_frame_features_->descriptors().row(max_y_feat) << std::endl;
+    std::cout << "2. " << frame_features->descriptors().row(max_y_feat) << std::endl;
+    auto dist = cv::norm(previous_frame_features_->descriptors().row(max_y_feat), frame_features->descriptors().row(max_y_feat), cv::NORM_L2);
     std::cout << "Feature with max y coord is at index " << max_y_feat << " dist " << dist << std::endl;
     
     std::vector<double> previous_feature_matched(previous_tracks.size(), INFINITY);
     std::vector<std::size_t> matched_feature_assigned(previous_tracks.size(), std::numeric_limits<std::size_t>::max());
-    std::vector<bool> current_feature_matched(frame_features.keypoints().size(), false);
-    feature_track_list current_tracks(frame_features.keypoints().size());
+    std::vector<bool> current_feature_matched(frame_features->keypoints().size(), false);
+    feature_track_list current_tracks(frame_features->keypoints().size());
     
     for (std::size_t i = 0; i < matches.size(); ++i) {
         const cv::DMatch &match = matches[i];
@@ -90,13 +91,14 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
                 previous_tracks[train_idx]->revertLastPosition();
                 
                 std::size_t previous_matched_idx = matched_feature_assigned[train_idx];
-                current_tracks[previous_matched_idx].reset(new FeatureTrack);
+                const FeatureId& feature_id = frame_features->getFeatureIds()[previous_matched_idx];
+                current_tracks[previous_matched_idx].reset(new FeatureTrack(feature_id));
                 
                 current_feature_matched[previous_matched_idx] = false;
             }
             
             // Track feature
-            const cv::KeyPoint &current_keypoint = frame_features.keypoints()[query_idx];
+            const cv::KeyPoint &current_keypoint = frame_features->keypoints()[query_idx];
             current_tracks[query_idx] = previous_tracks[train_idx];
             matched_feature_assigned[train_idx] = query_idx;
             current_tracks[query_idx]->addFeaturePosition(
@@ -108,9 +110,9 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     }
     
     markOutOfViewFeatures(previous_feature_matched, previous_tracks);
-    createNewFeatureTracks(current_feature_matched, current_tracks, frame_features, scale_factor);
+    createNewFeatureTracks(current_feature_matched, current_tracks, *frame_features, scale_factor);
     
-    frame_features.drawFeatures(image, cv::Scalar(159, 195, 79));
+    frame_features->drawFeatures(image, cv::Scalar(159, 195, 79));
     
     drawStats(image, previous_feature_matched, current_feature_matched, current_tracks, matches);
     
@@ -119,6 +121,9 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     return current_tracks;
 }
 
+std::size_t FeatureTracker::getLastFrameId() const {
+    return previous_frame_features_->getFrameId();
+}
 
 void FeatureTracker::drawStats(
     cv::Mat &image, const std::vector<double> &previous_features_matched,
@@ -170,13 +175,16 @@ const {
 
 void FeatureTracker::createNewFeatureTracks(
     std::vector<bool> &feature_matched,
-    feature_track_list &feature_tracks, const FrameFeatures &frame_features, double scale_factor
+    feature_track_list &feature_tracks,
+    const FrameFeatures &frame_features,
+    double scale_factor
 ) const {
     for (std::size_t i = 0; i < feature_tracks.size(); ++i) {
         if (!feature_matched[i]) {
             // This is new feature
+            const FeatureId& feature_id = frame_features.getFeatureIds()[i];
             const cv::KeyPoint &current_keypoint = frame_features.keypoints()[i];
-            std::shared_ptr<FeatureTrack> feature_track(new FeatureTrack);
+            std::shared_ptr<FeatureTrack> feature_track(new FeatureTrack(feature_id));
             feature_track->addFeaturePosition(current_keypoint.pt.x / scale_factor, current_keypoint.pt.y / scale_factor);
             feature_tracks[i] = feature_track;
         }

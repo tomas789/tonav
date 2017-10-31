@@ -11,6 +11,7 @@
 #include "body_state.h"
 #include "calibration.h"
 #include "camera_algorithms.h"
+#include "feature_id.h"
 #include "feature_rezidualization_result.h"
 #include "feature_tracker.h"
 #include "filter_state.h"
@@ -129,7 +130,7 @@ public:
     
     void setInitialBodyPositionInCameraFrame(const Eigen::Vector3d &position);
     
-    std::vector<Eigen::Vector3d> featurePointCloud() const;
+    std::vector<std::pair<FeatureId, Eigen::Vector3d>> featurePointCloud() const;
     
     const CameraAlgorithms &cameraAlgorithms() const;
 
@@ -157,7 +158,7 @@ protected:
     /** @brief Number of rows in last camera image */
     std::size_t frame_rows_;
     
-    std::vector<Eigen::Vector3d> feature_positions_;
+    std::vector<std::pair<FeatureId, Eigen::Vector3d>> feature_positions_;
     
     /**
      * @brief Get a reference to currently valid filter state.
@@ -206,7 +207,7 @@ protected:
      *
      * @todo Implement this
      */
-    void augment(const ImuBuffer::iterator &hint_gyro, const ImuBuffer::iterator &hint_accel);
+    void augment(const ImuBuffer::iterator &hint_gyro, const ImuBuffer::iterator &hint_accel, std::size_t frame_id);
     
     /**
      * @brief Remove unused camera poses from filter state.

@@ -68,22 +68,26 @@ void Filter::stepCamera(double time, cv::Mat &frame, const ImuBuffer::iterator &
     if (!is_initialized_) {
         return;
     }
-    augment(hint_gyro, hint_accel);
-    CameraPose &last_camera_pose = state().poses().back();
     
-    frame_rows_ = frame.rows;
     FeatureTracker::feature_track_list current_features_tracked;
-    if (feature_tracker_->previous_frame_features_.keypoints().size() == 0) {
+    current_features_tracked = feature_tracker_->processImage(features_tracked_, frame);
+    
+    augment(hint_gyro, hint_accel, feature_tracker_->getLastFrameId());
+    CameraPose &last_camera_pose = state().poses().back();
+
+#ifdef DEBUG
+    if (feature_tracker_->previous_frame_features_->keypoints().size() == 0) {
         assert(state().poses().size() == 1);
     }
-    current_features_tracked = feature_tracker_->processImage(features_tracked_, frame);
+#endif
+    
+    frame_rows_ = frame.rows;
     last_camera_pose.setActiveFeaturesCount(current_features_tracked.size());
     for (std::size_t i = 0; i < current_features_tracked.size(); ++i) {
+        const FeatureId& feature_id = current_features_tracked[i]->getFeatureId();
+        last_camera_pose.rememberFeatureId(feature_id);
         if (current_features_tracked[i]->wasUsedForResidualization()) {
-            last_camera_pose.rememberFeatureId(current_features_tracked[i]->getFeatureId());
-            last_camera_pose.decreaseActiveFeaturesCount(current_features_tracked[i]->getFeatureId());
-        } else {
-            last_camera_pose.rememberFeatureId(current_features_tracked[i]->getFeatureId());
+            last_camera_pose.decreaseActiveFeaturesCount(feature_id);
         }
     }
     
@@ -116,7 +120,7 @@ void Filter::stepCamera(double time, cv::Mat &frame, const ImuBuffer::iterator &
     
     std::cout << " 🚀 POSES IN STATE ";
     for (std::size_t i = 0; i < state().poses().size(); ++i) {
-        std::cout << state().poses()[i].getCameraPoseId() << " ";
+        std::cout << state().poses()[i].getFrameId() << " ";
     }
     std::cout << std::endl;
     
@@ -190,7 +194,7 @@ void Filter::setInitialBodyPositionInCameraFrame(const Eigen::Vector3d &position
     initial_body_position_in_camera_frame_ = position;
 }
 
-std::vector<Eigen::Vector3d> Filter::featurePointCloud() const {
+std::vector<std::pair<FeatureId, Eigen::Vector3d>> Filter::featurePointCloud() const {
     return feature_positions_;
 }
 
@@ -291,10 +295,10 @@ Eigen::Vector3d Filter::computeAccelerationEstimate(const Eigen::Vector3d &accel
     return res;
 }
 
-void Filter::augment(const ImuBuffer::iterator &hint_gyro, const ImuBuffer::iterator &hint_accel) {
-    CameraPose new_pose(*state().body_state_, hint_gyro, hint_accel);
+void Filter::augment(const ImuBuffer::iterator &hint_gyro, const ImuBuffer::iterator &hint_accel, std::size_t frame_id) {
+    CameraPose new_pose(*state().body_state_, hint_gyro, hint_accel, frame_id);
     state().poses().pushBack(new_pose);
-    std::cout << " 🚀 CREATE CAMERA POSE WITH ID " << new_pose.getCameraPoseId() << " | SIZE OF BUFFER " << state().poses().size() << std::endl;
+    std::cout << " 🚀 CREATE CAMERA POSE WITH ID " << new_pose.getFrameId() << " | SIZE OF BUFFER " << state().poses().size() << std::endl;
     Eigen::MatrixXd new_covar_(filter_covar_.rows() + 9, filter_covar_.cols() + 9);
     Eigen::MatrixXd J_pi = Eigen::MatrixXd::Identity(9, filter_covar_.cols());
     new_covar_.block(0, 0, filter_covar_.rows(), filter_covar_.cols()) = filter_covar_;
@@ -347,7 +351,7 @@ FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack &feat
     result.setGlobalFeaturePosition(global_position);
     if (!global_position_success) {
         result.setIsInvalid();
-        std::cout << "Global position failed " << feature_track.getFeatureId() << std::endl;
+        std::cout << "Global position failed " << feature_track.getFeatureId().getFeatureId() << std::endl;
         return result;
     }
     
@@ -536,7 +540,8 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list &features_to
             r_list.push_back(r_0_i);
             H_list.push_back(H_0_i);
             H_rows += H_0_i.rows();
-            feature_positions_.push_back(rezidualization_result.getGlobalFeaturePosition());
+            const FeatureId& feature_id = feature->getFeatureId();
+            feature_positions_.push_back(std::make_pair(feature_id, rezidualization_result.getGlobalFeaturePosition()));
         } else {
             std::cout << "Feature is outlier." << std::endl;
         }

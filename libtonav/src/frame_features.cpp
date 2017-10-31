@@ -13,11 +13,13 @@
 
 namespace tonav {
 
-FrameFeatures FrameFeatures::fromImage(
+std::size_t FrameFeatures::frame_counter_;
+
+std::shared_ptr<FrameFeatures> FrameFeatures::fromImage(
     cv::Ptr<cv::FeatureDetector> detector,
     cv::Ptr<cv::DescriptorExtractor> extractor, cv::Mat &image
 ) {
-    FrameFeatures frame_features;
+    std::shared_ptr<FrameFeatures> frame_features(new FrameFeatures);
     
     assert(image.channels() == 3);
     
@@ -26,15 +28,19 @@ FrameFeatures FrameFeatures::fromImage(
         detector->detectAndCompute(
             gray,
             cv::Mat(),
-            frame_features.keypoints_,
-            frame_features.descriptors_
+            frame_features->keypoints_,
+            frame_features->descriptors_
         );
     } else {
-        frame_features.detectKeypoints(detector, gray);
-        frame_features.computeDescriptors(extractor, gray);
+        frame_features->detectKeypoints(detector, gray);
+        frame_features->computeDescriptors(extractor, gray);
     }
     
-    frame_features.drawFeatures(image);
+    for (int i = 0; i < frame_features->keypoints_.size(); ++i) {
+        frame_features->feature_ids_.emplace_back(frame_features->frame_id_, i);
+    }
+    
+    frame_features->drawFeatures(image);
     
     return frame_features;
 }
@@ -129,6 +135,14 @@ const cv::Mat& FrameFeatures::descriptors() const {
     return descriptors_;
 }
 
+const std::vector<FeatureId>& FrameFeatures::getFeatureIds() const {
+    return feature_ids_;
+}
+
+std::size_t FrameFeatures::getFrameId() const {
+    return frame_id_;
+}
+
 double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch> &matches) const {
     double min_distance = 100;
     double max_distance = 0;
@@ -147,4 +161,9 @@ double FrameFeatures::computeDistanceLimitForMatch(const std::vector<cv::DMatch>
     return std::max(2 * min_distance, 5.0);
 }
 
+FrameFeatures::FrameFeatures()
+    : frame_id_(FrameFeatures::frame_counter_++)
+{
 }
+
+} // namespace tonav
