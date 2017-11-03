@@ -24,8 +24,6 @@
 #include "imu_buffer.h"
 #include "quaternion.h"
 #include "quaternion_tools.h"
-#include "stats.h"
-#include "stats_timer.h"
 
 namespace tonav {
 
@@ -582,7 +580,7 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list &features_to
     auto Q_1 = Q.leftCols(nonZeros);
     r_q = Q_1.transpose() * r;
     
-    // updateState(T_H, r_q, H, r);
+    updateState(T_H, r_q, H, r);
 }
 
 bool Filter::gatingTest(const Eigen::VectorXd &r_0_i, const Eigen::MatrixXd H_0_i) {

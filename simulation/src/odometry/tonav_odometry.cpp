@@ -7,6 +7,9 @@
 #include <tonav.h>
 #include <geometry.h>
 
+#include "sim_setup_component.h"
+#include "vio_simulation.h"
+
 std::unique_ptr<TonavOdometry> TonavOdometry::load(SimSetup* sim_setup, const json& j) {
     std::unique_ptr<TonavOdometry> odometry(new TonavOdometry(sim_setup));
     

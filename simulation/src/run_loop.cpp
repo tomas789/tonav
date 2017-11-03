@@ -45,3 +45,7 @@ void RunLoop::registerCallback(float time, RunLoopCallback *callback) {
 bool RunLoop::Item::operator>(const Item &other) const {
     return time > other.time;
 }
+
+bool RunLoop::isRunning() const {
+    return should_stop_;
+}

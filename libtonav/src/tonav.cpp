@@ -6,10 +6,9 @@
 #include <opencv2/core/core.hpp>
 
 #include "camera_item.h"
+#include "debug_logger.h"
 #include "imu_device.h"
 #include "state_initializer.h"
-#include "stats.h"
-#include "stats_timer.h"
 
 namespace tonav {
 
@@ -22,6 +21,10 @@ Tonav::Tonav(
       filter_(calibration, state_initializer_, feature_tracker)
 {
     filter_.setInitialBodyPositionInCameraFrame(p_B_C);
+    
+    DebugLogger& logger = DebugLogger::getInstance();
+    logger.setOutputFile("debug_output.log");
+    logger.setUseTerminalExceptionWriter();
 }
 
 bool Tonav::updateAcceleration(double time, Eigen::Vector3d accel) {
@@ -134,9 +137,6 @@ std::vector<std::pair<FeatureId, Eigen::Vector3d>> Tonav::getFeaturePointCloud()
 }
 
 Tonav::~Tonav() {
-    Stats &stats = Stats::getGlobalInstance();
-    std::cout << " --== STATS ==--" << std::endl;
-    std::cout << stats.str() << std::endl;
 }
 
 //void Tonav::performUpdateIfPossible() {
@@ -250,10 +250,8 @@ bool Tonav::tryPropagate() {
         bool filter_was_initialized = filter_.isInitialized();
         propagateToTime(camera_item_capture_time);
         if (filter_was_initialized) {
-            Stats::getGlobalInstance().openLevel("Tonav::Update");
             update();
             camera_item_.setIsProcessed();
-            Stats::getGlobalInstance().closeCurrentLevel();
         }
         return true;
     } else {
@@ -262,8 +260,6 @@ bool Tonav::tryPropagate() {
 }
 
 void Tonav::propagateToTime(double t) {
-    StatsTimer timer("Tonav::propagateToTime");
-    
     assert(!isInitialized() || time() < t);
     if (it_accel_->getTime() < it_gyro_->getTime()) {
         assert(!isInitialized() || it_accel_->getTime() <= time());

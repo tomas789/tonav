@@ -11,6 +11,7 @@ add_library(tonav
         src/camera_item.cpp
         src/camera_pose.cpp
         src/camera_reprojection_functor.cpp
+        src/debug_logger.cpp
         src/feature_id.cpp
         src/feature_rezidualization_result.cpp
         src/feature_track.cpp
@@ -24,9 +25,6 @@ add_library(tonav
         src/quaternion.cpp
         src/quaternion_tools.cpp
         src/state_initializer.cpp
-        src/stats.cpp
-        src/stats_node.cpp
-        src/stats_timer.cpp
         src/tonav.cpp
 )
 target_include_directories (tonav PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
@@ -59,5 +57,7 @@ target_link_libraries(tonavtests
         LINK_PUBLIC tonav
         LINK_PRIVATE ${GTEST_BOTH_LIBRARIES}
 )
+
+target_include_directories(tonav PUBLIC "../thirdparty/nlohmann_json")
 
 add_test(AllTonavTests tonavtests)

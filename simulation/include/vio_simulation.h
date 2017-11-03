@@ -19,6 +19,7 @@ public:
     VioSimulation();
     
     void run(std::shared_ptr<SimSetup> sim_setup);
+    void stop();
     
     void accelerometerCallback(double time, Eigen::Vector3d accel);
     void gyroscopeCallback(double time, Eigen::Vector3d gyro);

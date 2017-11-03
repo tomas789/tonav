@@ -20,6 +20,8 @@ public:
     void registerSimulationForUpdates(VioSimulation *simulation);
     void registerCallback(float time, RunLoopCallback *callback);
     
+    bool isRunning() const;
+    
 private:
     struct Item {
         float time;

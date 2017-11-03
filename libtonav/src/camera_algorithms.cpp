@@ -1,5 +1,6 @@
 #include "camera_algorithms.h"
 
+#include <chrono>
 #include <Eigen/Core>
 #include <Eigen/SVD>
 #include <Eigen/QR>

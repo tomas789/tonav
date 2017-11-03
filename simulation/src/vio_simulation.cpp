@@ -58,12 +58,16 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
     is_simulation_running_ = true;
     std::thread t(&VioSimulation::startRunLoop, this);
     
-    while (!window_->wasStopped()) {
+    while (!window_->wasStopped() && is_simulation_running_) {
         std::lock_guard<std::mutex> _(ui_lock_);
         window_->spinOnce();
     }
     run_loop_.stop();
     t.join();
+}
+
+void VioSimulation::stop() {
+    is_simulation_running_ = false;
 }
 
 void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
@@ -172,6 +176,9 @@ cv::Affine3d VioSimulation::getPose(tonav::Quaternion q, Eigen::Vector3d p) cons
 }
 
 void VioSimulation::updateOdometryVisualState(const std::vector<std::pair<tonav::FeatureId, Eigen::Vector3d>>& features) {
+    if (!features.empty()) {
+        stop();
+    }
     if (features.empty()) {
         return;
     }
