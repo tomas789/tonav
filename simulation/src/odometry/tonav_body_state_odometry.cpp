@@ -9,7 +9,7 @@
 std::unique_ptr<TonavBodyStateOdometry> TonavBodyStateOdometry::load(SimSetup* sim_setup, const json& j) {
     std::unique_ptr<TonavBodyStateOdometry> odometry(new TonavBodyStateOdometry(sim_setup));
     
-    return std::move(odometry);
+    return odometry;
 }
 
 void TonavBodyStateOdometry::initialize(VioSimulation *simulation) {

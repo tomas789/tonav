@@ -23,7 +23,6 @@ Tonav::Tonav(
     filter_.setInitialBodyPositionInCameraFrame(p_B_C);
     
     DebugLogger& logger = DebugLogger::getInstance();
-    logger.setOutputFile("debug_output.log");
     logger.setUseTerminalExceptionWriter();
 }
 

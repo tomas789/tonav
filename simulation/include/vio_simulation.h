@@ -18,6 +18,8 @@ class VioSimulation {
 public:
     VioSimulation();
     
+    void setHeadless();
+    void setSimulationLength(double time);
     void run(std::shared_ptr<SimSetup> sim_setup);
     void stop();
     
@@ -46,6 +48,7 @@ private:
     
     tonav::Quaternion q_viz_sim_ = tonav::Quaternion(0.5, -0.5, 0.5, -0.5).conjugate();
     
+    bool is_headless_;
     std::shared_ptr<cv::viz::Viz3d> window_;
     
     std::shared_ptr<cv::viz::WCloud> features_cloud_;

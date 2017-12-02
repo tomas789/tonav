@@ -7,7 +7,7 @@
 std::unique_ptr<StandstillTrajectory> StandstillTrajectory::load(SimSetup *sim_setup, const json& j) {
     std::unique_ptr<StandstillTrajectory> trajectory(new StandstillTrajectory(sim_setup));
     
-    return std::move(trajectory);
+    return trajectory;
 }
 
 void StandstillTrajectory::initialize(VioSimulation *simulation) {

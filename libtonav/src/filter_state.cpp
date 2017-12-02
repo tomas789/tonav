@@ -21,6 +21,14 @@ double FilterState::time() const {
     return body_state_->time();
 }
 
+const Eigen::Vector3d& FilterState::getGyroscopeBias() const {
+    return bias_gyroscope_;
+}
+
+const Eigen::Vector3d& FilterState::getAccelerometerBias() const {
+    return bias_accelerometer_;
+}
+
 const Quaternion &FilterState::getOrientationInGlobalFrame() const {
     assert(body_state_.get());
     return body_state_->getOrientationInGlobalFrame();
@@ -46,6 +54,34 @@ const Eigen::Matrix3d &FilterState::getGyroscopeAccelerationSensitivityMatrix() 
 
 const Eigen::Matrix3d &FilterState::getAccelerometerShapeMatrix() const {
     return accelerometer_shape_;
+}
+
+const Eigen::Vector3d& FilterState::getBodyPositionInCameraFrame() const {
+    return position_of_body_in_camera_;
+}
+
+const Eigen::Vector2d& FilterState::getFocalLength() const {
+    return focal_point_;
+}
+
+const Eigen::Vector2d& FilterState::getOpticalCenter() const {
+    return optical_center_;
+}
+
+const Eigen::Vector3d& FilterState::getRadialDistortion() const {
+    return radial_distortion_;
+}
+
+const Eigen::Vector2d& FilterState::getTangentialDistortion() const {
+    return tangential_distortion_;
+}
+
+double FilterState::getCameraDelayTime() const {
+    return camera_delay_;
+}
+
+double FilterState::getCameraReadoutTime() const {
+    return camera_readout_;
 }
 
 void FilterState::orientationCorrection(const Quaternion &orientation) {
@@ -89,11 +125,11 @@ void FilterState::updateWithStateDelta(const Eigen::VectorXd &delta_x) {
     delta_T_a.block<1, 3>(2, 0) = delta_x.segment<3>(39);
     
     // @todo: Shape matrices?
-//    gyroscope_shape_ += delta_T_g;
-//    gyroscope_acceleration_sensitivity_ += delta_T_s;
-//    accelerometer_shape_ += delta_T_a;
+    gyroscope_shape_ += delta_T_g;
+    gyroscope_acceleration_sensitivity_ += delta_T_s;
+    accelerometer_shape_ += delta_T_a;
     
-    position_of_body_in_camera_ += delta_x.segment<3>(42);
+    // position_of_body_in_camera_ += delta_x.segment<3>(42);
     focal_point_ += delta_x.segment<2>(45);
     optical_center_ += delta_x.segment<2>(47);
     radial_distortion_ += delta_x.segment<3>(49);

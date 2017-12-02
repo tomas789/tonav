@@ -57,7 +57,6 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     }
     
     std::vector<cv::DMatch> matches = frame_features->match(matcher_, *previous_frame_features_);
-    std::size_t matches_size = matches.size();
     
     std::size_t max_y_feat = 0;
     for (int i = 0; i < previous_frame_features_->keypoints().size(); ++i) {

@@ -5,6 +5,7 @@
 #ifndef TONAV_RUN_LOOP_H
 #define TONAV_RUN_LOOP_H
 
+#include <cmath>
 #include <queue>
 
 #include "run_loop_callback.h"
@@ -13,7 +14,8 @@ class VioSimulation;
 
 class RunLoop {
 public:
-    float getTime() const;
+    double getTime() const;
+    void setSimulationLength(double time);
     void run();
     void stop();
     
@@ -31,6 +33,7 @@ private:
     };
     
     bool should_stop_ = false;
+    double simulation_length_ = NAN;
     VioSimulation *simulation_ = nullptr;
     std::priority_queue<Item, std::vector<Item>, std::greater<Item>> queue_;
 };

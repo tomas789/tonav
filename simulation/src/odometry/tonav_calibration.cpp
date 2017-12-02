@@ -10,13 +10,13 @@ std::shared_ptr<TonavCalibration> TonavCalibration::prepare(SimSetup *sim_setup)
     const Trajectory& trajectory = sim_setup->getTrajectory();
     const Vision& vision = sim_setup->getVision();
     
-    calibration->focal_point_ = vision.getFocalLength();
+    calibration->focal_length_ = vision.getFocalLength();
     calibration->optical_center_ = vision.getOpticalCenter();
     calibration->radial_distortion_ = vision.getRadialDistortion();
     calibration->tangential_distortion_ = vision.getTangentialDistortion();
     calibration->camera_delay_time_ = 0;
     calibration->camera_readout_time_ = 0;
-    calibration->image_noise_variance_ = 1e-9;
+    calibration->image_noise_variance_ = 1e-7;
     
     calibration->gyroscope_acceleration_sensitivity_matrix_ = Eigen::Matrix3d::Zero();
     calibration->gyroscope_shape_matrix_ = Eigen::Matrix3d::Identity();
@@ -25,7 +25,7 @@ std::shared_ptr<TonavCalibration> TonavCalibration::prepare(SimSetup *sim_setup)
     calibration->accelerometer_bias_ = Eigen::Vector3d::Zero();
     calibration->global_gravity_ = trajectory.getGlobalGravity();
     
-    double v = 1e-9;
+    double v = 1e-7;
     
     calibration->accelerometer_variance_ = v;
     calibration->gyroscope_variance_ = v;
@@ -44,21 +44,21 @@ std::shared_ptr<TonavCalibration> TonavCalibration::prepare(SimSetup *sim_setup)
     Eigen::Matrix3d ones33;
     ones33 << 1, 1, 1, 1, 1, 1, 1, 1, 1;
     
-    calibration->orientation_noise_ = 1e2*v*ones3;
-    calibration->position_noise_ = 1e2*v*ones3;
-    calibration->velocity_noise_ = 1e2*v*ones3;
+    calibration->orientation_noise_ = 1e-4*v*ones3;
+    calibration->position_noise_ = 1e4*v*ones3;
+    calibration->velocity_noise_ = 1e1*ones3;
     calibration->gyroscope_bias_noise_ = v*ones3;
     calibration->accelerometer_bias_noise_ = v*ones3;
     calibration->gyroscope_acceleration_sensitivity_matrix_noise_ = v*ones33;
     calibration->gyroscope_shape_matrix_noise_ = v*ones33;
     calibration->accelerometer_shape_matrix_noise_ = v*ones33;
-    calibration->position_of_body_in_camera_frame_noise_ = v*ones3;
-    calibration->focal_point_noise_ = v*ones2;
-    calibration->optical_center_noise_ = v*ones2;
-    calibration->radial_distortion_noise_ = v*ones3;
-    calibration->tangential_distortion_noise_ = v*ones2;
-    calibration->camera_delay_time_noise_ = v;
-    calibration->camera_readout_time_noise_ = v;
+    calibration->position_of_body_in_camera_frame_noise_ = 1e-2*v*ones3;
+    calibration->focal_length_noise_ = 100*v*ones2;
+    calibration->optical_center_noise_ = 1e-3*v*ones2;
+    calibration->radial_distortion_noise_ = 1e-5*v*ones3;
+    calibration->tangential_distortion_noise_ = 1e-5*v*ones2;
+    calibration->camera_delay_time_noise_ = 1e2*v;
+    calibration->camera_readout_time_noise_ = 1e-5*v;
     
     calibration->body_to_camera_rotation_ = trajectory.getBodyToCameraFrameRotation();
     

@@ -39,10 +39,10 @@ public:
             : container_(nullptr), it_(0) { }
         
         Iterator(container_pointer_type container, size_type it)
-            : container_(container), it_(it) { }
+            : it_(it), container_(container) { }
         
         Iterator(const Iterator<IsConst>& other)
-            : container_(other.container_), it_(other.it_) { }
+            : it_(other.it_), container_(other.container_) { }
         
         Iterator<IsConst>& operator=(const Iterator<IsConst>& other) {
             container_ = other.container_;
@@ -115,7 +115,7 @@ public:
     
     
     CircularBuffer(int max_size)
-        : max_size_(max_size), begin_it_(0), end_it_(0) {
+        : begin_it_(0), end_it_(0), max_size_(max_size) {
         buffer_ = reinterpret_cast<pointer>(new char[max_size_*sizeof(value_type)]);
     }
     

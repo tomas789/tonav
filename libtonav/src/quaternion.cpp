@@ -133,6 +133,12 @@ bool Quaternion::isApprox(const Quaternion &other, double eps) const {
     return x_close && y_close && z_close && w_close;
 }
 
+double Quaternion::angularDistance(const Quaternion &other) const {
+    Eigen::Quaterniond a(x(), y(), z(), w());
+    Eigen::Quaterniond b(other.x(), other.y(), other.z(), other.w());
+    return a.angularDistance(b);
+}
+
 Quaternion Quaternion::identity() {
     return Quaternion(0.0, 0.0, 0.0, 1.0);
 }

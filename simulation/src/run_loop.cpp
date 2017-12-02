@@ -8,6 +8,10 @@
 
 #include "vio_simulation.h"
 
+void RunLoop::setSimulationLength(double time) {
+    simulation_length_ = time;
+}
+
 void RunLoop::run() {
     float last_simulation_update_time = std::numeric_limits<float>::min();
     while (!queue_.empty() && !should_stop_) {
@@ -15,6 +19,9 @@ void RunLoop::run() {
         queue_.pop();
         
         float time = item.time;
+        if (!std::isnan(simulation_length_) && time > simulation_length_) {
+            break;
+        }
         RunLoopCallback *callback = item.callback;
         callback->runLoopCallback(time);
         

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 
-add_library(tonav
+set(TONAV_SRC
         src/exceptions/base_exception.cpp
         src/exceptions/calibration_file_error.cpp
         src/exceptions/general_exception.cpp
@@ -25,7 +25,37 @@ add_library(tonav
         src/quaternion.cpp
         src/quaternion_tools.cpp
         src/state_initializer.cpp
-        src/tonav.cpp
+        src/tonav.cpp)
+
+set(TONAV_HEADERS
+        include/exceptions/base_exception.h
+        include/exceptions/calibration_file_error.h
+        include/exceptions/general_exception.h
+        include/exceptions/impossible_exception.h
+        include/body_state.h
+        include/calibration.h
+        include/camera_algorithms.h
+        include/camera_item.h
+        include/camera_pose.h
+        include/camera_reprojection_functor.h
+        include/debug_logger.h
+        include/feature_id.h
+        include/feature_rezidualization_result.h
+        include/feature_track.h
+        include/feature_tracker.h
+        include/filter.h
+        include/filter_state.h
+        include/frame_features.h
+        include/geometry.h
+        include/imu_buffer.h
+        include/imu_item.h
+        include/quaternion.h
+        include/quaternion_tools.h
+        include/state_initializer.h
+        include/tonav.h)
+
+add_library(tonav
+    ${TONAV_SRC} ${TONAV_HEADERS}
 )
 target_include_directories (tonav PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 

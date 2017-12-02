@@ -12,7 +12,7 @@ std::unique_ptr<Imu> Imu::load(SimSetup *sim_setup, const json &j) {
     std::unique_ptr<Imu> imu;
     
     if (type == "numerical_diff") {
-        imu = std::move(NumericalDiffImu::load(sim_setup, params));
+        imu = NumericalDiffImu::load(sim_setup, params);
     } else {
         throw std::runtime_error("Unknown imu type.");
     }

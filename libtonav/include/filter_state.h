@@ -18,6 +18,7 @@ class BodyState;
 
 class Calibration;
 
+
 class CameraAlgorithms;
 
 class Filter;
@@ -33,11 +34,18 @@ public:
     
     friend class Filter;
     
+    template<typename _Scalar, int NX, int NY>
+    friend class CameraProjectFunctor;
+    
     friend std::ostream &operator<<(std::ostream &, Filter &);
     
     FilterState(std::shared_ptr<const Calibration> calibration);
     
     double time() const;
+    
+    const Eigen::Vector3d& getGyroscopeBias() const;
+    
+    const Eigen::Vector3d& getAccelerometerBias() const;
     
     const Quaternion &getOrientationInGlobalFrame() const;
     
@@ -50,6 +58,20 @@ public:
     const Eigen::Matrix3d &getGyroscopeAccelerationSensitivityMatrix() const;
     
     const Eigen::Matrix3d &getAccelerometerShapeMatrix() const;
+    
+    const Eigen::Vector3d& getBodyPositionInCameraFrame() const;
+    
+    const Eigen::Vector2d& getFocalLength() const;
+    
+    const Eigen::Vector2d& getOpticalCenter() const;
+    
+    const Eigen::Vector3d& getRadialDistortion() const;
+    
+    const Eigen::Vector2d& getTangentialDistortion() const;
+    
+    double getCameraDelayTime() const;
+    
+    double getCameraReadoutTime() const;
     
     void orientationCorrection(const Quaternion &orientation);
     

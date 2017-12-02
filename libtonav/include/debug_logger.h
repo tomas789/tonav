@@ -6,6 +6,8 @@
 #define TONAV_DEBUG_LOGGER_H
 
 #include <json.hpp>
+#include <Eigen/Core>
+#include <sstream>
 
 using nlohmann::json;
 
@@ -19,16 +21,31 @@ private:
     public:
         friend class DebugLogger;
         
-        void log(const std::string& key, const std::string& message);
-        
+        template <typename Derived>
+        void logEigen(const std::string& key, const Eigen::MatrixBase<Derived>& mat) {
+            Eigen::IOFormat CommaInitFmt(Eigen::StreamPrecision, Eigen::DontAlignCols, ", ", ", ", "", "", "[", "]");
+            std::ostringstream ss;
+            ss << mat.format(CommaInitFmt);
+            logImpl(key, ss.str());
+        }
+    
+        template <typename T>
+        void log(const std::string& key, const T& message) {
+            logImpl(key, std::to_string(message));
+        }
+
+
     private:
         std::vector<std::pair<std::string, std::string>> messages_;
+    
+        void logImpl(const std::string& key, const std::string& message);
         
         json getJsonRepresentation() const;
     };
     
 public:
     void setOutputFile(const std::string& output_file);
+    void writeAndClear();
     LoggerNode& getFeatureNode(const FeatureId& feature_id);
     
     void setUseTerminalExceptionWriter();

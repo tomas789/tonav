@@ -13,9 +13,9 @@ std::unique_ptr<Odometry> Odometry::load(SimSetup *sim_setup, const json& j) {
     std::unique_ptr<Odometry> odometry;
     
     if (type == "tonav_body_state") {
-        odometry = std::move(TonavBodyStateOdometry::load(sim_setup, params));
+        odometry = TonavBodyStateOdometry::load(sim_setup, params);
     } else if (type == "tonav") {
-        odometry = std::move(TonavOdometry::load(sim_setup, params));
+        odometry = TonavOdometry::load(sim_setup, params);
     } else {
         throw std::runtime_error("Unknown odometry type.");
     }

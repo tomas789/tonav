@@ -15,7 +15,7 @@ class SimSetup;
 
 using json = nlohmann::json;
 
-class Trajectory: protected SimSetupComponent {
+class Trajectory: public SimSetupComponent {
 public:
     static std::unique_ptr<Trajectory> load(SimSetup *sim_data, const json& j);
     

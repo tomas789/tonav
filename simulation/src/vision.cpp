@@ -13,7 +13,7 @@ std::unique_ptr<Vision> Vision::load(SimSetup *sim_setup, const json& j) {
     std::unique_ptr<Vision> vision;
     
     if (type == "generated_features") {
-        vision = std::move(GeneratedFeaturesVision::load(sim_setup, params));
+        vision = GeneratedFeaturesVision::load(sim_setup, params);
     } else {
         throw std::runtime_error("Unknown vision type.");
     }
@@ -23,7 +23,7 @@ std::unique_ptr<Vision> Vision::load(SimSetup *sim_setup, const json& j) {
         throw std::runtime_error("'update_frequency' has to be a positive number.");
     }
     
-    return std::move(vision);
+    return vision;
 }
 
 double Vision::getUpdateFrequency() const {

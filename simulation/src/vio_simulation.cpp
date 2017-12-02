@@ -17,13 +17,21 @@ VioSimulation* VioSimulation::global_vio_simulation_;
 
 VioSimulation::VioSimulation() = default;
 
+void VioSimulation::setHeadless() {
+    is_headless_ = true;
+}
+
+void VioSimulation::setSimulationLength(double time) {
+    run_loop_.setSimulationLength(time);
+}
+
 void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
     if (!sim_setup) {
         throw std::runtime_error("No SimSetup provided.");
     }
     sim_setup_ = sim_setup;
     run_loop_.registerSimulationForUpdates(this);
-    if (!window_) {
+    if (!window_ && !is_headless_) {
         window_.reset(new cv::viz::Viz3d("Vio Simulation"));
         window_->showWidget("Coordinate Frame", cv::viz::WCoordinateSystem());
         cv::Affine3d coord_frame_pose = getPose(tonav::Quaternion::identity(), Eigen::Vector3d::Zero());
@@ -58,11 +66,13 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
     is_simulation_running_ = true;
     std::thread t(&VioSimulation::startRunLoop, this);
     
-    while (!window_->wasStopped() && is_simulation_running_) {
-        std::lock_guard<std::mutex> _(ui_lock_);
-        window_->spinOnce();
+    if (!is_headless_) {
+        while (!window_->wasStopped() && is_simulation_running_) {
+            std::lock_guard<std::mutex> _(ui_lock_);
+            window_->spinOnce();
+        }
+        run_loop_.stop();
     }
-    run_loop_.stop();
     t.join();
 }
 
@@ -78,7 +88,9 @@ void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
         bool was_updated = false;
         tonav_odometry->updateAcceleration(time, accel, was_updated);
         if (was_updated && tonav_odometry->getTonav()->isInitialized()) {
-            cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
+            if (!is_headless_) {
+                cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
+            }
             cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
             
             updateOdometryVisualState(tonav_odometry->getTonav()->getFeaturePointCloud());
@@ -96,7 +108,9 @@ void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
         bool was_updated = false;
         tonav_odometry->updateRotationRate(time, gyro, was_updated);
         if (was_updated && tonav_odometry->getTonav()->isInitialized()) {
-            cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
+            if (!is_headless_) {
+                cv::imshow("Tonav", tonav_odometry->getTonav()->getCurrentImage());
+            }
             cv::imwrite((std::to_string(time) + ".jpg"), tonav_odometry->getTonav()->getCurrentImage());
             
             updateOdometryVisualState(tonav_odometry->getTonav()->getFeaturePointCloud());
@@ -131,7 +145,7 @@ void VioSimulation::runLoopCallback(double time) {
         features_in_view.push_back(pose.translation());
     }
     
-    {
+    if (!is_headless_) {
         std::lock_guard<std::mutex> _(ui_lock_);
         window_->setWidgetPose("Body GT", getPose(q_G_B_gt, p_B_G_gt));
         window_->setWidgetPose("Camera GT", getPose(q_G_C_gt, p_C_G_gt));
@@ -176,8 +190,11 @@ cv::Affine3d VioSimulation::getPose(tonav::Quaternion q, Eigen::Vector3d p) cons
 }
 
 void VioSimulation::updateOdometryVisualState(const std::vector<std::pair<tonav::FeatureId, Eigen::Vector3d>>& features) {
+    if (is_headless_) {
+        return;
+    }
     if (!features.empty()) {
-        stop();
+        //stop();
     }
     if (features.empty()) {
         return;

@@ -12,7 +12,7 @@ std::unique_ptr<InplaceRotationTrajectory> InplaceRotationTrajectory::load(SimSe
     trajectory->seconds_per_revolution_ = j.at("seconds_per_revolution");
     trajectory->axis_of_revolution_ = j.at("axis_of_revolution");
     
-    return std::move(trajectory);
+    return trajectory;
 }
 
 void InplaceRotationTrajectory::initialize(VioSimulation *simulation) {

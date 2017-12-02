@@ -8,6 +8,7 @@
 #include <json.hpp>
 #include <tonav.h>
 
+#include "../custom_serialization.h"
 #include "../odometry.h"
 #include "tonav_calibration.h"
 
@@ -34,6 +35,7 @@ public:
     tonav::Quaternion getGlobalToCameraFrameRotation() const;
     
     std::shared_ptr<tonav::Tonav> getTonav();
+    std::shared_ptr<TonavCalibration> getTonavCalibration();
     
     virtual ~TonavOdometry();
 
@@ -41,6 +43,12 @@ private:
     TonavOdometry(SimSetup *sim_setup);
     
     void updateTonavInitializerFromGroundTruth(double time);
+    void evaluateToGroundTruth(double time);
+    
+    void writeEvalGt(json& j, const std::string& key, const Eigen::Vector2d& true_state, const Eigen::Vector2d& estimate);
+    void writeEvalGt(json& j, const std::string& key, const Eigen::Vector3d& true_state, const Eigen::Vector3d& estimate);
+    void writeEvalGt(json& j, const std::string& key, const tonav::Quaternion& true_state, const tonav::Quaternion& estimate);
+    void writeEvalGt(json& j, const std::string& key, double true_state, double estimate);
     
     VioSimulation *vio_simulation_;
     
@@ -50,6 +58,8 @@ private:
     
     std::shared_ptr<TonavCalibration> tonav_calibration_;
     std::shared_ptr<tonav::Tonav> tonav_;
+    
+    json eval_to_gt_;
 };
 
 #endif //TONAV_TONAV_ODOMETRY_H

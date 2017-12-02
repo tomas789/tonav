@@ -233,6 +233,39 @@ Eigen::Vector2d CameraAlgorithms::cameraProject(const Eigen::Vector3d &p) const 
     return state.optical_center_ + state.focal_point_.asDiagonal() * (d_r * uv_vec + d_t);
 }
 
+template<typename _Scalar, int NX=Eigen::Dynamic, int NY=Eigen::Dynamic>
+class CameraProjectFunctor {
+public:
+    typedef _Scalar Scalar;
+    enum {
+        InputsAtCompileTime = NX,
+        ValuesAtCompileTime = NY
+    };
+    typedef Eigen::Matrix<Scalar,InputsAtCompileTime,1> InputType;
+    typedef Eigen::Matrix<Scalar,ValuesAtCompileTime,1> ValueType;
+    typedef Eigen::Matrix<Scalar,ValuesAtCompileTime,InputsAtCompileTime> JacobianType;
+    
+    
+    CameraProjectFunctor(const Filter* filter) : filter_(filter) { }
+    
+    int m_inputs = 3;
+    int m_values = 2;
+    
+    int inputs() const { return m_inputs; }
+    int values() const { return m_values; }
+    
+    int operator()(const Eigen::Vector3d &x, Eigen::Vector2d &fvec) const {
+        Eigen::Vector2d focal_length = filter_->state().focal_point_;
+        Eigen::Vector2d optical_center = filter_->state().optical_center_;
+        fvec(0) = focal_length(0)*x(0)/x(2) + optical_center(0);
+        fvec(1) = focal_length(1)*x(1)/x(2) + optical_center(1);
+        return 0;
+    }
+    
+public:
+    const Filter* filter_;
+};
+
 Eigen::Matrix<double, 2, 3> CameraAlgorithms::cameraProjectJacobian(const Eigen::Vector3d &p) const {
     double x = p(0);
     double y = p(1);
@@ -246,7 +279,16 @@ Eigen::Matrix<double, 2, 3> CameraAlgorithms::cameraProjectJacobian(const Eigen:
     double k3 = state.radial_distortion_(2);
     double t1 = state.tangential_distortion_(0);
     double t2 = state.tangential_distortion_(1);
-    double dr = 1.0 + k1 * r + k2 * r * r + k3 * std::pow(r, 3.0);
+    double dr = 1.0 + k1*r + k2*r*r + k3*std::pow(r, 3);
+    
+    CameraProjectFunctor<double, 3, 2> functor(filter_);
+    Eigen::NumericalDiff<CameraProjectFunctor<double, 3, 2>> num_diff(functor);
+    
+    Eigen::Matrix<double, 2, 3> jac;
+    num_diff.df(p, jac);
+    
+    std::cout << "jac: " << std::endl << jac << std::endl;
+    
     
     
     Eigen::Matrix<double, 2, 3> d;
@@ -256,8 +298,6 @@ Eigen::Matrix<double, 2, 3> CameraAlgorithms::cameraProjectJacobian(const Eigen:
     d(1, 0) = 0;
     d(1, 1) = state.focal_point_(1) / z;
     d(1, 2) = -state.focal_point_(1) * y / (z * z);
-    return d;
-    
     
     Eigen::RowVector3d uv_by_xyz;
     uv_by_xyz << y / (z * z), x / (z * z), -2.0 * x * y / std::pow(z, 3.0);

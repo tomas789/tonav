@@ -13,7 +13,7 @@ namespace tonav {
 
 DebugLogger DebugLogger::instance_;
 
-void DebugLogger::LoggerNode::log(const std::string& key, const std::string& message) {
+void DebugLogger::LoggerNode::logImpl(const std::string& key, const std::string& message) {
     messages_.emplace_back(key, message);
 }
 
@@ -26,7 +26,14 @@ json DebugLogger::LoggerNode::getJsonRepresentation() const {
 }
 
 void DebugLogger::setOutputFile(const std::string &output_file) {
+    std::cout << "Setting output file to " << output_file << std::endl;
     output_file_ = output_file;
+}
+    
+void DebugLogger::writeAndClear() {
+    write();
+    termination_reason_ = "";
+    feature_nodes_.clear();
 }
 
 DebugLogger::LoggerNode &DebugLogger::getFeatureNode(const FeatureId &feature_id) {
@@ -79,10 +86,13 @@ json DebugLogger::getJsonRepresentation() const {
 }
 
 void DebugLogger::write() const {
-    std::ofstream out(output_file_);
+    std::cout << "writing debug output to " << output_file_ << std::endl;
+    std::ofstream out(output_file_.empty() ? "debug_output.log" : output_file_);
     try {
         if (out) {
             out << getJsonRepresentation().dump(4);
+        } else {
+            std::cerr << "Cannot write DebugLogger output. Cannot open file." << std::endl;
         }
     } catch(const std::exception& e) {
         std::cout << e.what() << std::endl;
