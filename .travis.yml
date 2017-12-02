@@ -11,11 +11,21 @@ addons:
     - cmake
     - build-essential
     - libeigen3-dev
+    - libvtk6-dev
 
 before_install:
-  - sudo add-apt-repository -y ppa:ulikoehler/opencv3
-  - sudo apt update
-  - sudo apt install libopencv3
+  - git clone https://github.com/opencv/opencv_contrib.git
+  - cd opencv_contrib
+  - git checkout 3.3.1
+  - cd ..
+  - git clone https://github.com/opencv/opencv.git
+  - cd opencv
+  - git checkout 3.3.1
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=RELEASE -DWITH_VTK=ON ..
+  - make -j2
+  - sudo make install
 
 before_script:
   - mkdir build
