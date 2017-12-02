@@ -12,6 +12,7 @@ addons:
     - build-essential
     - libeigen3-dev
     - libvtk6-dev
+    - libgtest-dev
 
 before_install:
   - git clone https://github.com/opencv/opencv_contrib.git
