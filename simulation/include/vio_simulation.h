@@ -5,6 +5,7 @@
 #ifndef TONAV_VIO_SIMULATION_H
 #define TONAV_VIO_SIMULATION_H
 
+#include <atomic>
 #include <vector>
 #include <opencv2/viz.hpp>
 #include <thread>
