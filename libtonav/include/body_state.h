@@ -2,6 +2,7 @@
 #define TONAV_BODY_STATE_H
 
 #include <Eigen/Core>
+#include <memory>
 
 #include "calibration.h"
 #include "quaternion.h"

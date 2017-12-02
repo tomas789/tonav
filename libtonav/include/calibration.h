@@ -8,6 +8,7 @@
 #include <Eigen/Core>
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "quaternion.h"
 
