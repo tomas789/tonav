@@ -6,7 +6,6 @@
 #include <fstream>
 #include <list>
 #include <mutex>
-#include <spdlog/spdlog.h>
 
 #include "camera_item.h"
 #include "filter.h"
