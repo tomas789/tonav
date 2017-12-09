@@ -57,7 +57,11 @@ set(TONAV_HEADERS
 add_library(tonav
     ${TONAV_SRC} ${TONAV_HEADERS}
 )
+set_property(TARGET tonav PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_include_directories (tonav PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
+if(UNIX AND NOT APPLE)
+    target_link_libraries(tonav LINK_PUBLIC pthread)
+endif()
 
 set_target_properties(tonav PROPERTIES
     CXX_STANDARD 11
@@ -72,21 +76,21 @@ find_package(OpenCV 3 REQUIRED core calib3d features2d imgproc)
 target_include_directories (tonav PUBLIC "${OpenCV_INCLUDE_DIRS}")
 target_link_libraries(tonav LINK_PUBLIC ${OpenCV_LIBS})
 
-enable_testing()
-find_package(GTest REQUIRED)
+#enable_testing()
+#find_package(GTest REQUIRED)
 
-add_executable(tonavtests
-        test/circular_buffer_test.cpp
-)
-set_target_properties(tonavtests PROPERTIES
-        CXX_STANDARD 11
-        CXX_STANDARD_REQUIRED ON
-        CXX_EXTENSIONS OFF
-)
-target_link_libraries(tonavtests
-        LINK_PUBLIC tonav
-        LINK_PRIVATE ${GTEST_BOTH_LIBRARIES}
-)
+#add_executable(tonavtests
+#        test/circular_buffer_test.cpp
+#)
+#set_target_properties(tonavtests PROPERTIES
+#        CXX_STANDARD 11
+#        CXX_STANDARD_REQUIRED ON
+#        CXX_EXTENSIONS OFF
+#)
+#target_link_libraries(tonavtests
+#        LINK_PUBLIC tonav
+#        LINK_PRIVATE ${GTEST_BOTH_LIBRARIES}
+#)
 
 target_include_directories(tonav PUBLIC "../thirdparty/nlohmann_json")
 

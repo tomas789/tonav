@@ -1,4 +1,4 @@
-#!env python3
+#!/usr/bin/python3
 
 import multiprocessing
 import subprocess
@@ -8,7 +8,14 @@ import json
 import os
 import shutil
 
-pytonav_path = "../build/simulation/Debug/pytonavsimulation.cpython-36m-darwin.so"
+pytonav_path_candidates = [
+    "../build/simulation/pytonavsimulation.cpython-35m-x86_64-linux-gnu.so",
+    "../build/simulation/Debug/pytonavsimulation.cpython-36m-darwin.so"
+]
+for candidate in pytonav_path_candidates:
+    if os.path.exists(candidate):
+        pytonav_path = candidate
+        break
 spec = importlib.util.spec_from_file_location("pytonavsimulation", pytonav_path)
 pytonavsimulation = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(pytonavsimulation)
@@ -55,8 +62,9 @@ def work(process_rank):
             "camera_readout_time_noise": gen_param(1, -6, -2)
         }
 
-        for end_time in [1, 2, 5, 8]:
-            pytonavsimulation.DebugLogger.getInstance().set_output_file("results/tonav_output_{}_{}.json".format(i, end_time))
+        for end_time in [1, 2, 8, 20]:
+            output_path = "results/tonav_output_{}_{}.json".format(i, end_time)
+            pytonavsimulation.DebugLogger.getInstance().set_output_file(output_path)
             sim_setup = pytonavsimulation.SimSetup("../../examples/sim_setup_tonav.json")
             calibration = sim_setup.getOdometry().get_tonav_calibration()
             for k, v in sim_params.items():
@@ -69,6 +77,7 @@ def work(process_rank):
             with open('results/tonav_params_{}_{}.json'.format(i, end_time), 'w') as o:
                 json.dump({k:(v[0] if len(v) == 1 else v.tolist()) for k, v in sim_params.items()}, o, indent=4, sort_keys=True)
             pytonavsimulation.DebugLogger.getInstance().write_and_clear()
+            os.remove(output_path)
             del sim
             del sim_setup
             del calibration
