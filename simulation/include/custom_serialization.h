@@ -44,6 +44,24 @@ struct adl_serializer<Eigen::Vector3d> {
     }
 };
 
+template <>
+struct adl_serializer<Eigen::Matrix3d> {
+    static void to_json(json &j, const Eigen::Matrix3d &m) {
+        j = json {
+            json { m(0), m(1), m(2) },
+            json { m(3), m(4), m(5) },
+            json { m(6), m(7), m(8) }
+        };
+    }
+    
+    static void from_json(const json &j, Eigen::Matrix3d &m) {
+        m <<
+            j.at(0).at(0), j.at(0).at(1), j.at(0).at(2),
+            j.at(1).at(0), j.at(1).at(1), j.at(1).at(2),
+            j.at(2).at(0), j.at(2).at(1), j.at(2).at(2);
+    }
+};
+    
 }
 
 #endif //TONAV_CUSTOM_SERIALIZATION_H

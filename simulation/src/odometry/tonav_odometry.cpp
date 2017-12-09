@@ -13,7 +13,7 @@
 std::unique_ptr<TonavOdometry> TonavOdometry::load(SimSetup* sim_setup, const json& j) {
     std::unique_ptr<TonavOdometry> odometry(new TonavOdometry(sim_setup));
     
-    odometry->tonav_calibration_ = TonavCalibration::prepare(sim_setup);
+    odometry->tonav_calibration_ = TonavCalibration::prepare(sim_setup, "/Users/tomaskrejci/Developer/tonav/examples/tonav_params_0.json");
     
     return odometry;
 }

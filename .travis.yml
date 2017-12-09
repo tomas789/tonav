@@ -27,6 +27,12 @@ before_install:
   - cmake -DCMAKE_BUILD_TYPE=RELEASE -DWITH_VTK=ON ..
   - make -j2
   - sudo make install
+  - cd ../..
+  - git clone https://github.com/pybind/pybind11.git
+  - mkdir pybind11/build
+  - cd pybind11/build
+  - cmake ..
+  - sudo make install -j2
 
 before_script:
   - mkdir build

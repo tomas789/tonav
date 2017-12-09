@@ -14,7 +14,7 @@ std::unique_ptr<TonavBodyStateOdometry> TonavBodyStateOdometry::load(SimSetup* s
 
 void TonavBodyStateOdometry::initialize(VioSimulation *simulation) {
     vio_simulation_ = simulation;
-    tonav_calibration_ = TonavCalibration::prepare(sim_setup_);
+    tonav_calibration_ = TonavCalibration::prepare(sim_setup_, "tonav_params.json");
     const Imu& imu = sim_setup_->getImu();
     const Trajectory &trajectory = sim_setup_->getTrajectory();
     next_propagation_time_ = NAN;

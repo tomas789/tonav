@@ -78,6 +78,7 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
 
 void VioSimulation::stop() {
     is_simulation_running_ = false;
+    run_loop_.stop();
 }
 
 void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
@@ -98,6 +99,7 @@ void VioSimulation::accelerometerCallback(double time, Eigen::Vector3d accel) {
     } else {
         sim_setup_->getOdometry().updateAcceleration(time, accel);
     }
+    evaluateTerminationConditions(time);
 }
 
 void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
@@ -118,6 +120,7 @@ void VioSimulation::gyroscopeCallback(double time, Eigen::Vector3d gyro) {
     } else {
         sim_setup_->getOdometry().updateRotationRate(time, gyro);
     }
+    evaluateTerminationConditions(time);
 }
 
 void VioSimulation::cameraCallback(double time, cv::Mat frame) {
@@ -214,6 +217,18 @@ void VioSimulation::updateOdometryVisualState(const std::vector<std::pair<tonav:
         data[i].z = features[i].second.z();
     }
     rezidualized_features_cloud_->addCloud(cloud, cv::viz::Color::yellow());
+}
+
+void VioSimulation::evaluateTerminationConditions(double time) {
+    Trajectory& trajectory = sim_setup_->getTrajectory();
+    const Odometry& odometry = sim_setup_->getOdometry();
+    Eigen::Vector3d p_B_G_gt = trajectory.getBodyPositionInGlobalFrame(time);
+    Eigen::Vector3d p_B_G = odometry.getBodyPositionInGlobalFrame();
+    double error_norm = (p_B_G - p_B_G_gt).norm();
+    std::cerr << "Error: " << error_norm << std::endl;
+    if (error_norm > 1.0) {
+        stop();
+    }
 }
 
 void VioSimulation::windowKeyboardCallback(const cv::viz::KeyboardEvent& event, void*) {
