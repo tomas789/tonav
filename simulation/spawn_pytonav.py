@@ -1,4 +1,4 @@
-#!env python3
+#!/usr/bin/python3
 
 import multiprocessing
 import subprocess
@@ -8,7 +8,14 @@ import json
 import os
 import shutil
 
-pytonav_path = "../build/simulation/Debug/pytonavsimulation.cpython-36m-darwin.so"
+pytonav_path_candidates = [
+    "../build/simulation/pytonavsimulation.cpython-35m-x86_64-linux-gnu.so",
+    "../build/simulation/Debug/pytonavsimulation.cpython-36m-darwin.so"
+]
+for candidate in pytonav_path_candidates:
+    if os.path.exists(candidate):
+        pytonav_path = candidate
+        break
 spec = importlib.util.spec_from_file_location("pytonavsimulation", pytonav_path)
 pytonavsimulation = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(pytonavsimulation)
