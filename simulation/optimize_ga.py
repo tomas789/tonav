@@ -45,7 +45,7 @@ TONAV_CONFIG = {
       "type": "kitti_loader",
       "params": {
         "skip_frames": 0,
-        "path": os.path.join(os.getcwd(), "../kitti_data/2011_09_30/2011_09_30_drive_0034_sync")
+        "path": os.path.expanduser("~/kitti_data/2011_09_30/2011_09_30_drive_0034_sync")
       }
     }
   ],
