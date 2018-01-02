@@ -151,15 +151,10 @@ def evalTonavKittiSimulation(individual, headless=True):
         sim = pytonavsimulation.VioSimulation()
         if headless:
             sim.set_headless()
-        max_sim_time = float(shared.getConst("max_sim_time"))
+        #max_sim_time = float(shared.getConst("max_sim_time"))
+        max_sim_time = 20
         sim.set_simulation_length(max_sim_time)
-        try:
-            sim.run(sim_setup)
-        except:
-            pytonavsimulation.DebugLogger.getInstance().write_and_clear()
-            del sim
-            del sim_setup
-            return 99999999, 99999999
+        sim.run(sim_setup)
         pytonavsimulation.DebugLogger.getInstance().write_and_clear()
         del sim
         del sim_setup
@@ -175,6 +170,8 @@ def evalTonavKittiSimulation(individual, headless=True):
         curr_pos = np.asarray(gt_eval[keys[i]]["p_B_G"]["true"])
         ttd += np.linalg.norm(curr_pos - prev_pos)
         error_norm = gt_eval[keys[i]]["p_B_G"]["error_norm"]
+        if error_norm is None:
+            return 1e9, 1e9
         errors_pttd.append(error_norm/ttd)
     position_error = gt_eval[last_key]["p_B_G"]["error_norm"]
     mean_error_pttd = sum(errors_pttd)/len(errors_pttd)
@@ -212,7 +209,7 @@ toolbox.register("select", tools.selTournament, tournsize=3)
 
 def main(args):
     globals()["DEBUG_OUTPUT"] = args.debug
-    shared.setConst(max_sim_time=args.max_sim_time)
+    #shared.setConst(max_sim_time=args.max_sim_time)
     checkpoint = args.checkpoint
     if checkpoint and os.path.exists(checkpoint):
         # A file name has been given, then load the data from the file
