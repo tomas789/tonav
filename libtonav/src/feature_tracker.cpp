@@ -41,7 +41,6 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     cv::resize(image, working_image, cv::Size(), scale_factor, scale_factor, cv::INTER_LINEAR);
     
     std::shared_ptr<FrameFeatures> frame_features = FrameFeatures::fromImage(detector_, extractor_, working_image);
-    // frame_features.drawFeatures(image);
     
     if (!previous_frame_features_ || previous_frame_features_->keypoints().size() == 0) {
         FeatureTracker::feature_track_list current_features;

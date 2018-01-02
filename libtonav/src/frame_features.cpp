@@ -93,34 +93,30 @@ std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matc
             good_matches.push_back(matches[i][0]);
         }
     }
-    return good_matches;
     
-    // @todo: Move use_homography_filter out to the configuration?
-    /*
-    bool use_homography_filter = false;
-    if (use_homography_filter) {
+    bool use_fundamental_filter = true;
+    if (use_fundamental_filter) {
         std::vector<cv::Point2f> this_pts;
         std::vector<cv::Point2f> other_pts;
-        this_pts.reserve(matches.size());
-        other_pts.reserve(matches.size());
-        for (std::size_t i = 0; i < matches.size(); ++i) {
-            this_pts.push_back(keypoints_[matches[i].queryIdx].pt);
-            other_pts.push_back(other.keypoints_[matches[i].trainIdx].pt);
+        this_pts.reserve(good_matches.size());
+        other_pts.reserve(good_matches.size());
+        for (std::size_t i = 0; i < good_matches.size(); ++i) {
+            this_pts.push_back(keypoints_[good_matches[i].queryIdx].pt);
+            other_pts.push_back(other.keypoints_[good_matches[i].trainIdx].pt);
         }
-        cv::Mat good_features_mask;
-        cv::Mat H = cv::findHomography(this_pts, other_pts, CV_RANSAC, 3, good_features_mask);
+        cv::Mat good_matches_mask;
+        cv::Mat F = cv::findFundamentalMat(this_pts, other_pts, CV_FM_RANSAC, 3, 0.99, good_matches_mask);
         
-        std::vector<cv::DMatch> good_matches;
-        for (std::size_t i = 0; i < matches.size(); ++i) {
-            if (good_features_mask.at<bool>(i, 0)) {
-                good_matches.push_back(matches[i]);
+        std::vector<cv::DMatch> good_matches_filtered;
+        for (std::size_t i = 0; i < good_matches.size(); ++i) {
+            if (good_matches_mask.at<bool>(i, 0)) {
+                good_matches_filtered.push_back(good_matches[i]);
             }
         }
-        return good_matches;
+        return good_matches_filtered;
     } else {
-        return matches;
+        return good_matches;
     }
-     */
 }
 
 std::vector<cv::KeyPoint> &FrameFeatures::keypoints() {
