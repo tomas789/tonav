@@ -50,6 +50,8 @@ private:
     void writeEvalGt(json& j, const std::string& key, const tonav::Quaternion& true_state, const tonav::Quaternion& estimate);
     void writeEvalGt(json& j, const std::string& key, double true_state, double estimate);
     
+    std::string calibration_params_path_;
+    
     VioSimulation *vio_simulation_;
     
     double next_propagation_time_;

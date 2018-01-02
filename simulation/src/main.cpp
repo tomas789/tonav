@@ -14,7 +14,7 @@ int main(int argc, char* argv[]) {
     std::shared_ptr<SimSetup> sim_setup = SimSetup::load(args[1]);
     
     VioSimulation sim;
-    // sim.setHeadless();
+//    sim.setHeadless();
     sim.setSimulationLength(80);
     sim.run(sim_setup);
 

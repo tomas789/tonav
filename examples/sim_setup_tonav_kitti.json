@@ -1,0 +1,18 @@
+{
+  "helpers": [
+    {
+      "id": "kitti_loader",
+      "type": "kitti_loader",
+      "params": {
+        "skip_frames": 0,
+        "path": "kitti_data/2011_09_30/2011_09_30_drive_0034_sync"
+      }
+    }
+  ],
+  "odometry": {
+    "type": "tonav",
+    "params": {
+      "load_path": "examples/tonav_params_0.json"
+    }
+  }
+}

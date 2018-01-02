@@ -13,8 +13,6 @@
 
 #include "odometry/tonav_odometry.h"
 
-VioSimulation* VioSimulation::global_vio_simulation_;
-
 VioSimulation::VioSimulation() = default;
 
 void VioSimulation::setHeadless() {
@@ -31,6 +29,19 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
     }
     sim_setup_ = sim_setup;
     run_loop_.registerSimulationForUpdates(this);
+    
+    for (std::string helper_name : sim_setup->getAllHelperNames()) {
+        sim_setup->getHelper(helper_name).initialize(this);
+    }
+    
+    for (auto helper_name : sim_setup->getAllHelperNames()) {
+        sim_setup->getHelper(helper_name).initialize(this);
+    }
+    sim_setup->getImu().initialize(this);
+    sim_setup->getVision().initialize(this);
+    sim_setup->getTrajectory().initialize(this);
+    sim_setup->getOdometry().initialize(this);
+    
     if (!window_ && !is_headless_) {
         window_.reset(new cv::viz::Viz3d("Vio Simulation"));
         window_->showWidget("Coordinate Frame", cv::viz::WCoordinateSystem());
@@ -49,19 +60,12 @@ void VioSimulation::run(std::shared_ptr<SimSetup> sim_setup) {
         body_.reset(new cv::viz::WCoordinateSystem(0.3));
         window_->showWidget("Body", *body_);
     
-        global_vio_simulation_ = this;
         window_->registerKeyboardCallback(&VioSimulation::windowKeyboardCallback);
         
         cv::namedWindow("Tonav");
         
         window_->spinOnce();
     }
-    
-    global_vio_simulation_ = this;
-    sim_setup->getImu().initialize(this);
-    sim_setup->getVision().initialize(this);
-    sim_setup->getTrajectory().initialize(this);
-    sim_setup->getOdometry().initialize(this);
     
     is_simulation_running_ = true;
     std::thread t(&VioSimulation::startRunLoop, this);
@@ -183,6 +187,7 @@ void VioSimulation::startRunLoop() {
 }
 
 cv::Affine3d VioSimulation::getPose(tonav::Quaternion q, Eigen::Vector3d p) const {
+    p *= 0.05;
     cv::Matx33d R;
     cv::eigen2cv((q_viz_sim_*q).toRotationMatrix(), R);
     cv::Vec3d p_viz;
@@ -225,13 +230,11 @@ void VioSimulation::evaluateTerminationConditions(double time) {
     Eigen::Vector3d p_B_G_gt = trajectory.getBodyPositionInGlobalFrame(time);
     Eigen::Vector3d p_B_G = odometry.getBodyPositionInGlobalFrame();
     double error_norm = (p_B_G - p_B_G_gt).norm();
-    std::cerr << "Error: " << error_norm << std::endl;
-    if (error_norm > 1.0) {
-        stop();
-    }
+//    if (error_norm > 3.0) {
+//        stop();
+//    }
 }
 
 void VioSimulation::windowKeyboardCallback(const cv::viz::KeyboardEvent& event, void*) {
-    std::cout << "Window keyboard callback" << std::endl;
 }
 

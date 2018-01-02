@@ -7,5 +7,4 @@
 #include "sim_setup.h"
 
 SimSetupComponent::SimSetupComponent(SimSetup *sim_setup) : sim_setup_(sim_setup) { }
-
 SimSetupComponent::~SimSetupComponent() { }

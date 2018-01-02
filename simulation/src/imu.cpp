@@ -25,7 +25,7 @@ std::unique_ptr<Imu> Imu::load(SimSetup *sim_setup, const json &j) {
     return imu;
 }
 
-float Imu::getUpdateFrequency() const {
+double Imu::getUpdateFrequency() const {
     return update_frequency_;
 }
 

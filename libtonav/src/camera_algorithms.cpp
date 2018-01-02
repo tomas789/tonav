@@ -111,17 +111,6 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
         out << "}" << std::endl;
     }
     
-    //    std::cout << " ⛄ " << std::endl;
-    //    std::cout << "p_B0_G: [" << it_c0->getBodyPositionInGlobalFrame().transpose() << "]^T" << std::endl;
-    //    std::cout << "p_Blast_G: [" << (it_c0 + (n-1))->getBodyPositionInGlobalFrame().transpose() << "]^T" << std::endl;
-    //    std::cout << "distance: " << (it_c0->getBodyPositionInGlobalFrame() - (it_c0 + (n-1))->getBodyPositionInGlobalFrame()).norm() << " m" << std::endl;
-    //    std::cout << "p_C0_G: [" << it_c0->getCameraPositionInGlobalFrame(*this).transpose() << "]^T" << std::endl;
-    //    std::cout << "p_Clast_G: [" << (it_c0 + (n-1))->getCameraPositionInGlobalFrame(*this).transpose() << "]^T" << std::endl;
-    //    std::cout << "distance: " << (it_c0->getCameraPositionInGlobalFrame(*this) - (it_c0 + (n-1))->getCameraPositionInGlobalFrame(*this)).norm() << " m" << std::endl;
-    //    std::cout << "p_Clast_C0: [" << (it_c0)->getPositionOfAnotherPose(*(it_c0 + (n-1)), *this).transpose() << "]^T" << std::endl;
-    //    std::cout << "||p_Clast_C0||: " << (it_c0)->getPositionOfAnotherPose(*(it_c0 + (n-1)), *this).norm() << " m" << std::endl;
-    //    std::cout << " ⛸ ⛸ ⛸ ⛸ " << std::endl;
-    
     // Solve
     CameraReprojectionFunctor functor(rotations, positions, measurements, *filter_);
     Eigen::NumericalDiff<CameraReprojectionFunctor> num_diff(functor);
@@ -189,7 +178,6 @@ std::pair<bool, Eigen::Vector3d> CameraAlgorithms::triangulateGlobalFeaturePosit
         default:
             break;
     }
-    std::cout << "Optimization ended after " << lm.iterations() << " iteration(s) with status " << status_msg << " (" << msg << ")" << std::endl;
     
     Eigen::VectorXd fvec;
     fvec.resize(functor.values());
@@ -286,10 +274,6 @@ Eigen::Matrix<double, 2, 3> CameraAlgorithms::cameraProjectJacobian(const Eigen:
     
     Eigen::Matrix<double, 2, 3> jac;
     num_diff.df(p, jac);
-    
-    std::cout << "jac: " << std::endl << jac << std::endl;
-    
-    
     
     Eigen::Matrix<double, 2, 3> d;
     d(0, 0) = state.focal_point_(0) / z;

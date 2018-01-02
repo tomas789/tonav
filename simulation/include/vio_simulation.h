@@ -39,7 +39,6 @@ private:
     void updateOdometryVisualState(const std::vector<std::pair<tonav::FeatureId, Eigen::Vector3d>>& features);
     void evaluateTerminationConditions(double time);
     
-    static VioSimulation* global_vio_simulation_;
     static void windowKeyboardCallback(const cv::viz::KeyboardEvent& event, void*);
     
     std::shared_ptr<SimSetup> sim_setup_;

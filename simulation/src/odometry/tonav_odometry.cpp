@@ -13,17 +13,23 @@
 std::unique_ptr<TonavOdometry> TonavOdometry::load(SimSetup* sim_setup, const json& j) {
     std::unique_ptr<TonavOdometry> odometry(new TonavOdometry(sim_setup));
     
-    odometry->tonav_calibration_ = TonavCalibration::prepare(sim_setup, "/Users/tomaskrejci/Developer/tonav/examples/tonav_params_0.json");
+    odometry->calibration_params_path_ = j["load_path"];
     
     return odometry;
 }
 
 void TonavOdometry::initialize(VioSimulation *simulation) {
+    tonav_calibration_ = TonavCalibration::prepare(sim_setup_, calibration_params_path_);
+    
+    const Trajectory& trajectory = sim_setup_->getTrajectory();
+    
     vio_simulation_ = simulation;
     Vision &vision = sim_setup_->getVision();
     next_propagation_time_ = NAN;
     
-    Eigen::Vector3d p_B_C = Eigen::Vector3d::Zero();
+    Eigen::Vector3d p_C_B = trajectory.getCameraPositionInBodyFrame();
+    tonav::Quaternion q_C_B = trajectory.getBodyToCameraFrameRotation();
+    Eigen::Vector3d p_B_C = tonav::Geometry::switchFrames(p_C_B, q_C_B);
     
     cv::Ptr<cv::Feature2D> feature_2d = vision.getFeature2D();
     cv::Ptr<cv::DescriptorMatcher> matcher(new cv::FlannBasedMatcher);
@@ -176,6 +182,8 @@ void TonavOdometry::evaluateToGroundTruth(double time) {
     writeEvalGt(j, "p_B_C", p_B_C_gt, p_B_C);
     writeEvalGt(j, "focal_length", focal_length_gt, focal_length);
     writeEvalGt(j, "optical_center", optical_center_gt, optical_center);
+    writeEvalGt(j, "radial_distortion", radial_distortion_gt, radial_distortion);
+    writeEvalGt(j, "tangential_distortion", tangential_distortion_gt, tangential_distortion);
     writeEvalGt(j, "camera_delay", camera_delay_gt, camera_delay);
     writeEvalGt(j, "camera_readout", camera_readout_gt, camera_readout);
     
