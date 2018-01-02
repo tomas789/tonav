@@ -125,9 +125,9 @@ toolbox.register("population", tools.initRepeat, list, toolbox.individual)
 
 def mutateTonavInd(individual, indpb):
     for i in range(len(individual)):
-        if np.random.binomial(1, indpb):
+        if np.random.rand() < indpb:
             change = np.random.exponential(1) + 1
-            if np.random.binomial(1, 0.5):
+            if np.random.rand() < 0.5:
                 individual[i] *= change
             else:
                 individual[i] /= change
@@ -202,10 +202,11 @@ NGEN = 300
 FREQ = 1
 CXPB = 0.3
 MUTPB = 0.6
+INDPB = 0.04
     
 toolbox.register("evaluate", evalTonavKittiSimulation)
 toolbox.register("mate", cxTwoPointCopy)
-toolbox.register("mutate", mutateTonavInd, indpb=MUTPB)
+toolbox.register("mutate", mutateTonavInd, indpb=INDPB)
 toolbox.register("select", tools.selTournament, tournsize=3)
 
 
