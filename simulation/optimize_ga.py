@@ -216,6 +216,8 @@ def main(args):
         with open(checkpoint, "rb") as cp_file:
             cp = pkl.load(cp_file)
         population = cp["population"]
+        for i in range(len(population)):
+            del population[i].fitness.values
         start_gen = cp["generation"]
         halloffame = cp["halloffame"]
         logbook = cp["logbook"]
