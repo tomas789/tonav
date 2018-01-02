@@ -61,10 +61,8 @@ Eigen::Matrix<double, 56, 56> BodyState::propagateCovariance(
     // As in Shelley (6.39)
     
     Eigen::Matrix<double, 15, 15> phi_Bl = BodyState::bodyStateTransitionMatrix(filter, from_state, to_state);
-    Eigen::Matrix<double, 15, 27> gamma_imu = BodyState::imuCalibrationParamsTransitionMatrix(filter, from_state,
-                                                                                              to_state);
-    Eigen::Matrix<double, 15, 15> noise_matrix = BodyState::propagationNoiseMatrix(filter, from_state, to_state,
-                                                                                   phi_Bl);
+    Eigen::Matrix<double, 15, 27> gamma_imu = BodyState::imuCalibrationParamsTransitionMatrix(filter, from_state, to_state);
+    Eigen::Matrix<double, 15, 15> noise_matrix = BodyState::propagationNoiseMatrix(filter, from_state, to_state, phi_Bl);
     
     Eigen::Matrix<double, 56, 56> phi = Eigen::Matrix<double, 56, 56>::Identity(56, 56);
     phi.block<15, 15>(0, 0) = phi_Bl;
@@ -166,7 +164,6 @@ Eigen::Matrix<double, 15, 15> BodyState::bodyStateTransitionMatrix(
     const Filter &filter, const BodyState &from_state,
     BodyState &to_state
 ) {
-    /// @todo Implement this
     double delta_t = from_state.timeTo(to_state);
     Eigen::Matrix<double, 15, 15> phi = Eigen::Matrix<double, 15, 15>::Identity();
     
@@ -179,12 +176,12 @@ Eigen::Matrix<double, 15, 15> BodyState::bodyStateTransitionMatrix(
     Eigen::Matrix3d T_a_inv = filter.state().getAccelerometerShapeMatrix().inverse();
     Eigen::Matrix3d rot_transp_sum = R_Bnext_G.transpose() + R_Bprev_G.transpose();
     Eigen::Vector3d global_gravity = filter.calibration().getGlobalGravity();
-    Eigen::Vector3d a_g_Bnext = R_G_Bnext * to_state.acceleration_estimate_ + global_gravity;
+    Eigen::Vector3d a_g_Bnext = R_G_Bnext*to_state.acceleration_estimate_ + global_gravity;
     
     /// From Shelley (6.37)
-    Eigen::Matrix3d phi_pq = -QuaternionTools::crossMatrix(R_G_Bprev * to_state.y_hat_);
+    Eigen::Matrix3d phi_pq = -QuaternionTools::crossMatrix(R_G_Bprev*from_state.y_hat_);
     /// From Shelley (6.37)
-    Eigen::Matrix3d phi_vq = -QuaternionTools::crossMatrix(R_G_Bprev * to_state.s_hat_);
+    Eigen::Matrix3d phi_vq = -QuaternionTools::crossMatrix(R_G_Bprev*from_state.s_hat_);
     
     Eigen::Matrix3d phi_q_bg = -0.5 * delta_t * rot_transp_sum * T_g_inv;
     Eigen::Matrix3d phi_v_bg =
@@ -192,7 +189,7 @@ Eigen::Matrix<double, 15, 15> BodyState::bodyStateTransitionMatrix(
     Eigen::Matrix3d phi_p_bg = 0.5 * delta_t * phi_v_bg;
     
     Eigen::Matrix3d phi_q_ba = 0.5 * delta_t * rot_transp_sum * T_g_inv * T_s * T_a_inv;
-    Eigen::Matrix3d phi_v_ba = 0.5 * delta_t * QuaternionTools::crossMatrix(a_g_Bnext - global_gravity) * phi_q_ba;
+    Eigen::Matrix3d phi_v_ba = -0.5*delta_t*rot_transp_sum*T_a_inv + 0.25*delta_t*delta_t*QuaternionTools::crossMatrix(a_g_Bnext - global_gravity)*rot_transp_sum*T_g_inv*T_s*T_a_inv;
     Eigen::Matrix3d phi_p_ba = 0.5 * delta_t * phi_v_ba;
     
     phi.block<3, 3>(3, 0) = phi_pq;
@@ -201,12 +198,12 @@ Eigen::Matrix<double, 15, 15> BodyState::bodyStateTransitionMatrix(
     phi.block<3, 3>(3, 6) = delta_t * Eigen::Matrix3d::Identity();
     
     phi.block<3, 3>(0, 9) = phi_q_bg;
-    phi.block<3, 3>(1, 9) = phi_p_bg;
-    phi.block<3, 3>(2, 9) = phi_v_bg;
+    phi.block<3, 3>(3, 9) = phi_p_bg;
+    phi.block<3, 3>(6, 9) = phi_v_bg;
     
     phi.block<3, 3>(0, 12) = phi_q_ba;
-    phi.block<3, 3>(1, 12) = phi_p_ba;
-    phi.block<3, 3>(2, 12) = phi_v_ba;
+    phi.block<3, 3>(3, 12) = phi_p_ba;
+    phi.block<3, 3>(6, 12) = phi_v_ba;
     
     return phi;
 }
@@ -215,8 +212,73 @@ Eigen::Matrix<double, 15, 27> BodyState::imuCalibrationParamsTransitionMatrix(
     const Filter &filter,
     const BodyState &from_state, BodyState &to_state
 ) {
-    /// @todo Implement this
-    return Eigen::Matrix<double, 15, 27>::Zero();
+    Eigen::Matrix<double, 15, 27> gamma_imu = Eigen::Matrix<double, 15, 27>::Zero();
+    
+    double delta_t = from_state.timeTo(to_state);
+    Eigen::Matrix3d R_Bprev_G = from_state.getOrientationInGlobalFrame().toRotationMatrix();
+    Eigen::Matrix3d R_Bnext_G = to_state.getOrientationInGlobalFrame().toRotationMatrix();
+    Eigen::Matrix3d R_G_Bnext = R_Bnext_G.transpose();
+    Eigen::Matrix3d T_g_inv = filter.state().getGyroscopeShapeMatrix().inverse();
+    Eigen::Matrix3d T_s = filter.state().getGyroscopeAccelerationSensitivityMatrix();
+    Eigen::Matrix3d T_a_inv = filter.state().getAccelerometerShapeMatrix().inverse();
+    Eigen::Matrix3d rot_transp_sum = R_Bnext_G.transpose() + R_Bprev_G.transpose();
+    Eigen::Vector3d global_gravity = filter.calibration().getGlobalGravity();
+    Eigen::Vector3d a_g_Bnext = R_G_Bnext*to_state.acceleration_estimate_ + global_gravity;
+    Eigen::Vector3d a_Bnext = to_state.acceleration_estimate_;
+    Eigen::Vector3d omega_Bnext = to_state.rotation_estimate_;
+    Eigen::Matrix3d a_g_Bnext_cross = QuaternionTools::crossMatrix(a_g_Bnext - global_gravity);
+    
+    Eigen::Matrix<double, 3, 9> gamma_q_T_g;
+    for (int i = 0; i < 9; ++i) {
+        Eigen::Matrix3d T_by_T_vec_ith = BodyState::getIthElementOfTMat(i);
+        gamma_q_T_g.block<3, 1>(0, i) = -0.5*delta_t*rot_transp_sum*T_g_inv*T_by_T_vec_ith*omega_Bnext;
+    }
+    Eigen::Matrix<double, 3, 9> gamma_v_T_g;
+    for (int i = 0; i < 9; ++i) {
+        Eigen::Matrix3d T_by_T_vec_ith = BodyState::getIthElementOfTMat(i);
+        gamma_v_T_g.block<3, 1>(0, i) = -0.25*delta_t*delta_t*a_g_Bnext_cross*rot_transp_sum*T_g_inv*T_by_T_vec_ith*omega_Bnext;
+    }
+    Eigen::Matrix<double, 3, 9> gamma_p_T_g = 0.5*delta_t*gamma_v_T_g;
+    
+    Eigen::Matrix<double, 3, 9> gamma_q_T_s;
+    for (int i = 0; i < 9; ++i) {
+        Eigen::Matrix3d T_by_T_vec_ith = BodyState::getIthElementOfTMat(i);
+        gamma_q_T_s.block<3, 1>(0, i) = -0.5*delta_t*rot_transp_sum*T_g_inv*T_by_T_vec_ith*a_Bnext;
+    }
+    Eigen::Matrix<double, 3, 9> gamma_v_T_s;
+    for (int i = 0; i < 9; ++i) {
+        Eigen::Matrix3d T_by_T_vec_ith = BodyState::getIthElementOfTMat(i);
+        gamma_v_T_s.block<3, 1>(0, i) = -0.25*delta_t*delta_t*a_g_Bnext_cross*rot_transp_sum*T_g_inv*T_by_T_vec_ith*a_Bnext;
+    }
+    Eigen::Matrix<double, 3, 9> gamma_p_T_s = 0.5*delta_t*gamma_v_T_s;
+    
+    Eigen::Matrix<double, 3, 9> gamma_q_T_a;
+    for (int i = 0; i < 9; ++i) {
+        Eigen::Matrix3d T_by_T_vec_ith = BodyState::getIthElementOfTMat(i);
+        gamma_q_T_a.block<3, 1>(0, i) = 0.5*delta_t*rot_transp_sum*T_g_inv*T_s*T_a_inv*T_by_T_vec_ith*a_Bnext;
+    }
+    Eigen::Matrix<double, 3, 9> gamma_v_T_a;
+    for (int i = 0; i < 9; ++i) {
+        Eigen::Matrix3d T_by_T_vec_ith = BodyState::getIthElementOfTMat(i);
+        Eigen::Vector3d first_part = 0.25*delta_t*delta_t*a_g_Bnext_cross*rot_transp_sum*T_g_inv*T_s*T_a_inv*T_by_T_vec_ith*a_Bnext;
+        Eigen::Vector3d second_part = 0.5*delta_t*rot_transp_sum*T_a_inv*T_by_T_vec_ith*a_Bnext;
+        gamma_v_T_a.block<3, 1>(0, i) = first_part - second_part;
+    }
+    Eigen::Matrix<double, 3, 9> gamma_p_T_a = 0.5*delta_t*gamma_v_T_a;
+    
+    gamma_imu.block<3, 9>(0, 0) = gamma_q_T_g;
+    gamma_imu.block<3, 9>(3, 0) = gamma_p_T_g;
+    gamma_imu.block<3, 9>(6, 0) = gamma_v_T_g;
+    
+    gamma_imu.block<3, 9>(0, 9) = gamma_q_T_s;
+    gamma_imu.block<3, 9>(3, 9) = gamma_p_T_s;
+    gamma_imu.block<3, 9>(6, 9) = gamma_v_T_s;
+    
+    gamma_imu.block<3, 9>(0, 18) = gamma_q_T_a;
+    gamma_imu.block<3, 9>(3, 18) = gamma_p_T_a;
+    gamma_imu.block<3, 9>(6, 18) = gamma_v_T_a;
+    
+    return gamma_imu;
 }
 
 Eigen::Matrix<double, 15, 15> BodyState::propagationNoiseMatrix(
@@ -229,18 +291,18 @@ Eigen::Matrix<double, 15, 15> BodyState::propagationNoiseMatrix(
     double accelerometer_random_walk_variance = filter.calibration().getAccelerometerRandomWalkVariance();
     
     double simga_gc_squared = gyroscope_variance * gyroscope_variance;
-    double sigma_ga_squared = accelerometer_variance * accelerometer_variance;
+    double sigma_ac_squared = accelerometer_variance * accelerometer_variance;
     double sigma_wgc_squared = gyroscope_random_walk_variance * gyroscope_random_walk_variance;
-    double sigma_wga_squared = accelerometer_random_walk_variance * accelerometer_random_walk_variance;
+    double sigma_wac_squared = accelerometer_random_walk_variance * accelerometer_random_walk_variance;
     
     double delta_t = from_state.timeTo(to_state);
     Eigen::Matrix3d R_G_Bprev = from_state.getOrientationInGlobalFrame().toRotationMatrix().transpose();
     
     Eigen::Matrix<double, 12, 12> q_c = Eigen::Matrix<double, 12, 12>::Zero();
     q_c.block<3, 3>(0, 0) = simga_gc_squared * Eigen::Matrix3d::Identity();
-    q_c.block<3, 3>(3, 3) = sigma_ga_squared * Eigen::Matrix3d::Identity();
+    q_c.block<3, 3>(3, 3) = sigma_ac_squared * Eigen::Matrix3d::Identity();
     q_c.block<3, 3>(6, 6) = sigma_wgc_squared * Eigen::Matrix3d::Identity();
-    q_c.block<3, 3>(9, 9) = sigma_wga_squared * Eigen::Matrix3d::Identity();
+    q_c.block<3, 3>(9, 9) = sigma_wac_squared * Eigen::Matrix3d::Identity();
     
     Eigen::Matrix<double, 15, 12> g_c = Eigen::Matrix<double, 15, 12>::Zero();
     g_c.block<3, 3>(0, 0) = -Eigen::Matrix3d::Identity();
@@ -252,6 +314,12 @@ Eigen::Matrix<double, 15, 15> BodyState::propagationNoiseMatrix(
     Eigen::Matrix<double, 15, 15> q_d =
         0.5 * delta_t * bodyStateTransitionMatrix * n_c * bodyStateTransitionMatrix.transpose() + n_c;
     return q_d;
+}
+    
+Eigen::Matrix3d BodyState::getIthElementOfTMat(int i) {
+    Eigen::Matrix3d T_by_T_vec_ith = Eigen::Matrix3d::Zero();
+    T_by_T_vec_ith(i / 3, i % 3) = 1;
+    return T_by_T_vec_ith;
 }
 
 }

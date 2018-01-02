@@ -142,6 +142,8 @@ private:
         const Filter &filter, const BodyState &from_state,
         BodyState &to_state, const Eigen::Matrix<double, 15, 15> &bodyStateTransitionMatrix
     );
+    
+    static Eigen::Matrix3d getIthElementOfTMat(int i);
 };
 
 }
