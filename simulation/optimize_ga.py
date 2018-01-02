@@ -257,11 +257,10 @@ def main(args):
             ind.fitness.values = fit
 
         halloffame.update(population)
+        population = tools.selBest(population + halloffame.items[:5], len(population))
         record = stats.compile(population)
         logbook.record(gen=gen, evals=len(invalid_ind), **record)
         print(logbook.stream)
-
-        population = tools.selBest(population + halloffame.items[:5], len(population))
 
         if gen % FREQ == 0:
             # Fill the dictionary using the dict(key=value[, ...]) constructor
