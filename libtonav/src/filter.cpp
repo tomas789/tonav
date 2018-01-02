@@ -13,7 +13,7 @@
 #include <iostream>
 #include <iomanip>
 #include <iterator>
-#include <opencv2/core/core.hpp>
+#include <opencv2/core.hpp>
 
 #include "body_state.h"
 #include "chi_squared_ppm.h"

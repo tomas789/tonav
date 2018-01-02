@@ -153,7 +153,13 @@ def evalTonavKittiSimulation(individual, headless=True):
             sim.set_headless()
         max_sim_time = float(shared.getConst("max_sim_time"))
         sim.set_simulation_length(max_sim_time)
-        sim.run(sim_setup)
+        try:
+            sim.run(sim_setup)
+        except:
+            pytonavsimulation.DebugLogger.getInstance().write_and_clear()
+            del sim
+            del sim_setup
+            return 99999999, 99999999
         pytonavsimulation.DebugLogger.getInstance().write_and_clear()
         del sim
         del sim_setup
