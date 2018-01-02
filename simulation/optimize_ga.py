@@ -219,15 +219,14 @@ def main(args):
         for i in range(len(population)):
             del population[i].fitness.values
         start_gen = cp["generation"]
-        halloffame = cp["halloffame"]
         logbook = cp["logbook"]
         np.random.set_state(cp["rndstate"])
     else:
         # Start a new evolution
         population = toolbox.population(n=args.population_size)
         start_gen = 0
-        halloffame = tools.HallOfFame(maxsize=15, similar=np.array_equal)
         logbook = tools.Logbook()
+    halloffame = tools.HallOfFame(maxsize=15, similar=np.array_equal)
 
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("min", lambda l: min(map(creator.FitnessMin, l)).values)
