@@ -267,7 +267,7 @@ def main(args):
 
 
 def clear_precomputed_features():
-    call(["find", "../kitti_data", "-name", "'*.opencv'", "-delete"])
+    call(["find", "~/kitti_data", "-name", "'*.opencv'", "-delete"])
 
 def recompile_tonav():
     if os.path.exists("../build"):
