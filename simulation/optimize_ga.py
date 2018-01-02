@@ -199,7 +199,7 @@ NGEN = 300
 FREQ = 1
 CXPB = 0.3
 MUTPB = 0.6
-INDPB = 0.04
+INDPB = 0.08
     
 toolbox.register("evaluate", evalTonavKittiSimulation)
 toolbox.register("mate", cxTwoPointCopy)
