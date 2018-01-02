@@ -291,7 +291,7 @@ if __name__ == "__main__":
     if args.should_optimize:
         if args.recompile:
             recompile_tonav()
-            clear_precomputed_features()
+            #clear_precomputed_features()
         import_tonav()
         main(args)
     else:

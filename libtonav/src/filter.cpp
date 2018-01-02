@@ -368,7 +368,7 @@ FeatureRezidualizationResult Filter::rezidualizeFeature(const FeatureTrack &feat
         
         Eigen::Vector3d p_f_C = R_C_B * R_Bj_G * (global_position - p_Bj_G) + p_B_C;
         
-        if (p_f_C(2) < 0) {
+        if (p_f_C(2) < 2 || p_f_C(2) > 100) {
             // Feature is behind camera
             vul = true;
             result.setIsInvalid();
@@ -476,13 +476,6 @@ void Filter::performUpdate(const FeatureTracker::feature_track_list &features_to
     std::size_t num_poses = state().poses().size();
     feature_positions_.clear();
     
-    int hist[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    for (const std::shared_ptr<FeatureTrack> &feature : features_to_rezidualize) {
-        if (feature->posesTrackedCount() < 10) {
-            hist[feature->posesTrackedCount()] += 1;
-        }
-    }
-    
     for (const std::shared_ptr<FeatureTrack> &feature : features_to_rezidualize) {
         DebugLogger::getInstance().getFeatureNode(feature->getFeatureId()).log("poses_tracked_count", feature->posesTrackedCount());
         if (feature->posesTrackedCount() <= 3) {
@@ -570,11 +563,11 @@ void Filter::updateState(const Eigen::MatrixXd &T_H, const Eigen::VectorXd &r_q,
     double sigma = calibration_->getImageNoiseVariance();
     double sigma_squared = sigma * sigma;
     
-//    Eigen::MatrixXd K_big = filter_covar_*H.transpose()*(H*filter_covar_*H.transpose() + sigma_squared*Eigen::MatrixXd::Identity(H.rows(), H.rows())).inverse();
-//    filter_covar_ = filter_covar_ - K_big*H*filter_covar_;
-//    Eigen::VectorXd delta_x_big = K_big * r;
-//    filter_state_->updateWithStateDelta(delta_x_big);
-//    return;
+    Eigen::MatrixXd K_big = filter_covar_*H.transpose()*(H*filter_covar_*H.transpose() + sigma_squared*Eigen::MatrixXd::Identity(H.rows(), H.rows())).inverse();
+    filter_covar_ = filter_covar_ - K_big*H*filter_covar_;
+    Eigen::VectorXd delta_x_big = K_big * r;
+    filter_state_->updateWithStateDelta(delta_x_big);
+    return;
     
     Eigen::MatrixXd R_q = sigma_squared * Eigen::MatrixXd::Identity(T_H.rows(), T_H.rows());
     // Kalman gain
