@@ -38,7 +38,7 @@ std::shared_ptr<TonavCalibration> TonavCalibration::prepare(SimSetup *sim_setup,
     calibration->accelerometer_random_walk_variance_ = j["accelerometer_random_walk_variance"];
     calibration->gyroscope_random_walk_variance_ = j["gyroscope_random_walk_variance"];
     
-    calibration->max_camera_poses_ = 10;
+    calibration->max_camera_poses_ = 30;
     calibration->max_triangulation_iterations_ = 100;
     
     calibration->orientation_noise_ = j["orientation_noise"];
