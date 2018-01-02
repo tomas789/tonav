@@ -95,7 +95,7 @@ std::vector<cv::DMatch> FrameFeatures::match(cv::Ptr<cv::DescriptorMatcher> matc
     }
     
     bool use_fundamental_filter = true;
-    if (use_fundamental_filter) {
+    if (use_fundamental_filter && !good_matches.empty()) {
         std::vector<cv::Point2f> this_pts;
         std::vector<cv::Point2f> other_pts;
         this_pts.reserve(good_matches.size());

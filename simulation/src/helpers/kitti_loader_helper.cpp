@@ -221,7 +221,6 @@ void KittiLoaderHelper::loadCameraParams(const std::string &file_name, Eigen::Ve
         if (key == "S_rect_00:") {
             if (parts.size() != 3) {
                 throw std::runtime_error("Expected 3 items at line " + std::to_string(i) + " of file " + file_name);
-                std::exit(1);
             }
             image_size(0) = std::stod(parts[1]);
             image_size(1) = std::stod(parts[2]);
@@ -229,7 +228,6 @@ void KittiLoaderHelper::loadCameraParams(const std::string &file_name, Eigen::Ve
         } else if (key == "P_rect_00:") {
             if (parts.size() != 13) {
                 throw std::runtime_error("Expected 13 items at line " + std::to_string(i) + " of file " + file_name);
-                std::exit(1);
             }
             focal_length(0) = std::stod(parts[1]);
             focal_length(1) = std::stod(parts[6]);
