@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!env python3
 
 import multiprocessing
 import subprocess
@@ -10,15 +10,20 @@ import shutil
 
 pytonav_path_candidates = [
     "../build/simulation/pytonavsimulation.cpython-35m-x86_64-linux-gnu.so",
-    "../build/simulation/Debug/pytonavsimulation.cpython-36m-darwin.so"
+    "../build/simulation/Debug/pytonavsimulation.cpython-36m-darwin.so",
+    "../build/simulation/pytonavsimulation.cpython-36m-darwin.so"
 ]
 for candidate in pytonav_path_candidates:
     if os.path.exists(candidate):
         pytonav_path = candidate
         break
+if pytonav_path is None:
+    print("No pytonavsimulation was found. Did you compile it?")
+    sys.exit(1)
 spec = importlib.util.spec_from_file_location("pytonavsimulation", pytonav_path)
 pytonavsimulation = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(pytonavsimulation)
+
 
 def gen_param(size, order_min, order_max):
     magnitude = np.random.randint(order_min, order_max)
@@ -44,20 +49,20 @@ def work(process_rank):
         i += 1
 
         sim_params = {
-            "image_noise_variance": gen_param(1, 0, 2),
-            "accelerometer_variance": gen_param(1, -8, 6),
-            "gyroscope_variance": gen_param(1, -6, -5),
-            "accelerometer_random_walk_variance": gen_param(1, -7, -5),
-            "gyroscope_random_walk_variance": gen_param(1, -7, 5),
-            "orientation_noise": gen_param(3, -7, -5),
-            "position_noise": gen_param(3, -5, -2),
-            "velocity_noise": gen_param(3, -6, -2),
-            "gyroscope_bias_noise": gen_param(3, -8, -5),
-            "accelerometer_bias_noise": gen_param(3, -6, -4),
+            "image_noise_variance": gen_param(1, -2, 3),
+            "accelerometer_variance": gen_param(1, -8, 2),
+            "gyroscope_variance": gen_param(1, -8, 2),
+            "accelerometer_random_walk_variance": gen_param(1, -7, 1),
+            "gyroscope_random_walk_variance": gen_param(1, -7, 1),
+            "orientation_noise": gen_param(3, -7, 2),
+            "position_noise": gen_param(3, -5, 2),
+            "velocity_noise": gen_param(3, -6, 2),
+            "gyroscope_bias_noise": gen_param(3, -8, -2),
+            "accelerometer_bias_noise": gen_param(3, -6, -2),
             "gyroscope_acceleration_sensitivity_noise": gen_param((3, 3), -8, -5),
             "gyroscope_shape_matrix_noise": gen_param((3, 3), -7, -5),
             "accelerometer_shape_matrix_noise": gen_param((3, 3), -6, -5),
-            "position_of_body_in_camera_frame_noise": gen_param(3, -6, -4),
+            "position_of_body_in_camera_frame_noise": gen_param(3, -6, 1),
             "focal_length_noise": gen_param(2, -3, 2),
             "optical_center_noise": gen_param(2, -4, 1),
             "radial_distortion_noise": gen_param(3, -8, -5),
@@ -65,30 +70,31 @@ def work(process_rank):
             "camera_delay_time_noise": gen_param(1, -6, -2),
             "camera_readout_time_noise": gen_param(1, -6, -3)
         }
-
-        pytonavsimulation.DebugLogger.getInstance().set_output_file("results/tonav_output_{}.json".format(i))
-        print(os.path.exists("../../examples/sim_setup_tonav.json"))
-        sim_setup = pytonavsimulation.SimSetup("../../examples/sim_setup_tonav.json")
-        calibration = sim_setup.getOdometry().get_tonav_calibration()
-        for k, v in sim_params.items():
-            setattr(calibration, k, v)
-
         with open('results/tonav_params_{}.json'.format(i), 'w') as o:
             json.dump({k:(v[0] if len(v) == 1 else v.tolist()) for k, v in sim_params.items()}, o, indent=4, sort_keys=True)
+
+        with open("../../examples/sim_setup_tonav_kitti.json", "r") as o:
+            sim_setup_config = json.load(o)
+        sim_setup_config["odometry"]["params"]["load_path"] = "results/tonav_params_{}.json".format(i)
+        with open("results/sim_setup_tonav_kitti_{}.json".format(i), "w") as o:
+            json.dump(sim_setup_config, o)
+
+        pytonavsimulation.DebugLogger.getInstance().set_output_file("results/tonav_output_{}.json".format(i))
+        sim_setup = pytonavsimulation.SimSetup("results/sim_setup_tonav_kitti_{}.json".format(i))
+        #calibration = sim_setup.getOdometry().get_tonav_calibration()
+        #for k, v in sim_params.items():
+        #    setattr(calibration, k, v)
+
+        print("Setting up")
 
         sim = pytonavsimulation.VioSimulation()
         sim.set_headless()
         sim.set_simulation_length(100)
-        try:
-            sim.run(sim_setup)
-        except:
-            print("Worker {} crashed.".format(i))
-            return
-        
+        sim.run(sim_setup)
+
         pytonavsimulation.DebugLogger.getInstance().write_and_clear()
         del sim
         del sim_setup
-        del calibration
         with open("gt_eval.json", "r") as o:
             gt_eval = json.load(o)
         last_key = sorted(gt_eval.keys())[-1]

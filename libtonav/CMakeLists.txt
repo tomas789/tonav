@@ -72,7 +72,7 @@ set_target_properties(tonav PROPERTIES
 find_package(Eigen3 REQUIRED)
 target_include_directories (tonav PUBLIC "${EIGEN3_INCLUDE_DIR}")
 
-find_package(OpenCV 3 REQUIRED core calib3d features2d imgproc)
+find_package(OpenCV 3 REQUIRED core calib3d features2d xfeatures2d imgproc)
 target_include_directories (tonav PUBLIC "${OpenCV_INCLUDE_DIRS}")
 target_link_libraries(tonav LINK_PUBLIC ${OpenCV_LIBS})
 

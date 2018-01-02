@@ -49,7 +49,6 @@ TEST(FrameFeaturesTest, TwoConsecutiveImages) {
 TEST(FrameFeaturesTest, DISABLED_MatchFeatures_Detector_ORB_Extractor_ORB_Matcher_BF) {
     std::vector<int> n_features_to_try = { 25, 50, 75, 100, 150, 200, 250, 300, 350, 400, 450, 500, 600, 700, 800, 900, 1000, 1200, 1400, 1600, 1800, 2000 };
     for (int n_features : n_features_to_try) {
-        std::cout << " !!! processing " << n_features << std::endl;
         
         cv::ORB detector(n_features);
         cv::ORB descriptor(n_features);
@@ -104,7 +103,6 @@ TEST(FrameFeaturesTest, DISABLED_MatchFeatures_Detector_ORB_Extractor_ORB_Matche
             matcher.match(query_descriptor, train_descriptor, matches);
             auto end_matching = std::chrono::high_resolution_clock::now();
             total_match_duration += end_matching - start_matching;
-            // std::cout << "Matches: " << matches.size() << std::endl;
             
             // FIND HOMOGRAPHY
             
@@ -119,7 +117,6 @@ TEST(FrameFeaturesTest, DISABLED_MatchFeatures_Detector_ORB_Extractor_ORB_Matche
             cv::Mat H = cv::findHomography(query_pts, train_pts, CV_RANSAC, 3, good_features_mask);
             auto end_homography = std::chrono::high_resolution_clock::now();
             total_homography_duration += end_homography - start_homography;
-            // std::cout << "Good features mask size: " << good_features_mask.rows << std::endl;
             total_features_count += matches.size();
             for (std::size_t i = 0; i < matches.size(); ++i) {
                 if (good_features_mask.at<bool>(i, 0)) {

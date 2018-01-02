@@ -42,7 +42,7 @@
   "odometry": {
     "type": "tonav",
     "params": {
-
+      "load_path": "examples/tonav_params_0.json"
     }
   }
 }

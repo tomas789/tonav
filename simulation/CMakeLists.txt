@@ -1,12 +1,17 @@
 set (VIO_SIMULATION_SRC_FILES
+        src/helpers/kitti_loader_helper.cpp
+        src/imu/kitti_imu.cpp
         src/imu/numerical_diff_imu.cpp
         src/odometry/tonav_body_state_odometry.cpp
         src/odometry/tonav_calibration.cpp
         src/odometry/tonav_odometry.cpp
         src/trajectory/circular_trajectory.cpp
         src/trajectory/inplace_rotation_trajectory.cpp
+        src/trajectory/kitti_trajectory.cpp
         src/trajectory/standstill_trajectory.cpp
         src/vision/generated_features_vision.cpp
+        src/vision/kitti_vision.cpp
+        src/helper.cpp
         src/imu.cpp
         src/main.cpp
         src/odometry.cpp
@@ -18,14 +23,19 @@ set (VIO_SIMULATION_SRC_FILES
         src/vision.cpp
 )
 set (VIO_SIMULATION_HEADER_FILES
+        include/helpers/kitti_loader_helper.h
+        include/imu/kitti_imu.h
         include/imu/numerical_diff_imu.h
         include/odometry/tonav_body_state_odometry.h
         include/odometry/tonav_calibration.h
         include/odometry/tonav_odometry.h
         include/trajectory/circular_trajectory.h
         include/trajectory/inplace_rotation_trajectory.h
+        include/trajectory/kitti_trajectory.h
         include/trajectory/standstill_trajectory.h
         include/vision/generated_features_vision.h
+        include/vision/kitti_vision.h
+        include/helper.h
         include/imu.h
         include/odometry.h
         include/run_loop.h

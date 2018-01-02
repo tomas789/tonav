@@ -26,7 +26,6 @@ json DebugLogger::LoggerNode::getJsonRepresentation() const {
 }
 
 void DebugLogger::setOutputFile(const std::string &output_file) {
-    std::cout << "Setting output file to " << output_file << std::endl;
     output_file_ = output_file;
 }
     
@@ -86,7 +85,6 @@ json DebugLogger::getJsonRepresentation() const {
 }
 
 void DebugLogger::write() const {
-    std::cout << "writing debug output to " << output_file_ << std::endl;
     std::ofstream out(output_file_.empty() ? "debug_output.log" : output_file_);
     try {
         if (out) {
@@ -95,7 +93,7 @@ void DebugLogger::write() const {
             std::cerr << "Cannot write DebugLogger output. Cannot open file." << std::endl;
         }
     } catch(const std::exception& e) {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 }
 

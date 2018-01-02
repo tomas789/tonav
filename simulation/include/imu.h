@@ -20,7 +20,7 @@ public:
     
     virtual void initialize(VioSimulation *simulation) = 0;
     
-    float getUpdateFrequency() const;
+    double getUpdateFrequency() const;
     
     virtual Eigen::Vector3d getAccelerometerData(double time) const = 0;
     virtual Eigen::Vector3d getGyroscopeData(double time) const = 0;

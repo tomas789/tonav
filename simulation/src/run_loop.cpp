@@ -13,12 +13,12 @@ void RunLoop::setSimulationLength(double time) {
 }
 
 void RunLoop::run() {
-    float last_simulation_update_time = std::numeric_limits<float>::min();
+    double last_simulation_update_time = std::numeric_limits<double>::min();
     while (!queue_.empty() && !should_stop_) {
         Item item = queue_.top();
         queue_.pop();
         
-        float time = item.time;
+        double time = item.time;
         if (!std::isnan(simulation_length_) && time > simulation_length_) {
             break;
         }
@@ -42,7 +42,7 @@ void RunLoop::registerSimulationForUpdates(VioSimulation *simulation) {
     simulation_ = simulation;
 }
 
-void RunLoop::registerCallback(float time, RunLoopCallback *callback) {
+void RunLoop::registerCallback(double time, RunLoopCallback *callback) {
     Item item;
     item.time = time;
     item.callback = callback;

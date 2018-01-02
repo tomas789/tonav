@@ -58,17 +58,6 @@ FeatureTracker::feature_track_list FeatureTracker::processImage(feature_track_li
     
     std::vector<cv::DMatch> matches = frame_features->match(matcher_, *previous_frame_features_);
     
-    std::size_t max_y_feat = 0;
-    for (int i = 0; i < previous_frame_features_->keypoints().size(); ++i) {
-        if (previous_frame_features_->keypoints()[i].pt.y > previous_frame_features_->keypoints()[max_y_feat].pt.y) {
-            max_y_feat = i;
-        }
-    }
-    std::cout << "1. " << previous_frame_features_->descriptors().row(max_y_feat) << std::endl;
-    std::cout << "2. " << frame_features->descriptors().row(max_y_feat) << std::endl;
-    auto dist = cv::norm(previous_frame_features_->descriptors().row(max_y_feat), frame_features->descriptors().row(max_y_feat), cv::NORM_L2);
-    std::cout << "Feature with max y coord is at index " << max_y_feat << " dist " << dist << std::endl;
-    
     std::vector<double> previous_feature_matched(previous_tracks.size(), INFINITY);
     std::vector<std::size_t> matched_feature_assigned(previous_tracks.size(), std::numeric_limits<std::size_t>::max());
     std::vector<bool> current_feature_matched(frame_features->keypoints().size(), false);

@@ -3,7 +3,6 @@
 #include <Eigen/Core>
 #include <Eigen/LU>
 #include <memory>
-#include <iostream>
 
 #include "calibration.h"
 #include "filter.h"
@@ -208,8 +207,6 @@ Eigen::Matrix<double, 15, 15> BodyState::bodyStateTransitionMatrix(
     phi.block<3, 3>(0, 12) = phi_q_ba;
     phi.block<3, 3>(1, 12) = phi_p_ba;
     phi.block<3, 3>(2, 12) = phi_v_ba;
-    
-    std::cout << "phi MIN: " << phi.minCoeff() << " | MAX: " << phi.maxCoeff() << std::endl;
     
     return phi;
 }

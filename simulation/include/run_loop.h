@@ -20,13 +20,13 @@ public:
     void stop();
     
     void registerSimulationForUpdates(VioSimulation *simulation);
-    void registerCallback(float time, RunLoopCallback *callback);
+    void registerCallback(double time, RunLoopCallback *callback);
     
     bool isRunning() const;
     
 private:
     struct Item {
-        float time;
+        double time;
         RunLoopCallback *callback;
     
         bool operator>(const Item& other) const;

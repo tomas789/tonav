@@ -3,7 +3,7 @@
 #--------------------------------------------------------------------------------------------
 
 # Camera calibration and distortion parameters (OpenCV) 
-Camera.focalPoint: [721.5377 721.5377]
+Camera.focalLength: [721.5377 721.5377]
 Camera.opticalCenter: [609.5593 172.8540]
 
 Camera.radialDistortion: [0.0 0.0 0.0]
@@ -67,7 +67,7 @@ Noise.Ts: [0.000001 0.000001 0.000001; 0.000001 0.000001 0.000001; 0.000001 0.00
 Noise.Tg: [0.000001 0.000001 0.000001; 0.000001 0.000001 0.000001; 0.000001 0.000001 0.000001]
 Noise.Ta: [0.000001 0.000001 0.000001; 0.000001 0.000001 0.000001; 0.000001 0.000001 0.000001]
 Noise.positionOfBodyInCameraFrame: [0.0000001 0.0000001 0.0000001]
-Noise.focalPoint: [2.0 2.0]
+Noise.focalLength: [2.0 2.0]
 Noise.opticalCenter: [0.0000001 0.0000001]
 Noise.radialDistortion: [0.0000001 0.0000001 0.0000001]
 Noise.tangentialDistortion: [0.0000001 0.0000001]

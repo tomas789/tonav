@@ -41,8 +41,7 @@ Eigen::Vector3d CircularTrajectory::getGlobalGravity() const {
 
 CircularTrajectory::~CircularTrajectory() = default;
 
-CircularTrajectory::CircularTrajectory(SimSetup *sim_setup)
-    : Trajectory(sim_setup) {
+CircularTrajectory::CircularTrajectory(SimSetup *sim_setup) : Trajectory(sim_setup) {
     
 }
 
