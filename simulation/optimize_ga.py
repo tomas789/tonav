@@ -255,7 +255,7 @@ def main(args):
         logbook.record(gen=gen, evals=len(invalid_ind), **record)
         print(logbook.stream)
 
-        population = toolbox.select(population, k=len(population))
+        population = tools.selBest(population + halloffame.items[:5], len(population))
 
         if gen % FREQ == 0:
             # Fill the dictionary using the dict(key=value[, ...]) constructor
