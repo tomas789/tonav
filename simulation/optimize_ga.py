@@ -151,8 +151,7 @@ def evalTonavKittiSimulation(individual, headless=True):
         sim = pytonavsimulation.VioSimulation()
         if headless:
             sim.set_headless()
-        #max_sim_time = float(shared.getConst("max_sim_time"))
-        max_sim_time = 20
+        max_sim_time = float(shared.getConst("max_sim_time"))
         sim.set_simulation_length(max_sim_time)
         sim.run(sim_setup)
         pytonavsimulation.DebugLogger.getInstance().write_and_clear()
@@ -209,7 +208,7 @@ toolbox.register("select", tools.selTournament, tournsize=3)
 
 def main(args):
     globals()["DEBUG_OUTPUT"] = args.debug
-    #shared.setConst(max_sim_time=args.max_sim_time)
+    shared.setConst(max_sim_time=args.max_sim_time)
     checkpoint = args.checkpoint
     if checkpoint and os.path.exists(checkpoint):
         # A file name has been given, then load the data from the file
