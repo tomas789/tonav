@@ -195,7 +195,7 @@ def cxTwoPointCopy(ind1, ind2):
 NGEN = 300
 FREQ = 1
 CXPB = 0.3
-MUTPB = 0.5
+MUTPB = 0.6
     
 toolbox.register("evaluate", evalTonavKittiSimulation)
 toolbox.register("mate", cxTwoPointCopy)
