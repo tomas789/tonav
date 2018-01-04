@@ -35,6 +35,7 @@ before_install:
   - sudo make install -j2
 
 before_script:
+  - pyenv shell 3.6.3:system
   - mkdir build
   - cd build
   - cmake ..
