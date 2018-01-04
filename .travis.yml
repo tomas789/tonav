@@ -1,3 +1,6 @@
+sudo: required 
+dist: trusty
+
 language:
   - cpp
 
@@ -15,6 +18,7 @@ addons:
     - libgtest-dev
 
 before_install:
+  - pyenv shell 3.6.3:system
   - git clone https://github.com/opencv/opencv_contrib.git
   - cd opencv_contrib
   - git checkout 3.3.1
@@ -35,7 +39,6 @@ before_install:
   - sudo make install -j2
 
 before_script:
-  - pyenv shell 3.6.3:system
   - mkdir build
   - cd build
   - cmake ..
