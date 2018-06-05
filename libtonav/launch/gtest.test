@@ -1,3 +1,0 @@
-<launch>
-	<test test-name="Unit-Tests" pkg="tonav" type="tonav-test" name="CarsTest"/>
-</launch>
