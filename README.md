@@ -1,9 +1,9 @@
 Tonav
 -----
 
-Lately, I was getting quite a lot of emails from people trying to run Tonav without much success. I acknowledge that it might be very difficult to make it run well (or at all). For that reason, I decided to make a big step forward and actually re-implement the whole thing. Increasing accuracy and robustness. I call it **Tonav-NG**.
+Lately, I was getting quite a lot of emails from people trying to run Tonav without much success. I acknowledge that it might be very difficult to make it run well (or at all). For that reason, I decided to make a big step forward and actually re-implement the whole thing. Increasing the accuracy and robustness. I call it **Tonav-NG**.
 
-The source code of it is not public yet. I will share it as soon as it is stable enough. But even now, it works really good. 
+The source code of it is not public yet. I will share it as soon as it is stable enough. But even now, it works really well. 
 
 If you want to stay in touch, you can leave me your contact and I'll let you know.
 
